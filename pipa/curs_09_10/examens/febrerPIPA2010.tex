@@ -1,0 +1,136 @@
+\documentclass[11pt]{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Examen Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+febrer 2010}
+\end{center}
+
+\vspace{1 cm}
+\noindent\textbf{P1.-}
+Una diana consisteix en 3 cercles conc\`entrics amb radis
+respectius 1 cm, 2 cm i 3 cm. En una competici\'o de tir, la
+distribuci\'o dels impactes en la diana i els voltants \'es tal que
+les desviacions horitzontal i vertical respecte del centre de la
+diana s\'on independents i les dues segueixen una distribuci\'o normal
+N(0, 1 cm.). Determinau la proporci\'o d'impactes dins cada anell de
+la diana. 
+
+
+\noindent
+(Indicacions: Utilitzau un canvi a coordenades polars per a simplificar els càlculs: 
+$x=r\cos\theta$, $y=r\sin\theta$, $dxdy=rdrd\theta$).
+\ \hfill{\textbf{ 2.5 pt.}}
+
+
+\vspace{1 cm}
+\noindent\textbf{P2.-}
+La següent taula mostra els valors d'alçada i pes dels jugadors de l'equip de bàsquet NBA 
+Los Angeles Lakers (font: www.nba.com).
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{ccc}
+Jugador & Alçada (m) & Pes (Kg) \\ \hline
+Artest & $2,01$ & $117,93$ \\ 
+Brown & $1,93$ & $95,25$ \\
+Bryant & $1,98$ & $92,99$ \\
+Bynum & $2,13$ & $129,27$ \\
+Farmar & $1,88$ & $81,65$ \\
+Fisher & $1,85$ & $95,25$ \\
+\end{tabular}
+&
+\begin{tabular}{ccc}
+Jugador & Alçada (m) & Pes (Kg) \\ \hline
+Gasol & $2,13$ & $113,4$ \\ 
+Mbenga & $2,13$ & $115,67$ \\
+Morrison & $2,03$ & $92,99$ \\
+Odom & $2,08$ & $104,33$ \\
+Powell & $2,06$ & $108,86$ \\
+Vujacic & $2,01$ & $92,99$ \\
+Walton & $2,03$ & $106,59$ 
+\end{tabular}
+\end{tabular}
+\end{center}
+
+Calculau la millor estimació lineal dels valos de pes a partir dels valors d'alçada (recta de regressió 
+lineal). 
+Si un jugador medís $2,20cm$, quin seria el seu pes d'acord amb aquesta estimació?
+Calculau el coeficient de correlació entre pes i alçada.
+\ \hfill{\textbf{ 2.5 pt.}}
+
+
+\vspace{1 cm}
+
+
+
+
+\noindent\textbf{P3.-}.
+Un equip electrònic envia 100 bits d'informació a un ordinador cada 10 minuts. La probabilitat que
+un bit es transmeti de manera errònia és de $0,001$. 
+\begin{enumerate}[a)]
+\item Quina és la probabilitat que en un periode d'3h
+es rebin incorrectament més de 2 bits? 
+\item Quin és el valor esperat de bits erronis rebuts al cap d'1 dia.
+\item Quin temps ha de passar, com a mínim, per tenir una probabilitat superior al $90\%$
+d'haver rebut més de 5 bits erronis?
+\end{enumerate}
+\ \hfill{\textbf{ 2.5 pt.}}
+
+\vspace{1 cm}
+
+\noindent\textbf{P4.-} 
+Sigui $X(t)$ un procés aleatori definit com $X(t)=t^2+3U$, on $U$ és una variable
+aleatòria de Poisson amb paràmetre $10$.
+\begin{enumerate}[a)]
+\item 
+Calculau la mitjana i l'autocovariància de $X(t)$. És tracta d'un procés
+estacionari?
+\item Si $Y(t)$ és un procés aleatori Gaussià estacionari i amb mitjana 4,
+calculau la correlació creuada de $X$ i $Y$ suposant que $Y(t)$ i $U$ són 
+independents per a tot $t$.
+\end{enumerate}
+
+
+\ \hfill{\textbf{1.25 pt.}}
+
+
+\vspace{1 cm}
+
+\noindent\textbf{P5.-} 
+Sigui $S_n=X_1+X_2+\cdots+X_n$ un procés suma on les variables aleatòries $X_i$
+són i.i.d. i prenen valors $1$ o $-1$ amb probabilitats respectives $\frac{1}{4}$
+i $\frac{3}{4}$.
+Calculau $P(S_{n+3}=0|_{S_n=1})$.
+\ \hfill{\textbf{1.25 pt.}}
+
+
+
+\vspace{0.75 cm}
+
+\hrule
+
+\vspace{0.5 cm}
+
+\noindent Duraci\'o de l'examen 4 hores.\newline
+
+\end{document}

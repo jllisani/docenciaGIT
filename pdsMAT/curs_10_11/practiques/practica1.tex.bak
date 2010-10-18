@@ -1,0 +1,74 @@
+Practiques Processament Digital del Senyal
+
+Pr\`actica 1. Processament de senyals 1D
+
+
+
+Exercici 1.
+
+Conceptes b\`asics. 
+
+a) Representar el senyal {\it ftest1} per a valors entre 0 i 62 amb diferents valors de precissi\'o
+(utilitzau la funci\'o {\it plot})
+
+b) Mostrejar el senyal amb diferents per\'\i odes de mostreig (provau amb $T=0.5, 1, 2, 3 i 4$) i 
+representar el resultat amb la funci\'o {\it stem}.
+
+c) Escriure una funci\'o de Matlab que permeti fer la reconstrucci\'o d'un senyal continu a partir
+d'un senyal discret a partir del Teorema de Shannon.
+
+d) Provar la funcci\'o anterior per a la reconstrucci\'o de les diferents versions mostrejades obtingudes
+a l'apartat b). Comentar els resultats. Qu\`e passa si reconstru\"\i m el senyal amb un per\'iode
+de mostreig diferent al que li correspon?
+
+e) Escriure una funci\'o de Matlab que calculi la Transformada de Fourier d'un senyal mostrejat.
+
+f) Calcular les Transformades de Fourier dels senyals mostrejats en l'apartat b) i relacionar-les amb
+els resultats obtinguts a l'apartat d).
+
+g) Exercici te\`oric: relacionar la FFT amb la Transformada de Fourier programada a l'apartat e).
+
+h) Calcular la FFT (funci\'o {\it fft} de Matlab) dels senyals obtinguts a l'apartat b) i comentar els 
+resultats.
+
+
+Exercici 2.
+
+An\`alisi de funcions peri\`odiques.
+
+El senyal {\it ftest2} \'es un senyal peri\`odic de per\'\i ode $4$. En aquest exercici es demana repetir
+els apartats b), d) i h) per a la funci\'o {\it ftest2} i comentar quines consideracions addicionals s'han
+de fer en analitzar un senyal peri\`odic.
+
+
+Exercici 3.
+
+An\`alisi de senyals de veu i filtratge.
+
+a) Reproduir el senyal de veu `awake.wav' des d'una finestra de Windows.
+
+b) Obrir el senyal des de Matlab emprant la funci\'i {\it wavread}.
+
+c) Representar el senyal i calcular la seva FFT. Representar-la.
+
+d) Reconstruir el senyal continu original a partir de la f\`ormula de reconstrucci\'o de Shannon.
+
+e) Mostrejar el senyal reconstru\"\i t amb diferents pe\'\i odes de mostreig, guardar i reproduir el 
+resultat. Comentar els resultats.
+
+f) Utilitzar la funci\'o {\it wavwrite} per guardar el senyal amb per\'iodes de mostreig diferents
+de l'original i reproduir els resultats.
+
+g) Aplicar diferents filtres freq\"uencials al senyal (passa-baix, passa-alt, passa-banda)
+i reproduir el senyal resultant.
+
+i) Filtratge per convoluci\'o: filtre de mitja. Convolucionar el senyal original amb el senyal 
+$u=[\frac{1}{3} \frac{1}{3} \frac{1}{3}]$ (utilitzar la funci\'o {\it conv} de Matlab). 
+Relacionar l'operaci\'o de convoluci\'o amb la FFT dels senyals convolucionats. Escriure una funci\'o de Matlab que   
+apliqui $n$ vegades el filtre de mitja al senyal original. Reproduir els resultats del filtratge.
+
+j) Filtratge no lineal: filtre de mediana. Escriure una funci\'o de Matlab que calculi el filtratge de mediana d'un 
+senyal. Aplicar la funci\'o al senyal de veu original per a diferents valors dels par`ametres i reproduir els 
+resultats.
+
+   

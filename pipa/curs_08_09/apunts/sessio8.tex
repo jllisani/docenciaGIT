@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{fancyheadings}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\setcounter{exctr}{25}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{fancy}
+\markboth{Tema 1. Variables aleat\`ories vectorials}{}
+\setcounter{page}{14}
+\setlength{\headrulewidth}{0pt}
+
+\begin{document}
+
+\noindent
+\textbf{\large Variables aleat\`ories n-dimensionals}
+\vskip 0.3 cm
+\noindent
+Donades $n$ variables aleat\`ories $X_1, X_2, \cdots, X_n$, es defineix la 
+\textbf{funci\'o de distribuci\'o conjunta del vector aleatori $n$-dimensional} 
+$(X_1, X_2, \cdots, X_n)$ com:
+\[
+F_{X_1 X_2 \cdots X_n}(x_1, x_2, \cdots, x_n)=P(X_1 \leq x_1, X_2 \leq x_2, \cdots, X_n \leq x_n)
+\]
+
+\vskip 0.2 cm
+Si les variables $X_1, X_2, \cdots, X_n$ s\'on \textbf{discretes} llavors es pot definir
+una funci\'o $P(X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n)$ anomenada
+\textbf{funci\'o de probabilitat conjunta del vector aleatori $n$-dimensional}, tal que:
+\[
+F_{X_1 X_2 \cdots X_n}(x_1, x_2, \cdots, x_n)=
+\sum_{x_1' \leq x_1} \cdots \sum_{x_n' \leq x_n} P(X_1 = x_1', X_2 = x_2', \cdots, X_n = x_n')
+\]
+\noindent
+i la probabilitat d'un succ\'es $A$ es pot calcular com:
+\[
+P(A)={\sum \cdots \sum}_{(x_1', \cdots, x_n') \in A} P(X_1 = x_1', X_2 = x_2', \cdots, X_n = x_n')
+\]
+
+
+\vskip 0.2 cm
+Si les variables $X_1, X_2, \cdots, X_n$ s\'on \textbf{cont\'\i nues} llavors es pot definir
+una funci\'o $f_{X_1 X_2 \cdots X_n}(x_1, x_2, \cdots, x_n)$ anomenada 
+\textbf{funci\'o de densitat conjunta del vector aleatori $n$-dimensional}, tal que:
+\[
+F_{X_1 X_2 \cdots X_n}(x_1, x_2, \cdots, x_n)=
+\int_0^{x_1} \cdots \int_0^{x_n} f_{X_1 X_2 \cdots X_n}(x_1', x_2', \cdots, x_n') \, dx_1' dx_2' \cdots dx_n'
+\]
+\noindent
+i la probabilitat d'un succ\'es $A$ es pot calcular com:
+\[
+P(A)=
+{\int \cdots \int}_{(x_1', \cdots, x_n') \in A}  f_{X_1 X_2 \cdots X_n}(x_1', x_2', \cdots, x_n') \, dx_1' dx_2' \cdots dx_n'
+\]
+
+
+
+\vskip 0.2 cm
+Donat un vector aleatori $n$-dimensional discret $(X_1, X_2, \cdots, X_n)$, 
+la \textbf{funci\'o de probabilitat marginal} de la variable $X_j$ es defineix com:
+\[
+P(X_j=x_j)=\sum_{x_1'} \cdots \sum_{x_{j-1}'} \sum_{x_{j+1}'} \cdots \sum_{x_n'} 
+P(X_1 = x_1', \cdots, X_{j-1}=x_{j-1}', X_j=x_j, X_{j+1}=x_{j+1}', X_n = x_n')
+\]  
+\noindent
+i la \textbf{funci\'o de probabilitat marginal conjunta} de $(X_1, \cdots, X_m)$ ($1 \leq m < n$):
+\[
+P(X_1=x_1, X_2=x_2, \cdots, X_m=x_m)=\sum_{x_{m+1}'} \cdots \sum_{x_n'} 
+P(X_1 = x_1, \cdots, X_m=x_m, X_{m+1}=x_{m+1}', \cdots,  X_n = x_n')
+\]  
+  
+
+\vskip 0.2 cm
+Donat un vector aleatori $n$-dimensional continu $(X_1, X_2, \cdots, X_n)$, 
+la \textbf{funci\'o de densitat marginal} de la variable $X_j$ es defineix com:
+\[
+f_{X_j}(x_j)=\int_{-\infty}^{+\infty} \cdots \int_{-\infty}^{+\infty}
+f_{X_1 X_2 \cdots X_n}(x_1', \cdots, x_{j-1}', x_j, x_{j+1}', x_n') \, d_{x_1'} \cdots d_{x_{j-1}'} d_{x_{j+1}'} \cdots d_{x_n'}  
+\]  
+\noindent
+i la \textbf{funci\'o de densitat marginal conjunta} de $(X_1, \cdots, X_m)$ ($1 \leq m < n$):
+\[
+f_{X_1 \cdots X_m}(x_1, \cdots, x_m)=\int_{-\infty}^{+\infty} \cdots \int_{-\infty}^{+\infty}
+f_{X_1 X_2 \cdots X_n}(x_1, \cdots, x_m, x_{m+1}', \cdots, x_n') \,  d_{x_{m+1}'} \cdots d_{x_n'}  
+\]  
+
+
+\vskip 0.2 cm
+Donat un vector aleatori $n$-dimensional discret $(X_1, X_2, \cdots, X_n)$, es defineix la 
+\textbf{funci\'o de pro\-ba\-bi\-li\-tat condicional} de $X_{m+1}$ condicionat per $X_1, \cdots, X_m$ ($1 \leq m < n$)
+com:
+\[
+P(X_{m+1}=x_{m+1} |_{X_1=x_1, \cdots, X_m=x_m})=
+\frac{ P(X_1=x_1, X_2=x_2, \cdots, X_{m+1}=x_{m+1}) }{ P(X_1=x_1, X_2=x_2, \cdots, X_{m}=x_{m}) }
+\]
+\noindent
+Es pot demostrar que
+\[
+\begin{array}{rl}
+P(X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) = & P(X_{n}=x_{n} |_{X_1=x_1, \cdots, X_{n-1}=x_{n-1}}) \, \times \\ \\
+ & \times \, P(X_{n-1}=x_{n-1} |_{X_1=x_1, \cdots, X_{n-2}=x_{n-2}}) \cdots P(X_2=x_2 |_{X_1=x_1}) \cdot P(X_1=x_1) 
+\end{array}
+\]
+
+\vskip 0.2 cm
+Donat un vector aleatori $n$-dimensional continu $(X_1, X_2, \cdots, X_n)$, es defineix la 
+\textbf{funci\'o de densitat condicional} de $X_{m+1}$ condicionat per $X_1, \cdots, X_m$ ($1 \leq m < n$)
+com:
+\[
+f_{X_{m+1}|_{X_1 X_2 \cdots X_m}}(x_{m+1}|_{x_1 x_2 \cdots x_m})=
+\frac{ f_{X_1 X_2 \cdots X_{m+1}} (x_1, x_2, \cdots, x_{m+1})}{ f_{X_1 X_2 \cdots X_{m}} (x_1, x_2, \cdots, x_{m}) }
+\]
+\noindent
+Es pot demostrar que:
+\[
+\begin{array}{rl}
+f_{X_1 X_2 \cdots X_{n}} (x_1, x_2, \cdots, x_{n})= &
+f_{X_{n}|_{X_1 X_2 \cdots X_{n-1}}}(x_{n}|_{x_1 x_2 \cdots x_{n-1}}) \, \times \\ \\
+ & \times \, f_{X_{n-1}|_{X_1 X_2 \cdots X_{n-2}}}(x_{n-1}|_{x_1 x_2 \cdots x_{n-2}}) \cdots
+f_{X_1 |_{X_2}}(x_1 |_{x_2}) \cdot f_{X_1}(x_1)
+\end{array}
+\]
+
+\vskip 0.2 cm
+$n$ v.a. discretes $X_1, X_2, \cdots, X_n$ s\'on \textbf{independents} si:
+\[
+P(X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) =P(X_1 = x_1) \cdot P(X_2 = x_2) \cdots P(X_n=x_n)
+\]
+
+\vskip 0.2 cm
+$n$ v.a. cont\'\i nues $X_1, X_2, \cdots, X_n$ s\'on \textbf{independents} si:
+\[
+f_{X_1 X_2 \cdots X_{n}} (x_1, x_2, \cdots, x_{n})=f_{X_1}(x_1) \cdot f_{X_2}(x_2) \cdots f_{X_n}(x_n)
+\]
+
+
+\vskip 0.5 cm
+\noindent
+\textbf{\large Variable aleat\`oria Gaussiana n-dimensional}
+\vskip 0.3 cm
+\noindent
+$n$ v.a. cont\'\i nues $X_1, X_2, \cdots, X_n$ s\'on \textbf{conjuntament Gaussianes} si la seva
+funci\'o de densitat conjunta \'es de la forma:
+\[
+f_{X_1 X_2 \cdots X_n}(x_1, x_2, \cdots, x_n)=\frac{1}{(2 \pi)^{n/2} \sqrt{\mathrm{det}(K)}} \, e^{-\frac{1}{2} 
+\begin{pmatrix} x_1-\mu_{X_1} & \cdots & x_n - \mu_{X_n} \end{pmatrix} K^-1 
+\begin{pmatrix} x_1-\mu_{X_1} \\ \vdots \\ x_n - \mu_{X_n} \end{pmatrix} }
+\]
+\noindent
+on $K$ \'es la matriu de covari\`ancies de $X_1, X_2, \cdots, X_n$: 
+\[
+K=\begin{pmatrix} 
+\sigma_{X_1}^2 & \sigma_{X_1 X_2} & \cdots & \sigma_{X_1 X_n}\\ \\
+\sigma_{X_1 X_2} & \sigma_{X_2}^2 & \cdots & \sigma_{X_2 X_n}\\ \\
+\vdots & \vdots & \cdots & \vdots\\ \\
+\sigma_{X_1 X_n} & \sigma_{X_2 X_n} & \cdots & \sigma_{X_n}^2
+\end{pmatrix}
+\]
+
+\vskip 0.3 cm
+\noindent
+Propietats:
+\begin{itemize}
+\item Si $(X_1, \cdots, X_n)$ s\'on conjuntament Gaussianes,
+llavors les funcions de densitat marginals s\'on tamb\'e Gaussianes.
+
+\item Si $(X_1, \cdots, X_n)$ s\'on conjuntament Gaussianes, llavors les funcions de densitat condicionals 
+s\'on tamb\'e Gaussianes.
+
+\item Si $(X_1, \cdots, X_n)$ s\'on conjuntament Gaussianes i 
+$\begin{pmatrix} U_1 \\ \vdots \\ U_n \end{pmatrix}=A \cdot \begin{pmatrix} X_1 \\ \vdots \\ X_n \end{pmatrix}$, 
+amb $\mathrm{det}(A)\neq 0$, llavors $(U_1, \cdots,  U_n)$ s\'on conjuntament Gaussianes.
+
+\item Si $(X_1, \cdots, X_n)$ s\'on conjuntament Gaussianes, llavors $Z=a_1 X_1+ a_2 X_2 + \cdots + a_n X_n$ 
+\'es una v.a. Gaussiana per a qualsevol valor de les constants $a_1, a_2, \cdots, a_n$.
+\end{itemize}
+\end{document}

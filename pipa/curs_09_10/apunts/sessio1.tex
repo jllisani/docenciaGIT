@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+
+\begin{document}
+
+\textbf{\Large Tema 1. Variables aleat\`ories vectorials}
+
+\vskip 0.2 cm
+\noindent
+Recordatori:
+\vskip 0.1 cm
+una \textbf{variable aleat\`oria} (v.a.) \'es una funci\'o
+que associa un n\'umero a cada un dels successos elementals d'un experiment 
+aleatori.
+
+\vskip 0.2 cm
+\begin{exemple}
+Experiment=llan\c{c}ar 2 monedes, X=nombre de cares
+\end{exemple}
+
+\vskip 0.3 cm
+\noindent
+En aquest tema:
+\vskip 0.1 cm
+estudiarem les relacions entre 2 o m\'es v.a. associades a un mateix experiment.
+
+
+\vskip 0.2 cm
+\begin{exemple}
+Experiment=llan\c{c}ar 2 monedes, X=nombre de cares, Y=nombre de creus
+\end{exemple}
+
+
+\vskip  0.3 cm
+\noindent
+\textbf{\large Cas discret}
+
+\noindent
+Donades dues v.a. discretes $X$ i $Y$ anomenam \textbf{vector aleatori} al parell $(X, Y)$.
+El conjunt de valors possibles de $(X, Y)$ es denota $\Omega_{XY}$. 
+Definim la \textbf{funci\'o de probabilitat conjunta} de $(X, Y)$ com:
+\[
+P(X=x, Y=y)=P(X=x \cap Y=y) \qquad \forall (x, y) \in \Omega_{XY}
+\]
+
+\vskip 0.1 cm
+(Notaci\'o alternativa: $f_{XY}(x, y)=P(X=x, Y=y)$)
+
+\vskip 0.3 cm
+\textbf{Propietats}
+\begin{enumerate}
+\item $\sum\sum_{(x, y) \in \Omega_{XY}} P(X=x, Y=y) = 1$
+\item $P(X=x)=\sum_{y \in \Omega_Y} P(X=x, Y=y)$ $\qquad$ (funci\'o de probabilitat marginal de $X$)
+\item $P(Y=y)=\sum_{x \in \Omega_X} P(X=x, Y=y)$ $\qquad$ (funci\'o de probabilitat marginal de $Y$)
+\item si $X$ i $Y$ s\'on v.a. independents: $P(X=x, Y=y)=P(X=x) \cdot P(Y=y)$
+\item Donat un conjunt $A$: $P((X, Y) \in A) = \sum\sum_{(x, y) \in A \cap \Omega_{XY}} P(X=x, Y=y)$
+\end{enumerate}
+
+\vskip 0.2 cm
+\noindent
+\textbf{Funci\'o de distribuci\'o conjunta}: $F_{XY}(x, y)=P(X \leq x, Y \leq y)$
+
+
+\vskip 0.3 cm
+\begin{exemple}
+La funci\'o de probabilitat conjunta de dues v.a. discretes $X$ i $Y$ es mostra en la taula seg\"uent:
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|}
+Y $\backslash$ X & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+1     & k/35 & 1/35 & 1/35 & 1/35 & 0 & 0 & 0 \\ \hline
+2     & 1/35 & 2/35 & 2/35 & 1/35 & 1/35 & 0 & 0 \\ \hline
+3     & 0 & 1/35 & 2/35 & 2/35 & 2/35 & 1/35 & 0 \\ \hline
+4     & 0 & 0 & 1/35 & 2/35 & 2/35 & 1/35 & 1/35 \\ \hline
+5     & 0 & 0 & 1/35 & 1/35 & 2/35 & 2/35 & 2/35 \\ \hline
+\end{tabular}
+\end{center}
+Dibuixau el suport de la funci\'o, calculau $k$, les funcions de probabilitat marginals i
+$P(3 < X+Y \leq 5)$. S\'on independents les variables $X$ i $Y$?
+\end{exemple}
+
+
+\vskip 0.3 cm
+\begin{exemple}
+(Exercici 11a) Llan\c{c}am a l'aire un dau equilibrat. Considerem dues variables
+aleat\`ories $X$ i $Y$ definides com:
+\[
+X = \begin{cases}-1 & \text{si el resultat \'es imparell}\\ 
+1 & \text{si el resultat \'es parell} \end{cases} \ \ 
+Y = \begin{cases}-1 & \text{si el resultat \'es 1, 2 o 3}\\
+0 & \text{si el resultat \'es 4}\\ 
+1 & \text{si el resultat \'es 5 o 6}\end{cases}
+\]
+Trobau la llei conjunta i la funci\'o de distribuci\'o de $X$ i $Y$.
+\end{exemple}
+
+
+\vskip 0.6 cm
+\noindent
+Exercicis proposats: 1, 14a, 17a, 6
+
+\end{document}

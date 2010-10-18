@@ -1,0 +1,21 @@
+function f=fShannon2D(X, Tx, Ty, x, y)
+%FSHANNON2D Shannon interpolate of a 2D discrete function
+
+[h, w]=size(X);
+
+Nx=length(x);
+Ny=length(y);
+
+for mx=1:Nx
+  for my=1:Ny
+          
+    for j=0:(j-1)
+    
+        Xj(j)=fShannon(X(1+j,:), Ty, y(my));
+        
+    end
+    f(mx, my)=fShannon(Xi, Tx, x(mx));
+       
+  end
+end
+

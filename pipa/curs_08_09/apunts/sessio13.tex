@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car\`acters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{fancyheadings}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{fancy}
+\markboth{Tema 3. Processos aleatoris}{}
+\setcounter{page}{1}
+\setlength{\headrulewidth}{0pt}
+
+
+
+\begin{document}
+
+\textbf{\Large Tema 3. Processos aleatoris}
+
+\vskip 0.2 cm
+En els temes anteriors hem estudiat les \textit{variables aleat\`ories}, que s\'on
+nombres aleatoris associats a un experiment aleatori. En aquest tema estudiarem
+el \textit{processos aleatoris o estoc\`astics}, que s\'on \textbf{seq\"u\`encies de nombres aleatoris}
+associades a un experiment.
+
+\vskip 0.3 cm
+Exemples de processos aleatoris s\'on:
+\begin{enumerate}
+\item el s\'o que rebem en un receptor de r\`adio quan sintonitzam una freq\"u\`encia buida
+\item el d\`ebil senyal el\`ectric que detectam amb un volt\'imetre en un circuit sense
+alimentaci\'o
+\item la seq\"u\`encia de bits que rebem quan transmetem un senyal binari per un canal amb renou
+\end{enumerate}
+
+Veurem en el tema seg\"uent que el \textit{renou} en un sistema de comunicacions
+es modela en termes matem\`atics com un 
+proc\'es aleatori, per aix\`o, l'estudi de les propietats dels processos aleatoris ens
+ser\`a \'util per aprendre a controlar el nivell de renou en les comunicacions.
+
+\vskip 0.5 cm
+\textbf{Formalitzaci\'o dels processos aleatoris}
+
+Cada una de les seq\"u\`encies de nombres que obtenim quan repetim v\`aries vegades
+el mateix experiment aleatori es diu \textbf{realitzaci\'o del proc\'es aleatori}.
+Formalment aix\`o ho podem escriure de la seg\"uent manera:
+\[
+\begin{array}{rccc}
+X: & \Omega & \longrightarrow  & \text{conjunt de funcions}\\
+   & \omega_1 & \rightarrow & X(\omega_1, t) \\
+   & \omega_2 & \rightarrow & X(\omega_2, t) \\
+   & \vdots   & \vdots      &   \vdots 
+\end{array}
+\]
+
+\noindent
+on $\Omega=\{ \omega_1, \omega_2, \cdots \}$ \'es l'espai mostral de l'experiment (el conjunt
+de tots els resultats possibles). $X$ denota el proc\'es aleat\`ori i les funcions 
+$X(\omega_1, t)$, $X(\omega_2, t)$, etc. representen
+les seq\"u\`encies de nombres associades a cada repetici\'o de l'experiment.
+
+Cadascuna d'aquestes funcions \'es una \textit{realitzaci\'o} del proc\'es.
+Si aquestes funcions s\'on cont\'inues deim que el proc\'es \'es un 
+\textbf{proc\'es aleatori en temps continu}, mentre que si les funcions s\'on discretes
+parlam de \textbf{proc\'es aleatori en temps discret}. 
+
+El terme ``temps'' fa refer\`encia a l'\'index $t$ de les funcions  
+$X(\omega_1, t)$, $X(\omega_2, t)$, etc i s'utilitza per ab\'us de llenguatge, ja que en molts 
+de casos les seq\"u\`encies de nombres associades al proc\'es representen la seva evoluci\'o
+temporal.
+
+\vskip 0.5 cm
+\begin{exemple}
+Sigui $\xi$ un nombre aleatori seleccionat a l'atzar en l'interval $[-1, 1]$.
+Definim el seg\"uent proc\'es aleatori: $X(\xi, t)=\xi \cos(2\pi t)$. Dibuixau
+algunes realitzacions del proc\'es.
+\end{exemple}
+
+\vskip 0.5 cm
+\begin{exemple}
+Una part\'icula es despla\c{c}a d'esquerra a dreta amb un moviment constant i de dalt a baix
+de manera aleat\`oria segons la seg\"uent llei: $(x_{n+1}, y_{n+1})=(x_n+1, y_n + A)$,
+on $A$ \'es una v.a. que pren valors equiprobables $+1$ o $-1$.
+Dibuixau algunes de les possibles traject\`ories de la part\'icula i raonau per qu\`e
+es pot considerar un proc\'es aleatori.
+\end{exemple}
+
+
+\end{document}

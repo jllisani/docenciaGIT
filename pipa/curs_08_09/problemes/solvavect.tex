@@ -1,0 +1,3023 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{eepic}
+\usepackage{graphicx}
+
+%NOTA: si usam eepic hem de compilar a .dvi o .ps (NO PDF)
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+
+\begin{document}
+
+\begin{center}
+\textbf{Problemes resolts Tema 1}
+\end{center}
+
+\vskip 0.5 cm
+\noindent
+\textbf{Problema 1.}
+Es llancen a l'aire dos daus de diferent color, un blanc i
+l'altre vermell. Sigui $X$ la variable aleat\`oria ``nombre de punts
+obtinguts amb el dau blanc", i $Y$ la variable aleat\`oria ``nombre
+m\'es gran dels punts obtinguts amb els dos daus".
+\begin{enumerate}[a)]
+\item Determinau la llei conjunta.
+\item Obteniu les lleis marginals.
+\item S\'on independents? 
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Tenim que $\Omega_X=\Omega_Y=\{ 1, 2, 3, 4, 5, 6 \}$. Podem definir $Z$ com la
+v.a. ``nombre de punts obtinguts amb el dau vermell". Podem suposar que les v.a. $X$ i $Y$ s\'on independents.
+La funci\'o de probabilitat conjunta de $(X, Y)$ \'es (considerant daus equilibrats):
+
+\[
+\begin{array}{rl}
+P(X=x, Y=y)=& 0 \qquad \text{si } x\notin \Omega_X \quad \text{i} \quad y\notin \Omega_Y \\ \\
+P(X=1, Y=1)=& P(X=1, Z \leq 1)=P(X=1)\cdot P(Z\leq 1) = \\ 
+           =&P(X=1) \cdot P(Z=1)= \frac{1}{6} \cdot \frac{1}{6} =\frac{1}{36} \\ \\
+P(X=1, Y=2)=& P(X=1, Z=2)=P(X=1)\cdot P(Z=2) =\frac{1}{6} \cdot \frac{1}{6} =\frac{1}{36} \\ \\
+\vdots & \vdots \\
+P(X=1, Y=6)=& P(X=1, Z=6)=P(X=1)\cdot P(Z=6) =\frac{1}{6} \cdot \frac{1}{6} =\frac{1}{36} \\ \\
+P(X=2, Y=1)=&0 \quad \text{(succ\'es impossible)} \\ \\
+P(X=2, Y=2)=& P(X=2, Z \leq 2)=P(X=2)\cdot P(Z\leq 2) = \\ 
+           =&P(X=2) \cdot (P(Z=1)+P(Z=2))= \frac{1}{6} \cdot (\frac{1}{6}+\frac{1}{6}) =\frac{2}{36} \\ \\
+P(X=2, Y=3)=& P(X=2, Z=3)=P(X=2)\cdot P(Z=3) =\frac{1}{6} \cdot \frac{1}{6} =\frac{1}{36} \\ \\
+\vdots & \vdots \\
+P(X=3, Y=1)=&0 \quad \text{(succ\'es impossible)} \\ \\
+P(X=3, Y=2)=&0 \quad \text{(succ\'es impossible)} \\ \\
+P(X=3, Y=3)=& P(X=3, Z \leq 3)=P(X=3)\cdot P(Z\leq 3) = \\ 
+           =& P(X=3) \cdot (P(Z=1)+P(Z=2)+P(Z=3))= \frac{1}{6} \cdot (\frac{1}{6}+\frac{1}{6}+\frac{1}{6}) =\frac{3}{36} \\ \\
+\vdots & \vdots 
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+Raonant de manera similar per a tots els valors possibles de $(x, y)$ obtenim la seg\"uent taula per 
+a la funci\'o de probabilitat conjunta de $(X, Y)$:
+
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+Y $\backslash$ X & 1 & 2 & 3 & 4 & 5 & 6  \\ \hline
+1     & 1/36 &    0 &    0 &    0 &    0 & 0  \\ \hline
+2     & 1/36 & 2/36 &    0 &    0 &    0 & 0  \\ \hline
+3     & 1/36 & 1/36 & 3/36 &    0 &    0 & 0  \\ \hline
+4     & 1/36 & 1/36 & 1/36 & 4/36 &    0 & 0  \\ \hline
+5     & 1/36 & 1/36 & 1/36 & 1/36 & 5/36 & 0  \\ \hline
+6     & 1/36 & 1/36 & 1/36 & 1/36 & 1/36 & 6/36  \\ \hline
+\end{tabular}
+\end{center}
+
+\vskip 0.2 cm
+\noindent
+\'Es f\`acil comprovar que la suma de tots els valors de la taula \'es igual a $1$.
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} Tenim que:
+\[
+\begin{array}{ll}
+P(X=x)= & P(X=x, Y=1)+P(X=x, Y=2)+\cdots+P(X=x, Y=6) \\
+P(Y=y)= & P(X=1, Y=y)+P(X=2, Y=y)+\cdots+P(X=6, Y=y)
+\end{array}
+\]
+\noindent
+Per tant:
+
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c||c}
+Y $\backslash$ X & 1 & 2 & 3 & 4 & 5 & 6 & P(Y=y) \\ \hline
+1     & 1/36 &    0 &    0 &    0 &    0 & 0 & 1/36 \\ \hline
+2     & 1/36 & 2/36 &    0 &    0 &    0 & 0 & 3/36 \\ \hline
+3     & 1/36 & 1/36 & 3/36 &    0 &    0 & 0 & 5/36 \\ \hline
+4     & 1/36 & 1/36 & 1/36 & 4/36 &    0 & 0 & 7/36 \\ \hline
+5     & 1/36 & 1/36 & 1/36 & 1/36 & 5/36 & 0 & 9/36 \\ \hline
+6     & 1/36 & 1/36 & 1/36 & 1/36 & 1/36 & 6/36 & 11/36 \\ \hline \hline
+P(X=x) & 6/36=1/6 & 6/36=1/6 & 6/36=1/6 & 6/36=1/6 & 6/36=1/6 & 6/36=1/6 &  
+\end{tabular}
+\end{center}
+
+\vskip 0.2 cm
+\noindent
+\textbf{c)} Si $X$ i $Y$ f\`ossin independents, per a qualsevol valor $(x, y)$
+s'hauria de verificar que $P(X=x, Y=y)=P(X=x) \cdot P(Y=y)$. Podem comprovar
+que, per exemple, si $(x, y)=(1, 1)$: 
+
+\[
+P(X=1, Y=1)=\frac{1}{36} \neq P(X=1) \cdot P(Y=1)=\frac{1}{6} \cdot \frac{1}{36}
+\]
+
+\vskip 0.2 cm
+\noindent
+Per tant $X$ i $Y$ no s\'on independents.
+
+\newpage
+\noindent
+\textbf{Problema 3.} Dues persones A i B esperen trobar-se en un cert lloc entre
+les 5 i les 6. Cap d'elles  esperar\`a l'altra m\'es de 10 minuts. Si
+suposam que arriben independentment, calculau la probabilitat que
+se trobin en cada un dels dos casos seg\"{u}ents:
+\begin{enumerate}[a)]
+\item Si la persona A arriba a les 5.30. 
+\item Si A i B arriben en qualsevol moment, a l'atzar.
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Definim les seg\"uents variables aleat\`ories:
+
+$T_A$: hora d'arribada de A al lloc de l'encontre
+
+$T_B$: hora d'arribada de B al lloc de l'encontre
+
+\noindent
+Com que l'hora d'arribada pot \'esser qualsevol valor entre 5 i 6 (en hores), llavors
+podem considerar que $T_A \sim {\cal U}(5, 6)$ i $T_B \sim {\cal U}(5, 6)$, per tant:
+\[
+f_{T_A}(t)=f_{T_B}(t)=\begin{cases} 1 & \text{si } t \in (5, 6) \\ 0 & \text{en altre cas} \end{cases}
+\]
+
+
+\noindent
+\textbf{a)} 
+\[
+\begin{array}{rl}
+P(\{\text{trobar-se si A arriba a les 5h30}\}) &=P(\text{5h20} \leq T_B \leq \text{5h40})= \\ \\
+ &= P(\frac{16}{3} \leq T_B \leq \frac{17}{3})=
+ \int_{16/3}^{17/3} 1 \cdot dt = \left. t\right]_{16/3}^{17/3}=
+\frac{17}{3}-\frac{16}{3}=\frac{1}{3}
+\end{array}
+\]
+\noindent
+on s'ha tengut en compte que 5h20min=5h+$\frac{1}{3}$h=$\frac{16}{3}$h i 
+5h40min=5h+$\frac{2}{3}$h=$\frac{17}{3}$h.
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+P(\{\text{trobar-se si A i B arriben en qualsevol moment}\}) =  P(|T_A-T_B| < 10\text{min})=
+P(|T_A-T_B| < \frac{1}{6})=P(R)
+\]
+
+\noindent
+on s'ha tengut en compte que 10min=$\frac{1}{6}$h, $R$ \'es el conjunt de valors $(t_A, t_B)$ 
+que cumpleixen la condici\'o $|t_A-t_B| < \frac{1}{6}$ i
+\[
+f_{T_A T_B} (t_A, t_B) = \text{(v.a. independents)}=f_{T_A}(t_A) \cdot f_{T_B}(t_B)=
+\begin{cases} 1 & \text{si } (t_A, t_B) \in (5, 6)^2 \\ 0 & \text{en altre cas} \end{cases}
+\]
+
+\noindent
+(veure figura 1).
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$t_A$}
+\put(-5, 95){$t_B$}
+\put(50, 50){\line(1, 0){30}}
+\put(50, 80){\line(1, 0){30}}
+\put(50, 50){\line(0, 1){30}}
+\put(80, 50){\line(0, 1){30}}
+\multiput(10, 50)(10, 0){4}{\line(5, 0){5}} 
+\multiput(10, 80)(10, 0){4}{\line(5, 0){5}} 
+\multiput(50, 10)(0, 10){4}{\line(0, 5){5}} 
+\multiput(80, 10)(0, 10){4}{\line(0, 5){5}} 
+\put(50, 0){$5$}
+\put(0, 50){$5$}
+\put(80, 0){$6$}
+\put(0, 80){$6$}
+\put(70, 70){\textbf{\textit{S}}}
+\end{picture}
+$\qquad \qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$t_A$}
+\put(-5, 95){$t_B$}
+\put(20, 10){\line(1, 1){70}}
+\put(20, 10){\line(-1, -1){20}}
+\put(10, 20){\line(1, 1){80}}
+\put(10, 20){\line(-1, -1){10}}
+\multiput(5, -5)(5, 5){17}{\line(0, 1){20}}
+\put(20, 0){$\frac{1}{6}$}
+\put(0, 20){$\frac{1}{6}$}
+\put(50, 50){\textbf{\textit{R}}}
+\put(80, 60){$t_A-t_B=\frac{1}{6}$}
+\put(80, 105){$t_A-t_B=-\frac{1}{6}$}
+\end{picture}
+$\qquad \qquad \qquad \qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$t_A$}
+\put(-5, 95){$t_B$}
+\put(50, 50){\line(1, 0){30}}
+\put(50, 80){\line(1, 0){30}}
+\put(50, 50){\line(0, 1){30}}
+\put(80, 50){\line(0, 1){30}}
+\multiput(10, 50)(10, 0){4}{\line(5, 0){5}} 
+\multiput(10, 80)(10, 0){4}{\line(5, 0){5}} 
+\multiput(50, 10)(0, 10){4}{\line(0, 5){5}} 
+\multiput(80, 10)(0, 10){4}{\line(0, 5){5}} 
+\put(85, 55){\textbf{\textit{S}}}
+\put(20, 10){\line(1, 1){70}}
+\put(20, 10){\line(-1, -1){20}}
+\put(10, 20){\line(1, 1){80}}
+\put(10, 20){\line(-1, -1){10}}
+\multiput(5, -5)(5, 5){17}{\line(0, 1){20}}
+\put(20, 0){$\frac{1}{6}$}
+\put(0, 20){$\frac{1}{6}$}
+\put(90, 90){\textbf{\textit{R}}}
+\thicklines
+\put(70, 80){\line(1, 0){10}}
+\put(50, 50){\line(1, 0){10}}
+\put(50, 50){\line(0, 1){10}}
+\put(80, 80){\line(0, -1){10}}
+\put(50, 60){\line(1, 1){20}}
+\put(60, 50){\line(1, 1){20}}
+\put(60,60){$V$}
+\put(50, 72){$T_2$}
+\put(70, 52){$T_1$}
+\thinlines
+\multiput(60, 10)(0, 10){4}{\line(0, 5){5}} 
+\multiput(10, 70)(10, 0){7}{\line(5, 0){5}} 
+\put(45, 0){$5$}
+\put(0, 50){$5$}
+\put(80, 0){$6$}
+\put(0, 80){$6$}
+\put(55, 0){$\frac{31}{6}$}
+\put(-3, 65){$\frac{35}{6}$}
+\end{picture}
+\end{center}
+\caption{Esquerra: suport ($S$) de $f_{T_A T_B} (t_A, t_B)$. Centre: $R=\{ (t_A, t_B) / \, |t_A-t_B| < \frac{1}{6} \}$.
+Dreta: $V=R \cap S$. (Nota: els dibuixos no estan a escala).}
+\end{figure}
+
+\[
+\begin{array}{rl}
+P(R)=\iint_R f_{T_A T_B} (t_A, t_B) \, dt_A dt_B & = \iint_{R \cap S} 1 \cdot dt_A dt_B =
+\text{area}(R \cap S)= \\ \\
+&= \text{area}(S)-\text{area}(T_1)-\text{area}(T_2)=\\ \\
+&= 1-2\cdot \text{area}(T_1)=
+1-2 \frac{(6-\frac{31}{6}) (\frac{35}{6}-5)}{2}=\frac{11}{36}
+\end{array}
+\]
+\vskip 0.2 cm
+\noindent
+on, per simetria (veure figura 1), area($T_1$)=area($T_2$) i, a m\'es, area($S$)=$(6-5)\cdot(6-5)=1$.
+
+
+\newpage
+\noindent
+\textbf{Problema 4.} Les variables aleat\`ories $X_1 \mbox{i } X_2$ s\'on independents
+i amb densitat com\'u 
+\[
+f(x) = \begin{cases}1 & \text{si } 0 \leq x \leq 1 \\ 
+0 & \text{en cas contrari} \end{cases}
+\]
+\begin{enumerate}[a)]
+\item Determinau la densitat de $Y = X_1 + X_2.$
+\item Determinau la densitat de $Z = X_1 - X_2.$
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Com que $X_1$ i $X_2$ s\'on v.a. cont\'\i nues, tamb\'e ho ser\`a $Y$.
+El c\`alcul de $f_Y(y)$ es pot fer de v\`aries maneres. En aquest exercici nosaltres 
+ho farem en dos pasos: (1) primer calcularem $F_Y(y)$ (la funci\'o de distribuci\'o de $Y$)
+i (2) trobarem $f_Y(y)$ derivant $F_Y(y)$.
+
+\[
+F_Y(y)=P(Y \leq y)=P(X_1+X_2 \leq y)=\iint_{A_y} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2
+\]
+\noindent
+on $A_y$ \'es el conjunt de punts $(x_1, x_2)$ que verifiquen la condici\'o $x_1+x_2 \leq y$
+i s'ha aplicat la propietat del c\`alcul de la probabilitat d'un conjunt de punts.
+Observem que per a cada valor de $y$ el conjunt de punts $A_y$ ser\`a diferent (veure la
+Figura 1-esquerra). A m\'es, tenim que 
+\[
+f_{X_1 X_2}(x_1, x_2) = f_{X_1}(x_1) \cdot f_{X_2}(x_2) = 
+\begin{cases} 1 & \text{si } 0 \leq x_1 \leq 1 \quad \text{i} \quad 0 \leq x_2 \leq 1 \\
+0 & \text{en cas contrari} \end{cases}
+\]
+\noindent
+ja que $X_1$ i $X_2$ s\'on v.a. independents que tenen la funci\'o de densitat donada a
+l'enunciat.
+
+\vskip 0.2 cm
+Per a calcular la integral anterior hem de dibuixar primer el suport de $f_{X_1 X_2}(x_1, x_2)$ (veure la Figura 1-dreta):
+\[
+S=\{(x, y) \, / \quad 0 \leq x \leq 1 \quad \text{i} \quad 0 \leq y \leq 1 \}
+\]
+
+\vskip 0.2 cm
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x_1$}
+\put(-5, 95){$x_2$}
+\put(10, 72){\line(1, -1){75}}
+\put(10, 72){\line(-1, 1){10}}
+\put(72, 0){\textbf{\textit{1.5}}}
+\put(-10, 72){\textbf{\textit{1.5}}}
+\put(25, 25){$A_{1.5}$}
+\multiput(5, 77)(5, -5){12}{\line(-1, -1){40}}
+\put(65, 17){\line(-1, -1){35}}
+\put(70, 12){\line(-1, -1){30}}
+\put(75, 7){\line(-1, -1){25}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x_1$}
+\put(-5, 95){$x_2$}
+\put(10, 60){\line(1, 0){50}}
+\put(60, 10){\line(0, 1){50}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(50, 50){\textbf{\textit{S}}}
+\end{picture}
+\end{center}
+\caption{Esquerra: conjunt $A_y$ per al valor $y=1.5$. 
+Dreta: suport de $f_{X_1 X_2}(x_1, x_2)$. }
+\end{figure}
+
+Si tenim en compte el suport $S$ la funci\'o de distribuci\'o es calcula com:
+\[
+F_Y(y)=P(Y \leq y)=P(X_1+X_2 \leq y)=\iint_{A_y} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2
+= \iint_{A_y \cap S} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2
+\]
+
+
+En funci\'o del valor de $y$ tendrem diferents resultats per a la intersecci\'o $A_y \cap S$.
+Podem trobar quatre casos diferents:
+\begin{itemize}
+\item $y < 0$, llavors $A_y \cap S=\emptyset$ i per tant $F_Y(y)=\iint_{\emptyset} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2=0$
+\item $y \geq 2$, llavors $A_y \cap S=S$ i per tant $F_Y(y)=\iint_{S} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2=1$
+\item $0 \leq y < 1$, llavors $A_y \cap S=T$ (figura 2-esquerra) i \newline
+\[
+F_Y(y)=\iint_{T} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2=\iint_{T} 1 \cdot dx_1 dx_2=\text{area}(T)=\frac{y^2}{2}
+\]
+\item $1 \leq y < 2$, llavors $A_y \cap S=P$ (figura 2-dreta) i 
+\[
+\begin{array}{rl}
+F_Y(y)=\iint_{P} f_{X_1 X_2}(x_1, x_2) \, dx_1 dx_2=\iint_{P} 1 \cdot dx_1 dx_2=&\text{area}(P)=
+\text{area}(S)-\text{area}(U)=\\
+=&1-\frac{(1-(y-1)^2}{2}=1-\frac{(2-y)^2}{2}
+\end{array}
+\]
+\end{itemize}
+
+\vskip 0.2 cm
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x_1$}
+\put(-5, 95){$x_2$}
+%\linethickness{0.5mm}
+\thicklines
+\put(10, 10){\line(1, 0){27}}
+\put(10, 10){\line(0, 1){27}}
+\put(10, 37){\line(1, -1){27}}
+\put(10, 11){\line(1, 0){27}}
+\put(11, 10){\line(0, 1){27}}
+\put(10, 37.5){\line(1, -1){27}}
+\put(37, 0){\textbf{\textit{y}}}
+\put(0, 37){\textbf{\textit{y}}}
+\put(30, 30){$A_y \cap S=T$}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x_1$}
+\put(-5, 95){$x_2$}
+\put(10, 72){\line(1, -1){75}}
+\put(10, 72){\line(-1, 1){10}}
+\put(72, 0){\textbf{\textit{y}}}
+\put(-10, 72){\textbf{\textit{y}}}
+\put(10, 60){\line(1, 0){50}}
+\put(60, 10){\line(0, 1){50}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(12, 0){\textbf{\textit{y-1}}}
+\put(-10, 22){\textbf{\textit{y-1}}}
+\thicklines
+\put(10, 10){\line(1, 0){50}}
+\put(10, 10){\line(0, 1){50}}
+\put(60, 10){\line(0, 1){12}}
+\put(10, 60){\line(1, 0){12}}
+\put(22, 60){\line(1, -1){38}}
+\put(10, 11){\line(1, 0){50}}
+\put(11, 10){\line(0, 1){50}}
+\put(60.5, 10){\line(0, 1){12}}
+\put(10, 60.5){\line(1, 0){12}}
+\put(22, 60.5){\line(1, -1){38}}
+\thinlines
+\multiput(22, 10)(0, 10){6}{\line(0, 1){5}}
+\multiput(10, 22)(10, 0){6}{\line(1, 0){5}}
+\put(15, 25){$A_y \cap S=P$}
+\put(50, 50){\textbf{\textit{U}}}
+\end{picture}
+\end{center}
+\caption{Esquerra: intersecci\'o del conjunt $A_y$ ($0 \leq y < 1$) amb el suport de $f_{X_1 X_2}(x_1, x_2)$
+(triangle delimitat per l\'\i nies gruixades). 
+Dreta: intersecci\'o del conjunt $A_y$ ($1 \leq y < 2$) amb el suport de $f_{X_1 X_2}(x_1, x_2)$
+(pol\'\i gon delimitat per l\'\i nies gruixades). }
+\end{figure}
+
+En conclusi\'o:
+\[
+F_Y(y)=\begin{cases} 
+0 & \text{si } y < 0\\
+\frac{y^2}{2} & \text{si } 0 \leq y < 1\\
+1-\frac{(2-y)^2}{2} & \text{si } 1 \leq  y < 2\\
+1 & \text{si } y \geq 2
+\end{cases}
+\]
+
+Derivant aquesta funci\'o en cada un d'aquests intervals obtenim la funci\'o de densitat de $Y$:
+\[
+f_Y(y)=\begin{cases}
+\frac{d}{dy}0=0 & \text{si } y < 0\\
+\frac{d}{dy} (\frac{y^2}{2})=y & \text{si } 0 \leq y < 1\\
+\frac{d}{dy}(1-\frac{(2-y)^2}{2})=2-y & \text{si } 1 \leq y < 2\\
+\frac{d}{dy}1=0 & \text{si } y \geq 2
+\end{cases}
+= 
+\begin{cases}
+0 & \text{si } y < 0 \quad \text{\'o} \quad y \geq 2\\
+y & \text{si } 0 \leq y < 1\\
+2-y & \text{si } 1 \leq y < 2\\
+\end{cases}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} La funci\'o de densitat de $Z=X_1-X_2$ es calcula de manera similar 
+a l'apartat anterior. En aquest cas el conjunt $A_z=\{ (x_1, x_2) / \quad x_1-x_2 \leq z\}$
+t\'e la forma que es mostra en la figura 3.
+Raonant de manera similar a l'apartat anterior arribarem a:
+\[
+f_Z(z)=\begin{cases}
+0 & \text{si } z < -1 \quad \text{\'o} \quad z \geq 1\\
+1+z & \text{si }  -1 \leq z < 0\\
+1-z & \text{si } 0 \leq z < 1
+\end{cases}
+\]
+
+\vskip 0.2 cm
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\line(-1, 0){30}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x_1$}
+\put(-5, 95){$x_2$}
+\put(10, 35){\line(1, 1){30}}
+\put(10, 35){\line(-1, -1){35}}
+\put(0, 35){\textbf{\textit{0.5}}}
+\put(-25, 0){\textbf{\textit{-0.5}}}
+\put(25, 25){$A_{-0.5}$}
+\multiput(10, 35)(-5, -5){4}{\line(1, -1){40}}
+\put(-10, 15){\line(1, -1){35}}
+\put(-15, 10){\line(1, -1){30}}
+\put(-20, 5){\line(1, -1){25}}
+\multiput(10, 35)(5, 5){6}{\line(1, -1){40}}
+\end{picture}
+\end{center}
+\caption{Conjunt $A_z$ per al valor $z=-0.5$.}
+\end{figure}
+
+
+\newpage
+\noindent
+\textbf{Problema 5.} 
+Obteniu la funci\'o de distribuci\'o conjunta de les variables
+aleat\`ories $X$ i $Y $ la funci\'o de densitat conjunta de les quals
+\'es: 
+\[
+f(x,y) = \begin{cases}
+\frac{6}{5}(x+y^2) & \text{si } x,y \in (0,1)\\
+0 & \text{en cas contrari}\end{cases}
+\]
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+\vskip 0.2 cm
+\noindent
+El suport ($S$) de $f_{XY}$ es mostra en la figura 1-esquerra. D'altra banda 
+$F_{XY}(\mathrm{x}, \mathrm{y})=P(X \leq \mathrm{x}, Y \leq \mathrm{y})=P(A_{\mathrm{xy}})$, 
+on $A_{\mathrm{xy}}$ \'es el conjunt de punts $(x, y)$ tals que $x \leq \mathrm{x}$ i $y \leq \mathrm{y}$ 
+(veure la figura 1-dreta). 
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 60){\line(1, 0){50}}
+\put(60, 10){\line(0, 1){50}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(50, 50){\textbf{\textit{S}}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(-20, 72){\line(1, 0){100}}
+\put(72, -20){\line(0, 1){100}}
+\put(72, 0){$\mathrm{x}$}
+\put(-10, 77){$\mathrm{y}$}
+\put(35, 35){$A_{\mathrm{x}\mathrm{y}}$}
+\put(77, 77){$(\mathrm{x}, \mathrm{y})$}
+\put(72, 72){\circle*{3}}
+\put(-5, 72){\line(-1, -1){10}}
+\put(5, 72){\line(-1, -1){20}}
+\put(15, 72){\line(-1, -1){30}}
+\put(25, 72){\line(-1, -1){40}}
+\put(35, 72){\line(-1, -1){50}}
+\put(45, 72){\line(-1, -1){60}}
+\put(55, 72){\line(-1, -1){70}}
+\put(65, 72){\line(-1, -1){80}}
+\put(72, 70){\line(-1, -1){90}}
+\put(72, 60){\line(-1, -1){80}}
+\put(72, 50){\line(-1, -1){70}}
+\put(72, 40){\line(-1, -1){60}}
+\put(72, 30){\line(-1, -1){50}}
+\put(72, 20){\line(-1, -1){40}}
+\put(72, 10){\line(-1, -1){30}}
+\put(72, 0){\line(-1, -1){20}}
+\put(72, -10){\line(-1, -1){10}}
+\end{picture}
+\end{center}
+\caption{Esquerra: suport de $f_{XY}(x, y)$. 
+Dreta: conjunt $A_{\mathrm{x}\mathrm{y}}$ per a $\mathrm{x} > 0$ i $\mathrm{y} > 0$. }
+\end{figure}
+
+\[
+F_{XY}(\mathrm{x}, \mathrm{y})=\iint_{A_{\mathrm{xy}} \cap S} f_{XY}(x, y) \, dxdy
+\]
+\noindent
+Depenent del valor de $(\mathrm{x}, \mathrm{y})$ la intersecci\'o $A_{\mathrm{xy}} \cap S$ tendr\`a
+un valor o un altre. Si tenim en compte tots els casos possibles obtenim:
+
+\[
+F_{XY}(\mathrm{x}, \mathrm{y})=\begin{cases}
+\text{si } \mathrm{x} \geq 1 \quad \text{i} \quad \mathrm{y} \geq 1 & 1 \\ \\
+\text{si } \mathrm{x} < 0 \quad \text{\'o} \quad \mathrm{y} < 0 & 0 \\ \\
+\text{si } 0 \leq \mathrm{x} < 1 \quad \text{i} \quad 0 \leq \mathrm{y} < 1 &
+\int_0^\mathrm{x} \int_0^\mathrm{y} \frac{6}{5}(x+y^2) \, dy dx =\frac{3}{5}yx^2+\frac{2}{5}y^3x\\ \\
+\text{si } 0 \leq \mathrm{x} < 1 \quad \text{i} \quad \mathrm{y} \geq 1 & 
+\int_0^\mathrm{x} \int_0^1 \frac{6}{5}(x+y^2) \, dy dx = \frac{3}{5}x^2+\frac{2}{5} x \\ \\
+\text{si } \mathrm{x} \geq 1 \quad \text{i} \quad 0 \leq \mathrm{y} < 1 & 
+\int_0^\mathrm{1} \int_0^\mathrm{y} \frac{6}{5}(x+y^2) \, dy dx = \frac{3}{5}y+\frac{2}{5} y^3 
+\end{cases}
+\]
+
+
+
+\newpage
+\noindent
+\textbf{Problema 6.} Si $X_1 \mbox{ i } X_2 $ s\'on dues variables aleat\`ories amb
+distribuci\'o de Poisson, independents i amb mitjanes respectives
+$\alpha \mbox{ i } \beta$, provau que $Y = X_1 + X_2 $ tamb\'e \'es
+una variable aleat\`oria Poisson (amb mitjana $\> \alpha + \beta$).
+(Nota: Una variable aleat\`oria que t\'e aquesta propietat \'es diu que
+\'es \emph{estable})
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Tenim que $X_1 \sim \mathrm{Po}(\alpha)$ i 
+$X_2 \sim \mathrm{Po}(\beta)$, per tant:
+\[
+P(X_1=x)=\begin{cases}
+\frac{\alpha^{x}}{x!} e^{-\alpha} & \text{si } x \in \Omega_{X_1}\\
+0 & \text{si } x \notin \Omega_{X_1} \end{cases}
+\qquad 
+P(X_2=x)=\begin{cases}
+\frac{\beta^{x}}{x!} e^{-\beta} & \text{si } x \in \Omega_{X_2}\\
+0 & \text{si } x \notin \Omega_{X_2} \end{cases}
+\]
+\noindent
+on $\Omega_{X_1}=\Omega_{X_2}=\{ 0, 1, 2, \cdots \}$.
+
+\vskip 0.2 cm
+\noindent
+$Y=X_1+X_2$, per tant $\Omega_Y=\{0, 1, 2, \cdots\}$. 
+
+\noindent
+Podem calcular alguns valors de la funci\'o de probabilitat de $Y$ (tenint en compte que les
+v.a. $X_1$ i $X_2$ s\'on independents):
+\[
+\begin{array}{rl}
+P(Y=0)=&P(X_1+X_2=0)=P(X_1=0, X_2=0)=P(X_1=0)\cdot P(X_2=0)= \\
+      =&\frac{\alpha^{0}}{0!} e^{-\alpha} \cdot \frac{\beta^{0}}{0!} e^{-\beta} = e^{-\alpha} \cdot e^{-\beta}=e^{-(\alpha+\beta)} \\ \\
+P(Y=1)=&P(X_1+X_2=1)=P(X_1=1, X_2=0)+P(X_1=0, X_2=1)= \\
+      =&P(X_1=1)\cdot P(X_2=0)+P(X_1=0)\cdot P(X_2=1)=\\
+      =&\frac{\alpha^{1}}{1!} e^{-\alpha} \cdot \frac{\beta^{0}}{0!} e^{-\beta} + 
+\frac{\alpha^{0}}{0!} e^{-\alpha} \cdot \frac{\beta^{1}}{1!} e^{-\beta}= (\alpha+\beta) e^{-(\alpha+\beta)} 
+\end{array}
+\]
+
+\noindent
+en general, si $y \in \Omega_Y$:
+\[
+\begin{array}{rl}
+P(Y=y)=&P(X_1=y, X_2=0)+ P(X_1=y-1, X_2=1)+ \cdots + P(X_1=0, X_2=y)=\\ \\
+      =& \sum_{i=0}^{y} P(X_1=y-i, X_2=i) = \\ \\
+      =& \sum_{i=0}^{y} P(X_1=y-i) \cdot P(X_2=i) = 
+      \sum_{i=0}^{y} \frac{\alpha^{y-i}}{(y-i)!} e^{-\alpha} \cdot \frac{\beta^{i}}{i!} e^{-\beta} = \\ \\
+      =& e^{-(\alpha+\beta)} \sum_{i=0}^{y} \frac{1}{(y-i)! i!} \alpha^{y-i} \beta^{i}
+\end{array}
+\]
+
+\noindent
+Com que $\binom{y}{i}=\frac{y!}{(y-i)! i!}$, podem escriure $\frac{1}{(y-i)! i!} = \frac{1}{y!} \binom{y}{i}$,
+i per tant:
+
+\[
+P(Y=y)= e^{-(\alpha+\beta)} \frac{1}{y!} \sum_{i=0}^{y} \binom{y}{i} \alpha^{y-i} \beta^{i}
+\]
+
+\noindent
+L'expressi\'o dins el sumatori \'es el desenvolupament del binomi de Newton: 
+$(\alpha + \beta)^y = \sum_{i=0}^{y} \binom{y}{i} \alpha^{y-i} \beta^{i}$. De manera que, finalment:
+
+\[
+P(Y=y)= \frac{(\alpha + \beta)^y}{y!} e^{-(\alpha+\beta)}
+\]
+
+\noindent
+Aquesta expressi\'o correspon a la funci\'o de probabilitat d'una v.a. de Poisson amb par\`ametre
+$\alpha+\beta$. Per tant podem concloure que $Y \sim \mathrm{Po}(\alpha+\beta)$.
+
+
+\newpage
+\noindent
+\textbf{Problema 7.}
+Durant un per\'{\i}ode $T$, el nombre $X$ de cridades arribades a
+una centraleta \'es una variable aleat\`oria Poisson amb mitjana
+$\lambda \cdot T,$ i el nombre $Y$ de cridades que surten de la
+centraleta \'es una altra variable aleat\`oria Poisson amb mitjana $
+\mu \cdot T. $ Suposant que $X \mbox{i } Y$ s\'on independents,
+determinau la distribuci\'o condicional de $X \mbox{donat que } X +
+Y = n.$ 
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+\vskip 0.1 cm
+\noindent
+Ens demanen calcular $P(X=k| \, X+Y=n)$. 
+Tenim que $X \sim \mathrm{Po}(\lambda T)$ i $Y \sim \mathrm{Po}(\mu T)$.
+D'altra banda, pel resultat del problema 6 sabem que $X+Y \sim \mathrm{Po}(\lambda T+\mu T)=\mathrm{Po}((\lambda + \mu) T)$.
+\[
+\begin{array}{rl}
+P(X=k| \, X+Y=n) &= \frac{ P(X=k \, \cap \, X+Y=n) }{P(X+Y=n)}=\frac{ P(X=k \, \cap \, Y=n-X) }{P(X+Y=n)}= \\ \\
+&= \frac{ P(X=k \, \cap \, Y=n-k) }{P(X+Y=n)}=\frac{ P(X=k) \cdot P(Y=n-k) }{P(X+Y=n)}
+\end{array}
+\]
+\noindent
+on s'ha aplicat que $X$ i $Y$ s\'on v.a. independents.
+\[
+P(X=k)=\frac{(\lambda T)^k}{k!} e^{-\lambda T} \qquad \text{si } k \in \{ 0, 1, \cdots \} 
+\]
+\[
+P(Y=n-k)=\frac{(\mu T)^{(n-k)}}{(n-k)!} e^{-\mu T} \qquad \text{si } n-k \in \{ 0, 1, \cdots \} 
+\]
+\[
+P(X+Y=n)=\frac{((\lambda + \mu) T)^n}{n!} e^{-(\lambda + \mu) T} \qquad \text{si } n \in \{ 0, 1, \cdots \} 
+\]
+
+\noindent
+Combinant tots aquests valors de probabilitat i simplificant les expressions arribarem a:
+\[
+P(X=k| \, X+Y=n)= \begin{cases} 
+\frac{n!}{k! (n-k)!} \frac{\lambda^k}{(\lambda+\mu)^k} \frac{\mu^{(n-k)}}{(\lambda+\mu)^{(n-k)}} & 
+\text{si } k \in \{0, 1, \cdots, n \} \\
+0 & \text{en altre cas} \end{cases}
+\]
+
+\noindent
+Finalment, si observam que $\binom{n}{k}=\frac{n!}{k! (n-k)!}$ i $\frac{\mu}{\lambda+\mu}=1-\frac{\lambda}{\lambda+\mu}$,
+veurem que la funci\'o de probabilitat anterior es pot escriure com
+\[
+P(X=k| \, X+Y=n)= \begin{cases} 
+\binom{n}{k}  \cdot \left( \frac{\lambda}{\lambda+\mu} \right)^k  \cdot \left( 1- \frac{\lambda}{\lambda+\mu} \right)^{(n-k)} & 
+\text{si } k \in \{0, 1, \cdots, n \} \\
+0 & \text{en altre cas} \end{cases}
+\]
+\noindent
+Aquesta funci\'o de probabilitat correspon a una v.a. binomial amb par\`ametres $n$ i 
+$\frac{\lambda}{\lambda+\mu}$. Per tant: 
+\[
+X |_{X+Y=n} \, \sim B(n, \frac{\lambda}{\lambda+\mu})
+\]
+ 
+
+\newpage
+\noindent
+\textbf{Problema 8.}
+Un prove\"{\i}dor de serveis inform\`atics t\'e una quantitat $X$ de
+cents d'unitats d'un cert producte al principi de cada mes. Durant
+el mes es venen $Y$ cents d'unitats del producte. Suposem que $X$
+ i $Y$ tenen una densitat conjunta donada per
+\[
+f(x,y) = \begin{cases}2/9 & \text{si } 0 < y < x < 3\\
+0 & \text{en cas contrari}\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Comprovau que {\it f} \'es una densitat.
+\item Determinau $\> F_{X,Y}.$
+\item Calculau la probabilitat que a final de mes s'hagi venut com a
+m\'{\i}nim la meitat de les unitats que hi havia inicialment.
+\item Si s'han venut 100 unitats, quina \'es la probabilitat que n'hi hagu\`essin
+com a m\'\i nim 200 a principi de mes?
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Per demostrar que $f(x, y)$ \'es una funci\'o de densitat hem de 
+comprovar que $f$ no agafa mai valors negatius (en efecte, els dos valors
+posibles de la funci\'o, $0$ i $\frac{2}{9}$; s\'on no negatius) i que la 
+seg\"uent integral es pot calcular i val $1$:
+\[
+\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) \, dxdy=\iint_S \frac{2}{9} \,dxdy=
+\frac{2}{9} \cdot \text{area}(S)=\frac{2}{9} \cdot \frac{3 \cdot 3}{2}=1
+\]
+\noindent
+on $S$ \'es el suport de $f(x, y)$, qu\`e es mostra a la figura 1-esquerra.
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 10){\line(1, 1){70}}
+\put(75, 70){$y=x$}
+\multiput(10, 60)(10, 0){6}{\line(1, 0){5}}
+\thicklines
+\put(10, 10){\line(1, 1){50}}
+\put(60, 10){\line(0, 1){50}}
+\thinlines
+\put(20, 10){\line(0, 1){10}}
+\put(25, 10){\line(0, 1){15}}
+\put(30, 10){\line(0, 1){20}}
+\put(35, 10){\line(0, 1){25}}
+\put(40, 10){\line(0, 1){30}}
+\put(45, 10){\line(0, 1){35}}
+\put(50, 10){\line(0, 1){40}}
+\put(55, 10){\line(0, 1){45}}
+\put(60, 0){\textbf{\textit{3}}}
+\put(0, 60){\textbf{\textit{3}}}
+\put(50, 40){\textbf{\textit{S}}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(-20, 72){\line(1, 0){100}}
+\put(72, -20){\line(0, 1){100}}
+\put(72, 0){$\mathrm{x}$}
+\put(-10, 77){$\mathrm{y}$}
+\put(35, 35){$A_{\mathrm{x}\mathrm{y}}$}
+\put(77, 77){$(\mathrm{x}, \mathrm{y})$}
+\put(72, 72){\circle*{3}}
+\put(-5, 72){\line(-1, -1){10}}
+\put(5, 72){\line(-1, -1){20}}
+\put(15, 72){\line(-1, -1){30}}
+\put(25, 72){\line(-1, -1){40}}
+\put(35, 72){\line(-1, -1){50}}
+\put(45, 72){\line(-1, -1){60}}
+\put(55, 72){\line(-1, -1){70}}
+\put(65, 72){\line(-1, -1){80}}
+\put(72, 70){\line(-1, -1){90}}
+\put(72, 60){\line(-1, -1){80}}
+\put(72, 50){\line(-1, -1){70}}
+\put(72, 40){\line(-1, -1){60}}
+\put(72, 30){\line(-1, -1){50}}
+\put(72, 20){\line(-1, -1){40}}
+\put(72, 10){\line(-1, -1){30}}
+\put(72, 0){\line(-1, -1){20}}
+\put(72, -10){\line(-1, -1){10}}
+\end{picture}
+\end{center}
+\caption{Esquerra: suport ($S$) de $f_{XY}(x, y)$ (zona ratxada). Centre: regi\'o de punts $(x, y)$
+per al c\`alcul de la funci\'o de distribuci\'o. Dreta: $R$, regi\'o de punts tals que $y \geq x/2$.}
+\end{figure}
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+F_{XY}(\mathrm{x}, \mathrm{y})=P(X \leq \mathrm{x}, Y \leq \mathrm{y})=\iint_{A_{\mathrm{x}\mathrm{y}}} f_{XY}(x, y) \, dxdy=
+\iint_{A_{\mathrm{x}\mathrm{y}} \cap S} \frac{2}{9} \, dxdy=
+\frac{2}{9} \cdot \text{area}(A_{\mathrm{x}\mathrm{y}} \cap S)
+\]
+\noindent
+on $A_{\mathrm{x}\mathrm{y}}$ \'es el conjunt de punts $(x, y)$ tals que $x \leq \mathrm{x}$ i 
+$y \leq \mathrm{y}$ (veure figura 1-dreta). El conjunt intersecci\'o depenendr\`a del valor de 
+$\mathrm{x}$ i de $\mathrm{y}$:
+\[
+F_{XY}(\mathrm{x}, \mathrm{y})=\begin{cases}
+\text{si } \mathrm{x} < 0 \quad \text{\'o} \quad \mathrm{y} < 0 & 0 \\ \\
+\text{si } \mathrm{x} \geq 3 \quad \text{i} \quad \mathrm{y} \geq 3 & 1 \\ \\
+\text{si } 0 \leq \mathrm{x} < 3 \quad \text{i} \quad \mathrm{y} \geq  \mathrm{x} & \frac{x^2}{2} \\ \\
+\text{si } 0 \leq \mathrm{x} < 3 \quad \text{i} \quad 0 \leq \mathrm{y} <  \mathrm{x} & \frac{1}{9} (2xy-y^2) \\ \\
+\text{si } \mathrm{x} \geq 3 \quad \text{i} \quad 0 \leq \mathrm{y} < 3 & \frac{1}{9} (6y-y^2) 
+\end{cases}
+\]
+
+\newpage
+\noindent
+\textbf{c)} 
+\[
+P(Y \geq \frac{X}{2})=P(R)=\iint_{R \cap S} \frac{2}{9} \, dxdy=\frac{2}{9} \cdot \text{area}(R \cap S)
+\]
+\noindent
+on $R$ \'es el conjunt de punts $(x, y)$ tals que $y \geq \frac{x}{2}$ (veure figura 2-esquerra).
+\[
+P(Y \geq \frac{X}{2})=\frac{2}{9} \cdot (\text{area}(S)-   \text{area}(T))=
+\frac{2}{9} \cdot ( \frac{9}{2} - \frac{3 \cdot 3/2}{2})=\frac{1}{2}
+\]
+
+\vskip 0.2 cm
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 10){\line(1, 1){70}}
+\put(75, 70){$y=x$}
+\multiput(10, 60)(10, 0){6}{\line(1, 0){5}}
+\thicklines
+\put(10, 10){\line(1, 1){50}}
+\put(60, 10){\line(0, 1){50}}
+\thinlines
+\put(-10, 0){\line(2, 1){95}}
+\put(75, 35){$y=x/2$}
+\multiput(-5, 2.5)(5, 2.5){18}{\line(-1, 2){30}}
+\put(60, 0){\textbf{\textit{3}}}
+\put(0, 60){\textbf{\textit{3}}}
+\put(30, 70){\textbf{\textit{R}}}
+\put(50, 15){\textbf{\textit{T}}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 10){\line(1, 1){70}}
+\put(75, 70){$y=x$}
+\multiput(10, 60)(10, 0){6}{\line(1, 0){5}}
+\thicklines
+\put(10, 10){\line(1, 1){50}}
+\put(60, 10){\line(0, 1){50}}
+\thinlines
+\put(0, 27){\line(1, 0){85}}
+\put(0, 28){\textbf{\textit{1}}}
+\put(44, 0){\line(0, 1){80}}
+\put(45, 0){\textbf{\textit{2}}}
+\put(60, 0){\textbf{\textit{3}}}
+\put(0, 60){\textbf{\textit{3}}}
+\linethickness{0.7mm}
+\put(44, 27){\line(1, 0){16}}
+\thinlines
+\put(80, 43){\vector(-2, -1){30}}
+\put(80, 44){$A$}
+\put(50, 45){\textbf{\textit{S}}}
+\end{picture}
+\end{center}
+\caption{Esquerra: $R$, regi\'o de punts tals que $y \geq x/2$. 
+Dreta: $A$, regi\'o de punts de $S$ tals que $x \geq 2$ i $y=1$.}
+\end{figure}
+
+\vskip 0.2 cm
+\noindent
+\textbf{d)} 
+\[
+P(X \geq 2 | Y=1)= \frac{P(X \geq 2, Y=1)}{f_Y(1)}
+\]
+
+\[
+f_Y(y)=\int_{-\infty}^{+\infty} f_{XY}(x, y) \, dx = \begin{cases}
+\text{si } 0 \leq y < 3 & \int_y^3 \frac{2}{9} \, dx = \frac{2}{9} (3-y) \\ \\
+\text{en altre cas } & 0 
+\end{cases}
+\]
+
+\[
+P(X \geq 2, Y=1)=\iint_{x \geq 2 \, \cap \, y =1} f_{XY}(x, y) \, dxdy = \int_{A} f_{XY}(x, 1) \, dx = 
+\int_2^3 \frac{2}{9} \, dx = \frac{2}{9}
+\]
+\noindent
+on $A$ \'es la regi\'o de punts del suport de $f_{XY}(x, y)$ tals que $x \geq 2$ i $y=1$ (veure
+la figura 2-dreta).
+
+\noindent
+El resultat final \'es:
+\[
+P(X \geq 2 | Y=1)= \frac{\frac{2}{9}}{\frac{2}{9} (3-1)}=\frac{1}{2}
+\]
+
+
+
+\newpage
+\noindent
+\textbf{Problema 11.}
+Llan\c{c}am a l'aire un dau equilibrat. Considerem dues variables
+aleat\`ories $X$ i $Y$ definides com:
+\[
+X = \begin{cases}-1 & \text{si el resultat \'es imparell}\\ 
+1 & \text{si el resultat \'es parell} \end{cases} \ \ 
+Y = \begin{cases}-1 & \text{si el resultat \'es 1, 2 o 3}\\
+0 & \text{si el resultat \'es 4}\\ 
+1 & \text{si el resultat \'es 5 o 6}\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Trobau la llei conjunta i la funci\'o de distribuci\'o de $X$
+i $Y$.
+\item Calculau $P(X + Y = 0 | Y \leq 0)$  i
+$P(X = 1 | X + Y = 2)$. 
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Com el dau est\`a equilibrat, llavors $P(\{i\})=\frac{1}{6}$, on $\{i\}$ denota
+el succ\'es ``treure $i$''. A m\'es, tenim que $\Omega_X=\{-1, 1\}$, $\Omega_Y=\{-1, 0, 1\}$ i 
+$\Omega_{XY}=\{(-1, -1), (-1, 0), (-1, 1), (1, -1), (1, 0), (1, 1)\}$.
+\[
+\begin{array}{rl}
+P(X=x, Y=y)=& 0 $\qquad$ \text{ si } (x, y) \notin \Omega_{XY}\\ \\
+P(X=-1, Y=-1)=& P(\{1, 3, 5\} \cap \{1, 2, 3\})=P(\{1, 3\})=P(\{1\} \cup \{ 3\})=P(\{1\})+P(\{3\})=
+\frac{1}{6}+\frac{1}{6}=\frac{2}{6} \\ \\
+P(X=-1, Y=0)=& P(\{1, 3, 5\} \cap \{4\})=P(\emptyset)=0 \\
+\vdots & \vdots
+\end{array}
+\]
+\noindent
+raonant de manera similar per a tots els valors de $\Omega_{XY}$ obtenim la seg\"uent taula 
+probabilitat conjunta, on tamb\'e s'indiquen els valors de les probabilitats marginals
+(sumant per files o per columnes, per a valors de $X$ o de $Y$ fixats):
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c||c}
+$X \backslash Y$ & -1 & 0 & 1 & $P(X=x)$ \\ \hline
+-1 & 2/6 & 0 & 1/6 & 1/2 \\ \hline
+1 & 1/6 & 1/6 & 1/6 & 1/2 \\ \hline \hline
+$P(Y=y)$ & 1/2 & 1/6 & 1/3
+\end{tabular}
+\end{center}
+\noindent
+es pot comprovar que la suma de tots els valors de la taula de probabilitat conjunta \'es igual a $1$.
+
+\vskip 0.2 cm
+\noindent
+\textbf{Funci\'o de distribuci\'o conjunta}: 
+\[
+\begin{array}{rl}
+F_{XY}(x, y)& = P(X \leq x, Y \leq y)=\\ \\
+ & = 
+\left\{ 
+\begin{array}{ccccll}
+x < -1 & \text{\'o} & y < -1 & \qquad & & 0 \\ \\
+x \geq 1 & \text{i} & y \geq 1 & \qquad & & 1 \\ \\
+-1 \leq x < 1 & \text{i} & -1 \leq y < 0 & \qquad & P(X=-1, Y=-1)=&\frac{1}{3}\\ \\
+-1 \leq x < 1 & \text{i} & 0 \leq y < 1 & \qquad & P(X=-1, Y=-1)+P(X=-1, Y=0)=& \frac{1}{3}\\ \\
+-1 \leq x < 1 & \text{i} &  y \geq 1 & \qquad & P(X=-1, Y=-1)+P(X=-1, Y=0)+ & \\
+              &          &           & \qquad & +P(X=-1, Y=1)=& \frac{1}{2}\\ \\
+x \geq 1 & \text{i} & -1 \leq y < 0 & \qquad & P(X=-1, Y=-1)+P(X=1, Y=-1)=& \frac{1}{2}\\ \\
+x \geq 1 & \text{i} & 0 \leq y < 1 & \qquad & P(X=-1, Y=-1)+P(X=-1, Y=0)+ & \\
+         &          &              & \qquad & +P(X=1, Y=-1)+P(X=1, Y=0)= & \frac{2}{3}
+\end{array}
+\right.
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+\begin{array}{ll}
+P(X+Y=0 |Y \leq 0)&=\frac{P(\{X+Y =0\} \cap \{Y \leq 0\})}{P(Y \leq 0)}=\frac{P(X=1, Y=-1)}{P(Y=-1)+P(Y=0)}=
+\frac{1/6}{1/2+1/6}=\frac{1}{4}
+\\ 
+\\
+P(X=1 | X+Y=2)&=\frac{ P(\{X=1\} \cap \{X+Y=2\})}{P(X+Y=2)}=\frac{P(X=1,Y=1)}{P(X=1, Y=1)}=1
+\end{array}
+\]
+
+
+\newpage
+\noindent
+\textbf{Problema 12.} 
+El nombre d'errors $X$ per p\`agina que comet un determinat
+escriptor \'es una variable aleat\`oria amb llei 
+\[
+P(X = x) = e^{-2} \cdot {2^x \over x \> !}, \ \ x = 0,1, \ldots
+\]
+\noindent
+Si una p\`agina t\'e {\it x} errors, el nombre de minuts $Y$ que un revisor tarda en
+revisar i corregir cada p\`agina \'es una variable aleat\`oria amb
+distribuci\'o:
+
+\[
+P(Y = y | X = x) = \begin{cases}
+1/5 & \text{si } y = 1+x\\
+3/5 & \text{si } y = 2+x\\
+1/5 & \text{si } y = 3+x
+\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Trobau la probabilitat que es necessitin 4 minuts per revisar
+i corregir una p\`agina elegida a l'atzar. 
+\item Si s'han utilitzat 4 minuts en la revisi\'o i correcci\'o d'una
+p\`agina, quina \'es la probabilitat que hi hagu\'es 3 errors?
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Ens demanen calcular $P(Y=4)$, aplicant la f\`ormula de la probabilitat total:
+\[
+P(Y=4)=P(Y=4|X=0)\cdot P(X=0) + P(Y=4|X=1)\cdot P(X=1) + P(Y=4|X=2)\cdot P(X=2) + \cdots
+\]
+
+Tenim a m\'es que:
+\[
+P(Y = y | X = 0) = \begin{cases}
+1/5 & \text{si } y = 1+0=1\\
+3/5 & \text{si } y = 2+0=2\\
+1/5 & \text{si } y = 3+0=3 \\
+0 & \text{resta de casos}
+\end{cases}
+\qquad \text{per tant} \qquad P(Y = 4 | X = 0)=0
+\]
+\[
+P(Y = y | X = 1) = \begin{cases}
+1/5 & \text{si } y = 1+1=2\\
+3/5 & \text{si } y = 2+1=3\\
+1/5 & \text{si } y = 3+1=4 \\
+0 & \text{resta de casos}
+\end{cases}
+\qquad \text{per tant} \qquad P(Y = 4 | X = 1)=1/5
+\]
+\[
+P(Y = y | X = 2) = \begin{cases}
+1/5 & \text{si } y = 1+2=3\\
+3/5 & \text{si } y = 2+2=4\\
+1/5 & \text{si } y = 3+2=5 \\
+0 & \text{resta de casos}
+\end{cases}
+\qquad \text{per tant} \qquad P(Y = 4 | X = 2)=3/5
+\]
+\[
+P(Y = y | X = 3) = \begin{cases}
+1/5 & \text{si } y = 1+3=4\\
+3/5 & \text{si } y = 2+3=5\\
+1/5 & \text{si } y = 3+3=6 \\
+0 & \text{resta de casos}
+\end{cases}
+\qquad \text{per tant} \qquad P(Y = 4 | X = 3)=1/5
+\]
+\[
+P(Y = y | X = 4) = \begin{cases}
+1/5 & \text{si } y = 1+4=5\\
+3/5 & \text{si } y = 2+4=6\\
+1/5 & \text{si } y = 3+4=7 \\
+0 & \text{resta de casos}
+\end{cases}
+\qquad \text{per tant} \qquad P(Y = 4 | X = 4)=0
+\]
+\noindent
+raonant de manera similar comprovam que $P(Y = y | X = x)=0$ si $x \geq 4$. Per tant:
+\[
+P(Y=4)=\frac{1}{5} e^{-2} \frac{2^1}{1!} + \frac{3}{5} e^{-2} \frac{2^2}{2!}
++ \frac{1}{5} e^{-2} \frac{2^3}{3!}=\frac{28}{15} e^{-2}=0.2526
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+P(X=3|Y=4)=\frac{ P(X=3, Y=4) }{P(Y=4)}=\frac{P(Y=4|X=3) \cdot P(X=3)}{P(Y=4)}=
+\frac{ \frac{1}{5} e^{-2} \frac{2^3}{3!} }{\frac{28}{15} e^{-2}}=\frac{1}{7}
+\]
+
+
+\newpage
+\noindent
+\textbf{Problema 13.}
+Suposem que la variable aleat\`oria $X$ es selecciona a l'atzar
+de l'interval unitat, i aleshores la variable aleat\`oria $Y$
+ es selecciona a l'atzar de l'interval $(0,X).$ Determinau la
+distribuci\'o de $Y.$ 
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Per l'enunciat dedu\"\i m que $Y$ \'es una v.a. cont\'\i nua, per tant
+haurem calcular $f_Y(y)$. 
+
+\noindent
+Les dades del problema s\'on: $X \sim {\cal U}(0, 1)$ i $Y|X \sim {\cal U}(0, X)$. De manera que:
+\[
+f_X(x)=\begin{cases} 1 & \text{si } 0 < x < 1 \\ 0 & \text{en altre cas} \end{cases}
+\qquad \qquad
+f_{Y|X}(y|x)=\begin{cases} \frac{1}{x} & \text{si }  0 < y < x\\ 
+0 & \text{en altre cas} \end{cases}
+\]
+
+\noindent
+D'altra banda, sabem que $f_{Y|X}(y|x)=\frac{f_{XY}(x, y)}{f_X(x)}$, per tant 
+\[
+f_{XY}(x, y)=f_{Y|X}(y|x) \cdot f_X(x) = 
+\begin{cases} \frac{1}{x} & \text{si } 0 < y < x < 1 \\ 0 & \text{en altre cas} \end{cases}
+\]
+\noindent
+El suport d'aquesta funci\'o de densitat es mostra en la seg\"uent figura.
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 10){\line(1, 1){70}}
+\put(75, 70){$y=x$}
+\multiput(10, 60)(10, 0){6}{\line(1, 0){5}}
+\thicklines
+\put(10, 10){\line(1, 1){50}}
+\put(60, 10){\line(0, 1){50}}
+\thinlines
+\put(20, 10){\line(0, 1){10}}
+\put(25, 10){\line(0, 1){15}}
+\put(30, 10){\line(0, 1){20}}
+\put(35, 10){\line(0, 1){25}}
+\put(40, 10){\line(0, 1){30}}
+\put(45, 10){\line(0, 1){35}}
+\put(50, 10){\line(0, 1){40}}
+\put(55, 10){\line(0, 1){45}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(50, 40){\textbf{\textit{S}}}
+\end{picture}
+\end{center}
+\caption{Suport de $f_{XY}(x, y)$ (zona ratxada). }
+\end{figure}
+
+\[
+f_Y(y)=\int_{-\infty}^{+\infty} f_{XY}(x, y) \, dx=\begin{cases}
+0 < y < 1 & \int_y^1 \frac{1}{x} \, dx = \left( \mathrm{ln}(x) \right]_y^1 = \mathrm{ln}(1) - \mathrm{ln}(y)=-\mathrm{ln}(y) \\ \\
+\text{en altre cas} & 0 \end{cases}
+\]
+
+
+
+
+\newpage
+\noindent
+\textbf{Problema 14.}  Un auditor selecciona a l'atzar un cert nombre $X$ de
+factures d'un arxivador; $X$ \'es un nombre a l'atzar entre 5 i 8.
+Sigui $Y$ el temps en minuts que tarda en revisar-les. Suposem que
+$(X,Y)$ t\'e una llei conjunta donada per
+
+\[
+P(X = x, Y = y) = \begin{cases}
+{1 \over 4} \cdot {10-x \over x} \cdot \left ( {x \over 10} \right )^y & \text{si } x = 5,6,7,8, y =
+1,2,\ldots \\ 0 & \text{en cas contrari}
+\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Trobau la distribuci\'o marginal de $Y.$
+\item Trobau la distribuci\'o condicional de $X $  donat que $Y = y.$
+\item  Calculau la probabilitat que hagi triat 6 factures sabent que
+ha tardat m\'es de 3 minuts en revisar-les. 
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Tenim que $\Omega_X=\{5,6,7,8\}$ i $\Omega_Y=\{ 1, 2, \cdots \}$. 
+Tenim que $P(Y=y)=0$ si $y \notin \Omega_Y$ i per als valors $y \in \Omega_Y$:
+\[
+\begin{array}{rl}
+P(Y=y)=&\sum_{x \in \Omega_X} P(X=x, Y=y)= \\ \\
+      =&P(X=5, Y=y)+P(X=6, Y=y)+P(X=7, Y=y)+P(X=8, Y=y)=\\ \\
+      =& \frac{1}{4} \frac{10-5}{5} ( \frac{5}{10} )^y + \frac{1}{4} \frac{10-6}{6} ( \frac{6}{10} )^y +
+      \frac{1}{4} \frac{10-7}{7} ( \frac{7}{10} )^y + \frac{1}{4} \frac{10-8}{8} ( \frac{8}{10} )^y=\\ \\
+      =& \frac{1}{4} \left[ (\frac{5}{10})^y + \frac{2}{3} ( \frac{6}{10} )^y + \frac{3}{7} ( \frac{7}{10} )^y
++ \frac{1}{4} ( \frac{8}{10} )^y \right]
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+\begin{array}{rl}
+P(X=x | Y=y)=&\frac{P(X=x, Y=y)}{P(Y=y)}= \\ \\
+=&\begin{cases} 
+\frac{ {1 \over 4} \cdot {10-x \over x} \cdot \left ( {x \over 10} \right )^y }{ \frac{1}{4} \left[ (\frac{5}{10})^y + \frac{2}{3} ( \frac{6}{10} )^y + \frac{3}{7} ( \frac{7}{10} )^y + \frac{1}{4} ( \frac{8}{10} )^y \right] } = 
+\frac{10-x}{x} \frac{x^y}{ 5^y+ \frac{2}{3} 6^y + \frac{3}{7} 7^y + \frac{1}{4} 8^y}
+& 
+\text{si } x\in \Omega_X, y \in \Omega_Y \\ \\
+0 & \text{altrament}
+\end{cases}
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{c)}
+\[
+P(X=6 | Y > 3) = \frac{P(X=6, Y > 3)}{P(Y > 3)}=\frac{\sum_{y=4}^\infty P(X=6, Y=y)}{1-P(Y \leq 3)}
+\]
+
+\[
+\begin{array}{rl}
+P(Y \leq 3)= & P(Y=1)+P(Y=2)+P(Y=3)=  \\ \\
+=& \frac{1}{4} \left[ (\frac{5}{10})^1 +\frac{2}{3}(\frac{6}{10})^1 + \frac{3}{7} (\frac{7}{10})^1 +\frac{1}{4}(\frac{8}{10})^1 \right]+
+ \frac{1}{4} \left[ (\frac{5}{10})^2 +\frac{2}{3}(\frac{6}{10})^2 + \frac{3}{7} (\frac{7}{10})^2 +\frac{1}{4}(\frac{8}{10})^2 \right] +
+\\ \\
+& + \frac{1}{4} \left[ (\frac{5}{10})^3 +\frac{2}{3}(\frac{6}{10})^3 + \frac{3}{7} (\frac{7}{10})^3 +\frac{1}{4}(\frac{8}{10})^3 \right] 
+= \frac{7}{20} + \frac{86}{400} + \frac{544}{4000} = \frac{1196}{4000}
+\end{array} 
+\]
+
+\[
+\sum_{y=4}^\infty P(X=6, Y=y)= \sum_{y=4}^\infty {1 \over 4} \cdot {10-6 \over 6} \cdot \left ( {6 \over 10} \right )^y=
+\frac{1}{4} \cdot \frac{4}{6}  \sum_{y=4}^\infty \left( \frac{3}{5} \right)^y = 
+\frac{1}{6} \frac{ \left( \frac{3}{5} \right) ^4}{1-\frac{3}{5}} = \frac{5}{12} \left( \frac{3}{5} \right) ^4
+\]
+\noindent
+on hem aplicat la f\`ormula per a la suma d'infinits termes d'una progressi\'o geom\`etrica: $S=\frac{a_0}{1-r}$, 
+amb $a_0=(\frac{3}{5})^4$ i $r=\frac{3}{5} < 1$.
+
+\vskip 0.2 cm
+\noindent
+La soluci\'o final \'es:
+\[
+P(X=6 | Y > 3) = \frac{ \frac{5}{12} \left( \frac{3}{5} \right) ^4 }{ 1- \frac{1196}{4000} } = \cdots = \frac{54}{299}=0.1806
+\]
+
+\newpage
+\noindent
+\textbf{Problema 15.} Una diana consisteix en 3 cercles conc\`entrics amb radis
+respectius 1 cm, 2 cm i 3 cm. En una competici\'o de tir, la
+distribuci\'o dels impactes en la diana i els voltants \'es tal que
+les desviacions horitzontal i vertical respecte del centre de la
+diana s\'on independents i les dues segueixen una distribuci\'o normal
+N(0, 1 cm.). Determinau la proporci\'o d'impactes dins cada anell de
+la diana. (Ind.: Utilitzau les coordenades polars).
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+Anomenam $A$, $B$ i $C$ cada un dels anells de la diana (veure la figura 1). 
+Denotam $X$, $Y$ les coordenades de l'impacte en la diana. La dist\`ancia de
+cada impacte al centre de la diana \'es $R=+\sqrt{X^2+Y^2}$. Definim una
+nova variable $Z=X^2+Y^2$, per tant $R=+\sqrt{Z}$.
+Tenim que:
+\[
+\begin{array}{rl}
+P(\{\text{impacte en $A$}\})=&P(R \leq 1)=P(\sqrt{Z} \leq 1)=P(Z \leq 1)=F_Z(1) \\ \\
+P(\{\text{impacte en $B$}\})=&P(1 < R \leq 2)=P(1 < \sqrt{Z} \leq 2)=P(1 < Z \leq 4)=F_Z(4)-F_Z(1)\\ \\
+P(\{\text{impacte en $C$}\})=&P(2 < R \leq 3)=P(2 < \sqrt{Z} \leq 3)=P(4 < Z \leq 9)=F_Z(9)-F_Z(4)
+\end{array}
+\]
+\noindent
+on $F_Z(z)$ \'es la funci\'o de distribuci\'o de $Z=X^2+Y^2$.
+
+\[
+F_Z(z)=P(Z \leq z)=P(X^2+Y^2 \leq z)=P(A_z)=\iint_{A_z \cap S} f_{XY}(x, y) \, dx dy
+\]
+
+\noindent
+$A_z$ \'es el conjunt de punts $(x, y)$ tals que $x^2+y^2 \leq z$ i $S$ \'es el suport de
+la funci\'o de densitat conjunta de $X$ i $Y$.
+
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(120, 120)(-60, -60)
+\put(-60, 0){\vector(1, 0){120}}
+\put(0, -60){\vector(0, 1){120}}
+\put(0, 0){\circle{30}}
+\put(0, 0){\circle{60}}
+\put(0, 0){\circle{90}}
+\put(0, 0){\line(1, 2){6.5}}
+\put(0, 0){\line(-1, 2){13.5}}
+\put(0, 0){\line(-2, 1){40}}
+\put(6,3){1}
+\put(-8,20){2}
+\put(-35,20){3}
+\put(-8,-9){A}
+\put(-21, -18){B}
+\put(-34, -29){C}
+\end{picture}
+\end{center}
+\caption{Diana}
+\end{figure}
+
+
+\vskip 0.2 cm
+\noindent
+Com que $X$ i $Y$ s\'on v.a. independents i ambdues s\'on v.a. normals $N(0, 1)$, llavors:
+\[
+\begin{array}{rll}
+f_X(x)=&\frac{1}{\sqrt{2\pi}} e^{-x^2/2} & \qquad \Omega_X=(-\infty, +\infty)=\R \\ 
+f_Y(y)=&\frac{1}{\sqrt{2\pi}} e^{-y^2/2} & \qquad \Omega_Y=(-\infty, +\infty)=\R \\ 
+f_{XY}(x, y)=&f_X(x) \cdot f_Y(y) = \frac{1}{2\pi} e^{-(x^2+y^2)/2} & \qquad \Omega_{XY}=S=\R^2
+\end{array}
+\]
+
+\noindent
+Per tant:
+\[
+F_Z(z)=\frac{1}{2\pi} \iint_{x^2+y^2 \leq z} e^{-(x^2+y^2)/2} \, dx dy
+\]
+
+\noindent
+Si feim un canvi de coordenades $(x, y)$ a coordenades polars $(r, \theta)$:
+\[
+x=r \cos \theta \qquad y=r \sin \theta \qquad x^2+y^2=r^2 \qquad dxdy=rdrd\theta \qquad 
+A_z=\{ r \leq \sqrt{z}, 0 \leq \theta < 2\pi \}
+\]
+
+\[
+F_Z(z)=\frac{1}{2\pi} \int_0^{2\pi} \int_0^{\sqrt{z}} e^{-r^2/2} \, rdrd\theta = 
+\text{(fent el canvi de variable $t=r^2/2$)}=\cdots=1-e^{-z/2}
+\]
+
+\noindent
+De manera que:
+\[
+\begin{array}{rl}
+P(\{\text{impacte en $A$}\})=&F_Z(1)=1-e^{-1/2}=0.3934 \\
+P(\{\text{impacte en $B$}\})=&F_Z(4)-F_Z(1)=(1-e^{-4/2})-(1-e^{-1/2})=0.47067\\
+P(\{\text{impacte en $C$}\})=&F_Z(9)-F_Z(4)=(1-e^{-9/2})-(1-e^{-4/2})=0.124
+\end{array}
+\]
+
+
+\newpage
+\noindent
+\textbf{Problema 16.}  Siguin $X$ i $Y$ dues variables aleat\`ories amb densitat
+conjunta 
+\[
+f_{XY}(x,y) = \left\{\begin{array}{ll}\frac{1}{x} &
+\mbox{si } 0 \leq y \leq x \leq 1\\ 0 & \mbox{en cas
+contrari}\end{array}\right.
+\]
+\begin{enumerate}[a)]
+\item Calculau $f_X(x)$.
+\item Calculau $f_{Y}(y|x)$.
+\item Calculau $E(Y)$. 
+\item Calculau $E(Y|X)$, la ra\'o de correlaci\'on $\eta_{Y|X}$ i ECM. 
+\item Calculau $E(E(Y | X))$ i comprovau que
+coincideix amb $E(Y)$.
+\item Estimeu $Y$ si sabem que $X=0.75$.
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+El suport de $f_{XY}$ es mostra en la figura seg\"uent:
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 10){\line(1, 1){70}}
+\put(75, 70){$y=x$}
+\multiput(10, 60)(10, 0){6}{\line(1, 0){5}}
+\thicklines
+\put(10, 10){\line(1, 1){50}}
+\put(60, 10){\line(0, 1){50}}
+\thinlines
+\put(20, 10){\line(0, 1){10}}
+\put(25, 10){\line(0, 1){15}}
+\put(30, 10){\line(0, 1){20}}
+\put(35, 10){\line(0, 1){25}}
+\put(40, 10){\line(0, 1){30}}
+\put(45, 10){\line(0, 1){35}}
+\put(50, 10){\line(0, 1){40}}
+\put(55, 10){\line(0, 1){45}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(50, 40){\textbf{\textit{S}}}
+\end{picture}
+\end{center}
+\caption{Suport de $f_{XY}(x, y)$ (zona ratxada). }
+\end{figure}
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} 
+\[
+f_X(x)=\int_{-\infty}^{+\infty} f_{XY}(x, y) \, dy=\begin{cases}
+\text{si } x \leq 0 & 0\\
+\text{si } x > 1 & 0 \\
+\text{si } 0 < x \leq 1 & \int_0^x \frac{1}{x} \, dy = \frac{1}{x} \left( y \right]_0^x = \frac{x-0}{x}=1
+\end{cases}
+\]
+\noindent
+Aquesta funci\'o de densitat correspon a una v.a. uniforme en l'interval $(0, 1)$, per tant: $X \sim {\cal U}(0, 1)$.
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} 
+\[
+f_{Y|X}(y|x)=\frac{f_{XY}(x, y)}{f_X(x)}=\begin{cases}
+\text{si } (x, y) \in S \, \Leftrightarrow \, 0 \leq y \leq x \leq 1 & \qquad \frac{1/x}{1}=\frac{1}{x} \\
+\text{en cas contrari} & \qquad 0
+\end{cases}
+\]
+\noindent
+Aquesta funci\'o de densitat correspon a una v.a. uniforme en l'interval $(0, x)$, per tant: $Y|_X \sim {\cal U}(0, X)$.
+
+\vskip 0.2 cm
+\noindent
+\textbf{c)} $E(Y)=\int_{-\infty}^{+\infty} y f_Y(y) \, dy$, d'altra banda,
+\[
+f_Y(y)=\int_{-\infty}^{+\infty} f_{XY}(x, y) \, dx=\begin{cases}
+\text{si } y \leq 0 & 0\\
+\text{si } y > 1 & 0 \\
+\text{si } 0 < y \leq 1 & \int_y^1 \frac{1}{x} \, dx = \left( \mathrm{ln} x \right]_y^1=
+(\mathrm{ln} 1 - \mathrm{ln} y)= -\mathrm{ln}y
+\end{cases}
+\]
+
+\noindent
+Per tant:
+\[
+E(Y)=\int_0^1 - y \mathrm{ln}y \, dy= \left( \text{per parts: }
+\left\{ \begin{array}{ll} u=\mathrm{ln} y & du= \frac{1}{y} dy \\ dv=y\, dy & v=\frac{y^2}{2} \end{array} \right\} \right)
+ =\cdots=
+\left( \frac{y^2}{2} (\frac{1}{2}-\mathrm{ln}y) \right]_0^1=\cdots=\frac{1}{4}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{d)} El suport de $f_{Y|X}(y|x)$ \'es el mateix que el de $f_{XY}(x, y)$ (veure figura 1), per tant:
+\[
+E(Y|X)=\int_{-\infty}^{+\infty} y f_{Y|X}(y|x) \, dy =\begin{cases}
+\text{si } 0 < x \leq 1 & \int_0^x y \cdot \frac{1}{x} \, dy = \frac{1}{x} \left( \frac{y^2}{2}\right]_0^x = 
+\frac{1}{x} \frac{x^2}{2}=\frac{x}{2}\\
+\text{en cas contrari} & 0 \end{cases}
+\]
+
+\vskip 0.2 cm
+\noindent
+Si denotam $Y^*=E(Y|X)$, llavors l'error quadr\`atic mitj\`a (ECM) \'es $\mathrm{ECM}=E((Y^* - Y)^2)$
+i la ra\'o de correlaci\'o $\eta_{Y|X} = \frac{\mathrm{Var}(Y^*)}{\mathrm{Var}(Y)}=1-\frac{\mathrm{ECM}}{\mathrm{Var}(Y)}$,
+per tant $\mathrm{ECM}=\mathrm{Var}(Y)(1-\eta_{Y|X})$.
+\[
+\begin{array}{ll}
+E(Y) &=  \text{(apartat c)}=\frac{1}{4} \\ \\
+E(Y^2) & = \int_0^1 - y^2 \mathrm{ln}y \, dy= \left( \text{per parts: }
+\left\{ \begin{array}{ll} u=y \mathrm{ln} y & du= (\mathrm{ln}y+1) dy \\ dv=y\, dy & v=\frac{y^2}{2} \end{array} 
+\right\} \right)= \\ 
+&= \cdots= \left(  \frac{y^3}{3} (\frac{1}{3}-\mathrm{ln}y) \right]_0^1=\cdots=\frac{1}{9} \\ \\
+\mathrm{Var}(Y) &=E(Y^2)-E(Y)^2 = \frac{1}{9} - \frac{1}{16}=\frac{7}{144}\\ \\
+E(Y^*) & =E(E(Y|X))=\text{(apartat e)}=E(Y)=\frac{1}{4} \\ \\
+E({Y^*}^2) & = \int_{-\infty}^{+\infty} E(Y|X)^2 f_X(x) \, dx = \int_0^1 \frac{x^2}{4} \, dx = 
+\left( \frac{x^3}{12} \right]_0^1 = \frac{1}{12} \\ \\
+\mathrm{Var}(Y^*) &=E({Y^*}^2)-E(Y^*)^2 = \frac{1}{12} - \frac{1}{16} =\frac{1}{48} \\ \\
+\eta_{Y|X} & = \frac{\mathrm{Var}(Y^*)}{\mathrm{Var}(Y)}= \frac{1/48}{7/144}=\frac{3}{7} \\ \\
+\mathrm{ECM}& =\mathrm{Var}(Y)(1-\eta_{Y|X}) = \frac{7}{144} (1-\frac{3}{7})=\frac{1}{36}
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{e)} 
+\[
+E(E(Y|X))=\int_{-\infty}^{+\infty} E(Y|X) f_X(x) \, dx = \int_0^1 \frac{x}{2} \, dx = \left( \frac{x^2}{4} \right]_0^1=
+\frac{1}{4}
+\]
+\noindent
+Observem que aquest resultat coincideix amb $E(Y)$ (recordem que $E(E(Y|X))=E(Y)$).
+
+\vskip 0.2 cm
+\noindent
+\textbf{f)} $E(Y|X=0.75)=\text{(a partir del resultat de l'apartat d)}=\frac{0.75}{2}= \frac{3}{8}$.
+
+
+
+\newpage
+\noindent
+\textbf{Problema 17.} 
+Considerem un experiment amb tres possibles resultats $E_1,
+E_2 \mbox{ i } E_3$ amb probabilitats respectives $p,q$ i $r$ tals
+que $p+q+r = 1.$ En una seq\"{u}\`encia de $n$ proves independents de
+l'experiment, denotem per $X$ el nombre de vegades que ocorr
+$E_1$, i per $Y$ el nombre de vegades que ocorr $E_2$. Es sap que
+el vector $(X,Y)$ t\'e una distribuci\'o anomenada \textbf{trinomial}
+que ve donada per: $$P(X=i,Y=j) = {n! \over i! \> j! \> k!} \>
+p^i \> q^j \> r^k \> , \ \ \ k = n-i-j$$
+\begin{enumerate}[a)]
+\item Provau que les distribucions marginals s\'on binomials.
+\item Determinau el vector mitjana i la matriu de covari\`ancies de
+$(X,Y)$.
+\item Provau que les distribucions condicionals s\'on binomials.
+\item Obteniu l'expressi\'o de $E(Y | X = i) \ \ \forall i = 0,
+ \ldots , n$.
+\item Comprovau que el coeficient de correlaci\'o entre $E(Y | X)$
+i $X$ \'es igual a -1 i, per tant, $E(Y | X)$ \'es una funci\'o lineal
+de $X$, $E(Y | X) = a X + b$, amb $a < 0$.
+\item Determinau els coeficients $a$ i $b$ a partir de
+l'expressi\'o obtinguda a l'apartat (d).
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Per a valors de $i \notin \{0, 1, 2, \cdots, n\}$, $P(X=i)=0$.
+Per a valors $i \in \{0, 1, 2, \cdots, n\}$:
+\[
+P(X=i)=\sum_{j \in \Omega_Y} P(X=i, Y=j)= \sum_{j=0}^{n-i} P(X=i, Y=j) = 
+\sum_{j=0}^{n-i} \frac{n!}{i! j! (n-i-j)!} p^i q^j r^{(n-i-j)}
+\]
+\noindent
+on s'ha tengut en compte que si $X=i$ llavors $Y$ no pot prendre un valor
+superior a $n-i$.
+\[
+P(X=i)=\frac{n!}{i!} p^i \sum_{j=0}^{n-i} \frac{1}{j! (n-i-j)!} q^j r^{(n-i-j)} =
+ \frac{n!}{i! (n-i)!} p^i \sum_{j=0}^{n-i} \binom{n-i}{j} q^j r^{(n-i-j)}
+\]
+\noindent
+on s'ha aplicat la igualtat: $\binom{n-i}{j}=\frac{(n-i)!}{j! (n-i-j)!}$, per tant:
+$\frac{1}{j! (n-i-j)!}=\frac{1}{(n-i)!} \binom{n-i}{j}$.
+
+\vskip 0.2cm
+\noindent
+Si ara aplicam la definici\'o del binomi de Newton: 
+$(q+r)^{(n-i)}=\sum_{j=0}^{n-i} \binom{n-i}{j} q^j r^{(n-i-j)}$, obtenim:
+\[
+P(X=i)= \frac{n!}{i! (n-i)!} p^i (q+r)^{(n-i)}
+\]
+\noindent
+i com que $q+r=1-p$, i a m\'es $\frac{n!}{i! (n-i)!}=\binom{n}{i}$, llavors:
+\[
+P(X=i)=\binom{n}{i} p^i (1-p)^{(n-i)}
+\]
+\noindent
+Aquesta expressi\'o correspon a la funci\'o de probabilitat d'una v.a. 
+binomial amb par\`ametres $n$ i $p$. Per tant podem concloure que $X \sim B(n, p)$.
+
+\vskip 0.3 cm
+\noindent
+Seguint un raonament similar per a la funci\'o de probabilitat marginal de $Y$ 
+arribariem a: $Y \sim B(n, q)$.
+
+\vskip 0.3 cm
+\noindent
+\textbf{b)} 
+Vector de mitjanes: $(E(X), E(Y))$. A l'apartat anterior s'ha demostrat que $X \sim B(n, p)$ 
+i $Y \sim B(n, q)$. Per tant, mirant les taules d'esperances per a una v.a. binomial trobam:
+$E(X)=n p$, $E(Y)=nq$.
+
+\vskip 0.3 cm
+Matriu de covari\`ancies: 
+$K=\begin{pmatrix} \sigma_{XX} & \sigma_{XY} \\ \sigma_{XY} & \sigma_{YY} \end{pmatrix}$.
+\vskip 0.3 cm
+Tenim que $\sigma_{XX}=\mathrm{Cov}(X, X)=\mathrm{Var}(X)=\sigma_X^2=\text{(taules)}=np(1-p)$ i
+$\sigma_{YY}=\mathrm{Cov}(Y, Y)=\mathrm{Var}(Y)=\sigma_Y^2=\text{(taules)}=nq(1-q)$. 
+
+$$\sigma_{XY}=\mathrm{Cov}(X, Y)=\mathrm{Cov}(Y, X)=E(XY)-E(X)E(Y)$$
+
+\[
+E(XY)=\sum_{i=0}^n \sum_{j=0}^n i j P(X=i, Y=j)
+\]
+
+Observam que quan $i=0$ o $j=0$ el factor $i j P(X=i, Y=j)$ ser\`a igual a zero, per tant basta comen\c{c}ar els
+sumatoris amb el valor 1. Cal observar tamb\'e que el segon sumatori no pot arribar fins a $n$, ja que, si s'obtenen $i$
+resultats de tipus $E_1$, nom\'es es poden obtenir un m\`axim de $n-i$ resultats de tipus $E_2$. 
+Pel mateix motiu, com el segon sumatori comen\c{c}a en $j=1$, el primer pot prendre com a m\`axim el valor $n-1$.
+
+A m\'es, podem fer les substitucions: $k=n-i-j$ i $r=1-p-q$. 
+
+\[
+\begin{split}
+E(XY) & = \sum_{i=1}^{n-1} \sum_{j=1}^{n-i} i j {n! \over i!  j!  k!}  p^i  q^j  r^k = \\ 
+&= \sum_{i=1}^{n-1} i {n! \over i!} p^i \sum_{j=1}^{n-i} j {1 \over j! (n-i-j)!} q^j  (1-p-q)^{n-i-j} = \\ 
+&= \sum_{i=1}^{n-1} {n! \over (i-1)!} p^i \sum_{j=1}^{n-i} {1 \over (j-1)! (n-i-j)!} q^j  (1-p-q)^{n-i-j} =
+\end{split}
+\]
+
+Descomposam $q^j$ en $q^{j-1} q$ i feim el canvi de variable $m=j-1$. 
+
+\[
+E(XY)= q \sum_{i=1}^{n-1} {n! \over (i-1)!} p^i \sum_{m=0}^{n-i-1} {1 \over m! (n-i-m-1)!} q^m  (1-p-q)^{n-i-m-1}
+\]
+
+Utilitzam la relaci\'o: $\binom{n-i-1}{m}=\frac{(n-i-1)!}{m! (n-i-1-m)!}$.
+
+\[
+E(XY)= q \sum_{i=1}^{n-1} {n! \over (i-1)! (n-i-1)!} p^i \sum_{m=0}^{n-i-1} \binom{n-i-1}{m} q^m  (1-p-q)^{n-i-m-1}
+\]
+
+Observam que el segon sumatori \'es igual al binomi de Newton: \[ (q + (1-p-q) )^{n-i-1} = (1-p)^{n-i-1} \]
+
+Per tant:
+
+\[
+E(XY)= q \sum_{i=1}^{n-1} {n! \over (i-1)! (n-i-1)!} p^i (1-p)^{n-i-1}
+\]
+
+Descomposam $p^i$ en $p^{i-1} p$ i feim el canvi de variable $s=i-1$. 
+
+\[
+\begin{split}
+E(XY)& = qp \sum_{s=0}^{n-2} {n! \over s! (n-s-2)!} p^s (1-p)^{n-s-2} = \\
+&= qp n (n-1) \sum_{s=0}^{n-2} {(n-2)! \over s! (n-s-2)!} p^s (1-p)^{n-s-2}
+\end{split}
+\]
+
+Aplicant l'expressi\'o del binomi de Newton a aquest sumatori obtenim:
+
+\[
+E(XY)=qp n (n-1) (p+1-p)^{n-2}=qpn(n-1) 1^{n-2}=qpn(n-1)
+\]
+
+
+En conclusi\'o: $$\sigma_{XY}=qpn(n-1)-qpn^2=-qpn$$
+
+i la matriu de covari\`ancies queda:
+\[
+K=\begin{pmatrix} np(1-p) & -npq \\ -npq & nq(1-q) \end{pmatrix}
+\]
+
+
+\vskip 0.2 cm
+\noindent
+\textbf{c)}
+\[
+P(X=i | Y=j)=\frac{ P(X=i, Y=j) }{P(Y=j)} = 
+\begin{cases}
+\frac{ \frac{n!}{i! j! (n-i-j)!} p^i q^j r^{(n-i-j)} }{ \frac{n!}{j! (n-j)!} q^j (1-q)^{(n-j)}} & 
+\text{si } j \in \{ 0, 1, \cdots, n \}, i \in \{ 0, 1, \cdots, n-j\} \\
+0 & \text{altrament}
+\end{cases}
+\] 
+
+\noindent
+simplificant l'expressi\'o anterior:
+\[
+\begin{array}{rl}
+P(X=i | Y=j)=&\frac{(n-j)!}{i! (n-i-j)!} p^i \frac{r^{n-i-j}}{(1-q)^{n-j}}=
+\binom{n-j}{i} p^i \frac{r^{n-i-j}}{(1-q)^{(n-i-j)} (1-q)^i}=
+\binom{n-j}{i} \left( \frac{p}{1-q} \right)^i \left( \frac{r}{1-q} \right)^{(n-i-j)}= \\ \\
+=& \binom{n-j}{i} \left( \frac{p}{1-q} \right)^i \left( \frac{1-p-q}{1-q} \right)^{(n-i-j)}=
+\binom{n-j}{i} \left( \frac{p}{1-q} \right)^i \left( 1 - \frac{p}{1-q} \right)^{(n-i-j)}
+\end{array}
+\]
+\noindent
+per a valors $j \in \{ 0, 1, \cdots, n \}$, $i \in \{ 0, 1, \cdots, n-j\}$. 
+Aquesta funci\'o de probabilitat correspon a una v.a. binomial amb par\`ametres
+$n-j$ i $\frac{p}{1-q}$, per tant podem concloure:
+\[
+X|_{Y=j} \sim B(n-j, \frac{p}{1-q})
+\]
+
+\noindent
+De manera similar demostrariem: $Y|_{X=i} \sim B(n-i, \frac{q}{1-p})$
+
+\vskip 0.2 cm
+\noindent
+\textbf{d)} Com que $X|_{Y=j} \sim B(n-j, \frac{p}{1-q})$ i $Y|_{X=i} \sim B(n-i, \frac{q}{1-p})$ 
+mirant les taules de moments de la v.a. binomial tenim que:
+\[
+\begin{array}{rll}
+E(X|_{Y=j}) &= (n-j) \frac{p}{1-q} & \text{si } j=0, 1, \cdots, n \\ \\
+\mathrm{Var}(X|_{Y=j}) &= (n-j) \frac{p}{1-q} (1-\frac{p}{1-q}) & \text{si } j=0, 1, \cdots, n \\ \\
+E(Y|_{X=i}) &=(n-i) \frac{q}{1-p} & \text{si } i=0, 1, \cdots, n \\ \\
+\mathrm{Var}(Y|_{X=i}) &=(n-i) \frac{q}{1-p} (1-\frac{q}{1-p}) & \text{si } i=0, 1, \cdots, n 
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{e)} Si denotam $Y^*=E(Y|_X)$, llavors
+\[
+\eta_{E(Y|_X) X}=\eta_{Y^*X}=\frac{ \mathrm{Cov}(Y^*, X) }{\sqrt{\mathrm{Var}(Y^*)} \sqrt{\mathrm{Var}(X)} }
+\]
+
+\noindent
+on $\mathrm{Var}(X)=np(1-p)$.
+
+\vskip 0.2 cm
+\noindent
+D'altra banda tenim que $Y^*=E(Y|_X)=(n-X) \frac{q}{1-p}$, per tant
+\[ 
+\begin{array}{rl}
+E(Y^*)& =E(E(Y|_X))=\text{(propietat)}=E(Y)=nq \\ \\
+\mathrm{Var}(Y^*)& =\mathrm{Var}\left( (n-X) \frac{q}{1-p} \right)= 
+\mathrm{Var}\left( n \frac{q}{1-p} - \frac{q}{1-p} X \right) = \\
+ &= \frac{q^2}{(1-p)^2} \mathrm{Var}(X)=  \frac{q^2}{(1-p)^2}  np(1-p) = \frac{npq^2}{1-p} \\ \\
+\mathrm{Cov}(Y^*, X) &= E(Y^*X)-E(Y^*)E(X) \\ \\
+E(Y^*X) &= E \left(  (n-X) \frac{q}{1-p} X \right) =n \frac{q}{1-p} E(X) - \frac{q}{1-p} E(X^2) =
+n \frac{q}{1-p}  np - \frac{q}{1-p} (np-np^2+n^2p^2) = \\ 
+&= \frac{q}{1-p} ( n^2p - np+np^2-n^2p^2 )=\frac{npq}{1-p} (n-1+p-np)
+\end{array}
+\]
+\noindent
+on s'ha aplicat que $E(X^2)=\mathrm{Var}(X)+E(X)^2= np(1-p)+(np)^2$.
+
+\vskip 0.2 cm
+\noindent
+Simplificant les expressions anteriors obtenim: $\mathrm{Cov}(Y^*, X) =-npq$,
+de manera que:
+
+\[
+\eta_{E(Y|_X) X}=\frac{-npq}{\sqrt{\frac{npq^2}{1-p}} \sqrt{np(1-p)}} = \frac{-npq}{npq} = -1
+\]
+
+\noindent
+que \'es el que ens demanaven demostrar.
+
+
+\vskip 0.2 cm
+\noindent
+\textbf{f)} $E(Y|_X)=(n-X) \frac{q}{1-p}=-\frac{q}{1-p} X + n \frac{q}{1-p}=aX+b$, on $a=-\frac{q}{1-p}$
+i $b=n \frac{q}{1-p}$.
+
+\newpage
+\noindent
+\textbf{Problema 18.} 
+En l'exercici 1,
+\begin{enumerate}[a)]
+\item Determinau $E(X | Y)$. 
+\item Calculau $E(E(X | Y))$, i comprovau que
+coincideix amb $E(X)$. 
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} $E(X | Y)=E(X|_{Y=y})=\sum_{x \in \Omega_X} x \cdot P(X=x | Y=y)$
+on $P(X=x | Y=y)= \frac{P(X=x, Y=y)}{P(Y=y)}$.
+A partir de les taules de les funcions de probabilitat conjunta i marginals
+(veure soluci\'o del problema 1) obtenim la seg\"uent taula per a la
+funci\'o de probabilitat condicionada:
+
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+Y $\backslash$ X & 1 & 2 & 3 & 4 & 5 & 6  \\ \hline
+1     & $\frac{1/36}{1/36}=1$ &    0 &    0 &    0 &    0 & 0  \\ \hline
+2     & $\frac{1/36}{3/36}=1/3$ & $\frac{2/36}{3/36}=2/3$ &    0 &    0 &    0 & 0  \\ \hline
+3     & $\frac{1/36}{5/36}=1/5$ & $\frac{1/36}{5/36}=1/5$ & $\frac{3/36}{5/36}=3/5$ &    0 &    0 & 0  \\ \hline
+4     & $\frac{1/36}{7/36}=1/7$ & $\frac{1/36}{7/36}=1/7$ & $\frac{1/36}{7/36}=1/7$ & $\frac{4/36}{7/36}=4/7$ &    0 & 0  \\ \hline
+5     & $\frac{1/36}{9/36}=1/9$ & $\frac{1/36}{9/36}=1/9$ & $\frac{1/36}{9/36}=1/9$ & $\frac{1/36}{9/36}=1/9$ & $\frac{5/36}{9/36}=5/9$
+ & 0  \\ \hline
+6     & $\frac{1/36}{11/36}=1/11$ & $\frac{1/36}{11/36}=1/11$ & $\frac{1/36}{11/36}=1/11$ & $\frac{1/36}{11/36}=1/11$
+ & $\frac{1/36}{11/36}=1/11$ & $\frac{6/36}{11/36}=6/11$  \\ \hline
+\end{tabular}
+\end{center}
+
+\vskip 0.2 cm
+\noindent
+Aplicant la f\`ormula de l'esperan\c{c}a condicionada obtenim, per a cada valor de $Y$:
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|l|}
+Y & $E(X|_{Y=y})$ \\ \hline
+1 & $1 \cdot 1 = 1$ \\ \hline 
+2 & $1 \cdot \frac{1}{3} + 2 \cdot \frac{2}{3}=\frac{5}{3}$ \\ \hline
+3 & $1 \cdot \frac{1}{5} + 2 \cdot \frac{1}{5} + 3 \cdot \frac{3}{5} =\frac{12}{5}$ \\ \hline
+4 & $1 \cdot \frac{1}{7} + 2 \cdot \frac{1}{7} + 3 \cdot \frac{1}{7} + 4 \cdot \frac{4}{7} =\frac{22}{7}$ \\ \hline
+5 & $1 \cdot \frac{1}{9} + 2 \cdot \frac{1}{9} + 3 \cdot \frac{1}{9} + 4 \cdot \frac{1}{9} + 5 \cdot \frac{5}{9} =\frac{35}{9}$ \\ \hline
+6 & $1 \cdot \frac{1}{11} + 2 \cdot \frac{1}{11} + 3 \cdot \frac{1}{11} + 4 \cdot \frac{1}{11} + 5 \cdot \frac{1}{11} 
++ 6 \cdot \frac{6}{11} =\frac{51}{11}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\vskip 0.3 cm
+\noindent
+\textbf{b)} 
+\[
+\begin{array}{rl}
+E(E(X|Y)) = & E(X|_{Y=1}) \cdot P(Y=1) + E(X|_{Y=2}) \cdot P(Y=2) + E(X|_{Y=3}) \cdot P(Y=3) + \\ \\
+ & + E(X|_{Y=4}) \cdot P(Y=4) + E(X|_{Y=5}) \cdot P(Y=5) + E(X|_{Y=6}) \cdot P(Y=6) = \\ \\
+ = & 1 \cdot \frac{1}{36} + \frac{5}{3} \cdot \frac{3}{36} + \frac{12}{5} \cdot \frac{5}{36} + \frac{22}{7} \cdot \frac{7}{36}
+ + \frac{35}{9} \cdot \frac{9}{36} + \frac{51}{11} \cdot \frac{11}{36} = \frac{7}{2}
+\end{array}
+\]
+
+\noindent
+D'altra banda:
+\[
+\begin{array}{rl}
+E(X) & = 1 \cdot P(X=1) + 2 \cdot P(X=2) + 3 \cdot P(X=3) + 4 \cdot P(X=4) + 5 \cdot P(X=5) + 6 \cdot P(X=6) = \\ \\
+ & = 1 \cdot \frac{1}{36} + 2 \cdot \frac{1}{36} + 3 \cdot \frac{1}{36} + 4 \cdot \frac{1}{36} + 5 \cdot \frac{1}{36} + 6 \cdot \frac{1}{36} =
+\frac{7}{2}
+\end{array}
+\]
+
+\newpage
+\noindent
+\textbf{Problema 22.}
+Es llancen a l'aire dos daus sense biaix. Siguin $N_1 \mbox{
+i } N_2$ els valors obtinguts en els dos daus. Posem $X = N_1 +
+N_2$ i $Y = \ \mid N_1 - N_2 \mid.$ Obteniu la distribuci\'o
+conjunta de $X$ i $Y$ i comprovau que $X$ i $Y$ estan
+incorrelacionades. S\'on independents?
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+Tenim que $\Omega_{N_1}=\Omega_{N_2}=\{ 0, 1, 2, 3, 4, 5, 6 \}$ i que $P(N_1=i)P(N_2=i)=\frac{1}{6}$
+si $i \in \Omega_{N_1}$, ja que els daus no tenen biaix. A m\'es, com poden considerar que els
+daus s\'on independents, llavors $P(N_1=i, N_2=j)=P(N_1=i) \cdot P(N_2=j)$.
+
+\vskip 0.2 cm
+\noindent
+Cada parell de valors $(N_1, N_2)$ genera un parell de valors $(X, Y)$. El conjunt de tots els valors
+$(X, Y)$ possibles es mostra en la taula seg\"uent:
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+$N_2 \backslash N_1$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+$1$ & $X=2$ & $X=3$ & $X=4$ & $X=5$ & $X=6$ & $X=7$  \\ 
+    & $Y=0$ & $Y=1$ & $Y=2$ & $Y=4$ & $Y=5$ & $Y=6$  \\ \hline
+$2$ & $X=3$ & $X=4$ & $X=5$ & $X=6$ & $X=7$ & $X=8$  \\ 
+    & $Y=1$ & $Y=0$ & $Y=1$ & $Y=2$ & $Y=3$ & $Y=4$  \\ \hline
+$3$ & $X=4$ & $X=5$ & $X=6$ & $X=7$ & $X=8$ & $X=9$  \\ 
+    & $Y=2$ & $Y=1$ & $Y=0$ & $Y=1$ & $Y=2$ & $Y=3$  \\ \hline
+$4$ & $X=5$ & $X=6$ & $X=7$ & $X=8$ & $X=9$ & $X=10$  \\ 
+    & $Y=3$ & $Y=2$ & $Y=1$ & $Y=0$ & $Y=1$ & $Y=2$  \\ \hline
+$5$ & $X=6$ & $X=7$ & $X=8$ & $X=9$ & $X=10$ & $X=11$  \\ 
+    & $Y=4$ & $Y=3$ & $Y=2$ & $Y=1$ & $Y=0$ & $Y=1$  \\ \hline
+$6$ & $X=7$ & $X=8$ & $X=9$ & $X=10$ & $X=11$ & $X=12$  \\ 
+    & $Y=5$ & $Y=4$ & $Y=3$ & $Y=2$ & $Y=1$ & $Y=0$  \\ \hline
+\end{tabular}
+\end{center}
+ 
+\noindent
+Per tant, el conjunt de valors possibles per a $X$ i $Y$ s\'on: $\Omega_X=\{ 2, 3, \cdots, 12 \}$ i 
+$\Omega_Y=\{ 0, 1, \cdots, 5 \}$. I les probabilitats de cada parell $(x, y)$ es calculen a partir
+de les probalitats de $N_1$ i $N_2$ observant la taula anterior. Per exemple: 
+\[
+\begin{array}{l}
+P(X=2, Y=0)= P(N_1=1, N_2=1)= P(N_1=1) \cdot P(N_2=1)=\frac{1}{36} \\ \\
+P(X=2, Y=1)= 0 \\ \\
+P(X=3, Y=0)= 0 \\ \\
+P(X=3, Y=1)=P(N_1=2, N_2=1)+P(N_1=1, N_2=2)=\frac{1}{36}+\frac{1}{36}=\frac{2}{36} \\
+\qquad \qquad \vdots \qquad \qquad \vdots \qquad \qquad \vdots
+\end{array}
+\]
+
+\noindent
+Els valors de la funci\'o de probabilitat conjunta de $(X, Y)$ es mostren en la taula seg\"uent. Tamb\'e 
+es mostren els valors de les probabilitats marginals.
+\vskip 0.1 cm
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c||c}
+$Y \backslash X$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $P(X=i)$ \\ \hline
+$0$ & $\frac{1}{36}$ & $0$ & $\frac{1}{36}$ & $0$ & $\frac{1}{36}$ &  $0$ & $\frac{1}{36}$ & $0$ & $\frac{1}{36}$ & 
+$0$ & $\frac{1}{36}$ & $\frac{6}{36}$ \\ \hline
+$1$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ &  $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & 
+$0$  & $\frac{10}{36}$ \\ \hline
+$2$ & $0$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ &  $0$ & $\frac{2}{36}$ & $0$ & $0$  & $\frac{8}{36}$ \\ \hline
+$3$ & $0$ & $0$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & $0$ & $0$ & $0$  & $\frac{6}{36}$ \\ \hline
+$4$ & $0$ & $0$ & $0$ & $0$ & $\frac{2}{36}$ & $0$ & $\frac{2}{36}$ & $0$ & $0$ & $0$ & $0$  & $\frac{4}{36}$ \\ \hline
+$5$ & $0$ & $0$ & $0$ & $0$ & $0$ & $\frac{2}{36}$ & $0$ & $0$ & $0$ & $0$ & $0$  & $\frac{2}{36}$ \\ \hline
+$P(Y=j)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & 
+$\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$ & \\ \hline
+\end{tabular}
+\end{center}
+
+\vskip 0.1 cm
+\noindent
+Podem comprovar que $X$ i $Y$ no s\'on independents ja que, per exemple, 
+$P(X=2, Y=2)=0 \neq P(X=2) \cdot P(Y=2) = \frac{2}{36} \cdot \frac{8}{36}$.
+
+\vskip 0.1 cm
+\noindent
+Per comprovar si $X$ i $Y$ s\'on incorrelades hem de demostrar que $\mathrm{Cov}(X, Y)=0$, i per tant $E(XY)=E(X) \cdot E(Y)$.
+\[
+\begin{array}{rl}
+E(XY) & =\sum_{i \in \Omega_X} \sum_{j \in \Omega_Y} i \cdot j \cdot P(X=i, Y=j) =  \\ 
+      & =0 \cdot 2 \cdot \frac{1}{36} +  0 \cdot 4 \cdot \frac{1}{36} + \cdots + 
+      1 \cdot 3 \cdot \frac{2}{36} + 1 \cdot 5 \cdot \frac{2}{36} + \cdots + 5 \cdot 7 \cdot \frac{2}{36}=\frac{490}{36} \\
+E(X) &= \sum_{i \in \Omega_X} i \cdot P(X=i) = 2 \cdot \frac{1}{36} + 3 \cdot \frac{2}{36} + \cdots + 12 \cdot \frac{1}{36}=7 \\
+E(Y) &= \sum_{j \in \Omega_Y} j \cdot P(Y=j) = 0 \cdot \frac{6}{36} + 1 \cdot \frac{10}{36} + \cdots + 5 \cdot \frac{2}{36}=\frac{70}{36}
+\end{array}
+\]      
+
+\noindent
+Comprovam que $E(X) \cdot E(Y)=7 \cdot \frac{70}{36}=\frac{490}{36}=E(XY)$, per tant les variables estan \textbf{incorrelades}.
+
+
+\newpage
+\noindent
+\textbf{Problema 23.}
+El nombre de clients que arriben a una estaci\'o de servei
+durant un temps {\it t} \'es una variable aleat\`oria de Poisson amb
+par\`ametre $\beta \cdot t.$ El temps necessari per servir cada
+client \'es una variable aleat\`oria exponencial amb par\`ametre
+$\alpha$. Determinau la llei de la variable aleat\`oria que d\'ona el
+nombre de clients que arriben durant el temps de servei {\it T}
+d'un determinat client. Es suposa que les arribades de clients s\'on
+independents del temps de servei dels clients. (Nota: $
+\displaystyle \> \int_o^\infty r^k \> e^{-r} \> dr = \Gamma(k+1) =
+k!$)
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Denotam:
+
+$X_t$: nombre de clients que arriben a una estaci\'o de servei en un temps $t$, $X_t \sim \mathrm{Po}(\beta t)$
+
+$T$: temps necessari per a servir a cada client, $T \sim \mathrm{Exp}(\alpha)$
+
+$Z$: nombre de clients que arriben durant el temps de servei $T$ d'un client
+
+
+\noindent
+$T$ \'es un v.a. cont\'\i nua amb funci\'o
+de densitat:
+\[
+f_T(t)=\begin{cases} \alpha e^{-\alpha t} & \text{si } t > 0 \\ 0 & \text{si } t \leq 0 \end{cases} 
+\]
+
+\noindent
+$X_t$ \'es una v.a. discreta amb funci\'o de probabilitat:
+\[
+P(X_t=i)=\begin{cases} \frac{(\beta t)^i}{i!} e^{-\beta t} & \text{si } i \in \{0, 1, \cdots \} \\
+0 & \text{en cas contrari} \end{cases} 
+\]
+
+
+Observem que $Z$ \'es una v.a. discreta i el seu conjunt de valors possibles \'es 
+$\Omega_Z=\{ 0, 1, 2, \cdots \}$. 
+Si $i \notin \Omega_Z$, $P(Z=i)=0$. Si $i \in \Omega_Z$, aplicam la f\`ormula de
+la probabilitat total per a calcular $P(Z=i)$, tenint en compte que $T$ \'es una v.a. cont\'\i nua:
+\[
+P(Z=i)=\int_0^{+\infty} P(Z=i | T=t) \cdot f_T(t) \, dt 
+\]
+
+\noindent
+D'altra banda, $Z=i |_{T=t}$ \'es el succ\'es ``arriben $i$ clients a l'estaci\'o
+de servei en un temps $t$'', per tant \'es equivalent al succ\'es $X_t=i$. De
+manera que
+\[
+P(Z=i | T=t)=P(X_t=i)=\frac{(\beta t)^i}{i!} e^{-\beta t} \qquad \text{si } i \in \{0, 1, \cdots \}
+\]
+
+\noindent
+La integral queda:
+\[
+P(Z=i)=\int_0^{+\infty} \frac{(\beta t)^i}{i!} e^{-\beta t} \cdot \alpha e^{-\alpha t} \, dt=
+\frac{\alpha \beta^i}{i!} \int_0^{+\infty} t^i e^{-(\alpha+\beta)t} \, dt
+\]
+\noindent
+Per aplicar la nota de l'enunciat hem de fer el canvi de variable:
+\[
+r=(\alpha+\beta)t \qquad t=\frac{r}{\alpha+\beta} \qquad dr=\alpha + \beta
+\]
+\noindent
+i la integral s'escriu:
+\[
+P(Z=i)= \frac{\alpha \beta^i}{i!} \frac{1}{(\alpha+\beta)^{i+1}} \int_0^{+\infty} r^i e^{-r} \, dr = 
+\frac{\alpha \beta^i}{i!} \frac{1}{(\alpha+\beta)^{i+1}} i! = 
+\frac{\alpha}{\alpha+\beta} \left( \frac{\beta}{\alpha+\beta} \right)^i = 
+\frac{\alpha}{\alpha+\beta} \left( 1-\frac{\alpha}{\alpha+\beta} \right)^i
+\]
+
+\noindent
+Observem que aquesta funci\'o de probabilitat correspon a la d'una v.a. geom\`etrica amb par\`ametre
+$\frac{\alpha}{\alpha+\beta}$ que comen\c{c}a a 0:
+\[
+Z \sim \mathrm{Geom}(\frac{\alpha}{\alpha+\beta})
+\]
+
+\newpage
+\noindent
+\textbf{Problema 25.}  
+Una persona contreu el virus d'una certa malaltia que
+requereix hospitalitzaci\'o. Sigui $X$ la variable aleat\`oria que
+d\'ona el temps, en setmanes, que tarda en manifestar-se la
+malaltia. Sigui $Y$ la variable aleat\`oria que expressa el temps
+total, tamb\'e en setmanes, des de que el virus s'ha contret fins
+que el pacient \'es donat d'alta. Se suposa que en el moment que
+apareixen els s\'{\i}mptomes el malalt \'es hospitalitzat. Se sap que $X$
+i $Y$ tenen una densitat conjunta donada per: $$f_{XY}(x,y) = \begin{cases}x
+\cdot {e}^{-y} & \text{si   } 0 \leq x \leq y < +\infty \\ 0 & \text{en cas
+contrari}\end{cases}$$
+
+\begin{enumerate}[a)]
+\item Trobau les corbes i les rectes de regressi\'o i estudiau la
+bondat dels ajustaments.
+\item Calculau la probabilitat que un pacient estigui hospitalitzat
+menys d'una setmana. ($\mathbf{1-{ e}^{-1}}$)
+\item Suposant que el pacient \'es donat d'alta avui despr\'es de 5 dies
+hospitalitzat, quina \'es la probabilitat que contragu\'es el virus fa
+menys de dues setmanes? ({\bf Ind.}: Fes un canvi de les variables
+$(X,Y)$ a les noves variables $({\cal U},{\cal V}) = (Y - X, Y)$.)
+($\mathbf{1-\frac{16}{7}e^{-\frac{9}{7}}=0.37}$)
+\end{enumerate}
+
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:}
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Calcularem primer les corbes de regressi\'o $Y^*=E(Y|X)$ i
+$X^*=E(X|Y)$.
+
+\[
+E(Y|X)= \int_{-\infty}^{+\infty} y f_{Y|X}(y|x) dy
+\]
+
+Necessitam calcular primer la funci\'o de densitat de $Y$ condicionada a $X$. Aplicam la definici\'o:
+
+\[
+f_{Y|X}(y|x)= \frac{ f_{XY}(x, y) }{f_X(x)}
+\]
+
+La funci\'o de densitat marginal de $X$ es calcula com:
+
+\[
+f_X(x)= \int_{-\infty}^{+\infty} f_{XY}(x, y) dy = 
+\begin{cases} x \geq 0 & \int_x^{+\infty} x e^{-y} dy = x e^{-x} \\ \\
+x < 0 & 0 \end{cases}
+\]
+
+Per tant:
+
+\[
+f_{Y|X}(y|x)= \begin{cases} \frac{ x e^{-y} } { x e^{-x} } = e^{x-y} & \text{si   } 0 \leq x \leq y < +\infty \\
+0 & \text{en cas contrari}\end{cases}
+\]
+
+Finalment,
+
+\[
+E(Y|X)= \int_{x}^{+\infty} y e^{x-y} dy = e^x \int_{x}^{+\infty} y e^{-y} dy = (\text{integram per parts})=1+x
+\]
+
+
+\vskip 0.5 cm
+Seguim un procediment similar per calcular $E(X|Y)$:
+
+\[
+E(X|Y)= \int_{-\infty}^{+\infty} x f_{X|Y}(x|y) dx
+\]
+
+\[
+f_{X|Y}(x|y)= \frac{ f_{XY}(x, y) }{f_Y(y)}
+\]
+
+\[
+f_Y(y)= \int_{-\infty}^{+\infty} f_{XY}(x, y) dx = 
+\begin{cases} y \geq 0 & \int_0^y x e^{-y} dx = \frac{y^2}{2} e^{-y} \\ \\
+y < 0 & 0 \end{cases}
+\]
+
+\[
+f_{X|Y}(x|y)= \begin{cases} \frac{ x e^{-y} } { \frac{y^2}{2} e^{-y} } = \frac{2x}{y^2} 
+& \text{si   } 0 \leq x \leq y < +\infty \\
+0 & \text{en cas contrari}\end{cases}
+\]
+
+\[
+E(X|Y)= \int_{0}^{y} x \frac{2x}{y^2} dx = \frac{2}{3} y
+\]
+
+
+\vskip 0.5 cm
+Podem calcular tamb\'e les rectes de regressi\'o:
+
+\[
+Y^{**}=aX+b \qquad \text{amb } a=\frac{\mathrm{Cov}(X, Y)}{\mathrm{Var}(X)} \qquad \text{i} \qquad b=E(Y)-a E(X) 
+\]
+
+\[
+X^{**}=a'X+b' \qquad \text{amb } a'=\frac{\mathrm{Cov}(X, Y)}{\mathrm{Var}(Y)} \qquad \text{i} \qquad b'=E(X)-a' E(Y) 
+\]
+
+No obstant, com l'equaci\'o de la corba de regressi\'o $Y^*=E(Y|X)$ \'es l'equaci\'o d'una recta, sabem que 
+$Y^{**}=Y^*$. A m\'es, com l'equaci\'o de la corba de regressi\'o $X^*=E(X|Y)$ \'es tamb\'e l'equaci\'o d'una recta,
+tendrem que $X^{**}=X^*$.
+
+\vskip 0.5 cm
+\noindent
+\textbf{b)} Anomenam $Z$ el temps d'hospitalitzaci\'o. Aquest temps es calcula com la difer\`encia entre el temps que
+ tarda un pacient en \'esser donat d'alta i el temps en qu\`e es manifesten els primers simptomes. Per tant
+ $Z=Y-X$. Volem calcular $P(Z < 1)$.
+ 
+ \[
+ P(Z < 1) = P(Y-X < 1) = \iint\limits_R f_{XY}(x, y) dxdy
+ \]
+ 
+on $R$ \'es la regi\'o del pla formada pels punts $(x, y)$ que verifiquen la condici\'o $y-x < 1$:
+\[
+R=\{ (x, y) \; / \; y-x < 1 \}
+\]
+
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\thicklines
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\thinlines
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 30){\line(1, 1){70}}
+\put(10, 10){\line(1, 1){85}}
+\put(85, 100){$y-x=1$}
+\put(95, 90){$y=x$}
+\put(10, 20){\line(1, 0){10}}
+\put(10, 25){\line(1, 0){15}}
+\put(10, 30){\line(1, 0){20}}
+\put(10, 35){\line(1, 0){25}}
+\put(10, 40){\line(1, 0){30}}
+\put(10, 45){\line(1, 0){35}}
+\put(10, 50){\line(1, 0){40}}
+\put(10, 55){\line(1, 0){45}}
+\put(10, 60){\line(1, 0){50}}
+\put(10, 65){\line(1, 0){55}}
+\put(10, 70){\line(1, 0){60}}
+\put(10, 75){\line(1, 0){65}}
+\put(10, 80){\line(1, 0){70}}
+\put(10, 85){\line(1, 0){75}}
+\put(10, 90){\line(1, 0){80}}
+\put(10, 30){\line(0, -1){45}}
+\put(15, 35){\line(0, -1){50}}
+\put(20, 40){\line(0, -1){55}}
+\put(25, 45){\line(0, -1){60}}
+\put(30, 50){\line(0, -1){65}}
+\put(35, 55){\line(0, -1){70}}
+\put(40, 60){\line(0, -1){75}}
+\put(45, 65){\line(0, -1){80}}
+\put(50, 70){\line(0, -1){85}}
+\put(55, 75){\line(0, -1){90}}
+\put(60, 80){\line(0, -1){95}}
+\put(65, 85){\line(0, -1){100}}
+\put(70, 90){\line(0, -1){105}}
+\put(75, 95){\line(0, -1){110}}
+\multiput(90, 50)(0, 5){4}{\line(1, 0){15}}
+\put(110, 55){suport de $f_{XY}$}
+\multiput(90, 30)(5, 0){4}{\line(0, 1){10}}
+\put(110, 30){$R$}
+\put(50, -30){(a)}
+\end{picture}
+\hspace{4cm}
+\begin{picture}(100, 100)
+\thicklines
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\thinlines
+\put(95, 0){$z$}
+\put(-5, 95){$y$}
+\put(-10, 50){\line(1, 0){105}}
+\put(-5, 55){$2$}
+\multiput(-5, 50)(5, 0){20}{\line(0, -1){65}}
+\multiput(25, 10)(0, 5){18}{\line(0, 1){3}}
+\put(24, 0){$\frac{5}{7}$}
+\linethickness{0.5mm}
+\put(25, -15){\line(0, 1){65}}
+\thinlines
+\put(65, 35){$y < 2$}
+\put(35, 63){$A=\{ y < 2 \cap z=\frac{5}{7} \}$}
+\put(35, 60){\vector(-1, -2){10}}
+\put(50, -30){(b)}
+\end{picture}
+\end{center}
+\vskip 0.4 cm
+\caption{}
+\end{figure}
+
+
+
+La integral anterior prendr\`a un valor diferent de zero nom\'es en la regi\'o d'intersecci\'o de $R$ amb el
+suport de la funci\'o (veure figura 1a), de manera que tendrem:
+
+\[
+P(Z < 1) = \int_0^{+\infty} \int_x^{1+x} x e^{-y} dy dx = \cdots = 1-\frac{1}{e}
+\]
+
+
+\vskip 0.5 cm
+\noindent
+\textbf{c)} Ens demanen calcular 
+\[
+P(Y < 2 |_{Z=\frac{5}{7}})=\frac{ P( Y < 2 \cap Z=\frac{5}{7} )}{f_Z(\frac{5}{7})}=\frac{P(A)}{f_Z(\frac{5}{7})}
+\]
+
+on $A$ \'es el conjunt de punts $(z, y)$ que verifiquen les condicions $y < 2$ i $z=\frac{5}{7}$ (veure figura 1b).
+De manera que: 
+\[
+P(A)=\int_{-\infty}^2 f_{ZY}(\frac{5}{7}, y) dy
+\]
+
+Observam com per calcular els valors anteriors necessitam con\`eixer $f_Z$ i $f_{ZY}$. Tenim dues maneres de fer-ho:
+c\`alcul directe o utilitzant transformacions. Ho farem de les dues maneres:
+
+\vskip 0.5 cm
+\noindent
+\textbf{C\`alcul directe de $f_Z$ i $f_{ZY}$}
+
+Com $Y$ i $Z$ s\'on v.a. cont\'\i nues hem de calcular en primer lloc les funcions de distribuci\'o. A partir d'aquestes
+podrem obtenir, per derivaci\'o, les funcions de densitat.
+
+\[
+F_Z(z)=P(Z \leq z) = P(Y-X \leq z)=P(R_z)=\iint\limits_{R_z} f_{XY}(x, y) dx dy
+\]
+
+on $R_z$ \'es la regi\'o del pla formada pels punts $(x, y)$ que verifiquen la condici\'o $y-x \leq z$. Aquesta regi\'o
+varia per a cada valor de $z$ i t\'e una forma similar a la mostrada en la figura 1a. La intersecci\'o entre $R_z$ 
+i el suport de la funci\'o $f_{XY}$ ser\`a nul.la per a valors de $z < 0$. Per tant:
+
+\[
+F_Z(z)=\begin{cases} \int_0^{+\infty} \int_x^{z+x} x e^{-y} dy dx = \cdots = 1-e^{-z} & \text{si } z \geq 0 \\
+0 & \text{si } z < 0 \end{cases}
+\]
+
+Derivant aquesta funci\'o obtenim la funci\'o de densitat de $Z$:
+
+\[
+f_Z(z)=\frac{d F_Z(z)}{dz}=\begin{cases} e^{-z} & \text{si } z \geq 0 \\
+0 & \text{si } z < 0 \end{cases}
+\]
+
+\vskip 0.3 cm
+Per obtenir $f_{ZY}$ seguim un procediment similar a l'anterior:
+
+\[
+F_{ZY}(z, y)=P(Z \leq z, Y \leq y)=P(Y-X \leq z, Y \leq y)=P(R_{zy})=\iint\limits_{R_{zy}} f_{XY}(x, y) dx dy
+\]
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\thicklines
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\thinlines
+\put(95, 0){$x'$}
+\put(-5, 95){$y'$}
+\put(10, 30){\line(1, 1){70}}
+\put(10, 10){\line(1, 1){85}}
+\put(85, 100){$y'-x'=z$}
+\put(95, 90){$y'=x'$}
+\put(0, 25){$z$}
+\put(10, 20){\line(1, 0){10}}
+\put(10, 25){\line(1, 0){15}}
+\put(10, 30){\line(1, 0){20}}
+\put(10, 35){\line(1, 0){25}}
+\put(10, 40){\line(1, 0){30}}
+\put(10, 45){\line(1, 0){35}}
+\put(10, 50){\line(1, 0){40}}
+\put(10, 55){\line(1, 0){45}}
+\put(10, 60){\line(1, 0){50}}
+\put(10, 65){\line(1, 0){55}}
+\put(10, 70){\line(1, 0){60}}
+\put(10, 75){\line(1, 0){65}}
+\put(10, 80){\line(1, 0){70}}
+\put(10, 85){\line(1, 0){75}}
+\put(10, 90){\line(1, 0){80}}
+\put(10, 30){\line(0, -1){45}}
+\put(15, 35){\line(0, -1){50}}
+\put(20, 40){\line(0, -1){55}}
+\put(25, 45){\line(0, -1){60}}
+\put(30, 50){\line(0, -1){65}}
+\put(35, 55){\line(0, -1){70}}
+\put(40, 60){\line(0, -1){75}}
+\put(45, 65){\line(0, -1){80}}
+\put(50, 70){\line(0, -1){85}}
+\put(55, 75){\line(0, -1){90}}
+\put(60, 80){\line(0, -1){95}}
+\put(65, 85){\line(0, -1){100}}
+\put(70, 90){\line(0, -1){105}}
+\put(75, 95){\line(0, -1){110}}
+\thicklines
+\put(0, 50){\line(1, 0){100}}
+\thinlines
+\put(5, 50){\line(1, -1){65}}
+\put(10, 50){\line(1, -1){65}}
+\put(15, 50){\line(1, -1){65}}
+\put(20, 50){\line(1, -1){60}}
+\put(25, 50){\line(1, -1){55}}
+\put(30, 50){\line(1, -1){50}}
+\put(35, 50){\line(1, -1){45}}
+\put(40, 50){\line(1, -1){40}}
+\put(45, 50){\line(1, -1){35}}
+\put(50, 50){\line(1, -1){30}}
+\put(55, 50){\line(1, -1){25}}
+\put(60, 50){\line(1, -1){20}}
+\put(65, 50){\line(1, -1){15}}
+\put(70, 50){\line(1, -1){10}}
+\put(5, 45){\line(1, -1){60}}
+\put(5, 40){\line(1, -1){55}}
+\put(5, 35){\line(1, -1){50}}
+\put(5, 30){\line(1, -1){45}}
+\put(5, 25){\line(1, -1){40}}
+\put(5, 20){\line(1, -1){35}}
+\put(5, 15){\line(1, -1){30}}
+\put(5, 10){\line(1, -1){25}}
+\put(5, 5){\line(1, -1){20}}
+\put(5, 0){\line(1, -1){15}}
+\put(100, 55){$y'=y$}
+\put(-10, 45){$y$}
+\multiput(140, 50)(0, 5){4}{\line(1, 0){15}}
+\put(160, 55){suport de $f_{XY}$}
+\multiput(140, 30)(5, 0){4}{\line(0, 1){10}}
+\put(160, 30){$y'-x'\leq z$}
+\put(140, 15){\line(1, -1){20}}
+\put(145, 15){\line(1, -1){15}}
+\put(150, 15){\line(1, -1){10}}
+\put(140, 10){\line(1, -1){15}}
+\put(140, 5){\line(1, -1){10}}
+\put(162, 5){$y'\leq y$}
+\put(15, 30){$\mathbf{R_{zy}}$}
+\end{picture}
+\end{center}
+\caption{}
+\end{figure}
+
+
+on $R_{zy}$ \'es la regi\'o del pla formada pels punts $(x', y')$ que verifiquen les condicions  $y' \leq y$ i 
+$y'-x' \leq z$. Aquesta regi\'o varia per a cada valor $y$ i $z$ (veure figura 2).
+En particular, La intersecci\'o entre $R_{zy}$ i el suport de la funci\'o $f_{XY}$ ser\`a nul.la quan
+$y < 0$ o b\'e $z < 0$. Per tant:
+
+\[
+F_{ZY}(z, y)=\begin{cases} 
+0 & \text{si } y < 0 \; \text{o} \; z < 0 \\ \\
+\int_0^{y-z} \int_x^{x+z} x e^{-y} dy dx + \int_{y-z}^y \int_x^y x e^{-y} dy dx = \cdots = 
+1-e^{-z}-ze^{-y}(1+y-\frac{z}{2}) & \text{si } y \geq z \geq 0 \\ \\
+\int_0^y \int_x^y xe^{-y} dy dx = \cdots = 1 - e^{-y} (\frac{y^2}{2}+y+1) & \text{si } z > y \geq 0
+\end{cases}
+\]
+
+Derivant aquesta funci\'o obtenim $f_{YZ}$:
+
+\[
+f_{ZY}(z, y)=\frac{\partial^2 F_{ZY}(z, y)}{\partial z \partial y}=
+\begin{cases} 
+0 & \text{si } y < 0 \; \text{o} \; z < 0 \\ \\
+e^{-y} (y-z) & \text{si } y \geq z \geq 0 \\ \\
+0 & \text{si } z > y \geq 0
+\end{cases} = 
+\begin{cases} e^{-y} (y-z) & \text{si } y \geq z \geq 0 \\ \\ 0 & \text{en cas contrari} \end{cases}
+\]
+
+
+\newpage
+\noindent
+\textbf{C\`alcul de $f_Z$ i $f_{ZY}$ utilitzant transformacions de v.a.}
+\vskip 0.2 cm
+
+Feim el canvi de variables $({\cal U},{\cal V}) = (Y - X, Y)$. En notaci\'o matricial aquest canvi s'escriu
+com:
+
+\[
+\begin{pmatrix} {\cal U} \\ {\cal V} \end{pmatrix} = \begin{pmatrix} -1 & 1 \\ 0 & 1 \end{pmatrix} 
+\begin{pmatrix} X \\ Y \end{pmatrix}
+\]
+
+Amb aquest canvi tenim que $Z={\cal U}$ i per tant $f_{ZY}=f_{{\cal U}{\cal V}}$ i $f_Z=f_{\cal U}$.
+
+La funci\'o de densitat conjunta de ${\cal U}$ i ${\cal V}$ es pot calcular a partir de la funci\'o de densitat 
+conjunta de $X$ i $Y$  amb la f\`ormula:
+
+\[
+f_{{\cal U}{\cal V}}(u, v) =
+\frac{ f_{XY} ( A^{-1} \begin{pmatrix} u \\ v \end{pmatrix} } { | \mathrm{det}(A) |}
+\]
+
+on $A$ \'es la matriu associada a la transformaci\'o lineal. Tenim doncs:
+\[
+A= \begin{pmatrix} -1 & 1 \\ 0 & 1 \end{pmatrix} 
+\qquad 
+A^{-1}= \begin{pmatrix} -1 & 1 \\ 0 & 1 \end{pmatrix} 
+\qquad 
+\text{i}
+\quad 
+\mathrm{det}(A)=-1
+\]
+
+Per tant:
+
+\[
+f_{{\cal U}{\cal V}}(u, v) =\frac{ f_{XY} (v-u, v) }{|-1|}=f_{XY} (v-u, v) =
+\begin{cases} (v-u) e^{-v} & \text{si } 0 \leq v-u \leq v \\ \\ 0 & \text{en cas contrari} \end{cases}
+\]
+
+La condici\'o $0 \leq v-u \leq v$ \'es equivalent a $v \geq u \geq 0$, de manera que obtenim la mateixa 
+funci\'o de densitat conjunta que fent el c\`alcul directe.
+
+$f_{\cal U}$ es calcula com una llei marginal a partir de $f_{{\cal U}{\cal V}}$:
+\[
+f_{\cal U}(u)=\int_{-\infty}^{+\infty} f_{{\cal U}{\cal V}}(u, v)dv = 
+\begin{cases} \int_u^{+\infty} (v-u) e^{-v} dv = \cdots = e^{-u} & \text{si } u \geq 0 \\ \\
+0 & \text{en cas contrari} \end{cases}
+\]
+
+que \'es el mateix resultat obtingut amb el c\`alcul directe.
+
+
+
+
+\vskip 1.5 cm
+Ara ja podem resoldre l'apartat c):
+
+\[
+P(Y < 2 |_{Z=\frac{5}{7}})=\frac{ \int_{-\infty}^2 f_{ZY}(\frac{5}{7}, y) dy } {f_Z(\frac{5}{7})}=
+\frac{ \int_{5/7}^2 \; e^{-y} (y-\frac{5}{7}) dy}{e^{-5/7}}=
+\frac{ e^{-5/7} - \frac{16}{7} e^{-2} }{e^{-5/7}} = 1-\frac{16}{7} e^{-9/7}
+\]
+
+
+\newpage
+\noindent
+\textbf{Problema 28.}  
+Siguin $X_{1}$, $X_{2}$ variables aleat\`ories independents
+tals que
+
+$$P(X_{i}=1)=p=1-P(X_{i}=2) \mbox{ si } i=1,2$$ Sigui $Y_{k}$ la
+v.a. que designa el nombre de variables $X_{i}$ iguals a $k$ amb
+$k=1,2$. Trobau la distribuci\'o conjunta de $(Y_{1},Y_{2})$ i el
+seu vector de mitjanes i la seva matriu de covari\`ancies.
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Per l'enunciat del problema sabem que:
+\[
+\begin{array}{l}
+\Omega_{X_1}=\{ 1, 2 \} \qquad P(X_1=1)=p \qquad P(X_1=2)=1-p
+\\
+\\
+\Omega_{X_2}=\{ 1, 2 \} \qquad P(X_2=1)=p \qquad P(X_2=2)=1-p
+\end{array}
+\]
+
+\noindent
+Com que $X_1$ i $X_2$ s\'on independents, llavors $P(X_1=i, X_2=j)=P(X_1=i) \cdot P(X_2=j)$.
+
+\vskip 0.2 cm
+\noindent
+A m\'es, per la definici\'o de $Y_1$ i $Y_2$ tenim que:
+\[
+\begin{array}{l}
+\Omega_{Y_1}=\{0, 1, 2\} \qquad \Omega_{Y_2}=\{0, 1, 2\} \\ \\
+P(Y_1=i, Y_2=j) =0 \qquad \text{si } i \notin \Omega_{Y_1} \quad \text{ \'o } \quad j \notin \Omega_{Y_2} \\ \\
+P(Y_1=0, Y_2=0) =P(\text{cap variable $X_1$, $X_2$ igual a 1 o a 2})=0 \quad \text{(impossible)} \\ \\
+P(Y_1=0, Y_2=1) =P(\text{cap variable $X_1$, $X_2$ igual a 1, una \'unica igual a 2})=0 \quad \text{(impossible)} \\ \\
+P(Y_1=0, Y_2=2) =P(X_1=2, X_2=2)=P(X_1=2) \cdot P(X_2=2)=(1-p)^2 \\ \\
+P(Y_1=1, Y_2=0) =P(\text{cap variable $X_1$, $X_2$ igual a 2, una \'unica igual a 1})=0 \quad \text{(impossible)} \\ \\
+P(Y_1=1, Y_2=1) =P(X_1=1, X_2=2)+P(X_1=2, X_2=1)= \\
+\qquad \qquad \qquad  \qquad  =P(X_1=1) \cdot P(X_2=2) + P(X_1=2) \cdot P(X_2=1)= 2p(1-p) \\ \\
+P(Y_1=1, Y_2=2) =P(\text{una \'unica variable $X_1$, $X_2$ igual a 1, dues iguals a 2})=0 \quad \text{(impossible)} \\ \\
+P(Y_1=2, Y_2=0) =P(X_1=1, X_2=1)=P(X_1=1) \cdot P(X_2=1)=p^2 \\ \\
+P(Y_1=2, Y_2=1) =P(\text{una \'unica variable $X_1$, $X_2$ igual a 2, dues iguals a 1})=0 \quad \text{(impossible)} \\ \\
+P(Y_1=2, Y_2=2) =P(\text{dues variables $X_1$, $X_2$ iguals a 1 i dues iguals a 2})=0 \quad \text{(impossible)} 
+\end{array}
+\]
+
+\noindent
+Aquests resultats es poden resumir en la seg\"uent taula, on es mostren tamb\'e les funcions de
+probabilitat marginals.
+
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{c|c|c|c||c}
+$Y_2 \backslash Y_1$ & $0$ & $1$ & $2$ & $P(Y_2=j)$ \\ \hline
+$0$ & $0$ & $0$ & $p^2$ & $p^2$ \\ \hline
+$1$ & $0$ & $2p(1-p)$ & $0$ & $2p(1-p)$ \\ \hline
+$2$ & $(1-p)^2$ & $0$ & $0$ & $(1-p)^2$ \\ \hline \hline
+$P(Y_1=i)$ & $(1-p)^2$ & $2p(1-p)$ & $p^2$ 
+\end{tabular} 
+\end{center}
+
+\vskip 0.2 cm
+\noindent
+Es pot comprovar que la suma de tots els valors de la probabilitat conjunta, aix\'i com
+la suma de les probabilitats marginals, \'es igual a $1$.
+
+\vskip 0.3 cm
+\noindent
+El vector de mitjanes $(E(Y_1), E(Y_2))$ \'es el seg\"uent:
+\[
+\begin{array}{l}
+E(Y_1)=0 \cdot P(Y_1=0) + 1 \cdot P(Y_1=1) + 2 \cdot P(Y_1=2)=2p(1-p)+2p^2=2p \\ \\
+E(Y_2)=0 \cdot P(Y_2=0) + 1 \cdot P(Y_2=1) + 2 \cdot P(Y_2=2)=2p(1-p)+2(1-p)^2=2-2p=2(1-p) \\ \\
+\end{array}
+\]
+
+\vskip 0.3 cm
+\noindent
+La matriu de covari\`ancies \'es: $K = \begin{pmatrix} \sigma_{Y_1}^2 & \sigma_{Y_1 Y_2} \\ \sigma_{Y_1 Y_2} & \sigma_{Y_2}^2 \end{pmatrix}$
+
+\[
+\begin{array}{l}
+E(Y_1^2)=0^2 \cdot P(Y_1=0) + 1^2 \cdot P(Y_1=1) + 2^2 \cdot P(Y_1=2)=2p(1-p)+4p^2=2p(1+p) \\ \\
+\sigma_{Y_1}^2=E(Y_1^2)-E(Y_1)^2= 2p+2p^2 - (2p)^2=2p(1-p) \\ \\
+E(Y_2^2)=0^2 \cdot P(Y_2=0) + 1^2 \cdot P(Y_2=1) + 2^2 \cdot P(Y_2=2)=2p(1-p)+4(1-p)^2=2(1-p)(2-p) \\ \\
+\sigma_{Y_2}^2=E(Y_2^2)-E(Y_2)^2=  2(1-p)(2-p) - (2-2p)^2 = 2(1-p)p\\ \\
+E(Y_1Y_2)=0 \cdot 2 \cdot P(Y_1=0, Y_2=2) +  1 \cdot 1 \cdot P(Y_1=1, Y_2=1) + 2 \cdot 0 \cdot P(Y_1=2, Y_2=0)=2p(1-p) \\ \\
+\sigma_{Y_1 Y_2}=E(Y_1Y_2) - E(Y_1) \cdot E(Y_2) = 2p(1-p) - 2p \cdot 2(1-p) = -2p(1-p)
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+De manera que la matriu de covari\`ancies queda finalment:
+\[
+K=\begin{pmatrix} 2p(1-p) & -2p(1-p) \\ \\ -2p(1-p) & 2p(1-p) \end{pmatrix} = 2p(1-p) \begin{pmatrix} 1 & -1 \\ \\ -1 & 1 \end{pmatrix}
+\]
+
+
+
+\vskip 0.2cm
+\noindent
+Si calculam el coeficient de correlaci\'o:
+\[
+\rho_{Y_1 Y_2}= \frac{ \sigma_{Y_1 Y_2} }{ \sigma_{Y_1} \sigma_{Y_2} }=\frac{-2p(1-p)}{\sqrt{2p(1-p)} \sqrt{2p(1-p)}}=-1
+\]
+
+\noindent
+Aquest valor de $\rho_{Y_1 Y_2}$ indica que existeix una relaci\'o lineal entre les variables $Y_1$ i $Y_2$.
+
+
+
+
+\newpage
+\noindent
+\textbf{Problema 29.}  
+Sigui $(X,Y)$ un vector aleatori que t\'e distribuci\'o uniforme
+a $(0,1)\times(0,1)$. Calculau la distribuci\'o conjunta i les
+marginals de $(U,V)$ on $U=\max(X,Y)$ i $V=\min(X,Y)$.
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Calcularem primer $F_{UV}(u, v)$ i a continuaci\'o derivarem
+per a trobar les funcions de densitat conjunta i marginals.
+
+\[
+F_{UV}(u, v)=P(U \leq u, V \leq v)=P(\max(X, Y) \leq u, \min(X, Y) \leq v)=P(A_{uv})
+\]
+\noindent
+on $A_{uv}$ \'es el conjunt de punts $(x, y)$ tals que $\max(x, y) \leq u$ i $\min(X, Y) \leq v$.
+
+\noindent
+Podem escriure $A$ com la intersecci\'o de dos conjunts: $A_{uv}=A_{u}^{\max} \cap A_{v}^{\min}$,
+on 
+\[
+A_{u}^{\max}=\{ (x, y) \, / \max(x, y) \leq u \} \qquad \text{i} \qquad
+A_{v}^{\min}=\{ (x, y) \, / \min(x, y) \leq v \}
+\]
+\noindent
+En la figura 1 es mostra la forma que tenen aquests conjunts. 
+
+\vskip 0.2 cm
+\noindent
+D'altra banda,
+\[
+f_{XY}(x, y)=\begin{cases} K & \text{si } 0 \leq x \leq 1 \quad \text{i} \quad 0 \leq y \leq 1 \\ 
+0 & \text{en cas contrari} \end{cases}
+\]
+\noindent
+El suport d'aquesta funci\'o es mostra en la figura 1. El valor de $K$ es troba aplicant la propietat
+$\iint_{\R^2} f_{XY}(x, y) \, dxdy=\iint_{\Omega_{XY}} f_{XY}(x, y) \, dxdy= 1$. Fent la integral comprovam que $K=1$.
+
+\vskip 0.2 cm
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(10, 60){\line(1, 0){50}}
+\put(60, 10){\line(0, 1){50}}
+\put(60, 0){\textbf{\textit{1}}}
+\put(0, 60){\textbf{\textit{1}}}
+\put(50, 50){\textbf{\textit{S}}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(-20, 72){\line(1, 0){100}}
+\put(72, -20){\line(0, 1){100}}
+\put(72, 0){$u$}
+\put(-10, 77){$u$}
+\put(35, 35){$A_u^{\mathrm{max}}$}
+\put(77, 77){$(u, u)$}
+\put(72, 72){\circle*{3}}
+\put(-5, 72){\line(-1, -1){10}}
+\put(5, 72){\line(-1, -1){20}}
+\put(15, 72){\line(-1, -1){30}}
+\put(25, 72){\line(-1, -1){40}}
+\put(35, 72){\line(-1, -1){50}}
+\put(45, 72){\line(-1, -1){60}}
+\put(55, 72){\line(-1, -1){70}}
+\put(65, 72){\line(-1, -1){80}}
+\put(72, 70){\line(-1, -1){90}}
+\put(72, 60){\line(-1, -1){80}}
+\put(72, 50){\line(-1, -1){70}}
+\put(72, 40){\line(-1, -1){60}}
+\put(72, 30){\line(-1, -1){50}}
+\put(72, 20){\line(-1, -1){40}}
+\put(72, 10){\line(-1, -1){30}}
+\put(72, 0){\line(-1, -1){20}}
+\put(72, -10){\line(-1, -1){10}}
+\end{picture}
+$\qquad$ $\qquad$
+\begin{picture}(100, 100)
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(-20, 42){\line(1, 0){120}}
+\put(42, -20){\line(0, 1){120}}
+\put(42, 0){$v$}
+\put(-10, 47){$v$}
+\put(20, 20){$A_v^{\mathrm{min}}$}
+\put(47, 47){$(v, v)$}
+\put(42, 42){\circle*{3}}
+\multiput(42, 95)(0, -10){6}{\line(-1, -1){50}}
+\put(37, 100){\line(-1, -1){45}}
+\put(27, 100){\line(-1, -1){35}}
+\put(17, 100){\line(-1, -1){25}}
+\put(52, 42){\line(-1, -1){60}}
+\put(62, 42){\line(-1, -1){60}}
+\put(72, 42){\line(-1, -1){60}}
+\put(82, 42){\line(-1, -1){60}}
+\put(92, 42){\line(-1, -1){60}}
+\put(100, 40){\line(-1, -1){58}}
+\put(100, 30){\line(-1, -1){48}}
+\put(100, 20){\line(-1, -1){38}}
+\end{picture}
+\end{center}
+\caption{Esquerra: suport de $f_{XY}(x, y)$. 
+Centre: conjunt $A_{u}^{\mathrm{max}}$ per a $u > 0$. 
+Dreta: conjunt $A_{v}^{\mathrm{min}}$ per a $v > 0$.}
+\end{figure}
+
+
+\vskip 0.2 cm
+\noindent
+Ara ja podem calcular $F_{UV}(u, v)$:
+\[
+F_{UV}(u, v)=\iint_{A_{u}^{\max} \cap A_{v}^{\min} \cap \Omega_{XY}} f_{XY}(x, y) \, dxdy= 
+\iint_{A_{u}^{\max} \cap A_{v}^{\min} \cap \Omega_{XY}} 1 \, dxdy=\mathrm{area}(A_{u}^{\max} \cap A_{v}^{\min} \cap \Omega_{XY})
+\]
+
+\vskip 0.2 cm
+\noindent
+L'\`area de la intersecci\'o d'aquests conjunts dependr\`a dels valors de $u$ i$v$. Tenint en compte 
+totes les possibilitats arribarem al seg\"uent resultat:
+\[
+F_{UV}(u, v)=\begin{cases}
+\text{si } u < 0 \, \text{ \'o } \, v < 0 & 0 \\
+\text{si } 0 \leq u \leq 1  \, \text{ i } \, 0 \leq v < u & 2uv-v^2 \\
+\text{si } 0 \leq u \leq 1  \, \text{ i } \, v \geq u & u^2 \\
+\text{si } u > 1 \, \text{ i } \,   v \leq 1  & 2v-v^2 \\
+\text{si } u > 1 \, \text{ i } \, v > 1 & 1 
+\end{cases}
+\]
+ 
+\vskip 0.2 cm
+\noindent
+Dividint aquesta funci\'o en cada interval obtenim la funci\'o de densitat conjunta:
+\[
+f_{UV}(u, v)=\frac{\partial^2 F_{UV}(u, v)}{\partial u \, \partial v}=\begin{cases}
+\text{si } u < 0 \, \text{ \'o } \, v < 0 & \frac{\partial^2 0}{\partial u \, \partial v}=0 \\
+\text{si } 0 \leq u \leq 1  \, \text{ i } \, 0 \leq v < u & \frac{\partial^2 2uv-v^2}{\partial u \, \partial v}=2  \\
+\text{si } 0 \leq u \leq 1  \, \text{ i } \, v \geq u & \frac{\partial^2 u^2}{\partial u \, \partial v} =0 \\
+\text{si } u > 1 \, \text{ i } \,   v \leq 1  & \frac{\partial^2 2v-v^2}{\partial u \, \partial v}=0 \\
+\text{si } u > 1 \, \text{ i } \, v > 1 &  \frac{\partial^2 1}{\partial u \, \partial v} = 0
+\end{cases}
+= \begin{cases} 2 & \text{si } 0 \leq v < u \leq 1 \\ 0 & \text{en cas contrari} \end{cases}
+\]
+
+Les funcions de densitat marginals s'obtenen integrant aquesta funci\'o:
+\[
+f_U(u)=\int_{-\infty}^{+\infty} f_{UV}(u, v) \,dv = \begin{cases} \text{si } 0 \leq u \leq 1 & 2u \\ \text{altrament} & 0 \end{cases}
+\qquad 
+f_V(v)=\int_{-\infty}^{+\infty} f_{UV}(u, v) \,du = \begin{cases} \text{si } 0 \leq v \leq 1 & 2-2v \\ \text{altrament} & 0 \end{cases}
+\]
+
+\newpage
+\noindent
+\textbf{Problema 30.} 
+Sigui $(X,Y)$ un vector aleatori distribu\"{\i}t uniformement al
+cercle unitat. Siguin les variables aleat\`ories $U=\sqrt{X^2+Y^2}$
+i $V=\arctan{\frac{Y}{X}}$.
+\begin{enumerate}[a)]
+\item Demostrau que $U$ i $V$ s\'on v.a. independents.
+\item Siguin $R$ i $\Theta$ dues variables aleat\`ories independents
+ amb distribuci\'o uniforme a l'interval
+unitat i a l'interval $(0,2\pi)$ respectivament. El vector aleatori
+$(R,\Theta)$ t\'e la mateixa distribuci\'o que el $(U,V)$? 
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} 
+
+\vskip 0.2 cm
+\noindent
+\textbf{a)} Per demostrar que $U$ i $V$ s\'on independents hem de provar que
+$f_{UV}(u, v)=f_U(u) \cdot f_V(v)$. Primer calcularem $f_{UV}(u, v)$ i a partir
+d'aqu\'i trobarem les densitats marginals.
+
+Calcularem $f_{UV}(u, v)$ utilitzant la f\`ormula:
+\[
+f_{UV}(u, v)=f_{XY}(h_1(u, v), h_2(u, v)) \cdot |J_{h_1h_2}(u, v)| \qquad \text{on }\quad
+J_{h_1h_2}(u, v)=\mathrm{det} \begin{pmatrix} 
+\frac{\partial h_1(u, v)}{\partial u} & \frac{\partial h_1(u, v)}{\partial v} \\
+\frac{\partial h_2(u, v)}{\partial u} & \frac{\partial h_2(u, v)}{\partial v} 
+\end{pmatrix} 
+\]
+
+\noindent
+on les funcions $h_1(u, v)$ i $h_2(u, v)$ s\'on les inverses de $u=g_1(x, y)=\sqrt{x^2+y^2}$ i 
+$v=g_2(x, y)=\mathrm{arctan}\frac{y}{x}$. Tenim que $x=h_1(u, v)=u \cdot \cos v$ i
+$y=h_2(u, v)=u \cdot \sin v$. Per tant:
+
+\[
+J_{h_1h_2}(u, v)=\mathrm{det} \begin{pmatrix} \cos v & -u \cdot \sin v \\ \sin v & u \cdot \cos v \end{pmatrix}=
+u \cdot \cos^2 v + u \cdot \sin^2 v = u
+\]
+
+\noindent
+La funci\'o de densitat de $(X, Y)$ \'es de la forma
+\[
+f_{XY}(x, y)=\begin{cases} K & \text{si } (x, y) \in S \\ 0 & \text{en cas contrari} \end{cases}
+\]
+\noindent
+El suport $S$ d'aquesta funci\'o es mostra en la figura seg\"uent:
+
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(120, 120)(-60, -60)
+\put(-40, 0){\vector(1, 0){100}}
+\put(0, -40){\vector(0, 1){100}}
+\put(60, -5){$x$}
+\put(-5, 60){$y$}
+\put(0, 0){\circle{60}}
+\put(0, 0){\line(-1, 2){13.5}}
+\put(-8,20){1}
+\put(-21, -18){S}
+\end{picture}
+\end{center}
+\vskip -1.2 cm
+\caption{$S$: suport de $f_{XY}(x, y)$.}
+\end{figure}
+ 
+\vskip 0.2 cm
+\noindent
+El valor de $K$ es troba aplicant la propietat
+$\iint_{\R^2} f_{XY}(x, y) \, dxdy=\iint_{S} f_{XY}(x, y) \, dxdy= 1$. 
+Com que $\iint_{S} f_{XY}(x, y) \, dxdy = \iint_{S} K \, dxdy=K \cdot \mathrm{area}(S)$ i $\mathrm{area}(S)=\pi \cdot 1^2$,
+llavors $K=\frac{1}{\pi}$.
+
+\vskip 0.4 cm
+\noindent
+De manera que:
+\[
+f_{UV}(u, v)=u \cdot f_{XY}(u \cdot \cos v, u \cdot \sin v)=\begin{cases}
+\frac{u}{\pi} & \text{si } (u \cdot \cos v, u \cdot \sin v) \in S \\ 0 & \text{en cas contrari} \end{cases}=
+\begin{cases}
+\frac{u}{\pi} & \text{si } 0 \leq u \leq 1 \quad 0 \leq v \leq 2 \pi \\ 0 & \text{en cas contrari} \end{cases}
+\]
+
+\noindent
+Les funcions de densitat marginals s\'on:
+\[
+f_U(u)=\int_{-\infty}^{+\infty} f_{UV}(u, v) \,dv = \begin{cases} \text{si } 0 \leq u \leq 1 & 2u \\ \text{altrament} & 0 \end{cases}
+\qquad 
+f_V(v)=\int_{-\infty}^{+\infty} f_{UV}(u, v) \,du = \begin{cases} \text{si } 0 \leq v \leq 2\pi  & \frac{1}{2\pi} 
+\\ \text{altrament} & 0 \end{cases}
+\]
+
+\noindent
+Es comprova que $f_U(u) \cdot f_V(v) = f_{UV}(u, v)$, per tant hem demostrat que $U$ i $V$ s\'on v.a. independents.
+
+\vskip 0.2 cm
+\noindent
+\textbf{b)} Si $R \sim {\cal U}(0, 1)$ i $\Theta \sim {\cal U}(0, 2\pi)$, llavors:
+$
+f_R(r)= \begin{cases} \text{si } 0 \leq r \leq 1 & 1 \\ \text{altrament} & 0 \end{cases}
+$ i
+$
+f_\Theta(\theta)=\begin{cases} \text{si } 0 \leq \theta \leq 2\pi  & \frac{1}{2\pi} 
+\\ \text{altrament} & 0 \end{cases}
+$
+
+\noindent
+Com que $R$ i $\Theta$ s\'on v.a. independents, la seva funci\'o de densitat conjunta \'es:
+\[
+f_{R\Theta}(r, \theta)=f_R(r) \cdot f_\Theta(\theta) = \begin{cases}
+\text{si } 0 \leq r \leq 1 \quad 0 \leq \theta \leq 2\pi  & \frac{1}{2\pi} 
+\\ \text{altrament} & 0 \end{cases}
+\]
+
+\noindent
+Com que $f_{R\Theta}$ \'es diferent de $f_{UV}$ podem afirmar que $(R, \Theta)$ i $(U, V)$ tenen distribucions diferents.
+ 
+\newpage
+\noindent
+\textbf{Problema 31.}   Siguin $X$ i $Y$ dues v.a. exponencials independents. Trobau
+la funci\'o de densitat de $Z=|X-Y|$.
+
+\vskip 0.3 cm
+\noindent
+\textbf{Soluci\'o:} Calcularem primer $F_Z(z)$ i a continuaci\'o derivarem per a trobar $f_Z(z)$.
+
+\[
+F_Z(z)=P(Z \leq z)=P(|X-Y| \leq z)=\begin{cases} P(-z \leq X-Y \leq z) & \text{si } z \leq 0 \\ 0 & \text{en cas contrari} \end{cases}
+\]
+\noindent
+Per al cas $z \geq 0$ denotam $R$ el conjunt de punts $(x, y)$ tals que $-z \leq x-y \leq z$ (figura 1), de manera que
+\[
+P(-z \leq X-Y \leq z)=\iint_R f_{XY}(x, y) \, dxdy
+\]
+
+\setcounter{figure}{0}
+\begin{figure}[htbp]
+\begin{center}
+\begin{picture}(100, 100)
+\thicklines
+\put(10, 10){\vector(1, 0){90}}
+\put(10, 10){\vector(0, 1){90}}
+\thinlines
+\put(95, 0){$x$}
+\put(-5, 95){$y$}
+\put(0, 20){\line(1, 1){90}}
+\put(0, -20){\line(1, 1){90}}
+\put(0, 30){$z$}
+\put(30, 0){$z$}
+\put(85, 100){$x-y=-z$}
+\put(85, 60){$x-y=z$}
+\multiput(10, 15)(0, 5){15}{\line(1, 0){80}}
+\multiput(5, -15)(5, 5){17}{\line(0, 1){40}}
+\multiput(150, 50)(0, 5){4}{\line(1, 0){15}}
+\put(170, 55){suport de $f_{XY}$}
+\multiput(150, 30)(5, 0){4}{\line(0, 1){10}}
+\put(170, 30){$R$}
+\end{picture}
+\end{center}
+\caption{}
+\end{figure}
+
+\vskip 0.2 cm
+\noindent
+D'altra banda, $X$ i $Y$ s\'on v.a. exponencials independents. Si denotam els seus par\`ametres com $\lambda$ i $\alpha$,
+respectivament, llavors:
+\[
+f_X(x)=\begin{cases} \lambda e^{-\lambda x} & \text{si } x>0  \\
+0 & \text{si } x \leq 0 \end{cases} 
+\qquad
+f_Y(y)=\begin{cases} \alpha e^{- \alpha y} & \text{si } y>0  \\
+0 & \text{si } y \leq 0 \end{cases} 
+\]
+\[
+f_{XY}(x, y)=f_X(x) \cdot f_Y(y)=
+\begin{cases} \lambda \alpha e^{-\lambda x - \alpha y} & \text{si } x>0 \text{ i } y > 0 \\
+0 & \text{en cas contrari} \end{cases}
+\]
+
+\noindent
+El suport de $f_{XY}(x, y)$ s\'on els valors de $x$ i $y$ positius, per tant el c\`alcul de $P(-z \leq X-Y \leq z)$ queda:
+\[
+\begin{array}{ll}
+P(-z \leq X-Y \leq z) & =\displaystyle \iint_{R \cap \Omega_{XY}} \lambda \alpha e^{-\lambda x - \alpha y} \, dxdy=\\ \\
+ & = \displaystyle  \int_0^z \left( \int_0^{x+z} \alpha e^{-\lambda x - \alpha y} \, dy \right) \, dx +
+\int_z^{+\infty} \left( \int_{x-z}^{x+z} \alpha e^{-\lambda x - \alpha y} \, dy \right) \, dx = \\ \\
+ & = \cdots = 1-e^{-\lambda z} + \frac{\lambda}{\lambda + \alpha} (e^{-\lambda z} - e^{-\alpha z})
+\end{array}
+\]
+
+\vskip 0.2 cm
+\noindent
+En conclusi\'o:
+\[
+F_Z(z)=\begin{cases} 
+1-e^{-\lambda z} + \frac{\lambda}{\lambda + \alpha} (e^{-\lambda z} - e^{-\alpha z}) & \text{si } z \geq 0\\ \\
+0 & \text{en cas contrari} \end{cases}
+\]
+\vskip 0.2 cm
+\noindent
+I la funci\'o de densitat de $Z$ \'es per tant:
+\[
+f_Z(z)=\frac{d F_Z(z)}{dz}=\begin{cases} 
+\frac{d \quad}{dz} \left(  1-e^{-\lambda z} + \frac{\lambda}{\lambda + \alpha} (e^{-\lambda z} - e^{-\alpha z}) \right)
+= \frac{\lambda \alpha}{\lambda + \alpha} (e^{-\lambda z} + e^{-\alpha z})
+ & \text{si } z \geq 0\\ \\
+\frac{d 0}{dz}=0 & \text{en cas contrari} \end{cases}
+\]
+
+
+
+
+
+
+\end{document}
+

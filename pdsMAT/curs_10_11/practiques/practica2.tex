@@ -1,0 +1,230 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\title{Pr\`actiques de Processament Digital del
+Senyal\newline\newline
+Pr\`actica 2. \\
+Exercicis b\`asics de processament d'imatges }
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercici 1}.\label{ex1}
+\newline
+
+Zoom: augment d'escala.
+\begin{enumerate}[a)]
+\item \label{1a} Obriu i visualitzau la imatge `nina.png'
+(utilitzau les funcions {\it imread} i {\it imshow} de Matlab).
+
+\item \label{1b} Obriu i visualitzau la imatge `ull.png' qu\`e
+\'es una subimatge de `nina.png'. En aquests exercici estudiarem
+diferents m\`etodes per ampliar aquesta subimatge.
+
+\item \label{1c} {\bf Zoom per duplicaci\'o de p\'\i xels}.
+Constru\"iu una matriu de tamany doble a la imatge `ull.png' i
+formada en afegir entre cada dues files (columnes) de la imatge
+original una fila (columna) de zeros (imatge inter-zeros).
+Utilitzau la funci\'o {\it mascara2D} per aplicar la seg\"uent
+m\`ascara a la imatge inter-zeros:
+$$
+\left( \begin{array}{ccc} 1 & 1 & 0\\1 & 1 & 0\\0 & 0 &
+0\end{array} \right)
+$$
+\noindent L'efecte d'aplicar aquesta m\`ascara \'es la
+duplicaci\'o del p\'\i xel $(i,j)$ de la imatge original en les
+posicions $(2i,2j)$, $(2i+1,2j)$, $(2i,2j+1)$ i $(2i+1,2j+1)$ de
+la imatge inter-zeros.
+\newline
+Repetiu el proc\'es v\`aries vegades fins a obtenir una imatge de
+tamany $208 \times 248$ (ampliaci\'o en un factor $8$ de la imatge
+original). Comentau els resultats.
+
+\item \label{1d} {\bf Zoom a partir de la reconstrucci\'o de
+Shannon de la imatge}. Al igual que haviem fet per als senyals 1D,
+\'es possible calcular la reconstrucci\'o de Shannon de la imatge
+discreta. Si en fer la reconstrucci\'o empram un per\'\i ode de
+mostreig major de l'original, aconseguirem canviar l'escala de la
+imatge (recordau l'exercici 1d de la Pr\`actica 1).\newline
+Utilitzau la funci\'o {\it fShannon2D} per reconstruir la imatge
+amb per\'\i odes de mostreig horitzontals i verticals iguals a
+$8$. Comentau els resultats.
+
+\item \label{1e} {\bf Zoom per zero-padding}. La t\`ecnica de {\it
+zero-padding} d\'ona uns resultats equivalents als de l'exercici
+anterior i \'es la utilitzada en la pr\`actica per fer un canvi
+d'escala basat en la Teoria de Shannon. Una manera d'aconseguir un
+nombre major de mostres de la imatge continua original consisteix
+en augmentar el suport de la seva transformada de Fourier discreta
+i a continuaci\'o calcular la transformada inversa. La manera
+d'augmentar el suport \'es afegir zeros a la part de l'espectre
+corresponent a les altes freq\"u\`encies (d'aqu\'\i $ $ el nom de
+zero-padding).
+\newline
+Calculau la transformada de Fourier de la imatge original ({\it
+fft2}). Constru\"\i u una matriu del tamany desitjat ($208 \times
+248$) formada per zeros i copiau els 4 cantons de la FFT original
+en els cantons corresponents d'aquesta matriu: el rectangle
+definit pels vertexos $(0,0)-(26,31)$ copiat en la posici\'o
+$(0,0)-(26,31)$, el rectangle $(0,32)-(26,62)$ copiat en $(0,
+218)-(26,248)$, etc.
+\newline
+Visualitzau, en escala logar\'\i
+tmica, el m\`odul dels valors d'aquesta matriu. Calculau
+l'antitransformada de Fourier ({\it ifft2}) de la matriu i
+visualitzau la imatge resultant. Comentau els resultats.
+
+\item \label{1f} {\bf Zoom per interpolaci\'o lineal}. Constru\"iu
+la imatge inter-zeros de la imatge original.  Utilitzau la
+funci\'o {\it mascara2D} per aplicar la seg\"uent m\`ascara a la
+imatge inter-zeros:
+$$
+\left(
+\begin{array}{ccc}
+\frac{1}{4} & \frac{1}{2} & \frac{1}{4}\\
+\frac{1}{2} & 1 & \frac{1}{2}\\
+\frac{1}{4} &  \frac{1}{2} & \frac{1}{4}
+\end{array}
+\right)
+$$
+\noindent L'efecte d'aplicar aquesta m\`ascara \'es la
+interpolaci\'o lineal del valor dels pixels diferents de zero en
+la imatge inter-zeros. Per exemple, el nou valor del pixel que es
+troba en la posici\'o $(i+1,j)$ ser\`a igual a la mitja dels
+valors dels pixels que es troben en les posicions $(i,j)$ i
+$(i+2,j)$.
+\newline
+Repetiu el process v\`aries vegades fins a obtenir una imatge de
+tamany $208 \times 248$. Comentau els resultats.
+\end{enumerate}
+
+\vskip 0.5 cm
+
+\noindent \textbf{Exercici 2}. \label{ex2}
+\newline
+
+Zoom invers: reducci\'o d'escala (sub-mostreig).
+\begin{enumerate}[a)]
+\item \label{2a} Obriu la imatge `camisa.png' i visualitzau-la.
+
+\item \label{2b} Calculau la transformada de Fourier discreta de
+la imatge i visualitzau el seu m\`odul en escala logar\'\i tmica.
+
+\item \label{2c} Sub-mostrejau la imatge prenent un pixel de cada
+dos, visualitzau la imatge resultant i calculau la seva
+transformada de Fourier. Pensau que hi ha aliasing? A qu\`e \'es
+degut?
+
+\item \label{2d} Escriviu un programa de Matlab que implementi un
+filtre antialiasing (filtre passa baix) adequat per al mostreig
+efectuat en l'apartat anterior.
+
+\item \label{2e} Aplicau el filtre a la transformada de Fourier de
+la imatge original i obteniu la imatge filtrada calculant
+l'antitransformada de Fourier. Visualitzau la imatge resultant.
+
+\item \label{2f}  Repetiu els apartats \ref{2b} i \ref{2c} amb la
+imatge obtinguda a l'apartat anterior. Comentau els resultats.
+S'ha produ\"it el fen\`omen de Gibbs?
+
+\end{enumerate}
+
+\vskip 0.5 cm
+
+
+\noindent \textbf{Exercici 3}. \label{ex3}
+\newline
+
+Filtres passa-baix i filtres de mitjana: aplicaci\'o a
+l'eliminaci\'o de renou.
+\begin{enumerate}[a)]
+ \item \label{3a} Utilitzau el programa escrit a l'apartat \ref{2d}
+ per fer un filtratge passa-baix de la imatge `nina.png' amb diferents
+valors de la freq\"u\`encia de tall. Observau com els contorns de
+les imatges filtrades se van difuminant i com cada vegada \'es
+m\'es evident l'efecte de Gibbs.
+
+\item \label{3b} \'Es possible construir un filtre passa-baix
+mitjan\c{c}ant l'aplicaci\'o de la m\`ascara seg\"uent:
+\[
+A=\frac{1}{s^2}(a_{ij}), \qquad a_{ij}=1
+\qquad 1 \leq i,j \leq s
+\]
+\noindent Utilitzau la funci\'o {\it mascara2D} per aplicar
+aquesta m\`ascara, amb $s=7$, a la imatge `nina.png'.
+\newline
+\noindent Observau com la imatge queda difuminada. Calculau la
+transformada de Fourier de la m\`ascara i comprovau com es tracta
+d'un filtre passa-baix.
+
+\item \label{3c} Utilitzau la instrucci\'o {\it imnoise} de Matlab
+per afegir diferents tipus de renou a la imatge `nina.png'.
+
+\item \label{3d} Filtrau les imatges amb renou amb un filtre
+passa-baix. Comentau els resultats.
+
+\item \label{3e} Repetiu l'apartat anterior utilitzant un filtre
+de mitjana (emprau la funci\'o {\it medfilt2} de Matlab). Comentau
+els resultats.
+
+\end{enumerate}
+
+
+\vskip 0.5 cm
+
+\noindent \textbf{Exercici 4}. \label{ex4}
+\newline
+
+Filtres passa-alt i millora de contorns.
+\begin{enumerate}[a)]
+\item \label{4a} Obriu i visualitzau la imatge `ullZ.png'.
+Observau com els seus contorns es troben difuminats.
+
+\item \label{4b} \'Es possible construir un filtre passa-alt
+mitjan\c{c}ant l'aplicaci\'o de la m\`ascara seg\"uent:
+\[A=\frac{1}{s^2}(a_{ij}), \qquad a_{ij}=
+\begin{cases}
+s^2-1 & \mathrm{si} \quad  i=j=\frac{s}{2}\\
+-1    & \mathrm{resta}
+\end{cases}
+\qquad 1 \leq i,j \leq s
+\]
+\noindent Utilitzau aquesta m\`ascara amb $s=15$ per filtrar la
+imatge i visualitzau el resultat. Observau com els contorns de la
+imatge han quedat resaltats. Calculau la transformada de Fourier
+de la m\`ascara i verificau que es tracta, en efecte, d'un filtre
+passa-alt.
+
+\item \label{4c} Una aplicaci\'o dels filtres passa-alt \'es la
+millora dels contorns de les imatges. Sumau, a la imatge inicial,
+la sortida del filtre passa-alt ponderada amb diferents valors
+(per exemple $0.5$, $1$ i $2$). Aquesta operaci\'o equival a
+``afegir contorns" a la imatge original. Visualitzau i comentau
+els resultats.
+\end{enumerate}
+
+
+\vskip 0.5 cm
+
+
+\noindent \textbf{Exercici 5}. \label{ex5}
+\newline
+
+Informacio visual i transformada de Fourier.
+\begin{enumerate}[a)]
+\item \label{5a} Obriu i visualitzau les imatges `nina.png' i
+`casa.png'.
+
+\item \label{5b} Calculau el m\`odul i la fase de les
+transformades de Fourier de les dues imatges i intercanviau-los:
+la fase de la segona imatge amb el m\`odul de la primera i
+vice-versa. Visualitzau les imatges resultants i comentau els
+resultats.
+\end{enumerate}
+
+
+
+\end{document}

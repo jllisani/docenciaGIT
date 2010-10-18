@@ -1,0 +1,488 @@
+\documentclass[oneside,11pt]{report}
+\usepackage{enumerate}
+%\input 8bitdefs
+\setlength{\textwidth}{17cm} \setlength{\textheight}{24cm}
+ \setlength{\oddsidemargin}{-0.3cm}
+ \setlength{\evensidemargin}{1cm}
+\addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm} \pagestyle{myheadings}
+ %\parskip= 1 ex
+% % % % % \parindent = 10pt
+%%%%%CONTADORES
+\newcount\secc %%CONTADOR SECCION
+\secc=0
+\newcount\sbsecc %%CONTADOR SUBSECCION
+\sbsecc=0
+\newcount\teor%%%%CONTADOR TEOREMAS
+\teor=0
+\newcount\prob%%%%CONTADOR PROBLEMAS
+\prob=1
+\newcount\defi
+\defi=0
+\newcount\prop
+\prop=0
+%%%%%%DEFINICIONES DE LAS MACROS
+% \def \sp#1{\vskip #1ex} %%SALTO INDENTADO DE #1 lineas
+% \def \fsp#1{\vskip #1ex \noindent} %%SALTO NO INDENTADO DE #1 lineas
+
+%%%FORMULAS MATEMATICAS Y SIMBOLOS OPORTUNOS
+% \def \va#1{\ #1_{1},\ #1_{2}, \cdots , #1_{n}} %%VARIABLE #1 DE 1 A N
+% \def \fun#1#2#3{#1 : #2 \longrightarrow #3} %%FUNCION #1:#2 FLECHA #3
+% \def \E{$E\ $}%% PONE E DE MODO MATEMATICO
+% \def \suc#1#2{\{ #1_#2 \}}
+% \def \su#1#2{#1_#2}
+% \def \ep{\varepsilon}
+% \def \np{\vskip 0.25 cm}
+% \def \ap{\vskip 0.15 cm}
+% \def \linf{\lim_{n \rightarrow \infty}}
+% \def \limfun#1#2{\lim_{#1 \rightarrow #2}}
+
+\newcommand{\pr}[1]{P( #1 )}
+
+% \def \X{{ X}}
+% \def \Y{{\cal Y}}
+%\newcommand{\Z}{{\cal Z}}
+
+
+%%%%CONJUNTOS N, Z, R, Rn,[0,1].vacio
+\newcommand{\N}{I\!\!N}
+\newcommand{\R}{I\!\!R}
+\newcommand{\C}{I\!\!\!\!C}
+\newcommand{\Z}{Z\!\!\!Z}
+%\def\Zp{\Z^{+}}
+\newcommand{\Q}{{\rm{0\!\!\!\!Q}}}
+%\def \Rn{\R^{n}}
+%\def \int{[0,1]}
+%\def \vac{\emptyset}
+
+
+%%%OTRAS MACROS
+
+
+% \def \lme#1{\ \> {\hbox{\rm {#1}}}\ \> }%%PONE TEXTO EN MODO MATEMATICO
+% \def \lm#1{{\hbox{\rm {#1}}}}%%PONE TEXTO EN MODO MATEMATICO
+
+%%%%FUENTES
+% \font\mg = cmr10 scaled \magstep 4 %% FONT NORMAL AUMENTO 4
+% \font\g = cmr10 scaled \magstep 2 %% FONT NORMAL AUMENTO 2
+% \font\cab=cmr6 %%DEFINICION DE FONT CMR6
+% \font\pie=cmr5 %%DEFINICION DE FONT CMR6
+
+%%%% COMEN‚A EL DOCUMENT
+%\includeonly{probtema1}
+\includeonly{prob1bis,prob2,catalanprob3}
+\begin{document}
+\parindent = 0pt
+\pagestyle{empty}
+
+\newcounter{problema}
+\newcommand{\prb}{\addtocounter{problema}{1}
+\noindent\vskip 2mm {\textbf{\theproblema ) }}}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\theproblema]{Sol.: #1} }}}
+
+\setcounter{problema}{0}
+
+%%%Teorema central del limite
+\begin{center}
+   \textsc{Tema 2. Suma de variables aleat\`ories.}
+\end{center}
+
+\prb  Sigui $W = X + Y + Z$, on  $X$, $Y$ i $Z$ s\'on variables
+aleat\`ories amb mitjana 0 i vari\`ancia 1, i amb $ Cov(X,Y) = 1/4,
+Cov(X,Z) = 0, Cov(Y,Z) = -1/4.$
+
+\begin{enumerate}[a)]
+\item Trobau l'esperan\c{c}a i la vari\`ancia de $W$. (Sol.:$\mathbf{0; 3}$)
+\item Repetiu l'apartat (a) suposant que $X, Y$ i $Z$
+estan incorrelacionades. (Sol.:$\mathbf{0; 3}$)
+\end{enumerate}
+
+\prb   Siguin $X_1, \ldots, X_n \> $ variables aleat\`ories amb la
+mateixa mitjana $\mu$ i covari\`ancies $$Cov(X_i,X_j) =
+\cases{\sigma^2 & si $\> i=j$\cr \rho \sigma^2 & si $\>
+|i-j|=1$\cr 0 & en otro caso $ $\cr}$$
+
+on $|\rho|<1.$ Determinau la mitjana i la vari\`ancia de $ S_n =
+X_1+ \cdots +X_n.$ (Sol.:$\mathbf{n\mu;
+n\sigma^2+2\rho\sigma^2(n-1)}$)
+
+
+\prb \'Idem que  l'anterior per\`o amb $Cov(X_{i},X_{j})=\sigma^2
+\rho^{|i-j|}$ per $i,j=1,\ldots,n$ amb $\sigma>0$ i $|\rho|<1$.
+(Sol.:$\mathbf{n\mu;
+\frac{\sigma^2}{(1-\rho)^2}\left(n-2\rho-n\rho^2+2\rho^{n+1}\right)}$)
+
+
+
+%\prb Sigui $\chi_{n}^2=X_{1}^2+\ldots+X_{n}^2$ on
+%$X_{1},\ldots,X_{n}$ s\'on n v.a. iid. normals est\`andard.
+%
+%\begin{enumerate}[a)]
+%\item Demostrau que $\chi_{1}^2$ segueix una distribuci\'o 
+%chi-quadrat\footnote{Una v.a. $X$ segueix una distribuci\'o chi-quadrat (o ji-quadrat) amb $k$ graus de llibertat
+% si la seva funci\'o de 
+%densitat \'es $f_X(x)=\frac{x^{(k-2)/2} e^{-x/2}}{2^{k/2} \Gamma(k/2)}$ si $x > 0$, on $k$ \'es un enter positiu.
+%La seva funci\'o car\`acter\'\i stica \'es $\Phi_X(\omega)=\left( \frac{1}{1-j2\omega} \right)^{k/2}$.
+%Alguns valors t\'\i pics de la funci\'o $\Gamma$ s\'on: $\Gamma(1/2)=\sqrt{\pi}$, $\Gamma(z+1)=z\Gamma(z)$ per $z > 0$, $\Gamma(m+1)=m!$ per $m$ enter.} 
+%amb $1$ grau de llibertat.
+%\item Demostrau que $\chi_{n}^2$ segueix una distribuci\'o chi-quadrat amb $n$
+%graus de llibertat.
+%\item  Trobau la distribuci\'o de $T_{n}=\sqrt{\chi_{n}^2}$.
+%  %%%%%%%  (Sol.:$\mathbf{f_{t_{n}}(t)= t e^{-\frac{t^2}{2}} \mbox{ si }
+%%%%%%%%    t>0}$)
+%    \item Demostrau que $T_{2}$ segueix la distribuci\'o Rayleigh.(Sol.:$\mathbf
+%{f_{t_{n}}(t)=
+%     t e^{-\frac{t^2}{2}} \mbox{ si }
+% t>0}$)
+%   \end{enumerate}
+%
+%
+%   \prb Siguin $X$ i $Y$ dues v.a. exponencials independents amb par\`ametres 
+%   $\alpha$
+%   i $\beta$ respectivament. Sigui $Z=X+Y$
+%
+%   \begin{enumerate}[a)]
+%   \item Trobau la densitat de $Z$.
+%    (Sol.:$\mathbf{\frac{\alpha\beta}{\alpha-\beta}
+%       \left(e^{-\beta z}-e^{-\alpha z}\right)\mbox{ si } z>0}$)
+%       \item Trobau la funci\'o caracter\'{\i}stica de $Z$.
+%       (Sol.:$\mathbf{\frac{\alpha}{\alpha-j \omega}
+%       \frac{\beta}{\beta-j \omega}
+%      }$)
+%   \item Trobau la densitat de $Z$ a partir de la funci\'o
+%    caracter\'{\i}stica.
+%       \end{enumerate}
+%
+%       \prb Siguin $Z=aX+bY$ on $X$ e $Y$ s\'on v.a. cont\'{\i}nues
+%       i independents i $a,b\in\R$.
+%
+%       \begin{enumerate}[a)]
+%       \item Calculau la funci\'o caracter\'{\i}stica de $Z$ en funci\'o de
+%       les de $X$ i $Y$. (Sol.:$\mathbf{\Phi_{X}(a\omega)\Phi_{Y}(b\omega)}$)
+%       \item Donau les expressions del c\`alcul de l'esperan\c{c}a i la
+%       vari\`ancia de $Z$ en funci\'o de les derivades de la seva funci\'o
+%       caracter\'{\i}stica.
+%       \end{enumerate}
+
+       \prb Sigui $S_{k}=X_{1}+\ldots+X_{k}$ on $X_{i}$ s\'on v.a.
+       independents i amb  distribuci\'o $B(n_{i},p)$ per a $i=1,\ldots,k$.
+       Utilitzau la funci\'o generadora de probabilitats per demostrar
+       que $S_{k}$ segueix una  distribuci\'o $B(\sum_{i=1}^k n_{i}, p)$.
+       Explicau aquest resultat.
+
+       \prb Demostrau que la suma de $n$ v.a. Poisson independents \'es
+       tamb\'e Poisson amb par\`ametre la suma dels par\`ametres.
+
+       \prb Sigui $N$ una v.a. que pren  valors enters positius. Sigui
+       $X_{1},\ldots,X_{N}$ una seq\"{u}\`encia de $N$ v.a. iid.
+       Considerem $S_{N}=\sum_{k=1}^N X_{k}$.
+
+       \begin{enumerate}[a)]
+           \item Calculau $E(S_{N}|N)$. (Sol.:$\mathbf{N E(X)}$).
+           \item Calculau $E(S_{N})=E(E(S_{N}|N))$. (Sol.:$\mathbf{E(N) E(X)}$)
+           \item Demostrau que  $E(e^{j\omega
+           S_{N}}|N)=\Phi_{X_{1}}(\omega)^N$.
+          \item Demostrau que $\Phi_{S_{N}}(\omega)=
+          G_{N}(\phi_{X_{1}}(\omega))$
+          on $G_{N}(z)=E(z^N)$ \'es la funci\'o generadora de
+          probabilitats
+          de $N$.(ind.: $\Phi_{S_{N}}(\omega)=E(E(e^{j\omega
+           S_{N}}|N))$).
+       \end{enumerate}
+
+%       \prb El nombre de treballs que arriben a un ordinador en una hora
+%       \'es una v.a. geom\`etrica amb par\`ametre $p$, i el temps d'execuci\'o
+% de cada treball s\'on v.a. exponencials independents
+%       amb mitjana $\frac{1}{\alpha}$. Trobau la funci\'o de densitat de
+%       la suma dels temps d'execuci\'o de tots els treballs
+%       arribats en una hora.(Sol.:$\mathbf{f_{S_{N}}(x)=p \delta(x)+(1-p) p\alpha       e^{-p\alpha x}}$ on $\delta$ \'es la delta de Dirac.)
+
+       \prb Sigui $X_{1},X_{2},\ldots,X_{k},\ldots$ una seq\"{u}\`encia de v.a.
+       iid. que pren valors enters. Sigui $N$ una v.a. que pren  valors enters
+       positius. Sigui $S_{N}=\sum_{k=1}^N X_{k}$
+       \begin{enumerate}[a)]
+           \item Trobau la mitjana i la vari\`ancia de $S_{N}$.
+           \item Demostrau que $G_{S_{N}}(z)=E(z^{S_N})=G_{N}(G_{X_{1}}(z))$.
+        \end{enumerate}
+
+           \prb Suposem que  el nombre de treballs que arriben a una
+           tenda  en una hora segueix una distribuci\'o Poisson amb
+           mitjana
+           $L$. Cada treball requereix $X_{j}$ segons per completar-se,
+           on cada $X_{j}$ \'es independent de les dem\'es i pren  els
+           valors ``3'' o ``6'' amb la mateixa probabilitat.
+           \begin{enumerate}[a)]
+           \item Trobau la mitjana i la vari\`ancia   del temps total
+           de treball (W) mesurat en minuts en un per\'{\i}ode d'una hora.
+           (Sol.:$\mathbf{E(W)=\frac{9}{2}L, Var(W)=\frac{45}{2}L}$)
+           \item Trobau $G_{W}(z)=E(z^{W})$.
+           \end{enumerate}
+% \prb EL tiempo de vida de un dispositivo es una v.a. que sigue una
+% distribuci\'on Rayleigh. Sea $T$ el tiempo transcurrido hasta el primer
+% fallo entre $n$ dispositivos independientes. Hallar la funci\'on de
+% densidad de $T$. Hallar $E(T)$.
+%%%%%%
+
+\prb  Suposem que el nombre d'emissions de part\'{\i}cules per part
+d'un objecte radioactiu en $t$ segons \'es una variable aleat\`oria
+$N_t$ de Poisson amb mitjana $\lambda t$. Utilizau la desigualtat
+de Txebicheff per obtenir una fita de la probabilitat que
+$|N_t/t-\lambda|$ superi un valor donat $\varepsilon.$
+(Sol.:$\mathbf{{\lambda \over \varepsilon^2 \cdot t}}$)
+
+\prb  Suposem que el 10\% dels votants estan a favor d'una certa
+legislaci\'o. Es fa una enquesta entre la poblaci\'o i s'obt\'e una
+freq\"{u}\`encia relativa $f_n(A)$ com una estimaci\'o de la proporci\'o
+anterior. Determinau, aplicant la desigualtat de Txebicheff,
+quants de votants s'haurien d'enquestar perqu\`e  la probabilitat
+que $f_n(A)$ difereixi de 0.1 menys de 0.02 sigui al menys 0.95
+(Sol.:$\mathbf{4500}$).  Qu\`e podem dir si no coneixem el valor de
+la proporci\'o? (Sol.:$\mathbf{12500}$) Repetiu el mateix per\`o
+aplicant el teorema  del l\'{\i}mit central. (Sol.:$\mathbf{865}$
+\textbf{si sabem que } $\mathbf{p=0.1}$ \textbf{i} $\mathbf{2401}$
+\textbf{altrament})
+
+\prb  Es llan\c{c}a a l'aire un dau regular 100 vegades. Aplicau la
+desigualtat de Txebicheff per obtenir una fita de la probabilitat
+que el nombre total de punts obtinguts estigui entre 300 i 400.
+(Sol.:$\mathbf{0.883}$). Quina probabilitat s'obt\'e
+ aplicant el teorema  del l\'{\i}mit central?
+(Sol.:$\mathbf{0.9964}$)
+
+\prb Es sap que, en una poblaci\'o, la talla dels individus mascles
+adults \'es una variable aleat\`oria $X$ amb  mitjana $\mu_x = 170$ cm
+i desviaci\'o t\'{\i}pica $\sigma_x = 7 $ cm. Es tria una mostra
+aleat\`oria de 140 individus. Calculau la probabilitat que la
+mitjana mostral $\overline{x}$ difereixi de $\mu_x$ en menys d'1
+cm. (Sol.:$\mathbf{0.909}$)
+
+\prb  Quantes  vegades  hem  de  llan\c{c}ar  un
+ dau  sense  biaix per
+tenir  com a    m\'{\i}nim  un  95\% de seguretat de que la freq\"{u}\`encia
+relativa del ``6'' disti menys de 0.01 de la probabilitat te\`orica
+1/6? (Sol.:$\mathbf{5336}$)
+
+\prb Es llan\c{c}a a  l'aire una moneda sense biaix $n$ vegades.
+Calculau $n$ de manera que la freq\"{u}\`encia relativa del nombre de
+cares difereixi de 1/2 en menys de 0.01 amb probabilitat 0.95.
+(Sol.:$\mathbf{9604}$)
+
+\prb El nombre de missatges que arriben a un multiplexor \'es una
+variable aleat\`oria de Poisson amb una mitjana de 10 missatges per
+segon. Estimau la probabilitat que arribin m\'es de 650 missatges en
+un minut. (Ind.: Utilizau el teorema  del l\'{\i}mit central)
+(Sol.:$\mathbf{0.0207}$)
+
+
+
+%
+%%%%%%%%%va la 21
+%
+\prb  El nombre  d'errors d'impremta per p\`agina d'un llibre
+segueix una llei de Poisson, amb un nombre mitj\`a d'errors per
+p\`agina igual a 2. En un llibre de 300 p\`agines, quina \'es la
+probabilitat que en una o m\'es p\`agines  hi hagi  m\'es de 5 errors?
+Calculau-la directament, aproximant per una Poisson, i aproximant
+per una normal. (Sol.:\textbf{ 0.9934, 0.9931, 0.9849})
+
+\prb  Un canal de transmissi\'o binari t\'e una probabilitat d'error
+igual a 0.15. Estimau la probabilitat que hi hagi  20 o menys
+errors en una transmissi\'o de 100 bits. (Sol.: \textbf{0.9382, \'o
+0.917 si aproximam per una Poisson})
+
+\prb  S'ha de calcular la suma de 100 n\'umeros reals. Suposem que
+els n\'umeros s'han aproximat per l'enter m\'es pr\`oxim de manera que
+cada n\'umero t\'e un error  uniformement distribu\"{\i}t en $(-1/2,1/2).$
+Utilitzau el teorema  del l\'{\i}mit central per estimar la
+probabilitat que  l'error total en la suma dels 100 n\'umeros superi
+6. (Sol.:\textbf{ 0.0376})
+
+\prb  Un radiofar est\`a alimentat per  una bateria amb un temps de
+vida \'util $T$ governat per una distribuci\'o exponencial amb una
+esperan\c{c}a d'un mes. Trobau el nombre m\'{\i}nim de bateries que s'han
+de suministrar al radiofar perqu\`e  que sigui operatiu al menys un
+any amb probabilidad $0.99$. (Sol.:\textbf{ 24})
+
+\prb  Si obtenim 447 cares en 1000 llan\c{c}aments d'una moneda
+suposadament regular,  hi ha algun indici per suposar que no ho
+\'es? (Sol.:\textbf{ S\'{\i}})
+
+\prb  En un museu  venen di\`ariament 1000 entrades i la proporci\'o
+esperada de visitants estrangers \'es del 35$\%$. Quina \'es la
+probabilitat que en una setmana visitin el museu m\'es de 5000
+espanyols? (Sol.:\textbf{ Pr\`acticament 0})
+
+\prb  La mitjana de bol\'{\i}grafs que es venen di\`ariament en una
+papereria \'es 30, i la desviaci\'o t\'{\i}pica 5. Aquests valors s\'on 20 i
+4 per al nombre de quaderns venuts. Es sap, a m\'es, que el
+coeficient de correlaci\'o entre les vendes de ambd\'os productes \'es
+0.7. Quina \'es la probabilitat que el nombre total dels dos
+articles venuts durant un trimestre estigui compr\`es entre 4300 i
+4600 unitats? (Sol.: \textbf{0.894})
+
+\prb  El nombre {\it N} d'usuaris que arriben a un sistema durant
+un cert per\'{\i}ode \'es una variable aleat\`oria amb llei
+$\mathrm{Po}(\lambda)$. Sigui $\> p \in (0,1) \> $ la probabilitat que
+un usuari que arriba al sistema rebi servei. Determinau la llei de
+la variable aleat\`oria que compta el nombre d'usuaris que reben
+servei. (Sol.:$\mathbf{\mathrm{Po}(\lambda p)}$)
+
+
+%\prb Suposem que instal.lam un dispositiu en $t=0$ i el seu temps
+%de vida \'es una v.a. $X_{1}$ , si el dispositiu falla \'es
+%immediatament reempla\c{c}at per un altre, el temps de vida del qual
+%\'es $X_{2}$ i aix\'{\i} successivament. Sigui $N(t)$ el nombre de
+%dispositius que han fallat fins el temps $t$. La freq\"{u}\`encia de
+%components reempla\c{c}ats en $t$ ser\'a $\frac{N(t)}{t}$. Si denotam
+%per $X_{j}$ el temps de vida del $j$-\`essim dispositiu, llavors  el
+%temps transcorregut fins  la fallada del $n$-\`essim dispositiu \'es
+%$S_{n}=X_{1}+\ldots+X_{n}$. Suposau que les $X_{j}$ s\'on iid amb
+%$0<E(X_{j})=\mu<+\infty$
+%
+%\begin{enumerate}[a)]
+%\item Demostrau que $\frac{S_{N(t)}}{N(t)}\leq \frac{t}{N(t)} <
+%\frac{S_{N(t)+1}}{N(t)}$
+%\item Demostrau que, amb probabilitat 1 $\lim_{t\to\infty}\frac{S_{N(t)}}{N(t)}=
+%\lim_{t\to\infty}\frac{S_{N(t)+1}}{N(t)}=E(X)$ i per tant\newline
+% $\lim_{t\to \infty}\frac{N(t)}{t}=\frac{1}{E(X)}$ amb probabilitat 1.
+% Aquest \'ultim l\'{\i}mit  rep el nom de
+%freq\"{u}\`encia de fallada a ``\emph{llarg termini}''.
+%\end{enumerate}
+%
+%\prb Els clients arriben  a una estaci\'o de servei amb distribuci\'o
+%de temps entre arribades iid exponencials $X_{j}$ amb
+%$E(X_{j})=\frac{1}{\alpha}$. Calculau la freq\"{u}\`encia d'arribades a
+%llarg termini.  (Sol.: $\alpha$).
+%
+%
+%\prb Sigui $U_{j}$ el temps que roman funcionant de forma continua
+%un sistema (\'es a dir el temps de  funcionament des de la
+%$(j-1)$-\`essima aturada) i sigui $D_{j}$ el temps en qu\`e roman
+%aturat, \'es a dir el temps total de reparaci\'o quan s'atura per
+%$j$-\`essima vegada. Es defineix un cicle de reparaci\'o com el temps
+%des de que comen\c{c}a a funcionar fins que torna a funcionar despr\'es
+%d'una fallada, \'es a dir $X_{j}=U_{j}+D_{j}$. Suposau que les
+%$U_{j}$ i les $D_{j}$ s\'on v.a. iid:
+%
+%\begin{enumerate}[a)]
+%    \item Calculau el temps esperat de duraci\'o del cicle $j$. (Sol.:
+%    $E(U)+E(D)$).
+%    \item Calculau la freq\"{u}\`encia  de reparacions a llarg termini. (Sol.:
+%    $\frac{1}{E(U)+E(D)}$)
+%    \end{enumerate}
+%
+%    \prb Suposam que tenim un esdeveniment de forma que la distribuci\'o
+%    del temps entre l'ocurr\`encia $j-1$ i la $j$ s\'on v.a. $X_{j}$ iid.
+%    Sigui $C_{j}$ el cost associat a la $j$-\`essima ocurr\`encia de
+%    l'esdeveniment. Si
+%    $N(t)$ \'es el nombre d'esdeveniments fins el temps $t$, tindrem que
+%    $C(t)=\sum_{j=1}^{N(t)} C_{j}$ \'es el cost acumulat en el temps $t$.
+%    Suposau que $(X_{j},C_{j})$ s\'on vectors aleatoris
+%    independents i id\`enticament distribu\"{\i}ts.
+%%     (esto no significa que $C_{j}$ sea independiente
+%%     de $X_{j}$).
+%   \begin{enumerate}[a)]
+%       \item Demostrau que $\lim_{t\to\infty}
+%      \frac{\sum_{j=1}^{N(t)}C_{j}}{N(t)}=E(C)$ amb
+%      probabilitat 1.
+%\item Demostrau que $\lim_{t\to\infty}\frac{C(t)}{t}=\frac{E(C)}{E(X)}$
+%amb probabilitat 1
+%\end{enumerate}
+%
+%
+%\prb Considerem  la situaci\'o dels problemes 30 y 31. Sigui
+%$$I_{U}(t)=\left\{\begin{array}{ll}1 & \mbox{si el sistema
+%funciona a l'instant } t\\ 0 &\mbox{altrament}\end{array}\right.
+%$$ La proporci\'o de temps de funcionament fins a l'instant $t$ \'es
+%$\frac{1}{t}\int_{0}^{t} I_{U}(t')dt'$.
+%
+%\begin{enumerate}[a)]
+%\item Demostrau que  si $t$ \'es un instant on   el cicle s'acaba
+%llavors $\frac{1}{t}\sum_{j=1}^{N(t)}
+%U_{j}=\frac{1}{t}\int_{0}^{t} I_{U}(t')dt'$
+%% y por lo tanto la proporci\'on de tiempo de funcionamiento a largo
+%% plazo es
+%% $\lim_{t\to\infty} \frac{1}{t}\sum_{j=1}^{N(t)} U_{j}=
+%% \lim_{t\to\infty} \frac{1}{t}\int_{0}^{t} I_{U}(t')dt'$.
+%\item  Definim $U(t)=\sum_{j=1}^{N(t)} U_{j}$. Aplicau l'apartat
+%a), considerant $U(t)$ com a  un cost, i els resultats del
+%problema anterior per demostrar que, amb probabilitat 1, la
+%proporci\'o de temps de funcionamient a llarg termini \'es
+%$\lim_{t\to\infty}\frac{U(t)}{t}=\frac{E(U)}{E(U)+E(D)}$.
+%\item Suposau que el cost associat a cada aturada s\'on variables
+%aleat\`ories  $C_{j}$ iid. Trobau el cost mitj\`a a llarg termini.
+%(Sol.: $\mathbf{\frac{E(C)}{E(U)+E(D)}}$.)
+%\end{enumerate}
+%
+%
+%\prb El temps entre arribades de viatgers a una estaci\'o
+%d'autobusos per prendre una determinada l\'{\i}nia s\'on v.a. iid
+%exponencials amb mitjana $T$. Suposem que els autobusos surten de
+%l'estaci\'o quan tenen m viatgers. Quina \'es la freq\"{u}\`encia de
+%sortides d'autobusos a llarg termini? (Sol.:
+%$\mathbf{\frac{1}{mT}}$.)
+%
+%\prb Un canal de comunicaci\'o alterna per\'{\i}odes lliures d'errors amb
+%per\'{\i}odes en  qu\`e introdueix errors. Assumint que la duraci\'o
+%d'aquests per\'{\i}odes s\'on v.a. independents amb mitjanes $\mu_{1}$ i
+%$\mu_{2}$, trobau la proporci\'o de temps a llarg termini en qu\`e el
+%canal no produeix errors.
+%(Sol.:$\mathbf{\frac{\mu_{1}}{\mu_{1}+\mu_{2}}}$.)
+%
+%\prb Un empleat treballa una proporci\'o de temps $r_{1}$ quan el
+%seu  cap hi \'es present i $r_{2}$ quan no hi \'es. Suposem que la
+%seq\"{u}\`encia de la duraci\'o dels per\'{\i}odes de temps en qu\`e el cap hi 
+%\'es
+%i en les que no hi \'es s\'on v.a. exponencials, independents amb
+%mitjanes $\mu_{1}$ i $\mu_{2}$. Trobau la proporci\'o de temps que
+%treballa l'empleat a llarg termini.
+%(Sol.:$\mathbf{\frac{r_1\mu_{1}+r_2 \mu_2}{\mu_{1}+\mu_{2}}}$.)
+%
+%
+%\prb Els usuaris arriben a un tel\`efon p\'ublic i  l'utilitzen  de
+%forma independent durant un temps determinat per a una v.a. $Y$,
+%si el tel\`efon est\`a lliure. Si un usuari arriba i el tel\`efon no
+%esta lliure, se'n va immediatament. Suposau que el temps entre
+%arribades dels clients s\'on v.a. iid exponencials amb par\`ametre $\lambda$.
+%\begin{enumerate}[a)]
+%    \item Trobau la freq\"{u}\`encia d'utilitzaci\'o del tel\`efon a llarg termini.
+%    (Sol.:$\mathbf{r=\frac{\lambda}{1+\lambda E(Y)}}$.)
+%    \item Trobau la proporci\'o  a llarg termini  d'usuaris que se'n van
+%    sense
+%    utilitzar el tel\`efon. (Sol.:$\mathbf{\frac{\lambda-r}{\lambda}}$.)
+%    \end{enumerate}
+%
+%\prb Un programa de compressi\'o de dades codifica cadenes de bits
+%de la forma seg\"{u}ent:
+%
+%\begin{center}
+%\begin{tabular}{lll}
+%    \multicolumn{1}{c}{Patr\'o} & \multicolumn{1}{c}{Codificaci\'o} &
+%    \multicolumn{1}{c}{Probabilitat}\\
+%    1 & 100 & 0.1\\
+%    01 & 101 & 0.09\\
+%    001 & 110 & 0.081\\
+%    0001 & 111 & 0.0729\\
+%    0000 & 0 & 0.6561
+%    \end{tabular}
+%\end{center}
+%
+%Suposem que es produeix una entrada d'un bit cada milisegon.
+%\begin{enumerate}[a)]
+%    \item Demostrau que l'entrada dels bits \'es independent i que
+%    si $X_{t}$ \'es el bit que entra en el milisegon $t$ llavors
+%    $X_{t}$ \'es una v.a. Bernoulli.
+%    \item Sigui $L_{j}$ la v.a. que ens d\'ona la llarg\`aria d'entrada de la
+%    $j$-\`essima paraula codificada. Demostrau que la seq\"{u}\`encia de v.a.
+%    $L_{j}$ s\'on iid. A m\'es a m\'es $L_{j}$ \'es el temps en milisegons entre
+%    les dues codificacions. Sigui $M(t)$ el nombre de paraules
+%    codificades
+%    en $t$ milisegons. Calculau la freq\"{u}\`encia de paraules
+%    codificades a llarg termini. (Sol.:$0.2908$.)
+%    \item Sigui $S_{j}$ el cost de la codificaci\'o de la $j$-\`essima
+%    paraula, \'es a dir la llarg\`aria de la paraula codificada.
+%    Calculau la proporci\'o entre el nombre de bits de la
+%    codificaci\'o i els de la entrada a llarg termini.(Sol.:$49.078\%$.)
+%\end{enumerate}
+
+\end{document}

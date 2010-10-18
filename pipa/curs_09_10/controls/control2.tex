@@ -1,0 +1,60 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i caràcters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Control 2 Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+curs 2009/10}
+\end{center}
+
+\vspace{1 cm}
+
+\noindent
+\textbf{Problema 1}
+Una tenda de llepolies ha venut en els darrers 10 dies les següents quantitats diàries de caramels de taronja:
+
+\[
+15 \quad 12 \quad 20 \quad 18 \quad 9 \quad 16 \quad 10 \quad 17 \quad 11 \quad 15
+\]
+
+\begin{enumerate}[a)]
+\item Una manera d'estimar la mitjana i la variància d'una variable aleatòria a partir de dades
+empíriques és utilitzant les següents expressions:
+\[
+\text{mitjana}=\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}
+\qquad
+\text{variància}=\bar{s}^2=\frac{n}{n-1}\left( \frac{x^2_1+x^2_2+\cdots+x^2_n}{n} - \bar{x}^2 \right)
+\]
+\noindent
+on $x_1, x_2, \cdots , x_n$ són $n$ valors coneguts de la variable.
+
+Utilitzau aquestes fòrmules i les dades de l'enunciat per a
+calcular la mitjana i la variància del nombre de caramels de taronja venuts diàriament en la tenda.
+
+\item Quin és el nombre mínim de caramels de taronja que ha de comanar a principi de cada mes l'encarregat
+de la tenda per tenir una probabilitat superior al $90\%$ de no quedar-se sense existències? (Nota: 
+considerau que un mes té 25 dies laborables i aplicau el TLC).
+\end{enumerate}
+
+
+
+
+\end{document}

@@ -1,0 +1,33 @@
+function XX=iftd(X, T, ximax, xistep, t)
+%IFTD Inverse Fourier Transform of a Discrete Signal 
+
+[m, n]=size(X);
+if (~((m == 1) & (n > 1))) 
+    error('Input must be a row vector')
+end
+
+s=length(t);
+for m=1:s
+  Y1=ftd(X, T, 0:xistep:ximax);
+  k=1;
+  for xi=0:xistep:ximax
+    Z(k)=exp(i*2*pi*xi*t(m));
+    k=k+1;
+  end
+  XX(m)=Y*Z';
+  
+  Y=ftd(X, T, -xistep:-xistep:-ximax);
+  k=1;
+  for xi=0:xistep:ximax
+    Z(k)=exp(i*2*pi*xi*t(m));
+    k=k+1;
+  end
+  XX(m)=Y*Z';
+
+  
+  for xi=-xistep:-xistep:-ximax
+    XX(m)=XX(m)+ftd(X, T, xi)*exp(i*2*pi*xi*t(m));
+  end
+  
+end
+

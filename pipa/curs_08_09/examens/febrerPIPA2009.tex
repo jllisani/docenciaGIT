@@ -1,0 +1,129 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Examen Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+febrer 2009}
+\end{center}
+
+\vspace{1 cm}
+\noindent\textbf{P1.-}
+El sistema de còpies de seguretat d'una empresa fa una còpia diària
+de cada un dels dos discs durs centrals en un moment aleatori entre 
+les 3h i les 5h. Les còpies de cada disc dur es fan de manera independent.
+Per un error en la configuració, si la diferència
+entre els inicis de còpia de cada disc dur és inferior a 2 minuts
+es produeix un error en el sistema.
+\begin{enumerate}[a)]
+\item Definiu les variables aleatòries associades al problema i escriviu les
+seves funcions de probabilitat. \ \hfill{\textbf{ 0.5pt.}}
+\item Escriviu la funció de probabilitat conjunta i dibuixau el seu suport. 
+\ \hfill{\textbf{ 0.5 pt.}}
+\item Quina és la probabilitat que es produeixi un error en el sistema
+un dia qualsevol? \ \hfill{\textbf{ 1.5 pt.}}
+\end{enumerate}
+\vspace{0.75 cm}
+
+
+
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P2.-}
+Per fer un estudi estadístic sobre la relació entre la latitud i la temperatura mitjana de diferents
+ciutats es modelen ambdues magnituds mitjançant les variables aleatòries discretes $T$ i $L$,
+respectivament i les dades estadístiques s'utilitzen per a crear la següent taula de 
+probabilitats conjuntes:
+
+\vskip 0.2 cm
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+$T \, \backslash \, L$& $5$ & $15$ & $25$ & $35$ & $45$ & $55$ \\
+\hline
+$2$ & $0$ & $0$ & $0$ & $0$ & $1/40$ & $3/40$ \\ \hline
+$7$ & $0$ & $0$ & $0$ & $0$ & $0$ & $2/40$ \\ \hline
+$12$ & $1/40$ & $0$ & $0$ & $1/40$ & $5/40$ & $1/40$  \\ \hline
+$17$ & $0$ & $1/40$ & $0$ & $5/40$ & $0$ & $0$ \\ \hline
+$22$ & $0$ & $2/40$ & $5/40$ & $1/40$ & $0$ & $0$\\ \hline
+$27$ & $k/40$ & $4/40$ & $2/40$ & $0$ & $0$ & $0$\\ \hline
+\end{tabular}
+\end{center}
+
+\vskip 0.2 cm
+\begin{enumerate}[a)]
+\item Calculau $k$. \ \hfill{\textbf{ 0.25 pt.}}
+\item Calculau les probabilitats marginals. \ \hfill{\textbf{ 0.25 pt.}}
+\item Calculau el vector de mitjanes. \ \hfill{\textbf{ 0.5 pt.}}
+\item Calculau la matriu de covariàncies. \ \hfill{\textbf{ 0.5 pt.}}
+\item Calculau la recta de regressió de $T$ sobre $L$. \ \hfill{\textbf{ 0.5 pt.}}
+\item Quantificau el grau de relació lineal entre les variables.\ \hfill{\textbf{ 0.5 pt.}}
+\end{enumerate}
+
+\vspace{0.75 cm}
+
+
+\noindent\textbf{P3.-}.
+El departament de qualitat d'una empresa que fabrica
+descodificadors de TDT vol estimar la probabilitat $p$ de que
+els aparells s'espenyin en 1 any o menys. Per a això
+es seleccionen $n$ aparells, es proven durant 1 any i es
+calcula la mitjana mostral dels que no funcionen al cap
+d'aquest temps. Quin ha d'ésser el valor
+mínim de $n$ per assegurar que la diferència entre la mitjana
+mostral calculada i el valor real $p$ sigui inferior a 0.01
+amb una probabilitat, com a mínim, del $95\%$?
+\ \hfill{\textbf{ 2.5 pt.}}
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P4.-} La transmissió d'un senyal binari està contaminada
+per un renou blanc Gaussià de mitjana $0$ i densitat 
+espectral de potència $5$. Aquest renou s'afegeix (renou additiu)
+al senyal transmés $v(t)$. 
+
+\noindent
+$v(t)$ pren el valor $+A$ quan es vol 
+transmetre un `1' i $-A$ si es vol transmetre un `0' $(A > 0)$. 
+En recepció es decideix que s'ha rebut un `1' si el senyal rebut és positiu
+i un `0' en cas contrari. Quin és el valor mínim de $A$ que assegura 
+que, com a mínim, 999 de cada 1000 bits es reben correctament?
+\ \hfill{\textbf{1.25 pt.}}
+
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P5.-} 
+Sigui $S_n$ un procés de tipus passejada aleatòria.
+Calculau $P(S_{n+3}=0|_{S_n=1})$.
+\ \hfill{\textbf{1.25 pt.}}
+
+
+
+\vspace{0.75 cm}
+
+\hrule
+
+\vspace{0.5 cm}
+
+\noindent Duraci\'o de l'examen 4 hores.\newline
+
+\end{document}

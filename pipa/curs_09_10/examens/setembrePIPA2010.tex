@@ -1,0 +1,106 @@
+\documentclass[11pt]{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Examen Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+setembre 2010}
+\end{center}
+
+\noindent\textbf{P1.-}
+La funci\'o de densitat conjunta de dues variables aleat\`ories $X$ i $Y$ \'es:
+\[
+f_{XY}(x, y)=\begin{cases} k x^2 e^{-y} & \text{si } \; 1 < |x| < 2 \; \text{ i } \; 1 < y < 3 \\
+\\
+0 & \text{altrament}
+\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Trobau el valor de la constant $k$. \ \hfill{\textbf{ 0.5 pt.}}
+\item Demostrau que les variables $X$ i $Y$ s\'on independents.  \ \hfill{\textbf{ 1 pt.}}
+\item Calculau $P(Y-\frac{X}{2} \geq 2)$.  \ \hfill{\textbf{ 1 pt.}}
+\end{enumerate}
+
+\vskip 0.2 cm
+\textbf{Indicaci\'o:} $\int x^2 e^{-\frac{x}{2}} dx = -2 e^{-\frac{x}{2}} (x^2+4x+8)$
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P2.-}
+Siguin $X$ i $Y$ dues v.a. discretes amb funci\'o de probabilitat conjunta
+\[
+f_{XY}(x, y)=\alpha \sqrt{2xy}  \qquad \text{si } \; x=0, 1, 2; \; y=1, 4, 9; \qquad
+\qquad f_{XY}(x, y)=0 \qquad \text{altrament}
+\]
+\noindent
+Calculau:
+\begin{enumerate}[a)]
+\item El valor de la constant $\alpha$. \ \hfill{\textbf{ 0.5 pt.}}
+\item La funci\'o de probabilitat de $U=\frac{X^2+1}{Y}$. \ \hfill{\textbf{ 0.5 pt.}}
+\item La funci\'o de probabilitat de $V=|3Y-2X|$. \ \hfill{\textbf{ 0.5 pt.}}
+\item El vector de mitjanes de $(U, V)$. \ \hfill{\textbf{ 0.5 pt.}}
+\item La covari\`ancia de $U$ i $V$. \ \hfill{\textbf{ 0.5 pt.}}
+\end{enumerate}
+
+\vspace{0.75 cm}
+
+
+
+\noindent\textbf{P3.-}.
+El motor que permet orientar una antena parab\`olica produeix un error en l'orientaci\'o de
+$\varepsilon$ graus cada vegada que s'acciona, on $\varepsilon \sim N(0, 1)$. Els errors en
+l'orientaci\'o s'acumulen despr\'es de cada actuaci\'o del motor i s\'on independents entre s\'i.
+\begin{enumerate}[a)]
+\item Quina \'es la probabilitat que l'error d'orientaci\'o sigui superior a $5$ graus despr\'es de
+$100$ actuacions del motor?\ \hfill{\textbf{ 1.25 pt.}}
+\item Quan l'error acumulat (en valor absolut) \'es superior a $10$ graus l'antena s'ha de recalibrar.
+Quin \'es el nombre m\`axim d'actuacions del motor que es poden fer si es vol garantir, amb una
+probabilitat del $95\%$, que l'antena no necessita \'esser recalibrada?\ \hfill{\textbf{ 1.25 pt.}}
+\end{enumerate}
+
+
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P4.-} Consideram el proc\'es aleatori $Z(t)=t + X$, on 
+$X$ \'es una v.a. uniforme en l'interval $[-0.1, 0.1]$.
+\begin{enumerate}[a)]
+\item Calculau la probabilitat que $Z(t)$ sigui major que 1 per a valors de $t$ entre $0$ i $1$. 
+\ \hfill{\textbf{1 pt.}}
+\item Calculau la mitjana i l'autocovari\`ancia del proc\'es. Es tracta d'un proc\'es 
+estacionari?. \ \hfill{\textbf{0.75pt.}}
+\item Consideram el proc\'es $W(t)=t^2 + Y$, on $Y$ \'es una v.a. gaussiana
+de mitjana $0$ i desviaci\'o t\'\i pica $0.1$. Si $X$ i $Y$ s\'on v.a. independents,
+estan incorrelats els processos?. Justificau la resposta.\ \hfill{\textbf{0.75 pt.}}
+\end{enumerate}
+
+
+
+
+\vspace{0.75 cm}
+
+\hrule
+
+\vspace{0.5 cm}
+
+\noindent Duraci\'o de l'examen 4 hores.\newline
+
+\end{document}

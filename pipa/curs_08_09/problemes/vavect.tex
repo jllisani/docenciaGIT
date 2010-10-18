@@ -1,0 +1,712 @@
+\documentclass[oneside,11pt]{report}
+\usepackage{enumerate}
+%\input 8bitdefs
+\setlength{\textwidth}{17cm} \setlength{\textheight}{24cm}
+ \setlength{\oddsidemargin}{-0.3cm}
+ \setlength{\evensidemargin}{1cm}
+\addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm} \pagestyle{myheadings}
+ %\parskip= 1 ex
+% % % % % \parindent = 10pt
+%%%%%CONTADORES
+\newcount\secc %%CONTADOR SECCION
+\secc=0
+\newcount\sbsecc %%CONTADOR SUBSECCION
+\sbsecc=0
+\newcount\teor%%%%CONTADOR TEOREMAS
+\teor=0
+\newcount\prob%%%%CONTADOR PROBLEMAS
+\prob=1
+\newcount\defi
+\defi=0
+\newcount\prop
+\prop=0
+%%%%%%DEFINICIONES DE LAS MACROS
+% \def \sp#1{\vskip #1ex} %%SALTO INDENTADO DE #1 lineas
+% \def \fsp#1{\vskip #1ex \noindent} %%SALTO NO INDENTADO DE #1 lineas
+
+%%%FORMULAS MATEMATICAS Y SIMBOLOS OPORTUNOS
+% \def \va#1{\ #1_{1},\ #1_{2}, \cdots , #1_{n}} %%VARIABLE #1 DE 1 A N
+% \def \fun#1#2#3{#1 : #2 \longrightarrow #3} %%FUNCION #1:#2 FLECHA #3
+% \def \E{$E\ $}%% PONE E DE MODO MATEMATICO
+% \def \suc#1#2{\{ #1_#2 \}}
+% \def \su#1#2{#1_#2}
+% \def \ep{\varepsilon}
+% \def \np{\vskip 0.25 cm}
+% \def \ap{\vskip 0.15 cm}
+% \def \linf{\lim_{n \rightarrow \infty}}
+% \def \limfun#1#2{\lim_{#1 \rightarrow #2}}
+
+\newcommand{\pr}[1]{P( #1 )}
+
+% \def \X{{ X}}
+% \def \Y{{\cal Y}}
+%\newcommand{\Z}{{\cal Z}}
+
+
+%%%%CONJUNTOS N, Z, R, Rn,[0,1].vacio
+\newcommand{\N}{I\!\!N}
+\newcommand{\R}{I\!\!R}
+\newcommand{\C}{I\!\!\!\!C}
+\newcommand{\Z}{Z\!\!\!Z}
+%\def\Zp{\Z^{+}}
+\newcommand{\Q}{{\rm{0\!\!\!\!Q}}}
+%\def \Rn{\R^{n}}
+%\def \int{[0,1]}
+%\def \vac{\emptyset}
+
+
+%%%OTRAS MACROS
+
+
+% \def \lme#1{\ \> {\hbox{\rm {#1}}}\ \> }%%PONE TEXTO EN MODO MATEMATICO
+% \def \lm#1{{\hbox{\rm {#1}}}}%%PONE TEXTO EN MODO MATEMATICO
+
+%%%%FUENTES
+% \font\mg = cmr10 scaled \magstep 4 %% FONT NORMAL AUMENTO 4
+% \font\g = cmr10 scaled \magstep 2 %% FONT NORMAL AUMENTO 2
+% \font\cab=cmr6 %%DEFINICION DE FONT CMR6
+% \font\pie=cmr5 %%DEFINICION DE FONT CMR6
+
+%%%% COMENÇA EL DOCUMENT
+%\includeonly{probtema1}
+\includeonly{prob1bis,prob2,catalanprob3}
+\begin{document}
+\parindent = 0pt
+\pagestyle{empty}
+
+\newcounter{problema}
+\newcommand{\prb}{\addtocounter{problema}{1}
+\noindent\vskip 2mm {\textbf{\theproblema ) }}}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\theproblema]{Sol.: #1} }}}
+
+\setcounter{problema}{0}
+
+\begin{center}
+
+    \textsc{Tema1. Variables aleat\`ories vectorials \\ Problemes proposats}
+\end{center}
+
+\prb 
+Es llancen a l'aire dos daus de diferent color, un blanc i
+l'altre vermell. Sigui $X$ la variable aleat\`oria ``nombre de punts
+obtinguts amb el dau blanc", i $Y$ la variable aleat\`oria ``nombre
+m\'es gran dels punts obtinguts amb els dos daus".
+\begin{enumerate}[a)]
+\item Determinau la llei conjunta.
+\item Obteniu les lleis marginals.
+\item S\'on independents? (\textbf{No})
+\end{enumerate}
+
+\prb  La funci\'o de densitat conjunta de dues variables aleat\`ories
+absolutament cont\'{\i}nues \'es: $$f (x,y) = \cases{k(x+xy) & si $\>
+(x,y) \in (0,1)^2$\cr 0 & en tot altre cas\cr}$$
+
+\begin{enumerate}[a)]
+\item Determinau $\> k.$ ($\mathbf{4/3}$)
+\item Trobau les funcions de densitat marginals.
+\item S\'on independents? (\textbf{ S\'{\i}})
+\end{enumerate}
+
+\prb Dues persones A i B esperen trobar-se en un cert lloc entre
+les 5 i les 6. Cap d'elles  esperar\`a l'altra m\'es de 10 minuts. Si
+suposam que arriben independentment, calculau la probabilitat que
+se trobin en cada un dels dos casos seg\"{u}ents:
+\begin{enumerate}[a)]
+\item Si la persona A arriba a les 5.30. ($\mathbf{1/3}$)
+\item Si A i B arriben en qualsevol moment, a l'atzar.
+($\mathbf{11/36}$)
+\end{enumerate}
+
+\prb Les variables aleat\`ories $X_1 \mbox{i } X_2$ s\'on independents
+i amb densitat com\'u $$f(x) = \cases{1 & si $0 \leq x \leq 1$\cr 0
+& en cas contrari\cr}$$
+\begin{enumerate}[a)]
+\item Determinau la densitat de $Y = X_1 + X_2.$
+\item Determinau la densitat de $Z = X_1 - X_2.$
+\end{enumerate}
+
+\prb Obteniu la funci\'o de distribuci\'o conjunta de les variables
+aleat\`ories $X$ i $Y $ la funci\'o de densitat conjunta de les quals
+\'es: $$f(x,y) = \cases{{6 \over 5}(x+y^2) & si $\> x,y \in
+(0,1)$\cr 0 & en cas contrari\cr}$$
+
+\prb Si $X_1 \mbox{ i } X_2 $ s\'on dues variables aleat\`ories amb
+distribuci\'o de Poisson, independents i amb mitjanes respectives
+$\alpha \mbox{ i } \beta$, provau que $Y = X_1 + X_2 $ tamb\'e \'es
+una variable aleat\`oria Poisson (amb mitjana $\> \alpha + \beta$).
+(Nota: Una variable aleat\`oria que t\'e aquesta propietat \'es diu que
+\'es \emph{estable})
+
+\prb Durant un per\'{\i}ode $T$, el nombre $X$ de cridades arribades a
+una centraleta \'es una variable aleat\`oria Poisson amb mitjana
+$\lambda \cdot T,$ i el nombre $Y$ de cridades que surten de la
+centraleta \'es una altra variable aleat\`oria Poisson amb mitjana $
+\mu \cdot T. $ Suposant que $X \mbox{i } Y$ s\'on independents,
+determinau la distribuci\'o condicional de $X \mbox{donat que } X +
+Y = n.$ ($\mathbf{B\left( n, {\lambda \over \lambda+\mu}
+\right)}$)
+
+%%%%%%%%%%%%%%va la 16
+
+\prb Un prove\"{\i}dor de serveis inform\`atics t\'e una quantitat $X$ de
+cents d'unitats d'un cert producte al principi de cada mes. Durant
+el mes es venen $Y$ cents d'unitats del producte. Suposem que $X$
+ i $Y$ tenen una densitat conjunta donada per
+
+$$f(x,y) = \cases{2/9 & si $\> 0 < y < x < 3$\cr 0 & en cas
+contrari\cr}$$
+\begin{enumerate}[a)]
+\item Comprovau que {\it f} \'es una densitat.
+\item Determinau $\> F_{X,Y}.$
+\item Calculau la probabilitat que a final de mes s'hagi venut com a
+m\'{\i}nim la meitat de les unitats que hi havia inicialment.
+($\mathbf{1/2}$)
+\item Si s'han venut 100 unitats, quina \'es la probabilitat que n'hi
+haguessin com a m\'{\i}nim 200 a principi de mes? ($\mathbf{1/2}$)
+\end{enumerate}
+
+\prb Siguin $X$ i $Y$ dues variables aleat\`ories conjuntament
+absolutament cont\'{\i}nues. Suposem que
+
+$$ f_{X}(x) = \cases{4x^3 & si $\> 0 < x < 1$\cr 0 & en cas
+contrari\cr}$$
+
+i que
+
+$$ f_{Y}(y|x) = \cases{{2y \over x^2} & si $\> 0 < y < x$\cr 0 &
+en cas contrari\cr}$$
+\begin{enumerate}[a)]
+\item  Determinau $f_{X,Y}$.
+\item Obteniu la distribuci\'o de $Y.$
+\item  Trobau $f_{X}(x|y).$
+\end{enumerate}
+
+\prb En l'exercici 1,
+\begin{enumerate}[a)]
+\item Obteniu la distribuci\'o de $X$ condicionada a $Y =
+4$.
+\item Quina \'es l'esperan\c{c}a de $X$ condicionada a $Y = 4$?
+($\mathbf{22/7}$)
+\item I la vari\`ancia de $X$ condicionada a $Y = 4$?
+($\mathbf{62/49}$)
+\end{enumerate}
+\prb Llan\c{c}am a l'aire un dau equilibrat. Considerem dues variables
+aleat\`ories $X$ i $Y$ definides com
+
+$$X = \cases{-1 & si el resultat \'es imparell\cr 1 & si el resultat
+\'es parell\cr} \ \ Y = \cases{-1 & si el resultat \'es 1, 2 o 3\cr 0
+& si el resultat \'es 4\cr 1 & si el resultat \'es 5 o 6\cr}$$
+\begin{enumerate}[a)]
+\item Trobau la llei conjunta i la funci\'o de distribuci\'o de $X
+\mbox{i} Y.$
+\item Calculau $\pr{X + Y = 0 | Y \leq 0}$ ($\mathbf{1/4}$) i
+$\pr{X = 1 | X + Y = 2}$  ($\mathbf{1}$).
+\end{enumerate}
+
+%%%%%%%%%%% va la 17
+%
+%
+\prb El nombre d'errors $X$ per p\`agina que comet un determinat
+escriptor \'es una variable aleat\`oria amb llei $$\pr{X = x} = e^{-2}
+\cdot {2^x \over x \> !}, \ \ x = 0,1, \ldots$$ Si una p\`agina t\'e
+{\it x} errors, el nombre de minuts $Y$ que un revisor tarda en
+revisar i corregir cada p\`agina \'es una variable aleat\`oria amb
+distribuci\'o:
+
+$$\pr{Y = y | X = x} = \cases{1/5 & si $\> y = 1+x$\cr 3/5 & si
+$\> y = 2+x$\cr 1/5 & si $\> y = 3+x$\cr}$$
+\begin{enumerate}[a)]
+\item Trobau la probabilitat que es necessitin 4 minuts per revisar
+i corregir una p\`agina elegida a l'atzar. ($\mathbf{0.253}$)
+\item Si s'han utilitzat 4 minuts en la revisi\'o i correcci\'o d'una
+p\`agina, quina \'es la probabilitat que hi hagu\'es 3 errors?
+($\mathbf{1/7}$)
+\end{enumerate}
+
+\prb Suposem que la variable aleat\`oria $X$ es selecciona a l'atzar
+de l'interval unitat, i aleshores la variable aleat\`oria $Y$
+ es selecciona a l'atzar de l'interval $(0,X).$ Determinau la
+distribuci\'o de $Y.$
+
+\prb Un auditor selecciona a l'atzar un cert nombre $X$ de
+factures d'un arxivador; $X$ \'es un nombre a l'atzar entre 5 i 8.
+Sigui $Y$ el temps en minuts que tarda en revisar-les. Suposem que
+$(X,Y)$ t\'e una llei conjunta donada per
+
+$$\pr{X = x, Y = y} = \cases{{1 \over 4} \cdot {10-x \over x}
+\cdot \left ( {x \over 10} \right )^y & si $\> x = 5,6,7,8, \ y =
+1,2,\ldots$\cr 0 & en cas contrari\cr}$$
+\begin{enumerate}[a)]
+    \item Trobau la distribuci\'o marginal de $Y.$
+\item Trobau la distribuci\'o condicional de $X $  donat que $Y = y.$
+\item  Calculau la probabilitat que hagi triat 6 factures sabent que
+ha tardat m\'es de 3 minuts en revisar-les. ($\mathbf{0.18}$)
+\end{enumerate}
+
+\prb Una diana consisteix en 3 cercles conc\`entrics amb radis
+respectius 1 cm, 2 cm i 3 cm. En una competici\'o de tir, la
+distribuci\'o dels impactes en la diana i els voltants \'es tal que
+les desviacions horitzontal i vertical respecte del centre de la
+diana s\'on independents i les dues segueixen una distribuci\'o normal
+N(0, 1 cm.). Determinau la proporci\'o d'impactes dins cada anell de
+la diana. (Ind.: Utilitzau les coordenades polars)
+($\mathbf{0.393, 0.471, 0.124}$)
+
+%%%va la 18
+%%%%%%%va la 18
+%
+
+\prb  Siguin $X$ i $Y$ dues variables aleat\`ories amb densitat
+conjunta $$f_{XY}(x,y) = \left\{\begin{array}{ll}\frac{1}{x} &
+\mbox{si } 0 \leq y \leq x \leq 1\\ 0 & \mbox{en cas
+contrari}\end{array}\right.$$
+\begin{enumerate}[a)]
+\item Calculau $f_X(x)$.
+\item Calculau $f_{Y}(y|x)$.
+\item Calculau $E(Y)$. ($\mathbf{1/4}$)
+\item Calculau $E(Y|X)$, la ra\'o de correlaci\'on $\eta_{Y|X}$ i ECM. ($\mathbf{\eta^2_{Y|X}=3/7, ECM=1/36}$)
+\item Calculau $E(E(Y | X))$ i comprovau que
+coincideix amb $E(Y)$.
+\item Estimeu $Y$ si sabem que $X=0.75$.($\mathbf{3/8}$)
+\end{enumerate}
+
+\prb  Considerem un experiment amb tres possibles resultats $E_1,
+E_2 \mbox{ i } E_3$ amb probabilitats respectives $p,q$ i $r$ tals
+que $p+q+r = 1.$ En una seq\"{u}\`encia de $n$ proves independents de
+l'experiment, denotem per $X$ el nombre de vegades que ocorr
+$E_1$, i per $Y$ el nombre de vegades que ocorr $E_2$. Es sap que
+el vector $(X,Y)$ t\'e una distribuci\'o anomenada \textbf{trinomial}
+que ve donada per: $$\pr{X=i,Y=j} = {n! \over i! \> j! \> k!} \>
+p^i \> q^j \> r^k \> , \ \ \ k = n-i-j$$
+\begin{enumerate}[a)]
+\item Provau que les distribucions marginals s\'on binomials.
+\item Determinau el vector mitjana i la matriu de covari\`ancies de
+$(X,Y)$.
+\item Provau que les distribucions condicionals s\'on binomials.
+\item Obteniu l'expressi\'o de $E(Y | X = i) \ \ \forall i = 0,
+ \ldots , n$.
+\item Comprovau que el coeficient de correlaci\'o entre $E(Y | X)$
+i $X$ \'es igual a -1 i, per tant, $E(Y | X)$ \'es una funci\'o lineal
+de $X$, $E(Y | X) = a X + b$, amb $a < 0$.
+\item Determinau els coeficients $a$ i $b$ a partir de
+l'expressi\'o obtinguda a l'apartat (d).
+\end{enumerate}
+
+\prb  En l'exercici 1,
+\begin{enumerate}[a)]
+\item Determinau $E(X | Y)$. ($\mathbf{{3Y^2-Y \over 2(2Y-1)}}$)
+\item Calculau $E(E(X | Y))$, i comprovau que
+coincideix amb $E(X)$. ($\mathbf{21/6}$)
+\end{enumerate}
+
+\prb Siguin $X$ i $Y$ dues variables aleat\`ories conjuntament
+gaussianes, amb funci\'o de densitat conjunta:
+
+$$ f_{X Y} (x,y) = {1 \over 2 \pi \sqrt{1-r^2}} \>
+e^{-(x^2+y^2-2rxy)/2(1-r^2)} \ \ \mbox{ per a } - \infty < x,y <
+\infty$$ Provau que el coeficient de correlaci\'o entre $X$ i $Y$ \'es
+ $r$.
+
+\prb  Es llan\c{c}a un dau sense biaix. Sigui $X$ la variable
+aleat\`oria ``nombre de punts obtinguts", i $Y$ la variable aleat\`oria
+que val 0 si s'obt\'e un 1, un 2 o un 3, i val 1 si s'obt\'e 4, 5 o 6.
+Calculau la covari\`ancia ($\mathbf{3/4}$) i el coeficient de
+correlaci\'o ($\mathbf{0.878}$) entre $X$ i $Y$.
+
+
+
+
+%
+%%%%%%%%va la 19
+%
+
+\prb  La funci\'o de densitat conjunta de dues variables aleat\`ories
+cont\'{\i}nues $X$ i $Y$ \'es: $$f(x,y) = \cases{{3 \over 2}(x^2+y^2) &
+si $x,y \in (0,1)$ \cr 0 & en tot altre cas.\cr}$$
+
+Calculau les mitjanes ($\mathbf{5/8, 5/8}$), les vari\`ancies
+($\mathbf{73/960, 73/960}$), la covari\`ancia ($\mathbf{-1/64}$) i
+el coeficient de correlaci\'o ($\mathbf{-15/73}$).
+
+\prb  Es llancen a l'aire dos daus sense biaix. Siguin $N_1 \mbox{
+i } N_2$ els valors obtinguts en els dos daus. Posem $X = N_1 +
+N_2$ i $Y = \ \mid N_1 - N_2 \mid.$ Obteniu la distribuci\'o
+conjunta de $X$ i $Y$ i comprovau que $X$ i $Y$ estan
+incorrelacionades. S\'on independents? (\textbf{No})
+
+\prb  El nombre de clients que arriben a una estaci\'o de servei
+durant un temps {\it t} \'es una variable aleat\`oria de Poisson amb
+par\`ametre $\beta \cdot t.$ El temps necessari per servir cada
+client \'es una variable aleat\`oria exponencial amb par\`ametre
+$\alpha$. Determinau la llei de la variable aleat\`oria que d\'ona el
+nombre de clients que arriben durant el temps de servei {\it T}
+d'un determinat client. Es suposa que les arribades de clients s\'on
+independents del temps de servei dels clients. (Nota: $
+\displaystyle \> \int_o^\infty r^k \> e^{-r} \> dr = \Gamma(k+1) =
+k!$) ($\mathbf{Geom\left({\alpha \over \alpha + \beta}\right)}$)
+
+%\prob Regressi\'o lineal pel m\`etode dels minims cuadrats. Suposem
+%que tenim un conjunt de observacions (a $\R^2$) d'un determinat
+%fen\`omen:
+%
+%$$(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n)$$
+%
+%Es demanan trobar la recta $y=a +b x$ que millor aproxima les
+%observacions anteriors. \'Es a dir si estimem el valor asociat a
+%$x_i$ mitja\c{c}ant la recta obtindrem $y^{*}_i=a + b x_i$ i es
+%produ\"{\i}r\'{\i}a un error $e_i=y_i-y^{*}_i$ al que s'anomena residu. Ara
+%tenim que  $y_i=a + b x_i+e_i$, llavors la millor recta de
+%regressi\'o pel m\'etode del minins quadrats consiteix en trobar els
+%valors $a$ i $b$ tals que minimitzen l'error quadr\`atic
+%$SE=\Sum_{i=1}^{n} e_i^2$.
+%
+%\begin{enumerate}[a)]
+%\item Demostreu que $a$ i $b$ verifiquen el seg\"{u}ent sistema
+%(que reb el nom d'equacions normals):
+%
+%$$\left\{\begin{array}{lcl} n a + b \sum_{x_i}&=&\sum_{j=1}^n
+%y_i\\
+%  a\sum_{i=1}^n x_i + b \sum_{x^2_i}&=&\sum_{j=1}^n x_i y_i
+%y_i\end{array}\right.$$
+%
+%\item Resoleu el sistema anterior i doneu les expresions de $a$ i
+%$b$ en funci\'o dels valors $x_i$ i $y_i$.
+
+
+
+
+\prb $E(Y|X)$ \'es la funci\'o $g(X)$ que ``millor''aproxima $Y$ on 
+``millor'' indica que l'error quadr\`atic mitj\`a
+$E\left((Y-g(X))^2\right)$ \'es m\'{\i}nim. Aquesta funci\'o de $X$
+s'anomena la {\bf corba de regressi\'o de la mitjana de $Y$ sobre
+$X$}. An\`alogament tenim la corba de regressi\'o de la mitjana de $X$
+sobre $Y$. Determinau les corbes de regressi\'o de les mitjanes i
+les rectes de regressi\'o lineal si
+$(X,Y)$ est\`a distribu\"{\i}t uniformement en el triangle de
+v\`ertexs (0,0), (1,0) i (1,2).
+
+%les rectes de regressi\'o lineal en cada un dels dos casos seg\"{u}ents:
+%\begin{enumerate}[a)]
+%    \item $(X,Y)$ est\`a distribu\"{\i}t uniformement en el triangle de
+%v\`ertexs (0,0), (1,0) i (1,2).
+%\item  $(X,Y)$ est\`a distribu\"{\i}t uniformement en el semicercle
+%unitat superior.\end{enumerate}
+
+
+\prb  Una persona contreu el virus d'una certa malaltia que
+requereix hospitalitzaci\'o. Sigui $X$ la variable aleat\`oria que
+d\'ona el temps, en setmanes, que tarda en manifestar-se la
+malaltia. Sigui $Y$ la variable aleat\`oria que expressa el temps
+total, tamb\'e en setmanes, des de que el virus s'ha contret fins
+que el pacient \'es donat d'alta. Se suposa que en el moment que
+apareixen els s\'{\i}mptomes el malalt \'es hospitalitzat. Se sap que $X$
+i $Y$ tenen una densitat conjunta donada per: $$f(x,y) = \cases{x
+\cdot {e}^{-y} & si $0 \leq x \leq y < +\infty$ \cr 0 & en cas
+contrari.\cr}$$
+
+\begin{enumerate}[a)]
+\item Trobau les corbes i les rectes de regressi\'o i estudiau la
+bondat dels ajustaments.
+\item Calculau la probabilitat que un pacient estigui hospitalitzat
+menys d'una setmana. ($\mathbf{1-{ e}^{-1}}$)
+\item Suposant que el pacient \'es donat d'alta avui despr\'es de 5 dies
+hospitalitzat, quina \'es la probabilitat que contragu\'es el virus fa
+menys de dues setmanes? ({\bf Ind.}: Fes un canvi de les variables
+$(X,Y)$ a les noves variables $({\cal U},{\cal V}) = (Y - X, Y)$.)
+($\mathbf{1-\frac{16}{7}e^{-\frac{9}{7}}=0.37}$)
+\end{enumerate}
+
+%
+%%%%%%%%%va la 20
+%
+
+
+\prb Siguin $X$ i $Y$ dues v.a. discretes amb funci\'o de
+probabilitat conjunta
+
+$$f_{XY}(x,y)= \frac{6}{37} \left(\frac{1}{x} + \frac{1}{y}\right)
+\mbox{ si } x=1,2,3;  y=2,3$$
+
+Trobau la funci\'o de probabilitat de $U=X Y$ i de $V=X+Y$.
+Trobau el vector de mitjanes, la matriu de covari\`ancies i el
+coeficient de correlaci\'o de $(U,V)$.
+ ($\mathbf{E(U)=4.37838}$; $\mathbf{E(V)=4.24324}$ ;
+$\mathbf{Cov(U,V)=2.01607}$; $\mathbf{Var(U)= 4.82980}$ ; $\mathbf{Var(V)= 0.88678}$).
+
+%Trobau la funci\'o de probabilitat conjunta de $U=X Y$ , $V=X+Y$.
+%Trobau el vector de mitjanes, la matriu de covari\`ancies i el
+%coeficient de correlaci\'o de $(U,V)$.\footnote{[2] bibl. compl. pp.
+%218-219}\newline ($\mathbf{E(U)=4.37838; E(V)=4.24324 ;
+%Cov(U,V)=2.01607; Var(U)= 4.82980 ; Var(V)= 0.88678}$).
+
+
+\prb Sigui $(X,Y)$ una v.a. continua amb funci\'o de densitat:
+
+$$f_{XY}(x,y)=\left\{
+\begin{array}{ll}
+    \frac{2-x-y}{8} & -1\leq x\leq 1,\quad -1\leq y \leq  1  \\
+    0 & \mbox{ en altre cas}
+\end{array}
+\right.$$
+
+Comprovau si $X$, $Y$ s\'on independents. Calculau la funci\'o de
+densitat de $(X^2,Y^2)$; comprovau si s\'on independents.
+
+\prb Siguin $X_{1}$, $X_{2}$ variables aleat\`ories independents
+tals que
+
+$$P(X_{i}=1)=p=1-P(X_{i}=2) \mbox{ si } i=1,2$$ Sigui $Y_{k}$ la
+v.a. que designa el nombre de variables $X_{i}$ iguals a $k$ amb
+$k=1,2$. Trobau la distribuci\'o conjunta de $(Y_{1},Y_{2})$ i el
+seu vector de mitjanes i la seva matriu de covari\`ancies.
+
+\prb Sigui $(X,Y)$ un vector aleatori que t\'e distribuci\'o uniforme
+a $(0,1)\times(0,1)$. Calculau la distribuci\'o conjunta i les
+marginals de $(U,V)$ on $U=\max(X,Y)$ i $V=\min(X,Y)$.
+
+
+%\prb Sigui $(X,Y)$ un vector aleatori amb distribuci\'o
+%$N(\mu,\Sigma)$.
+%\begin{enumerate}[a)]
+%\item Determinau  les distribucions marginals i la distribuci\'o
+%condicional $X/Y$.
+%\item Determinau la corba de regressi\'o de $X$ damunt $Y$
+%\end{enumerate}
+
+\prb Sigui $(X,Y)$ un vector aleatori distribu\"{\i}t uniformement al
+cercle unitat. Siguin les variables aleat\`ories $U=\sqrt{X^2+Y^2}$
+i $V=\arctan{\frac{Y}{X}}$.
+\begin{enumerate}[a)]
+\item Demostrau que $U$ i $V$ s\'on v.a. independents.
+\item Siguin $R$ i $\Theta$ dues variables aleat\`ories independents
+ amb distribuci\'o uniforme a l'interval
+unitat i a l'interval $(0,2\pi)$ respectivament. El vector aleatori
+$(R,\Theta)$ t\'e la mateixa distribuci\'o que el $(U,V)$? (\textbf{No})
+\end{enumerate}
+
+
+
+%\prb Sigui $(X,Y)$ una v.a. bidimensional continua amb funci\'o de
+%densitat:
+%
+%$$f_{XY}(x,y)=\left\{
+%\begin{array}{ll}
+%    6x & 0\leq x\leq y\leq 1  \\
+%    0 & \mbox{ en altre cas}
+%\end{array}
+%\right.$$
+%
+%\begin{enumerate}[a)]
+%    \item Trobau la funci\'o caracter\'{\i}stica conjunta de $(X,Y)$.
+%    \item Trobau les funcions  caracter\'{\i}stiques  marginals.
+%    \item S\'on independents?
+%    \item Trobau la funci\'o generatriu de moments conjunta i marginals.
+%    \item  Calculau utilitzant la funci\'o caracter\'{\i}stica o la funci\'o
+%generatriu les mitjanes, vari\`ancies i covari\`ancies.
+%\item Trobau la funci\'o caracter\'{\i}stica de $Z=2X-3Y$.
+%\end{enumerate}
+
+\prb Siguin $X$ i $Y$ dues v.a. exponencials independents. Trobau
+la funci\'o de densitat de $Z=|X-Y|$.
+
+%\prb Siguin $X$ i $Y$ dues v.a. normal st\`andard i independents.
+%Demostreu que $Z=X/Y$ es una v.a. Cauchy\footnote{Una v.a. segueix
+%una distribuci\'o Cauchy si la seva funci\'o de densitat \'es
+%$\frac{\frac{\alpha}{\pi}} { x^2 +\alpha^2}$ si $x\in \R$ amb
+%$\alpha>0$}.
+%
+%\prb Siguin $X$ i $Y$ dues v.a. independents amb distribuci\'o
+%Rayleigh \footnote{Una v.a. segueix una distribuci\'o Rayleigh si la
+%seva funci\'o de densitat \'es $\frac{x}{\alpha^2}
+%e^{-\frac{x^2}{2\alpha^2}}$ si $x\geq 0$ amb $\alpha>0$.}. Trobau
+%la densitat de la v.a. $Z=X/Y$.
+
+% \prb Sigui $(X,Y)$ una v.a. conjuntament gaussiana amb
+% $\mu_{X}=\mu_{Y}=0$. Trobeu la transformaci\'o lineal $A\in
+% \mathcal{M}_{2}(\R)$ tal que
+% $\left(
+% \begin{array}{c}
+%     Y_{1}  \\
+%     Y_{2}
+% \end{array}\right)=A\left(
+% \begin{array}{c}
+%     X_{1}  \\
+%     X_{2}
+% \end{array}\right)$
+%
+% sigui una normal bivariant standar.
+
+%%%%\prb Sigui $(X,Y)$ una v.a. conjuntament gaussiana amb
+%%%%$\mu_{X}=\mu_{Y}=1$, $\sigma_{X}=\sigma_{Y}=2$ $\rho_{XY}=0.7$.
+%%%%Trobau la probabilitat $P(X\leq 1.5, Y\leq 2)$ en funci\'on d'una
+%%%%normal bidimensional est\`andard.
+
+%%%%treball
+%%%%\textbf{Els darrers problemes d'aquest tema es poden entregar resolts
+%%%%i puntuaran com a treball del curs.}
+%%%%\prb Un inspector decideix inspeccionar un individu  llan\c{c}ant una
+%%%%moneda al aire. Si surt cara li fa l'inspecci\'o i el deixa passar en
+%%%%cas contrari. Suposem que el temps d'arribada dels individus a
+%%%%l'inspecció es exponencial amb mitjana 1. El temps que es tarda en fer
+%%%%una revisió es constant i val $t$.
+%%%%
+%%%%\begin{enumerate}[a)]
+%%%%    \item Trobau la funció de probabilitat del nombre de individus
+%%%%    que arriben entre dos inspeccions consecutives.
+%%%%    \item Trobeu la funció de densitat del temps $X$ entre dos
+%%%%    inspeccions consecutives.
+%%%%    \item Trobau el valor $p$, tal que amb el 90\% de probabilitat
+%%%%    una inspecci\'o es completada abans de que arribi un altre individu
+%%%%    per inspeccionar.
+%%%%    \end{enumerate}
+
+    \prb El temps de vida $X$ de un dispositiu \'es una v.a. exponencial
+   amb mitjana $\frac{1}{R}$. Suposem que a causa d'irregularitats en
+   el proc\'es de producci\'o, el par\`ametre $R$ \'es una v.a. amb
+   distribuci\'o gamma
+   \footnote{Una v.a. segueix una distribuci\'o gamma si la seva funci\'o de 
+   densitat \'es $f_X(x)=\frac{\lambda (\lambda x)^{\alpha -1} e^{-\lambda x}}{\Gamma(\alpha)}$, si $x > 0$,
+   amb $\alpha > 0$ i $\lambda > 0$. A m\'es, $\Gamma(\alpha)=\int_0^\infty x^{\alpha-1} e^{-x} dx$ i verifica la propietat:  $\Gamma(\alpha+1)=\alpha \Gamma(\alpha)$.}.
+   \begin{enumerate}[a)]
+       \item Trobau la funci\'o de densitat conjunta de $(X,R)$.
+       \item Trobau la funci\'o de densitat de $X$.
+       %\item Trobau l'esperan\c{c}a i la vari\`ancia de $X$.
+       \end{enumerate}
+
+  %%%%     \prb Siguin $X$, $Y$ dos mostres d'una  senyal aleat\`oria en
+%%%%       dos instants. Suposem que $X$ i $Y$ són gaussianes
+%%%%       independents amb mitjana zero i la mateixa varian\c{c}a.
+%%%%       Quan la senyal es $0$  la vari\`ancia és $\sigma_{0}^2$ i si
+%%%%       la senyal és 1 llavors la varian\c{c}a és
+%%%%       $\sigma_{1}^2>\sigma_{0}^2$. Suposem que les senyals 0 i 1
+%%%%       ocurreixen amb probabilitats $p$ i $1-p$ respectivament. Sigui
+%%%%       $R^2=X^2 + Y^2$ l'energía total de les dues observacions.
+%%%%
+%%%%       \begin{enumerate}[a)]
+%%%%       \item Trobau la funció de densitat de $R^2$ quan la senyal és 0 i
+%%%%       quan la senyal és 1. Trobau la funció de densitat de $R^2$.
+%%%%       \item Suposem que tenim la seg\"{u}ent regla de  detecció de la
+%%%%       senyal:
+%%%%
+%%%%        \begin{itemize}
+%%%%        \item Si $R^2>T$, llavors decidim que la senyal es 1.
+%%%%        \item Si $R^2\leq T$ llavors decidim que la senyal es 0.
+%%%%        \end{itemize}
+%%%%
+%%%%        Trobau una expressió per a la probabilitat d'error en termes de
+%%%%        l'umbral  $T$.
+%%%%       \item Trobau el valor de $T$ que minimitza la probabilitat d'error.
+%%%%       \end{enumerate}
+%%%%
+%%%%\prb Siguin $U_{0}, U_{1},\ldots$ una seq\"{u}\`encia de v.a. normals standar.
+%%%% Un ``\textit{low-pass filter}'' agafa una seq\"{u}\`encia  $U_{i}$ i
+%%%% produeix una seq\"{u}\`encia de sortida
+%%%%
+%%%% $$X_{n}=\frac{1}{2} (U_{n}+U_{n-1});$$
+%%%%
+%%%% i un ``\textit{high-pass filter}'' produeix una seq\"{u}\`encia de sortida
+%%%%
+%%%% $$Y_{n}=\frac{1}{2} (U_{n}-U_{n-1});$$
+%%%% \begin{enumerate}[a)]
+%%%%       \item Trobau la funció de densitat conjunta de $X_{n}$, $X_{n-1}$ i
+%%%%       de $X_{n}$, $X_{n+m}$ per $m>1$
+%%%%       \item El mateix que abans per\`o per $Y_{n}$
+%%%%       \item Trobau la funció de densitat conjunta de $X_{n}$, $Y_{n}$.
+%%%% \end{enumerate}
+%%%%
+%%%%       %            \item Si $R^2>T$, llavors decidim que la senyal es 1.
+%%%%     \prb Un paquet de m\`oduls de conmutació té tres entrades i
+%%%%     tres sortides. Cada $T$ segons el m\`odul accepta paquets de
+%%%%     les tres entrades. Cada entrada t\'e un paquet amb probabilitat
+%%%%     $p$ i no t\'e paquets amb probabilitat $1-p$. Les
+%%%%     entrades de paquets són independents. Els paquets són enviats
+%%%%     amb equiprobabilitat a una de les tres sortides. Siguin $X_{1},
+%%%%     X_{2}, X_{3}$ el nombre de paquets arribats  a les sortides 1,2 i 3
+%%%%     respectivament.
+%%%%
+%%%%     \begin{enumerate}[a)]
+%%%%         \item Trobeu la funció de probabilitat conjunta de
+%%%%         $X_{1},X_{2},X_{3}$.
+%%%%         \item Trobeu la funció de probabilitat conjunta de
+%%%%         $X_{1},X_{2}$.
+%%%%         \item Trobeu la funció de probabilitat conjunta de
+%%%%         $X_{1}$.
+%%%%         \item  Suposem que cada sortida pot acceptar com a molt un paquet
+%%%%         i rebutja el demés paquets destinats a ella. Trobau la
+%%%%         mitjana del nombre de paquets rebutjats per el m\`odul en cada
+%%%%         per\'{\i}ode de $T$ segons.
+%%%%        \end{enumerate}
+%%%%
+%%%%
+%%%%        \prb Sigui $Y=X+N$ on $X$ i $N$ són dues v.a. normals
+%%%%        independents amb esperan\c{c}a zero i la mateixa vari\`ancia.
+%%%%        \begin{enumerate}[a]
+%%%%        \item Dibuixeu el coeficient de correlació entre la ``senyal
+%%%%        observada $Y$'' i la ``senyal desitjada $X$'' com una funció de
+%%%%        la ra\'o ``senyal/renou'' $\sigma_{X}/\sigma_{N}$.
+%%%%        \item Trobau  l'estimació de ``$X$''
+%%%%        en termes de  ``$Y$'' que dóna el més petit
+%%%%        error quadràtic mitjà. Trobau l'error quadràtic mitjà d'aquesta
+%%%%        estimació.
+%%%%        \end{enumerate}
+%%%%
+%%%%        \prb Un multiplexor combina $N$ senyals digitals de televisió en
+%%%%        una l\'{\i}nia de transmissió comú. La senyal $n$ genera $X_{n}$ bits
+%%%%        cada 33 milisegons, on $X_{n}$ es una v.a. normal amb $E(X_{n})=m$
+%%%%        i vari\`ancia $\sigma^2$. Suposem que el multiplexor admet
+%%%%        un nombre màxim de $T$ bits desde la sortida combinada cada 33
+%%%%        milisegons, i que  tots el bits restants es descarten. Suposem
+%%%%        que les $N$ senyals són independents.
+%%%%
+%%%%        \begin{enumerate}[a)]
+%%%%        \item Trobau la funció de probabilitat del nombre de bits
+%%%%        descartats en un per\'{\i}ode de 33 milisegons, si tenim que
+%%%%        $T=m_{a}+t\sigma$, on $m_{a}$ es el nombre mitjà del total de bits
+%%%%        generats per les sortides combinades, i $\sigma$ es la desviació
+%%%%        típica del nombre total de  bits produ\"{\i}ts per les sortides
+%%%%        combinades.
+%%%%        \item Trobau el nombre esperat de bits descartats cada 33 milisegons.
+%%%%        \item Trobau el nombre màxim de bits perduts per el multiplexor.
+%%%%%       \item  Trobau el valor esperat del nombre de bits de la sortida de
+%%%%%       l'apartat a), i trobau el valor esperat del nombre de bits perduts
+%%%%%       per sortida. Qu\`e succeeix quan $N$ es gran?
+%%%%%       \item Suposem que  volem que $t$  estigui ajustat de forma que la
+%%%%%       fracció de bits perduts es constant.
+%%%%%       Trobeu una equaci\'o que tinguin
+%%%%%       per solució aquest valor $t$.
+%%%%%       \item En que canvien els anteriors resultats si les senyals tenen
+%%%%%       $Cov(X_{i},X_{j})=a$?
+%%%%    \end{enumerate}
+%%%%
+%%%%%      \prb Siguin $X_{1},X_{2},\ldots$ mostres de una  senyal. Suposem
+%%%%%      que les mostres són conjuntament gaussianes amb covariances
+%%%%%
+%%%%%      $$Cov(X_{i},X_{j})=\left\{
+%%%%%             \begin{array}{ll}
+%%%%%          \sigma^2 & \mbox{ si } i=j  \\
+%%%%%          \rho\sigma^2 & \mbox{ si } |i-j|=1  \\
+%%%%%          0 & \mbox{en altres cas}
+%%%%%      \end{array}\right.$$
+%%%%%
+%%%%%      Suposem que prenem blocs de 2 mostres consecutives llavors tenim
+%%%%%      el vector $\underline{X}=\left(
+%%%%%             \begin{array}{c}
+%%%%%          X_{i}  \\
+%%%%%          X_{i+1}
+%%%%%      \end{array}\right)$, con\-si\-de\-rem la transformació lineal
+%%%%%      $\underline{Y}=A\underline{X}$
+%%%%%      \begin{enumerate}[a)]
+%%%%%          \item Trobau la matriu $A$ tal que les components de
+%%%%%          $\underline{Y}$ siguin independents.
+%%%%%          \item Siguin $\underline{X}_{i}$ i  $\underline{X}_{i+1}$
+%%%%%          dos blocs consecutius i siguin
+%%%%%          $\underline{Y}_{i}$ i  $\underline{Y}_{i+1}$ les corresponents
+%%%%%          transformacions lineals. Són  $\underline{Y}_{i}$ i  $\underline{Y}_{i+1}$
+%%%%%          independents?
+%%%%
+%%%%%          \end{enumerate}
+%%%%\newpage
+
+
+\end{document}

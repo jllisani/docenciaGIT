@@ -1,0 +1,1185 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[spanish]{babel}
+
+\oddsidemargin -0.3cm
+\evensidemargin 0cm
+\textwidth 16.5cm
+\textheight 21cm
+
+\def\N{\mathbb N}
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+
+\title{An\`alisi d'imatges}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Contorns}
+
+\subsection{Definici\'o de contorn}
+
+\subsection{Filtratge gaussi\`a}
+
+\subsection{M\`etodes multi-escala}
+
+
+\section{Segmentaci\'o}
+
+\subsection{T\`ecniques b\`asiques de segmentaci\'o}
+
+\subsection{Segmentaci\'o basada en la minimitzaci\'o d'un funcional}
+
+\subsubsection{Segmentaci\'o de Mumford-Shah}
+
+\section{An\`alisi morfol\`ogic: el mapa topogr\`afic}
+
+\subsection{El principi d'invari\`ancia per canvi de contrast}
+
+Una propietat important de la visi\'o humana, enunciada pels psic\`olegs gestaltistes ja en 1923
+\'es que la percepci\'o dels objectes d'una escena \'es independent de la il.luminaci\'o o del
+color. La Figura \ref{fig_invcontrast} il.lustra aquesta propietat.
+
+
+\begin{figure}[htbp]
+\begin{tabular}{ccc}
+\includegraphics[width=5cm]{imatges6/lombardo_valsecchi2.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_grey.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_grey2.eps}
+\end{tabular}
+\caption{Invari\`ancia de la percepci\'o als canvis de color o contrast: en les tres imatges
+som capa\c{c}os de reconeixer els objectes que hi apar\`eixen.}
+\label{fig_invcontrast}
+\end{figure}
+
+
+En la Figura \ref{fig_invcontrast} observam tres imatges que representen la mateixa escena. Una d'elles
+\'es una imatge en color, i les altres dues s\'on imatges de nivell de gris amb il.luminacions diferents.
+A pesar d'aquestes difer\`encies en el color i la il.luminaci\'o no tenim cap dificultat en recon\`eixer
+com a id\`entics els objectes que apareixen en les tres imatges. En aquest sentit deim que la informaci\'o
+de {\it forma} continguda en les imatges \'es invariant als canvis de color i contrast.
+
+\vskip 0.3 cm
+Si ens centram en el cas de les imatges de nivell de gris, ens podem demanar si els models per a
+l'an\`alisi d'imatges presentats en les seccions anteriors (contorns i segmentaci\'o) tenen en compte
+aquesta invari\`ancia. Dit en altres paraules, les caracter\'\i stiques b\`asiques d'una imatge, 
+obtingudes per segmentaci\'o o extracci\'o de contorns, s\'on les mateixes quan la imatge \'es sotmesa a un
+canvi de contrast? La resposta \'es ``no'' i les seg\"uents figures ho il.lustren.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=5cm]{imatges6/lombardo_grey_edges.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_grey2_edges.eps}
+\end{tabular}
+\end{center}
+\caption{Els contorns obtinguts per a dues imatges relacionades per un canvi de contrast s\'on diferents.
+En conseq\"u\`encia, podem afirmar que la representaci\'o de les imatges basada en els contorns no \'es 
+invariant als canvis de contrast.}
+\label{fig_contrast_contorns}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=5cm]{imatges6/lombardo_grey_seg.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_grey2_seg.eps}
+\end{tabular}
+\end{center}
+\caption{Les segmentacions obtingudes per a dues imatges relacionades per un canvi de contrast s\'on diferents.
+En conseq\"u\`encia, podem afirmar que la representaci\'o de les imatges basada en la segmentaci\'o 
+no \'es invariant als canvis de contrast.}
+\label{fig_contrast_segmentacio}
+\end{figure}
+
+
+
+Les figures anteriors mostren com els models presentats fins ara per a l'an\`alisi d'imatges s\'on incapa\c{c}os 
+de complir un dels requeriments b\`asics de la percepci\'o humana, el de la invari\`ancia per canvi de contrast. 
+Per aquest motiu cercam un nou model que s\'\i $ $ el compleixi. Aquest model est\`a basat en la representaci\'o 
+de la imatge pels seus conjunts de nivell.
+
+\subsubsection{Canvis de contrast i filtratge d'imatges}
+Abans de passar a estudiar aquesta nova representaci\'o de les imatges dedicam unes l\'\i nies a parlar dels
+canvis de contrast des del punt de vista de la seva modelitzaci\'o matem\`atica. El model m\'es simple
+consisteix en considerar un canvi de contrast com una funci\'o mon\`otona creixent  - estrictament o no - 
+(veure la Figura \ref{canvicontrast}, centre). 
+\[
+g:\R \longrightarrow \R \qquad \text{$g$ mon\`otona creixent} \qquad \Longleftrightarrow \qquad 
+\text{$g$ \'es un canvi de contrast}
+\]
+
+Aquest model captura la caracter\'\i stica esencial d'un canvi
+de contrast: els valors de nivell de gris s\'on modificats, per\`o no la seva relaci\'o d'ordre. En aquest sentit,
+si un objecte \'es m\'es clar que un altre en la imatge original, el mateix passar\`a en la nova imatge
+(veure les imatges esquerra i dreta de la Figura \ref{canvicontrast}). Com a molt, si la funci\'o de canvi de
+contrast no \'es estrictament mon\`otona pot passar que dos nivells que abans eren diferents tenguin ara assignat
+el mateix valor.
+
+
+\begin{figure}[htbp]
+\begin{tabular}{ccc}
+\includegraphics[width=5cm]{imatges6/lombardo_grey.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_canvi.eps} &
+\includegraphics[width=5cm]{imatges6/lombardo_grey2.eps}
+\end{tabular}
+\caption{Imatge original, canvi de contrast i imatge resultant d'aplicar el canvi de contrast a la primera imatge.}
+\label{canvicontrast}
+\end{figure}
+
+
+\noindent
+{\bf Definici\'o}. Deim que un {\bf operador} (filtre) $T$ que associa a una imatge $u$ una nova imatge $Tu$ (dins
+un determinat espai d'imatges) \'es {\bf invariant per canvi de contrast} (o {\bf morfol\`ogic}) si compleix la propietat
+\begin{equation}
+\label{prop_inv_contrast}
+T(g(u))=g(Tu)
+\end{equation}
+
+\noindent
+on $g$ \'es un canvi de contrast.
+
+\noindent
+\'Es a dir, $T$ \'es invariant per canvi de contrast si commuta amb totes les funciones mon\`otones creixents $g$.
+
+\vskip 0.3 cm
+\noindent
+{\bf Exercici}. Recordem (Tema 5) que el filtratge gaussi\`a es pot modelar 
+mitjan\c{c}ant l'equaci\'o de la calor:
+
+\[
+\frac{\partial u(x, y, t)}{\partial t} = \nabla^2 u(x, y, t) 
+\]
+
+\noindent
+on $u_0=u(x, y, 0)$ \'es la imatge original, $\nabla^2$ \'es l'operador laplaci\`a i 
+$u(x, y, t)$ \'es la imatge filtrada a 
+l'escala $t$, la qual \'es soluci\'o de l'anterior equaci\'o en derivades parcials.
+
+\vskip 0.2 cm
+\noindent
+Demostrar que l'operador $T_t$ que assigna a l'imatge original $u_0=u(x, y, 0)$ 
+la nova imatge $T_t u(x, y, 0)=u(x, y, t)$ no \'es invariant per canvi de contrast.
+
+\vskip 0.2 cm
+\noindent
+{\it Soluci\'o}. Si $T_t$ \'es invariant per canvi de contrast s'ha de complir que 
+\[
+T_t g(u(x, y, 0))=g(T_t u(x, y, 0))=g(u(x, y, t)
+\]
+\noindent
+\'es soluci\'o de l'equaci\'o de la calor.
+Aplicant la regla de la cadena i el fet que $u(x, y, t)$ \'es soluci\'o de l'equaci\'o de la calor 
+obtenim (suposant que $g$ \'es $C^2$):
+\begin{equation}
+\label{exgauss1}
+\frac{\partial g(u(x, y, t))}{\partial t}=g'(u) \frac{\partial u(x, y, t)}{\partial t}=g'(u) \nabla^2 u(x, y, t) 
+\end{equation}
+
+\begin{equation}
+\label{exgauss2}
+\nabla^2 g(u(x, y, t)) = g'(u) \nabla^2 u(x, y, t) + g''(u) \|\nabla u\|^2
+\end{equation}
+
+\noindent
+Comparant aquestes dues equacions podem veure com, en general, 
+$\frac{\partial g(u(x, y, t))}{\partial t} \neq \nabla^2 g(u(x, y, t))$, i per tant el filtratge gaussi\`a
+no \'es invariant per canvis de contrast.
+
+
+\vskip 0.7 cm
+
+\noindent
+{\bf Observacions}. 
+\begin{enumerate}
+\item En general, les operacions damunt imatges definides per una convoluci\'o no s\'on invariants
+per canvis de contrast. Aix\'o implica que  les operacions amb imatges realitzades amb filtres lineals
+i invariants espacials no s\'on invariants per canvis de contrast, ja que aquestes operacions es modelen com la
+convoluci\'o de la imatge original per la resposta impulsional del filtre (veure el Tema 3).
+
+\item Si a m\'es de la invari\`ancia per canvi de contrast exigim als filtres altres propietats relacionades
+amb la percepci\'o, com la invari\`ancia per translaci\'o, per rotaci\'o, zoom, etc. podem arribar a deduir
+l'expressi\'o general de les operacions perceptualment acceptables damunt les imatges. S'ha demostrat [AGLM] que 
+aquestes operacions es poden relacionar amb la fam\'\i lia d'equacions diferencials estudiades
+en el Tema 5. Recordem que aquestes equacions tenen la forma
+\[
+\frac{\partial u}{\partial t}=|\nabla u| \text{curv}(u)^\alpha
+\]
+
+\end{enumerate}
+
+\subsection{Conjunts de nivell i canvis de contrast} 
+\noindent
+Donada una imatge $u(x, y): \Omega \subseteq \R^2 \longrightarrow \R$ definim el {\bf conjunt de nivell (superior)} 
+$\lambda$ de $u$ com:
+
+\begin{equation}
+\label{upperlevelset}
+{\cal X}_\lambda u = {\cal X}_\lambda^\text{sup} u = \{ (x, y) \in \Omega : u(x, y) \geq \lambda \}
+\end{equation}
+
+\vskip 0.2 cm
+\noindent
+De manera an\`aloga podem definir el {\bf conjunt de nivell inferior} $\lambda$ com:
+
+\begin{equation}
+\label{lowerlevelset}
+{\cal X}_\lambda^\text{inf} u = \{ (x, y) \in \Omega : u(x, y) \leq \lambda \}
+\end{equation}
+
+
+\vskip 0.3 cm
+\noindent
+{\bf Observaci\'o}. Un conjunt de nivell (superior o inferior) pot estar format per una o v\`aries 
+components connexes\footnote{Es diu que un espai topol\`ogic $X$ \'es {\bf connex}
+si tot subconjunt $C$ de $X$ 
+no es pot escriure com la uni\'o de dos conjunts disjunts no buits. En aquest cas es diu que $C$ \'es connex.
+Un conjunt $C$ de $X$ 
+s'anomena {\bf component connexa} si \'es connex i per a tot subconjunt connex $C_1$ de $X$ 
+tal que $C \subseteq C_1$, llavors $C_1=C$. La noci\'o de connexitat en el cas d'imatges digitals
+ha estat definida en el Tema 4.} (veure la Figura \ref{levelset3D}).
+
+\vskip 0.2 cm
+\noindent
+La Figura \ref{levelset3D} mostra un exemple de conjunt de nivell superior d'una imatge.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=4cm]{imatges6/im3dorigg.eps} & 
+\includegraphics[width=75mm]{imatges6/im3d.eps} \\
+\includegraphics[width=4cm]{imatges6/im3dlevelorig.eps} & 
+\includegraphics[width=75mm]{imatges6/im3dlevelsetmark.eps} 
+\end{tabular}
+\end{center}
+\caption{Representaci\'o tridimensional d'una imatge i d'un dels seus conjunts de nivell.
+En la part superior, imatge original i representaci\'o 3D. En la part inferior, un conjunt de
+nivell de la imatge i la seva representaci\'o tridimensional. Podem observar con el conjunt
+de nivell est\`a compost per v\`aries components connexes.}
+\label{levelset3D}
+\end{figure}
+
+\newpage
+%\vskip 0.3 cm
+\noindent
+{\bf Propietats}. Donada una imatge $u: \Omega \subseteq \R^2 \longrightarrow \R$, si 
+${\cal X}_\lambda u$ denota el conjunt de nivell superior $\lambda$ de $u$, llavors
+\begin{enumerate}[i)]
+\item {\bf Propietats d'inclusi\'o}.
+\begin{enumerate}[a)]
+\item ${\cal X}_\lambda u \subseteq {\cal X}_\mu u$, per a tot $\lambda > \mu$
+\item ${\cal X}_\lambda u =\cap_{\mu < \lambda} {\cal X}_\mu$ u, per a tot $\lambda \in \R$
+\end{enumerate}
+\item {\bf F\`ormula de reconstrucci\'o}. 
+\begin{equation}
+\label{levelsetreconst}
+u(x, y)=\sup \{ \lambda \in \R : (x, y) \in {\cal X}_\lambda u \}
+\end{equation}
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+{\it Demostraci\'o}. 
+\begin{enumerate}
+\item[] {\it Propietat i)a)}. La propietat es dedueix directament de la definici\'o de conjunt de nivell,
+ja que, com $\lambda > \mu$, 
+\[
+\begin{split}
+{\cal X}_\mu u & = \{ (x, y) \in \Omega : u(x, y) \geq \mu \} = \\ \\
+& = \{ (x, y) \in \Omega : u(x, y) \geq \lambda \} \cup \{ (x, y) \in \Omega : \mu \geq u(x, y) < \lambda \} 
+ \supseteq \{ (x, y) \in \Omega : u(x, y) \geq \lambda \} = {\cal X}_\lambda u
+\end{split}
+\]
+
+\item[] {\it Propietat i)b)}. (Exercici).
+
+
+\item[] {\it Propietat ii)}. (Exercici).
+
+\end{enumerate}
+
+
+\vskip 0.4 cm
+\noindent
+{\bf Exercici}. {\bf Conjunts de nivell d'una imatge digital}.
+En el cas d'una imatge digital, el conjunt de valors que pren $u(x, y)$ est\`a quantitzat i, normalment,
+$u(x, y) \in \{0, 1, 2, \dots, 255\}$. Es demana demostrar que en una imatge digital existeixen un m\`axim de 
+255 conjunts de nivell diferents.
+
+\vskip 0.2 cm
+\noindent
+{\it Demostraci\'o}. 
+Basta demostrar que per a tot $0 < x < 1$, $i \in \{ 0, 1, \dots, 254\}$ : 
+\[
+\begin{split}
+{\cal X}_{i+x} u & = \{ (x, y) \in \Omega : u(x, y) \geq i+x \}= \\ \\
+& = \{ (x, y) \in \Omega : i+x \leq u(x, y) < i+1 \} \, \cup \, \{ (x, y) \in \Omega : u(x, y) \geq i+1 \} = \\ \\
+& = \emptyset \, \cup \, \{ (x, y) \in \Omega : u(x, y) \geq i+1 \} = {\cal X}_{i+1} u
+\end{split}
+\]
+
+\vskip 0.5 cm
+La Figura \ref{ex_levelsets} mostra (marcats en blanc) alguns exemples de conjunts de nivell per a una imatge. 
+Observar la propietat d'inclusi\'o d'aquests conjunts a mida que augmenta $\lambda$. Observar que cada 
+conjunt de nivell est\`a format per una o v\`aries components connexes.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=55mm]{imatges6/ny.eps} &
+\includegraphics[width=55mm]{imatges6/ny100.eps} \\
+\includegraphics[width=55mm]{imatges6/ny150.eps} &
+\includegraphics[width=55mm]{imatges6/ny200.eps}
+\end{tabular}
+\end{center}
+\caption{Imatge original i conjunts de nivell superiors per a $\lambda=100$, $150$ i $200$. Els pixels que pert\`anyen
+al conjunt de nivell s'han marcat en color blanc. Observar la propietat d'inclusi\'o entre els conjunts i 
+l'exist\`encia de v\`aries components connexes en cada un d'ells.}
+\label{ex_levelsets}
+\end{figure}
+
+\vskip 0.5 cm
+\noindent
+{\bf Teorema} [GuichardMorel]. {\bf Conjunts de nivell i canvis de contrast}. Donada una imatge $u$ i una funci\'o cont\'\i nua estrictament creixent $g$ (canvi de contrast continu estrictament creixent), llavors 
+\[
+\forall \lambda \in \R \quad \exists \mu \in \R \quad \text{tal que} \quad {\cal X}_\lambda u = {\cal X}_\mu g(u)
+\qquad \text{ i }
+\]
+\[
+\forall \mu \in \R \quad \exists \lambda \in \R \quad \text{tal que} \quad {\cal X}_\lambda u = {\cal X}_\mu g(u)
+\]
+
+\noindent
+\'Es a dir, tot conjunt de nivell de $u$ \'es un conjunt de nivell de $g(u)$ i viceversa. Per tant, $u$ i $g(u)$
+tenen, globalment, els mateixos conjunts de nivell.
+
+\vskip 0.2 cm
+\noindent
+{\it Demostraci\'o}.
+Definim $g^{(-1)}(\lambda)$ com
+\[
+g^{(-1)}(\lambda)=\inf \{ r : g(r) \geq \lambda \}
+\]
+\noindent
+Com que $g$ \'es cont\'\i nua, tamb\'e ser\`a cont\'\i nua per la dreta i tenim que per a tota successi\'o de 
+nombres $r_n$ tals que $r_n > g^{(-1)}(\lambda)$
+\[
+\lim_{r_n \rightarrow g^{(-1)}(\lambda)} g(r_n)=g(g^{(-1)}(\lambda))
+\]
+\noindent
+Com que $r_n > g^{(-1)}(\lambda)$, per la definici\'o de $g^{(-1)}(\lambda)$ tenim que $g(r_n) \geq \lambda$, 
+llavors $\lim_{r_n \rightarrow g^{(-1)}(\lambda)} g(r_n) \geq \lambda$ i per tant
+\[
+g(g^{(-1)}(\lambda)) \geq \lambda
+\]
+\noindent
+\'Es f\`acil demostrar ({\it exercici}) que si aquesta condici\'o es compleix i $g$ \'es no decreixent, llavors 
+\[
+g(s) \geq \lambda \qquad \Longleftrightarrow \qquad s \geq g^{(-1)}(\lambda) 
+\]
+
+\noindent
+En conseq\"u\`encia, podem escriure la igualtat seg\"uent:
+\[
+{\cal X}_\lambda(g(u))= \{ (x, y) : g(u(x, y)) \geq \lambda \}= 
+\{ (x, y) : u(x, y) \geq g^{(-1)}(\lambda) \} = {\cal X}_\mu u
+\]
+\noindent
+on $\mu=g^{(-1)}(\lambda)$. 
+
+\noindent
+Per una altra banda, si $g$ \'es estrictament creixent, llavors
+\[
+\{ (x, y) : u(x, y) \geq \mu \} = \{ (x, y) : g(u(x, y)) \geq g(\mu) \}
+\]
+\noindent
+i seguint un raonament similar a l'anterior tenim que
+\[
+{\cal X}_\mu u = \{ (x, y) : u(x, y) \geq \mu \} = \{ (x, y) : g(u(x, y)) \geq g(\mu) \} =
+\{ (x, y) : u(x, y) \geq g^{(-1)}(g(\mu)) \} = {\cal X}_\lambda 
+\]
+\noindent
+on $\lambda = g^{(-1)}(g(\mu))$.
+
+%\newpage
+\vskip 0.5 cm
+\noindent
+{\bf Propietats}.
+\begin{enumerate}
+
+\item Donades dues imatges $u$ i $v$ que tenen globalment els mateixos conjunts de nivell, podem trobar un
+canvi de contrast $g$  creixent tal que $v=g(u)$. A m\'es, $g$ es pot definir per la f\`ormula
+\[
+g(\lambda)=\sup \{ \mu, {\cal X}_\mu v \supset {\cal X}_\lambda u \}
+\] 
+
+\item Si $g$ no \'es estrictament creixent ni cont\'\i nua per\`o \'es cont\'\i nua per la dreta\footnote{Recordem 
+que una funci\'o $g$ \'es cont\'\i nua per la dreta en un punt $s$ si
+\[
+\lim_{r \rightarrow s, r > s} g(r)=g(s)
+\]}
+, llavors podem al menys assegurar que tots els conjunts de nivell
+de $g(u)$ tamb\'e ho s\'on de $u$, per\`o no a la inversa.
+
+\end{enumerate}
+
+
+\vskip 0.5 cm
+La Figura \ref{ex_inv_levelsets} mostra dues imatges relacionades per un canvi de contrast i un conjunt 
+de nivell com\'u a totes dues, en el primer cas corresponent al nivell 235 i en l'altre al nivell 130.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=5cm]{imatges6/orig_contrast_inv1.eps} & 
+\includegraphics[width=5cm]{imatges6/orig_contrast_inv2.eps} &
+\includegraphics[width=5cm]{imatges6/ex_contrast_inv1.eps}
+\end{tabular}
+\end{center}
+\caption{D'esquerra a dreta, dues imatges relacionades per un canvi de contrast i un conjunt de nivell com\'u
+a ambdues. El conjunt de nivell correspon al nivell 235 per a la primera imatge i al nivell 130 per a la segona.}
+\label{ex_inv_levelsets}
+\end{figure}
+
+\vskip 0.5 cm
+\noindent
+{\bf Conclusi\'o}. Hem demostrat que els conjunts de nivell ens donen una descripci\'o de la imatge invariant 
+per canvis de contrast. Significa aix\'o que els podem considerar com les estructures b\`asiques de la imatge?
+En la secci\'o seg\"uent veurem que \'es possible simplificar la descripci\'o de la imatge donada pels conjunts de
+nivell si ens quedam \'unicament amb les fronteres d'aquests conjunts. Aquesta simplificaci\'o d\'ona lloc
+al {\bf mapa topogr\`afic} de la imatge.
+
+
+\subsection{L\'\i nies de nivell i mapa topogr\`afic}
+
+Donada una imatge $u:\Omega \subseteq \R^2 \longrightarrow \R$, definida en un compacte $\Omega$ de $\R^2$,
+anomenam {\bf l\'\i nia de nivell} $\lambda$ de $u$ al conjunt de punts
+\begin{equation}
+\label{levelline}
+u^{-1}(\lambda)=\{ (x, y) \in \Omega : u(x, y)=\lambda \}
+\end{equation}
+
+
+\vskip 0.3 cm
+\noindent
+{\bf Teorema}. Si $u:\Omega \subseteq \R^2 \longrightarrow \R$, amb $\Omega$ compacte,
+ \'es $C^1$ llavors, per a quasi tots els nivells $\lambda$, la l\'\i nia de
+nivell 
+\[
+u^{-1}(\lambda)=\{ (x, y) \in \Omega : u(x, y)=\lambda \}
+\]
+\noindent
+est\`a formada per una uni\'o finita de corbes de Jordan\footnote{Una corba cont\'\i nua es 
+diu de Jordan si no t\'e cap autointersecci\'o, excepte possiblement en els seus punts extrems. M\'es 
+formalment, $C$ \'es una corba de Jordan si podem trobar una aplicaci\'o cont\'\i nua 
+\[
+\boldsymbol{x}: [a, b] \subseteq \R \longrightarrow \R^2
+\]
+
+\noindent
+tal que $\boldsymbol{x}$ \'es bijectiva en $(a, b)$ i $\boldsymbol{x}([a, b])=C$. 
+Si $\boldsymbol{x}(a)=\boldsymbol{x}(b)$
+llavors es diu que la corba de Jordan \'es tancada. Si $\boldsymbol{x}$ \'es de classe $C^1$ en $[a, b]$, 
+llavors es diu que la corba de Jordan \'es de classe $C^1$.} tancades de classe $C^1$.
+Els \'unics nivells $\lambda$ per als quals no es compleix aquesta propietat s\'on aquells per als quals 
+existeix un $(x, y) \in u^{-1}(\lambda)$ tal que $|\nabla u|(x, y) = 0$. Aquests nivell reben el nom de 
+{\bf nivells singulars}.
+
+\vskip 0.2 cm
+\noindent
+{\it Demostraci\'o}. El teorema \'es conseq\"u\`encia dels teoremes de la funci\'o impl\'\i cita i de 
+Sard\footnote{{\bf Teorema de Sard}\cite{??}. Sigui $u$ una funci\'o real $C^1$ definida en un compacte $R$
+de $\R^2$, llavors per a quasi tot $\lambda \in \R$ el conjunt $u^{-1}(\lambda)$ \'es no singular,
+\'es a dir, $\forall (x, y) \in u^{-1}(\lambda)$, $|\nabla u (x, y)| \neq 0$.}.
+
+
+\vskip 0.3 cm
+\noindent
+{\bf Observaci\'o}. La hip\`otesi de continu\"\i tat de $u$ i de les seves derivades \'es perfectament aplicable
+ja que, tal com s'ha argumentat en el Tema 4, una imatge digital s'ha d'interpretar com la versi\'o
+discreta d'una funci\'o cont\'\i nua subjacent, d'amplada de banda limitada, la qual \'es interpolable a partir 
+dels valors discrets mitjan\c{c}ant la interpolaci\'o de Shannon (Tema 2), i per tant, de classe $C^\infty$.
+
+\vskip 0.3 cm
+\noindent
+{\bf Definici\'o}. Anomenam {\bf mapa topogr\`afic} d'una imatge $u:\Omega \subseteq \R^2 \longrightarrow \R$
+al conjunt de corbes de Jordan obtingudes en calcular les l\'\i nies de nivell per a tots
+els valors de $\lambda$ no singulars de $u$.
+
+
+\vskip 0.3 cm
+\noindent
+{\bf Teorema de les corbes de Jordan} [DoCarmo]. Una corba tancada de Jordan $C$ divideix el pla en dues
+components connexes, una acotada i l'altra no. Anomenam {\bf interior} de $C$, i ho denotam $\text{Int}(C)$,
+a la component connexa acotada. Anomenam {\bf exterior} de la corba a la component connexa no acotada.
+
+\vskip 0.3 cm
+\noindent
+Una conseq\"u\`encia del teorema anterior \'es que podem assignar a cada corba del mapa topogr\`afic una 
+{\bf orientaci\'o}, segons si el vector $\nabla u (x, y)$ est\`a dirigit cap a l'interior o l'exterior de 
+la l\'\i nia de nivell en tots els seus punts. En el primer cas parlam d'orientaci\'o {\bf positiva} i en
+el segon d'orientaci\'o {\bf negativa}.
+
+
+\subsubsection{Organitzaci\'o del mapa topogr\`afic en una estructura d'arbre}
+
+{\bf Propietat}. Les corbes del mapa topogr\`afic mai es creuen. O b\'e estan incloses unes dins les altres, o
+b\'e els seus interiors s\'on disjunts (veure la Figura \ref{propcorbesmap}).
+
+\vskip 0.3 cm
+\noindent
+{\it Demostraci\'o}. (Exercici).
+
+\vskip 0.3 cm
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=6cm]{imatges6/exllines.eps} $\qquad \qquad$
+\includegraphics[width=6cm]{imatges6/exnollines.eps}
+\end{center}
+\caption{La primera imatge mostre alguns exemples de corbes del mapa topogr\`afic. Les corbes estan incloses unes
+dins les altres o b\'e els seus interiors s\'on disjunts. La segona imatge mostra una corba que no pot pert\`anyer
+al mapa topogr\`afic, ja que es creua amb ella mateixa.}
+\label{propcorbesmap}
+\end{figure}
+
+
+Aquesta propietat ens permet organitzar les l\'\i nies de nivell del mapa topogr\`afic dins una estructura
+d'arbre. La Figura \ref{ex_arbre} mostra un exemple de mapa topogr\`afic per a una imatge senzilla i l'estructura
+d'arbre que se'n deriva.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=45mm]{imatges6/extreeimD.eps} &
+\includegraphics[width=45mm]{imatges6/extreeB.eps} &
+\includegraphics[width=45mm]{imatges6/extreeA.eps}
+\end{tabular}
+\end{center}
+\caption{D'esquerra a dreta, imatge original, algunes l\'\i nies del seu mapa topogr\`afic i estructura 
+d'arbre del mapa topogr\`afic. La corba etiquetada com {\it Z} representa el contorn de la imatge.}
+\label{ex_arbre}
+\end{figure}
+
+\subsubsection{Mapa topogr\`afic i conjunts de nivell}
+
+{\bf Teorema}. Si $u$ \'es de classe $C^1$, la l\'\i nia de nivell $\lambda$ de $u$, $u^{-1}(\lambda)$, 
+del mapa topogr\`afic \'es la frontera topol\`ogica del conjunt de nivell ${\cal X}_\lambda u$:
+\[
+u^{-1}(\lambda)=\partial {\cal X}_\lambda u
+\]
+
+\vskip 0.3 cm
+La Figura \ref{ex_levellines} mostra un conjunt de nivell i la seva l\'\i nia de nivell associada.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=55mm]{imatges6/whitetigergrey.eps} & 
+\includegraphics[width=55mm]{imatges6/whitetigergrey_set.eps} &
+\includegraphics[width=55mm]{imatges6/whitetigergrey_level.eps}
+\end{tabular}
+\end{center}
+\caption{D'esquerra a dreta: imatge original, un dels seus conjunts de nivell i la l\'\i nia de nivell del
+conjunt.}
+\label{ex_levellines}
+\end{figure}
+
+
+\vskip 0.3 cm
+El conjunt de nivell ${\cal X}_\lambda u$ es pot obtenir a partir de la seva frontera. Si anomenam 
+$c_i^+$ les corbes de $u^{-1}(\lambda)$ orientades positivament i $c_{j}^-$ les corbes 
+orientades negativament, llavors
+\[
+{\cal X}_\lambda u=\cup_i \left( \text{Int}(c_i^+) - 
+\left( \cup_{c_j^- \subset \text{Int}(c_i^+)} \text{Int}(c_j^-) \right) \right)
+\]
+
+Intuitivament, l'anterior expressi\'o equival a `omplir' primer les corbes $c_i$ per llevar despres els seus 
+forats.
+
+\vskip 0.3 cm
+Com que el conjunt de $\lambda$'s no singulars per als quals hem calculat el mapa topogr\`afic \'es
+dens (pel teorema de Sard, el conjunt de nivells singulars \'es de mesura nula), 
+les anteriors propietats ens asseguren que podrem trobar els conjunts de nivell de la imatge per a quasi
+tots els possibles $\lambda$. A partir d'aquest conjunts de nivell podrem reconstruir la imatge original
+mitjan\c{c}ant la f\'ormula de reconstrucci\'o (\ref{levelsetreconst}). En conclusi\'o:
+
+\vskip 0.2 cm
+\noindent
+{\bf Proposici\'o}. Sigui $u$ una funci\'o $C^1$ definida en un conjunt compacte de $\R^2$. Llavors $u$
+es pot recuperar a partir del seu mapa topogr\`afic.
+
+
+
+\vskip 0.3 cm
+\noindent
+{\bf Conclusions}. El conjunt de l\'\i nies de nivell d'una imatge (el mapa topogr\`afic) hereta les propietats
+d'invari\`ancia als canvis de contrast dels conjunts de nivell. 
+A m\'es, el mapa topogr\`afic representa una estructura m\'es simple que la dels conjunts de nivell, a partir de la 
+qual \'es sempre possible reconstruir aquests conjunts de nivell. Per aquest motiu 
+{\bf el mapa topogr\`afic \'es el model que utilitzarem per representar les imatges de manera invariant per canvi de contrast}. Tamb\'e direm que el mapa topogr\`afic cont\'e la {\bf informaci\'o geom\`etrica o morfol\`ogica} 
+de la imatge, en el sentit que descriu la {\it forma} dels objectes que apareixen dins l'escena,
+independentment del seu nivell de gris o color.
+
+
+\subsubsection{Mapa topogr\`afic d'una imatge digital}
+
+Una manera pr\`actica de calcular el mapa topogr\`afic d'una imatge digital \'es a partir de la 
+seva versi\'o cont\'\i nua obtinguda per interpolaci\'o bilineal a trossos. 
+
+Per a cada grup de quatre 
+p\'\i xels $(i, j)$, $(i+1, j)$, $(i, j+1)$, $(i+1, j+1)$ amb nivells de gris respectius $\lambda_1$,
+$\lambda_2$, $\lambda_3$ i $\lambda_4$, es defineix una funci\'o $u_{ij}(x, y)=axy+bx+cy+d$ tal que
+$u(0, 0)=\lambda_1$, $u(1, 0)=\lambda_2$, $u(0, 1)=\lambda_3$ i $u(1, 1)=\lambda_4$. La seg\"uent 
+figura mostra un exemple d'aquesta interpolaci\'o.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=40mm]{imatges6/exQpixel.eps} $\quad$
+\includegraphics[width=60mm]{imatges6/IntQpixel_b.eps}
+\end{center}
+\caption{Exemple d'interpolaci\'o bilineal dels valors de quatre pixels.}
+\label{ex_bilinear4}
+\end{figure}
+
+El conjunt de funcions $u_{ij}$ obtingudes per a cada grup de quatre pixels de la imatge d\'ona lloc a una 
+funci\'o bilineal a trossos com la mostrada en la Figura \ref{ex_bilinear}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=50mm]{imatges6/testBilinear.eps} $\quad$
+\includegraphics[width=70mm]{imatges6/IntImg3D_1b.eps}
+\end{center}
+\caption{D'esquerra a dreta, imatge original (per a cada pixel s'indica el seu valor de nivell de gris) 
+i imatge obtinguda per interpolaci\'o bilineal.}
+\label{ex_bilinear}
+\end{figure}
+
+
+
+L'avantatge d'aquest m\`etode
+\'es que \'es f\`acil de calcular i no crea nous m\`axims o m\'\i nims en la imatge, ja que, per a cada grup
+de pixels,  els valors de la funci\'o interpolada estan compressos
+entre els valors m\`axim i m\'\i nim dels  p\'\i xels.
+Les l\'\i nies de nivell obtingudes a partir de la funci\'o interpolada
+ s\'on cont\'\i nues i estan formades per la concatenaci\'o
+d'hip\`erboles. A m\'es, les propietats d'inclusi\'o comentades en les seccions anteriors es continuen cumplint.
+Les l\'\i nies de nivell es calculen per a un conjunt discret de valors no singulars $\lambda$ i s'organitzen en una
+estructura d'arbre. 
+
+La Figura \ref{ex_bilinear_ll}-esquerra mostra un exemple d'algunes de les l\'\i nies de nivell obtingudes 
+per a la imatge de la Figura \ref{ex_bilinear}.
+Finalment, comentar que les l\'\i nies que arriben al contorn de la imatge es tanquen seguint el cam\'\i $ $ m\'es
+curt damunt d'aquest contorn, tal com mostra la Figura \ref{ex_bilinear_ll}-dreta.
+%\ref{tancament}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=40mm]{imatges6/LvImg_2b.eps} & &
+\includegraphics[width=30mm]{imatges6/interior_open.eps}
+\end{tabular}
+\end{center}
+\caption{Esquerra, mapa topogr\`afic de la imatge de la Figura \ref{ex_bilinear}.
+Dreta, criteri per al tancament de les corbes que arriben al contorn de la imatge.}
+\label{ex_bilinear_ll}
+\end{figure}
+
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=40mm]{imatges6/LvImg_2b.eps}
+%\end{center}
+%\caption{Mapa topogr\`afic de la imatge de la Figura \ref{ex_bilinear}.}
+%\label{ex_bilinear_ll}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=30mm]{imatges6/interior_open.eps}
+%\end{center}
+%\caption{Criteri per al tancament de les corbes que arriben al contorn de la imatge.}
+%\label{tancament}
+%\end{figure}
+
+
+\newpage
+\subsection{Aplicacions del mapa topogr\`afic}
+
+\subsubsection{Comparaci\'o morfol\`ogica d'imatges}
+
+\vskip 0.3 cm
+Siguin dues imatges digitals $u_1$ i $u_2$ de la mateixa escena tals que, per a tots els pixels $(i, j)$, 
+els valors $u_1(i, j)$ i $u_2(i, j)$ corresponen a la intensitat de la llum en el mateix punt 
+de l'escena. En tal cas es diu que les imatges estan perfectament {\bf posades en correspond\`encia}
+({\it registered}). 
+Volem detectar els canvis en l'escena deguts a la pres\`encia de nous objectes,
+per\`o no els deguts a canvis en la il.luminaci\'o. Aquesta situaci\'o \'es t\'\i pica en la comparaci\'o 
+d'imatges de sat\`el.lit preses en dates diferents i en les quals volem detectar la construcci\'o
+o destrucci\'o d'edificis, la variaci\'o dels camps de cultiu, etc.
+
+Les t\`ecniques de comparaci\'o basades en variacions de nivell de gris no permetran la detecci\'o 
+de tals canvis, ja que entre dates diferents les condicions d'il.luminaci\'o poden variar bastant.
+En aquests casos, la comparaci\'o dels mapes topogr\`afics \'es un m\`etode efica\c{c} per trobar els
+canvis. La seg\"uent propietat ens permet dissenyar un algortme r\`apid detecci\'o:
+
+\vskip 0.3 cm
+\noindent
+{\bf Propietat}. Per un teorema cl\`asic de l'an\`alisi de funcions de v\`aries variables podem afirmar
+que les l\'\i nies de nivell s\'on perpendiculars a la direcci\'o del vector gradient a la funci\'o en tots els
+punts en qu\`e aquest gradient existeix. 
+
+\vskip 0.3 cm
+\noindent
+La Figura \ref{fig_canvi_grad} il.lustra la propietat anterior. La difer\`encia de l'angle 
+del vector gradient entre dos punts de correspond\`encia de les imatges ens d\'ona una mesura de la variaci\'o
+local del mapa topogr\`afic en el punt.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=6cm]{imatges6/fig_canvi_grad.eps}
+\end{center}
+\caption{La figura mostra, en diferents colors, dues l\'\i nies de nivell corresponents a dues imatges de la 
+mateixa escena. Suposam que les imatges estan perfectament posades en correspond\`encia, 
+de manera que el pixel (x, y) de la 
+primera imatge es correspon amb el pixel (x, y) de la segona. 
+La variaci\'o local del mapa topogr\`afic en aquest punt es pot quantificar mesurant la variaci\'o de l'angle 
+del vector gradient a cada imatge en el punt.}
+\label{fig_canvi_grad}
+\end{figure}
+
+\vskip 0.2 cm
+\noindent
+Aprofitant aquesta propietat s'ha dissenyat el seg\"uent algoritme:
+\begin{enumerate}
+\item Calcular el gradient en cada punt de les imatges (utilitzar els m\`etodes de discretitzaci\'o del
+valor del gradient descrits en el Tema 5).
+\item Calcular el m\`odul i l'angle del gradient (respecte a la direcci\'o horitzontal) en cada punt de les
+imatges. Anomenam $M_1(i, j)$ i $\alpha_1(i, j)$ al m\`odul i l'angle del gradient del pixel $(i, j)$ de la 
+primera imatge; respectivament, $M_2(i, j)$ i $\alpha_2(i, j)$ representen el 
+m\`odul i l'angle del gradient del pixel $(i, j)$ de la segona imatge. 
+\item Si $M_1(i, j)$ i $M_2(i, j)$ s\'on majors que un cert llindar (t\'\i picament $5$), calculam 
+la difer\`encia entre els seus angles, $\Delta A (i, j)=|A_1(i, j)-A_2(i, j)|$.
+\item La difer\`encia anterior mesura la variaci\'o del mapa topogr\`afic en cada punt de la imatge.
+Representam amb el seg\"uent codi de colors la imatge `difer\`encia': blanc, els pixels amb 
+$\Delta A (i, j) < \delta$; els pixels amb $\Delta A (i, j) \geq \delta$; i gris els p\'\i xels tals
+que $M_1(i, j)$ o $M_2(i, j)$ \'es inferior al llindar de gradient. $\delta$ \'es un llindar que
+determina a partir de quina difer\`encia d'angle consideram diferents les orientacions del gradient
+(t\'\i picament $20^\text{o}$.
+\item La imatge resultant ens d\'ona una idea gr\`afica del grau de variaci\'o dels mapes topogr\`afics
+de les imatges: com m\'es punts blacs, m\'es s'assemblen les imatges.
+\end{enumerate}
+
+
+Les seg\"uents figures mostren els resultats de la comparaci\'o per a dues imatges d'una ciutat i per
+un llindar de comparaci\'o de $20^\text{o}$ i un gradient m\'\i nim de $5$.
+
+\vskip 1 cm
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=110mm]{imatges6/toulouse1.eps}
+\end{center}
+\caption{Primera de les imatges a comparar.}
+\label{fig_changes_orig1}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=110mm]{imatges6/toulouse2.eps}
+\end{center}
+\caption{Segona de les imatges a comparar. Les imatges han estat presses en dates diferents.}
+\label{fig_changes_orig2}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=110mm]{imatges6/diffgradtoulouse.eps}
+\end{center}
+\caption{Resultat de la comparaci\'o de les imatges anteriors. S'ha mesurat el canvi en 
+la direcci\'o dels seus gradients
+amb llindars $5$ i $20^\text{o}$ per al m\`odul i la difer\`encia d'angle dels gradients, respectivament.
+Els punts grisos representen pixels amb m\`odul de gradient insuficient en alguna de les imatges;
+els punts blans s\'on punts on l'orientaci\'o del gradient no canvia i els negres on l'orientaci\'o canvia.}
+\label{fig_changes}
+\end{figure}
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{tabular}{cc}
+%\includegraphics[width=85mm]{imatges6/toulouse1.eps} &
+%\includegraphics[width=85mm]{imatges6/toulouse2.eps}
+%\end{tabular}
+%
+%\includegraphics[width=85mm]{imatges6/diffgradtoulouse.eps}
+%\end{center}
+%\caption{Imatges originals (a dalt) i resultat de la comparaci\'o de la direcci\'o dels seus gradients
+%amb llindars $5$ i $20^\text{o}$ per al m\`odul i la dife\`encia d'angle dels gradients, respectivament.
+%Els punts grisos representen pixels amb m\`odul de gradient insuficient en alguna de les imatges;
+%els punts blans s\'on punts on l'orientaci\'o del gradient no canvia i els negres on l'orientaci\'o canvia.}
+%\label{fig_changes}
+%\end{figure}
+
+
+\newpage
+\subsubsection{Filtratge: filtre de gra}
+
+En general, les formes petites de la imatge (moltes vegades degudes al renou) s\'on dif\'\i cilment percebudes. 
+Podem aprofitar aquesta caracter\'\i stica de la visi\'o per simplificar les imatges i eliminar-ne el renou
+[Vincent].
+
+
+L'organitzaci\'o en forma d'arbre del mapa topogr\`afic resulta especialment indicada per eliminar les
+formes petites de la imatge. Una forma petita per\`o ben contrastada en la imatge donar\`a lloc a una component
+connexa per a algun conjunt de nivell de la imatge; el contorn d'aquesta component connexa ser\`a una corba 
+del mapa topogr\`afic. Ja que la forma \'es petita, la corba tamb\'e ho ser\`a i 
+es trobar\`a, generalment, en les `fulles' de l'estructura d'arbre del mapa topogr\`afic. Per tant
+un algoritme que `podi' l'arbre aconseguir\`a eliminar aquestes formes [GuichardMonasse]. 
+Resta el problema d'assignar un nou 
+nivell de gris als pixels pertanyents a les formes eliminades. El criteri seguit \'es assignar-los el nivell
+de gris de la corba de la mateixa orientaci\'o m\'es petita en la qu\`e estava contingut el contorn de la forma. 
+L'\'unic par\`ametre d'aquest filtre \'es l'\`area m\`axima de les formes eliminades.
+La Figura \ref{ex_tree_grain} mostra un exemple senzill de simplificaci\'o del mapa topogr\`afic.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=5cm]{imatges6/extreeA.eps} &
+\includegraphics[width=5cm]{imatges6/extreeB.eps} \\
+\includegraphics[width=5cm]{imatges6/extreeAsim.eps} &
+\includegraphics[width=5cm]{imatges6/extreeBsim.eps}
+\end{tabular}
+\end{center}
+\caption{Exemple de simplificaci\'o del mapa topogr\`afic mitjan\c{c}ant el filtre de gr\`a.
+Les imatges de la part superior mostren un mapa topogr\`afic i la seva estructura d'arbre.
+El contorn de la imatge, que constitueix l'arrel de l'arbre, s'ha marcat amb la lletra Z. 
+A m\'es, per a aquest exemple suposam que l'orientaci\'o de totes les corbes \'es la mateixa. Donat
+un par\`ametre del filtre $\gamma$, si l'interior de les corbes G, N, S, D i K t\'e un \`area inferior
+a $\gamma$, llavors aquestes corbes s'eliminen de l'arbre. Les imatges de la part inferior
+mostren el resultat del filtratge. Els nous nivells de gris assignats als pixels de l'interior de les
+corbes eliminades s\'on els de les corbes m\'es petites que els contenen. Aix\'\i $ $, als pixels
+continguts en la corba G s'els assigna el nivell de la corba F, als de la corba N els de la corba M, etc.}
+\label{ex_tree_grain}
+\end{figure}
+
+La Figura \ref{grainfiltering} mostra l'efecte d'aplicar el filtre de gra, amb par\`ametre d'\`area $10$, sobre
+una imatge amb renou. La Figura \ref{ex_grain} mostra la simplificaci\'o de la imatge produida en aplicar 
+el filtre de gra a una imatge amb valors creixents del par\`ametre d'\`area.
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=80mm]{imatges6/hopperSPgrey.eps} &
+\includegraphics[width=80mm]{imatges6/hopperSPfilter10.eps} 
+\end{tabular}
+\end{center}
+\caption{D'esquerra a dreta, imatge amb renou i imatge filtrada amb un filtre de gra de par\`ametre 10. El renou
+queda pr\`acticament eliminat.}
+\label{grainfiltering}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=63mm]{imatges6/rain.eps} &
+\includegraphics[width=63mm]{imatges6/rainll20.eps}
+\end{tabular}
+\begin{tabular}{cc}
+\includegraphics[width=63mm]{imatges6/rain5.eps} &
+\includegraphics[width=63mm]{imatges6/rain5ll20.eps}
+\end{tabular}
+\begin{tabular}{cc}
+\includegraphics[width=63mm]{imatges6/rain10.eps} &
+\includegraphics[width=63mm]{imatges6/rain10ll20.eps}
+\end{tabular}
+\begin{tabular}{cc}
+\includegraphics[width=63mm]{imatges6/rain40.eps} &
+\includegraphics[width=63mm]{imatges6/rain40ll20.eps}
+\end{tabular}
+\end{center}
+\caption{De dalt a baix, imatge original i imatges resultants d'eliminar les formes de
+tamany $5$, $10$ i $40$. Les l\'\i nies de nivell dels mapes topogr\`afics corresponents, 
+tamb\'e es mostren per a nivells m\'utiples de 20.
+Observar com el nivell de detall de la imatge es va reduint i com el mapa topogr\`afic es va simplificant.}
+\label{ex_grain}
+\end{figure}
+
+\newpage
+\subsubsection{Posada en correspond\`encia d'imatges ({\it registration})}
+
+Posar en correspond\`encia ({\it register}) dues imatges significa calcular la transformaci\'o geom\`etrica que 
+aplica  els pixels d'una imatge en els de l'altra imatge. Aix\'o significa que, una vegada posades en correspond\`encia, 
+el pixel $(i, j)$ de cada imatge representa el nivell d'il.luminaci\'o procedent del mateix punt de l'espai 
+tridimensional.
+
+S'han desenvolupat dos m\`etodes de {\it registration} basats en el mapa topogr\`afic de les imatges.
+
+\vskip 0.4 cm
+\noindent
+{\bf {\it Registration} basat en {\it formes}} [Monasse]
+
+Definim una {\it forma} de la imatge com una component connexa d'algun dels seus conjunts de nivell.
+Per tant, una forma no \'es m\'es que un subconjunt de $\R^2$ i pot \'esser caracteritzada per una
+s\`erie de valors: \`area, posici\'o del centre de masses, moments de segon ordre, etc. La similitud
+entre dues formes pot \'esser llavors mesurada en termes de les difer\`encies entre aquests valors.
+
+Donades dues imatges, si som capa\c{c}os de trobar les correspond\`encies entre les formes d'una i l'altra,
+podrem estimar com es mouen els objectes d'una imatge respecte als de l'altra i, si la majoria dels objectes es
+desplacen amb el mateix moviment, ser\`a llavors possible estimar el moviment global entre les imatges.
+
+
+L'algoritme de posada en correspond\`encia basat en les formes \'es el seg\"uent:
+\begin{enumerate}
+\item Calcular el mapa topogr\`afic de les dues imatges
+
+\item Per a cada corba tancada del mapa, considerar el seu interior, el qual \'es una component connexa ({\it forma})
+d'algun conjunt de nivell. 
+
+\item Per a cada {\it forma} calcular els seg\"uents moments: 
+\`area (moment d'ordre 0), centre de masses (moments d'ordre 1)
+i moments centrats de segon ordre. 
+
+En una imatge digital, 
+el moment d'ordre $ij$ d'una forma $A$ es calcula com
+\[
+m_{ij}=\sum_{(x, y) \in A} x^i y^j
+\]
+
+i el moment centrat d'ordre $ij$ \'es
+\[
+\mu_{ij}=\sum_{(x, y) \in A} (x-m_{10})^i (y-m_{01})^j
+\]
+
+
+\vskip 0.2 cm
+Els exponents $i$ i $j$ en les expressions anteriors fan que el c\`alcul de moments d'ordres superiors a 2
+sigui molt sensible a petites variacions en els valor de $(x, y)$, degudes al renou. 
+
+
+\item Calcular els {\it invariants} de cada forma. La informaci\'o proporcionada pels moments no \'es 
+suficient per comparar dues formes sotmeses a un moviment arbitrari. Per exemple, el valor de l'\`area
+no varia quan la forma es sotmet a una translaci\'o o rotaci\'o, per\`o si quan hi ha un canvi d'escala (zoom).
+Per aquest motiu es cerquen combinacions de moments que siguin el m\'es invariants possibles. Els seg\"uents
+valors s\'on invariants a translacions, rotacions i canvis d'escala [Reiss]:
+\[
+\begin{split}
+s_1 & =\frac{\mu_{20}+\mu_{02}}{m_{00}^2} \\ \\
+s_2 & =\frac{\mu_{20} \mu_{02}- \mu_{11}^2}{m_{00}^2}
+\end{split}
+\]
+
+Per trobar invariants a altres tipus de moviment (com, per exemple, transformacions afins) hauriem d'utilitzar
+moments d'ordre superior que, com ja hem dit, s\'on poc fiables per \'esser molt sensitius al renou.
+De manera que el m\`etode servir\`a \'unicament per registrar imatges sotmeses a una transformaci\'o de similitud
+(translaci\'o, rotaci\'o i canvi d'escala).
+
+
+\item Comparar les formes. Es defineixen uns llindars de toler\`ancia $\epsilon_1$ i $\epsilon_2$ tals que,
+donades dues formes $A$ i $B$, si $|s_1^A-s_1^B| < \epsilon$ i $|s_2^A-s_2^B| < \epsilon_2$, llavors
+consideram que $A$ i $B$ s\'on la mateixa forma. 
+
+Per a cada forma de la primera imatge obtendrem una llista de formes similars en la segona imatge.
+
+
+\item Calcular el moviment entre parells de formes. Els moments calculats en els punts anteriors no ens permeten
+calcular el moviment entre les formes d'una i altra imatge. Com a m\`axim, si coneixem que la forma $A$ de la primera
+imatge es correspon amb la forma $A'$ de la segona imatge, podriem calcular la translaci\'o entre els seus centres 
+de masses. Per calcular la rotaci\'o i el canvi d'escala entre les formes feim el seg\"uent:
+
+\begin{enumerate}
+\item Consideram les formes $A$ i $B$ en la primera imatge i les formes $A'$ i $B'$ de la segona, tals que
+$A'$ \'es similar a $A$ i $B'$ \'es similar a $B$ (per als llindars establerts en el punt anterior).
+\item Formam els vectors $\vec{AB}$ i $\vec{A'B'}$ i calculam la transformaci\'o (translaci\'o, rotaci\'o i zoom)
+que aplica un vector damunt l'altre.
+\end{enumerate}
+
+\item Calcular el moviment global entre les imatges. Per a cada parell de formes de la primera imatge repetim el
+proc\'es anterior. Enmagatzemam els valors de rotaci\'o, translaci\'o i zoom trobats en un histograma i
+calculam el m\`axim pic de l'histograma. Aquest pic ens d\'ona el moviment dominant entre les imatges.
+
+
+\item Posar en correspond\`encia les imatges amb el valor de moviment trobat.
+
+\end{enumerate}
+
+
+Les seg\"uents figures il.lustren els diferents pasos de l'algoritme:
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=70mm]{imatges6/mosaic1.eps} &
+\includegraphics[width=70mm]{imatges6/mosaic2.eps}
+\end{tabular}
+\end{center}
+\caption{Imatges originals. Observar l'exist\`encia d'una part com\'u entre les imatges.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=70mm]{imatges6/mosaic1shapesB.eps} &
+\includegraphics[width=70mm]{imatges6/mosaic2shapesB.eps} 
+\end{tabular}
+\end{center}
+\caption{Exemple d'algunes de les formes que es corresponen entre les imatges.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=70mm]{imatges6/mosaic1vecB.eps} &
+\includegraphics[width=70mm]{imatges6/mosaic2vecB.eps} 
+\end{tabular}
+\end{center}
+\caption{Exemple d'un dels parells de formes utilitzats per calcular el moviment entre les imatges.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=7cm]{imatges6/histZR.eps} &
+\includegraphics[width=7cm]{imatges6/histTxy.eps}
+\end{tabular}
+\end{center}
+\caption{Histogrames (representats en tres dimensions) de rotaci\'o-zoom i translaci\'o horitzontal-vertical
+que ens permetran calcular el moviment global entre
+les imatges.}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm]{imatges6/mosaic.eps} 
+\end{center}
+\caption{Mosaic: resultat de aplicar el moviment trobat a la primera imatge.}
+\end{figure}
+
+\newpage
+%\vskip 0.4 cm
+\noindent
+{\bf {\it Registration} basat en peces de l\'\i nies de nivell} [LMMM]
+
+El m\`etode de posada en correspond\`encia basat en les formes presenta dos inconvenients principals:
+\begin{enumerate}
+\item No permet calcular transformacions afins entre les imatges.
+\item \'Es sensible a oclusions parcials.
+\end{enumerate}
+
+\noindent
+Per il.lustrar aquest darrer inconvenient consideram les imatges de la Figura \ref{ex_oclusio}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=6cm]{imatges6/boat1.eps} &
+\includegraphics[width=6cm]{imatges6/boat2.eps}
+\end{tabular}
+\end{center}
+\caption{Dues formes entre les quals hi ha una ocluci\'o parcial. La part com\'una entre les l\'\i nies de nivell
+s'ha marcat en color vermell.}
+\label{ex_oclusio}
+\end{figure}
+
+\noindent
+Observam com les formes mostrades en les imatges corresponen als mateixos objectes, no obstant la segona
+d'elles presenta una oclusi\'o que impedeix compararla amb la primera amb el m\`etode dels moments.
+Aquesta comparaci\'o ser\`a possible \'unicament si som capa\c{c}os de codificar de manera local el
+contorn de la forma.
+
+
+\vskip 0.3 cm
+L'observaci\'o anterior ens duu a desenvolupar un nou m\`etode de {\it registration} basat en la codificaci\'o local de
+les l\'\i nies de nivell. Aquesta codificaci\'o es fa de forma invariant a transformacions afins del pla 
+de les imatges i permet comparar les peces de l\'\i nies de nivell d'una i altra imatge. La informaci\'o de
+moviment calculada per a cada pe\c{c}a de corba s'enmagatzema en un histograma i es calcula el moviment global entre
+les imatges de manera similar al m\ `etode anterior.
+
+\vskip 0.3 cm  
+\noindent
+Les seg\"uents figures mostren alguns exemples de l'aplicaci\'o del m\`etode.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=7cm]{imatges6/satellite1.eps} &
+\includegraphics[width=7cm]{imatges6/satellite2.eps}
+\end{tabular}
+\end{center}
+\caption{Imatges originals. L'imatge de la dreta presenta una part com\'u amb la imatge de l'esquerra (cant\'o
+superior esquerre). Les imatges pert\`anyen a canals espectrals diferents (blau i vermell) i existeix una
+transformaci\'o af\'\i  $ $ entre elles.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=10cm]{imatges6/satellite_match.eps} &
+\includegraphics[width=7cm]{imatges6/satellite_mosaic.eps}
+\end{tabular}
+\end{center}
+\caption{Peces de l\'\i nies de nivell comunes entre les imatges i mosaic de les imatges anteriors obtengut a partir de la informaci\'o de moviment proporcionada pel nou m\`etode de posada en correspond\`encia.}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=5cm]{imatges6/superman1.eps} &
+\includegraphics[width=5cm]{imatges6/superman2.eps}
+\end{tabular}
+\end{center}
+\caption{Imatges originals.}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=6cm]{imatges6/superman_match.eps} &
+\includegraphics[width=6cm]{imatges6/superman_recal1.eps}
+\end{tabular}
+\end{center}
+\caption{L\'\i nies de nivell comunes i resultat d'aplicar el moviment estimat a una de les imatges.}
+\end{figure}
+
+
+\newpage
+\section{Refer\`encies}
+
+\begin{enumerate}
+\item[]
+[AGLM] L. Alvarez, F. Guichard, P.L. Lions, J.M. Morel. {\it Axioms and fundamentals equations of image processing}.
+Archive for Rational Mechanics and Analysis, 16 (9), pp. 200-257, 1993.
+\item[]
+[GuichardMorel] F. Guichard, J.M. Morel. {\it Iterative smoothing and PDE's}. Llibre en preparaci\'o, 2002.
+\item[]
+[DoCarmo] M.P. do Carmo. {\it Geometr\'\i a diferencial de curvas y superficies}. Alianza Universidad Textos, 1994.
+\item[]
+[GuichardMonasse] F. Guichard, P. Monasse. {\it Fast computation of a contrast-invariant image representation}.
+IEEE Transactions on Image Processing, vol. 20, gener, 1999.
+\item[]
+[Monasse] P. Monasse. {\it Contrast invariant image registration}. Proc. Int. Conference on Acoustics, Speech 
+and Signal Processing, vol. 6, pp. 3221-3224, 1999. 
+\item[]
+[LMMM] J.L. Lisani, L. Moisan, P. Monasse, J.M. Morel. {\it On the theory of planar shape}. 
+SIAM Multiscale, Model. Simul. Vol. 1, No. 1, pp. 1-24, Gener, 2003. 
+\item[]
+[Vincent] L. Vincent. {\it Greyscale area openings and closings, their implementation and applications}. 
+First Workshop on Mathematical Morphology and its Applications to Signal Processing. pp. 22-27.
+\end{enumerate}
+
+
+\end{document} 

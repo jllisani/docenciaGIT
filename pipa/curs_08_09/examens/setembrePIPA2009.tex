@@ -1,0 +1,131 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Examen Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+setembre 2009}
+\end{center}
+
+\vspace{0.5 cm}
+\noindent\textbf{P1.-}
+Un malalt que ha contret un virus arriba a l'hospital universitari
+de Princetown. El doctor House \'es el seu metge i fa el seg\"uent
+raonament per determinar el nombre de dies que haur\`a d'estar 
+hospitalitzat: anomena $X$ a la v.a. aleat\`oria que compta el temps,
+en dies, que tarda en manifestar-se la malaltia. Anomena $Y$ al
+temps total, en dies, des de que el virus s'ha contret fins que el pacient
+\'es donat d'alta. Si suposam que en el moment que apareixen els 
+s\'\i mptomes el pacient \'es hospitalitzat, llavors la v.a. $Z=Y-X$
+compta el temps d'hospitalitzaci\'o. House, que va llegir un estudi
+estad\'\i stic sobre la evoluci\'o del virus, 
+sap que la funci\'o de densitat conjunta de $X$ i $Y$ \'es:
+\[
+f_{XY}(x, y)=\begin{cases} 4 x \mathrm{e}^{-y} & \text{si } 0 \leq 2x \leq y \\ \\
+0 & \text{altrament}
+\end{cases}
+\]
+
+\noindent
+Ajudau al doctor House i responeu a les seg\"uents q\"uestions:
+\begin{enumerate}[a)]
+\item Calculau la funci\'o de densitat conjunta de les variables $Z$ i $Y$ i dibuixau el seu suport. 
+\ \hfill{\textbf{ 1.5 pt.}}
+\item Calculau la funci\'o de densitat de $Z$. \ \hfill{\textbf{ 0.75 pt.}}
+\item Suposant que el pacient \'es donat d'alta despr\'es de 3 dies hospitalitzat,
+quina \'es la probabilitat que contragu\'es el virus menys de 5 dies abans d'\'esser donat d'alta?.
+ \ \hfill{\textbf{ 0.75 pt.}}
+\end{enumerate}
+
+\vskip 0.2 cm
+\noindent
+\textbf{Indicaci\'o:} $\int x \mathrm{e}^{-x} \, dx = - \mathrm{e}^{-x} (1+x) + C $
+
+
+
+
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P2.-}
+Tenim una urna amb tres bolles blanques i dues negres. Es fan tres extraccions sense reposici\'o.
+Sigui $N$ la variable aleat\`oria que compta el nombre de bolles blanques extretes, i sigui
+$M$ la variable que compta el nombre de bolles negres extretes {\it abans} de la primera bolla blanca.
+Es demana:
+\begin{enumerate}[a)]
+\item Calculau la funci\'o de probabilitat conjunta de $N$ i $M$.\ \hfill{\textbf{ 0.5 pt.}}
+\item Calculau $P(|M-N|\leq 2)$. \ \hfill{\textbf{ 0.5 pt.}}
+\item Calculau l'esperan\c{c}a i la vari\`ancia de $N$. \ \hfill{\textbf{ 0.25 pt.}}
+\item Calculau l'esperan\c{c}a i la vari\`ancia de $M$. \ \hfill{\textbf{ 0.25 pt.}}
+\item Calculau la covari\`ancia i el coeficient de correlaci\'o de $N$ i $M$. \ \hfill{\textbf{ 0.5 pt.}}
+\end{enumerate}
+
+\vspace{0.75 cm}
+
+
+\noindent\textbf{P3.-}.
+El motor que permet orientar una antena parab\`olica produeix un error en l'orientaci\'o de
+$\varepsilon$ graus cada vegada que s'acciona, on $\varepsilon \sim N(0, 1)$. Els errors en
+l'orientaci\'o s'acumulen despr\'es de cada actuaci\'o del motor i s\'on independents entre s\'i.
+\begin{enumerate}[a)]
+\item Quina \'es la probabilitat que l'error d'orientaci\'o sigui superior a $5$ graus despr\'es de
+$100$ actuacions del motor?\ \hfill{\textbf{ 1.25 pt.}}
+\item Quan l'error acumulat (en valor absolut) \'es superior a $10$ graus l'antena s'ha de recalibrar.
+Quin \'es el nombre m\`axim d'actuacions del motor que es poden fer si es vol garantir, amb una
+probabilitat del $95\%$, que l'antena no necessita \'esser recalibrada?\ \hfill{\textbf{ 1.25 pt.}}
+\end{enumerate}
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P4.-} La transmissió d'un senyal binari està contaminada
+per un renou blanc Gaussià de mitjana $0$ i densitat 
+espectral de potència $5$. Aquest renou s'afegeix (renou additiu)
+al senyal transmés $v(t)$. 
+
+\noindent
+$v(t)$ pren el valor $+A$ quan es vol 
+transmetre un `1' i $-A$ si es vol transmetre un `0' $(A > 0)$. 
+En recepció es decideix que s'ha rebut un `1' si el senyal rebut és positiu
+i un `0' en cas contrari. Quin és el valor mínim de $A$ que assegura 
+que, com a mínim, 999 de cada 1000 bits es reben correctament?
+\ \hfill{\textbf{1.25 pt.}}
+
+
+\vspace{0.75 cm}
+
+\noindent\textbf{P5.-}
+Sigui $S_n$ el proc\'es suma seg\"uent: $S_n=X_1+X_2+\cdots+X_n$.
+Les variables aleat\`ories $X_i$ s\'on variables discretes iid que prenen valors $-1$, $0$ o $1$ amb 
+probabilitats respectives $\frac{1}{4}$, $\frac{1}{2}$ i $\frac{1}{4}$.
+Calculau $P(S_3=k)$ per a tots els valors possibles de $k$. 
+\ \hfill{\textbf{ 1.25 pt.}}
+
+
+
+\vspace{0.5 cm}
+
+\hrule
+
+\vspace{0.5 cm}
+
+\noindent Duraci\'o de l'examen 4 hores.\newline
+
+\end{document}

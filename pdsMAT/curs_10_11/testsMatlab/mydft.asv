@@ -1,0 +1,16 @@
+function Y=mydft(X)
+% MYDFT Discrete 1D Fourier Transform
+
+[m, n]=size(X);
+if (~((m == 1) & (n > 1))) 
+    error('Input must be a row vector')
+end
+
+Y=
+for s=0:(n-1)
+    for k=0:(n-1)
+        termK=1;
+        Y(1+s)+=termK;
+    end
+end
+

@@ -1,0 +1,31 @@
+NOTES CONTROL 1 PIPA
+
+
+Alumne				Nota
+
+
+Bestard Martí, Jaume		10/10
+
+del Olmo, Jaume			2/10
+
+Ferrer García, Pedro		2/10
+
+García Sánchez, Carlos		0/10
+
+González Rubio, Fernando	10/10
+
+Gual de Torrella Covas, José Mª	2/10
+
+Jiménez Bennásar, Pedro		3/10
+
+López Grifol, Álvaro		10/10
+
+Martínez González, Javier	0/10
+
+Roca Marí, Damià		10/10
+
+Sarciat Girán, María		7/10
+
+Tomás Jiménez, Silvia		6/10
+
+

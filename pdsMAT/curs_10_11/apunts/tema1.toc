@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Senyals i Sistemes}{1}
+\contentsline {section}{\numberline {2}An\`alisi de Fourier}{3}
+\contentsline {section}{\numberline {3}Senyals i Sistemes Discrets}{3}
+\contentsline {section}{\numberline {4}Senyals aleatoris. Renou}{3}
+\contentsline {section}{\numberline {5}Processament Digital del Senyal (DSP)}{3}

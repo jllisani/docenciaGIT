@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{fancyheadings}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\setcounter{exctr}{8}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{fancy}
+\markboth{Tema 1. Variables aleat\`ories vectorials}{}
+\setcounter{page}{3}
+\setlength{\headrulewidth}{0pt}
+
+\begin{document}
+
+\noindent
+\textbf{\large Probabilitats condicionades}
+
+\vskip 0.2 cm
+\noindent
+Recordatori:
+\vskip 0.1 cm
+donats dos successos qualssevol $A$ i $B$, la probabilitat de $A$ condicionada a $B$ es calcula com:
+\[
+P(A|B)=\frac{P(A \cap B)}{P(B)}
+\]
+
+Si els successos s\'on independents, llavors $P(A|B)=P(A) \Leftrightarrow P(A \cap B)=P(A) \cdot P(B)$.
+
+
+\vskip 0.5cm
+\noindent
+En aquest tema:
+
+
+\vskip 0.2cm
+\noindent
+\textbf{Cas discret}
+\vskip 0.1 cm
+Siguin dues v.a. $X$ i $Y$ discretes amb funci\'o de probabilitat conjunta $P(X=x, Y=y)$, la 
+\textbf{funci\'o de probabilitat de $Y$ condicionada per $X$} es defineix com:
+\[
+P(Y=y|X=x)=\frac{P(X=x, Y=y)}{P(X=x)}
+\]
+
+\vskip 0.2 cm
+\noindent
+\textbf{Propietat:} les variables aleat\`ories discretes $X$ i $Y$ s\'on \textbf{independents} si i nom\'es si 
+\[
+P(X=x, Y=y)=P(X=x) \cdot P(Y=y) \qquad \forall (x, y)
+\]
+
+\vskip 0.2 cm
+\noindent
+La \textbf{funci\'o de distribuci\'o de $Y$ condicionada per $X$} es defineix com:
+\[
+P(Y \leq y|X=x)=\frac{P(X=x, Y \leq y)}{P(X=x)}
+\]
+\noindent
+I, en general, donat un succ\'es qualsevol $A$:
+\[
+P(A|X=x)=\frac{P(A)}{P(X=x)}=\frac{\sum_{y \in A} P(X=x, Y=y)}{P(X=x)}
+\]
+
+Les funcions de probabilitat i distribuci\'o de $X$ condicionades per $Y$ es defineixen de manera
+an\`aloga i es denoten $P(X=x|Y=y)$, $P(X \leq x|Y=y)$.
+
+\vskip 0.2cm
+\noindent
+\textbf{Cas continu}
+\vskip 0.1 cm
+Siguin dues v.a. $X$ i $Y$ cont\'\i nues amb funci\'o de densitat conjunta $f_{XY}(x, y)$, la 
+\textbf{funci\'o de densitat de $Y$ condicionada per $X$} es defineix com:
+\[
+f_{Y|X}(y|x)=\frac{f_{XY}(x, y)}{f_X(x)}
+\]
+\vskip 0.2 cm
+\noindent
+\textbf{Propietat:} les variables aleat\`ories cont\'\i nues $X$ i $Y$ s\'on \textbf{independents} si i nom\'es si 
+\[
+f_{XY}(x, y)=f_X(x) \cdot f_Y(y) \qquad \forall (x, y)
+\]
+
+\vskip 0.2 cm
+\noindent
+La \textbf{funci\'o de distribuci\'o de $Y$ condicionada per $X$} es defineix com:
+\[
+F_{Y|X}(y|x)=P(Y \leq y | X=x)=\frac{\int_{-\infty}^y f_{XY}(x, y) \, dy}{f_X(x)}
+\]
+\noindent
+I, en general, donat un succ\'es qualsevol $A$:
+\[
+P(A|X=x)=\frac{\int_{y \in A} f_{XY}(x, y) \, dy}{f_X(x)}
+\]
+Les funcions de densitat i distribuci\'o de $X$ condicionades per $Y$ es defineixen de manera
+an\`aloga i es denoten $f_{X|Y}(x|y)$, $F_{X|Y}(x|y)$.
+
+
+
+
+\newpage
+\begin{exemple}
+(Exercici 11b). Llan\c{c}am a l'aire un dau equilibrat. Considerem dues variables
+aleat\`ories $X$ i $Y$ definides com:
+\[
+X = \begin{cases}-1 & \text{si el resultat \'es imparell}\\ 
+1 & \text{si el resultat \'es parell} \end{cases} \qquad
+Y = \begin{cases}-1 & \text{si el resultat \'es 1, 2 o 3}\\
+0 & \text{si el resultat \'es 4}\\ 
+1 & \text{si el resultat \'es 5 o 6}\end{cases}
+\]
+Calculau $P(X+Y=0|Y \leq 0)$ i $P(X=1|X+Y=2)$.
+\end{exemple}
+  
+\vskip 0.2 cm
+\begin{exemple}
+(Exercici 14bc). Un auditor selecciona a l'atzar un cert nombre $X$ de
+factures d'un arxivador; $X$ \'es un nombre a l'atzar entre 5 i 8.
+Sigui $Y$ el temps en minuts que tarda en revisar-les. Suposem que
+$(X,Y)$ t\'e una llei conjunta donada per
+
+\[
+P(X = x, Y = y) = \begin{cases}
+{1 \over 4} \cdot {10-x \over x} \cdot \left ( {x \over 10} \right )^y & \text{si } x = 5,6,7,8, y =
+1,2,\ldots \\ 0 & \text{en cas contrari}
+\end{cases}
+\]
+\begin{enumerate}[a)]
+\item Trobau la distribuci\'o condicional de $X $  donat que $Y = y.$
+\item  Calculau la probabilitat que hagi triat 6 factures sabent que
+ha tardat m\'es de 3 minuts en revisar-les. 
+\end{enumerate}
+\end{exemple}
+
+\vskip 0.3 cm
+\begin{exemple}
+(Exercici 16b). Siguin $X$ i $Y$ dues variables aleat\`ories amb densitat
+conjunta 
+\[
+f_{XY}(x,y) = \left\{\begin{array}{ll}\frac{1}{x} &
+\mbox{si } 0 \leq y \leq x \leq 1\\ 0 & \mbox{en cas
+contrari}\end{array}\right.
+\]
+Calculau $f_{Y}(y|x)$.
+\end{exemple}
+  
+  
+\vskip 0.3 cm
+\begin{exemple}
+(Exercici 9). Siguin $X$ i $Y$ dues variables aleat\`ories conjuntament
+absolutament cont\'{\i}nues. Suposem que
+\[
+f_{X}(x) = \begin{cases}4x^3 & \text{si } 0 < x < 1 \\ 0 & \text{en cas contrari} \end{cases}
+\qquad
+\text{i que}
+\qquad
+f_{Y}(y|x) = \begin{cases}{2y \over x^2} & \text{si } 0 < y < x \\ 0 & \text{en cas contrari} \end{cases}
+\]
+\begin{enumerate}[a)]
+\item  Determinau $f_{X,Y}$.
+\item Obteniu la distribuci\'o de $Y.$
+\item  Trobau $f_{X}(x|y).$
+\end{enumerate}
+\end{exemple}
+
+
+\vskip 0.5 cm
+\noindent
+Exercicis proposats: 12, 8d, 13, 17c, 7, 23
+
+\end{document}

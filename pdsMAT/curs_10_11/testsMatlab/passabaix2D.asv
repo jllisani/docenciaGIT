@@ -1,0 +1,13 @@
+function Y=passabaix2D(X, kxmax, kymax)
+%PASSABAIX2D  deixa passar els valors de frequencia entre 0 i kmax 
+%             (i frequencies simetriques)
+
+
+[m, n]=size(X);
+if ((kmax > n/2) | (kmax > m/2)) 
+    error('freq. max ha d esser inferior al tamany del costat menor / 2'); 
+end
+
+Y=X;
+Y(kmax+1:m-kmax,:)=0;
+Y(:,kmax+1:n-kmax)=0;
