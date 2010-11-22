@@ -1,0 +1,52 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i caràcters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Control 1 Probabilitat i Processos Aleatoris.
+Telem\`{a}tica\\
+curs 2010/11}
+\end{center}
+
+\vspace{1 cm}
+
+\noindent
+\textbf{Problema 1}
+Siguin dues variables aleatòries $X$ i $Y$ distribuïdes conjuntament amb funció de densitat 
+\[
+f_{XY}(x, y)=\begin{cases} Kx^2y & \text{si } (x, y) \in T \\ 0 & \text{altrament}\end{cases}
+\]
+
+\noindent
+on $T$ és el triangle definit pels punts $(-1, 0)$, $(0, 1)$ i $(1, 0)$.
+
+\vskip 0.5cm
+\noindent
+Es demana:
+\begin{enumerate}[a)]
+\item Dibuixau el suport de $f_{XY}(x, y)$ i calculau la constant $K$.
+\item Calculau les funcions de densitat marginals $f_X(x)$ i $f_Y(y)$.
+\item Calculau la funció de densitat de Y condicionada per X, $f_{Y|X}$, i dibuixau el seu suport.
+\item Trobau el vector de mitjanes $(E(X), E(Y))$.
+\item Calculau la corba de regressió de la mitjana de $Y$ sobre $X$
+\item Comprovau que $E(E(Y|X))=E(Y)$.
+\end{enumerate}
+
+\end{document}
