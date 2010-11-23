@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb, amstext}
+
+\addtolength{\topmargin}{-3cm}
+\oddsidemargin -0.3cm
+\evensidemargin 0cm
+\textwidth 16.5cm
+\textheight 25cm
+
+\def\N{\mathbb N}
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+
+\begin{document}
+
+\section*{Funci\'o caracter\'\i stica d'una variable aleat\`oria unidimensional}
+
+Sigui $X$ una v.a. real. Anomenam {\bf funci\'o caracter\'\i stica} de $X$ a una aplicaci\'o 
+dels nombres reals en els complexos definida com:
+\[
+\begin{array}{ccrcl}
+\Phi_X & : & \R & \longrightarrow & \C\\
+       &   & \omega & \longrightarrow & \Phi_X(\omega)=E(e^{j \omega X})
+\end{array}
+\]
+
+Si descomposam l'exponencial amb la f\`ormula d'Euler obtenim:
+\[
+\Phi_X(\omega)=E(e^{j \omega X})=E(\cos(\omega X) + j \sin(\omega X))=E(\cos(\omega X))+j E(\sin(\omega X))
+\]
+
+\vskip 0.3 cm
+\noindent
+{\bf Propietats}.
+\begin{itemize}
+\item {\bf Cas discret}, amb $X(\Omega)=\{x_1, x_2, \dots \}$:
+\[
+\Phi_X(\omega)=E(e^{j \omega X})=\sum_{x_i} e^{j \omega x_i} f_X(x_i)
+\]
+
+on $f_X$ \'es la funci\'o de probabilitat de $X$.
+
+\vskip 0.3 cm
+Si $X(\Omega)=\Z$ llavors 
+\[
+\Phi_X(\omega)=\sum_{k=-\infty}^{+\infty} e^{j \omega k} f_X(k)
+\]
+i, a m\'es, $\Phi_X(\omega)$ \'es peri\`odica de per\'\i ode $2\pi$: $\Phi_X(\omega)=\Phi_X(\omega+2\pi)$.
+ 
+\vskip 0.3 cm
+
+\item {\bf Cas continu}:
+\[
+\Phi_X(\omega)=E(e^{j \omega X})=\int_{-\infty}^{+\infty} f_X(x) e^{j \omega X} dx
+\]
+
+on $f_X$ \'es la funci\'o de densitat de $X$. Aquesta integral \'es la {\bf transformada inversa
+de Fourier} de $f_X$.
+
+\end{itemize}
+
+\vskip 0.6 cm
+\noindent
+{\bf Exemples}.
+
+\vskip 0.2 cm
+\noindent
+{\it Exemple 1}. Calcular la funci\'o caracter\'\i stica d'una v.a. $X \sim \mathrm{Ge}(p)$
+amb $X(\Omega)=\{0, 1, 2, \dots \}$.
+\[
+\Phi_X(\omega)=\sum_{k=0}^\infty p q^k e^{j \omega k}=p \sum_{k=0}^\infty (q e^{j\omega})^k=
+p \frac{1}{1-q e^{j\omega}}
+\]
+
+\vskip 0.5 cm
+\noindent
+{\it Exemple 2}. Calcular la funci\'o caracter\'\i stica d'una v.a. $X \sim \mathrm{Exp}(\lambda)$.
+\[
+\Phi_X(\omega)=\int_0^\infty \lambda e^{-\lambda x} e^{j\omega x}=
+\lambda \int_0^\infty e^{(j \omega - \lambda) x} dx=
+\frac{\lambda}{j \omega - \lambda} \left. e^{(j \omega - \lambda) x} \right]_0^\infty =
+\frac{\lambda}{j \omega - \lambda} (0-1)=\frac{\lambda}{\lambda - j \omega}
+\]
+
+\vskip 0.5 cm
+\noindent
+El seg\"uent teorema ens diu que les funcions de probabilitat i de distribuci\'o
+es poden calcular a partir de la funci\'o caracter\'\i stica.
+
+\vskip 0.3 cm
+\noindent
+{\bf Teorema}. La funci\'o caracter\'\i stica d'una v.a. determina de manera \'unica
+la seva funci\'o de distribuci\'o. Dues v.a. amb la mateixa funci\'o caracter\'\i stica
+tenen la mateixa distribuci\'o. 
+\begin{itemize}
+\item si $X$ \'es v.a. discreta amb $X(\Omega)=\Z$:
+\[
+f_X(k)=\frac{1}{2\pi} \int_0^{2\pi} \Phi_X(\omega) e^{-j \omega k} d\omega \qquad \omega \in \Z
+\]
+
+{\bf Nota}. Els valors de $f_X$ coincideixen amb els coeficients de la s\`erie de Fourier
+de la funci\'o peri\`odica $\Phi_X(\omega)$.
+
+\item si $X$ \'es v.a. cont\'\i nua:
+\[
+f_X(x)=\frac{1}{2\pi} \int_{-\infty}^{\infty} \Phi_X(\omega) e^{-j \omega x} d\omega
+\]
+Aquesta \'es l'expressi\'o de la transformada de Fourier de $\Phi_X(\omega)$.
+\end{itemize}
+
+\vskip 0.4 cm
+\noindent
+{\bf Exemple}. Sigui $X \sim \mathcal{U}(0, 1)$ i $Y=-\mathrm{ln}X$. Calcular la 
+funci\'o caracter\'\i stica de $Y$.
+\[
+\Phi_Y(\omega)=E(e^{j\omega Y})=\int_0^1 e^{-j\omega \mathrm{ln}x} \cdot 1 \cdot dx=
+\int_0^1 (e^{\mathrm{ln}x})^{-j \omega} dx= \int_0^1 x^{-j\omega} dx=
+\left. \frac{x^{-j\omega + 1}}{-j \omega +1} \right]_0^1=\frac{1}{1-j \omega}
+\]
+
+Aquesta funci\'o caracter\'\i stica \'es igual a la d'una v.a. exponencial amb par\`ametre 
+$\lambda=1$ (veure l'exemple 2 de la secci\'o anterior), 
+per tant, pel teorema anterior podem afirmar que $Y=- \mathrm{ln}X=\mathrm{Exp}(1)$. 
+
+\subsection*{Taula de funcions caracter\'\i stiques habituals}
+
+\vskip 0.2 cm
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Variable aleat\`oria & Funci\'o caracter\'\i stica  \\ &  \\ \hline  & \\
+$X \sim \mathrm{N}(\mu, \sigma^2)$ & $\Phi_X(\omega)=e^{j\mu\omega-\sigma^2\omega^2/2}$ \\  & \\ \hline  &\\ 
+$X \sim \mathrm{Exp}(\lambda)$ & $\Phi_X(\omega)=\frac{\lambda}{\lambda - j \omega}$ \\  & \\ \hline  &\\ 
+$X \sim \mathcal{U}(a, b)$ & $\Phi_X(\omega)=\frac{e^{j\omega b} - e^{j\omega a}}{\j\omega (b-a)}$ \\  & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\section*{Funci\'o generadora de probabilitat d'una variable aleat\`oria unidimensional}
+
+Sigui $X$ una v.a. {\bf discreta} que pren valors no negatius. 
+Anomenam {\bf funci\'o generadora de probabilitat} de $X$ a l'aplicaci\'o seg\"uent:
+\[
+G_X(z)=E(z^X)=\sum_{k=0}^\infty z^k P(X=k)
+\]
+
+\vskip 0.3 cm
+\noindent
+{\bf Teorema}. La funci\'o generadora de probabilitat d'una v.a. determina de manera \'unica
+la seva funci\'o de distribuci\'o. Dues v.a. amb la mateixa funci\'o generadora de probabilitat
+tenen la mateixa distribuci\'o. 
+
+
+\subsection*{Taula de funcions generadores de probabilitat habituals}
+
+\vskip 0.2 cm
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Variable aleat\`oria & Funci\'o generadora de probabilitat  \\ &  \\ \hline  & \\
+$X \sim \mathrm{B}(n, p)$ & $G_X(z)=((1-p)+pz)^n$  \\  & \\ \hline  &\\ 
+$X \sim \mathrm{Po}(\lambda)$ & $G_X(z)=e^{\lambda(z-1)}$ \\ & \\ \hline  &\\ 
+$X \sim \mathrm{Ge}(p)$ &    \\
+$X(\Omega)=\{1, 2, \dots \}$ & $G_X(z)=\frac{pz}{1-(1-p)z}$ \\ 
+$X(\Omega)=\{0, 1, \dots \}$ & $G_X(z)=\frac{p}{1-(1-p)z}$\\  & \\ \hline
+\end{tabular}
+\end{center}
+
+
+\end{document}
