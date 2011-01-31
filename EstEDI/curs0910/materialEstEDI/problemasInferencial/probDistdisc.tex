@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf DISTRIBUCIONS DE PROBABILITAT DISCRETES NOTABLES}
+\end{centerline}
+
+\probl    Un estudiante contesta a una prueba con 20 cuestiones. Cada una de ellas    admite diez respuestas posibles, de las cuales s\'olo dos son verdaderas.    El cuestionario se cumplimenta eligiendo s\'olo una de las diez    opciones.    ?`Cu\'al es la probabilidad de responder mal a las 20 preguntas? ?`Cu\'al    es la probabilidad de responder bien a 5? ?`Cu\'al es la probabilidad de    responder bien a m\'as de 5? ?`Cu\'al es el valor esperado y la varianza    de las respuestas correctas?    \sol{ $X =$ ``n\'{u}mero de respuestas correctas'', 
+$P_{X}(0) =    0.0115$, $P_{X}(5) = 0.1746$, % aproximando por una $\mathcal{P}(5)$    $P(X > 5) = 0.1958$,    % si aproximamos por una $\mathcal{P}(5)$ entonces $P(X > 5) \approx 0.384$,    
+$E(X) = 4$, $Var(X) = 3.2$}
+
+\probl    Un peque\~{n}o hotel rural dispone de 10 habitaciones. El    departamento de reservas hace 12 reservas al d\'{\i}a    porque sabe que la probabilidad de que cada una de ellas falle es    del 25\%. Las reservas se realizan de forma independiente.    \begin{itemize}        \item  [a)] Hallar la probabilidad de que en un d\'{\i}a        elegido al azar no tenga suficientes habitaciones para atender        todas las reservas. (Indica claramente la variable que utilizas    y el tipo de distribuci\'on que sigue la variable.)    \item  [b)] Hallar la probabilidad de que en un d\'{\i}a        elegido al azar no llene todas las habitaciones.        \item  [c)] Hallar la probabilidad de que en un fin de semana largo    (3 dias) no le falten habitaciones ning\'un dia.    \end{itemize}    \sol{ a) 0.0317, b) 0.6093, c) 0.9079}
+
+\probl    Por una larga experiencia se ha estimado que el promedio de errores    tipogr\'aficos al componer un libro es de 2 por cada 20 p\'aginas.    \begin{itemize}        \item [a)] Hallar la probabilidad de que en un libro de 100    p\'aginas existan  a lo sumo 10 erratas.        \item [b)] Hallar la probabilidad de que en un libro de 50    p\'aginas existan m\'as de 15 erratas.        \item [c)] Hallar la probabilidad de que el n\'umero de erratas    de una publicaci\'on de 10 p\'aginas sea mayor o igual que 2 y    menor o igual que 4.    \end{itemize}    \sol{ a) 0.5830, b) 0.0001, c) 0.2605}
+
+\probl    En promedio llegan 2.4 clientes por minuto al mostrador de una    compa\~n\'{\i}a a\'erea durante el per\'{\i}odo de m\'axima    actividad. Asumir que el n\'umero de llegadas es Poisson.    \begin{itemize}    \item [a)] ?`Cu\'al es la probabilidad de que no llegue nadie    en un minuto?    \item [b)] ?`Cu\'al es la probabilidad de que se produzcan m\'as    de tres llegadas en un minuto?    \end {itemize}    \sol{ a) 0.0907, b) 0.2213}
+
+\probl  Una cadena de producción da salida a $10000$ unidades diarias,  el número medio de
+unidades incorrectas es $200$. Una vez al día, se inspecciona un lote de $100$ unidades.
+Determinar la probabilidad de que el lote contenga más de $3$ unidades incorrectas
+\begin{enumerate}[a)]
+\item Utilizando la distribución binomial.
+\item Utilizando la aproximación de Poisson.
+\sol{a) $\mathbf{(0.1410)}$ ; b)  $\mathbf{(0.1429)}$}
+\end{enumerate}
+
+\probl  Los taxis llegan aleatoriamente (según un proceso Poisson) a la terminal de un
+aeropuerto con un ritmo medio de un taxi cada $3$ minutos. ?`Cuál es la probabilidad de que
+el último pasajero de una cola de $4$ tenga que esperar un taxi más de un cuarto de hora?
+\sol{$\mathbf{(0.265)}$}
+
+\probl  En una planta de fabricación de circuitos integrados, la proporción de circuitos
+defectuosos es $p$. Supongamos que la incidencia de circuitos defectuosos es completamente
+aleatoria.
+\begin{enumerate}[a)]
+\item  Determinar la distribución del número $X$ de circuitos
+aceptables producidos antes del primer circuito defectuoso.
+\item  ?`Cuál es la longitud media de una cadena de producción exitosa? si
+$p = 0.05.$\sol{b) $\mathbf{(19)}$}
+\end{enumerate}
+
+\probl Un servidor de mensajería esta en funcionamiento. Los clientes acceden a él de forma
+independiente. La probabilidad de que el servidor caiga cuando accede el cliente es $p$.
+Calcular la distribución de probabilidad del número de clientes a los que se dará servicio
+antes de que el servidor caiga.
+
+\begin{enumerate}[a)]
+\item Calcular el valor esperado y la varianza de esta variable.
+\item  ?`Cuál es la probabilidad de que se de servicio a más de $1000$ clientes sin que se
+caiga el servidor?
+\end{enumerate}
+\sol{a) $\mathbf{(\frac{q}{p};\, \frac{q}p^2)}$ b) $\mathbf{(q^{1001})}$}
+
+\probl Un sistema informático  dispone de un sistema de seguridad compuesto por tres claves
+de $3$ dígitos (del $0$ al $9$) cada una. Para entrar en el sistema hay que averiguar la
+primera clave, luego la segunda y por último la tercera. Un pirata informático intenta
+entrar ilegalmente en el sistema, para ello va introduciendo al azar distintas claves de
+forma independiente, olvidando las que ha introducido antes. Calcular el valor esperado y
+la varianza del número de intentos antes de romper el sistema.
+
+Comparar el resultado anterior cuando se ataca el sistema de forma similar pero cuando el
+sistema de seguridad sólo consta de una clave de $9$ dígitos. ?`Cuál es el sistema más
+seguro, desde el punto de vista del número de intentos necesarios para violarlo?
+
+
+\probl La probabilidad de que una cajero automático se estropee en una operación es $p=0.001$.
+Responder a las siguientes cuestiones:
+\begin{enumerate}[a)]
+\item ?`Cuál es el número esperado de operaciones correctas hasta el primer error?
+\item ?`Cuál es la varianza del número de operaciones correctas hasta el primer error?
+\item ?`Cuál es la probabilidad de que el número de operaciones consecutivas correctas 
+sea mayor o igual que 100?
+\end{enumerate}
+\sol{ a) 999, b) 999000, c) 0.9048}
+
+\end{document}
+

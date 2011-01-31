@@ -1,0 +1,8 @@
+\frametitle {Introducción de bloques}
+\begin{block}{Código}
+\begin{verbatim}
+\begin{block}{titulo del bloque}
+...
+\\end{block}
+\end{verbatim}
+\end{block}

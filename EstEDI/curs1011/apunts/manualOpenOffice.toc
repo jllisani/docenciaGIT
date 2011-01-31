@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Tablas y gr\'aficas estad\'isticas}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Utilizaci\'on de la base de datos del INE}{18}{subsection.1.1}
+\contentsline {section}{\numberline {2}C\'alculo de medidas de tendencia central}{22}{section.2}
+\contentsline {section}{\numberline {3}C\'alculo de medidas de dispersi\'on}{33}{section.3}
+\contentsline {section}{\numberline {4}C\'alculo de medidas de simetr\IeC {\'\i }a y apuntamiento}{39}{section.4}
+\contentsline {section}{\numberline {5}An\'alisis bivariante}{46}{section.5}

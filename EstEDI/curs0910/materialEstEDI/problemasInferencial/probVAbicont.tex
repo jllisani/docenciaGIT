@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf VARIABLES ALEATÒRIES VECTORIALS CONTÍNUES}
+\end{centerline}
+
+\probl
+Las variables aleatorias continuas $X$ e $Y$ tienen por función de densidad
+
+$$
+f(x,y)=\left\{\begin{array}{ll} k(3x^2+2y) & \mbox{si } 0\leq x \leq 1 \mbox{ y }  0\leq y
+\leq 1\\ 0 & \mbox{en cualquier otro caso}
+\end{array}\right.
+$$
+Se pide:
+\begin{enumerate}[a)]
+    \item El valor de la constante $k$.
+    \item Las funciones de densidad marginales.
+    \item Las probabilidades $P(X\leq 0.5)$ y $P(Y\leq 0.3)$
+    \item Las medias y las varianzas  de $X$ y de $Y$.
+    \item La covarianza de $X$ e $Y$.
+    \item La matriz de varianzas-covarianzas y la de correlaciones.
+    \end{enumerate}
+    \sol{a) $k=\frac{1}{2}$;
+     b) $f_{X}(x)=\left\{\begin{array}{ll}
+    \frac{1}{2} (3x^2+1) & \mbox{si } 0\leq x\leq 1\\
+    0 & \mbox{en el resto de casos}\end{array}\right.$;
+    $f_{Y}(y)=\left\{\begin{array}{ll}
+    \frac{1}{2} (1+2y) & \mbox{si } 0\leq y\leq 1\\
+    0 & \mbox{en el resto de casos}\end{array}\right.$;
+    c) $P(X\leq 0.5)=0.312$ y $P(Y\leq 0.3)=0.195$;
+    d) $E(X)=\frac{5}{8}$; $E(Y)=\frac{7}{12}$; $Var(X)=\frac{73}{960}$;
+    $Var(Y)=\frac{11}{144}$.
+    e) $Cov(X,Y)=\frac{-1}{96}$; f)$\left(\begin{array}{rr}
+     \frac{73}{960} & \frac{-1}{96}\\
+      \frac{-1}{96} & \frac{11}{144}\end{array}\right)$}
+
+
+
+\probl
+    Los gastos $X$  e ingresos $Y$ de una familia se consideran como una
+    variable bidimensional con función de densidad dada por:
+
+
+$$
+f(x,y)=\left\{\begin{array}{ll} k (x+y)  & \mbox{si } 0\leq x \leq 100 \mbox{ y }  0\leq y
+\leq 100\\ 0 & \mbox{en cualquier otro caso}
+\end{array}\right.
+$$
+Se pide:
+\begin{enumerate}[a)]
+    \item El valor de la constante $k$ para que $f(x,y)$ sea densidad.
+    \item La probabilidad $P(0\leq X\leq 60, 0\leq Y\leq 50)$
+    \item Las funciones de densidad marginales.
+    \item Los gastos e ingresos medios.
+    \item La covarianza de $X$ e $Y$.
+    \item La matriz de varianzas-covarianzas.
+    \item \textbf{Opcional.} La densidad (condicionada) de los gastos
+    de las familias con ingresos $Y=50$. La esperanza de los gastos
+    condicionados a que los ingresos valen $Y=50$.
+    \end{enumerate}
+    \sol{a) $k=\frac{1}{100^3}$; b) 0.165;
+    c) $f_{X}(x)=\left\{\begin{array}{ll}
+    \frac{x+50}{100^2} & \mbox{ si } 0<x<100\\
+    0 & \mbox{ en el resto de casos}
+    \end{array}\right.$, la de $Y$ es similar;
+    d)$E(X)=E(Y)=\frac{175}{3}$;
+    e) $Cov(X,Y)=\frac{-625}{9}$;
+    f) $\left(\begin{array}{cc}
+      \frac{6875}{9} & \frac{-625}{9}\\
+      \frac{-625}{9} &  \frac{6875}{9} \end{array}\right)$;
+    g) $f_{X/Y}(x|50)=
+    \left\{ \begin{array}{ll}
+\frac{1}{100^2} (x+50) & \mbox{si } 0\leq x \leq 100 \\ 0 & \mbox{en cualquier otro caso}
+\end{array}\right.$;
+ $E(X/Y=50)=\frac{175}{3}$}
+
+
+
+\probl
+ Dos amigos desayunan cada mañana en una cafetería entre la 8 y las 8:30 de la mañana. La
+distribución  conjunta de sus tiempos de llegada es uniforme en dicho intervalo, es decir
+(y para simplificar tomando el tiempo en minutos):
+$$f(x,y)=\left\{\begin{array}{ll}
+k  & \mbox{ si } 0\leq x \leq 30 \mbox{ y } 0\leq y \leq 30\\ 0 & \mbox{ en el resto de
+casos}
+\end{array}\right. .$$
+Si los amigos esperan un máximo de 10 minutos, calcular la probabilidad de que se
+encuentren (sugerencia: resolverlo gráficamente). Calcular las distribuciones marginales.
+\sol{(Para la solución completa véase Daniel Peña ``\textit{Estadística Modelos y Métodos.
+Vol 1. 2 Ed pág.160})  \  $\frac{5}{9}$; las marginales son uniformes en el intervalo
+$(0,30)$ }
+
+
+\probl
+La variable $X$ representa la proporción de errores tipo A en ciertos documentos y la
+variable $Y$ la proporción de errores de tipo B. Se verifica que $X+Y\leq 1$ ( es decir
+puede haber más tipos de errores posibles) y la densidad conjunta de ambas variables es
+$$f(x,y)=\left\{\begin{array}{ll}
+k  & \mbox{ si } 0\leq x \leq 1\mbox{; } 0\leq y\leq 1\mbox{ y } x+y\leq 1\\ 0 & \mbox{ en
+el resto de casos}
+\end{array}\right. .$$
+\begin{enumerate}[a)]
+\item Calcular el valor de la constante $k$.
+\item \textbf{Opcional.} Calcular la densidad condicional de $X$ a $Y=y_{0}$  con
+$0<y_{0}<1$.
+\item \textbf{Opcional.}  Calcular la esperanza de la variable condicionada del
+apartado anterior.
+\item Calcular el vector de medias y  la matriz de correlaciones de $(X,Y)$
+\end{enumerate}
+\sol{a) $k=2$; b) Dado $0<y_{0}<1$ la densidad condicional de $X$ a $Y=y_{0}$ es
+$f_{X|Y}(x|y_{0})= \left\{\begin{array}{ll} \frac{1}{(1-y)} & \mbox{si } 0<x<1 \mbox{y }
+x<1-y_{0}\\ 0 & \mbox{en el resto de casos}
+\end{array}\right.$; c) $\frac{1}{3}$}
+
+
+\probl
+  La función de densidad conjunta de dos variables aleatorias  continuas
+es:
+$$f (x,y) = \begin{cases}k(x+xy) & \text{si } (x,y) \in (0,1)^2\\ 0 & \text{en otro caso}\end{cases}$$
+
+\begin{enumerate}[a)]
+\item Determinar $\> k.$ 
+\item Encontrar las funciones de densidad marginales.
+\item ?`Son independientes? 
+\end{enumerate}
+\sol{a) $\mathbf{4/3}$, c) Sí}
+
+\probl
+ Las variables aleatorias $X_1 \mbox{ y  } X_2$ son independientes y ambas tienen la misma densidad
+$$f(x) = \begin{cases}1 & \text{si } 0 \leq x \leq 1\\ 0 & \text{en caso contrario}\end{cases}$$
+\begin{enumerate}[a)]
+\item Determinar la densidad de $Y = X_1 + X_2.$
+\item Determinar la densidad de $Z = X_1 - X_2.$
+\item Calcular la esperanza y varianza de $Y$ y de $Z$.
+\end{enumerate}
+
+
+\probl
+ Un proveedor de servicios informáticos tiene  una cantidad $X$ de cientos de unidades
+de un cierto producto al principio de cada mes. Durante el mes se venden $Y$ cientos de
+unidades del producto. Supongamos que  $X$
+ e $Y$ tienen una densidad conjunta dada por
+
+$$f(x,y) = \begin{cases}2/9 & \text{si }  0 < y < x < 3\\ 0 & \text{en caso
+contrario}\end{cases}$$
+\begin{enumerate}[a)]
+\item Comprobar que {\it f} es una densidad.
+\item Determinar $F_{X,Y}.$
+\item \textbf{Opcional.}  Calcular la probabilidad de que al final de mes se hayan vendido como mínimo la mitad de las unidades
+que había inicialmente. 
+\item \textbf{Opcional.}  Si se han vendido 100 unidades, ?`cuál es la probabilidad de que hubieran, como mínimo 200
+a principio de mes? 
+\end{enumerate}
+\sol{c) $\mathbf{1/2}$, d) $\mathbf{1/2}$ }
+
+\probl
+ \textbf{Opcional.}  Sean $X$ e $Y$ dos variables aleatorias conjuntamente absolutamente continuas.
+Supongamos que
+
+$$ f_{X}(x) = \begin{cases}4x^3 & \text{si } 0 < x < 1\\ 0 & \text{en caso
+contrario}\end{cases}$$
+
+y que
+
+$$ f_{Y}(y|x) = \begin{cases}{2y \over x^2} & \text{si } 0 < y < x\\ 0 &
+\text{en caso contrario}\end{cases}$$
+\begin{enumerate}[a)]
+\item  Determinar $f_{X,Y}$.
+\item Obtener la distribución de $Y.$
+\item  Calcular $f_{X}(x|y).$
+\end{enumerate}
+
+
+\probl
+  Sea $W = X + Y + Z$, donde  $X$, $Y$ y $Z$ son variables aleatorias con media
+0 y varianza 1,
+\begin{enumerate}[a)]
+\item Sabiendo que  $ Cov(X,Y) = 1/4, Cov(X,Z) = 0, Cov(Y,Z) = -1/4.$
+calcular la esperanza y la varianza de $W$. 
+\item Sabiendo  que $X, Y$ y $Z$ 
+son incorreladas calcular la esperanza y la varianza de $W$. 
+\item Calcular la esperanza y la varianza de $W$ si  $ Cov(X,Y) = 1/4, Cov(X,Z) = 1/4,
+ Cov(Y,Z) = 1/4.$ 
+\item Sabiendo  que $X, Y$ y $Z$ son independientes calcular $Var(W)$ y $E(W)$.
+\end{enumerate}
+\sol{a) $\mathbf{0; 3}$, b) $\mathbf{0; 3}$, c) $\mathbf{0; 15/4 }$ }
+
+\end{document}

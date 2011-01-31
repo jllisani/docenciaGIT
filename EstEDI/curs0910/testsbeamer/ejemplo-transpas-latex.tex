@@ -1,0 +1,184 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemeshadow}
+
+\title{LaTeX - Beamer}
+\subtitle{Introduccion a Beamer}
+\author{
+	Juan Dapena Paz
+}
+\date{$19$ de Enero de $2009$}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Índice}
+	\tableofcontents
+\end{frame}
+
+\section{Instalación en Debian}
+	\begin{frame}
+		\frametitle{Que nos aporta esta instalación}
+			\begin{itemize}
+				\item Instalación de Beamer
+				\item La instalación ocupa sobre 500 MB
+				\item Soporte para temas
+				\item Soporte para Español
+			\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[fragile]{Proceso de instalación}
+		\begin{block}{Desde superusuario...}
+		\begin{verbatim}
+			su
+		\end{verbatim}
+		\end{block}
+		\begin{block}{Instalación de todo lo necesario para Beamer}
+		\begin{verbatim}
+			apt-get install latex-beamer
+		\end{verbatim}
+		\end{block}
+		\begin{block}{Para soporte de idioma}
+		\begin{verbatim}
+			apt-get install texlive-latex-extra \
+			texlive-latex-recommended
+		\end{verbatim}
+		\end{block}
+	\end{frame}
+
+\section{Elementos de un documento}
+\subsection{Cabecera del documento}
+	\begin{frame}[fragile]
+		\frametitle{Cabecera del documento}
+		Para el caso de este documento
+		\begin{block}{El tipo de documento}
+			\begin{verbatim}
+				\documentclass{beamer}
+			\end{verbatim}
+		\end{block}
+		\begin{block}{El lenguaje}
+			\begin{verbatim}	
+				\usepackage[spanish]{babel}
+			\end{verbatim}
+		\end{block}
+		\begin{block}{El tipo de codificación}
+			\begin{verbatim}
+				\usepackage[utf8]{inputenc}
+			\end{verbatim}
+		\end{block}
+		\begin{block}{El tema de las transparencias (opcional)}
+			\begin{verbatim}
+				\usepackage{beamerthemeshadow}
+			\end{verbatim}
+		\end{block}
+	\end{frame}
+	
+\subsection{Cuerpo del documento}
+	\begin{frame}[fragile]
+		\frametitle{Creación de una transparencia}
+		\begin{block}{El contenido de la transparencia irá dentro}
+			\begin{verbatim}
+				\begin{frame}
+				...
+				\\end{frame}
+			\end{verbatim}
+			o
+			\begin{verbatim}
+				\frame{
+				...
+				}
+			\end{verbatim}
+			\alert{En el end, sobra la primera barra}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Definición de una tabla de contenidos}
+		\begin{block}{Código}
+			\begin{verbatim}
+				\begin{frame}
+				   \title{Índice}
+				   \tableofcontents
+				\\end{frame}
+			\end{verbatim}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Definición de una lista}
+		\begin{block}{Aparecen todos los elementos}
+			\begin{verbatim}
+				\begin{itemize}
+					\item loquesea
+					\item loquesea 2
+					\item loquesea 3
+				\\end{itemize}
+			\end{verbatim}
+		\end{block}
+		\begin{block}{Aparecen gradualmente los elementos}
+			\begin{verbatim}
+				\begin{itemize}
+					\item<1-> loquesea
+					\item<2-> loquesea 2
+					\item<3-> loquesea 3
+				\\end{itemize}
+			\end{verbatim}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Introducción de texto plano}
+		\begin{block}{Código}
+			\begin{verbatim}
+				begin{verbatim}
+					...
+				end{verbatim}
+			\end{verbatim}
+			\alert{No tiene \ delante, porque si no el compilador creería que estoy realmente metiendo una sentencia verbatim}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Introducción de bloques}
+		\begin{block}{Código}
+			\begin{verbatim}
+				\begin{block}{titulo del bloque}
+				...
+				\\end{block}
+			\end{verbatim}
+		\end{block}
+	\end{frame}
+	
+\subsection{Cosas a recordar}
+	\begin{frame}
+		\frametitle{Cosas a recordar}
+		\begin{itemize}
+			\item Los comandos empiezan por \
+			\item Las marcas
+			\begin{itemize}
+				\item Puede ser begin ... end
+				\item Puede ser etiqueta ... 
+			\end{itemize}
+			\item El verbatim siempre debe llevar [fragile] de argumento en el frame
+			\item Los itemize, enumerate y type\_list son equivalentes
+			\item Los elementos tipo itemize son anidables (como esta lista)
+		\end{itemize}
+	\end{frame}
+	
+\section{Anexo}
+	\begin{frame}
+		\frametitle{Links}
+		\begin{block}{Fuente de este documento}
+			http://blzarovich.miguelpuig.com/ejemplo-transpas-latex.tex
+		\end{block}
+		\begin{block}{Mi blog}
+			Aquí podrás encontrar más detalles de Beamer en futuros posts
+			http://blzarovich.miguelpuig.com/
+		\end{block}
+	\end{frame}
+	
+\end{document}

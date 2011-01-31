@@ -1,0 +1,212 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\large {Examen d'Estad\'istica Enginyeria Edificaci\'o. 
+\\
+Setembre 2010}}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{problema}
+
+Considerem les següents dades corresponents a la temperatura (en ${}^{o}C$) de diferents
+ciutats del món mesurada el dia 2 de juny de 2010 a les 10:55GMT.
+
+ 
+\vspace{0.3cm}
+\begin{tabular}{cccc}
+\begin{tabular}{c|c}
+Ciutat & Temp. \\ \hline
+Amsterdam & 20 \\
+Atenas & 24 \\
+Barcelona & 22 \\
+Bombay & 34 \\
+Buenos Aires & 12
+\end{tabular}
+& 
+\begin{tabular}{c|c}
+Ciutat & Temp. \\ \hline
+Cancún & 26 \\
+Dublín & 17 \\
+El Cairo & 34 \\
+Hamburgo & 19 \\
+Lima & 18
+\end{tabular}
+&
+\begin{tabular}{c|c}
+Ciutat & Temp. \\ \hline
+Los Angeles & 17 \\
+Miami & 27 \\
+Montreal & 18 \\
+Moscú & 26 \\
+Nueva York & 21
+\end{tabular}
+&
+\begin{tabular}{c|c}
+Ciutat & Temp. \\ \hline
+París & 18 \\
+Pekín & 22 \\
+Sao Paulo & 14 \\
+Sidney & 17 \\
+Tokio & 18
+\end{tabular}
+\end{tabular}
+\vspace{0.3cm}
+
+Dibuixau el diagrama de capsa corresponent a la variable Temperatura, indicant tots els valors numèrics rellevants:
+mediana, quartils, rang interquartílic, límits entre valors típics i atípics i entre valors atípics i extrems,
+valors típics màxim i mínim. Indicau quins valors són atípics i extrems, si n'hi ha.
+
+\end{problema}
+
+\begin{problema} 
+En una oficina treballen 3 delineants. 
+El primer dibuixa un $40 \%$ dels plànols, 
+però s'equivoca en un $5 \%$ d'ells. El segon 
+dibuixa un $35 \%$ dels plànols i s'equivoca en un $3 \%$. 
+El tercer delineant només dibuixa un $25 \%$ dels plànols, 
+però s'equivoca molt poc (un $1 \%$ de les vegades).
+
+\begin{enumerate}[a)]
+\item Identifica els successos més rellevants i les probabilitats assignades en l'enunciat.
+Distingeix clarament les probabilitats condicionades de les no condicionades. 
+\item Si l'arquitecte en cap de l'oficina revisa els plànols i es fixa en un plànol a l'atzar,
+quina és la probabilitat que aquest contengui un error?
+\item Si el plànol conté un error, quina és la probabilitat que l'hagi dibuixat el primer delineant?
+\item Si es revisen 10 plànols, quina és la probabilita que 3 o més contenguin errors?
+\end{enumerate}
+\end{problema}
+
+
+
+\begin{problema}
+Una petita barca amb capacitat per a 15 persones (a part de la tripulaci\'o) fa viatges diaris al Parc Natural de Cabrera. El patr\'o de la barca sap que 1 de cada 5 reserves fallen, per la qual cosa cada dia f\`a 17 reserves.
+\begin{enumerate}[a)]
+\item Quina \'es la probabilitat que un dia qualsevol no hagi espai a la barca per dur a totes les persones que han fet una reserva (overbooking)? 
+\item Quina \'es la probabilitat que un dia qualsevol no s'ompli la barca?
+\item Quina \'es la probabilitat que un dia qualsevol viatgin en la barca entre 10 i 12 persones (incloses)?
+\item Quina ha de \'esser la capacitat m\'{\i}nima de la barca per a que la probabilitat d'overbooking sigui inferior al $3\%$. 
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+El propietari d'una immobiliària ha comprovat que només un $5\%$ dels seus clients
+acaben realitzant una compra. Durant un periode d'un mes 
+l'immobiliària rep la cridada de 450 clients, que poden ésser considerats com una mostra
+aleatòria del total de clients de la immobiliària.
+\begin{enumerate}[a)]
+\item Quina és la mitjana de la proporció mostral de clients que acaben realitzant una compra?
+\item Quina és la variància de la proporció mostral?
+\item Quina és la probabilitat que la proporció mostral sigui major que $0,075$?
+\item Quin ha d'ésser el tamany mínim de la mostra que ens assegura que la desviació típica de la proporció mostral és
+inferior a $0,005$?
+\end{enumerate}
+\end{problema}
+
+
+
+\vskip 1cm
+
+\newpage
+
+\vskip 5cm
+\textbf{Variables aleat\`ories usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{|c|cl|c|c|l|}
+V.A. (X) & $f_X(x)$ & & $E(X)$ & $Var(X)$ & Altres propietats \\
+\hline
+Binomial $B(n, p)$ & $\binom{n}{x} p^x (1-p)^{n-x}$ & si $x\in \Omega_X$ &
+ $np$ & $np(1-p)$ & \\
+$\Omega_X=\{ 0, 1, \cdots, n \}$ & $0$ & si $x \notin \Omega_X$ & & & \\ \hline
+Poisson $Po(\lambda)$ & $\frac{\lambda^x}{x!} e^{-\lambda}$ & si $x\in \Omega_X$ & 
+ $\lambda$ & $\lambda$ & \\
+$\Omega_X=\{ 0, 1, \cdots \}$ & $0$ & si $x \notin \Omega_X$ & & & \\ \hline
+Uniforme ${\cal U}(a, b)$ & $\frac{1}{b-a}$ & si $x \in [a, b]$ & 
+$\frac{b+a}{2}$ & $\frac{(b-a)^2}{12}$ & 
+$F_X(x)=\begin{cases} 
+\frac{x-a}{b-a} & x \in [a, b] \\
+0 & x < a \\
+1 & x > b
+\end{cases}$ \\
+$\Omega_X=[a, b]$ & 0 & si $x \notin [a, b]$ &  & & \\ \hline
+Gaussiana $X(\mu, \sigma^2)$ & & & $\mu$ & $\sigma^2$ & $Z\sim N(0, 1)$ normal est\'andar \\
+$\Omega_X=\mathbb{R}$ & & & &  & $F_Z(-z)=1-F_Z(z)$ \\
+ & & & &  & $F_X(x)=F_Z(\frac{x-\mu}{\sigma})$ \\ \hline
+\end{tabular}
+
+\vskip 0.5 cm
+\textbf{Estad\'\i stics m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{c|c|c|cl}
+Par\`ametre  & Esperan\c{c}a & Vari\`ancia & Distribuci\'o  & \\
+mostral &  &  & de probabilitat & \\
+(estad\'\i stic) & & & & \\ 
+\hline
+$\bar{X}$ & $E(\bar{X})=\mu$ & $\mathrm{Var}(\bar{X})=\frac{\sigma^2}{n}$ & 
+$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$ & poblaci\'o normal, $\sigma$ conegut \\
+& & & $\frac{\bar{X}-\mu}{\hat{s}_X / \sqrt{n}} \sim t_{n-1}$ & 
+poblaci\'o normal, $\sigma$ desconegut, $n \leq 30$ \\
+& & & 
+$\bar{X} \sim N(\mu, \frac{\hat{s}_X^2}{n})$ & 
+$\sigma$ desconegut, $n > 30$ \\
+& & & & \\
+$\hat{s}_X^2$ & $E(\hat{s}_X^2)=\sigma^2$ & $\mathrm{Var}(\hat{s}_X^2)=\frac{2\sigma^4}{n-1}$ & 
+$\frac{n-1}{\sigma^2}\hat{s}_X^2 \sim \chi^2_{n-1}$ & poblaci\'o normal \\
+& & & & \\
+$\hat{p}_X$ & $E(\hat{p}_X)=p$ & $\mathrm{Var}(\hat{p}_X)=\frac{p(1-p)}{n}$ &
+$\hat{p}_X \sim N(p, \frac{p(1-p)}{n})$ & $n > 30$ \\
+ & & & $\hat{p}_X \sim t_{n-1}$ & poblaci\'o normal, $n \leq 30$ 
+\end{tabular}
+
+\vskip 0.7 cm
+\textbf{Intervals de confian\c{c}a m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{l|ll}
+Par\`ametre mostral & Interval de confian\c{c}a & \\
+\hline
+& & \\
+Mitjana & $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ conegut \\
+& & \\
+ & $\displaystyle \bar{X} \pm t_{n-1, \alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ desconegut  \\
+& & i $n \leq 30$\\
+& & \\
+& $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & si $n > 30$ \\
+& & \\
+& & \\
+Vari\`ancia & $\displaystyle \left[ \frac{n-1}{\chi^2_{n-1, 1-\alpha/2}} \hat{s}_X^2,
+ \frac{n-1}{\chi^2_{n-1, \alpha/2}} \hat{s}_X^2 \right]$ & si la poblaci\'o segueix una llei normal  \\
+& & \\
+& & \\
+Proporci\'o & $\displaystyle \hat{p}_X \pm z_{\alpha/2} \sqrt{\frac{\hat{p}_X (1-\hat{p}_X)}{n}}$ & si $n > 30$ \\
+& & 
+\end{tabular}
+
+\end{document}
+

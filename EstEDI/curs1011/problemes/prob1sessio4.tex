@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{eepic}
+\usepackage{graphicx}
+
+%NOTA: si usam eepic hem de compilar a .dvi o .ps (NO PDF)
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+%\pagestyle{empty}
+\begin{document}
+
+
+\begin{center}
+\textbf{\Large Tema 1. Anàlisi exploratòria de dades
+\newline
+Exercicis proposats}
+\end{center}
+
+\vskip 0.3 cm
+
+
+
+
+
+\section*{Sessió 4: mesures de dispersió}
+
+
+\noindent
+\textbf{Exercici 1} 
+
+En una enquesta sobre inmigració s'han obtingut les següents dades sobre nacionalitat:
+
+\begin{center}
+\begin{tabular}{c|c}
+Nacionalitat & Quantitat \\ \hline
+Rusia & 200 \\
+Somalia & 10 \\
+Portugal & 150 \\
+Argelia & 100 \\
+Bulgaria & 70 \\
+Cuba & 50 \\
+Xile & 30
+\end{tabular}
+\end{center}
+
+Quins estadístics de dispersió es poden calcular per a aquesta distribució? Calculau-los.
+
+
+
+\vskip 0.2 cm
+\noindent
+\textbf{Exercici 2} 
+
+La seg\"uent taula mostra els preus per persona i nit en hotels i pensions de l'\`area metropolitana d'una ciutat espanyola en euros: 
+\[
+\begin{tabular}{ccccccccccccc} 
+65 & 38 & 54 & 28 & 25 & 32 & 84 & 47 & 45 & 33 \\ 
+70 & 37 & 64 & 26 & 40 & 45 & 34 & 47 & 61 & 66 \\ 
+43 & 46 & 62 & 56 & 47 & 52 & 28 & 28 & 26 & 32 \\ 
+94 & 40 & 57 & 36 & 30 & 54 & 60 & 24 & 24 & 24 \\ 
+24 & 25 & 50 & 65 & 35 & 60 & 32 & 32 & 26 & 25 \\ 
+33 & 100 
+\end{tabular} 
+\]
+
+\begin{enumerate}[a)]
+\item Calculau el ratio de variació, el rang, el rang interquartílic, la variància i la desviació típica per a aquesta distribució.
+\item Dibuixau el diagrama de capsa indicant (si n'hi ha) quins són els valors atípics i els extrems.
+\end{enumerate}
+
+
+\vskip 0.2 cm
+\noindent
+\textbf{Exercici 3} 
+
+Per a incentivar els treballadors d'una empresa de missatgeria 
+la direcció de l'empresa ha decidit concedir un suplement salarial a la persona 
+que faci els repartiments amb major rapidesa. Els treballadors de l'empresa s'organitzen
+en dos torns. En el torn del matí, degut al trànsit, el temps mitjà del repartiment
+és de $30$ minuts, amb una variància de $100$, mentre que en el torn del capvespre 
+la mitjana és de $20$ minuts amb una variància de $49$. El missatger més veloç
+del torn del matí tarda una mitjana de $25$ minuts en fer els seus repartiments
+i el del capvespre $15$ minuts. 
+Utilitzau \textit{z-scores} per decidir a quin missatger aumentar el sou.
+
+
+\end{document}
+

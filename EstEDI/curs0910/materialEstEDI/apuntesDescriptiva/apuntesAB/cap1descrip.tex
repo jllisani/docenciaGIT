@@ -1,0 +1,2718 @@
+\chapter{Estadística descriptiva}
+
+Con estas nota de clase iniciamos el curso. El objetivo de este primer capítulo es dar unas
+nociones básicas de descripción de datos. Tiene que quedar claro que hay muchas otras
+técnicas básicas y avanzadas de descripción de datos que no veremos. Para la resolución
+de problemas se tienen que utilizar tanto  la resolución tradicional con papel, lápiz y
+calculadora, como la resolución con hojas de cálculo (Excel,OpenOffice\ldots)
+o paquetes estadísticos (SPSS, R,\ldots), o programas de propósito todavía más general ( Mathematica, Octave\ldots).
+Algunos de estos paquetes están disponibles en los ordenadores de las  aulas de informática de la
+universidad y de estos algunos otros tienen licencias que os permiten bajarlos por  internet de forma gratuita; como el OpenOffice (\url{www.openoffice.org})o el paquete
+estadístico R (\url{http://www.r-project.org}) en versiones para cualquier sistema operativo usual.
+
+
+
+
+\section{Conceptos básicos}
+
+La estadística es aquella ciencia que tiene por objeto dar métodos tanto para la
+ recopilación, organización y análisis de datos
+ que provienen de un grupo de individuos, así como  para la decisión de
+aceptar o rechazar ciertas afirmaciones o leyes.
+
+Conceptos básicos:
+\begin{itemize}
+\item Población: Conjunto de todos los individuos que tienen en común alguna
+característica observable y de los que se desea estudiar un determinado fenómeno. Sus
+ características se definen como  parámetros.
+
+Tipos de población: finita o infinita.
+\item Muestra: Es un subconjunto de la población del que se espera
+represente a la  población y
+ en el que se efectúa el estudio del fenómeno. Sus
+características se definen como  estadísticos.
+\end{itemize}
+\subsection{Estadística descriptiva}
+
+La Estadística Descriptiva se define como aquella ciencia dedicada a describir las
+regularidades o características de un conjunto de datos (muestra).
+
+Tareas de la Estadística Descriptiva:
+\begin{itemize}
+\item Organización de los datos
+numéricos de la muestra mediante tablas y  representaciones gráficas.
+\item Análisis de los datos obtenidos mediante
+la obtención de índices representativos de la muestra como son las medidas de tendencia
+central y  de dispersión.
+\end{itemize}
+
+\subsection{Estadística Inferencial}
+
+La Estadística Descriptiva basa su estudio sobre las muestras. Ver si éstas son
+representativas de la población es  tarea de la estadística inferencial.
+
+La misión principal de la Estadística Inferencial es extraer conclusiones de las
+características de la población mediante una muestra representativa de la misma.
+
+
+\section{Estadística descriptiva}
+
+\subsection{Datos y series estadísticas}
+
+El análisis estadístico parte siempre de un conjunto de datos. Dado un conjunto de
+objetos cualesquiera (individuos, países, municipios, etc...), la observación de una
+determinada característica o medida de ésta  (cualidad o atributo)  da lugar a un dato
+estadístico.
+
+Ejemplos:
+\begin{itemize}
+\item Población: Países del mundo.
+
+Característica a estudiar: Producto Interior Bruto (P.I.B.). Los datos estadísticos serán
+los valores del P.I.B. de los países en cuestión.
+\item Población: Estudiantes de segundo curso de Informática.
+
+Característica a estudiar: Altura. Los datos estadísticos serán los valores de la altura
+en cm. para cada estudiante.
+\end{itemize}
+
+\subsection{Clasificación de los datos}
+
+Una clasificación elemental de los datos estadísticos es la siguiente, dividida en tres
+criterios:
+\begin{itemize}
+\item Tipo de dato
+\begin{itemize}
+\item Cualitativos o de atributos:  cuando la  comparación entre ellos sólo puede ser de igualdad o
+desigualdad.
+
+Por ejemplo: color de los ojos, afiliación política, lugar de residencia, etc,...
+\item Ordinales: cuando los datos no son numéricos y la
+comparación entre ellos establece un orden.
+
+Por ejemplo: estado de ánimo (valores posibles: depresivo, normal y eufórico), estudios
+(valores posibles: ninguno, primarios, secundarios, superiores), etc...
+\item Cuantitativas: cuando los datos son
+numéricos. Entre los datos cuantitativos podemos señalar dos tipos más:
+\begin{itemize}
+\item Discretos:  cuando entre dos posibles valores no hay otro.
+Por ejemplo: número de  hijos de una familia, número de letras de una palabra en un
+texto, etc,...
+\item Continuas:  cuando  entre dos posibles valores, siempre podemos encontrar otro valor
+posible. Por ejemplo: altura, intereses de una cuenta bancaria, etc,...
+\end{itemize}
+\end{itemize}
+\item Dimensión
+\begin{itemize}
+\item Unidimensionales: si sólo se considera una única
+característica.
+
+Ejemplos: altura, edad, etc,...
+\item Multidimensionales: si se consideran conjuntamente varias
+características.
+
+Ejemplos: edad y altura, altura y peso, edad, altura y sexo, etc,...
+\end{itemize}
+\item Tiempo
+\begin{itemize}
+\item Atemporales:
+cuando los datos no están referidos, o no se considera, el momento de tiempo en el que
+fueron obtenidos.
+
+Ejemplos: color de los ojos de cierto conjunto de individuos, peso de los  estudiantes que han asistido a 
+la clase  de hoy, etc,...
+\item Temporales o series cronológicas: en caso contrario.
+
+Ejemplos: P.I.B. anual de Espa\~{n}a durante el periodo 1980 hasta 2004, número de turistas
+llegados al aeropuerto de  Palma el mes de agosto durante los a\~{n}os 1970 al 2004, etc,...
+\end{itemize}
+\end{itemize}
+
+\subsection{Descripción de una serie}
+
+Una vez realizada la recogida de datos, se ha de hacer una representación numérica y
+descriptiva de éstos que se adecue de la mejor manera posible al estudio que se desea
+realizar.
+
+Cuando los datos son atemporales  y  unidimensionales, es habitual presentarlos en forma
+de distribución de frecuencias asociando a cada modalidad o valor las veces que se repite
+(frecuencias absolutas).
+
+ En el caso en que los datos sean
+bidimensionales y atemporales se suele hacer una tabla de frecuencias de denominada
+también como tabla de contingencia.
+
+En el caso en que los datos sean series cronológicas, se representan como una función
+matemática en el tiempo, es a decir, una serie de valores $(t, Y_t)$ donde el primer
+elemento es el tiempo y  el segundo valor es el dato en ese tiempo.
+
+\subsection{Representación gráfica}
+
+Una vez descrita la serie estadística en forma de tabla, el paso siguiente es
+ hacer una representación gráfica de la misma porque lo interesante es observar de golpe
+ el aspecto general de los datos.
+
+Veamos con unos cuantos ejemplos en los que  esquemáticamente veremos las
+representaciones gráficas más habituales.
+\begin{itemize}
+\item Diagramas
+ de barras. Como ejemplo,  ver en la figura~\ref{ALUMNESTURISME} la representación gráfica
+ de la cantidad de alumnos que hay en distintos cursos de informática.
+
+\begin{figure}
+\begin{center}
+{\tt    \setlength{\unitlength}{0.65pt}
+\begin{picture}(161,242)
+\thinlines    \put(108,13){\footnotesize TERCERO}
+              \put(63,13){\footnotesize SEGUNDO}
+              \put(10,13){\footnotesize PRIMERO}
+              \put(115,115){125}
+              \put(69,88){102}
+              \put(22,130){235}
+              \put(102,31){\framebox(49,158){}}
+              \put(59,31){\framebox(42,118){}}
+              \put(10,31){\framebox(49,201){}}
+\end{picture}}
+\end{center}
+\caption {Alumnos de los distintos cursos de Informática} \label{ALUMNESTURISME}
+\end{figure}
+\item Gráficos de sectores:
+Es un gráfico circular dividido en sectores donde cada sector representa el tanto por
+ciento de individuos que pertenecen a una determinada modalidad.
+
+\item Pictogramas:
+Son representaciones gráficas que guardan relación con el objeto de estudio estadístico.
+\end{itemize}
+
+\subsubsection{Diagramas causa-efecto}
+
+Se utilizan en las empresas e industrias, para representar los factores que influyen en un
+fenómeno.
+
+Por ejemplo, consideremos el diagrama de la figura \ref{CausaEfecte}:
+
+\begin{figure}
+\begin{center}
+{\tt\setlength{\unitlength}{0.65pt}
+\begin{picture}(213,135)
+\thinlines    \put(143,12){TU}
+              \put(82,13){TE}
+              \put(125,115){ME}
+              \put(31,91){MP}
+              \put(170,30){\vector(0,1){28}}
+              \put(139,46){\vector(1,0){19}}
+              \put(121,31){\vector(0,1){30}}
+              \put(93,49){\vector(1,0){18}}
+              \put(154,102){\vector(0,-1){30}}
+              \put(145,108){\vector(0,-1){26}}
+              \put(106,95){\vector(1,0){26}}
+              \put(63,117){\vector(0,-1){26}}
+              \put(37,82){\vector(1,0){36}}
+              \put(144,32){\vector(1,1){34}}
+              \put(96,34){\vector(1,1){31}}
+              \put(115,112){\vector(1,-1){43}}
+              \put(47,108){\vector(1,-1){41}}
+              \put(10,67){\vector(1,0){193}}
+\end{picture}}
+\end{center}
+\caption{Diagrama causa-efecto} \label{CausaEfecte}
+\end{figure}
+En la figura anterior tenemos un problema en el que inciden las materias primas
+ (MP, 2 diferentes), los métodos de elaboración  (ME, 3 diferentes), la temperatura (TE, 15 grados
+ a 20, o bien  de 20 a 30)
+y los turnos de trabajo (TU, 2 diferentes).
+
+
+
+\section{Variables unidimensionales}
+
+\subsection{Descripción numérica}
+
+La representación ordenada de las observaciones de una muestra se hace mediante una tabla
+numérica, en la  que aparecen los valores de la variable y sus frecuencias absolutas;
+número de veces que aparece cada dato en la muestra. Además la tabla se puede completar con
+las frecuencias absolutas acumuladas.
+
+Mas concretamente, sean  $x_1,\ldots,x_n$ las observaciones de una
+ muestra, de tama\~{n}o $n$. Supongamos
+que los distintos valores que aparecen en las muestra son $X_1,\ldots,X_J$ y que, si es
+posible están ordenados de menor a mayor:
+$$X_1<X_2,<\ldots,X_J.$$
+
+Denotaremos por  $n_1$ las veces que aparece el valor $X_1$ en la muestra, $n_2$ las
+veces que aparece el valor  $X_2$, $\ldots$, y $n_J$ las veces que aparece el valor
+$X_J$. Las frecuencias absolutas serán, por lo tanto los valores:  $n_j,\ j=1,\ldots,J$.
+
+ Es evidente que se verifica la siguiente relación:
+$$n=\sum_{j=1}^J n_j$$
+
+Las frecuencias relativas se definen como el cociente entre las absolutas y el  tama\~{n}o de
+la muestra: $f_j =\frac{n_j}{ N}$. La frecuencia relativa de $X_j$ es el tanto por uno de
+veces que aparece en la muestra. En ocasiones se utilizan los tantos por cien, por
+mil,\ldots, pero en la práctica para el cálculo es más cómodo utilizar tantos por uno.
+
+Cuando los datos pueden ser ordenados, se define la frecuencia absoluta acumulada
+ $N_j$ del valor $X_j$ como el número de observaciones que son menores o iguales a $X_j$.
+ Se verifica la siguiente relación:
+$$N_j =\sum_{k=1 }^{j} n_k.$$
+
+La frecuencia relativa acumulada $F_j$ del valor $X_j$ es  el cociente
+ entre $N_j$ y $n$, que corresponde a la  suma de las
+frecuencias relativas de los datos anteriores a $X_j$. Así podemos escribir
+$$F_j =\sum_{k=}^j f_k=\frac{N_j}{ N}.$$
+
+Todos los resultados anteriores se pueden presentar en forma de  tabla, como por ejemplo
+la que sigue:
+$$
+\begin{tabular}{|c|c|c|c|c|}
+\hline $X_j$ & $n_j$ & $N_j$ & $f_j$ & $F_j$ \\ \hline \hline $X_1$ & $n_1$ & $N_1$ &
+$f_1$ & $F_1$ \\ \hline $X_2$ & $n_2$ & $N_2$ & $f_2$ & $F_2$ \\ \hline $\vdots$ &
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline $X_J$ & $n_J$ & $N_J$=n & $f_J$ &
+$F_J=1$
+\\ \hline \hline Suma $\sum$ & n & & 1 & \\ \hline
+\end{tabular}
+$$
+
+
+
+Cuando los datos son continuos y de una precisión elevada (por ejemplo el tiempo en
+segundos, con una precisión hasta milisegundos, de una transmisión) o discretos con un
+número elevado de posibles valores (por ejemplo tama\~{n}o en bits de ficheros en un HD), se
+corre el riesgo de que las frecuencias resuman escasamente la muestra, es decir que las
+frecuencias absolutas de cada valor sean $1$ o  a lo más $2$. En ambos casos se suele
+recurrir al conteo de datos por grupos o intervalos de valores a los que se denomina
+clases; es lo que se llama recuento de datos agrupados.
+
+
+Consideremos el caso del peso en kilogramos de una persona. Cuando decimos yo peso 60
+kilos ?`qué estoy diciendo en realidad? o si consideramos la edad y digo que tengo 21 a\~{n}os
+?`qué estoy diciendo en realidad?
+
+En la variable continua peso en kilos tenemos que los
+valores se calculan hasta las unidades, si estamos haciendo una medida en forma correcta
+decir que pesamos 60 Kg. debería ser equivalente a decir que pesamos $60\pm 0.5$ Kg, es
+decir nuestro instrumento de medida debería medir así; pues el error cometido será la
+mitad de la precisión del instrumento de medida. Lo mismo sucede con la edad; cometemos
+menos error si decimos que tenemos 21 a\~{n}os cuando tengamos $21\pm 0.5$ a\~{n}os \footnote{
+Es evidente que las personas no hacemos esto y que decimos que tenemos 21 a\~{n}os hasta el
+día anterior a nuestro aniversario, con lo cual durante la mitad del a\~{n}o, de cada a{\~{n}}o
+de nuestra vida, estamos cometiendo un error superior a medio a\~{n}o.}. Así que $60$ Kg.
+corresponde al intervalo $(59.5,60.5)$ este tipo de extremos recibe el nombre de límites
+reales y puede abarcar más de un tipo de dato, por ejemplo el intervalo $(59,5,70,5)$. Por
+contra tenemos los a veces llamados límites aparentes así podríamos definir el
+agrupamiento de $60$ a $70$ Kg.
+
+De forma más  general tenemos que si las observaciones vienen dadas con una precisión de
+una cifra decimal, los extremos reales de los intervalos serán de la forma $\#.\#5$,
+donde el símbolo $\#$ simboliza un dígito para la parte decimal y uno o varios para la
+entera.
+
+Por ejemplo si nos dan los datos:
+$$1.3, 3.6, 4.7, 4.9, 1.2, 0.6,$$
+unos posibles intervalos de agrupamiento con límites reales y de amplitud $1$ son:
+
+$$
+\begin{tabular}{c}
+$[0.55,1.55)$, \\ $[1.55,2.55)$, \\ $[2.55,3.55)$, \\ $[3.55,4.55)$, \\ $[4.55,5.55)$.
+\end{tabular}
+$$
+
+Si los valores vienen dados con dos cifras decimales de precisión, los extremos de los
+intervalos serían de la forma $\#.\#\# 5.$. Por ejemplo, si los datos son:
+$$
+0.23, 1.26, 3.54, 5.76, 8.76, 3.67,$$ unos posibles intervalos con límites reales de
+amplitud 2 son:
+$$
+\begin{tabular}{c}
+$[0.225,2.225)$, \\ $[2.225,4.225)$, \\ $[4.225,6.225)$, \\ $[6.225,8.225)$, \\
+$[8.225,10.225)$.
+\end{tabular}
+$$
+
+Para escoger el primer extremo se suele calcular el mínimo de la muestra y se toma  como
+valor mínimo el extremo  inferior del límite real de ese valor.
+
+En el primer ejemplo, el valor mínimo era $0.6$; por lo tanto el primer extremo es
+$0.6-0.05=0.55.$ En el segundo ejemplo, el valor mínimo es $0.23$; por lo tanto, el
+primer extremo será $0.23-0.005=0.225$.
+
+Los otros extremos se obtienen sumando una amplitud, de la misma precisión que los datos,
+desde el valor mínimo.
+
+
+
+
+Como receta general, que no es de obligado cumplimiento, a la hora de agrupar se
+recomienda:
+
+
+\begin{enumerate}[i)]
+\item Decidir el número de clases a considerar. Este número no debe ser inferior a $5$  y
+como máximo entre $15$ y $20$. Se pueden utilizar las siguientes heurísticas, si $J$ es
+el número de clases tomar $J\geq \sqrt{n}$ (para tama\~{n}os muestrales inferiores a 150)  o
+también $2^J\geq n$.
+\item Seleccionar los límites de clase que definen los intervalos, de forma que, si es
+posible, todos tengan la misma amplitud, salvo quizás los extremos.
+\item Intentar no dejar clases con frecuencias muy bajas, para evitar esto se pueden
+unir estas clases a una de sus adyacentes.
+\end{enumerate}
+
+A cada clase o agrupamiento se le asigna ahora un valor representativo que recibe el
+nombre de marca de clase. Se suele tomar, salvo que se diga lo contrario, como marca de
+clase el punto medio de un intervalo; que se obtiene dividiendo por dos la amplitud del
+mismo.
+
+En el primer ejemplo las marcas de clase son:
+$$\begin{tabular}{lr}
+\hline $[0.55,1.55)$ & $1.05$ \\ $[1.55,2.55)$ & $2.05$ \\ $[2.55,3.55)$ & $3.05$ \\
+$[3.55,4.55)$ & $4.05$ \\ $[4.55,5.55)$ & $5.05$ \\ \hline
+\end{tabular}
+$$
+
+mientras que para el segundo son estas:
+$$\begin{tabular}{lc}
+\hline $[0.225,2.225)$ & $1.225$ \\ $[2.225,4.225)$ & $3.225$ \\ $[4.225,6.225)$ &
+$5.225$ \\ $[6.225,8.225)$ & $7.225$ \\ $[8.225,10.225)$ & $9.225$ \\ \hline
+\end{tabular}
+$$
+
+
+La tabla final es:
+$$
+\begin{tabular}{lccccc}
+intervalos & \begin{tabular}{c}{\footnotesize (Marca de clase)}\\$X_j$ \end{tabular}  &
+$n_j$ & $N_j$ & $f_j$ & $F_j$
+\\ \hline \hline $[L_1,L_2)$ & $X_1$ & $n_1$ & $N_1$ & $f_1$ & $F_1$ \\ \hline
+$[L_2,L_3)$ & $X_2$ & $n_2$ & $N_2$ & $f_2$ & $F_2$ \\ \hline $\vdots$ & $\vdots$ &
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline $[L_J,L_{J+1})$ & $X_I$ & $n_I$ &
+$N_I$ & $f_I$ & $F_I$
+\\ \hline \hline Suma $\sum$ & & n & & 1 & \\ \hline
+\end{tabular}
+$$
+
+\begin{example}
+\label{especial} Consideremos las puntuaciones de $50$ aspirantes a un puesto de trabajo:
+{\rm
+$$\begin{tabular}{cccccccccc}
+8 & 11 & 11 & 8 & 9 & 10 & 16 & 6 & 12 & 19 \\ 13 & 6 & 9 & 13 & 15 & 9 & 12 & 16 & 8 & 7
+\\ 14 & 11 & 15 & 6 & 14 & 14 & 17 & 11 & 6 & 9 \\ 10 & 19 & 12 & 11 & 12 &  6 & 15 & 16
+& 16 & 12 \\ 13 & 12 & 12 & 8 & 17 & 13 & 7 & 12 & 14 & 12
+\end{tabular}
+$$
+}
+
+La tabla de frecuencias agrupadas con límites reales y amplitud fija de los intervalos
+$3$ es:
+
+$$
+\begin{tabular}{lccccc}
+intervalos  & $X_j$ & $n_j$ & $N_j$ &  $f_j$ &  $F_j$ \\ \hline $[5.5,8.5)$  & \ 7  & 11
+& 11 & 0.22 &  0.22 \\ $[8.5,11.5)$ & 10  & 11  & 22  & 0.22  & 0.44 \\ $[11.5,14.5)$ &
+13 & 17  & 39  & 0.34  & 0.78 \\ $[14.5,17.5)$ & 16 & \ 9  & 48 & 0.18  & 0.96 \\
+$[17.5,20.5)$ & 19   & \ 2  & 50 & 0.04  & 1.00 \\ \hline
+\end{tabular}
+$$
+\end{example}
+
+\subsection{Descripción gráfica}
+
+La representación gráfica de  los datos cuantitativos discretos se hace mediante
+diagramas de barras.
+
+ El gráfico~\ref{FAAVQD}  nos muestra el diagrama de barras de las frecuencias absolutas y
+ absolutas acumuladas para  variables
+discretas. Las frecuencias absolutas $n_i$ son las alturas de las barras con base el
+punto~$X_i$. Las frecuencias absolutas acumuladas~$N_i$ son también las alturas de las
+barras con base el punto $X_i$.
+
+
+\begin{figure}
+$$
+\begin{tabular}{ll}
+{\tt    \setlength{\unitlength}{0.70pt}
+\begin{picture}(255,178)
+\thinlines    \put(210,143){$n_I$}
+              \put(128,102){$n_2$}
+              \put(76,160){$n_1$}
+              \put(200,14){$X_I$}
+              \put(141,13){$\cdots$}
+              \put(111,14){$X_2$}
+              \put(61,14){$X_1$}
+              %\put(210,136){\line(-3,-4){38}}
+              \put(210,31){\line(0,1){104}}
+              %\put(72,153){\line(1,-1){56}}
+              \put(127,31){\line(0,1){67}}
+              %\put(72,154){\line(-1,-4){31}}
+              \put(72,31){\line(0,1){123}}
+              \put(10,31){\line(1,0){229}}
+              \put(29,167){\line(0,-1){154}}
+\end{picture}}
+& {\tt    \setlength{\unitlength}{0.70pt}
+\begin{picture}(249,228)
+\thinlines    \put(31,11){\line(0,1){207}}
+              \put(193,193){$N_I$}
+              \put(118,153){$N_2$}
+              \put(72,88){$N_1$}
+              \put(160,170){$\cdots$}
+              \put(196,184){\line(1,0){28}}
+              \put(196,31){\line(0,1){153}}
+              \put(121,144){\line(1,0){42}}
+              \put(121,77){\line(0,1){67}}
+              \put(78,31){\framebox(43,45){}}
+              \put(196,14){$X_I$}
+              \put(160,14){$\cdots$}
+              \put(118,14){$X_2$}
+              \put(72,14){$X_1$}
+              \put(10,31){\line(1,0){229}}
+\end{picture}}
+\end{tabular}
+$$
+\caption{Frecuencias absolutas. Variables discretas} \label{FAAVQD}
+\end{figure}
+
+
+La descripción gráfica  de los datos continuos (agrupados) se hace mediante histogramas.
+En la figura~\ref{FAAVQC} tenemos un ejemplo de histograma. En este caso es el histograma
+de  las frecuencias absolutas a la izquierda y a la derecha tenemos el gráfico de las
+frecuencias absolutas acumuladas. Las frecuencias absolutas $n_j$ del gráfico de la
+izquierda representen las areas de los rectángulos de la base $L_{j+1}-L_j$ (amplitud del
+intervalo de clase) mientras que las frecuencias absolutas acumuladas $N_j$ del gráfico
+de la derecha representen las alturas de los rectángulos de base $L_{i+1}-L_i$. La curva
+ que une los pares ordenados $(X_j,h_j)$ recibe el nombre
+  se llama  polígono de frecuencias absolutas (léase igual para relativas), mientras que el polígono
+  de frecuencias absolutas acumuladas (de forma similar para relativas) es el formado por los puntos
+  $(L_1,0),(L_2,N_1),\ldots,(L_{J+1},N_J)$.
+
+\begin{figure}
+%%%\begin{tabular}{ll}
+%%%\beginpicture
+%%%\setcoordinatesystem units < 0.5cm, 0.5cm> \setlinear
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  2.508 22.892 to
+%%%2.508 12.732
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  2.032 13.208 to
+%%%14.256 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrectangle corners at 5.842
+%%%15.431 and  7.906 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrectangle corners at 3.778
+%%%18.447 and  5.842 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrectangle corners at
+%%%10.763 17.494 and 12.827 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  2.985 13.208  4.731
+%%%18.447 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  4.731 18.447  4.731
+%%%18.447 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  4.731 18.447  6.953
+%%%15.431 / \putrule from  6.953 15.431 to  6.794 15.431
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 11.557 17.494  9.811
+%%%15.589 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 11.557 17.494 11.557
+%%%17.494 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 11.557 17.494 13.462
+%%%13.208 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setdots < 0.0953cm> \plot
+%%%4.731 13.208  4.731 11.779 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  6.794 13.208  6.794
+%%%11.779 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 11.716 13.208 11.716
+%%%11.779 /
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_1$} [lB] at  3.778 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_2$} [lB] at  5.842  12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_3$} [lB] at  7.906 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_I$} [lB] at 10.763 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_{I+1}$} [lB] at 12.827 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_1$} [lB] at  4.81 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_2$} [lB] at  6.837 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_J$} [lB] at 11.794 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$n_1$} [lB] at  4.413 18.923
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$n_2$} [lB] at  6.953 15.907
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$n_J$} [lB] at 11.398 18.288
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$\ldots$} [lB] at  8.700 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$\ldots$} [lB] at  8.382 14.637 \linethickness=0pt \putrectangle corners at  2.032
+%%%22.892 and 14.256 11.144
+%%%\endpicture
+%%%&
+%%%\beginpicture
+%%%\setcoordinatesystem units < 0.5cm, 0.5cm> \setshadesymbol ({\thinlinefont .}) \setlinear
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  2.508 22.892 to
+%%%2.508 12.732
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  2.032 13.208 to
+%%%14.256 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setdots < 0.0953cm> \plot
+%%%4.731 13.208  4.731 11.779 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  6.794 13.208  6.794
+%%%11.779 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 11.716 13.208 11.716
+%%%11.779 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setsolid \putrectangle
+%%%corners at  3.778 15.748 and  5.842 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrectangle corners at 5.842
+%%%18.447 and  7.906 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrectangle corners at
+%%%10.604 20.669 and 12.827 13.208
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  3.778 13.208 to
+%%%3.778 13.208 \plot  3.778 13.208  5.842 15.748 / \plot  5.842 15.748  7.906 18.447 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot 12.827 20.669 10.604
+%%%20.034 / \plot 10.604 20.034  9.652 19.082 /
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_2$} [lB] at  5.842 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_1$} [lB] at  3.778 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_1$} [lB] at  4.81 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_2$} [lB] at  6.873 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_3$} [lB] at  7.906 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$\ldots$} [lB] at  8.700 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_J$} [lB] at 10.604 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$X_J$} [lB] at 11.794 11.144
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_{J+1}$} [lB] at 12.688 12.414
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$N_1$} [lB] at  4.096 16.224
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$N_2$} [lB] at  6.477 18.764
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$N_J$} [lB] at 11.081 20.987
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$\ldots$} [lB] at  8.382 19.399 \linethickness=0pt \putrectangle corners at  2.032
+%%%22.892 and 14.256 11.144
+%%%\endpicture
+%%%\end{tabular}
+\begin{center}
+\includegraphics{frecuencias.eps}
+\end{center}
+\caption{Frecuencias absolutas. Variables continuas} \label{FAAVQC}
+\end{figure}
+
+\begin{example}
+Consideremos las puntuaciones de los $50$ aspirantes del ejemplo~\ref{especial}. Tomamos
+intervalos  de amplitud $3$. El histograma de frecuencias absolutas con el
+correspondientes polígono de frecuencias acumuladas se muestra en la
+figura~\ref{EXEMPLE2}.
+
+Notemos que las alturas de los rectángulos se calculan teniendo en cuenta que la amplitud
+de los intervalos es~$3$:
+\[
+\begin{array}{rlcrl}
+h_1 =& \frac{n_1}{3}=\frac{11}{3}=3.6666,& & h_2=& \frac{n_2}{3}= \frac{11}{3}=3.666,\\
+&&&&\\ h_3 =& \frac{n_3}{3}=\frac{17}{3}=5.6666,& & h_4=& \frac{n_4}{3}= \frac{9}{3}=3,
+\\ &&&&\\ h_5 = & \frac{n_5}{3}=\frac{2}{3}=0.666.&&&
+\end{array}
+\]
+
+\begin{figure}
+%%%$$
+%%%\setcoordinatesystem units <0.5cm,0.25cm>
+%%%\beginpicture
+%%%\setplotarea x from 5.5 to 20.5, y from 0 to 20 \axis bottom shiftedto y=0 ticks in
+%%%withvalues $5.5$ $8.5$ $11.5$ $14.5$ $17.5$ $20.5$ / quantity 6 / \axis left shiftedto
+%%%x=5.5 ticks in withvalues {} $2$ $4$ $6$ / quantity 4 / \sethistograms \plot 5.5 0 8.5 11
+%%%11.5 11 14.5 17 17.5 9 20.5 2 / \setlinear \plot 4 0 7 11 10 11 13 17 16 9 19 2 22 0 /
+%%%\endpicture
+%%%$$
+\begin{center}
+\includegraphics{histograma.eps}
+\end{center}
+ \caption {Histograma de frecuencias absolutas (ejemplo 1)} \label{EXEMPLE2}
+\end{figure}
+\label{PUNTUACIONS}
+\end{example}
+
+\section{Análisis de las distribuciones}
+
+El análisis de las distribuciones de una variable o dato estadístico consiste en reducir
+los datos estadísticos a unas pocas medidas o índices, que reciben el nombre de
+estadísticos, que nos permitan una interpretación de las regularidades de todo el
+colectivo.
+
+Tenemos los siguientes tipos de medidas:
+\begin{itemize}
+\item Medidas de posición:
+Intentan representar toda la distribución. Las más importantes son la media aritmética,
+la moda y la mediana.
+\item Medidas de dispersión: Intentan se\~{n}alar la
+dispersión o separación del conjunto de datos respecto a las medidas de posición
+ adoptadas. Las más importantes son la varianza,
+la desviación típica, el coeficiente de variación  y los recorridos.
+\item Medidas de simetría y apuntamiento: Estudian si el  polígono de frecuencias relativas
+es simétrico y lo \emph{estirado} que está (apuntamiento). Se suele comparar este
+polígono con la curva de frecuencias de una distribución ideal llamada normal o campana
+de Gauss.
+\item Otras como las medidas de concentración; que no veremos. Por ejemplo el índice de Gini.
+\end{itemize}
+
+\textbf{Nota importante:} Algunas de estas medidas sólo se pueden calcular cuando tenga
+sentido operar con los datos, es decir, si estos son cantidades o al menos órdenes. Si
+tengo que una variable que responde al deporte que practica una persona de determinad
+población, aunque la variable esté codificada a valores enteros, no tiene sentido hacer
+la media aritmética. En lo que sigue dejaremos al lector que decida, siempre de forma razonada, que estadísticos no son
+aplicables a estas variables.
+
+\subsection{Medidas de posición}
+Veremos aquí las más conocidas medidas de posición.
+
+\subsubsection{Media aritmética}
+
+ La media aritmética  es la medida de tendencia central más utilizada,
+simboliza el valor central de toda la distribución. Su fórmula general es\footnote{Como
+se ve damos dos fórmulas una para datos no agrupados y otra para datos posiblemente
+agrupados, en lo que sigue no especificaremos  cuales son las fórmulas para datos
+agrupados o no.}:
+
+$$overline{x}=\frac{x_1 + x_2 +\ldots +
+x_n}{n}=\frac{\sum\limits_{j=1}^{J} n_j X_j}{n}=\sum\limits_{j=1}^{J} f_j X_j.$$
+
+
+Para el caso de distribuciones de variables discretas, los $X_j$ son los posibles valores de la
+variable mientras que  en el caso continuo, son las marcas de clase de los intervalos.
+
+Una de las propiedades fundamentales de la media es que si  hacemos una transformación lineal
+de los datos digamos $Y=aX+b$\footnote{Multiplicar por una constante positiva se suel denominar cambio de escala. SUmar una constante a una varible recibe el nombre de cambio de origen. Así podemos decir que la media arimética queda igual de afectada por  los cambios de escala y origen en los datos.} donde $X$ son los valores de la variable, la relación
+entre la media aritmética de $Y$ y la de $X$ es:
+
+$$ \overline{y}=a \overline{x} +b.$$
+
+\subsubsection{Medias armónica y geométrica}
+
+Las medias armónica y geométrica no son de gran utilidad salvo en problemas concretos. Se
+calculan de la siguiente forma:
+
+\[ M_{h}=\frac{n}{\sum\limits_{i=1}^{n} \frac{1}{x_i}}=\frac{n}{\sum\limits_{j=1}^{I} \frac{n_j}{X_j}}, \quad  M_g
+=\root n\of{\prod_{i=1}^{n} x_j} =\root n\of{\prod_{j=1}^{I} X_j^{n_j}}.\]
+
+
+Estas medias tienen restricciones sobre los datos, no pueden tener datos nulos, y en
+general se utilizan para datos positivos.
+
+\begin{example}
+Consideremos los siguientes datos: {\rm
+$$
+\begin{tabular}{cccccccccc}
+10 & 5 & 2 & 7 & 9 & 5 & 7 & 6 & 5 & 9 \\ 12 & 2 & 6 & 6 & 9 & 12 & 6 & 6 & 6 & 4 \\
+ 9 & 7 & 12 & 11 & & & & & &
+\end{tabular}
+$$
+} La media aritmética de los datos anteriores sin agrupar en intervalos es:
+
+$$\overline{x}= \frac{10+5+2+\cdots +12+11}{24}=\frac{173}{24}=7.20833
+$$
+
+Si los agrupamos en intervalos de amplitud $3$, la media será (hacemos primero la
+correspondiente tabla de frecuencias){\rm
+$$
+\begin{tabular}{l|ccc|}
+intervalos    & $X_j$ & $n_j$ & $n_jX_j$ \\ \hline $[1.5,4.5)$   &  \ 3 &  \ 3 &   \ 9 \\
+\hline $[4.5,7.5)$   &  \ 6  & 12 &  72 \\ \hline $[7.5,10.5)$  &  \ 9 &  \ 5 &  45 \\
+\hline $[10.5,13.5)$ & 12  &  \ 4 &  48 \\ \hline
+  Suma        &   & 24   & 174
+\end{tabular}
+$$
+ }
+$$\overline{x}= \frac{174}{24}=7.25$$
+Notemos que los valores difieren ya que el agrupamiento provoca una pérdida de
+información.
+\end{example}
+
+\subsubsection{Media general de orden m}
+
+Definimos la media general $M_{(m)}$ de orden $m$ como:
+
+$$M_{(m) }=\left(\frac{\sum_{i=1}^n  n_i x_i^m}{n}\right)^{\frac{1}{m}}=
+\left(\frac{\sum_{j=1}^J  n_j X_j^m}{n}\right)^{\frac{1}{m}}$$
+
+Se cumple que:
+
+$$M_{(-1)}=M_h;\,  M_{(0)}=M_g;\,  M_{(1)}=\overline{x}$$
+
+
+Además se cumple que $M_{(m)}$ es una función creciente en $m$ y por lo tanto :
+
+$$M_h\leq M_g\leq \overline{x}.$$
+
+
+\subsubsection{Mediana y percentiles}
+
+La mediana es aquel valor que, cuando consideremos todos los valores de la muestra
+ordenados, ocupa el  lugar central. Es decir, quedan la misma cantidad de valores a su
+izquierda que a su derecha.
+
+Supongamos que los datos ordenados son $x_1, x_2,\ldots x_n$, la\textbf{ mediana} vale:
+
+\begin{eqnarray*}
+x_{\frac{n+1}{2}}, &\mbox{ si } \mbox{$n$  es impar,}\\
+\frac{x_{\frac{n}{2}}+x_{\frac{n}{2}+1}}{2},&\mbox{ si }\mbox{$n$ es par.}
+\end{eqnarray*}
+
+Por ejemplo, la mediana de los datos $1,2,5,8,8,9,11$ vale $8$ ya que $8$ es el que ocupa
+el lugar central y la mediana de $2,3,3,4,5,6$ vale $\frac{3+4}{2}=3.5$.
+
+La manera anterior de calcular la mediana no es práctica en el caso en que haya muchos
+datos es muy costoso ordenarlos ( orden $n^2$ o $n\log(n)$). Veamos alguna manera de
+cálculo aproximado de la mediana a partir de la tabla de distribución de frecuencias.
+
+Necesitaremos las columnas de frecuencias absolutas y la de frecuencias absolutas
+acumuladas:
+
+$$
+\begin{tabular}{l|ccc|}
+intervalos & $X_j$ & $n_j$ &$ N_j$ \\ \hline \hline $[L_1, L_2)$ & $X_1$ & $n_1$ & $N_1$
+\\ $[L_2, L_3)$ & $X_2$ & $n_2$ & $N_2$ \\ \hline $\vdots$ & $\vdots$ & $\vdots$ &
+$\vdots$ \\ \hline $[L_I, L_{I+1})$ & $X_I$ & $n_I$ & $N_I$ \\ \hline $\sum$ & & $n$ &
+\end{tabular}
+$$
+
+Llamaremos intervalo crítico para la mediana al primer intervalo en el que su frecuencia
+absoluta acumulada supere o iguale a $\frac{n}{2}$. Denotemos por $[L_c, L_{c+1})$  el
+intervalo crítico. Sea $N_{c-1}$ la frecuencia absoluta acumulada del intervalo anterior
+al crítico. En el caso en que el interval crítico sea  el primero, $N_{c-1}=0$. Sea $n_c$
+la  frecuencia absoluta del intervalo crítico. Sea  $A_c=L_{c+1}-L_c$ la amplitud del
+intervalo crítico. Calcularemos la \textbf{mediana} mediante:
+
+$$M=L_{c}+A \frac{\left(\frac{n}{2}- N_{c-1}\right)}{n_c}.$$
+
+La justificación de la fórmula anterior es la siguiente: si representásemos las
+frecuencias absolutas acumuladas entre los extremos de los intervalos, la mediana seria
+la antiimagen de $\frac{n}{2}$ en  el intervalo crítico haciendo una interpolación por
+rectas (ver figura~\ref{MEDIANA}).
+
+\begin{figure}
+%%%$$
+%%%\beginpicture
+%%%\setcoordinatesystem units < 0.75cm, 0.75cm> \setshadesymbol ({\thinlinefont .})
+%%%\setlinear
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  2.508 22.415 to
+%%%2.508 14.954
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \putrule from  1.873 15.589 to
+%%%10.287 15.589 \putrule from 10.287 15.589 to 10.128 15.589
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setdots < 0.0953cm> \plot
+%%%4.096 15.589  4.096 17.177 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  6.636 15.589  6.636
+%%%19.399 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  8.064 20.510  8.064
+%%%15.589 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setsolid \plot  4.096 17.177
+%%%8.223 20.669 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \setdots < 0.0953cm> \plot
+%%%3.937 17.177  2.508 17.177 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  6.636 19.399  2.508
+%%%19.399 /
+%%%%
+%%%% Fig POLYLINE object
+%%%%
+%%%\linethickness= 0.500pt \setplotsymbol ({\thinlinefont .}) \plot  8.064 20.510  2.508
+%%%20.510 /
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_c$} [lB] at  3.620 14.796
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$L_{c+1}$} [lB] at  7.747 14.796
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$M$} [lB] at  6.318 14.796
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$N_{c-1}$} [lB] at  1.238 17.018
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {${n\over 2}$} [lB] at  1.238 19.241
+%%%%
+%%%% Fig TEXT object
+%%%%
+%%%\put {$N_c$} [lB] at  1.238 20.352 \linethickness=0pt \putrectangle corners at  0.286
+%%%22.415 and 10.287 14.796
+%%%\endpicture
+%%%$$
+%%%%CAMBIAR DIBUJO N/2 -> n/2 y mejorar
+\begin{center}
+\includegraphics{interpretacion.eps}
+\end{center}
+\caption{Interpretación geométrica de la Mediana} \label{MEDIANA}
+\end{figure}
+
+Los percentiles son una generalización de la mediana. La mediana es el percentil~50 ya
+que deja el 50\% de las observaciones a su izquierda.
+
+En general el \textbf{percentil}~$P$ es aquel valor que deja el~$P\%$ de las
+observaciones a su izquierda. El cálculo, dada la distribución de frecuencias es
+semejante al cálculo de la mediana.
+
+Definimos el  intervalo crítico  en  este caso  como el primer intervalo del que su
+frecuencia absoluta acumulada supera o iguala a $\frac{n\cdot P}{100}$.
+
+
+Sean entonces, $[L_c, L_{c+1})$ el intervalo crítico,  $N_{c-1}$ la frecuencia absoluta
+acumulada del intervalo anterior al crítico y  $n_c$ la
+ frecuencia absoluta del intervalo
+crítico. Si denomamos por  $A_c$ a la amplitud  del intervalo crítico, la fórmula
+ para calcular el  \textbf{percentil}~$P$ es:
+
+$$M_p =L_c + A_c \frac{\left(\frac{n\cdot P}{100}-N_{c-1}\right)}{n_c}.$$
+
+\begin{example}
+Calculemos la mediana, sin agrupar,  de los siguientes datos:
+
+$$
+14, 15, 16, 18, 18, 18, 18, 19, 20, 20, 22.
+$$
+El tama\~{n}o de la muestra es $n=11$ observaciones y ya están ordenadas. El lugar central,
+es el que ocupa  el sexto puesto, el valor que ocupa este lugar es el $18$, por lo tanto,
+la mediana es $18$.
+
+En la siguiente muestra tenemos un número par de datos:
+$$
+24, 25, 26, 26, 27, 27, 27, 29.
+$$
+El tama\~{n}o muestral es $n=8$ observaciones que ya están ordenadas. El lugar central estará
+entre el  cuarto y el quinto puesto. Los datos que ocupan estos lugares son el $26$ y el
+$27$. Por lo tanto la mediana vale
+
+$$M=\frac{26+27}{2}=26.5.$$
+\end{example}
+
+\begin{example}
+Consideremos la siguiente  distribución de frecuencias: {\rm
+$$
+\begin{tabular}{lccc}
+intervalos &  $X_j$ &  $n_j$ &  $N_j$ \\ \hline $[1.5,4.5)$   & \ 3  &  \ 3 &   \ 3  \\
+$[4.5,7.5)$   & \ 6  & 12 &  15  \\ $[7.5,10.5)$  & \ 9  &  \ 5 &  20  \\ $[10.5,13.5)$ &
+12 &  \ 4 &  24  \\ \hline
+\end{tabular}
+$$
+} Tenemos  que $n=24$ y que  $\frac{n}{2}=12$. El intervalo crítico es:
+ $[4.5,7.5)$
+La mediana valdrá entonces:
+
+$$M=4.5+3\frac{(12-3)}{12}=6.75.$$
+
+Percentil $25$: $25\mbox{\%}\Rightarrow  \frac{n\cdot P}{100}= 6$. Intervalo crítico:
+ $[4.5,7.5)$.
+
+$$M_{25}=4.5+3\frac{(6-3)}{12}=5.25$$
+
+Percentil $75$: $75\mbox{\%} \Rightarrow  \frac{n\cdot P}{100}= 18$. Intervalo crítico:
+ $[7.5,10.5)$.
+
+$$
+M_{75}=7.5+3\frac{(18-15)}{5}=9.3
+$$
+\end{example}
+
+En general se habla de cuantiles para denominar a todos estos estadísticos. Los cuartiles
+que dividen a la población en cuartos son llamados cuartiles, así el primer cuartil $Q_1$
+deja a su izquierda el 25\% de las observaciones, el segundo cuartil $Q_2$ es la mediana
+y el tercer cuartil $Q_3$ deja a su izquierda el $75\%$ de las observaciones. También se
+habla de los deciles que son los estadísticos que dividen a la población en décimas
+partes.
+
+\subsubsection{Moda}
+
+La moda de una muestra es un valor que tenga la frecuencia absoluta más grande. En
+consecuencia la  moda no tiene por qué ser única puede haber más de un valor con
+frecuencia absoluta máxima. Si una distribución tiene una sola moda diremos que es
+unimodal, si dos bimodal, \ldots La presencia de dos modas puede indicar la existencia de
+dos poblaciones diferenciadas en la muestra (por ejemplo el peso según sexo).
+
+
+
+En el caso en que tengamos una tabla de distribuciones, para encontrar la moda, hemos de
+localizar el intervalo o intervalos con frecuencia absoluta más alta.
+
+Sean $[L_j, L_{j+1})$ los extremos del intervalo con  frecuencia absoluta máxima.
+
+Para calcular la moda podemos utilizar  la siguiente  fórmula, en la que suponemos que
+todos los intervalos tienen la misma amplitud $A$ (en caso contrario se utilizan otras
+aproximaciones):
+
+$$M_o =L_j + A \frac{n_{j+1}}{(n_{j-1}+n_{j+1})}.$$
+
+Donde:
+
+\begin{itemize}
+\item $A$: amplitud de los intervalos
+\item $n_{j-1}$: frecuencia absoluta del intervalo anterior al de
+frecuencia máxima.
+\item $n_{j+1}$: frecuencia absoluta del intervalo posterior al de
+frecuencia máxima.
+\end{itemize}
+
+\begin{example}
+Consideremos la siguiente distribución de frecuencias: {\rm $$
+\begin{tabular}{lccc}
+intervalos    & $X_j$ & $n_j$ & $N_j$ \\ \hline $[1.5,4.5) $  &  \ 3 & \ 3 &   \ 3  \\
+$[4.5,7.5) $  &  \ 6 &  12 &  15  \\ $[7.5,10.5)$  &  \ 9 &   \ 5 &  20
+\\ $[10.5,13.5)$ & 12 &   \ 4 &  24  \\ \hline
+\end{tabular}
+$$}
+
+El intervalo con la frecuencia absoluta mas alta es el $[4.5,7.5)$. Por lo tanto, la moda
+vale:
+
+$$M_0=4.5+3\frac{5}{(3+5)}=6.375.$$
+\end{example}
+
+
+
+\subsection{Medidas de dispersión}
+
+Una vez estudiadas las medidas de posición, vamos a estudiar algunos estadísticos
+ que miden lo separadas que están las observaciones entre sí.
+
+Algunas medidas de dispersión respecto a la media aritmética son la varianza, la
+desviación típica, la desviación media respecto de la media y el coeficiente  de
+variación.
+
+Las medidas de dispersión respecto a la a la mediana es la desviación media respecto de
+la mediana.
+
+Otras medidas de dispersión son el recorrido, el rango , el recorrido intercuartílico, el
+rango intercuartílico.
+
+%%%Las medidas de simetría y  apuntamiento (curtosis)  comparan el perfil de la distribución
+%%%con el perfil de una distribución normal.
+
+%%%Per últim hi ha els índexos de concentració \index{indexos@índexos!de concentracio@de
+%%%concentració} desde el punt de vista d'u\-ni\-for\-mi\-tat de la
+%%%distribució\index{distribucio@distribució} com és l'índex de Gini\index{index@índex!de
+%%%Gini}.
+
+\subsubsection{Varianza y  desviación típica o estándar}
+
+La varianza y la desviación  típica nos indican si los datos  están muy dispersos
+respecto de la media aritmética $\overline{x}$.
+
+La fórmula del cálculo de la varianza es:
+
+$$s^{2}=\frac{1}{n} \sum\limits_{j=1}^{J}
+n_j(X_j-\overline{x})^2=\frac{1}{n} \sum\limits_{j=1}^{J} n_j X_j^2- \overline{x}^2.$$
+
+o bien para datos sin agrupar
+
+$$s^{2}=\frac{1}{n} \sum\limits_{j=1}^{n}
+(x_i-\overline{x})^2=\frac{1}{n} \sum\limits_{j=1}^{n}  x_i^2- \overline{x}^2.$$
+
+La segunda expresión es más útil que la primera de cara al cálculo de la  varianza.
+
+La propiedad fundamental de la varianza  es que  minimiza las desviaciones  al cuadrado
+respecto a cualquier punto $X_0$. Es decir:
+
+$$\min_{X_0} \frac{1}{n} \sum\limits_{j=1}^{J}n_j (X_j - X_0)^2=s^2.$$
+
+La desviación típica o estándar es la raíz cuadrada positiva de la varianza:
+
+$$s=\sqrt{\frac{1}{n} \sum\limits_{j=1}^{J} n_j X_j^2-
+\overline{x}^2}.$$
+
+Por motivos que veremos en temas posteriores existe otra fórmula para el cálculo de la
+varianza de una muestra a la que en ocasiones se le denomina cuasivarianza o también se le
+llama varianza muestral  \footnote{Quizá algunos de vosotros descubra aquí el motivo por el que
+las calculadoras llevan dos teclas $s_n^2$ o $\sigma_{n}^2$ y $s_{n-1}$ o
+$\sigma_{n-1}$.}:
+
+$$\tilde{s}^2 =\frac{n}{n-1} s^2=\frac{1}{n-1}\sum\limits_{j=1}^{n}n_j(X_j-\overline{X})^2.$$
+
+Notemos que la cuasivarianza es una peque\~{n}a corrección de la varianza, en lugar de
+dividir por el tama\~{n}o muestral se divide por el tama\~{n}o muestral menos $1$. Para muestras
+grandes la corrección puede resultar insignificante pero para muestras peque\~{n}as es
+necesaria.
+
+Cuando  la variable $X$ se vea afectada por un cambio lineal: $Y=aX+b$, la varianza de
+$Y$ cumple la siguiente relación:
+
+$$s_Y^2 = a^2 s_X^2.$$
+
+De aquí deducimos que la varianza es independiente respecto a  cambios de origen y que
+queda afectada por el cuadrado de los cambios de escala.
+
+Para las desviaciones típicas tendremos:
+$$s_Y=|a| s_X.$$
+
+\begin{example}
+Consideremos la siguiente distribución de frecuencias{\rm
+$$
+\begin{tabular}{l|r|r|r|}
+intervalos    & $X_j$ & $n_j$ & $n_jX_j$ \\ \hline $[9.5,29.5)$   & 19.5 &  38 &   741.0
+\\ $[29.5,49.5)$  & 39.5 &  18 &   711.0 \\ $[49.5,69.5)$  & 59.5 &  31 & 1844.5 \\
+$[69.5,89.5)$  & 79.5 &  20 &  1590.0   \\ \hline
+    Sumas      &      & 107 &  4886.5
+\end{tabular}
+$$
+} Vamos a calcular la varianza
+
+Primero calculamos la media:
+
+$$\overline{x}=\frac{4886.5}{107}=45.6682$$
+
+Para calcular la varianza hemos de a\~{n}adir dos columnas a la tabla anterior: {\rm
+$$
+\begin{tabular}{crr}
+ $X_j$ & $X_j^2$ & $n_jX_j^2$ \\
+\hline
+ 19.5  & 380.25  & 14449.50 \\
+ 39.5  & 1560.25 &  28084.50 \\
+ 59.5  & 3540.25 & 109747.75 \\
+ 79.5  & 6320.25 & 126405.00 \\
+\hline Suma   &          & 278686.75
+\end{tabular}
+$$
+} La varianza y la desviación  típica valen:
+
+$$s_X^2=\frac{278686.75}{107}-45.6682^2=518.962$$
+$$s_X=\sqrt{518.962}=22.7807$$
+\end{example}
+
+\subsubsection{Coeficiente de variación}
+
+El coeficiente de variación  se define como el cociente entre la desviación
+ típica  y la media
+aritmética, se utiliza para variables en las que la media represente a la magnitud de los
+datos (por ejemplo si todos son positivos y la distribución es unimodal) :
+
+$$CV=\frac{s}{\overline{x}}.$$
+
+El coeficiente de variación  es independiente del cambio de escala. Más concretamente, si
+hacemos el cambio lineal  de la variable $X$:
+ $Y=a X$, con $a>0$,  el coeficiente de
+variación  de la variable $Y$ es el mismo que el de la variable $X$:
+
+$$CV_Y=CV_X.$$
+
+El coeficiente de variación será útil para comparar la dispersión de distribuciones
+medidas en diferentes escalas.
+
+\begin{example}
+
+Consideremos la siguiente distribución de frecuencias: {\rm
+$$
+\begin{tabular}{lccc}
+intervalos     & $X_j$ & $n_j$ & $n_jX_j$\\ \hline $[9.5,29.5)$  & 19.5 & \ 38  & \ 741.0
+\\ $[29.5,49.5)$ & 39.5 & \ 18  & \ 711.0  \\ $[49.5,69.5)$ & 59.5 & \ 31  & 1844.5 \\
+$[69.5,89.5)$ & 79.5 & \ 20  & 1590.0   \\ \hline Sumas     &      & 107 & 4886.5
+\end{tabular}
+$$
+}
+
+La media   y la desviación  típica son:
+$$\overline{x}=45.6682,\quad s_X=22.7807$$
+Por lo tanto el coeficiente de variación es:
+$$CV=\frac{s}{\overline{x}}=\frac{22.6807}{45.6682}=0.4988$$
+\end{example}
+
+\subsubsection{Desviación media}
+
+La desviación media es un índice de dispersión respecto a la mediana o a la media. Queda
+definido por:
+
+$$D_M=\frac{1}{n}\sum\limits_{j=1}^{J}n_j|X_j - M|.$$
+
+donde $M$ es la mediana o la media aritmética.
+
+La propiedad fundamental de la desviación  media respecto a la mediana es que minimiza
+las desviaciones en valor absoluto respecto de un punto cualquiera $X_0$. Es decir:
+
+$$\min_{X_0} \frac{1}{n} \sum\limits_{j=1}^{J}n_j|X_j - X_0|=D_M.$$
+
+\subsubsection{Recorrido}
+
+Otra medida de dispersión es el recorrido. Se define como la diferencia entre el valor
+máximo y mínimo de los valores observados.
+
+%%%En el caso de distribuciones agrupadasse entenderá como valor mínimo'entendr\`a com a valor
+%%%m\`axim l'extrem de la dreta del últim interval \index{interval} i com a valor mínim
+%%%l'extrem de l'esquerra del primer interval. Aquesta mesura\index{mesura} és v\`alida tant
+%%%per la media, \index{media} com per la moda com per la mediana.
+
+\begin{example}
+Consideremos la siguiente distribución de frecuencias: {\rm
+$$
+\begin{tabular}{lrrr}
+intervalos &\multicolumn{1}{c}{$X_j$} & \multicolumn{1}{c}{$n_j$}
+&\multicolumn{1}{c}{$n_j X_j$}\\ \hline $[0.5,15.5) $ &  8 & 4  & 32  \\ $[15.5,30.5)$ &
+23 & 4 & 92 \\ $[30.5,45.5)$ & 38 & 2 & 76 \\
+ \hline
+Sumas     &      & 10 & 200
+\end{tabular}
+$$
+} Vamos a calcular la desviación media:
+
+
+Calculamos la media
+
+$$\overline{x}=\frac{200}{10}=20$$
+
+A\~{n}adimos dos columnas más a la tabla de frecuencias:
+
+
+$$
+\begin{tabular}{ccc}
+$X_j$  & $|X_j-\overline{x}|$ &  $n_j|X_j-\overline{x}|$ \\ \hline \ 8     & 12   &   48
+\\ 23     & \ 3     &  12  \\ 38     & 18     &  36   \\ \hline Sumas  &       &  96 \\
+\end{tabular}
+$$
+ La desviación es:
+
+$$D_M=\frac{96}{10}=9.6$$
+\end{example}
+
+También se utiliza el recorrido intercuartílico que es $Q_3-Q_1$; la diferencia entre el
+tercer y primer cuartil. También se pueden calcular recorridos con deciles, percentiles y
+cuantiles en general.
+
+\subsection{Perfil de una distribución}
+
+El perfil de una distribución viene determinado por alguno de sus polígonos de
+frecuencias. Es mejor utilizar las frecuencias relativas ya que no dependen del tama\~{n}o de
+la muestra. La idea es encontrar la curva a donde tiende el polígono de frecuencias
+cuando la muestra se hace grande, que en definitiva sería la curva de frecuencias de toda
+la población.
+
+\begin{figure}
+%%%$$
+%%%\begin{tabular}{ll}
+%%%\setcoordinatesystem units <.075cm,.075cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 50 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} /
+%%% quantity 7 /
+%%%\axis left shiftedto x=0 ticks in withvalues {} {} {} {} {}  /
+%%% quantity 5 /
+%%%%\arrow <8pt> [0.2,0.67] from 25 75 to 75 65
+%%%%\put {$S$} at 23 78
+%%%%\put {$A$} [rt] at 0 0
+%%%%\put {$C$} [t] at 100 0
+%%%%\put {$B$} [lb] at 101 100
+%%%\setlinear \putrule from 10 0 to 10 40 \putrule from 20 0 to 20 30 \putrule from 30 0 to
+%%%30 20 \putrule from 40 0 to 40 50 \putrule from 50 0 to 50 30 \put {$f_j$} at -5 45 \put
+%%%{$\overline x$} at  25 -5
+%%%\endpicture
+%%%& \setcoordinatesystem units <.075cm,.075cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 50 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} /
+%%% quantity 7 /
+%%%\axis left shiftedto x=0 ticks in withvalues {} {} {} {} {}  /
+%%% quantity 5 /
+%%%%\arrow <8pt> [0.2,0.67] from 25 75 to 75 65
+%%%%\put {$S$} at 23 78
+%%%%\put {$A$} [rt] at 0 0
+%%%%\put {$C$} [t] at 100 0
+%%%%\put {$B$} [lb] at 101 100
+%%%\sethistograms \plot 5 0 15 40 25 30 35 20 45 50 55 30 / \put {$f_j$} at -5 45 \put
+%%%{$\overline x$} at  25 -5
+%%%\endpicture
+%%%\end{tabular}
+%%%$$
+\begin{center}
+\includegraphics{diagrama.eps}
+\end{center}
+\caption{Diagrama de barras e  histograma de las frecuencias relativas }
+\label{RELATIVES}
+\end{figure}
+
+Una curva continua en forma de campana llamada curva de Gauss \footnote{Es una buena broma pedir a un amigo el cálculo de la primitiva de la curva de Gauss.} puede servir como un modelo
+matemático ideal para comparar el perfil de cualquier distribución. Esta curva
+corresponde a la gráfica de la función:
+
+$$y=\frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}},$$
+donde  $\mu$ se aproxima por $\overline{x}$  y  $\sigma$ por $s$.
+ Su representación gráfica es
+la de la figura~\ref{NORMAL}, gaussiana o campana de gauss, para el caso (estándar) en el  que~$\mu=0$ y~$\sigma =1$.
+
+\begin{figure}
+%%%$$
+%%%\setcoordinatesystem units <1.75cm,8cm>
+%%%\beginpicture
+%%%\setplotarea x from -3.5 to 3.5, y from 0 to 0.5 \axis bottom shiftedto y=0 ticks in
+%%%withvalues  $-3$ $-2$ $-1$ $0$ $1$ $2$ $3$ / quantity 7 / \axis left shiftedto x=0 ticks
+%%%in withvalues {} $0.1$ $0.2$ $0.3$ $0.4$ / quantity 5 / \setlinear \plot -3.200 0.002384
+%%%-3.150   0.002794 -3.100   0.003267 -3.050   0.003810 -3.000   0.004432 -2.950 0.005143
+%%%-2.900   0.005953 -2.850   0.006873 -2.800   0.007915 -2.750   0.009094 -2.700 0.010421
+%%%-2.650   0.011912 -2.600   0.013583 -2.550   0.015449 -2.500   0.017528 -2.450 0.019837
+%%%-2.400   0.022395 -2.350   0.025218 -2.300   0.028327 -2.250   0.031740 -2.200 0.035475
+%%%-2.150   0.039550 -2.100   0.043984 -2.050   0.048792 -2.000   0.053991 -1.950 0.059595
+%%%-1.900   0.065616 -1.850   0.072065 -1.800   0.078950 -1.750   0.086277 -1.700 0.094049
+%%%-1.650   0.102265 -1.600   0.110921 -1.550   0.120009 -1.500   0.129518 -1.450 0.139431
+%%%-1.400   0.149727 -1.350   0.160383 -1.300   0.171369 -1.250   0.182649 -1.200 0.194186
+%%%-1.150   0.205936 -1.100   0.217852 -1.050   0.229882 -1.000   0.241971 -0.950 0.254059
+%%%-0.900   0.266085 -0.850   0.277985 -0.800   0.289692 -0.750   0.301137 -0.700 0.312254
+%%%-0.650   0.322972 -0.600   0.333225 -0.550   0.342944 -0.500   0.352065 -0.450 0.360527
+%%%-0.400   0.368270 -0.350   0.375240 -0.300   0.381388 -0.250   0.386668 -0.200 0.391043
+%%%-0.150   0.394479 -0.100   0.396953 -0.050   0.398444
+%%% 0.000   0.398942
+%%% 0.050   0.398444
+%%% 0.100   0.396953
+%%% 0.150   0.394479
+%%% 0.200   0.391043
+%%% 0.250   0.386668
+%%% 0.300   0.381388
+%%% 0.350   0.375240
+%%% 0.400   0.368270
+%%% 0.450   0.360527
+%%% 0.500   0.352065
+%%% 0.550   0.342944
+%%% 0.600   0.333225
+%%% 0.650   0.322972
+%%% 0.700   0.312254
+%%% 0.750   0.301137
+%%% 0.800   0.289692
+%%% 0.850   0.277985
+%%% 0.900   0.266085
+%%% 0.950   0.254059
+%%% 1.000   0.241971
+%%% 1.050   0.229882
+%%% 1.100   0.217852
+%%% 1.150   0.205936
+%%% 1.200   0.194186
+%%% 1.250   0.182649
+%%% 1.300   0.171369
+%%% 1.350   0.160383
+%%% 1.400   0.149727
+%%% 1.450   0.139431
+%%% 1.500   0.129518
+%%% 1.550   0.120009
+%%% 1.600   0.110921
+%%% 1.650   0.102265
+%%% 1.700   0.094049
+%%% 1.750   0.086277
+%%% 1.800   0.078950
+%%% 1.850   0.072065
+%%% 1.900   0.065616
+%%% 1.950   0.059595
+%%% 2.000   0.053991
+%%% 2.050   0.048792
+%%% 2.100   0.043984
+%%% 2.150   0.039550
+%%% 2.200   0.035475
+%%% 2.250   0.031740
+%%% 2.300   0.028327
+%%% 2.350   0.025218
+%%% 2.400   0.022395
+%%% 2.450   0.019837
+%%% 2.500   0.017528
+%%% 2.550   0.015449
+%%% 2.600   0.013583
+%%% 2.650   0.011912
+%%% 2.700   0.010421
+%%% 2.750   0.009094
+%%% 2.800   0.007915
+%%% 2.850   0.006873
+%%% 2.900   0.005953
+%%% 2.950   0.005143
+%%% 3.000   0.004432
+%%% 3.050   0.003810
+%%% 3.100   0.003267
+%%% 3.150   0.002794
+%%% 3.200   0.002384
+%%% 3.250   0.002029 /
+%%%\endpicture
+%%%$$
+\begin{center}
+\includegraphics{curva.eps}
+\end{center} \caption{Curva normal o campana de Gauss} \label{NORMAL}
+\end{figure}
+
+Las propiedades más importantes de la curva normal son:
+\begin{enumerate}[a)]
+\item Está definida para cualquier real  y es siempre positiva.
+\item El área comprendida entre  la curva y el eje de abcisas
+vale siempre $1$ para cualquier valor de $\mu$ y $\sigma>0$.
+\item Es simétrica respecto a la recta vertical $X=\mu$ y en este punto
+tiene un máximo absoluto que vale $\frac{1}{\sqrt{2 \pi} \sigma}$.
+\item Tiene dos puntos de inflexión en $x=\mu \pm \sigma$.
+\item El eje de abcisas es una asíntota de la curva.
+\end{enumerate}
+
+Las medidas de simetría y apuntamiento se suelen referir a la correspondiente
+distribución normal; aquella en la que los parámetros se estiman por  $\mu=\overline{x}$
+y $\sigma=s.$ ( o por la cuasivarianza).
+
+Se entiende, entonces, que la distribución normal es simétrica y es perfecta respecto 
+al apuntamiento. Es decir, que no es ni apuntada ni chata.
+
+\subsection{Medidas de simetría}
+
+Para ver si una distribución es simétrica o asimétrica por la derecha o por la izquierda
+se toma como índice de simetría:
+
+$$g_1=\frac{m_3}{s^3},$$
+donde $m_3$ es el momento central de tercer orden y se calcula de la siguiente forma:
+
+$$m_3=\frac{1}{n}\sum\limits_{j=1}^{J} n_j(X_j-\overline{x})^3,$$
+y $s$ es la desviación típica. Tenemos, entonces  que:
+\begin{itemize}
+\item[-] Si $g_1>0$, la distribución
+es asimétrica por la derecha o asimetría positiva.
+
+\item[-] Si $g_1=0$, la distribución
+es simétrica o el  índice no decide.
+
+\item[-] Si $g_1<0$, la distribución
+es asimétrica por la izquierda o asimetría negativa.
+\end{itemize}
+%%%%%%CAMIBIAR DIBUJO INCLUIR PIES CON g1<0 g1=0 g1>0
+\begin{figure}
+%%%$$
+%%%\begin{tabular}{lll}
+%%%\setcoordinatesystem units <.065cm,.065cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5 5 12.5 10 17.5 8 22.5 15 27.5 30 32.5 25 37.5 40 42.5 45
+%%%47.5 50 52.5 45 57.5 55 /
+%%%\endpicture
+%%%& \setcoordinatesystem units <.065cm,.065cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5 5 12.5 10 17.5 8 22.5 15 27.5 30 32.5 25 37.5 30 42.5 15
+%%%47.5 8 52.5 10 57.5 5 /
+%%%\endpicture
+%%%& \setcoordinatesystem units <.065cm,.065cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5  55 12.5 45 17.5 50 22.5 40 27.5 25 32.5 30 37.5 15 42.5
+%%%10 47.5 8 52.5 10 57.5 5  /
+%%%\endpicture
+%%%\end{tabular}
+%%%$$
+\begin{center}
+\includegraphics{histogramas2.eps}
+\end{center} \caption{Histogramas}
+\end{figure}
+
+\begin{example}
+Consideremos la siguiente distribución de frecuencias: {\rm
+$$
+\begin{tabular}{lrrrr}
+intervalos  &  $X_j$ & $ n_j$ &  $n_jX_j$  &  $n_jX_j^2$ \\ \hline $[14.5,19.5)$ & 17  &
+4    & 68   & 1156  \\ $[19.5,24.5)$ & 22  &  6   & 132   & 2904
+\\ $[24.5,29.5)$ & 27  &  8  &  216   & 5832 \\ $[29.5,34.5)$ & 32  & 11  &  352   &
+11264 \\ $[34.5,39.5)$ & 37  & 35  & 1295   & 47915 \\ $[39.5,44.5)$ & 42  &100  & 4200 &
+176400 \\ $[44.5,49.5)$ & 47  & 218 & 10246 & 481562 \\ \hline
+  Sumas       & &   382 & 16509 & 727033
+\end{tabular}
+$$
+} La media y la varianza valen:
+
+$$
+\overline{x}=  \frac{16509}{382}=43.2173, \quad s_{X}^2=
+\frac{727033}{382}-\left(\frac{16509}{382}\right)^2=35.49
+$$
+
+Calculemos el  coeficiente de asimetría $g_1$.  Para hacerlo, hemos de a\~{n}adir una columna
+más a la tabla anterior:
+\
+{\rm
+$$
+\begin{tabular}{rrr}
+        $X_j$ &  $ n_j$ &    $n_j {(X_j-\overline{x})}^3$ \\
+\hline
+        17 &   4  & -72081.33  \\
+        22  &  6  & -57308.66 \\
+        27  &  8  & -34121.16 \\
+        32  & 11  & -15525.84 \\
+        37  & 35  &  -8411.41 \\
+        42  & 100  &  -180.37 \\
+        47  & 218  & 11799.67 \\
+\hline
+ Sumas       & 382  &-175829.09
+\end{tabular}
+$$
+} El momento de tercer orden vale:
+
+$$m_3=\frac{-175829.09}{382}=-460.285$$
+
+A continuación calculamos el índice de asimetría:
+
+$$g_1=\frac{m_3}{s^3}=\frac{-460.285}{\left(\sqrt{35.49}\right)^3}=-2.18$$
+
+Por lo tanto podemos decir que se trata de una distribución asimétrica por la izquierda o
+negativa
+\end{example}
+
+El índice de simetría es independiente de cambios lineales de la forma $Y=aX+b$, con
+$a>0$, es decir:
+
+$$g_1(X)=g_1(Y).$$
+En otras palabras, el índice de simetría no queda afectado por cambios de origen, ni por
+cambios de escala positivos, mientras que para cambios de escala negativos cambia el
+signo de la simetría (ejercicio).
+
+\subsection{Medidas de apuntamiento}
+
+Las medidas de apuntamiento nos miden si el perfil de una distribución muestral está muy
+apuntado o no en comparación con un perfil ideal, como por ejemplo el de la campana de
+gauss asociada. Para estudiar el apuntamiento se utiliza un índice basado en el momento
+de cuarto orden, que recibe el nombre de coeficiente de apuntamiento o curtosis\footnote{En inglés \emph{kurtosis}.}:
+
+$$g_2=\frac{m_4}{s^4}-3,$$
+donde $m_4$ es el llamado momento central de cuarto orden y se calcula de la
+siguiente forma:
+
+$$
+m_4 =\frac{1}{n} \sum\limits_{j=1}^{J} n_j(X_j - \overline{x})^4,
+$$
+
+y $s$  es la desviación típica. Tenemos, pues  que:
+\begin{itemize}
+\item[-] Si  $g_2>0$, la distribución
+es puntiaguda o leptocúrtica.
+
+\item[-]Si $g_2=0$, la distribución
+es similar a la normal o mesocúrtica.
+
+\item[-] Si $g_2<0$, la distribución
+es achatada o platicúrtica.
+\end{itemize}
+
+\begin{figure}
+%%%$$
+%%%\begin{tabular}{lll}
+%%%\setcoordinatesystem units <.075cm,.075cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5 5 12.5 10 17.5 8 22.5 15 27.5 30 32.5 45 37.5 10 42.5 15
+%%%47.5 10 52.5 15 57.5 5 /
+%%%\endpicture
+%%%& \setcoordinatesystem units <.075cm,.075cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5 5 12.5 10 17.5 8 22.5 15 27.5 20 32.5 25 37.5 20 42.5 15
+%%%47.5 8 52.5 10 57.5 5 /
+%%%\endpicture
+%%%& \setcoordinatesystem units <.055cm,.075cm>
+%%%\beginpicture
+%%%\setplotarea x from 0 to 60, y from 0 to 60 \axis bottom shiftedto y=0 ticks in
+%%%withvalues {} {} {} {} {} {} {} {} {} {} {} {} {} /
+%%% quantity 13 /
+%%%%\axis left shiftedto x=0 ticks
+%%%%in withvalues {} {} {} {} {} {} {} /
+%%%% quantity 7 /
+%%%\sethistograms \plot 2.5 0 7.5 5 12.5 10 17.5 8 22.5 15 27.5 20 32.5 25 37.5 10 42.5 15
+%%%47.5 10 52.5 15 57.5 5 /
+%%%\endpicture
+%%%\end{tabular}
+%%%$$
+\begin{center}
+\includegraphics{histogramas3.eps}
+\end{center}
+\caption{Histogramas de los tres tipos de apuntamiento}
+\end{figure}
+
+\begin{example}
+Consideremos la siguiente distribución de frecuencias: {\rm
+$$
+\begin{tabular}{lrrrr}
+intervalos  &  $X_j$  & $n_j$   & $n_jX_j$   & $n_j X_j^2$  \\ \hline $[14.5,19.5)$ & 17
+& 4    & 68    & 1156  \\ $[19.5,24.5)$ & 22  & 6    & 132   & 2904
+\\ $[24.5,29.5)$ & 27 &   8   & 216   & 5832 \\ $[29.5,34.5)$ & 32 &  11   & 352   &
+11264 \\ $[34.5,39.5)$ & 37 &  35   & 1295  &  47915 \\ $[39.5,44.5)$ & 42 & 100   & 4200
+& 176400 \\ $[44.5,49.5)$ & 47 & 218  & 10246  & 481562 \\ \hline
+  Sumas     & &    382  & 16509  & 727033
+\end{tabular}
+$$
+} La media y la varianza valen:
+
+$$
+\overline{x} =  \frac{16509}{382}=43.22,\quad s_X^2=
+\frac{727033}{382}-\left(\frac{16509}{382}\right)^2=35.49
+$$
+
+El coeficiente de apuntamiento $g_2$.  Hemos de a\~{n}adir una columna a la tabla:
+
+ {\rm
+$$
+\begin{tabular}{lrrr}
+intervalos  &  $X_j$  & $n_j $  & $n_j(X_j-\overline{x})^4$   \\ \hline $[14.5,19.5)$ &
+17 & 4    & 1889776.11 \\ $[19.5,24.5)$ & 22  & 6    & 1215933.65 \\ $[24.5,29.5)$ & 27 &
+8 &  553352.38 \\ $[29.5,34.5)$ & 32 &  11   & 174157.64 \\ $[34.5,39.5)$ & 37 &  35 &
+52296.07 \\ $[39.5,44.5)$ & 42 & 100   &  219.56 \\ $[44.5,49.5)$ & 47 & 218  & 44634.88
+\\ \hline
+  Sumas     & &    382  & 3930370.29
+\end{tabular}
+$$
+} El momento de cuarto orden vale:
+
+$$m_4=\frac{3930370.29}{382}=10288.93$$
+
+A continuación, calculamos el índice de apuntamiento
+
+$$g_2=\frac{m_4}{s^4} -3 =\frac{10288.93}{35.49^2}-3=5.17$$
+Por lo tanto se trata  de una distribución puntiaguda o leptocúrtica.
+\end{example}
+
+El  índice de apuntamiento es independiente respecto cambios lineales  de la forma
+$Y=aX+b$, es decir:
+
+ $$g_2(X)=g_2(Y).$$
+
+
+El índice~$g_2$ no queda afectado por cambios de origen ni de escala.
+
+\section{Variables multidimensionales}
+Hasta ahora sólo hemos estudiado una variable, es evidente que en la realidad interesa el
+comportamiento conjunto de dos o más variables. En cualquier disciplina técnica o
+científica, economía, ciencias de la computación, bioinformática,
+telecomunicaciones,\ldots son muy utilizados los conceptos de asociación, independencia y
+otros, entre dos o más variables. Para introducirlos estudiaremos el caso más sencillo;
+el de las variables estadísticas bidimensionales. En lo que respecta a esta sección cada
+individuo de la población tiene asociado más de un valor o cualidad observada.  Per
+ejemplo peso y altura de un grupo de personas, peso y sexo, altura y nivel de estudios,
+\ldots. Por ejemplo  si estudiamos el peso ($p$) y la altura ($h$) de una población una
+muestra genérica de tama\~{n}o $n$ tendría el siguiente aspecto:
+$$
+ (p_1,h_1),(p_2,h_2),\ldots,(p_n,h_n),
+$$
+donde  $(p_i, h_i)$ es el peso y la estatura correspondientes a la observación $i$-ésima.
+
+Otro ejemplo sería el estudio de la relación entre los turistas llegados a nuestra isla y
+el a\~{n}o de llegada. Los datos serían:
+$$
+ (t_1,n_1),(t_2,n_2),\ldots,(t_N,n_N),
+$$
+donde $t_i$ es el a\~{n}o $i$-ésimo y  $n_i=$ número de turistas llegados ese a\~{n}o.
+
+\subsection{Descripción numérica: caso bidimensional}
+
+
+Supongamos que tenemos $(X,Y)$  un par de variables que se pueden medir conjuntamente en
+un individuo de la población que se desea estudiar.
+
+Supondremos que las variables son discretas.
+
+
+Sean $\{X_1,X_2,\ldots, X_I\}$ los valores posibles de  $X$ y   $\{Y_1,Y_2,\ldots, Y_J\}$
+los de $Y$.
+
+El conjunto de valores que puede tomar la variable conjunta $(X,Y)$ son:
+$$
+\{(X_1,Y_1),\ldots,(X_1,Y_J),(X_2,Y_1)\ldots,(X_2,Y_J),\ldots,(X_I,Y_1),\ldots
+,(X_I,Y_J)\}.
+$$
+Sean $n_{ij}$ la frecuencia absoluta correspondiente al valor  $(X_i,Y_j)$, o sea, es el
+nombre de individuos de la muestra que tienen la variable $X$ igual a $X_i$ y la variable
+$Y$ igual a $Y_j$.
+
+Toda esta información se puede resumir en la siguiente tabla de frecuencias absolutas o
+tabla de contingencia:
+
+$$
+\begin{tabular}{|c|cccccc|c|}
+\hline $X/Y$ & $Y_1$ & $Y_2$ & $\ldots$ & $Y_j$ & $\ldots$ & $Y_J$ & $n_{i \bullet}$ \\
+\hline $X_1$ & $n_{11}$ & $n_{12}$ & $\ldots$ & $n_{1j}$ & $\ldots$ & $n_{1J}$ & $n_{1
+\bullet}$ \\ $X_2$ & $n_{21}$ & $n_{22}$ & $\ldots$ & $n_{2j}$ & $\ldots$ & $n_{2J}$ &
+$n_{2 \bullet}$ \\ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ &
+$\vdots$ & $\vdots$ \\ $X_i$ & $n_{i1}$ & $n_{i2}$ & $\ldots$ & $n_{ij}$ & $\ldots$ &
+$n_{iJ}$ & $n_{i \bullet}$ \\ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ &
+$\vdots$ & $\vdots$ & $\vdots$ \\ $X_I$ & $n_{I1}$ & $n_{I2}$ & $\ldots$ & $n_{Ij}$ &
+$\ldots$ & $n_{IJ}$ & $n_{I \bullet}$ \\ \hline $n_{\bullet j}$ & $n_{\bullet 1}$ &
+$n_{\bullet 2}$ & $\ldots$ & $n_{\bullet j}$ & $\ldots$ & $n_{\bullet J}$ &
+$N=n_{\bullet\bullet}$ \\ \hline
+\end{tabular}
+$$
+
+En la tabla anterior, los valores de $n_{i\bullet}$ representan el número de individuos
+con $X=X_i$, $n_{\bullet j}$ el nombre de individuos con $Y=Y_j$ y $n$  es el nombre
+total de individuos.
+
+\begin{example}
+Consideremos la siguiente muestra de tama\~{n}o $12$  de dos características conjuntas; la
+edad y peso de unas personas:
+
+$$\begin{array}{rrrr}
+(20, 75) & (20, 75) & (30,75) & (40,85) \\ (30, 65) & (20, 75) & (40, 85) & (30, 65) \\
+(20, 65) & (40, 75) & (30, 65) & (20, 75)
+\end{array}
+$$
+
+La variable $X$ es ``edad'' y toma los valores $\{20,30,40\}$ y la variable $Y$ es
+``peso'' y toma los valores $\{65,75,85\}$.
+
+La tabla de frecuencias será:
+
+{\rm
+$$
+\begin{tabular}{c|ccc|c}
+$X/Y$ & 65 & 75 & 85 &\multicolumn{1}{c}{} \\ \hline 20 & 1 & 4 & 0 & 5\\ 30 & 3 & 1 & 0
+& 4 \\ 40 & 0 & 1 & 2 & 3 \\ \hline
+  & 4 & 6 & 2 & 12
+\end{tabular}
+$$}
+\end{example}
+
+En el caso en que las variables  $X$ y  $Y$ sean agrupadas es hace una  tabla semejante al
+caso discreto. En este caso, los datos de las dos variables $X$ e $Y$ se agrupan en
+intervalos de clase. La tabla de valores queda como se muestra a continuación:
+
+$$
+\begin{tabular}{|c|c|c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c|c|}
+\cline{1-11} $X/Y$ & intervalos & $[L'_0,L'_1)$ &
+ & $\cdots$ &  & $[L'_{j-1},L'_j)$ &  &  $\cdots$ &
+ & $[L'_{J-1},L'_J)$ & \multicolumn{1}{c}{} \\
+\hline intervalos & M. Clase & $c'_1$  &  & $\cdots$ &  & $c'_j$ &  & $\cdots$ & & $c'_J$
+& $n_{i\bullet}$ \\ \hline $[L_0,L_1)$ & $c_1$ & $n_{11}$  && $\cdots$ && $n_{1j}$ &&
+$\cdots$ && $n_{1J}$ & $n_{1\bullet}$ \\ $[L_1,L_2)$ & $c_2$ & $n_{21}$  && $\cdots$ &&
+$n_{2j}$ && $\cdots$ && $n_{2J}$ & $n_{2\bullet}$\\ $\vdots$ & $\vdots$ & $\vdots$  &&
+$\vdots$ && $\vdots$ && $\vdots$ && $\vdots$ & $\vdots$ \\ $[L_{i-1},L_i)$ & $c_i$ &
+$n_{i1}$  && $\cdots$ && $n_{ij}$ && $\cdots$ && $n_{iJ}$ & $n_{i\bullet}$\\ $\vdots$ &
+$\vdots$ & $\vdots$ && $\vdots$ && $\vdots$ && $\vdots$ && $\vdots$ & $\vdots$ \\
+$[L_{I-1},L_I)$ & $c_I$ & $n_{I1}$ && $\cdots$ && $n_{Ij}$ && $\cdots$ && $n_{IJ}$ &
+$n_{I\bullet}$\\ \hline \multicolumn{1}{c|}{} & {$n_{\bullet j}$} & $n_{\bullet 1}$  &&
+$\cdots$ && $n_{\bullet j}$ && $\cdots$ && $n_{\bullet J}$ & $n$\\ \cline{2-12}
+\end{tabular}
+$$
+
+En la tabla anterior las $c_i$ son las marcas de clase correspondientes a los intervalos
+de la variable $X$ y las  $c_j'$  son las marcas de clase correspondientes a los
+intervalos de la variable $Y$.
+
+\begin{example}
+Consideremos la siguiente tabla que nos da el peso y la estatura de  $15$ individuos:
+\
+{\rm
+$$
+\begin{tabular}{ccc}
+Individuo   &  $X$=peso & $Y$=estatura\\ \hline
+   \hphantom{1}1        &           65         &          1.6  \\
+   \hphantom{1}2        &           62         &          1.6  \\
+   \hphantom{1}3        &           71         &          1.6 \\
+   \hphantom{1}4        &           72         &          1.7 \\
+   \hphantom{1}5        &           75         &          1.8 \\
+   \hphantom{1}6        &           80         &          1.6 \\
+   \hphantom{1}7        &           74         &          1.6 \\
+   \hphantom{1}8        &           77         &          1.7 \\
+   \hphantom{1}9        &           81         &          1.8 \\
+    10        &           90         &          1.8 \\
+    11        &           89         &          1.7 \\
+    12        &           83         &          1.8 \\
+    13        &           82         &          1.8 \\
+    14        &           81         &          1.7 \\
+    15        &           71         &          1.7
+\end{tabular}
+$$}
+
+Tomamos intervalos de amplitud  $10$ para la variable $X$=peso. Así los intervalos para
+$X$ empiezan en el límite real del  mínimo peso $62$:
+$$[61.5,71.5) \mbox{, } [71.5,81.5) \mbox{, }  [81.5,91.5).$$
+Tomamos intervalos de amplitud   $0.1$ para la variable $Y$=talla. Los intervalos para
+$Y$ empiezan en el límite real de la  mínimo altura $1.6$.
+
+$$
+[1.55,1.65)  \mbox{, } [1.65,1.75) \mbox{, }  [1.75,1.85).
+$$
+
+La tabla de frecuencias agrupadas conjunta será:
+
+{\rm
+$$
+\begin{tabular}{|c|c|ccccc|c|}
+\cline{1-7} $X/Y$ & intervalos & \multicolumn{1}{c}{$[1.55,1.65)$} &\vrule &
+\multicolumn{1}{c}{$[1.65, 1.75)$} &\vrule &
+ \multicolumn{1}{c|}{$[1.75, 1.85)$} &\multicolumn{1}{c}{}\\
+\hline intervalos& M. Clase & \multicolumn{1}{c}{1.6} &\vrule & \multicolumn{1}{c}{1.7} &
+\vrule & \multicolumn{1}{c|}{1.8} & $n_{i\bullet}$ \\
+ \hline
+$[61.5, 71.5)$ & 66.5 & 3 && 1 && 0 & 4 \\ $[71.5, 81.5)$ & 76.5 & 2 && 3 && 2 & 7 \\
+$[81.5, 91.5)$ & 86.5 & 0 && 1 && 3 & 4 \\ \hline \multicolumn{1}{c|}{} & $n_{\bullet j}$
+& 5 && 5 && 5 & 15 \\ \cline{2-8}
+\end{tabular}
+$$}
+\end{example}
+
+\subsection{Distribuciones marginales}
+
+Consideremos una distribución conjunta de las variables $(X,Y)$ donde $X$     toma
+valores
+$$
+\{X_1,X_2,\ldots,X_I\},
+$$
+mientras que    $Y$   toma  los valores
+$$
+\{Y_1,Y_2,\ldots,Y_J\},
+$$
+con la correspondiente tabla de  frecuencias conjunta  $n_{ij}$.
+
+A la distribución unidimensional de la variable $X$ la llamaremos distribución marginal
+de $X$ y es la que toma los valores:
+
+$$
+\{X_1,X_2,\ldots,X_I\},
+$$
+
+y para la que la frecuencia absoluta correspondiente a $X_i$   es:
+
+$$
+n_{i \bullet}=\sum\limits_{j=1}^{J} n_{ij},
+$$
+es decir, la frecuencia absoluta del valor $X_i$ es el número total de
+ individuos que tienen la variable $X=X_i$.
+
+De la misma forma, la distribución marginal de$Y$ es aquella variable unidimensional que
+toma los valores
+$$
+\{Y_1,Y_2,\ldots,Y_J\},
+$$
+y para la que la  frecuencia absoluta correspondiente al valor   $Y_j$     vale:
+
+$$
+n_{\bullet j}=\sum\limits_{i=1}^{I} n_{ij},
+$$
+o sea, el número total de individuos observados que tienen la variable $Y=Y_j$.
+
+Las tablas  de frecuencias correspondientes a las distribuciones marginales son :
+\
+$$
+\begin{tabular}{cc}
+Distribución & Distribución \\ marginal de la & marginal de la \\ variable $X$ & variable
+$Y$  \\
+\begin{tabular}{|c|c|}
+$X_i$ & $n_{i\bullet}$ \\ \hline $X_1$ & $n_{1\bullet}$\\ $X_2$ & $n_{2\bullet}$ \\
+$\vdots$ & $\vdots$ \\ $X_i$ & $n_{i\bullet}$ \\ $\vdots$ & $\vdots$ \\ $X_I$ &
+$n_{I\bullet}$ \\ \hline \multicolumn{1}{c|}{} & $n$ \\ \cline{2-2}
+\end{tabular}
+&
+\begin{tabular}{|c|c|}
+$Y_i$ & $n_{\bullet j}$ \\ \hline $Y_1$ & $n_{\bullet 1}$\\ $Y_2$ & $n_{\bullet 1}$ \\
+$\vdots$ & $\vdots$ \\ $Y_i$ & $n_{\bullet j}$ \\ $\vdots$ & $\vdots$ \\ $Y_I$ &
+$n_{\bullet J}$ \\ \hline \multicolumn{1}{c|}{} & $n$ \\ \cline{2-2}
+\end{tabular}
+\end{tabular}
+$$
+
+\begin{example}
+Consideremos una distribución conjunta $(X,Y)$ no agrupada con tabla de frecuencias: {\rm
+$$
+\begin{tabular}{c|ccc|c}
+$X/Y$ & 65 & 75 & 85 & \multicolumn{1}{c}{}\\ \hline 20 & 1 & 4 & 0 & 5\\ 30 & 3 & 1 & 0
+& 4 \\ 40 & 0 & 1 & 2 & 3 \\ \hline
+ \multicolumn{1}{c}{} & 4 & 6 & 2 & 12
+\end{tabular}
+$$
+} Las distribuciones marginales de $X$ e $Y$ son: {\rm
+$$
+\begin{tabular}{cc}
+\begin{tabular}{cc}
+\multicolumn{2}{c}{{\sf Distribución}}\\ \multicolumn{2}{c}{{\sf marginal de $X$}}\\
+$X_i$ & $n_{i\bullet}$ \\ \hline
+ 20     &  5  \\
+ 30     &  4 \\
+ 40     &  3   \\
+ \hline
+ & 12  \\
+ \end{tabular}
+ &
+ \begin{tabular}{cc}
+\multicolumn{2}{c}{{\sf Distribución}}\\
+ \multicolumn{2}{c}{{\sf marginal de $Y$}}\\
+$Y_i$ & $n_{\bullet j}$ \\ \hline
+ 65  &   4 \\
+75  &   6 \\ 85  &   2 \\
+ \hline
+ & 12
+ \end{tabular}
+\end{tabular}
+$$
+}
+
+\end{example}
+
+\begin{example}
+Consideremos una distribución conjunta $(X,Y)$ en este caso de valores agrupados con
+tabla de frecuencias: {\rm
+$$
+\begin{tabular}{|c|c|ccccc|c|}
+\cline{1-7} $X/Y$ & intervalos & \multicolumn{1}{c}{$[1.55,1.65)$} &\vrule &
+\multicolumn{1}{c}{$[1.65, 1.75)$} &\vrule &
+ \multicolumn{1}{c|}{$[1.75, 1.85)$} &\multicolumn{1}{c}{}\\
+\hline intervalos & M. Clase & \multicolumn{1}{c}{1.6} &\vrule & \multicolumn{1}{c}{1.7}
+&\vrule & \multicolumn{1}{c|}{1.8} & $n_{i\bullet}$ \\
+ \hline
+$[61.5, 71.5)$ & 66.5 & 3 && 1 && 0 & 4 \\ $[71.5, 81.5)$ & 76.5 & 2 && 3 && 2 & 7 \\
+$[81.5, 91.5)$ & 86.5 & 0 && 1 && 3 & 4 \\ \hline \multicolumn{1}{c|}{} & $n_{\bullet j}$
+& 5 && 5 && 5 & 15 \\ \cline{2-8}
+\end{tabular}
+$$
+}
+
+
+Les distribuciones marginales de X e Y son: 
+{\rm
+$$
+\begin{tabular}{rr}
+{\begin{tabular}{r|rr} \multicolumn{3}{c}{Distribución} \\
+ \multicolumn{3}{c}{marginal de $X$}\\
+\hline Intervalo   &  $X_i$   &  $n_{i\bullet}$ \\ \hline $[61.5,71.5)$  & 66.5  &    4
+\\ $[71.5,81.5)$  &    76.5  &    7 \\ $[81.5,91.5)$  &     86.5  &    4
+\\ \hline
+       &                   &    15
+\end{tabular}} &
+{\begin{tabular}{r|rr} \multicolumn{3}{c}{Distribución}\\ \multicolumn{3}{c}{marginal de
+$Y$}\\ \hline Intervalo   &  $Y_i$   & $n_{\bullet j}$ \\ \hline $[1.55,1.65)$  &     1.6
+&    5 \\ $[1.65,1.75) $  &    1.7  & 5 \\ $[1.75,1.85)$  & 1.8  &    5    \\ \hline
+       &                   &    15
+\end{tabular}}
+\end{tabular}
+$$}
+
+\end{example}
+
+\subsection{Distribuciones condicionadas}
+
+Consideremos una distribución conjunta de variables $(X,Y)$ donde $X$ toma valores
+$$
+\{X_1,X_2,\ldots,X_I\},
+$$
+e $Y$ toma valores
+$$
+\{Y_1,Y_2,\ldots,Y_J\},
+$$
+con la correspondiente tabla de frecuencias conjunta   $n_{ij}$.
+
+Consideremos un valor concreto de la variable $Y$, $Y_j$. Definimos la distribución
+condicionada de $X$ respecte al valor $Y_j$ de    $Y$  y lo denotaremos por $X/Y=Y_j$
+como aquella distribución unidimensional que toma los mismo valores  que $X$, es decir,
+$$
+\{X_1,X_2,\ldots,X_I\},
+$$
+y tal que la frecuencia absoluta del valor $X_i$ (a la que denotaremos por $n_{i/j}$) se
+define como el número de individuos observados que tienen $X=X_i$ e $Y=Y_j$.
+
+De la misma manera, podemos considerar un valor concreto de la variable $X$, $X_i$.
+Definimos distribución condicionada de $Y$ respecto del valor  $X_i$  y la denotaremos
+por
+ $Y/X=X_i$ como aquella
+distribución unidimensional que toma los mismo valores que $Y$,
+
+$$
+\{Y_1,Y_2,\ldots,Y_J\},
+$$
+y tal que la frecuencia absoluta del valor $Y_j$ (a la que denotaremos por  $n_{j/i}$) se
+define como el número de individuos observados que tienen la  $Y=Y_j$ y la $X=X_i$.
+
+Observemos que existen tantas distribuciones condicionadas $X/Y=Y_j$ como valores
+distintos toma $Y$ y  que existen tantas condicionales  $Y/X=X_i$ como valores distintos
+toma $X$.
+
+\begin{example}
+Consideremos una distribución conjunta $(X,Y)$ sin agrupar, con tabla de frecuencias:
+
+
+{\rm
+$$
+\begin{tabular}{r|rrr|r}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 1 & 4 & 0 & 5 \\ 30 & 3 & 1 & 0 & 4 \\ 40 & 0 & 1 &
+2 & 3 \\ \hline & 4 & 6 & 2 & 12
+\end{tabular}
+$$}
+
+Fijemos  $Y=75$. La tabla de frecuencias de la distribución $X/Y=75$ es:
+
+{\rm
+$$
+\begin{tabular}{c|c}
+$X_i/Y=75$ &        $n_{i/75}$ \\ \hline 20     &     4 \\
+ 30      &    1 \\
+40      &    1   \\ \hline
+    &        6
+\end{tabular}
+$$
+}
+
+Fijemos por ejemplo $X=30$. La tabla de frecuencias de la distribución $Y/X=30$ es:
+
+{\rm
+$$
+\begin{tabular}{c|c}
+ $Y_j/X=30$ &         $n_{j/30}$ \\
+\hline 65     &    3 \\ 75     &    1 \\ 85     &    0 \\ \hline
+       &      4
+\end{tabular}
+$$
+} \end{example}
+
+\begin{example}
+Consideremos una distribución conjunta $(X,Y)$ caso agrupado con tabla de contingencia:
+
+{\rm
+$$
+\begin{tabular}{|c|c|ccccc|c|}
+\cline{1-7} $X/Y$ & intervalos & \multicolumn{1}{c}{$[1.55,1.65)$} &\vrule &
+\multicolumn{1}{c}{$[1.65, 1.75)$} &\vrule &
+ \multicolumn{1}{c|}{$[1.75, 1.85)$} &\multicolumn{1}{c}{}\\
+\hline intervalos & M. Clase & \multicolumn{1}{c}{1.6} &\vrule & \multicolumn{1}{c}{1.7}
+&\vrule & \multicolumn{1}{c|}{1.8} & $n_{i\bullet}$ \\
+ \hline
+$[61.5, 71.5)$ & 66.5 & 3 && 1 && 0 & 4 \\ $[71.5, 81.5)$ & 76.5 & 2 && 3 && 2 & 7 \\
+$[81.5, 91.5)$ & 86.5 & 0 && 1 && 3 & 4 \\ \hline \multicolumn{1}{c|}{} & $n_{\bullet j}$
+& 5 && 5 && 5 & 15 \\ \cline{2-8}
+\end{tabular}
+$$
+}
+\
+Fijemos por ejemplo $Y=1.6$. La tabla de frecuencias de $X/Y=1.6$ es:  {\rm
+$$
+\begin{tabular}{c|c|c}
+Intervalo     &     $X_i$   &    $n_{i/1.6}$ \\ \hline $[61.5,71.5) $ & 66.5    & 3 \\
+$[71.5,81.5) $   &  76.5    & 2 \\ $[81.5,91.5)$     & 86.5    & 0  \\ \hline
+                &          &  5
+\end{tabular}
+$$
+} Fijemos por ejemplo $X=86.5$. La tabla de frecuencias de $Y/X=86.5$ es: {\rm $$
+\begin{tabular}{c|c|c}
+Intervalo   &      $Y_j$ &      $n_{j/86.5}$ \\ \hline $[1.55,1.65)$ & 1.6   &    0 \\
+$[1.65,1.75)$  &     1.7   &    1 \\ $[1.75,1.85)$    &    1.8   &    3
+\\ \hline
+               &           &           4
+\end{tabular}
+$$}
+\end{example}
+
+\subsection{Momentos bidimensionales}
+
+Consideremos una distribución conjunta de las variables $(X,Y)$ donde $X$  toma valores
+$$
+\{X_1,X_2,\ldots,X_I\},
+$$
+mientras que $Y$ toma los valores
+$$
+\{Y_1,Y_2,\ldots,Y_J\},
+$$
+con la correspondiente tabla de frecuencias conjunta   $n_{ij}$.
+
+Vamos  a estudiar los momentos  bidimensionales de primer  y segundo orden.
+
+Los momentos de primer orden son la media de $X$ ($\overline{x}$) y la media de $Y$
+($\overline{y}$). Se calculan de la siguiente forma:
+
+$$
+\overline{x}=\frac{\sum\limits_{i=1}^{I}n_{i\bullet} X_i}{n},\quad
+\overline{y}=\frac{\sum\limits_{j=1}^{J}n_{\bullet j} Y_j}{n}.
+$$
+
+Los  momentos de segundo orden son la varianza de $X$ ($s_X^2$), la varianza de $Y$
+($s_Y^2$) y la covarianza de $X$  e $Y$ ($s_{XY}$).
+
+Las fórmulas respectivas son:
+\
+$$
+\begin{array}{rl}
+s_X^2= & \frac{1}{n}\sum\limits_{i=1}^I n_{i\bullet}\left(X_i-\overline{x}\right)^2 =
+\frac{1}{n}\sum\limits_{i=1}^I n_{i\bullet}X_i^2 -\overline{x}^2, \\ & \\ s_Y^2= &
+\frac{1}{n}\sum\limits_{j=1}^J n_{\bullet j}\left(Y_j-\overline{y}\right)^2 =
+\frac{1}{n}\sum\limits_{j=1}^J n_{\bullet j}Y_j^2 -\overline{y}^2, \\ & \\ s_{XY}= &
+\frac{\sum\limits_{i=1}^I\sum\limits_{j=1}^J
+   n_{ij}\left(X_i-\overline{x}\right)\left(Y_j-\overline{y}\right)}{n}=
+   \frac{\sum\limits_{i=1}^I\sum\limits_{j=1}^J
+   n_{ij}X_i Y_j}{n} -\overline{x}\cdot\overline{y}.
+\end{array}
+$$
+
+\begin{example}\label{bidi}
+Consideremos las siguientes distribución de las  variables $(X,Y)$: {\rm
+$$
+\begin{tabular}{c|ccc|c}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 1 & 4 & 0 & 5 \\ 30 & 3 & 1 & 0 & 4 \\ 40 & 0 & 1 &
+2 & 3 \\ \hline & 4 & 6 & 2 & 12
+\end{tabular}
+$$}
+
+Los momentos de primer orden son:
+
+{\rm
+$$
+\begin{array}{rl}
+\overline{x}=&\frac{n_{1\bullet}X_1+n_{2\bullet}X_2+n_{3\bullet}X_3}{n}= \frac{5 \cdot 20
++ 4 \cdot 30 + 3 \cdot 40}{12}=28.333, \\ &\\ \overline{y}=&\frac{n_{\bullet
+1}Y_1+n_{\bullet 2}Y_2+n_{\bullet 3}Y_3}{n}= \frac{4 \cdot 65 + 6 \cdot 75 + 2 \cdot
+85}{12}=73.333
+\end{array}
+$$}
+
+Los momentos de segundo orden son: {\rm
+$$
+\begin{array}{rl}
+s^2_X =&\frac{n_{1\bullet}X^2_1+n_{2\bullet}X^2_2+n_{3\bullet}X^2_3}{n}- \overline{x}^2=
+\frac{5 \cdot 20^2 + 4 \cdot 20^2 + 3 \cdot 40^2}{12}-28.333^2=63.888,\\ &\\
+s^2_Y=&\frac{n_{\bullet 1}Y^2_1+n_{\bullet 2}Y^2_2+n_{\bullet 3}Y^2_3}{n}-\overline{y}^2=
+\frac{4 \cdot 65^2 + 6 \cdot 75^2 + 2 \cdot 85^2}{12}-73.333^2=47.222, \\ &\\
+s_{XY}=&\frac{1}{n} \left( n_{11} X_1 Y_1 + n_{12} X_1 Y_2 + n_{13} X_1 Y_3 + n_{21} X_2
+Y_1 + n_{22} X_2 Y_2 \right.\\ & \\ & \left.+ n_{23} X_2 Y_3 + n_{31} X_3 Y_1 + n_{32}
+X_3 Y_2 + n_{33} X_3 Y_3 \right) -\overline{x}\cdot\overline{y}\\ & \\ =& \frac{1}{12}
+\left( 1\cdot 20 \cdot 65 + 4\cdot 20 \cdot 75 + 0\cdot 20 \cdot 85 + 3\cdot 30 \cdot 65
++ 1\cdot 30 \cdot 75 +\right.\\ & \\ &  \left. 0\cdot 30 \cdot 85+ 0\cdot 40 \cdot 65 +
+1\cdot 40 \cdot 75 + 2\cdot 40 \cdot 85 \right)-28.333\cdot 73.333 \\ & \\ =& 22.222
+\end{array}
+$$
+}
+\end{example}
+\
+\begin{example}
+Consideremos una distribución conjunta $(X,Y)$ (datos agrupados) con tabla de
+frecuencias:
+
+{\rm
+$$
+\begin{tabular}{|c|c|ccccc|c|}
+\cline{1-7} $X/Y$ & intervalos& \multicolumn{1}{c}{$[1.55,1.65)$} &\vrule &
+\multicolumn{1}{c}{$[1.65, 1.75)$} &\vrule &
+ \multicolumn{1}{c|}{$[1.75, 1.85)$} &\multicolumn{1}{c}{}\\
+\hline intervalos & M. Clase & \multicolumn{1}{c}{1.6} &\vrule & \multicolumn{1}{c}{1.7}
+&\vrule & \multicolumn{1}{c|}{1.8} & $n_{i\bullet}$ \\
+ \hline
+$[61.5, 71.5)$ & 66.5 & 3 && 1 && 0 & 4 \\ $[71.5, 81.5)$ & 76.5 & 2 && 3 && 2 & 7 \\
+$[81.5, 91.5)$ & 86.5 & 0 && 1 && 3 & 4 \\ \hline \multicolumn{1}{c|}{} & $n_{\bullet j}$
+& 5 && 5 && 5 & 15 \\ \cline{2-8}
+\end{tabular}
+$$
+}
+
+Los momentos de primer orden son:
+$$\overline{x}=76.5,\quad\overline{y}=1.7$$
+
+Los  momentos de segundo orden son:
+
+$$s^2_X=53.333,\quad s^2_Y=0.006,\quad s_{XY}=0.4$$
+\end{example}
+
+\subsection{Independencia e incorrelación}
+
+Vamos a introducir dos conceptos nuevos: el de independencia  y el de incorrelación.
+
+El concepto de independencia formaliza la idea conocer el valor de la variable~$X$ no
+aporta información alguna sobre el valor de $Y$ y viceversa.
+
+%%%Diremos que dos variables~$X$ e $Y$ son independientes  cuando:
+
+Dada una variable bidimensional $(X,Y)$ con tabla de  frecuencias conjunta $n_{ij}$,
+diremos que $X$ e $Y$ son independientes  si:
+$$
+\frac{n_{ij}}{n}=\frac{n_{i\bullet}}{n} \frac{n_{\bullet j}}{n}, \mbox{ para todo } i\in
+\{1,2,\ldots, I\} \mbox{y para todo } j\in \{1,2,\ldots, J\}.
+$$
+
+En el caso en que la relación anterior falle para  un $i$ y un $j$ diremos que las dos
+variable no son  independientes.
+
+\begin{example}
+En este ejemplo las variables $X$ e $Y$ no son independientes: {\rm
+$$
+\begin{tabular}{r|rrr|r}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 1 & 4 & 0 & 5 \\ 30 & 3 & 1 & 0 & 4 \\ 40 & 0 & 1 &
+2 & 3 \\ \hline & 4 & 6 & 2 & 12
+\end{tabular}
+$$}
+ya  que por ejemplo
+$$
+\frac{n_{11}}{n}\not=  \frac{n_{1\bullet}}{n}\frac{n_{\bullet 1}}{n},\quad
+\frac{1}{12}\not= \frac{5}{12}\cdot\frac{4}{12}.
+$$
+
+En cambio en este otro caso, si son independientes: {\rm
+$$
+\begin{tabular}{r|rrr|r}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 3 & 2 & 1 & 6 \\ 30 & 6 & 4 & 2 & 12 \\ 40 & 6 & 4
+& 2 & 12 \\ \hline
+ & 15 & 10 & 5 & 30
+\end{tabular}
+$$
+} Dejamos al lector la comprobación como ejercicio.
+\end{example}
+
+El concepto de incorrelación formaliza la idea de relación lineal en el sentido de que
+las variables crecen de forma lineal conjuntamente (relación directa) o bien  si una
+crece, la otra decrece (relación inversa). Dada una variable bidimensional  $(X,Y)$ con
+tabla de frecuencias conjunta $n_{ij}$, diremos que $X$ e $Y$
+ son incorreladas si su covarianza    $s_{XY}=0$.
+
+La relación que existe entre los dos conceptos introducidos, el de independencia   y el
+de incorrelación viene dada por la siguiente propiedad:
+
+\begin{theorem}
+Si las variables $X$ e $Y$  son independientes entonces son  incorreladas.
+\end{theorem}
+
+El recíproco del teorema anterior no es cierto en general. Podemos decir que
+independencia implica incorrelación pero lo contrario no.
+$$
+\mbox{ \bf independencia} \Rightarrow \mbox{ \bf incorrelación}
+$$
+
+Demostración del teorema:
+
+Si $X$ es independiente de $Y$ tenemos que
+$$
+\frac{n_{ij}}{n}=\frac{n_{i\bullet}}{n} \frac{n_{\bullet j}}{n}.
+$$
+
+
+Por lo tanto:
+$$
+\begin{array}{rl}
+s_{XY}=&\frac{1}{n}\sum\limits_{i=1}^I\sum\limits_{j=1}^{J}
+n_{ij}\left(x_i-\overline{x}\right) \left(y_j-\overline{y}\right)\\
+=&\sum\limits_{i=1}^I\left(x_i-\overline{x}\right)\frac{n_{i\bullet}}{n}
+\sum\limits_{j=1}^J\left(y_j-\overline{y}\right)\frac{n_{\bullet j}}{n} \\ = & 0 \cdot 0
+=0,
+\end{array}
+$$
+teniendo en cuenta que si $X$ es una variable unidimensional con valores
+\newline $\{x_1,x_2,\ldots, x_I\}$, con las correspondientes frecuencias
+absolutas $\{n_1,n_2,\ldots, n_I\}$, tenemos:
+$$
+\sum\limits_{i=1}^I n_i\left(x_i-\overline{x}\right)= \sum\limits_{i=1}^I n_ix_i -
+n\overline{x}=0.$$
+
+
+\section{Asociación, concordancia y correlación}
+
+\subsection{Introducción}
+
+En esta sección estudiaremos si existe algún tipo de relación entre dos variables $X$ e
+$Y$.
+
+Hasta ahora sabemos cuando dos variables son independientes o no. En caso de  que no se sean
+independientes,  nos interesará medir el grado de dependencia que tienen, es decir, si
+son ``muy dependientes o no''.
+
+Para medir la dependencia utilizaremos una serie de coeficientes como son  el coeficiente
+de contingencia de Pearson y  en el caso de variables con sólo dos valores el coeficiente de contingencia de Yule.
+
+
+\subsection{Coeficientes de asociación}
+
+{\bf Coeficiente de contingencia o de correlación de Pearson}
+
+Dada una variable bidimensional $(X,Y)$ con tabla de frecuencias conjunta $n_{ij}$,
+definimos el coeficiente de correlación de Pearson como:
+
+$$C_P= \sqrt{\frac{\chi^2}{n+\chi^2}},$$
+donde $\chi^2$ es el llamado estadístico de Pearson, que se define como:
+
+$$
+\chi^2=\sum\limits_{i=1}^I\sum\limits_{j=1}^J \frac{ \left( n_{ij}- \frac{ n_{i\bullet}
+n_{\bullet j} }{n} \right)^2 } {\frac{n_{i\bullet} n_{\bullet j}}{n}}.
+$$
+
+Las $n_{ij}$ son las conocidas como frecuencias empíricas u observadas y las expresiones
+ $\frac{n_{i\bullet} n_{\bullet
+j}}{n}$
+ se las conocen como frecuencias teóricas; o sea, las
+frecuencias conjuntas que tendrían las variables $(X,Y)$ si fueran independientes.
+
+Por lo tanto, cuando más cerca estén las frecuencias empíricas de las teóricas, más
+peque\~{n}o será el estadístico de Pearson  $\chi^2$ y el coeficiente de contingencia de
+Pearson $C_P$.
+\begin{example}
+Consideremos la siguiente distribución conjunta:
+
+{\rm
+$$
+\begin{tabular}{r|rrr|r}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 1 & 4 & 0 & 5 \\ 30 & 3 & 1 & 0 & 4 \\ 40 & 0 & 1 &
+2 & 3 \\ \hline & 4 & 6 & 2 & 12
+\end{tabular}
+$$
+}
+
+La tabla anterior es la de frecuencias empíricas. A continuación construimos la tabla de
+frecuencias teóricas: {\rm
+
+$$
+\begin{tabular}{r|rrr|r}
+$X/Y$ & 65 & 75 & 85 & \\ \hline 20 & 1.66 & 2.5 & 0.83 & 5 \\ 30 & 1.33 & 2 & 0.66 & 4
+\\ 40 & 1 & 1.5 & 0.5 & 3 \\ \hline & 4 & 6 & 2 & 12
+\end{tabular}
+$$
+}
+
+Como podemos observar, las frecuencias teóricas no coinciden con  las
+ empíricas. Por lo tanto, deducimos  que las
+dos variables $X$ e $Y$ no son independientes.
+
+Vamos a calcular ahora el  coeficiente de contingencia de Pearson $C_P$.
+
+En primer lugar hemos de calcular el estadístico $\chi^2$:
+\
+{\rm
+$$\begin{array}{rl}
+\chi^2= & \frac{\left(1-1.66\right)^2}{1.66} +\frac{\left(4-2.5\right)^2}{2.5}+
+\frac{\left(0-0.83\right)^2}{0.83}+ \frac{\left(3-1.33\right)^2}{1.33}
++\frac{\left(1-2\right)^2}{2}+ \\ & \\ & \frac{\left(0-0.66\right)^2}{0.66}+
+\frac{\left(0-1\right)^2}{1} +\frac{\left(1-1.5\right)^2}{1.5}+
+\frac{\left(2-0.5\right)^2}{0.5} \\ & \\ = & 10.916
+\end{array}
+$$
+} Por último calculamos el coeficiente de contingencia  de Pearson $C_P$:
+
+$$C_P=\sqrt{\frac{10.916}{12+10.916}}=0.690$$
+\end{example}
+
+Propiedades $C_P$:
+\begin{enumerate}[1)]
+\item El valor de   $C_P$         es mayor o igual que $0$ y menor que  $1$. En el
+caso en que  $X$  e
+ $Y$ sean independientes, las frecuencias empíricas y  teóricas
+ coinciden y  $C_P=0$.
+
+\item Cuanto más dependientes son las variables  $X$ e  $Y$,  $C_P$
+se aproxima más a $1$.
+\end{enumerate}
+
+Por lo tanto si $C_P$  es peque\~{n}o podemos decir que el grado de dependencia es bajo ,
+mientras que si $C_P$ aumenta es alto.
+
+Para el caso más trivial en el que  tengamos una tabla $2\times 2$, es decir $I=J=2$, o
+sea cuando las variables sólo toman dos valores cada una, se utiliza otro coeficiente, el
+coeficiente de contingencia de Yule.  Se define así:
+$$
+C_\gamma=\frac{n_{11} n_{22}-n_{12}n_{21}}{n_{11}n_{22}+n_{12}n_{21}}.
+$$
+
+Recordamos al lector que la tabla de frecuencias tendrá el siguiente aspecto:
+
+$$
+\begin{tabular}{|l|lll|l|}
+\cline{1-4} $X/Y$ & $Y_{1}$ && $Y_{2}$ &\multicolumn{1}{c}{} \\ \hline $X_1$ & $n_{11}$
+&& $n_{12}$ & $n_{1\bullet}$\\ \hline $X_2$ & $n_{21}$ && $n_{22}$ & $n_{2\bullet}$\\
+\hline \multicolumn{1}{c|}{} & $n_{\bullet 1}$ && $n_{\bullet 2}$ & $n$\\ \cline{2-5}
+\end{tabular}
+$$
+
+\begin{example}
+Calculemos el coeficiente de contingencia de Yule de la siguiente  distribución conjunta:
+{\rm
+$$
+\begin{tabular}{r|rr|r}
+$X/Y$ &   $Y_1$   &    $Y_2$  & \\ \hline $X_1$   &      2       &      8    & 10\\
+
+ $X_2$   &      3        &      7    &  10 \\
+\hline
+        &      5       &  15     &  20
+\end{tabular}
+$$
+}
+$$C_{\gamma} =\frac{2\cdot 7 - 3\cdot 8}{2\cdot 7 + 3\cdot 8}= -0.263158 $$
+\end{example}
+
+El coeficiente de contingencia de Yule siempre está entre $-1$y$1$. En caso de
+independencia entre las variables, se tiene que $C_\gamma=0$.
+
+\subsection{Correlación lineal}
+
+El problema que nos planteamos en este punto es    saber si existe una relación lineal
+entre $X$ e $Y$, es decir, si existen dos valores numéricos $a$ y $b$ tales que:
+
+$$Y\approx a +b X.$$
+
+\begin{figure}
+%%%$$\begin{tabular}{cc}
+%%%\setcoordinatesystem units <.06cm,.06cm>
+%%%$$
+%%%\beginpicture
+%%%\setplotarea x from -50 to 50, y from -50 to 50 \axis bottom shiftedto y=0 / \axis left
+%%%shiftedto x=0 / \put {$X$} at 40 -5 \put {$Y$} at -5 40 \put {$\bullet$} at 5 5 \put
+%%%{$\bullet$} at 10 12 \put {$\bullet$} at 20 25 \put {$\bullet$} at 35 30 \put {$\bullet$}
+%%%at 42 44 \put {$\bullet$} at -5 -7 \put {$\bullet$} at -10 -12 \put {$\bullet$} at -20
+%%%-25 \put {$\bullet$} at -35 -30 \put {$\bullet$} at -42 -44
+%%%\endpicture
+%%%$$
+%%%&
+%%%$$
+%%%\setcoordinatesystem units <.06cm,.06cm>
+%%%\beginpicture
+%%%\setplotarea x from -50 to 50, y from -50 to 50 \axis bottom shiftedto y=0 / \axis left
+%%%shiftedto x=0 / \put {$X$} at 40 -5 \put {$Y$} at -5 40 \put {$\bullet$} at 12.4 -29.3
+%%%\put {$\bullet$} at -12.4 -29.3 \put {$\bullet$} at 12.4 29.3 \put {$\bullet$} at -12.4
+%%%-29.3 \put {$\bullet$} at -23.2 44.1 \put {$\bullet$} at -23.2 -44.1 \put {$\bullet$} at
+%%%23.2 44.1 \put {$\bullet$} at 23.2 -44.1 \put {$\bullet$} at 43.7 -17.3 \put {$\bullet$}
+%%%at -43.7 -17.3 \put {$\bullet$} at 43.7 17.3 \put {$\bullet$} at -43.7 17.3 \put
+%%%{$\bullet$} at -2.9 -4.3 \put {$\bullet$} at 2.9 -4.3 \put {$\bullet$} at -2.9 4.3 \put
+%%%{$\bullet$} at 2.9 4.3 \put {$\bullet$} at 6.5 -22.3 \put {$\bullet$} at -6.5 -22.3 \put
+%%%{$\bullet$} at -6.5 22.3 \put {$\bullet$} at 6.5 22.3 \put {$\bullet$} at 41.5 35.2 \put
+%%%{$\bullet$} at -41.5 35.2 \put {$\bullet$} at 41.5 -35.2 \put {$\bullet$} at -41.5 -35.2
+%%%\endpicture
+%%%$$
+%%%\end{tabular}
+%%%$$
+\begin{center}
+\includegraphics{nube.eps}
+\end{center}
+ \caption{Nube de puntos con relación lineal y sin relación lineal}
+\label{LINEAL}
+\end{figure}
+
+
+La relación lineal no tiene por que ser perfecta. Lo que nos interesa es medir esa
+relación lineal. En el gráfico de la izquierda de la figura~\ref{LINEAL} se vislumbra una
+relación lineal mayor que en el de la derecha ya que podemos encontrar un a recta que
+aproxime mejor  $Y$ en función de $X$.
+
+Vamos  a introducir un coeficiente que mide la relación lineal   entre
+ dos variables. Este coeficiente es el coeficiente de correlación lineal de Pearson
+ $r_{XY}$  y se define de la manera siguiente
+
+$$
+r_{XY}=\frac{s_{XY}}{\sqrt{s^2_{X}s^2_{Y}}}=\frac{s_{XY}}{s_{X}s_{Y}}.
+$$
+
+
+
+Propiedades de $r_{XY}$:
+\begin{enumerate}[1)]
+\item $-1\leq r_{XY}\leq 1$
+\item $r_{XY}=r_{YX}$
+\item Interpretación de $r_{XY}$:
+\begin{itemize}
+\item Si $r_{XY}>0$ y a medida que  se aproxima a  $1$,
+aumenta la relación lineal positiva entre las dos variables $X$ e $Y$; lo que quiere
+decir que si $X$  crece, la variable $Y$ también y si   $X$ decrece,  $Y$  también,
+Obsérvese la parte  izquierda de la figura \ref{LINEAL} como ejemplo de este caso.
+ \item Si $r_{XY}<0$  y su valor está muy cerca de -1 quiere
+ decir  que hay una buena relación lineal negativa entre las dos variables $X$
+ e $Y$; lo
+  que significa que si la variable
+  $X$    crece, la variable $Y$ decrece o viceversa. Como ejemplo ver
+  el gráfico de la derecha de la figura \ref{LINEALNEGATIVA}.
+
+\begin{figure}
+%$$
+%\begin{tabular}{c}
+%$$
+%\setcoordinatesystem units <.06cm,.06cm>
+%\beginpicture
+%\setplotarea x from -50 to 50, y from -50 to 50 \axis bottom shiftedto y=0 / \axis left
+%shiftedto x=0 / \put {$X$} at 40 -5 \put {$Y$} at -5 40 \put {$\bullet$} at 5 -5 \put
+%{$\bullet$} at 10 -12 \put {$\bullet$} at 20 -25 \put {$\bullet$} at 35 -30 \put
+%{$\bullet$} at 42 -44 \put {$\bullet$} at -5 7 \put {$\bullet$} at -10 12 \put
+%{$\bullet$} at -20 25 \put {$\bullet$} at -35 30 \put {$\bullet$} at -42 44
+%\endpicture $$
+%\end{tabular}
+%$$
+\begin{center}
+\includegraphics{nube2.eps}
+\end{center} \caption{Nube de puntos con  relación lineal negativa }
+\label{LINEALNEGATIVA}
+\end{figure}
+
+\item Si  $r_{XY}=0$ o es peque\~{n}o, quiere decir que no hay ningún tipo de relación lineal
+  entre las variables $X$ e $Y$.
+
+\item Si $r_{XY}=\pm 1$, hay relación lineal exacta entre $X$ e $Y$, o sea,
+ existen dos números reales
+$a$ y $b$    tales que $Y=a + b X$.
+\end{itemize}
+\end{enumerate}
+
+\begin{example}
+Consideremos la siguiente distribución conjunta de la variable $(X,Y)$: (ver ejemplo
+\ref{bidi})
+
+Los valores de $s^2_X$, $s^2_Y$ y de $s_{XY}$ son:
+$$
+s^2_X= 63.888,\quad s^2_Y= 47.222,\quad s_{XY}= 22.222
+$$
+
+El coeficiente de correlación lineal vale:
+$$r_{XY}=\frac{22.222}{\sqrt{63.888 \cdot 47.222}}
+=0.405$$
+\end{example}
+
+\subsection{Correlación ordinal}
+
+Vamos a estudiar ahora la relación que existe entre dos  ordenaciones dadas por una
+muestra de datos bidimensionales.
+
+Los estadísticos que miden este tipo de relaciones reciben el nombre de coeficiente de
+correlación ordinal y  nos darán  medidas de la similitud de las dos ordenaciones a lo
+que se suele llamar concordancia.
+
+Más concretamente, consideremos un conjunto de individuos  y los ordenamos según dos
+criterios. Tendremos así dos ordenaciones de los individuos. Estas ordenaciones las
+podemos disponer como si se tratara de una estadística bidimensional, donde la primera
+componente de la observación de un individuo correspondería al número de orden del primer
+criterio de ordenación y la segunda componente al otro.
+
+Por ejemplo consideremos  las observaciones en $5$ humanos de su peso $X$ en Kg. y
+estatura $Y$ en metros:
+
+$$
+\begin{tabular}{l|r|r|r|r|}
+ Individuo $i$ & $(X_i,Y_i)$ & Orden $X$ & Orden $Y$ \\\hline
+ Individuo $1$ & $(80,1.75)$ & 3 & 2 \\
+ Individuo $2$ & $(75,1.92)$ & 2 & 4 \\
+ Individuo $3$ & $(85,1.67)$ & 4 & 1 \\
+ Individuo $4$ & $(66,1.80)$ & 1 & 3 \\
+ Individuo $5$ & $(90,2.00)$ & 5 & 5\\\hline
+\end{tabular}
+$$
+
+Si  ordenamos los individuos en orden ascendente (de menor a mayor) según el peso quedan así:
+
+\begin{center}
+\begin{tabular}{l|lllll}
+Rango Peso   & 1 & 2 & 3 & 4 & 5\\\hline Individuo & $4$&$2$&$1$&$3$&$5$ \end{tabular}
+\end{center}
+mientras que si los ordenamos en orden ascendente según su altura:
+\begin{center}
+\begin{tabular}{l|lllll}
+Rango  & 1 & 2 & 3 & 4 & 5\\\hline Individuo & $3$&$1$&$4$&$2$&$5$
+ \end{tabular}
+\end{center}
+
+Tenemos así dos ordenaciones de  números ordinales enteros que reciben el nombre de
+rangos\footnote{El cálculo de rangos se complica en el caso de empates, es decir cuado hay valores repetidos enlas series de datos. En estos casos se puede romper el empate de varias maneras.}. En general podemos escribir:
+
+$$
+\begin{array}{cc}
+\mbox{para } X \rightarrow & \{r_{x_1},r_{x_2}, r_{x_3},\ldots, r_{x_n}\}, \\ 
+\mbox{para } Y \rightarrow & \{r_{y_1},r_{y_2}, r_{y_3},\ldots, r_{y_n}\},
+\end{array}
+$$
+
+donde los valores de $r_{x_i}$ y $r_{y_i}$ dan el lugar que ocupa el valor $x_i$ o el
+$y_i$ en cada una de las muestras ordenadas. Estos valores están comprendidos entre $1$ y $n$, luego
+son dos permutaciones de orden $n$.
+
+Las diferencias entre las ordenaciones son:
+
+$$d_i=r_{x_i}-r_{y_i}\, ; i=1,2,\ldots,n.$$
+
+El coeficiente de correlación ordinal o por rangos de Spearman queda definido por:
+
+$$
+r_S= 1-\frac{6\sum\limits_{i=1}^n d^2_i}{n \left(n^2-1\right)}.
+$$
+
+De hecho, $r_S$ no es más que el coeficiente de correlación lineal introducido en la
+sección anterior aplicado a los rangos.
+
+Propiedades de $r_S$:
+
+\begin{itemize}
+\item[-] Si $r_S  = 1$, las dos ordenaciones coinciden; o sea,
+$r_{x_i}=r_{y_i}$ para cualquier $i$ entre $1$ y $n$.
+
+\item[-] Si $r_S  = -1$, la ordenación de  $Y$ es exactamente la opuesta a la de $X$, es decir
+,  $r_{x_i}=r_{y_{n-i+1}}$  para cualquier $i$ entre $1$ y $n$.
+
+\item[-]  El coeficiente $r_S$ esta siempre comprendido  entre -1
+y 1. Si $r_S  >0$, podemos decir   que las dos ordenaciones son del mismo sentido
+ y si $r_S <0$, las dos ordenaciones son de sentidos opuestos.
+\end{itemize}
+
+\begin{example}
+Consideremos la muestra anterior de pesos y estaturas de $5$ individuos:
+
+\begin{center}
+\begin{tabular}{l|r|r|r|r|}
+ Individuo $i$ & $(X_i,Y_i)$ &  $r_{X_i}$ &$r_{Y_i}$ & $d^2_i$ \\\hline
+ Individuo $1$ & $(80,1.75)$ & $3$ & $2$ & $1$\\
+ Individuo $2$ & $(75,1.92)$ & $2$ & $4$ & $4$\\
+ Individuo $3$ & $(85,1.67)$ & $4$ & $1$ & $9$\\
+ Individuo $4$ & $(66,1.80)$ & $1$ & $3$ & $4$\\
+ Individuo $5$ & $(90,2.00)$ & $5$ & $5$ & $0$\\\hline
+ $\Sigma$ & & & & $18$
+\end{tabular}
+\end{center}
+
+
+Luego tenemos que :
+
+$$
+r_s = 1 -  \frac{6\cdot 18}{5\cdot (25-1)}= 1-\frac{108}{120}= 0.1
+$$
+
+\end{example}

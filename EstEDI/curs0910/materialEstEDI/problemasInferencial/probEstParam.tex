@@ -1,0 +1,549 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcounter{problemes}
+\setcounter{problemes}{0}
+\newenvironment{prob}{\vskip 0.25cm\addtocounter{problemes}{1}
+\noindent{\textbf{\theproblemes.- }}}
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf MOSTREIG i ESTIMACIÓ DE PARÀMETRES}
+\end{centerline}
+
+
+\begin{prob}
+    El precio medio del $m^2$ en  la venta de casas nuevas durante el último año
+    en una determinada ciudad  fue de 115000 pts. La desviación
+    típica de la población fue de 25000 pts. Se toma una muestra
+    aleatoria de 100 casas nuevas de esta ciudad.
+    \begin{enumerate}[a)]
+        \item ?`Cuál es la probabilidad de que la media muestral de los
+        precios de venta sea menor que 110000 pts?
+        \item ?`Cuál es la probabilidad de que la media muestral de los
+        precios de venta esté entre 113000 pts. y 117000 pts.??
+        \item?`Cuál es la probabilidad de que la media muestral de los
+        precios de venta esté entre 114000 pts. y 116000 pts.?
+        \item Sin hacer cálculos, razonar en cuál de los siguientes rangos
+        resulta más probable que se encuentre la media muestral de los
+        precios de venta:\break
+        \begin{center}
+        \begin{tabular}{ll}
+        113000 pts-&115000 pts\\
+        114000 pts-&116000 pts\\
+        115000 pts-&117000 pts\\
+        116000 pts-&118000 pts
+            \end{tabular}
+
+            \end{center}
+        \end{enumerate}
+    \sol{a) 0.0228; b) 0.5762; c) 0.3108: d) el intervalo  114000 pts-116000 pts}
+    \end{prob}
+    \begin{prob}
+        Se ha tomado una muestra de 16 directores de oficina  de
+        corporaciones de una gran ciudad, con el fin de estimar el tiempo
+        medio que emplean en desplazarse para ir a su trabajo. Supongamos
+        que la distribución de dichos tiempos en la población sigue una
+        normal con media 87 minutos y desviación típica  22.
+        \begin{enumerate}[a)]
+\item ?`Cuál es el error estándar de la media muestral de los
+tiempos de desplazamiento?
+\item ?`Cuál es la probabilidad de que la media muestral sea
+inferior a 100 minutos?
+\item ?`Cuál es la probabilidad de que la media muestral sea
+superior  a 80 minutos?
+\item ?`Cuál es la probabilidad de que la media muestral esté entre
+85 y 95 minutos?
+\item Supongamos que se toma una segunda muestra de quince directores,
+independiente de la anterior. Sin hacer los cálculos, razonar si la probabilidades
+calculadas en los apartados b), c) y d)  serán mayores, menores o iguales para esta segunda
+muestra. Utilizar gráficos para ilustrar las respuestas.
+        \end{enumerate}
+        \sol{a) 5.5 ; b) 0.9909; c) 0.8980; d) 0.5671; e) es menor en los
+        tres casos.}
+    \end{prob}
+
+\begin{prob}
+    Una compañía produce cereales para el desayuno. La media del
+    peso que contienen las cajas de estos cereales es de doscientos
+    gramos y su desviación típica de seis gramos. La distribución de
+    los pesos de la población es normal. Se eligen cuatro cajas, que
+    pueden considerarse como una muestra aleatoria del total de la
+    producción.
+    \begin{enumerate}[a)]
+        \item ?`Cuál es el error estándar de la media muestral del peso de
+        las cuatro cajas?
+        \item ?`Cuál es la probabilidad de que la media del peso de esas cuatro cajas
+        sea inferior  que 197 gramos?
+        \item ?`Cuál es la probabilidad , en media, el peso de estas
+        cuatro cajas esté entre 105 y 195 gramos?
+        \item ?`Cuál es la probabilidad de que la suma del peso de estas
+        cuatro cajas sea menor de 800 gr.?
+        \item Se eligen al azar dos de estas cuatro cajas ?`Cuál es la
+        probabilidad de que, en media, el contenido de estas dos cajas
+        pese entre 195 y 200 gramos?
+        \end{enumerate}
+        \sol{a) 3; b) 0.1587; c) 0.0475; d) 0.5; e) 0.3810}
+    \end{prob}
+
+    \begin{prob} La tasa de rentabilidad de ciertos tipos de acciones
+        sigue una distribución con desviación típica 3.8. Se extrae una
+        muestra de tales acciones con el fin de estimar el precio medio.
+        \begin{enumerate}[a)]
+        \item ?`Qué tamaño ha de tener la muestra para asegurarnos que la
+        probabilidad de que la media muestral difiera de la media
+        poblacional en una cantidad superior a 1 sea menor que 0.1?
+        \item Sin realizar los cálculos razonar si será preciso  un tamaño
+        muestral mayor o menor que el requerido  en el apartado a) para
+        garantizar que la probabilidad de que la media muestral difiera
+        de la media poblacional en más de 1 sea inferior a 0.05.
+        \item Sin realizar los cálculos razonar si será preciso  un tamaño
+        muestral mayor o menor que el requerido  en el apartado a) para
+        garantizar que la probabilidad de que la media muestral difiera
+        de la media poblacional en más de 1.5 sea inferior a 0.1.
+        \end{enumerate}
+        \sol{a) $n\geq 40$; b) mayor; c) menor}
+    \end{prob}
+
+    \begin{prob}
+        De acuerdo con los datos del ministerio de Economía y Hacienda, el
+        15\% de las declaraciones del IRPF del último año darán lugar a
+        una devolución. Se toma una muestra aleatoria de 10 declaraciones.
+        \begin{enumerate}[a)]
+        \item ?`Cuál es la media de la distribución en el muestreo de la
+        proporción muestral de declaraciones que darán lugar a una
+        devolución?
+        \item ?`Cuál es la varianza de la proporción muestral?
+        \item ?`Cuál es el error estándar de la proporción muestral?
+        \item ?`Cuál es la probabilidad de que la proporción muestral sea
+        mayor que 0.8?
+        \end{enumerate}
+        \sol{a) 0.15; b) 0.01275; c) 0.1129; d) casi nula.}
+        \end{prob}
+
+        %PPPPPPPPPPPPP
+
+        \begin{prob}
+    El dueño de una portal de ventas de discos por internet ha comprobado que el 20\% de los
+    clientes que acceden a su portal realizan una compra. Cierta mañana
+    entraron en el portal 180 personas, que pueden ser consideradas como
+    una muestra aleatoria de todos sus clientes.
+        \begin{enumerate}[a)]
+        \item ?`Cuál será la media de la proporción muestral de clientes
+        que realizaron alguna compra?
+        \item ?`Cuál es la varianza de la proporción muestral?
+        \item ?`Cuál es el error estándar de la proporción muestral?
+        \item ?`Cuál es la probabilidad de que la proporción muestral sea
+        mayor que 0.15?
+        \end{enumerate}
+    \sol{a) 0.2; b) $\approx 0.0009$; c) $0.03$; d) 0.9525}
+\end{prob}
+
+                \begin{prob}
+    El administrador de una gran cadena de hospitales opina que, de
+    entre todos sus pacientes, el 30\% generará facturas que se pagarán
+    con más de dos meses de retraso. Se toma una muestra aleatoria de 200
+    pacientes.
+        \begin{enumerate}[a)]
+        \item ?`Cuál es el error estándar de la proporción muestral de
+        pacientes con facturas cuyo pago se retrasará dos meses?
+        \item ?`Cuál es la probabilidad de que la proporción muestral sea
+        inferior a   0.25?
+        \item  ?`Cuál es la probabilidad de que la proporción muestral sea
+        mayor que 0.33?
+        \item  ?`Cuál es la probabilidad de que la proporción muestral esté
+        entre 0.27 y 0.33?
+        \item Sin realizar los cálculos, razonar en cuál de los siguientes
+        intervalos es más probable que se encuentre la proporción
+        muestral: 0.29-0.31; 0.30-0.32; 0.31-0.33; 0.32-0.34.
+        \item Supongamos que se toma al azar una muestra de 500 pacientes.
+        Sin realizar los cálculos razonar si las probabilidades de los
+        apartados b), c)  y d) resultarán en este caso mayores, menores o iguales
+        que las calculadas para la muestra anterior.
+        \end{enumerate}
+        \sol{a) 0.0324; b) 0.0618; c) 0.1762; d) 0.6476; e) 0.29-0.31;  f)
+        menor, menor, mayor}
+        \end{prob}
+
+\begin{prob}
+    Se toma una muestra aleatoria de 100 votantes con el fin
+    de estimar la proporción de los mismos que están a favor de
+    un aumento en los impuestos sobre la gasolina para contar
+    así con un ingreso adicional para reparaciones de las
+    autopistas.  ?`Cuál es el mayor valor que puede tomar el
+    error estándar de la proporción muestral de esta medida?
+    \sol{0.05}
+    \end{prob}
+
+\begin{prob}
+    Continuando en la situación del problema anterior, se decide que
+    una muestra de 100 votantes es muy pequeña para obtener una
+    estimación de la proporción poblacional que resulte
+    suficientemente creíble. Se decide exigir que la probabilidad de
+    que la proporción muestral difiera de la proporción poblacional
+    (cualquiera que sea su valor) en más de 0.03 no debe ser superior
+    a 0.05. ?`Qué tamaño ha de tener la muestra para poder garantizar
+    que se cumple este requisito?
+    \sol{$n\geq 757$}
+    \end{prob}
+
+    \begin{prob}
+Una compañía quiere estimar la proporción de personas que son posibles compradores de
+máquinas de afeitar eléctricas que ven retransmisiones partidos de La Liga de Campeones. Se
+toma una muestra de 120 individuos que se identificaron como posibles compradores de
+afeitadoras eléctricas. Supongamos que la proporción de posibles compradores de afeitadoras
+eléctricas  en la población que ven estas retransmisiones es 0.25.
+\begin{enumerate}[a)]
+    \item 0.10 es la probabilidad de que la proporción muestral
+    exceda a la proporción poblacional ?`en qué valor?
+        \item 0.05 es la probabilidad de que la proporción muestral
+    esté por debajo de la proporción poblacional ?`en qué cantidad?
+        \item 0.30 es la probabilidad de que la proporción muestral
+    difiera de la proporción poblacional ?`en menos de qué cantidad?
+    \end{enumerate}
+    \sol{a)  0.0506; b) 0.0648; c) 0.0154}
+    \end{prob}
+    \begin{prob}
+        Supongamos que el 50\% de los españoles adultos opina que es
+        necesaria una revisión del sistema nacional público de hospitales.
+        ?`Cuál es la probabilidad de que más del 56\% de los componentes
+        de una muestra de 150 españoles adultos tenga esa opinión?
+            \sol{ 0.0708}
+        \end{prob}
+
+        \begin{prob} Las rentabilidades mensuales de cierto tipo de
+        acciones son independientes unas de otras, y siguen una
+        distribución normal con desviación típica 1,7. Se toma una
+        muestra de 12 meses.
+        \begin{enumerate}[a)]
+            \item Hallar la probabilidad de que la desviación típica muestral
+            sea menor que 2.5.
+            \item Hallar la probabilidad de que la desviación típica
+            muestral sea mayor que 1.
+            \end{enumerate}
+            \sol{a) 0.8; b) 0.975}
+            \end{prob}
+
+        \begin{prob} El número de horas que dedican a ver la televisión
+        los estudiantes en la semana anterior a los exámenes finales
+        sigue una distribución normal con una desviación típica de 4.5
+        horas. Se toma una muestra aleatoria de 30 estudiantes.
+
+        \begin{enumerate}[a)]
+            \item La probabilidad  de que la desviación típica muestral sea
+            mayor que 3.5 horas, ?`es mayor que 0.95?
+            \item La probabilidad de que la desviación típica muestral sea
+            menor que seis horas, ?`es mayor que 0.95?
+            \end{enumerate}
+            \sol{ a) Sí; b) Sí }
+            \end{prob}
+                \begin{prob} Se extrae una muestra aleatoria de 15 economistas
+                    y se les pregunta acerca de su predicción sobre la tasa de
+                    inflación para el próximo año. Supongamos que las predicciones
+                    para la población completa de economistas sigue una
+                    distribución normal con una desviación típica de 1.8.
+                \begin{enumerate}[a)]
+            \item 0.01 es la probabilidad de que la desviación típica sea
+            mayor que ?`qué número?
+            \item 0.025 es la probabilidad de que la desviación típica sea
+            menor que ?`qué número?
+            \item Encontrar una par de números, a y b, tales que la
+            probabilidad de que la desviación típica muestral se encuentre
+            entre ellos sea 0.9.
+            \end{enumerate}
+            \sol{a) 2.5969; b) 1.1415; c) 1.2331; 2.341}
+            \end{prob}
+            
+
+\begin{prob}
+    Se toma una muestra de ocho lotes de un producto químico para
+    comprobar la concentración de impurezas. Los niveles porcentuales
+    de impurezas encontrados en la muestra fueron
+    $$3.2 \ 4.3 \ 2.1 \ 2.8\ 3.2 \ 3.6\ 4.0\ 3.8$$
+    \begin{enumerate}[a)]
+        \item Hallar la media y la varianza muestrales.
+        Hallar la proporción muestral de lotes con nivel
+        porcentual de impurezas mayor que 3.75\%.
+        \item ?`Para qué parámetros poblacionales  se han hallado en la
+        parte  a) estimadores por procedimientos insesgados?
+        \end{enumerate}
+        \sol{a) $\overline{X}=3.375$; $S_{X}^2=0.4993$; $\hat{p}=
+        0.3557$; b) para todos.}
+\end{prob}
+% \begin{prob}
+%   Una muestra de diez economistas hicieron las siguientes predicciones
+%   para el crecimiento del producto interior bruto el próximo año.
+%
+%
+%   \begin{tabular}{lllll}
+%       2.2 & 2.82& 2.02 & 2.52& 2.42\\
+%       2.62 & 2.52& 2.42 & 2.72& 2.6
+%       \end{tabular}
+%   \end{prob}
+
+\begin{prob}
+        Sea $\hat{\theta}_{1}$ un estimador insesgado de $\theta_{1}$, y
+        $\hat{\theta}_{2}$ un estimador insesgado de $\theta_{2}$.
+        \begin{enumerate}[a)]
+            \item Probar que $(\hat{\theta}_{1}+\hat{\theta}_{2})$ es un
+            estimador insesgado de $(\theta_{1}+\theta_{2})$.
+            \item  Probar que $(\hat{\theta}_{1}-\hat{\theta}_{2})$ es un
+            estimador insesgado de $(\theta_{1}-\theta_{2})$.
+            \end{enumerate}
+        \end{prob}
+
+\begin{prob}
+    Sea $X_{1}$ y $X_{2}$ una muestra aleatoria de dos observaciones
+    independientes de
+    una población con media $\mu$ y varianza $\sigma^2$. Considerar los
+    siguientes tres estimadores puntuales de $\mu$:
+    $$\begin{array}{l}
+    \overline{X}=\frac{1}{2} X_{1}+\frac{1}{2} X_{2}\\
+    \hat{\mu}^{(1)}=\frac{1}{4}X_{1}+\frac{3}{4} X_{2}\\
+    \hat{\mu}^{(2)}=\frac{1}{3}X_{1}+\frac{2}{3} X_{2}
+\end{array}
+    $$
+        \begin{enumerate}[a)]
+        \item Probar que los tres estimadores son insesgados.
+        \item ?`Cuál de los tres estimadores es más eficiente?
+        \item Hallar la eficiencia relativa de $\overline{X}$ con respecto
+        a los otros estimadores.
+        \end{enumerate}
+        \sol{ b) $\overline{X}$; c) $\frac{Var(\overline{X})}{Var(\hat{\mu}^{(1)})}=0.8$;
+          $\frac{Var(\overline{X})}{Var(\hat{\mu}^{(2)})}=0.9$}
+    \end{prob}
+
+    \begin{prob}
+        A una clase de estadística asisten estudiantes de Informática de Gestión y de
+        Sistemas. En una muestra de
+         diez estudiantes de Gestión  se observaron las
+         siguientes calificaciones en el examen final
+         $$62 \ 57 \ 85 \ 59\ 64\ 63\ 71\ 58\ 77\ 72$$
+         En una muestra independiente de ocho estudiantes de Sistemas se
+         observaron las siguientes calificaciones en el mismo examen
+         $$73 \ 79 \ 85 \ 73\ 62\ 51\ 60\ 57$$
+         \begin{enumerate}[a)]
+             \item Utilizar un método de estimación insesgado para
+             obtener una estimación puntual de la diferencia de las
+             calificaciones medias entre los estudiantes de Gestión y
+             los de Sistemas. (Indicación: Utilizar el problema 151)
+             \item Utilizar un método de estimación insesgado para obtener una
+             estimación puntual de la diferencia entre la proporción poblacional de
+             estudiantes que obtuvieron una calificación  mayor que 70 en el
+             grupo de estudiantes de Gestión y el grupo de Sistemas.
+               (Indicación: Utilizar el problema 151)
+             \end{enumerate}
+             \sol{a) 0.2444; b)$-\frac{1}{10}$}
+        \end{prob}
+    \begin{prob}
+Se toma una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$  de una población con media $\mu$
+y varianza $\sigma^2$. Se considera el siguiente estimador de $\mu$ :
+$$\hat{\mu}=\frac{2}{n(n+1)}(X_{1}+2X_{2}+3X_{3}+\ldots+nX_{n})$$
+\begin{enumerate}[a)]
+    \item Probar que $\hat{\mu}$ es un estimador insesgado de $\mu$.
+    \item Hallar la eficiencia relativa de $\hat{\mu}$  respecto a
+    $\overline{X}$, la media muestral.
+    \end{enumerate}
+    \sol{ b) $Var(\hat{\mu})=\left(\frac{2}{n(n+1)}\right)^2 \frac{n (n+1) (2n+1)}{6}
+    \sigma^2$; $Eff.rel=\frac{Var(\hat{\mu})}{Var(\overline{X})}=\frac{2\,\left( 1 + 2\,n \right) }
+  {3\,\left( 1 + n \right)}.$ }
+        \end{prob}
+
+\begin{prob}
+\begin{enumerate}[a)]
+\item (Examen junio 2003) Calcular el estimador máximo verosímil (MLE\footnote{Del inglés
+ ``Maximun Likelihood  Estimator''}) para el parámetro $\lambda$ de una población que
+sigue una ley $Exp(\lambda)$ para una muestra aleatoria simple de tamaño $n$.
+\item (Examen septiembre 2004) Calcular el MLE para el parámetro $\lambda$ de una población
+que sigue una ley $Po(\lambda)$ para una muestra aleatoria simple de tamaño $n$.
+\item  Calcular el MLE para el parámetro $\mu$ de una población
+que sigue una ley $N(\mu,\sigma^2)$ para una muestra aleatoria simple de tamaño $n$.
+\item  Calcular el MLE para el parámetro $\sigma^2$ de una población
+que sigue una ley $N(\mu,\sigma^2)$ para una muestra aleatoria simple de tamaño $n$.
+\item Estudiar si los estimadores MLE de los apartados anteriores son insesgados.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+De una población de barras de hierro se extrae una muestra de $64$ barras y  se calcula la
+resistencia a la rotura por tracción se obtiene que $\overline{X}=1012\ Kg/cm^{2}$. Se sabe
+por experiencia que en este tipo de barras $\sigma=25$. Calcular un intervalo de confianza
+para $\mu$ al nivel 0.95. \sol{$\left(1005.88 , 1018.13\right)$}
+\end{prob}
+
+\begin{prob}
+Para investigar el C.I. medio de una cierta población de estudiantes, se realiza un test a
+$400$ estudiantes. La media y la desviación típica  muestrales obtenidas son
+$\overline{x}=86$ y $\tilde{s}_{X}=10.2$. Calcular un intervalo para $\mu$ con un nivel de
+significación del 98\%. \sol{$\left(84.8117, 87.1883\right)$}
+\end{prob}
+
+\begin{prob}
+Para investigar un nuevo tipo de combustible para cohetes espaciales, se disparan cuatro
+unidades y se miden las velocidades iniciales. Los resultados obtenidos, expresados en
+Km/h, son :19600, 20300, 20500, 19800. Calcular un intervalo para la velocidad media $\mu$
+con un nivel de confianza del 95\%, suponiendo que las velocidades son normales.
+\sol{$\left(19381.7, 20718.3\right)$} 20718.3
+\end{prob}
+
+\begin{prob}
+Un fabricante de cronómetros quiere calcular un intervalo de estimación de la desviación
+típica del tiempo marcado en $100$ horas por todos los cronómetros  de un cierto modelo.
+Para ello pone en marcha $10$ cronómetros del modelo durante $100$ horas y encuentra que
+$\tilde{s}_{X}=50$ segundos. Encontrar un intervalo para el parámetro $\sigma^2$ con
+$\alpha=0.01$, suponiendo que la población del tiempo marcado por los cronómetros es
+normal. \sol{$\left(953.834,12968.3\right)$}
+\end{prob}
+
+% \begin{prob}
+% El mismo fabricante del problema anterior quiere comparar ahora las
+% varianzas de dos modelos de cronómetros (modelo 1 y modelo 2)
+% tomando dos muestras con los siguientes resultados: $n_{1}=10$,
+% $\tilde{S}_{1}=50$ $n_{2}=16$ y $\tilde{S}_{2}=45$. Utilizar
+% $\alpha=0.01$
+% \sol{$[0.52,2.72]$}
+% \end{prob}
+
+\begin{prob}
+Un auditor informático quiere investigar la proporción de rutinas de un programa que
+presentan una determinada irregularidad. Para ello observa $120$ rutinas, resultando que
+$30$ de ellas presentan alguna irregularidad. Con estos datos buscar unos límites de
+confianza para la proporción $p$ de rutinas de la población que presentan esa irregularidad
+con probabilidad del 95\%.
+
+\sol{$\left(0.1725,0.3275\right)$}
+\end{prob}
+
+% \begin{prob} En una ciudad A de 400 propietarios de coches 125 tienen
+% una marca $X$; y en otra población B, de 600 propietarios, 180
+% tienen la marca $X$. Calcular un intervalo de confianza del 95\% para
+% la diferencia de proporciones entre la ciudad A y la B.
+% \sol{ $\left(-0.111,0.136\right)$}
+% \end{prob}
+%
+%
+%%%%%%%%%%%%%%%
+\begin{prob}(Examen septiembre 2003) Una infección por un virus puede haber perjudicado a muchos ordenadores con
+ \emph{Windwos}. Desde el
+ Centro de Alerta Temprana (CAT) se quiere calcular la
+ proporción de ordenadores infectados. El jefe del centro  os pide que calculéis
+ el tamaño de una muestra para que el intervalo de confianza de la proporción muestral de
+ ordenadores infectados tenga amplitud de a lo sumo $0.01$ con una probabilidad del 90\%.
+  \end{prob}
+
+\begin{prob}(Examen junio 2003) Se han medido los siguientes valores (en miles de personas) para la audiencia de un
+programa de televisión en distintos días (supuestos igualmente distribuidos e
+independientes):
+
+$$521, 742, 593, 635, 788, 717, 606, 639, 666, 624.$$
+
+Construir un intervalo de confianza del $90$\%, para la audiencia poblacional media y otro
+para la varianza poblacional, bajo la hipótesis de que la población de audiencias sigue una
+ley normal.
+
+Nota Suma de las audiencias=$6531$, Suma de los cuadrados de las audiencias=$4320401$.
+\end{prob}
+
+\begin{prob}
+Supongamos que la empresa para la que trabajamos está en un proyecto de investigación,
+financiado con fondos de la Comunidad Europea, que pretende extender una nueva aplicación
+de las TIC. Una de las tareas del proyecto es realizar una encuesta de opinión sobre el
+grado de aceptación que tendría esta nueva tecnología en el mercado europeo. De entre todas
+las universidades y empresas participantes en el proyecto, es a tu empresa a la que le toca
+hacer el protocolo de la encuesta, llevarla a cabo y redactar esta parte del informe final.
+Como eres el último que llegó a la empresa y el resto de miembros del equipo no se acuerda
+de la estadística que vio en la carrera, te toca a ti cargar con la responsabilidad. Claro
+que el coste de la encuesta depende del número $n$ de entrevistas que se realicen y el
+error de las proporciones de las contestaciones disminuye cuando $n$ aumenta. Como no sabes
+cuánto dinero está dispuesto a gastar tu jefe, tabula los tamaños muestrales para los
+errores $\pm 5\%, \pm 3\%, \pm 2\%,\pm 1\%$, y para niveles de confianza $0.95$ y $0.99$,
+suponiendo el peor caso. Añade un comentario para que el equipo de dirección del proyecto,
+en el que hay componentes ignorantes en  materia de encuestas, vea como quedarían redactado
+los datos técnicos de la encuesta, y pueda decidir  el tamaño muestral leyendo tu informe.
+\end{prob}
+
+\begin{prob}
+El número de reservas semanales de billetes de cierto vuelo de una compañía aérea sigue una
+distribución aproximadamente normal. Se toma un muestra aleatoria de $81$ observaciones de
+números de reservas de este vuelo: el número medio de reservas muestral resulta ser $112$,
+mientras que la desviación típica muestral es  $36$. Además de estos $81$ vuelos, $30$
+llegaron a su destino con un retraso de más de $15$ minutos.
+\begin{enumerate}[a)]
+    \item Calcular un intervalo de confianza del $95\%$ para el número medio
+    poblacional de reservas en este vuelo.
+    \item Calcular un intervalo de confianza de $95\%$ para la varianza
+    poblacional de las reservas.
+    \item Calcular un intervalo de confianza del $95\%$ para la proporción
+    poblacional de vuelos que llegan con un retraso de más de $15$ minutos.
+     \item Calcular el tamaño muestral que asegura un intervalo de
+     confianza de amplitud $0.1$ para la proporción de vuelos que llegan
+     con un retraso de más de $15$ minutos al nivel de confianza $95\%$.
+\end{enumerate}
+\sol{a) $\left(104.16,119.84)\right)$; b) $\left(972.343,1814.08)\right)$; c)
+$\left(0.265,0.475)\right)$; d) $n=385$}
+\end{prob}
+
+\begin{prob}
+    Una empresa cervecera sabe que las cantidades de cerveza que contienen
+sus latas sigue una distribución normal con desviación típica poblacional $0.03$ litros.
+\begin{enumerate}[a)]
+    \item Se extrae una muestra aleatoria de $25$ latas y, a partir de la
+    misma, un experto en estadística construye un  intervalo de confianza
+    para la media poblacional del contenido en litros de las latas que
+    discurre entre $0.32$ y $0.34$ ?`Cuál es el nivel de confianza de este
+    intervalo?
+    \item Un gerente de esta empresa exige un intervalo de confianza del
+    $99\%$  que tenga una amplitud máxima de $0.03$ litros a cada lado de la
+    media  muestral ?`Cuántas observaciones son necesarias, como mínimo,
+    para alcanzar este objetivo?
+\end{enumerate}
+\sol{a) $90.3\%$; b) $n=7$}
+\end{prob}
+
+
+
+
+
+\end{document}

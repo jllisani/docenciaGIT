@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf VARIABLES ALEATÒRIES CONTÍNUES}
+\end{centerline}
+
+\probl  Sea  $X$ una variable aleatoria continua con función de densidad $f(x)$ dada por:
+$$f(x) = \begin{cases}
+ k \cdot (1+x^2) & \text{si } x \in (0,3)\\ 0 & \text{si } x \not \in (0,3)
+ \end{cases}$$
+\begin{enumerate}[a)]
+\item Calcular la constante $k$  y la función de distribución de $X$.
+\item Calcular la probabilidad de que $X$ esté comprendida entre $1$ y $2$
+\item Calcular la probabilidad de  que $X $ sea menor que $1.$
+\item Sabiendo que $X$ es mayor que $1$, calcular la probabilidad de
+que sea menor que $2$. \sol{a)$\mathbf{k=1/12}$; b) $\mathbf{5/18}$; c)$\mathbf{1/9}$; e)
+$\mathbf{5/16}$}
+\end{enumerate}
+
+\probl  La función de densidad de una variable aleatoria continua es: 
+$$f(x) = \begin{cases} a
+\cdot x^2 + b & \text{si } x \in (0,3)\\
+ 0 & \text{si } x \not \in (0,3) 
+\end{cases}$$.
+
+ Determinar $ a$ y $b$ , sabiendo que
+$P(1 < X \leq 2) = 2/3$.  \sol{$\mathbf{a=-1/2, b=11/6}$}
+
+
+% \probl  Sea $X$ una variable aleatoria
+% continua con densidad:
+%
+%$$f(x) = \begin{cases}1-|x| & \text{si } |x| \leq 1\\ 0 & \text{en caso
+%contrario}\end{cases}$$
+%\begin{enumerate}[a)]
+%\item  Encontrar  la función de distribución de $ X.$
+%\item Calcular $ \pr{X \geq 0}$  y $\pr{|X| < 1/2}.$  \sol{b) $\mathbf{1/2,
+%3/4}$}
+%\end{enumerate}
+
+
+
+
+\probl  Consideremos $ f:{\R}\to {\R}  $ dada por
+
+$$f(x) = \begin{cases} 0 & \text{si } x \leq 0\\ a (1+x) & \text{si } 0 < x \leq
+1\\ 2/3 & \text{si } 1 < x \leq 2\\ 0 & \text{si } x > 2\end{cases}$$
+\begin{enumerate}[a)]
+\item  Determinar el valor de $a$ para que $f$  sea una densidad.
+\item  En este caso, si $X$ es una variable aleatoria
+ continua con densidad $f$, calcular $ \pr{1/2 < X\leq 3/2}$.
+ \item Calcular, para el valor de $a$ encontrado $E(X)$ y $Var(X)$.
+ \sol{a)$\mathbf{a=2/9}$ ; b) $\mathbf{19/36}$; c) $E(X)=\frac{32}{27}$,
+    $Var(X)=\frac{409}{1458}$.}
+\end{enumerate}
+
+
+%\probl  Conocida  la función de distribución de una variable aleatoria continua $X$, hallar
+%la función de densidad de $\displaystyle Y = X^2$ y de $ Z = e^X.$
+
+\probl  El precio por estacionar un vehículo en un aparcamiento es de $0.75$ euros por  la
+primera hora o fracción, y de $0.60$ euros a partir de la segunda hora o fracción. Supongamos
+que el tiempo, en horas, que un vehículo cualquiera permanece en el aparcamiento se
+modeliza según la siguiente función de densidad
+
+$$f_{X}(x) = \begin{cases}e^{-x} & \text{si } x \geq 0\\ 0 & \text{si } x <
+0\end{cases}$$
+
+Calcular  el ingreso medio por vehículo. \sol{$\mathbf{(1.1)}$}
+
+\probl Sea $X$ una variable aleatoria con función de densidad:
+
+$$f_{X}(x) = \begin{cases}2 x & \text{si }x \in (0,1)\\ 0 & \text{si } x \not \in
+(0,1)\end{cases}$$
+Determinar $E(\sqrt{X})$.
+\sol{$\mathbf{(4/5)}$}
+
+\probl  Consideremos una variable aleatoria $X$ con función de densidad $f_X$ dada por:
+$$f_X(x) = \left\{\begin{array}{ll}
+1/2 & \mbox{si }  0<x<2\\ 0 & \mbox{en otro caso}\end{array}\right.$$
+ determinar
+$\mathrm{E}( Y)$, donde $Y= \ln X.$ \sol{$\mathbf{(-0.3069)}$}
+
+
+
+\end{document}
+

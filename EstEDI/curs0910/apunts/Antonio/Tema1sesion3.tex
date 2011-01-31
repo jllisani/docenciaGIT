@@ -1,0 +1,431 @@
+\documentclass[compress,red,mathsans,10pt]{beamer}
+\usepackage{beamerthemesplit}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{srcltx}
+%\usetheme{Antibes}
+\usepackage{pgf,pgfarrows,pgfnodes}
+
+\setbeamercolor{uppercol}{fg=white,bg=purple}%
+\setbeamercolor{lowercol}{fg=black,bg=pink}%
+
+
+\usecolortheme{lily}
+\begin{document}
+\title{Aplicacions Estad\'{\i}stiques}
+\subtitle{Enginyeria Edificaci\'o 2009/10.}  
+\author{Antonio E. Teruel}
+\date{}
+
+\frame{\titlepage} 
+
+\frame{\frametitle{Temari}
+\begin{itemize}
+\item  {\color{red}Estad\'{\i}stica Descriptiva\color{black}}
+	\begin{itemize}
+	\item [] Tema 1. \color{red}An\`alisi exploratori de dades.\color{black}
+	\item [] Tema 2. Distribucions estad\'{\i}stiques bidimensionals. 
+	\end{itemize}
+\item Probabilitat.
+	\begin{itemize}
+	 \item [] Tema 3. Teoria de la probabilitat.
+	\end{itemize}
+\item Estad\'{\i}stica Inferencial.
+	\begin{itemize}
+	\item [] Tema 4. Variables aleat\`ories discretes.
+	\item [] Tema 5. Variables aleat\`ories continues.
+	\item [] Tema 6. Estimaci\'o de par\`ametres.
+	\item [] Tema 7. Contrast d'hipòtesis.
+	\end{itemize}
+\end{itemize}
+}
+
+
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item El conjunt de valors de freq\"u\`encia associats a una variable estad\'{\i}stica rep el nom de \textbf{distribuci\'o de freq\"u\`encies} de la variable.
+\item Les caracter\'{\i}stiques principals d'una distribuci\'o de freq\"u\`encies es poden resumir amb uns pocs valors num\`erics anomenats \textbf{estad\'{\i}stics}.
+\item Els \textbf{estad\'{\i}stics de tend\`encia central} resumeixen el comportament global de la distribuci\'o.
+	\begin{itemize}
+	\item \textbf{Moda}: valor amb m\`axima freq\"u\`encia absoluta.
+	\item \textbf{Mitjana}: mitjana aritm\`etica dels valors (\`unicament variables quantitatives)
+	\item \textbf{Mediana}: valor que ocupa la posici\'o central de les dades ordenades
+	(\'Unicament variables quantitatives i ordinals)
+		\begin{itemize}
+		\item \textbf{Percentil $P_{p}$}: valor $x$ tal que el $p\%$ dels valors de la distribuci\'o s\'on inferiors o iguals a $x.$  
+		\item \textbf{Quartils}: $Q_1=P_{25}$, $Q_2=P_{50}$ i $Q_3=P_{75}.$
+		\end{itemize}
+	La mitjana \'es iagual al percentil 50 i al 2$^{on}$ quartil.
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item Exemple: \textbf{Moda}
+\item[]
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$4$ & $1$ &$1$ &$0.1$ &$0.1$ &$10$ &$10$ \\ \hline
+$5$ & $2$ &$3$ &$0.2$ &$0.3$ &$20$ &$30$\\ \hline
+$6$ & $2$ &$5$ &$0.2$ &$0.5$ &$20$ &$50$ \\ \hline
+$7$ & $4$ &$9$ &$0.4$ &$0.9$ &$40$ &$90$ \\ \hline
+$9$ & $1$ &$10$ &$0.1$ &$1.0$ &$10$ &$100$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{picture}(0,0)
+\put(90,2){$n=10$}
+\put(135,2){$f=1$}
+\only<2->{
+\put(82,31){\color{red}\textbf{\circle{15}}\color{black}}
+\put(20,30){\color{red}\textbf{moda }\vector(1,0){20}\color{black}}
+}
+\end{picture}
+}
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item Exemple: \textbf{Mediana}  
+\[
+n=\left\{
+	\begin{array}{ll}
+	 d_{\left(\frac{n+1}2\right)} & n \text{ impar}\\ 
+	 \frac{d_{\left({n}/2\right)}+d_{\left({n}/2+1\right)}}2   & n \text{ par}
+	\end{array}
+\right.
+\]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$7$\\ \hline
+$5$\\ \hline
+$9$\\ \hline
+$7$\\ \hline
+$5$\\ \hline  
+$6$\\ \hline  
+$7$\\ \hline  
+$6$\\ \hline  
+$4$\\ \hline
+$7$\\ \hline  
+\end{tabular}\quad\quad
+$\Rightarrow$\quad\quad
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$4$\\ \hline
+$5$\\ \hline
+$5$\\ \hline
+$6$\\ \hline
+$6$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline
+$9$\\ \hline  
+\end{tabular}\quad
+$\Rightarrow$\quad
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$4$ & $1$ &$1$ &$0.1$ &$0.1$ &$10$ &$10$ \\ \hline
+$5$ & $2$ &$3$ &$0.2$ &$0.3$ &$20$ &$30$\\ \hline
+$6$ & $2$ &$5$ &$0.2$ &$0.5$ &$20$ &$50$ \\ \hline
+$7$ & $4$ &$9$ &$0.4$ &$0.9$ &$40$ &$90$ \\ \hline
+$9$ & $1$ &$10$ &$0.1$ &$1.0$ &$10$ &$100$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{picture}(0,0)
+\put(150,30){$n=10$}
+\put(195,30){$f=1$}
+\only<2->{
+\put(35,40){\color{red}\textbf{mediana}\color{black}}
+\put(50,30){\color{red}$6.5$\color{black}}
+\put(57,27){\color{red}\line(1,0){18}\line(0,1){46}\color{black}}
+\put(75,73){\color{red}\vector(1,0){6}\color{black}}
+}
+\only<3->{
+\put(235,88){\color{red}\textbf{\oval(20,42)}\color{black}}
+\put(235,55){\color{red}\textbf{\oval(20,25)}\color{black}}
+}
+\end{picture}
+}
+
+
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item Exemple: \textbf{Percentils} $k = Int\left(\frac{n*p}{100}\right), d=\frac{n*p}{100}-k,$ 
+\[
+ P_p= \left\{
+	\begin{array}{ll}
+	d_{k+1} & \text{si } d \neq 0 \\
+	\frac{d_{k}+d_{k+1}}2 & \text{si } d=0
+	\end{array}
+\right.
+\]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$7$\\ \hline
+$5$\\ \hline
+$9$\\ \hline
+$7$\\ \hline
+$5$\\ \hline  
+$6$\\ \hline  
+$7$\\ \hline  
+$6$\\ \hline  
+$4$\\ \hline
+$7$\\ \hline  
+\end{tabular}\quad\quad
+$\Rightarrow$\quad\quad
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$4$\\ \hline
+$5$\\ \hline
+$5$\\ \hline
+$6$\\ \hline
+$6$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline
+$9$\\ \hline  
+\end{tabular}\quad
+$\Rightarrow$\quad
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$4$ & $1$ &$1$ &$0.1$ &$0.1$ &$10$ &$10$ \\ \hline
+$5$ & $2$ &$3$ &$0.2$ &$0.3$ &$20$ &$30$\\ \hline
+$6$ & $2$ &$5$ &$0.2$ &$0.5$ &$20$ &$50$ \\ \hline
+$7$ & $4$ &$9$ &$0.4$ &$0.9$ &$40$ &$90$ \\ \hline
+$9$ & $1$ &$10$ &$0.1$ &$1.0$ &$10$ &$100$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{picture}(0,0)
+\put(150,30){$n=10$}
+\put(195,30){$f=1$}
+\only<2->{
+\put(-20,160){\color{red}$p=20\to k=2,d=0$\color{black}}
+\put(50,100){\color{red}${P_{20}}$\color{black}}
+\put(55,97){\color{red}\line(1,0){18}\line(0,1){12}\color{black}}
+\put(73,109){\color{red}\vector(1,0){6}\color{black}}
+}
+\only<3>{
+\put(235,95){\color{red}\textbf{\oval(25,15)}\color{black}}
+\put(235,65){\color{red}\textbf{\oval(20,40)}\color{black}}
+}
+\only<4->{
+\put(-20,150){\color{red}$p=65\to k=6,d=5$\color{black}}
+\put(50,30){\color{red}${P_{65}}$\color{black}}
+\put(57,27){\color{red}\line(1,0){18}\line(0,1){28}\color{black}}
+\put(75,55){\color{red}\vector(1,0){6}\color{black}}
+}
+\only<5>{
+\put(235,82){\color{red}\textbf{\oval(20,42)}\color{black}}
+\put(235,50){\color{red}\textbf{\oval(25,22)}\color{black}}
+}
+\end{picture}
+}
+
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item Exemple: \textbf{Quartils}
+\item[]
+\item [] \begin{center} $Q_1=P_{25}, Q_2=P_{50}$ i $Q_3=P_{75}.$ \end{center}
+\item[]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$7$\\ \hline
+$5$\\ \hline
+$9$\\ \hline
+$7$\\ \hline
+$5$\\ \hline  
+$6$\\ \hline  
+$7$\\ \hline  
+$6$\\ \hline  
+$4$\\ \hline
+$7$\\ \hline  
+\end{tabular}\quad\quad
+$\Rightarrow$\quad\quad
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$4$\\ \hline
+$5$\\ \hline
+$5$\\ \hline
+$6$\\ \hline
+$6$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline
+$9$\\ \hline  
+\end{tabular}\quad
+$\Rightarrow$\quad
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$4$ & $1$ &$1$ &$0.1$ &$0.1$ &$10$ &$10$ \\ \hline
+$5$ & $2$ &$3$ &$0.2$ &$0.3$ &$20$ &$30$\\ \hline
+$6$ & $2$ &$5$ &$0.2$ &$0.5$ &$20$ &$50$ \\ \hline
+$7$ & $4$ &$9$ &$0.4$ &$0.9$ &$40$ &$90$ \\ \hline
+$9$ & $1$ &$10$ &$0.1$ &$1.0$ &$10$ &$100$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{picture}(0,0)
+\put(150,30){$n=10$}
+\put(195,30){$f=1$}
+\put(50,100){\color{red}${Q_{1}}$\color{black}}
+\put(55,97){\color{red}\line(1,0){18}\line(0,1){6}\color{black}}
+\put(73,103){\color{red}\vector(1,0){6}\color{black}}
+\put(50,30){\color{red}${Q_{3}}$\color{black}}
+\put(57,27){\color{red}\line(1,0){18}\line(0,1){16}\color{black}}
+\put(75,43){\color{red}\vector(1,0){6}\color{black}}
+\end{picture}
+}
+
+\frame{\frametitle{Mesures de tend\`encia central}
+\begin{itemize}
+\item Exemple: \textbf{Mitjana}
+\[
+ \bar{x}=\dfrac{d_1+d_2+\ldots+d_n}{n} \hspace{2cm} \bar{x}=\dfrac{x_1 n_1+x_2 n_2+\ldots +x_k n_k}{n}
+\]
+\end{itemize}
+\hspace{1.5cm}
+\begin{tabular}{|c|}\hline
+$\mathbf{d}_i$\\ \hline
+$4$\\ \hline
+$5$\\ \hline
+$5$\\ \hline
+$6$\\ \hline
+$6$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline  
+$7$\\ \hline
+$9$\\ \hline  
+\end{tabular}\hspace{1cm}
+$\Rightarrow$\hspace{1cm}
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$4$ & $1$ &$1$ &$0.1$ &$0.1$ &$10$ &$10$ \\ \hline
+$5$ & $2$ &$3$ &$0.2$ &$0.3$ &$20$ &$30$\\ \hline
+$6$ & $2$ &$5$ &$0.2$ &$0.5$ &$20$ &$50$ \\ \hline
+$7$ & $4$ &$9$ &$0.4$ &$0.9$ &$40$ &$90$ \\ \hline
+$9$ & $1$ &$10$ &$0.1$ &$1.0$ &$10$ &$100$ \\ \hline
+\end{tabular}
+
+\begin{picture}(0,0)
+\only<2->{
+\put(50,-12){\color{red}$63 \to \bar{x}=\dfrac{63}{10}=6.3$\color{black}}
+\put(140,20){\color{red}$\bar{x}=6.3$\color{black}}
+}
+\end{picture}
+}
+
+\frame{\frametitle{Mesures de tend\`encia central, tablas con intervalos}
+\begin{itemize}
+\item \textbf{Moda}: Sigui $[x_{M},x_{M+1}]$ l'interval que cont\'e la freq\"u\`encia m\`es gran
+\item[]
+\[
+ \textbf{moda}=\dfrac {x_{M}+x_{M+1}}{2}
+\]
+\item[]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{m}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$[0,4)$& $2$   &$1$&$1$ &$0.05$ &$0.05$&$5$ &$5$ \\ \hline
+$[4,5)$& $4.5$ &$3$&$4$ &$0.15$ &$0.20$&$15$ &$20$\\ \hline
+$[5,7)$& $6$   &$9$&$13$&$0.45$ &$0.65$&$45$ &$65$ \\ \hline
+$[7,9)$& $8$   &$5$&$18$&$0.25$ &$0.90$&$25$ &$90$ \\ \hline
+$[9,10)$& $9.5$&$2$&$20$&$0.10$ &$1.00$&$10$ &$100$ \\ \hline
+\end{tabular}\end{center}
+\begin{picture}(0,0)
+\put(105,2){$n=10$}
+\put(155,2){$f=1$}
+\only<2->{
+\put(120,43){\color{red}\textbf{\circle{15}}\color{black}}
+}
+\only<3->{
+\put(208,115){\color{red}$=\dfrac{5+7}{2}=6$\color{black}}
+}
+\end{picture}
+}
+
+
+\frame{\frametitle{Mesures de tend\`encia central, taules amb intervals}
+\begin{itemize}
+\item \textbf{Percentil}: Sigui $[x_{k},x_{k+1}]$ l'interval que cont\'e el percentil
+\item[]
+\item[]
+\begin{columns}
+\begin{column}{0.5\textwidth}
+$P_p = x_{k}+\dfrac{\frac{p*n}{100} -N_{k-1}}{n_{k}}(x_{k+1}-x_{k});$
+\end{column}
+\begin{column}{0.5\textwidth}
+\end{column}
+\end{columns}
+\item[]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{m}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$[0,4)$& $2$   &$1$&$1$ &$0.05$ &$0.05$&$5$ &$5$ \\ \hline
+$[4,5)$& $4.5$ &$3$&$4$ &$0.15$ &$0.20$&$15$ &$20$\\ \hline
+$[5,7)$& $6$   &$9$&$13$&$0.45$ &$0.65$&$45$ &$65$ \\ \hline
+$[7,9)$& $8$   &$5$&$18$&$0.25$ &$0.90$&$25$ &$90$ \\ \hline
+$[9,10)$& $9.5$&$2$&$20$&$0.10$ &$1.00$&$10$ &$100$ \\ \hline
+\end{tabular}\end{center}
+\begin{picture}(0,0)
+\put(105,2){$n=10$}
+\put(155,2){$f=1$}
+\only<2->{
+\put(198,30){\color{red}\textbf{\oval(20,15)}\color{black}}
+}
+\only<3->{
+\put(160,125){\color{red}$P_{75}=7+\dfrac{0.75*10-13}{5}(9-7)=7.8$\color{black}}
+}
+\end{picture}
+}
+
+\frame{\frametitle{Mesures de tend\`encia central, taules amb intervals}
+\begin{itemize}
+\item \textbf{Mitjana}: 
+\item[]
+\item[]
+\begin{columns}
+\begin{column}{0.5\textwidth}
+$\bar{x}=\dfrac {m_1n_1+m_2n_2+\ldots+m_kn_k}{n}$
+\end{column}
+\begin{column}{0.5\textwidth}
+\end{column}
+\end{columns}
+\item[]
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+$\mathbf{x}_i$ & $\mathbf{m}_i$ & $\mathbf{n}_i$ & $\mathbf{N}_i$ & $\mathbf{f}_i$ & $\mathbf{F}_i$& $\mathbf{p}_i$ & $\mathbf{P}_i$ \\ \hline
+$[0,4)$& $2$   &$1$&$1$ &$0.05$ &$0.05$&$5$ &$5$ \\ \hline
+$[4,5)$& $4.5$ &$3$&$4$ &$0.15$ &$0.20$&$15$ &$20$\\ \hline
+$[5,7)$& $6$   &$9$&$13$&$0.45$ &$0.65$&$45$ &$65$ \\ \hline
+$[7,9)$& $8$   &$5$&$18$&$0.25$ &$0.90$&$25$ &$90$ \\ \hline
+$[9,10)$& $9.5$&$2$&$20$&$0.10$ &$1.00$&$10$ &$100$ \\ \hline
+\end{tabular}\end{center}
+\begin{picture}(0,0)
+\put(105,2){$n=10$}
+\put(155,2){$f=1$}
+\only<2->{
+\put(150,125){\color{red}$\bar{x}=\frac{2*1+4.5*3+6*9+8*5+9.5*2}{10}=6.425$\color{black}}
+}
+\end{picture}
+}
+
+
+\end{document}

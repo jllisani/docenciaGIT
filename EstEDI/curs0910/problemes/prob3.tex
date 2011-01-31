@@ -1,0 +1,463 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf PROBABILITAT}
+\end{centerline}
+
+\probl
+    Un experimento consiste en preguntarle a 3 personas elegidas al azar si
+    lavan sus platos con el detergente marca X.
+    \begin{itemize}
+        \item [a)] Enumerar los elementos del espacio muestral $\Omega$
+    utilizando la letra $s$ para las respuestas afirmativas y n para
+    las negativas.
+
+        \item [b)] Escribir los elementos de $\Omega$ que corresponden al
+    suceso $A =$ ``al menos una de las personas utilizan la marca X''.
+
+        \item [c)] Definir (describir) un suceso que tenga como elementos los
+        puntos $\{sss, nss, ssn, sns\}$.
+    \end{itemize}
+    \sol{a) $\{sss,ssn,sns,nss,nns,nsn,snn,nnn\}$, b) $A=\{sss,ssn,sns,nss,
+    nns,nsn,snn\}$, c) Al menos dos personas utilizan el detergente $X$.}
+
+
+\probl %1 pag 74 Newbold
+    Una compa\~n\'{\i}a recibe una maquinaria nueva que debe ser instalada
+    y revisada antes de ser ope\-ra\-ti\-va. En la siguiente tabla se muestra
+    la valoraci\'on de probabilidades de un gerente correspondiente al
+    n\'umero de d\'{\i}as necesarios para que la maquinaria sea operativa
+    \begin{center}
+        \begin{tabular}{|c||ccccc|}
+        \hline
+        N\'umero de d\'{\i}as & 3 & 4 & 5 & 6 & 7   \\
+        \hline
+        Probabilidad & 0.08 & 0.24 & 0.41 & 0.20 & 0.07  \\
+        \hline
+        \end{tabular}
+    \end{center}
+    Sea $A$ el suceso ``la maquinaria tardar\'a m\'as de cuatro d\'{\i}as
+    en ser operativa'' y sea $B$ el suceso ``la maquinaria tardar\'a m\'as
+    de seis d\'{\i}as en ser operativa''.
+    \begin{itemize}
+        \item [a)] Calcular la probabilidad del suceso $A$.
+
+        \item [b)] Calcular la probabilidad del suceso $B$.
+
+        \item [c)] Describir el suceso complementario del suceso $A$.
+
+        \item [d)] Calcular la probabilidad del complementario del suceso
+    $A$.
+
+        \item [e)] Describir el suceso intersecci\'on de los sucesos $A$ y
+    $B$.
+
+        \item [f)] Calcular la probabilidad del suceso intersecci\'on de $A$
+    y $B$.
+
+        \item [g)] Describir el suceso uni\'on de los sucesos $A$ y $B$.
+
+        \item [h)] Calcular la probabilidad de la uni\'on de los sucesos $A$
+    y $B$.
+
+        \item [i)] ?`Son los sucesos $A$ y $B$ mutuamente excluyentes?
+
+        \item [j)] ?`Forman los sucesos $A$ y $B$ un sistema completo de
+    sucesos?
+    \end{itemize}
+    \sol{a) 0.68, b) 0.07, d) 0.32, f) 0.07, h) 0.68, i) No, j) No.}
+
+
+\probl %5 pag 74 Newbold
+    El director de unos almacenes ha supervisado el n\'umero de quejas
+    recibidas a la semana por un servicio deficiente. Las probabilidades
+    co\-rres\-pon\-dien\-tes al n\'umero de quejas por semana encontradas en
+    la revisi\'on se muestran en la tabla.
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            N\'umero de quejas & Probabilidad   \\
+            \hline
+            \hline
+            0             &    0.14    \\
+            1 - 3         &    0.39    \\
+            4 - 6         &    0.23    \\
+            7 - 9         &    0.15    \\
+            10 - 12       &    0.06    \\
+            m\'as de 12   &    0.03    \\
+            \hline
+        \end{tabular}
+    \end{center}
+    Sean $A$ el suceso ``se recibir\'a al menos una queja por semana'', y
+    $B$ ``se recibir\'an menos de 10 quejas por semana''.
+    \begin{itemize}
+        \item [a)] Calcular la probabilidad del suceso $A$.
+
+        \item [b)] Calcular la probabilidad del suceso $B$.
+
+        \item [c)] Describir el complementario del suceso $A$.
+
+        \item [d)] Calcular la probabilidad del complementario del suceso
+        $A$.
+
+        \item [e)] Describir el suceso intersecci\'on de los sucesos $A$ y
+        $B$.
+
+        \item [f)] Calcular la probabilidad del suceso intersecci\'on de $A$
+    y $B$.
+
+        \item [g)] Describir el suceso uni\'on de los sucesos $A$ y $B$.
+
+        \item [h)] Calcular la probabilidad de la uni\'on de los sucesos $A$
+    y $B$.
+
+        \item [i)] ?` Son los sucesos $A$ y $B$ mutuamente excluyentes?
+
+        \item [j)] ?` Forman los sucesos $A$ y $B$ un sistema completo de
+    sucesos?
+    \end{itemize}
+    \sol{a) 0.86, b) 0.91, d) 0.14, f) 0.77, h) 1, i) No, j) No.}
+
+
+\probl  En una carrera en la que participen deu cavalls, de
+quantes maneres diferents se poden establir els quatre primers
+llocs? \sol{\bf 5040}
+
+\probl  Una empresa de recent creaci\'{o} encarrega a un dissenyador
+gr\`{a}fic l'elaboraci\'{o} del seu logotip, indicant que ha de
+seleccionar exactament tres colors d'una llista de sis. D'entre
+quants grups de colors se pot decidir el dissenyador? \sol{\bf 20}
+
+\probl  Quantes paraules diferents, de quatre lletres, se poden
+formar amb la paraula {\bf tesi}? \sol{\bf 24}
+
+\probl  De quantes maneres diferents se poden elegir el delegat i
+el subdelegat d'una classe formada per cinquanta alumnes? \sol{\bf
+2450}
+
+\probl  Amb onze empleats, quants comit\`{e}s d'empresa de cinc
+persones se poden formar? \sol{\bf  462}
+
+\probl  Quantes col.locacions diferents de quinze llibres
+diferents en una estanteria se poden fer si sempre volem el de
+Probabilitats en el primer lloc i el d'Estad\'{\i}stica en el tercer?
+\sol{\bf 6227020800}
+
+\probl  Quants de car\`{a}cters diferents podem formar fent servir com
+a m\`{a}xim tres signes dels utilitzats a l'alfabet Morse? \sol{\bf
+14}
+
+\probl  Un supermercat organitza una rifa amb un premi d'una
+botella de xampany per a totes aquelles paperetes que tenguin les
+dues darreres xifres iguals a les corresponents dues xifres del
+n\'{u}mero premiat en el sorteig de Nadal. Suposem que tots els d\`{e}cims
+tenen quatre xifres i que existeix un \'{u}nic d\`{e}cim de cada
+numeraci\'{o}. Quantes botelles repartir\`{a} el supermercat? \sol{\bf
+100}
+
+\probl  Quantes paraules diferents podem formar amb totes les
+lletres de la paraula {\bf estadistica}? \sol{\bf 2494800}
+
+\probl  En una tenda de regals hi ha rellotges d'arena amb cubetes
+de colors, i no hi ha cap difer\`{e}ncia de forma entre les dues
+cubetes que formen cada rellotge. Si hi ha quatre colors possibles
+i el color d'ambd\'{o}s recipients pot coincidir, quants de models de
+rellotge d'arena pot tenir l'establiment? \sol{\bf  10}
+
+\probl  En una partida de parx\'{\i}s guanya aquell jugador que
+aconsegueix dur abans les seves quatre fitxes a l'arribada. Si s\'{o}n
+quatre els jugadors i la partida continua fins que tots han
+completat el recorregut, quants d'ordres diferents hi ha per a
+l'entrada de les setze fitxes? \sol{\bf 63063000}
+
+\probl  S'han de repartir cinc beques entre deu espanyols i sis
+estrangers, de manera que se'n donin tres a espanyols i dues a
+estrangers. De quantes maneres se pot fer el repartiment. \sol{\bf
+1800}
+
+\probl  Quantes fitxes t\'{e} un d\`{o}mino? \sol{\bf 28}
+
+
+
+
+\probl  Calculau la probabilitat que en llan\c{c}ar 5 daus s'obtengui:
+\begin{enumerate}[a)]
+\item rep\`{o}ker (5 cares iguals);
+\item p\`{o}ker (4 cares iguals);
+\item full (3 cares iguals i les altres dues iguals);
+\item trio (3 cares iguals i les altres dues diferents);
+\item doble parella (2 cares iguals, 2 cares iguals i l'altra
+diferent);
+\item parella (2 cares iguals i les altres 3 diferents);
+\item res (les 5 cares diferents).
+\end{enumerate}
+\sol{ a) $\bf 6/6^5$; b) $\bf 150/6^5$;c) $\bf 300/6^5$;  d) $\bf
+1200/6^5$; e) $\bf 1800/6^5$; f) $\bf 3600/6^5$; g) $\bf 720/6^5$}
+
+\probl  Tenim 12 r\`{a}dios de les quals sabem que 5 s\'{o}n defectuoses.
+S'agafen 3 r\`{a}dios a l'atzar. Quina \'{e}s la probabilitat que nom\'{e}s
+una de les 3 sigui defectuosa? \sol{{\bf 21/44}}
+
+\probl  Llan\c{c}am a l'aire 6 daus. % distingibles.
+\begin{enumerate}[a)]
+\item Quina \'{e}s la probabilitat que tots ells donin cares
+diferents?
+\item Quina \'{e}s la probabilitat d'obtenir 3 parelles?
+\end{enumerate}
+\sol{ a)$\mathbf{120/6^5}$; b)  $\mathbf{300/6^5}$ }
+
+\probl  Suposem que en una empresa de fabricaci\'{o} d'uns certs
+components electr\`{o}nics se sap que el 2\% dels 550 components
+emmagatzemats s\'{o}n defectuosos. Quina \'{e}s la probabilitat de
+trobar-ne 2 de defectuosos si n'agafam aleat\`{o}riament 25?
+\sol{$\mathbf{0.074}$}
+
+\probl  Si mesclam ben mesclat un joc de 52 cartes, quina \'{e}s la
+probabilitat que els 4 assos quedin col.locats consecutivament?
+\sol{{\bf 24/132600}}
+
+
+\probl  Quina \'{e}s la probabilitat que d'entre n persones de les
+quals cap no ha nascut el 29 de febrer n'hi hagi com a m\'{\i}nim dues
+que han nascut el mateix dia de l'any? (no necess\`{a}riament del
+mateix any). Calculau la probabilitat per a diferents valors de n
+(10, 15, 22, 23, 30, 40, 50, 55) \sol{\bf 0.12; 0.25; 0.48; 0.51;
+0.71; 0.89; 0.97; 0.99}
+
+\probl  Quatre cartes numerades de l'1 al 4 estan girades cap
+avall damunt d'una taula. Una persona, suposadament clarivident,
+anir\`{a} endevinant els valors de les 4 cartes una a una. Si suposam
+que \'{e}s un farsant i que el que fa \'{e}s dir els quatre nombres a
+l'atzar, quina \'{e}s la probabilitat que n'encerti com a m\'{\i}nim un?
+(\`{O}bviament, no repeteix cap nombre) \sol{\bf 15/24}
+
+\probl  En una loteria hi ha 500 bitllets i 5 premis. Si una
+persona compra 10 bitllets, quina \'{e}s la probabilitat d'obtenir:
+\begin{enumerate}[a)]
+\item el primer premi?
+\item com a m\'{\i}nim un premi?
+\item exactament un premi?
+\end{enumerate} \sol{{\bf 0.02; 0.096; 0.093}}
+
+\probl  S'elegeix a l'atzar un nombre de l'1 al 6.000. Calculau la
+probabilitat que sigui m\'{u}ltiple de 2 o de 3 o de 4 o de 5.
+\sol{\bf 0.73}
+
+
+\probl  Si triam un nombre d'entre els primers 120 enters
+positius, quina \'{e}s la probabilitat que sigui m\'{u}ltiple de 3, no
+sigui divisible per 5, i sigui divisible per 4 o per 6? \sol{\bf
+2/15}
+
+
+\probl  Si la probabilitat de que un estudiant qualsevol acabi una
+carrera determinada \'{e}s 0.4, donat un grup de 5 estudiants
+d'aquesta carrera, calculau la probabilitat que:
+
+\begin{enumerate}[a)]
+\item  cap d'ells acabi la carrera;
+\item nom\'{e}s un acabi la carrera;
+\item almenys dos acabin la carrera;
+\item tots 5 acabin la
+carrera.
+\end{enumerate}
+\sol{\bf a) 0.07776; b) 0.2592; c) 0.66304; d) 0.01024}
+
+
+\probl  En una ciutat se publiquen 3 diaris A,B i C. El 30 \% de
+la poblaci\'{o} llegeix A, el 20 \% llegeix B i el 15 \% llegeix C; el
+12 \% llegeix A i B, el 9 \% llegeix A i C, i el 6 \% llegeix B i
+C; finalment, el 3 \% llegeix A, B i C. Calculau:\
+\begin{enumerate}[a)]
+\item El percentatge de gent que llegeix almenys un dels tres diaris.
+
+\item El percentatge de gent que nom\'{e}s llegeix A.
+\item  El percentatge de gent que llegeix B o C, per\`{o} no A.
+
+\item  El percentatge de gent que llegeix A o b\'{e} no llegeix ni B ni C.
+\sol{ \bf{ a) 0.41 ; b) 0.12; c) 0.11; d) 0.89}}
+\end{enumerate}
+
+\probl  Suposem que en un dau la probabilitat de cada cara \'{e}s
+proporcional al n\'{u}mero inscrit en ella. Calculau la probabilitat
+d'obtenir un nombre parell. \sol{\bf 4/7}
+
+\probl  En una reuni\'{o}, $n$ persones ($n \geq 3$) llancen una
+moneda a l'aire. Si una d'elles d\'{o}na diferent de totes les altres,
+el seu propietari paga una ronda. Quina \'{e}s la probabilitat que
+passi aix\`{o}? \sol{$\mathbf{(n \cdot \left( {1 \over 2}
+\right)^{n-1})}$}
+
+
+
+%%%%fulla 3
+
+
+\probl  
+		Un matrimoni planifica la seva fam\'{\i}lia considerant els
+		seg\"{u}ents esquemes (se suposa que tenir nin i tenir nina s\'{o}n
+		equiprobables):
+		\begin{description}
+			\item[Esq. A)] Tenir 3 infants.
+			\item[Esq. B)] Tenir infants fins que neixi la primera nina, o ja tenguin tres infants (el que passi primer).
+			\item[Esq. C)] Tenir infants fins que tenguin la parelleta, o ja tenguin tres infants (el que passi primer).
+		\end{description}
+		Sigui $B_i$ el succ\'{e}s que han nascut $i$ nins ($i=1, 2, 3$) i $C$ el succ\'{e}s que tenen m\'{e}s nines que nins.
+		\begin{enumerate}[a)]
+			\item Calculau $p(B_1)$ i $p(C)$ en cada un dels tres esquemes.
+			\item Calculau $p(B_2)$ i $p(B_3)$ en cada un dels tres esquemes.
+			\item Sigui $E$ el succ\'{e}s que la fam\'{\i}lia completa cont\'{e} igual nombre de nins que de nines. Trobau $p(E)$ en cada un dels tres esquemes.
+		\end{enumerate}
+		\sol{a) $\bf(p(B_1)=3/8,1/4,5/8; p(C)=1/2,1/2,1/4)$; b) $\bf(p(B_2)=3/8,1/8,1/8; p(B_3)=1/8,1/8,1/8)$; c) $\mathbf{(0,1/4,1/2)}$.}
+
+
+\probl  Una forma d'incrementar la fiabilitat d'un sistema \'{e}s
+mitjan\c{c}ant la introducci\'{o} d'una c\`{o}pia dels components en una
+configuraci\'{o} paral.lela. Suposem que la Nasa vol una probabilitat
+no menor que 0.99999 que el transbordador espacial entri en \`{o}rbita
+al voltant de la Terra amb \`{e}xit. Quants de motors s'han de
+configurar en paral.lel per tal d'assolir aquesta fiabilitat, si
+se sap que la probabilitat que un qualsevol dels motors funcioni
+adequadament \'{e}s 0.95? Suposem que els motors funcionen de manera
+independent entre s\'{\i}. \sol{{\bf 4}}
+
+\probl  Dos sistemes amb quatre components independents amb
+fiabilitats respectives $p_1, p_2, p_3$ i $p_4$ se configuren de
+les dues maneres seg\"{u}ents: En el sistema $A$, la combinaci\'{o} en
+s\`{e}rie dels components 1 i 2 se configura en paral.lel amb la
+combinaci\'{o} en s\`{e}rie dels components 3 i 4; en el sistema $B$, la
+combinaci\'{o} en paral.lel de 1 i 3 se configura en s\`{e}rie amb la
+combinaci\'{o} en paral.lel de 2 i 4. Determinau quin dels dos
+sistemes t\'{e} una fiabilitat m\'{e}s alta. \sol{\bf B}
+
+\probl  Si un sistema que consisteix en tres components
+independents amb la mateixa fiabilitat ($p_1=p_2=p_3$) t\'{e} una
+fiabilitat de 0.8, determinau $p_1$ si: a) el component 3 est\`{a}
+configurat en s\`{e}rie amb la combinaci\'{o} en paral.lel de 1 i 2; b) el
+component 3 est\`{a} configurat en paral.lel amb la combinaci\'{o} en
+s\`{e}rie de 1 i 2. \sol{\bf a) 0.825; b) 0.652}
+
+\probl  Una quarta part de la poblaci\'{o} ha estat vacunada contra
+una malaltia contagiosa. Durant una epid\`{e}mia, s'observa que
+d'entre els malalts n'hi ha un que ha estat vacunat per cada
+quatre que no hi estan.
+\begin{enumerate}[a)]
+\item Ha tengut qualque efic\`{a}cia la vacuna?
+\item D'altra banda, se sap que hi ha un malalt entre cada 12 persones
+vacunades. Quina \'{e}s la probabilitat que estigui malalta una
+persona que no s'ha vacunat?\sol{a) {\bf S\'{\i}}; b) {\bf 1/9}}
+\end{enumerate}
+
+\probl  Un llarg missatge s'ha codificat en termes de dos s\'{\i}mbols
+A i B per transmetre'l a trav\'{e}s d'un canal de comunicaci\'{o}. La
+codificaci\'{o} \'{e}s tal que A apareix el doble de vegades que B en el
+missatge codificat. El soroll del canal \'{e}s tal que quan A se
+transmet, se rep com a A amb probabilitat 0.8 i com a B amb
+probabilitat 0.2; quan B se transmet, se rep com a B amb
+probabilitat 0.7 i com a A amb probabilitat 0.3.
+\begin{enumerate}[a)]
+\item Quina \'{e}s la freq\"{u}\`{e}ncia relativa d'A en el missatge rebut?
+\item Si la darrera lletra del missatge que s'ha rebut \'{e}s una A, quina
+\'{e}s la probabilitat que s'hagi enviat una A?
+\end{enumerate}\sol{{\bf a) 0.633; b) 0.84}}
+
+
+\probl
+    Un contable tiene sobre su mesa dos grupos de 20 facturas cada uno. En
+    el primer lote hay dos facturas con errores de c\'alculo y en el segundo
+    tres. Una corriente de aire hace que las facturas caigan de la mesa y, al
+    re\-co\-ger\-las, una del primer grupo se confunde en el segundo. ?`Cu\'al
+    es la probabilidad de que, al revisar una factura del segundo grupo tenga
+    un error?
+    \sol{$\frac{31}{210}$}
+    
+\probl
+    En una f\'abrica se utilizan tres m\'aquinas, A, B, y C, para producir,
+    independientemente, un mismo art\'{\i}culo. La m\'aquina A produce 100
+    cajas diarias, la B produce 200, y la C produce 300, todas con igual
+    n\'umero de art\'{\i}culos. La probabilidad de que un articulo sea
+    defectuoso es: para la m\'aquina A  0.06, para la m\'aquina B 0.02 y
+    para la C 0.01. Al final de una jornada se revisa la producci\'on
+    eligiendo una caja al azar, y de ella se extrae un art\'{\i}culo de forma
+    aleatoria, resultando ser defectuoso. ?`Cu\'al es la probabilidad de que
+    dicho art\'{\i}culo haya sido fabricado por la m\'aquina B?
+    \sol{0.307692}
+
+
+\probl
+    Una compa\~{n}\'{\i}a petrolera tiene clasificados los terrenos que
+    pueden tener yacimientos de petr\'oleo en cinco tipos: el tipo I, que
+    son  el 50\%, los tipos II, III y IV, que son el 10\% cada uno, y el
+    tipo V, el  restante 20\% de los terrenos. Las probabilidades de
+    obtener petr\'oleo en  cada uno de ellos son, respectivamente,
+    0.1, 0.1, 0.3, 0.4 y 0.4. Calcular la probabilidad de que:
+    \begin{itemize}
+    \item [a)] Un terreno escogido al azar sea del tipo III y no
+    tenga petr\'oleo.
+
+        \item [b)] Un terreno escogido al azar no tenga petr\'oleo.
+
+        \item [c)] Un terreno que no tenga petr\'oleo sea del tipo III.
+    \end{itemize}
+    \sol{ a) 0.07, b) 0.79, c) 0.0886}
+		
+\probl  Un comerciant ha de viatjar en avi\'{o} entre Bangkok i
+Bagdad. Preocupat, demana a la companyia a\`{e}ria quina \'{e}s la
+probabilitat que hi hagi com a m\'{\i}nim una bomba dins l'avi\'{o} i li
+diuen que \'{e}s 0.1. M\'{e}s preocupat encara, demana quina seria la
+probabilitat que hi hagu\'{e}s com a m\'{\i}nim dues bombes i li diuen que
+seria 0.01. M\'{e}s tranquilitzat, decideix dur una bomba en el seu
+equipatge. Quina valoraci\'{o} estad\'{\i}stica podem fer de la seva
+decisi\'{o}? \sol{\bf Decisi\'{o} absurda}
+
+
+\probl  N'\`{O}scar diu la veritat nou vegades de cada deu i n'Ivan
+set de cada nou. S'extreu a l'atzar una bolla d'una bossa on hi
+havia 5 bolles blanques i 20 negres. Tots dos observen el color de
+la bolla extreta i llavors diuen de manera independent que la
+bolla extreta \'{e}s blanca. Quina \'{e}s la probabilitat que aix\`{o} sigui
+cert? \sol{\bf 0.89}
+
+
+\end{document}
+

@@ -1,0 +1,54 @@
+Aloy Gallent 5
+	- el coeficient de contingència està mal calculat
+Alvaro Ribas 5
+	- el coeficient de contingència està mal calculat
+Barceló Bobillo 5
+	- el coeficient de contingència està mal calculat
+Belghazi 4
+	- el diagrama de dispersió i el coef. de correlació és per a totes les dades, no agrupades per anys
+	- el coeficient de contingència està mal calculat
+Bordoy Vadell 9
+	- no utilitzes les fòrmules de la fulla de càlcul per calcular el coeficient de correlació 
+	- el valor màxim del coeficient de contingència està mal calculat
+de Vera Encinas 5
+	- el coeficient de contingència està mal calculat
+Garau Villegas 4
+	- el diagrama de dispersió i el coef. de correlació és per a totes les dades, no agrupades per anys
+	- el coeficient de contingència està mal calculat
+Llopis Garrido 5
+	- el coeficient de contingència està mal calculat
+López Brines 5
+	- el coeficient de contingència està mal calculat
+Marí Vargas 5
+	- no calcules el coeficient de contingència
+Mas Carreras 2
+	- el diagrama de dispersió és incorrecte
+	- hi ha dos valors del coeficient de correlació i un és incorrecte
+	- el coeficient de contingència està mal calculat
+Morell Alemany 5
+	- com calcules el coeficient de contingència? (el càlcul sembla incorrecte)
+Morro Cifre 5
+	- el coeficient de contingència està mal calculat
+Nguema 5
+	- el coeficient de contingència està mal calculat
+Nicolau Cladera 9,5
+	- no utilitzes la fòrmula de la fulla de càlcul per calcular el coeficient de correlació 
+Osuna Felipe 4
+	- el diagrama de dispersió i el coef. de correlació és per a totes les dades, no agrupades per anys
+	- el coeficient de contingència està mal calculat
+Rodríguez Pizà 5
+	- el coeficient de contingència està mal calculat
+Sánchez Castillo 0
+	- tots els càlculs són incorrectes
+Sastre Vicens 5
+	- el diagrama de dispersió i el coef. de correlació són per al conjunt de dades, no per a un mes concret
+	- el coeficient de contingència està mal calculat
+Socias Vallori 10
+	- molt bé
+Trigo Yerga 4
+	- el diagrama de dispersió és incorrecte
+	- el coeficient de contingència està mal calculat
+Vázquez Nicolau 5
+	- no calcules el coeficient de contingència
+Vidal Serra 9,5
+	- no utilitzes la fòrmula de la fulla de càlcul per calcular el coeficient de correlació 

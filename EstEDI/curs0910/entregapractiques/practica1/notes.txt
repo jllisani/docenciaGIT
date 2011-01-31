@@ -1,0 +1,71 @@
+Aloy Gallent 10
+	- molt bé
+Alvaro Ribas  9 
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar la mediana i quartils
+Barceló Bobillo 7
+	- en (a), valors màxim i mínim no atípics incorrectes
+	- en (b), falta fòrmula càlcul mediana, quartils i P90. Q1 és incorrecte.
+	- en (b), la variància és incorrecta
+Belghazi 4
+	- en (a), per al càlcul del diagrama de capsa tens 84 valors bruts (12 x 7 anys), no 7
+	- en (b) fas el que hauries d'haver fet en (a), l'apartat (b) no el fas
+Bordoy Vadell 7
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar la mediana i quartils
+	- en (a), els límits del diagrama de capsa estan mal calculats
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular mitjana ni variància
+de Vera Encinas 7
+	- en (a), falta indicar els valors màxim i mínim típics i si hi ha atípics i extrems
+	- en (b), mitjana, quartils i P90 molt mal calculats
+Garau Villegas 6,5
+	- en (a), on són les dades del diagrama de capsa?
+	- en (b), falta la mitjana i la mediana i la variància estan molt mal calculades
+Llopis Garrido 5
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar els quartils
+	- en (a), falta indicar els valors màxim i mínim típics i si hi ha atípics i extrems
+	- en (b), fas tots els càlculs a partir de les dades brutes, en lloc d'utilitzar la taula de freq.
+López Brines 6,5
+	- en (a), Q1, Q3 i mediana (no "mitjana") s'han de calcular a partir de les dades brutes
+	- en (b), falta calcular la mitjana i la variància està mal calculada 
+	(la calcules a partir de les dades brutes)
+Marí Vargas 9,5
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular mitjana ni variància
+Mas Carreras 9
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar els quartils i la mediana
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular la mitjana i no dius com calcules la variància
+Morell Alemany 5
+	- en (a), falta dir quins són els màxim i mínim valors típics
+	- en (b), fas tots els càlculs a partir de les dades brutes, en lloc d'utilitzar la taula de freq.
+Morro Cifre 10
+	- molt bé
+Nguema 6,5
+	- en (b), no expliques com calcules la mediana, quartils, P90 ni variància
+Nicolau Cladera 8
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar els quartils i la mediana	
+	- en (a), on són les dades del diagrama de capsa (límits atípics i extrems, màxim i mínim valors típics)?
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular la variància
+Osuna Felipe 4
+	- en (a), per al càlcul del diagrama de capsa tens 132 valors bruts (12 x 11 anys), no 11
+	- en (b), el diagrama de barres era de freq. absolutes, no absolutes acumulades
+	- en (b), no té sentit agrupar en intervals per a les 11 dades que utilitzes
+	- en (b), la variància està mal calculada
+Rodríguez Pizà 10
+	- molt bé
+Sánchez Castillo 4
+	- en (a), falta dir quins són els màxim i mínim valors típics
+	- en (b), la taula de freqüències es per a intervals de valors, no intervals de temps i a més
+	tots els càlculs són incorrectes
+Sastre Vicens 9,5
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular la mitjana
+Socias Vallori 4
+	- en (a), la moda és incorrecta
+	- en (a), el diagrama de capsa és incorrecte: la variable és "habitatges finalitzats" i no "data" 
+	- en (b), la taula de freqüències es per a intervals de valors, no intervals de temps i a més
+	tots els càlculs són incorrectes
+Trigo Yerga 5,5
+	- en (b), el càlcul de mitjana, variància, etc. és incorrecte, no utilitzes les dades agrupades
+Vázquez Nicolau 10
+	- molt bé
+Vidal Serra 8
+	- en (a), has d'utilitzar les fòrmules de la fulla de càlcul per trobar els quartils i la mediana	
+	- en (a), has d'indicar quins són els límits del diagrama de capsa
+	- en (b), no utilitzes la fòrmula suma.producto() per calcular mitjana ni variància

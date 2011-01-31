@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf VARIABLES ALEATÒRIES VECTORIALS DISCRETES}
+\end{centerline}
+
+
+\probl
+Los estudiantes de una universidad se clasifican de acuerdo a sus años en la universidad
+($X$) y el número de visitas a un museo el último año($Y=0$ si no  hizo ninguna visita
+$Y=1$ si hizo una visita, $Y=2$ si hizo más de una visita). En la tabla siguiente aparecen
+la probabilidades conjuntas que se estimaron para estas dos variables:
+
+    $$\begin{tabular}{c|cccc}
+        \hline\\
+        Núm. de Visitas (Y) & &Núm. de años (X) & & \\
+        \hline
+          & 1& 2 & 3  & 4 \\
+         \hline\\
+         0 & 0.07 & 0.05 & 0.03 & 0.02\\
+         1 & 0.13 & 0.11 & 0.17 & 0.15\\
+         2 & 0.04 & 0.04 & 0.09 & 0.10\\
+         \hline
+        \end{tabular}
+        $$
+        \begin{enumerate}[a)]
+            \item Hallar la probabilidad de que un estudiante elegido
+            aleatoriamente no haya visitado ningún museo el último año.
+            \item Hallar las medias de las variables aleatoria $X$ e $Y$.
+            \item Hallar e interpretar la covarianza y la correlación
+            entre las variables aleatorias $X$ e $Y$.
+            \end{enumerate}
+        \sol{a) 0.17; b) $E(X)= 2.59$, $E(Y)=1,10$; c) $Cov(X,Y)=0.191$,
+        $r_{XY}$=0.259291}
+       
+
+\probl
+    Un vendedor de libros  de texto realiza llamadas  a los despachos de
+    lo profesores, y tiene la impresión que éstos suelen ausentarse
+    más de los despachos los viernes  que cualquier otro día
+    laborable. Un repaso a las llamadas, de las cuales un quinto se
+    realizan los viernes, indica que  para el 16\% de las llamadas
+    realizadas en viernes, el profesor no estaba en su despacho, mientras
+    que esto ocurre sólo  para el 12\% de llamadas que se realizan en
+    cualquier otro día laborable. Definamos las variables aleatorias
+    siguientes:
+    $$X=\left\{\begin{array}{ll}
+    1 & \mbox{si la llamada es realizada el viernes}\\
+    0 & \mbox{en cualquier otro caso}
+    \end{array}\right.
+    $$
+    $$Y=\left\{\begin{array}{ll}
+    1 & \mbox{si  el profesor está en el despacho}\\
+    0 & \mbox{en cualquier otro caso}
+    \end{array}\right.
+    $$
+    \begin{enumerate}[a)]
+    \item Hallar la función de probabilidad conjunta de $X$ e $Y$.
+    \item Hallar la función de probabilidad condicional de $Y$, dado
+    que $X=0$.
+    \item Hallar las funciones de probabilidad marginal de $X$ e $Y$.
+    \item Hallar e interpretar la covarianza de $X$ e $Y$.
+    \end{enumerate}
+    \sol{\begin{tabular}{l|ll|l|}
+     & & $X$ & \\
+    \hline
+    $Y$ & 0 & 1 & $P_{Y}(y)$\\
+    \hline
+    0 & 0.096 & 0.032 & 0.128\\
+    1 & 0.704 & 0.168&  0.872\\
+    \hline
+    $P_{X}(x)$ & 0.8 & 0.2 & 1
+    \end{tabular};
+    b) \begin{tabular}{l|ll}
+    $Y$ & 0 & 1 \\
+    \hline
+     $P_{Y/X}(y|0)$&0.12& 0.88
+    \end{tabular}
+    d) $Cov(X,Y)=-0.0064$}
+ 
+
+
+\probl
+ Se lanzan al aire dos dados de diferente color, uno es blanco y el otro rojo.
+     Sea $X$ la variable aleatoria "número de puntos obtenidos con el dado blanco, e $Y$
+     la variable aleatoria "número más grande de puntos obtenido entre los dos dados".
+\begin{enumerate}[a)]
+\item Determinar la función de probabilidad conjunta.
+\item Obtener las funciones de probabilidad marginales.
+\item ?`Son independientes? (\textbf{No})
+\end{enumerate}
+
+
+
+\probl
+  Si $X_1 \mbox{ y } X_2 $ son dos  variables aleatorias con distribución Poisson,
+   independientes y con medias respectivas $\alpha \mbox{ y } \beta$, probar que $Y = X_1 +
+X_2 $ también una variable aleatoria Poisson (con media $\> \alpha + \beta$).
+
+
+
+
+\end{document}

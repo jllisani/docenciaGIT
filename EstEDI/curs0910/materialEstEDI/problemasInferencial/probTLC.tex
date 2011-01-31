@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage{graphicx}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{1cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+
+\begin{document}
+
+%\pagestyle{empty}
+\font\sc=cmcsc10
+\parskip=1ex
+\newcount\problemes
+
+\newcommand\probl{\advance\problemes by 1 \vskip 2ex\noindent{\bf
+\the\problemes) }}
+
+\def\probl{\advance\problemes by 1
+\vskip 1mm\noindent{\bf \the\problemes) }}
+\newcounter{pepe}
+
+\newcommand{\pr}[1]{P(#1)}
+
+%\newcounter{problema}
+%\newcommand{\prb}{\addtocounter{problema}{1}
+%\noindent\vskip 2mm {\textbf{\theproblemes  }}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+\begin{centerline}
+{\textbf{\textsc{PROBLEMES ESTAD\'ISTICA ENGINYERIA}}}
+\end{centerline}
+
+\problemes=0
+\begin{centerline}
+{\bf DESIGUALTAT DE TXEBITXEV i TEOREMA DEL LÍMIT CENTRAL}
+\end{centerline}
+
+\probl El número de periódicos vendidos en un kiosko es una variable aleatoria de media
+$200$ y desviación típica $10$. ?`Cuántos ejemplares diarios tiene que encargar el dueño del
+kiosko para tener una seguridad de que el menos el $99$\% de los días no se quedará sin
+existencias? Repetir el problema suponiendo que la distribución es normal.
+\sol{$\mathbf{(300)}$.}
+
+\probl El número de días al año que un trabajador de un pequeño comercio está de baja por
+enfermedad es  una variable aleatoria de media $10$ y  desviación típica $2$. Si cada uno
+de estos días la empresa pierde $10000$ pts., determinar los límites inferior y superior de
+las pérdidas anuales por trabajador con un grado de fiabilidad no inferior a $95$\%.
+Repetir el problema suponiendo que la distribución es normal.
+\sol{$\mathbf{(10.560)}$ y $\mathbf{(189.440)}$ pts.}
+
+\probl El ayuntamiento de una ciudad ha decido establecer una zona de aparcamiento
+limitado, en la que aparcan $500$ vehículos  diarios por termino medio. Si al menos el
+$99$\% de los días el número de coches que utilizan esta servicio está entre $475$ y $525$,
+estimar la desviación típica de la variable aleatoria que da el número  de vehículos
+diarios que ocupan plazas de estacionamiento limitado. \sol{$\mathbf{(2.5)}$}
+
+\probl  El número medio de personas que van a un local es $1000$, con una desviación típica
+de $20$ ?`Cuál es el número de sillas necesarias para que sea seguro, con una probabilidad
+no inferior a $0.75$ , que todos los asistentes podrán sentarse?
+Repetir el problema suponiendo que la distribución es normal.
+ \sol{$\mathbf{(1040)}$}
+
+
+\probl% teorema central del límite
+En cierta fabricación mecánica el 96\% de las piezas resultan con longitudes admisibles
+(dentro de las toleradas), un 3\% defectuosas cortas y un 1\% defectuosas largas. Calcular
+la probabilidad de:
+
+\begin{enumerate}[a)]
+\item En un lote de 250 piezas sean admisibles 242 o más
+\item En un lote de 500 sean cortas 10 o menos.
+\item En 1000 piezas haya entre 6 y 12 largas.
+\end{enumerate}
+\sol{Aproximando  por el T.C.L. a) 0.9131; b) 0.119; c) 0.7088}
+
+\probl Una organización de investigación de mercados ha
+encontrado que el 40\% de los clientes de un supermercado no quieren contestar cuando son
+encuestados. Si se pregunta a 1000 clientes, ?`cuál es la probabilidad de que menos de 500
+de ellos se nieguen a contestar? \sol{Aproximando por el T.C.L. prácticamente es 1}
+
+
+\probl
+Un servicio de grúa de auxilio en carretera recibe diariamente una media de 70 llamadas.
+Para un día cualquiera, ?`cuál es la probabilidad de que se reciban menos de 50 llamadas?
+\sol{Aproximadamente 0.3897}
+
+
+
+\probl
+   Supongamos que  el 10\% de los votantes,
+ de un determinado cuerpo electoral, están a favor de una cierta legislación. Se hace  una
+encuesta entre la población y se obtiene una frecuencia relativa $f_n(A)$ que estima la
+proporción poblacional anterior. Determinar, aplicando la desigualdad de Cheb. ¿Cuántos
+votantes se tendrían que encuestar para que  la probabilidad de que $f_n(A)$ difiera de $
+0.1$ menos de $0.02$ sea al menos de $0.95$? ?`Qué podemos decir si no
+conocemos el valor de la proporción?  Repetir el ejercicio pero
+aplicando el T.L.C. 
+\sol{$\mathbf{4500}$, $\mathbf{12500}$, $\mathbf{865}$ si sabemos que  $\mathbf{p=0.1}$ y $\mathbf{2401}$
+en otro caso}
+
+
+\probl
+Se lanza al aire una dado regular $100$ veces. Aplicar la desigualdad de Cheb.
+para obtener una cota de la probabilidad de  que el número total de puntos obtenidos esté
+entre $300$ y $400$. . ?`Cuál es la probabilidad que se obtiene
+aplicando el T.L.C? 
+\sol{$\mathbf{0.883}$, $\mathbf{0.9964}$ }
+
+\probl
+ Se sabe que, en una población, la altura de los individuos machos adultos es
+ una variable aleatoria $X$ con media $\mu_x = 170$ cm y desviación típica
+ $\sigma_x = 7 $ cm. Se toma una muestra aleatoria  de 140 individuos.
+  Calcular la probabilidad de que la media muestral
+$\overline{x}$ difiera de $\mu_x$ en menos de $1$ cm. 
+\sol{$\mathbf{0.909}$}
+
+\probl
+  ?`Cuántas veces hemos de lanzar un dado bien balanceado para tener como mínimo un  $95$\% de  certeza de que la frecuencia
+ relativa del salir ``6'' diste menos de $0.01$ de la
+probabilidad teórica $1/6$? 
+\sol{$\mathbf{5336}$}
+
+\probl
+Se lanza al aire una moneda sin sesgo $n$ veces. Estimar el valor de  $n$ de manera que la
+frecuencia relativa del número de caras difiera de $1/2$ en menos de $0.01$ con
+probabilidad $0.95$. \sol{$\mathbf{9604}$}
+
+
+\probl
+ El número de mensajes llegan a un multiplexor es una variable aleatoria que
+sigue una ley  Poisson con una  media de $10$ mensajes por segundo. Estimar la probabilidad
+de  que lleguen más de $650$ mensajes en un minuto. (Ind.: Utilizar el teorema del límite
+central) 
+\sol{El valor exacto es $\mathbf{0.0207}$, aproximando por el TLC con corrección de continuidad $\mathbf{0.0197}$, aproximando por TLC sin correción de continuidad  $\mathbf{0.0206}$}
+
+
+
+\end{document}
+

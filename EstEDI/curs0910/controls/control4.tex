@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\large {Control d'Estad\'istica Enginyeria Edificació. 
+\\
+Maig 2010}}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{problema}
+Suposem que un $60\%$ dels mallorquins opinen que són millors les ensaïmades de tallades que les
+de cabell d'àngel.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat que més del $70\%$ dels components d'una mostra de 200 mallorquins
+siguin d'aquesta opinió?
+\item Quina és la probabilitat que menys del $50\%$ dels components d'una mostra de 100 mallorquins
+siguin d'aquesta opinió?
+\item Si la proporció de mallorquins que opinen que les ensaïmades de tallades són millors que les
+de cabell d'àngel és un valor desconegut $p$, quin és el tamany mínim de la mostra que ens 
+`assegura' (amb probabilitat superior al $95\%$) que l'error comès en estimar $p$ a
+partir de la proporció mostral és inferior a $0,01$? (Suposau que la mostra està formada per més de
+30 persones).
+\end{enumerate}
+
+\end{problema}
+
+
+\vskip 1cm
+
+\begin{problema}
+Una acadèmia fa classes de repàs a estudiants d'estadística i assegura que els seus 
+estudiants tarden una mitjana de 9 minuts en resoldre un determinat tipus de problemes.
+Per comprovar si es cumpleix l'afirmació de l'acadèmia es pren una mostra de 7 alumnes 
+per als quals s'obtenen els 
+següents temps (en minuts):
+
+\[
+10.5 \quad 7.3 \quad 15.1 \quad 8.9 \quad 9.6 \quad 11.7 \quad 12.5
+\]
+Suposant que el temps que tarden els estudiants de l'acadèmia en resoldre el problema segueix una distribució normal
+%amb desviació típica $\sigma=2.5$,
+feu un contrast d'hipòtesis per confirmar o rebutjar l'afirmació de l'acadèmia amb un nivell de significació del $10\%$.
+Justificau les hipòtesis utilitzades i calculau el p-valor del contrast.
+
+
+
+\end{problema}
+
+%\newpage
+\vskip 0.5 cm
+\textbf{Estad\'\i stics m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{c|c|c|cl}
+Par\`ametre  & Esperan\c{c}a & Vari\`ancia & Distribuci\'o  & \\
+mostral &  &  & de probabilitat & \\
+(estad\'\i stic) & & & & \\ 
+\hline
+$\bar{X}$ & $E(\bar{X})=\mu$ & $\mathrm{Var}(\bar{X})=\frac{\sigma^2}{n}$ & 
+$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$ & poblaci\'o normal, $\sigma$ conegut \\
+& & & $\frac{\bar{X}-\mu}{\hat{s}_X / \sqrt{n}} \sim t_{n-1}$ & 
+poblaci\'o normal, $\sigma$ desconegut, $n \leq 30$ \\
+& & & 
+$\bar{X} \sim N(\mu, \frac{\hat{s}_X^2}{n})$ & 
+$\sigma$ desconegut, $n > 30$ \\
+& & & & \\
+$\hat{s}_X^2$ & $E(\hat{s}_X^2)=\sigma^2$ & $\mathrm{Var}(\hat{s}_X^2)=\frac{2\sigma^4}{n-1}$ & 
+$\frac{n-1}{\sigma^2}\hat{s}_X^2 \sim \chi^2_{n-1}$ & poblaci\'o normal \\
+& & & & \\
+$\hat{p}_X$ & $E(\hat{p}_X)=p$ & $\mathrm{Var}(\hat{p}_X)=\frac{p(1-p)}{n}$ &
+$\hat{p}_X \sim N(p, \frac{p(1-p)}{n})$ & $n > 30$ \\
+ & & & $\hat{p}_X \sim t_{n-1}$ & poblaci\'o normal, $n \leq 30$ 
+\end{tabular}
+
+\vskip 0.7 cm
+\textbf{Intervals de confian\c{c}a m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{l|ll}
+Par\`ametre mostral & Interval de confian\c{c}a & \\
+\hline
+& & \\
+Mitjana & $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ conegut \\
+& & \\
+ & $\displaystyle \bar{X} \pm t_{n-1, \alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ desconegut  \\
+& & i $n \leq 30$\\
+& & \\
+& $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & si $n > 30$ \\
+& & \\
+& & \\
+Vari\`ancia & $\displaystyle \left[ \frac{n-1}{\chi^2_{n-1, 1-\alpha/2}} \hat{s}_X^2,
+ \frac{n-1}{\chi^2_{n-1, \alpha/2}} \hat{s}_X^2 \right]$ & si la poblaci\'o segueix una llei normal  \\
+& & \\
+& & \\
+Proporci\'o & $\displaystyle \hat{p}_X \pm z_{\alpha/2} \sqrt{\frac{\hat{p}_X (1-\hat{p}_X)}{n}}$ & si $n > 30$ \\
+& & 
+\end{tabular}
+
+\end{document}
+

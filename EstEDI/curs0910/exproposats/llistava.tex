@@ -1,0 +1,404 @@
+\documentclass[11pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex
+
+\usepackage[latin1]{inputenc}		%%para utilizar tildes en el texto
+\usepackage[spanish]{babel}		%%corta las palabras segun el castellano, pero pone comas en los puntos
+							%% decimales
+\usepackage{amsmath}			%% AMS-LaTeX	
+\usepackage{amsfonts}
+\usepackage{amssymb}			%%simbolos del AMS-LaTeX
+
+\setlength{\topmargin}{-2cm}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+
+
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+\newtheorem{ejemplo}[prbcont]{Ejemplo}
+\newcommand{\sol}[1]{{\textbf{\footnotetext[\the\problemes]{Sol.: #1} }}}
+
+
+
+\begin{document}
+
+
+\begin{center}
+\textbf{{\large {Aplicacions Estad\'{i}stiques. 2009/10}\\Enginyeria Edificaci\'o.\\}}
+\vspace{0.5cm}
+\textbf{Exercicis Variable AleatÚria}
+\end{center}
+
+
+% \begin{problema}
+% Una bossa cont\'e 3 boles negres, 8 blanques i 13 vermelles. Una segona bossa cont\'e
+% 5 boles negres, 7 blanques i 6 vermelles. S'escull a l'atzar una bola de cada bossa.
+% Calculeu la probabilitat que les dues boles siguin de diferent color. %\sol{(283/432)}
+% \end{problema}
+
+\begin{problema}
+Es prenen 4 cartes d'una baralla de 48 cartes . Sigui $X=$``nombre
+d'espases entre les 4 cartes''. Calculeu la distribuci\'o d'$X$ i la seva esperan\c{c}a.
+\end{problema}
+
+\begin{problema}
+Es llan\c{c}a un dau dues vegades. Siguin $X_1$ i $X_2$ els resultats del primer i segon
+llan\c{c}ament. Sigui $X = \max\{X_1,X_2\}.$
+\begin{itemize}
+\item [(a)] Representeu la funci\'o de distribuci\'o d'$X$ i calculeu la seva esperan\c{c}a.
+\item [(b)] Sigui $A = \{X_1 = 2\}.$ Calculeu la distribuci\'o de la variable condicionada $X|A$.
+\end{itemize}
+\end{problema}
+
+
+\begin{problema}
+Es llan\c{c}a una moneda 3 vegades. Sigui $X$ la variable aleat\`oria ``nombre de cares que
+hi ha despr\'es de la primera creu''.(Per exemple, si surt $\{c+c\}$ llavors $X=1,$ si surt
+$\{c++\},$ llavors $X = 0$). Si la probabilitat de cara \'es igual a $p,$
+\begin{itemize}
+\item [(a)] Calculeu la funci\'o de probabilitat de la variable $X.$
+\item [(b)] Calculeu el valor de p que fa m\`axim $E(X)$
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Es tira una moneda 4 vegades seguides. Sigui $X$ el nombre total de cares obtingudes.
+\begin{itemize}
+\item [(a)] Busqueu i representeu gr\`aficament la funci\'o probabilitat i la funci\'o de
+distribuci\'o de $X.$
+\item [(b)] Calculeu l'esperan\c{c}a i la vari\`ancia de $X.$ %\sol{2,1}
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Un jugador de cartes extreu una carta a l'atzar d'una baralla de 48 cartes. Si surt
+figura, guanya 100 euros, si surt un as no guanya ni perd res, i si surt qualsevol altra
+carta, perd 25 euros. Quina \'es l'esperan\c{c}a de guany del jugador? %\sol{25/3}
+\end{problema}
+
+\begin{problema}
+Una bossa cont\'e 5 boles blanques, 3 negres i 2 vermelles. Se selecciona a l'atzar i
+sense devoluci\'o una mostra de dues boles de la bossa. Si $X$ simbolitza la v.a. ``nombre
+de boles negres en la mostra'', busqueu la funci\'o de probabilitat, l'esperan\c{c}a i la vari\`ancia
+d'aquesta variable. 
+%\sol{[P[X = 0] = 7/15, P[X = 1] = 7/15, P[X = 2] = 1/15; E(X) = 3/5; var(X) = 28/75]}
+\end{problema}
+
+
+%%%%-----------> Binomial
+
+\begin{problema}
+L'\'ultima novel.la d'un autor ha tingut un gran \`exit, fins al punt que el 80\% dels lectors ja l'han llegit. Un grup de 4 amics s\'on aficionats a la lectura: 
+\begin{itemize}
+\item Quina \'es la probabilitat que en el grup hagin llegit la novel.la 2 persones? 
+\item I com m\`axim 2? 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Un agent d'assegurances ven p\`olisses a cinc persones de la mateixa edat i que gaudeixen de bona salut. Segons les taules actuals, la probabilitat que una persona en aquestes condicions visqui 30 anys o m\'es \'es 2/3. Trobeu la probabilitat que, transcorreguts 30 anys, visquin: 
+\begin{itemize}
+\item Les cinc persones. 
+\item Almenys tres persones. 
+\item Exactament dues persones. 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Es llan\c{c}a una moneda quatre vegades. Calcular la probabilitat que surtin m\'es cares que creus 
+\end{problema}
+
+\begin{problema}
+Si de sis a set del vespre s'admet que un nombre de tel\`efon de cada cinc est\`a comunicant, quin \'es la probabilitat que, quan es marquin 10 nombres de tel\`efon triats a l'atzar, nom\'es comuniquin dos? 
+\end{problema}
+
+\begin{problema}
+La probabilitat que un home encerti en el blanc \'es 1/4. Si dispara 10 vegades quina \'es la probabilitat que encerti exactament en tres ocasions? Quin \'es la probabilitat que encerti almenys en una ocasi\'o? Quina \'es el nombre de encerts esperat?
+\end{problema}
+
+\begin{problema}
+En unes proves de alcoholemia s'ha observat que el 5\% dels conductors controlats donen positiu en la prova i que el 10\% dels conductors controlats no duen cordat cintur\'o de seguretat. Tamb\'e s'ha observat que les dues infraccions s\'on independents. Un gu\`ardia de tr\`afic det\'e cinc conductors a l'atzar. Si tenim en compte que el nombre de conductors \'es suficientment important com per a estimar que la proporci\'o d'infractors no varia al fer la selecci\'o. 
+\begin{itemize}
+\item Determineu la probabilitat que exactament tres conductors hagin com\`es alguna de les dues infraccions. 
+\item Determineu la probabilitat que almenys un dels conductors controlats hagi com\`es alguna de les dues infraccions. 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+\noindent
+$.$
+\begin{itemize}
+\item La probabilitat que un article produ\"{\i}t per una fabrica sigui defectu\'os \'es $p=0.002.$ Es va enviar un carregament de 10.000 articles a uns magatzems. Trobau el nombre esperat d'articles defectuosos, la vari\`ancia i la desviaci\'o t\'{\i}pica.
+\item Si cada article correcte el venem per 1 euro i per cada article defectuos hem d'abonar 10 euros en concepte de indemnitzaci\'o, quina \'es la probabilitat d'obtenir un benefici mayor o igual a 9900 euros?  \end{itemize}
+\end{problema}
+
+\begin{problema}
+En una urna hi ha 30 boles, 10 vermelles i la resta blanques. Es tria una bolla a l'atzar i s'anota si \'es vermella; el proc\'es es repeteix, retornant la bolla, 10 vegades. Calcular la mitjana i la desviaci\'o t\'ipica del nombre de bolles vermelles extretes. 
+\end{problema}
+
+\begin{problema}
+Un laboratori afirma que una droga causa efectes secundaris en una proporci\'o de 3 de cada 100 pacients. Per a contrastar aquesta afirmaci\'o, altre laboratori tria a l'atzar a 5 pacients als quals aplica la droga. Quin \'es la probabilitat dels seg\"uents successos? 
+\begin{itemize}
+\item Cap pacient tingui efectes secundaris. 
+\item Almenys dos tinguin efectes secundaris. 
+\item Quin \'es el nombre de pacients que espera laboratori que tinguin efectes secundaris si tria 100 pacients a l'atzar?  
+\end{itemize}
+\end{problema}
+
+
+\begin{problema}
+Un representant realitza 5 visites cada dia als comer\c{c}os del seu ram i per la seva experi\`encia anterior sap que la probabilitat que li facin una comanda en cada visita \'es del 0.4. Obtenir: 
+\begin{itemize}
+\item El nombre mitj‡ de comandes per dia 
+\item La vari\`ancia 
+\item La probabilitat que el nombre de comandes que realitza durant un dia estigui compr\`es entre 1 i 3
+\item La probabilitat que almenys realitzi dues comandes
+\end{itemize}%\sol{2,1.2,0.8352, 0.663} 
+\end{problema}
+
+\begin{problema}
+Una prova d'intel.lig\`encia consta de deu q\"uestions cadascuna d'elles amb cinc respostes de les quals una sola \'es vertadera. Un alumne respon a l'atzar (\'es a dir, sense tenir la menor idea sobre les deu q\"uestions). Quina \'es la probabilitat que respongui b\'e a dues q\"uestions? Quina la que respongui b\'e a quatre? Quina la que respongui b\'e a sis?%\sol{0.302, 0.088, 0.006.}
+\end{problema}
+
+\begin{problema}
+Determinau la probabilitat de realitzar cert tipus d'experiment amb \`exit si se sap que si es repeteix 14 vegades \'es igual de probable obtenir 2 \`exits que 3.%\sol{0.2.}
+\end{problema}
+
+\begin{problema}
+Un equip se serveix amb 7 perns per a ser muntats pel client, per\`o l'equip nom\'es necessita 4 per a funcionar. Si la proporci\'o de perns defectuosos \'es del 10\%, Quina \'es la probabilitat que un equip pugui muntar-se?. Com \'es la probabilitat que si comprem 3 equips no puguem fer funcionar cap, per culpa dels perns? (Els perns d'un equip no serveixen per a l'altre).%\sol{0.9972, 2.2.10-8}
+\end{problema}
+
+\begin{problema}
+Una companyia compra quantitats molt grans de components electr\`onics. La decisi\'o per a acceptar o rebutjar un lot de components es pren amb base a una mostra de 100 unitats. Si el lot es rebutja al trobar tres o m\'es unitats defectuoses en la mostra, quina \'es la probabilitat de rebutjar un lot si aquest cont\'e un 1\% de components defectuosos? Quina \'es la probabilitat de rebutjar un lot que contingui un 8\% d'unitats defectuoses. %\sol{0.0803, 0.9862}
+\end{problema}
+
+
+%%%%-----> Poisson
+
+\begin{problema}
+El nombre de rebentades en els pneum\`atics de cert vehicle industrial t\'e una distribuci\'o de Poisson amb mitjana 0.3 per cada 50 000 quil\`ometres. Si el vehicle recorre 100000 km, es demana: 
+\begin{itemize}
+\item Probabilitat que no hagi tingut rebentades. 
+\item Probabilitat que tingui menys de 3 rebentades 
+\item Nombre de km recorreguts perqu\`e la probabilitat que no tingui cap rebentada sigui 0.4066 
+\end{itemize}%\sol{0.5488, , 0,9769, 150000km}
+\end{problema}
+
+\begin{problema}
+Els accidents laborals diaris d'una empresa segueixen una distribuci\'o de Poisson de par\`ametre $\lambda=0.4.$ Calcular les probabilitats: 
+\begin{itemize}
+\item que en un determinat dia es produeixin dos; com a molt dos; i almenys dos accidents. 
+\item que hagin 4 accidents en una setmana. 
+\item que hagi un accident avui i cap dem\`a. 
+\end{itemize}%\sol{0.0536, 0.992, 0.0616, 0.156, 0.179.}
+\end{problema}
+
+\begin{problema}
+Els missatges que arriben a una computadora utilitzada com servidor ho fan d'acord amb una distribuci\'o Poisson amb una taxa de 0.1 missatges per minut. 
+\begin{itemize}
+\item Quina \'es la probabilitat que arribin com a molt 2 missatges en una hora? 
+\item Determinar l'interval de temps necessari perqu\`e la probabilitat que no arribi cap missatge durant aquest lapse de temps sigui 0.8.
+\end{itemize} %\sol{0.062, 2.2 minutos.}
+\end{problema}
+
+\begin{problema}
+El nombre de cridades telef\`oniques que es reben en una centraleta cada 5 minuts,
+s'ajusta a una distribuci\'o de Poisson de par\`ametre $\lambda = 3.$ Calculeu la probabilitat
+que:
+\begin{itemize}
+\item [(a)] La centraleta rebi 6 cridades en 5 minuts. %\sol{[0.0504]}
+\item [(b)] La centraleta no rebi cap cridada en 5 minuts. %\sol{[0.0498]}
+\item [(c)] La centraleta rebi 3 cridades en 10 minuts. %\sol{[0.0892]}
+\item [(d)] La centraleta rebi m\'es de 15 cridades en 15 minuts. %\sol{[0.0220]}
+\item [(e)] La centraleta rebi 2 cridades en 1 minut. %\sol{[0.0988]}
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Un llibre consta de 200.000 paraules. La probabilitat que en una paraula hi hagi un
+error d'impremta \'es de 1/50.000. Calculeu la probabilitat que:
+\begin{itemize}
+\item [(a)] El llibre no contingui cap error. %\sol{[0.0183]}
+\item [(b)] El llibre contingui m\'es de 6 errors. %\sol{[0.111]}
+\end{itemize}
+\end{problema}
+
+% \begin{problema}
+% Durant l'hora punta, la l\'{\i}nia de reserves d'una companya a\`eria est\`a ocupada el 95\%
+% del temps. Una persona fa cridades a aquesta l\'{\i}nia fins que sigui lliure. Calculeu:
+% \begin{itemize}
+% \item [(a)] Probabilitat que hagi de fer m\'es de 5 cridades fins que la l\'{\i}nia sigui lliure
+% \item [(b)] Nombre mitj\`a de cridades que ha de fer fins a trobar la l\'{\i}nia lliure
+% \end{itemize}
+% \end{problema}
+
+%%%----> varios
+
+\begin{problema}
+Un magatzem de fruites comercialitza les llimones en caixes de 200 unitats. La proporci\'o
+de llimones malmeses \'es de 0.45\%. Un eventual comprador, abans de fer l'enc\`arrec
+d'uns quants centenars de caixes de llimones, decideix fer un control de qualitat que
+consisteix en escollir a l'atzar una de les caixes i comprovar la qualitat de les llimones.
+Si no hi ha cap llimona en mal estat formalitza la compra. Si hi ha m\'es de 2 llimones
+malmeses rebutja l'enc\`arrec. Si la caixa cont\'e 1 o 2 llimones malmeses, escull a l'atzar
+una nova caixa, i si aquesta cont\'e menys de 2 llimones dolentes, formalitza la compra.
+En qualsevol altre cas, decideix no fer la compra. Calculeu la probabilitat que el
+comprador formalitzi la compra. %\sol{[0.8166]}
+\end{problema}
+
+
+
+\begin{problema}
+Se sap que el 1\% dels articles importats d'un cert pa\'{\i}s tenen algun defecte. Si prenem una mostra de 30 articles, determinar la probabilitat que tres o m\'es d'ells tinguin algun defecte. %\sol{0.0036} 
+\end{problema}
+
+\begin{problema}
+La variable aleat\`oria $X=$``temps de durada fins a la seva adquisici\'o de cert producte en l'aparador'' est\`a distribu\"{\i}da segons una Poisson, amb un temps mitj\`a de 6 dies. 
+\begin{itemize}
+\item Probabilitat que duri m\'es de 6 dies per\`o menys de 10 . 
+\item Quants dies com a m\'{i}nim hem de tenir el producte en l'aparador perqu\`e la probabilitat de no es vengui durant aquest per\'{\i}ode sigui de 0.85? 
+\item Un comerciant t\'e el producte en l'aparador tres dies. Com \'es la probabilitat que es vengui en  els pr\`oxims tres dies? %\sol{0.179, 0.97 d√≠as, 0.394.}
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+S'ha comprovat que la durada de vida de certs elements segueix una distribuci\'o Poisson amb mitjana 8 mesos. Es demana: 
+\begin{itemize}
+\item Calcular la probabilitat que un element tingui una vida entre 5 i 12 mesos. 
+\item El percentil 0'9 de la distribuci\'o. 
+\item La probabilitat que un element que ha viscut ja m\'es de 11 mesos, viva 14 mesos m\'es. 
+\end{itemize}%\sol{0.3, 18.4, 0.173.}
+\end{problema}
+
+\begin{problema}
+Suposi's que la concentraci\'o de cert contaminant es troba distribu\"{\i}da de manera uniforme en l'interval de 0 a 20 ppm (parts per millon). Si es considera t\`oxica una concentraci\'o de 8 o m\'es, quina \'es la probabilitat que al prendre's una mostra la concentraci\'o d'aquesta sigui t\`oxica?. Concentraci\'o mitjana i vari\`ancia. Probabilitat que la concentraci\'o sigui exactament 10. %\sol{12/20, 10, 100/3, 0.}
+\end{problema}
+
+% \begin{problema}
+% De la parada del autobus que recorre la l\'{\i}nia Madrid-Alcal\`a d'Henares surt un autobus cada 15 minuts. Un viatger arriba d'improvist en qualsevol moment. Obtenir: 
+% \begin{itemize}
+% \item Probabilitat que el viatger esperi menys de 5 minuts 
+% \item La mitjana i la vari\`ancia de la variable aleat\`oria temps d'espera 
+% \end{itemize}%\sol{1/3, 7.5 minutos, 18.75 minutos2}
+% \end{problema}
+
+\begin{problema}
+Una m\`aquina fabrica perns les longituds dels quals es distribu\"{\i}xen normalment amb mitjana 20mm i vari\`ancia 0'25mm. Un pern es considera defectu\'os si la seva longitud difereix de la mitjana m\'es de 1mm. Els perns es fabriquen de forma independent. Quina \'es la probabilitat de fabricar un pern defectu\'os?. Si els envasem en envasos de 15 perns, probabilitat que un env\`as no tingui m\'es de 2 defectuosos. %\sol{0.045 (aproximadamente 0.05), 0.964.}
+\end{problema}
+
+\begin{problema}
+Una empresa dedicada a la fabricaci\'o i venda de begudes refrescants observa que el 40\% dels establiments que s\'on visitats pels seus venedors realitzen compres d'aquestes begudes. Si un venedor visita 20 establiments, determinau la probabilitat que almenys 6 d'aquests establiments realitzin una compra %\sol{ 0.8}
+\end{problema}
+
+\begin{problema}
+La durada d'un laser semiconductor a pot\`encia constant t\'e una distribuci\'o normal amb mitjana 7000 hores i desviaci\'o t\'{\i}pica de 600 hores. 
+\begin{itemize}
+\item Com \'es la probabilitat que el laser falli abans de 5000 hores? 
+\item Com \'es la durada en hores excedida pel 95\% dels l\`asers? 
+\item Si es fa \'us de tres l\`asers en un producte i se suposa que fallen de manera independent, com \'es la probabilitat que els tres segueixin funcionant despr\'es de 7000 hores? 
+\end{itemize}%\sol{0.0004, 6010, 0.125}
+\end{problema}
+
+\begin{problema}
+Un servei dedicat a la reparaci\'o d'electrodom\`estics en general, ha observat que rep cada dia de mitjana 15 cridades. Determinar la probabilitat que es rebin m\'es de 20 cridades en un dia.%\sol{0.098}
+\end{problema}
+
+\begin{problema}
+El nombre mig de clients que entren en un banc durant una jornada, \'es de 25. Calcular la probabilitat que en un dia entrin en el banc almenys 35 clients. %\sol{0.02}
+\end{problema}
+
+\begin{problema}
+Les qualificacions dels alumnes d'estad\'{\i}stica, X, pot suposar-se que s'ajusten a una distribuci\'o aproximadament normal, amb una mitjana de sis punts i desviaci\'o t\'{\i}pica de tres punts 
+\begin{itemize}
+\item Trobar el percentatge d'alumnes que susp\`en 
+\item quin percentatge d'alumnes t\'e notables i excel.lents (\'es a dir puntuacions majors que 7 i 9)?
+\item Trobar la puntuaci\'o x tal que el 25\% dels alumnes t\'e una puntuaci\'o inferior o igual a x 
+\end{itemize} %\sol{0.3707, 0.3707, 3.975}
+\end{problema}
+
+\begin{problema}
+Les qualificacions dels 500 aspirants presentats a un examen per a contractaci\'o laboral, es distribue\"{\i}n normalment amb mitjana 6'5 i vari\`ancia 4 . 
+\begin{itemize}
+\item Calculi la probabilitat que un aspirant obtingui m\'es de 8 punts. 
+\item Determini la proporci\'o d'aspirants amb qualificacions inferiors a 5 punts. 
+\item Quants aspirants van obtenir qualificacions compreses entre 5 i 7'5 punts ?. 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Nom\'es 24 dels 200 alumnes d'un Centre medeixen menys de 150 cm. Si l'al\c{c}\`aria mitjana d'aquests alumnes \'es de 164 cm., quina \'es la seva vari\`ancia ?. 
+\end{problema}
+
+\begin{problema}
+El percentil 70 d'una distribuci\'o normal \'es igual a 88, sent 0'27 la probabilitat que la variable tingui un valor inferior a 60. A quina distribuci\'o normal ens estem referint?
+\end{problema}
+
+\begin{problema}
+En un estudi realitzat sobre els ingressos familiars en els quals els dos c\`onjuges treballen, s'ha observat que el salari mensual, en euros, de les dones (X) es distribu\"{\i}x normalment amb mitjana 1000, mentre que el dels homes (Y) t\'e la seg\"uent transformaci\'o Y = X + 20 . Sabent a m\'es que el 15\% dels homes no superen el percentil 75 de les dones, es demana: 
+\begin{itemize}
+\item El salari mig dels homes. 
+\item La desviaci\'o t\'{\i}pica del salari dels homes i de les dones. 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Analitzades 240 mostres de colesterol en sang, es va observar que es distribu\"{\i}en normalment amb mitjana 100 i desviaci\'o t\'{\i}pica 20 . 
+\begin{itemize}
+\item Calculi la probabilitat que una mostra sigui inferior a 94 . 
+\item Quina proporci\'o de mostres tenen valors compresos entre 105 i 130 ?. 
+\item Quantes mostres van ser superiors a 138 ?. 
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Determini la mitjana i la desviaci\'o t\'{\i}pica de les puntuacions d'un test d'agressivitat que es va aplicar a 120 individus, sabent que 30 van arribar menys de 40 punts i que el 60\% van obtenir puntuacions compreses entre 40 i 90 punts.  
+\end{problema}
+
+\begin{problema}
+Durant l'hora punta, la l\'{\i}nia de reserves d'una companya a\`eria est\`a ocupada el 95\%
+del temps. Una persona fa cridades a aquesta l\'{\i}nia fins que sigui lliure. Calculeu:
+\begin{itemize}
+\item [(a)] Probabilitat que hagi de fer m\'es de 5 cridades fins que la l\'{\i}nia sigui lliure
+\item [(b)] Nombre mitj\`a de cridades que ha de fer fins a trobar la l\'{\i}nia lliure
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+La llargada de les peces fabricades per una determinada m\`aquina s'ajusta a una distribuci\'o normal de mitjana 150 cm i desviaci\'o t\'{\i}pica 0.4 cm. Les peces es consideren
+acceptables si la seva llargada pertany a l'interval obert (149.2, 150.4). Es demana:
+\begin{itemize}
+\item [(a)] La proporci\'o de peces defectuoses que contindr\`a la mostra. %\sol{[18.14\%]}
+\item [(b)] Trobeu un interval $(150-\delta, 150+\delta)$ que contingui el 95\% de la producci\'o
+\item [(c)] Si s'escull una mostra a l'atzar de 50 peces, calculeu la probabilitat que la mostra
+contingui exactament 44 peces acceptables %\sol{[0.0847]}
+\end{itemize}
+\end{problema}
+
+% \begin{problema}
+% Una xarxa de distribuci\'o el\`ectrica funciona malament quan la tensi\'o sobrepassa la
+% capacitat de la xarxa. Si la tensi\'o es distribueix segons una normal $\mathcal{N}(\mu=100;\sigma^2 = 400),$ i
+% la capacitat segons una normal $\mathcal{N}(\mu = 140; \sigma^2 = 100),$ calculeu la probabilitat que la xarxa
+% funcioni incorrectament suposant que la tensi\'o i la capacitat varien independentment.
+% %\sol{[0.037]}
+% \end{problema}
+
+\begin{problema}
+La duraci\'o $X$ de les bombones de but\`a de 40 kg es distribueix segons una normal $\mu =
+200 h$ i $\sigma^2= 20.$
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat que una bombona duri m\'es de 220 hores. %\sol{[0.159]}
+\item [(b)] Quin \'es el temps de vida m\'{\i}nim que es pot garantir amb un risc d'equivocar-nos
+del 20\%? %\sol{[183 h]}
+\item [(c)] Si una bombona porta 160 h funcionant, quina \'es la probabilitat que duri m\'es
+de 220 h? %\sol{[0.1624]}
+\item [(d)] Determineu la probabilitat que entre 4 bombones n'hi hagi 2, com a m\'{\i}nim, que
+durin entre 180 i 220 h. %\sol{[0.9025]} 
+\item [(e)] Calculeu la probabilitat que el temps de vida total de 25 bombones sigui com a
+m\'{\i}nim de 5200 hores. %\sol{[0.023]}
+\end{itemize}
+\end{problema}
+
+\end{document}

@@ -1,0 +1,669 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red34\green139\blue34;\red0\green0\blue255;\red160\green32\blue240;
+}
+\paperw16840\paperh11900\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs20 \cf2 % --------------------------------------------------------------------
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 function\cf0  ReconstruccioLocalGlobalDirecta_Callback(hObject, eventdata, handles)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 % hObject    handle to ReconstruccioLocalGlobalDirecta (see GCBO)
+\fs24 \cf0 \
+
+\fs20 \cf2 % eventdata  reserved - to be defined in a future version of MATLAB
+\fs24 \cf0 \
+
+\fs20 \cf2 % handles    structure with handles and user data (see GUIDATA)
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 set(handles.info,\cf4 'String'\cf0 ,\cf4 'Carregant imatges...'\cf0 );
+\fs24 \
+
+\fs20 [FileName1 Path1]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge degradada.'\cf0 ); 
+\fs24 \
+
+\fs20 [FileName2 Path2]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge correcte.'\cf0 ); 
+\fs24 \
+
+\fs20  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 if\cf0  isequal(FileName1,0)|isequal(FileName2,0)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     \cf3 return\cf0  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 else
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     
+\fs24 \
+
+\fs20     im1=imread(strcat(Path1,FileName1));
+\fs24 \
+
+\fs20     im2=imread(strcat(Path2,FileName2));
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     \cf3 if\cf0  size(im1,3)==3
+\fs24 \
+
+\fs20     im1=rgb2gray(im1);
+\fs24 \
+
+\fs20     im2=rgb2gray(im2);
+\fs24 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     G=fft2(im1);
+\fs24 \
+
+\fs20     F=fft2(im2);
+\fs24 \
+
+\fs20     H=G./F;
+\fs24 \
+
+\fs20     h=ifft2(H);
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     handles.PSF=h;
+\fs24 \
+
+\fs20     guidata(hObject,handles)
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20     imatge=handles.imatge;
+\fs24 \
+
+\fs20    ZP=zeroPaddingS(h,handles,size(imatge,2),size(imatge,1));
+\fs24 \
+
+\fs20    ZP=fft2(ZP);
+\fs24 \
+
+\fs20    invers=ones(size(imatge,1),size(imatge,2))./ZP;
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20     imatge=fft2(imatge).*invers;
+\fs24 \
+
+\fs20     imatge=abs(ifft2(imatge));
+\fs24 \
+
+\fs20  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %imatge=filter2(double(h),double(imatge));
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 handles.imatge=imatge;
+\fs24 \
+
+\fs20 guidata(hObject,handles)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %imshow(fillPantalla1(hObject,handles),[]);
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 pinta1(hObject,handles)
+\fs24 \
+
+\fs20 set(handles.info,\cf4 'String'\cf0 ,\cf4 'Reconstrucci\'f3 realitzada.'\cf0 );
+\fs24 \
+
+\fs20  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 end
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %set(handles.info,'String','PSF estimada');
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2 % --------------------------------------------------------------------
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 function\cf0  PseudoReconstruccioLocalGlobal_Callback(hObject, eventdata, handles)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 % hObject    handle to PseudoReconstruccioLocalGlobal (see GCBO)
+\fs24 \cf0 \
+
+\fs20 \cf2 % eventdata  reserved - to be defined in a future version of MATLAB
+\fs24 \cf0 \
+
+\fs20 \cf2 % handles    structure with handles and user data (see GUIDATA)
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 set(handles.info,\cf4 'String'\cf0 ,\cf4 'Carregant imatges...'\cf0 );
+\fs24 \
+
+\fs20 [FileName1 Path1]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge degradada.'\cf0 ); 
+\fs24 \
+
+\fs20 [FileName2 Path2]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge correcte.'\cf0 ); 
+\fs24 \
+
+\fs20  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 if\cf0  isequal(FileName1,0)|isequal(FileName2,0)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     \cf3 return\cf0  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 else
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     set(handles.info,\cf4 'String'\cf0 ,\cf4 'Aplicant reconstrucci\'f3 global-local'\cf0 );
+\fs24 \
+
+\fs20     prompt = \{\cf4 'Seleccioni l`umbral de tall del filtre'\cf0 \};
+\fs24 \
+
+\fs20     dlg_title = \cf4 'Reconstrucci\'f3 Global-Local'\cf0 ;
+\fs24 \
+
+\fs20     num_lines = 1;
+\fs24 \
+
+\fs20     def = \{\cf4 '0.1'\cf0 \};
+\fs24 \
+
+\fs20     answer = inputdlg(prompt,dlg_title,num_lines,def);
+\fs24 \
+
+\fs20     c=str2double(answer(1));
+\fs24 \
+
+\fs20     im1=imread(strcat(Path1,FileName1));
+\fs24 \
+
+\fs20     im2=imread(strcat(Path2,FileName2));
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     \cf3 if\cf0  size(im1,3)==3
+\fs24 \
+
+\fs20     im1=rgb2gray(im1);
+\fs24 \
+
+\fs20     im2=rgb2gray(im2);
+\fs24 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     G=fft2(im1);
+\fs24 \
+
+\fs20     F=fft2(im2);
+\fs24 \
+
+\fs20     H=G;
+\fs24 \
+
+\fs20     \cf3 for\cf0  j=1:size(G,1)
+\fs24 \
+
+\fs20         \cf3 for\cf0  i=1:size(G,2)
+\fs24 \
+
+\fs20             \cf3 if\cf0  abs(F(j,i))>c
+\fs24 \
+
+\fs20                 H(j,i)=H(j,i)/F(j,i);
+\fs24 \
+
+\fs20             \cf3 else
+\fs24 \cf0 \
+
+\fs20                 H(j,i)=0;
+\fs24 \
+
+\fs20             \cf3 end\cf0 ;
+\fs24 \
+
+\fs20         \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     h=ifft2(H);
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     \cf2 %axes(handles.pantalla);
+\fs24 \cf0 \
+
+\fs20     \cf2 %imshow(log(abs(H)),[]);
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     handles.PSF=h;
+\fs24 \
+
+\fs20     guidata(hObject,handles)
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     imatge=handles.imatge;
+\fs24 \
+
+\fs20     ZP=zeroPaddingS(h,handles,size(imatge,2),size(imatge,1));
+\fs24 \
+
+\fs20 ZP=fft2(ZP);
+\fs24 \
+
+\fs20 invers=ones(size(imatge,1),size(imatge,2))./ZP;
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20 imatge=fft2(imatge).*invers;
+\fs24 \
+
+\fs20 imatge=abs(ifft2(imatge));
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %imatge=deconvwnr(imatge,PSF,0);
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 handles.imatge=imatge;
+\fs24 \
+
+\fs20 guidata(hObject,handles)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %imshow(fillPantalla1(hObject,handles),[]);
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 pinta1(hObject,handles)
+\fs24 \
+
+\fs20 set(handles.info,\cf4 'String'\cf0 ,\cf4 'Reconstrucci\'f3 realitzada.'\cf0 );
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 end
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 %set(handles.info,'String','PSF estimada');
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2 % --------------------------------------------------------------------
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 function\cf0  ReconstruccioSistemaLineal_Callback(hObject, eventdata, handles)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf2 % hObject    handle to ReconstruccioSistemaLineal (see GCBO)
+\fs24 \cf0 \
+
+\fs20 \cf2 % eventdata  reserved - to be defined in a future version of MATLAB
+\fs24 \cf0 \
+
+\fs20 \cf2 % handles    structure with handles and user data (see GUIDATA)
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0 set(handles.info,\cf4 'String'\cf0 ,\cf4 'Carregant imatges...'\cf0 );
+\fs24 \
+
+\fs20 [FileName1 Path1]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge degradada.'\cf0 ); 
+\fs24 \
+
+\fs20 [FileName2 Path2]=uigetfile(\{\cf4 '*.jpg;*.bmp;*.png;*.jpeg'\cf0 \},\cf4 'Seleccioni el fragment de la imatge correcte.'\cf0 ); 
+\fs24 \
+
+\fs20  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 if\cf0  isequal(FileName1,0)|isequal(FileName2,0)
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     \cf3 return\cf0  
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 else
+\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf0     im1=imread(strcat(Path1,FileName1));\cf2 %dolenta
+\fs24 \cf0 \
+
+\fs20     im2=imread(strcat(Path2,FileName2));\cf2 %bona
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     \cf3 if\cf0  size(im1,3)==3
+\fs24 \
+
+\fs20         im1=rgb2gray(im1);
+\fs24 \
+
+\fs20         im2=rgb2gray(im2);
+\fs24 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     set(handles.info,\cf4 'String'\cf0 ,\cf4 'Creant el sistema lineal'\cf0 );
+\fs24 \
+
+\fs20      
+\fs24 \
+
+\fs20     ny=size(im1,1);
+\fs24 \
+
+\fs20     nx=size(im1,2);
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     inicix=round(nx/3);
+\fs24 \
+
+\fs20     fix=2*round(nx/3);
+\fs24 \
+
+\fs20     iniciy=round(ny/3);
+\fs24 \
+
+\fs20     fiy=2*round(ny/3);
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     llargx=fix-inicix+1;
+\fs24 \
+
+\fs20     llargy=fiy-iniciy+1;
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     M=[];
+\fs24 \
+
+\fs20     B=[];
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     \cf3 for\cf0  i=inicix:fix
+\fs24 \
+
+\fs20         \cf3 for\cf0  j=iniciy:fiy
+\fs24 \
+
+\fs20             aux = im1(j-floor(llargy/2):j+floor(llargy/2),i-floor(llargx/2):i+floor(llargx/2));
+\fs24 \
+
+\fs20             aux = transpose(aux);
+\fs24 \
+
+\fs20             aux = reshape(aux, prod(size(aux)), 1);\cf2 %%la matriu aux, per files->vector columna
+\fs24 \cf0 \
+
+\fs20             aux = transpose(aux);\cf2 %%el vector fila de lo anterior
+\fs24 \cf0 \
+
+\fs20             M=[M;aux];
+\fs24 \
+
+\fs20             B=[B;im2(j,i)];\cf2 %%terme independent imatge bona
+\fs24 \cf0 \
+
+\fs20         \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20     M=double(M);
+\fs24 \
+
+\fs20     B=double(B);
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     set(handles.info,\cf4 'String'\cf0 ,\cf4 'Resolent el sistema lineal'\cf0 );
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20     X=M\\B;
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     X=transpose(X);
+\fs24 \
+
+\fs20     \cf2 %size(X)
+\fs24 \cf0 \
+
+\fs20     h=[];
+\fs24 \
+
+\fs20     aux=[];
+\fs24 \
+
+\fs20     \cf3 for\cf0  i=1:size(X,2)
+\fs24 \
+
+\fs20         aux=[aux,X(i)];
+\fs24 \
+
+\fs20         \cf3 if\cf0  mod(i,llargx+1)==0
+\fs24 \
+
+\fs20             h=[h;aux];
+\fs24 \
+
+\fs20             aux=[];
+\fs24 \
+
+\fs20         \cf3 end
+\fs24 \cf0 \
+
+\fs20     \cf3 end\cf0 ;
+\fs24 \
+
+\fs20        
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     h
+\fs24 \
+
+\fs20     \cf2 %llargx 
+\fs24 \cf0 \
+
+\fs20     \cf2 %llargy
+\fs24 \cf0 \
+
+\fs20     \cf2 %size(h)
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     imatge=double(handles.imatge);
+\fs24 \
+
+\fs20     im0=imatge;
+\fs24 \
+
+\fs20     imatge=filter2(double(h),double(imatge));
+\fs24 \
+
+\fs20    
+\fs24 \
+
+\fs20     handles.h=double(h);
+\fs24 \
+
+\fs20     guidata(hObject,handles) 
+\fs24 \
+
+\fs20     
+\fs24 \
+
+\fs20     handles.imatge=uint8(imatge);
+\fs24 \
+
+\fs20     guidata(hObject,handles)
+\fs24 \
+
+\fs20     pinta1(hObject,handles)
+\fs24 \
+
+\fs20     set(handles.info,\cf4 'String'\cf0 ,\cf4 'Reconstrucci\'f3 realitzada.'\cf0 );
+\fs24 \
+\pard\pardeftab720\ql\qnatural
+
+\fs20 \cf3 end
+\fs24 \cf0 \
+}

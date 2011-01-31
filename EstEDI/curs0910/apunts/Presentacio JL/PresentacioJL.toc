@@ -1,0 +1,2 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Presentaci\'o}{2}{0}{1}

@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{enumerate}
+\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex
+
+\usepackage[latin1]{inputenc}		%%para utilizar tildes en el texto
+%%\usepackage[spanish]{babel}		%%corta las palabras segun el castellano, pero pone comas en los puntos
+							%% decimales
+\usepackage{amsmath}			%% AMS-LaTeX	
+\usepackage{amsfonts}
+\usepackage{amssymb}			%%simbolos del AMS-LaTeX
+
+\setlength{\topmargin}{-2cm}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+
+
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+\newtheorem{ejemplo}[prbcont]{Ejemplo}
+
+
+\pagestyle{empty}
+\begin{document}
+
+\begin{center}
+\textbf{{\large {Aplicacions Estad\'{i}stiques \\
+Enginyeria Edificaci\'o\\
+Control 26/03/2010}\\}}
+\vspace{1cm}
+\end{center}
+
+\noindent
+\textbf{Problema 1}. Una persona treu 5 bolles, amb reposició, d'una urna que conté
+7 bolles blanques i 3 negres.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat de treure 3 blanques?
+\item Quina és la probabilitat de treure 3 blanques i que alguna d'elles surti en la primera o la segona extracció?
+%\item Si ha tret 3 blanques, quina és la probabilidad que alguna d'elles surti en la primera o la segona extracció?
+\end{enumerate}
+
+\vskip 1.5 cm
+\noindent
+\textbf{Problema 2}. En Toni, en Pep i na Maria es reuneixen per resoldre problemes d'estadística.
+Toni resol el $40\%$ del total dels problemes, Pep el $30\%$ i Maria el $30\%$ restant.
+Toni s'equivoca en un $2\%$ dels problemes que resol, Pep en el $6\%$ y Maria en l'$1\%$. 
+Agafam a l'atzar un dels problemes resolts.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat que estigui ben resolt?
+\item Si el problema està mal resolt, quina és la probabilitat
+que l'hagi resolt en Pep?
+\item Quina és la probabilitat que estigui ben resolt i que l'hagi resolt en Toni?
+\end{enumerate}
+
+
+\end{document}
+
