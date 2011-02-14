@@ -1,0 +1,31 @@
+R Add on Coding Window
+
+Media:
+
+mean({#K1:K38})
+{$OUT#O6}<-{$BASE}
+
+
+Varianza muestral:
+
+var({#K1:K38})
+{$OUT#O7}<-{$BASE}
+
+
+Pasar de tabla de frecuencias a lista de valores brutos:
+
+rep({#B2:B10}, {#C2:C10})
+{$OUT#Q1:Q38}<-{$BASE}
+
+
+
+Tests:
+
+rep(1:4, c(1,2,2,1))
+{$OUT#Q1:Q6}<-{$BASE}
+Funciona
+
+1:4
+{$OUT#Q1:Q4}<-{$BASE}
+Funciona
+

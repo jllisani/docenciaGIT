@@ -1,0 +1,105 @@
+\documentclass[12pt]{report}
+%\overfullrule=10pt
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carácters llatins de forma directa.
+\usepackage[spanish]{babel}
+   
+\spanishdecimal{,}
+%\usepackage{multimedia}linkcolor
+\usepackage{latexsym}
+\usepackage[pdftex,%
+            colorlinks=true,
+            linkcolor=cyan,
+            citecolor=cyan,
+            bookmarksnumbered=true,
+           bookmarksopen=true,            
+           pdftitle={Notas de Clase de Estadistica Aplicada},    % title
+           pdfauthor={Ricardo Alberich, Jose Luis Lisani},     % author
+            pdfsubject={UIB. 2007-2008. Graduado en Seguridad y Ciencias Policiales}
+            ]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{theorem}
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[pdftex]{graphicx} 
+\usepackage{amsmath}
+\usepackage{epstopdf}
+%\usepackage{epsdice}
+
+  
+
+\newtheorem{definition}{Definici\'on}
+\newtheorem{theorem}[definition]{Teorema}
+\newtheorem{proposition}[definition]{Proposici\'on}
+\newtheorem{corollary}[definition]{Corolario}
+\newtheorem{lemma}[definition]{Lema}
+\newtheorem{example}[definition]{Ejemplo}
+\newtheorem{Rem}[definition]{Nota:}
+\newcommand{\va}{variable aleatoria }
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!\!\!C}
+%\decimalpoint
+
+
+%\setlength{\textwidth}{17cm} 
+%\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{3cm}
+\setlength{\evensidemargin}{3cm}
+% \addtolength{\headheight}{\baselineskip}
+% \addtolength{\topmargin}{-3cm}
+
+%\pagestyle{plain}
+
+%\usepackage{multimedia}
+
+%\markboth{ESTADÍSTICA APLICADA curso 07-08}{ESTADÍSTICA APLICADA curso 07-08}
+\makeindex
+
+%Cambiar Cuadros por Tablas y lista de...
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla} 
+%%%%Definición de las cabeceras y los pies de página
+\usepackage{fancyhdr}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{Campus Extens}
+\cfoot{}
+\rfoot{ \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+
+
+%%%%%%%%%%%%Para los dibujos de portada y fondo.
+\usepackage{fancybox}
+%\fancyput(2cm,-19cm){\includegraphics[height=24,width=17cm]{fons.pdf}}
+\fancyput(0cm,-24cm){\includegraphics[height=24cm]{fons.pdf}}
+
+%\includeonly{tema0,tema1}
+%\tableofcontents
+%\listoftables
+\begin{document}
+\tableofcontents
+\listoftables
+\thisfancyput(0cm,0cm){\includegraphics{portada.pdf}}
+%\thisfancyput(2cm,-19cm){\includegraphics[width=15cm]{portada.pdf}}
+\part{Módulo II: Interpretación de datos estadísticos bivariantes.\\ Introducción a al probabibilidad y las variables aleatorias}
+\author{Ricardo Alberich, José Luis Lisani}
+
+
+En este módulo se culmina es estudio de la Estadística Descriptiva con el
+estudio de las relaciones entre varias variables estadísticas.
+Al igual que en módulo anterior se explica cómo resolver los problemas con
+la ayuda de aplicaciones informáticas.
+
+En la segunda parte del tema se dan los fundamentos de Probabilidad necesarios
+para el estudio de la Estadística Inferencial.
+
+\include{tema5}
+%\include{tema6}
+
+\end{document}
+
