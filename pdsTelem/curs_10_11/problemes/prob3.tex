@@ -1,0 +1,197 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[catalan]{babel}
+%\usepackage{t1enc}
+\usepackage{amssymb,amsthm,amsmath,xspace,color}
+\usepackage[dvips]{graphicx}
+\let\phi\varphi
+\usepackage[dvips,matrix,curve,arrow,rotate]{xy}
+%\CompileMatrices
+%\SelectTips{cm}{12}
+%\input defs.tex
+%
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+\newcommand\cT{{\cal T}}
+\newcommand\bR{\mathbb{R}}
+\newcommand\ROC{\text{ROC}}
+\newcommand\cZ{{\cal Z}}
+
+\title{Processament Digital del Senyal \\ Problemes Tema 3}
+%\author{Gabriel Cardona Juanals}
+\date{}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{enumerate}
+\item Determineu la transformada $\cZ$ i la ROC dels senyals següents:
+  \begin{enumerate}
+  \item $x[n]=(-2,1,0,3,\underline{0})$.
+  \item $x[n]=(-2,1,0,3,\underline{3})$.
+  \item $x[n]=(-2,1,\underline0,3)$.
+  \item $x[n]=(\underline{3},1,-1)$.
+  \end{enumerate}
+\item Determineu la transformada $\cZ$ i la ROC dels senyals següents:
+  \begin{enumerate}
+  \item $x[n]=u[n]$.
+  \item $x[n]=(1+n)u[n]$.
+  \item $x[n]=(a^n+a^{-n})u[n]$.
+  \item $x[n]=a^nu[n]-a^{-n}u[-n-1]$.
+  \item $x[n]=\cos(\omega n) u[n]$.
+  \item $x[n]=n\cos(\omega n) u[n]$.
+  \item $x[n]=a^n\cos(\omega n)u[n]$.
+  \item $x[n]=na^n\cos(\omega n)u[n]$.
+  \item $x[n]=(n^2+n)a^{n-1}u[n-1]$.
+  \end{enumerate}
+  On $a$ i $\omega$ són paràmetres arbitraris.
+\item Determineu la transformada $\cZ$ i la ROC dels senyals següents:
+  \begin{enumerate}
+  \item $x[n]=\begin{cases}
+      \left(\frac13\right)^n, & \text{si $n\ge 0$} \\
+      \left(\frac12\right)^{-n}, & \text{si $n<0$}
+    \end{cases} $.
+  \item $x[n]=\left(\frac13\right)^nu[n]+\left(\frac12\right)^{-n}u[-n-1]$.
+  \end{enumerate}
+\item Tenim uns senyals amb les propietats:
+  \begin{itemize}
+  \item $x_1$ és de durada finita i causal.
+  \item $x_2$ és de durada finita i anticausal.
+  \item $x_3$ és de durada finita i no és ni causal ni anticausal.
+  \item $x_4$ és de durada infinita i causal.
+  \item $x_5$ és de durada infinita i anticausal.
+  \item $x_6$ és de durada infinita i no és ni causal ni anticausal.
+  \end{itemize}
+  Digueu quina d'aquestes ROC correspon a cada cas: (noteu que el
+  quadrat exterior simbolitza l'infinit)
+
+  \begin{figure*}[htbp]
+    \centering
+    \input{prob2.exc1.pstex_t}
+    
+  \end{figure*}
+\item Trobeu la transformada $\cZ$ dels senyals
+  \begin{enumerate}
+  \item $y_1[n]=\sum_{k=-\infty}^n x[k]$.
+  \item $y_2[n]=x[2n]$.
+  \item $y_3[n]=\begin{cases} x[n/2] & \text{si $n$ és parell} \\
+      0 &\text{altrament}
+    \end{cases}$
+  \end{enumerate}
+  en funció de la transformada del senyal $x$.
+\item Calculeu els senyals causals que tenen per transformada $\cZ$
+  els següents:
+  \begin{enumerate}
+  \item $X(z)=\dfrac{1+3z^{-1}}{1+3z^{-1}+2z^{-2}}$.
+  \item $X(z)=\dfrac{1}{1-z^{-1}+\frac12 z^{-2}}$.
+  \item $X(z)=\dfrac{z^{-6}+z^{-7}}{1-z^{-1}}$.
+  \item $X(z)=\dfrac{1+2z^{-2}}{1+z^{-2}}$.
+  \end{enumerate}
+\item D'un senyal tant sols coneixem l'expresió tancada de la
+  transformada $\cZ$:
+  $$X(z)=\frac{5z^{-1}}{(1-2z^{-1})(3-z^{-1})}.$$
+  Digueu quantes possibles ROC diferents pot tenir i, per cadascuna
+  d'aquestes, trobeu el senyal corresponent.
+\item Trobeu el senyal que té per transformada i ROC els següents:
+  \begin{enumerate}
+  \item $X(z)=\log(1-2z)$, $\ROC=(0,1/2)$.
+  \item $X(z)=\log(1-z^{-1})$, $\ROC=(1,\infty)$.
+  \item $X(z)=e^z+e^{1/z}$, $\ROC=(0,\infty)$.
+  \end{enumerate}
+\item Sigui $x[n]$ un senyal amb transformada $X(z)$. Trobeu la
+  transformada dels senyals:
+  \begin{enumerate}
+  \item $x^*[n]$, on $x^*$ és el complexe conjugat de $x$.
+  \item $\Re(x[n])$.
+  \item $\Im(x[n])$.
+  \end{enumerate}
+  Deduiu propietats de simetria per a senyals reals i imaginaris purs.
+\item Un sistema LTI s'excita amb el senyal graó unitat $x[n]=u[n]$;
+  la sortida que s'observa és $y[n]=(\frac12)^{n+1}u[n-1]$.
+  \begin{enumerate}
+  \item Trobeu la transformada de la resposta impulsional del sistema
+    $H(z)$.
+  \item Trobeu la resposta impulsional del sistema.
+  \end{enumerate}
+\item L'entrada a un sistema LTI és
+  $x[n]=u[-n-1]+(\frac12)^nu[n]$. De la sortida tant sols coneixem la
+  expresió tancada per a la transformada,
+  $$Y(z)=\frac{-\frac12 z^{-1}}{(1-z^{-1})(1+z^{-1})},$$
+  mentre que desconeixem la seva ROC.
+  \begin{enumerate}
+  \item Determineu la ROC de $Y(z)$.
+  \item Determineu la resposta impulsional del sistema.
+  \end{enumerate}
+  \newpage{}
+\item Sigui $x[n]$ un senyal causal.
+  \begin{enumerate}
+  \item Calculeu $\lim_{z\to\infty}X(z)$.
+  \item Demostreu que si $X(z)$ ve donat per un quocient de polinomis,
+    $X(z)=P(z)/Q(z)$, aleshores $\deg P\le \deg Q$.
+  \end{enumerate}
+\item Sigui $x[n]$ un senyal causal tal que la seva transformada $\cZ$
+  té com a zeros $z_1=-1$ i  com a pols $p_1=\frac12$, $p_2=-\frac12$,
+  $p_3=p_4^*=\frac12+j\frac12$.
+  Determineu el diagrama de zeros i pols i la ROC dels senyals
+  $x_1[n]=x[n-2]$, $x_2[n]=x[-n-2]$ i $x_3[n]=e^{jn\pi/3}x[n]$.
+\item Disenyeu un sistema LTI causal tal que quan s'excita amb el
+  senyal
+  $$x[n]=\left(\frac12\right)^n
+  u[n]-\frac14\left(\frac12\right)^{n-1}u[n-1]$$
+  la sortida és
+  $$y[n]=\left(\frac13\right)^nu[n].$$
+  Seguiu els pasos:
+  \begin{enumerate}
+  \item Trobeu la transformada de la resposta impulsional necessària.
+  \item Trobeu aquesta resposta impulsional.
+  \item Trobeu una equació en diferències finites que implementi el
+    sistema.
+  \item Trobeu la realització canònica del sistema.
+  \item Discutiu l'estabilitat del sistema.
+  \end{enumerate}
+\item Sigui $\cT$ un sistema causal caracteritzat per l'equació en
+  diferències finites:
+  $$y[n]+a_1y[n-1]+a_2y[n-2]=x[n].$$
+  Feu servir la caracterització d'estabilitat d'un sistema causal en
+  funció dels pols de $H(z)$ per trobar les condicions que han de
+  complir els paràmetres $a_1$ i $a_2$ per tal que el sistema sigui
+  estable.
+\item Un sistema té 3 pols situats a $z=-3$, $-0.5$ i $2$ i un zero
+  situat a $z=1$. 
+  \begin{enumerate}
+  \item Suposant que el sistema és estable, trobeu-ne la ROC.
+  \item Suposant que el sistema és causal, trobeu-ne la ROC.
+  \item És possible que un sistema estable i causal tingui aquesta
+    configuració de zeros i pols?
+  \end{enumerate}
+  \newpage{}
+\item D'un sistema LTI en coneixem el diagrama de zeros i pols:
+  \begin{figure*}[htbp]
+    \centering
+    \input{prob2.exc3.pstex_t}
+  \end{figure*}
+  on $r=1.5$ i $\theta=\pi/6$.
+  \begin{enumerate}
+  \item Trobeu la funció de transferència sabent que $H(1)=1$.
+  \item Trobeu la resposta impulsional.
+  \item Discutiu l'estabilitat del sistema.
+  \end{enumerate}
+\item Demostreu que si $x[n]$ és un senyal causal, aleshores
+  $$\lim_{z\to\infty}X(z)=x[0].$$
+  Doneu un resultat d'aquest estil per a senyals anticausals.
+\end{enumerate}
+
+%\bibliography{genere2}
+%\bibliographystyle{alpha}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
