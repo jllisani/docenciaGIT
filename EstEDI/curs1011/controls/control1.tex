@@ -1,0 +1,196 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\noindent
+{\large \bf Escola Politècnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificació}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estadístiques}
+
+\hrule
+
+\vskip 0.3cm
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pràctica & Examen & Altres \\
+\hline
+Puntuable & & & X & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències específiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les tècniques i mètodes probabilístics i d'anàlisi estadística & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències genèriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resolució de problemes (CI-1) & X \\ \hline
+Capacitat d'anàlisi i síntesi (CI-4) & X \\ \hline
+Coneixement d'informàtica relatiu a l'àmbit d'estudis (CI-2) & \\ \hline
+Aptitud per a la gestió de l'informació (CI-5) & \\ \hline
+Compromís ètic (CP-1) & X \\ \hline
+Raonament crític (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) & \\ \hline
+Aprenentatge autònom (CP-9) & \\ \hline
+\end{tabular}
+
+
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data: 11/03/2011}
+
+\hrule
+
+\vspace{0.3 cm}
+
+\begin{problema}
+\noindent
+Considerau les següents dades corresponents a les temperatures mínimes a 
+Palma de Mallorca durant 20 dies consecutius de l'any 2009 (font www.diariodemallorca.es):
+
+\begin{center}
+3 \quad 1 \quad 6 \quad 4 \quad 8 \quad 1 \quad 1 \quad 7 \quad 11 
+\quad 11 \quad 11 \quad 12 \quad 6 \quad 11 \quad 11 \quad 11 \quad 11 \quad 7 \quad 7 \quad 11
+\end{center}
+
+
+\begin{enumerate}[a)]
+\item Representau les temperatures en un diagrama de capsa, indicant 
+tots els valors numèrics rellevants i quins són, si n'hi ha, els valors atípics i extrems.
+\item Agrupau les temperatures màximes en els intervals següents: \textit{menys de 3}, $[3, 5)$, 
+$[5, 7)$, $[7, 9)$, \textit{igual o superior a 9}
+i calculau:
+\begin{enumerate}[1)]
+\item Taula de freqüències (absolutes, relatives, acumulades i percentatges).
+\item Moda, mitjana, mediana i percentil $60\%$. 
+\item Dibuixau l'histograma de freqüències absolutes.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{problema}
+
+\vspace{0.3cm}
+
+\begin{problema}
+La següent taula mostra les dades de consum de ciment (en desenes de milers de tones) i de nombre d'aturats (en desenes de milers de persones) a les Illes Balears
+entre els mesos de gener i desembre de l'any 2008.
+
+\vskip 0.3 cm
+\begin{center}
+\begin{tabular}{|c|cccccccccccc|}
+\hline
+Ciment & 8,8 & 9,5 & 7,7 & 9,7 & 7,7 & 7,6 & 6,2 & 4,2 & 5,1 & 6,0 & 5,1 & 3,7 \\
+\hline
+Aturats & 5,0 & 4,8 & 4,5 & 4,1 & 3,6 & 3,7 & 4,0 & 4,3 & 4,7 & 5,7 & 7,0 & 7,3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vskip 0.3 cm
+\noindent
+Es demana calcular, \textbf{amb dues xifres decimals de precissió en els càlculs}:
+
+\begin{enumerate}[a)]
+\item Mitjana i desviació típica de la variable ``nombre d'aturats''.
+\item Mitjana i desviació típica de la variable ``consum de ciment''.
+\item Diagrama de dispersió.
+\item Covariància i coeficient de correlació entre les variables ``nombre d'aturats'' i ``consum de ciment'',
+donant una interpretació del valor trobat.
+\end{enumerate}
+
+\end{problema}
+
+
+\vskip 1cm
+
+\newpage
+
+
+
+\vskip 5cm
+\textbf{Formulari Estadística Descriptiva}
+\vskip 0.2 cm
+
+\begin{itemize}
+\item Percentil $p$ de dades agrupades en intervals:
+\[
+P_p=L_p + (L_{p+1}-L_p) \frac{N \cdot p - N_{p-1}}{n_p}
+\]
+
+\item Coeficient de simetria: $g_1=\frac{m_3}{s^3}$, $s$: desviació típica
+\begin{itemize}
+\item Dades brutes
+\[
+m_3=\frac{(x_1-\bar{x})^3+(x_2-\bar{x})^3+\cdots+(x_N-\bar{x})^3}{N}
+\]
+\item Dades en taula de freqüències
+\[
+m_3=\frac{(x_1-\bar{x})^3 n_1+(x_2-\bar{x})^3 n_2+\cdots+(x_k-\bar{x})^3 n_k}{N}
+\]
+\end{itemize}
+
+\item Coeficient d'apuntament: $g_2=\frac{m_4}{s^4} - 3$, $s$: desviació típica
+\begin{itemize}
+\item Dades brutes
+\[
+m_4=\frac{(x_1-\bar{x})^4+(x_2-\bar{x})^4+\cdots+(x_N-\bar{x})^4}{N}
+\]
+\item Dades en taula de freqüències
+\[
+m_4=\frac{(x_1-\bar{x})^4 n_1+(x_2-\bar{x})^4 n_2+\cdots+(x_k-\bar{x})^4 n_k}{N}
+\]
+\end{itemize}
+
+\item Recta de regressió: $\hat{Y}=aX+b$
+\[
+a=\frac{\mathrm{Cov(X, Y)}}{\mathrm{Var(X)}} \qquad b=\bar{y}-a \bar{x}
+\]
+
+\end{itemize}
+
+
+
+\end{document}
+
