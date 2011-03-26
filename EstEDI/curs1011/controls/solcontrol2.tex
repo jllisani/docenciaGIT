@@ -1,0 +1,227 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+
+\noindent
+\textbf{Solució Control 2 Aplicacions Estadístiques. Data: 25/03/2011}
+
+\hrule
+
+\vspace{0.3 cm}
+
+\begin{problema}
+\noindent
+Una persona treu 5 bolles, amb reposició, d'una urna que conté
+7 bolles blanques i 3 negres.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat de treure 3 blanques?
+\item Quina és la probabilitat de treure 3 blanques i que alguna d'elles surti en la primera o la segona extracció?
+%\item Si ha tret 3 blanques, quina és la probabilidad que alguna d'elles surti en la primera o la segona extracció?
+\end{enumerate}
+\end{problema}
+
+
+\vskip 0.5 cm
+\noindent
+\textbf{Solució}
+
+\noindent
+Hi ha dues maneres de resoldre el problema, en ambdós casos 
+definim els següents successos:
+
+\noindent
+B=``treure bolla blanca'' 
+\newline
+N=``treure bolla negra''
+\newline
+A=``treure 3 blanques''
+\newline
+C=``treure bolla blanca en primera o segona extracció''
+
+\vskip 0.5 cm
+\noindent
+\textbf{Mètode 1}
+
+\noindent
+Com les extraccions són amb reposició, en cada extracció tenim que: 
+$P(B)=CF/CP=7/10$ i $P(N)=CF/CP=3/10$.
+
+\noindent
+a)
+
+\begin{eqnarray*}
+P(A) & = & P( BBBNN \cup BBNBN \cup BNBBN \cup NBBBN \cup BBNNB \cup \\ 
+     &   &   BNBNB \cup NBBNB \cup BNNBB \cup NBNBB \cup NNBBB) = \\
+     & = & (\text{disjunts})= \\
+     & = & P( BBBNN ) + P( BBNBN ) + P( BNBBN ) + P(NBBBN) + P( BBNNB ) + \\ 
+     &   & + P( BNBNB ) + P( NBBNB ) + P(BNNBB) + P( NBNBB ) + P(NNBBB) = \\
+     & = & (\text{en cada sumand, successos independents}) = \\
+     & = & P(B)P(B)P(B)P(N)P(N) + P(B)P(B)P(N)P(B)P(N) + \cdots + P(N)P(N)P(B)P(B)P(B) =\\
+     & = & 10 \cdot (7/10)^3 \cdot (3/10)^2 = 0.3087
+\end{eqnarray*}
+
+\noindent
+b)
+
+\begin{eqnarray*}
+P(A) & = & P( BBBNN \cup BBNBN \cup BNBBN \cup NBBBN \cup BBNNB \cup \\ 
+     &   &   BNBNB \cup NBBNB \cup BNNBB \cup NBNBB) = \\
+     & = & (\text{disjunts})= \\
+     & = & P( BBBNN ) + P( BBNBN ) + P( BNBBN ) + P(NBBBN) + P( BBNNB ) + \\ 
+     &   & + P( BNBNB ) + P( NBBNB ) + P(BNNBB) + P( NBNBB ) = \\
+     & = & (\text{en cada sumand, successos independents}) = \\
+     & = & P(B)P(B)P(B)P(N)P(N) + P(B)P(B)P(N)P(B)P(N) + \cdots + P(N)P(B)P(N)P(B)P(B) =\\
+     & = & 9 \cdot (7/10)^3 \cdot (3/10)^2 = 0.27783
+\end{eqnarray*}
+
+\vskip 0.5 cm
+\noindent
+\textbf{Mètode 2}
+
+\vskip 0.3cm
+\noindent
+CP=$VR_{10}^5 = 10^5$
+
+\noindent
+a)
+
+\noindent
+\begin{eqnarray*}
+CF_A & = & \{\text{maneres de col.locar les 3 blanques}\} \cdot \\
+     &   & \{\text{maneres de col.locar les 2 negres}\} \cdot \\
+     &   & \{\text{maneres de col.locar les negres entre les blanques}\} =\\
+     & = & VR_7^3 \cdot VR_3^2 \cdot PR_5^{32} = 7^3 \cdot 3^2 \cdot 10
+\end{eqnarray*}
+
+\noindent
+$P(A)=\frac{CF_A}{CP}=\frac{7^3 \cdot 3^2 \cdot 10}{10^5}=0.3087$
+
+\vskip 0.3 cm
+\noindent
+b)
+
+\noindent
+Definim
+
+\noindent
+D=``no treure blanca ni en primera ni en segona extraccions''=``treure NNBBB''
+
+\noindent
+$CF_{A \cap C}=CF_A - CF_D = 7^3 \cdot 3^2 \cdot 10 - 7^3 \cdot 3^2 = 7^3 \cdot 3^2 \cdot 9 $
+
+\noindent
+$P(A\cap C)=\frac{CF_{A\cap C}}{CP}=\frac{7^3 \cdot 3^2 \cdot 9}{10^5}=0.27783$
+
+\newpage
+\begin{problema}
+\noindent
+En Toni, en Pep i na Maria es reuneixen per resoldre problemes d'estadística.
+Toni resol el $40\%$ del total dels problemes, Pep el $30\%$ i Maria el $30\%$ restant.
+Toni s'equivoca en un $2\%$ dels problemes que resol, Pep en el $6\%$ y Maria en l'$1\%$. 
+Agafam a l'atzar un dels problemes resolts.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat que estigui ben resolt?
+\item Si el problema està mal resolt, quina és la probabilitat
+que l'hagi resolt en Pep?
+\item Quina és la probabilitat que estigui ben resolt i que l'hagi resolt en Toni?
+\end{enumerate}
+\end{problema}
+
+
+\vskip 0.5 cm
+\noindent
+\textbf{Solució}
+
+\noindent
+Definim els següents successos:
+
+\noindent
+A=``problema fet per en Toni'' 
+\newline
+B=``problema fet per en Pep''
+\newline
+C=``problema fet per na Maria''
+\newline
+D=``problema mal resolt''
+
+\vskip 0.3 cm
+\noindent
+De l'enunciat tenim:
+
+\begin{eqnarray*}
+P(A) & = & 0.4 \\
+P(B) & = & 0.3 \\
+P(C) & = & 0.3 \\
+P(D|A) & = & 0.02 \\
+P(D|B) & = & 0.06 \\
+P(D|M) & = & 0.01 
+\end{eqnarray*}
+
+\vskip 0.3 cm
+\noindent
+a)
+
+\noindent
+L'enunciat ens demana calcular $P(\bar{D})=1-P(D)$.
+
+\noindent
+Els successos $A$, $B$ i $C$ formen un \textbf{sistema complet de successos}, ja que:
+\begin{enumerate}[i)]
+\item $P(A)+P(B)+P(C)=1$ (això equival a dir que $A \cup B \cup C=\Omega$)
+\item $A \cap B = \emptyset $, $A \cap C = \emptyset $, $B \cap C = \emptyset $ (disjunts 2 a dos)
+\end{enumerate}
+
+\noindent
+De manera que podem utilitzar la fòrmula de la probabilitat total:
+\[
+P(D)=P(D|A) \cdot P(A) + P(D|B) \cdot P(B) + P(D|C) \cdot P(C) = 
+0.02 \cdot 0.4 + 0.06 \cdot 0.3 + 0.01 \cdot 0.3 = 0.029
+\]
+
+\noindent
+Finalment: 
+
+\noindent
+$P(\bar{D})=1-0.029=0.971$
+
+\vskip 0.3 cm
+\noindent
+b)
+
+\noindent
+Ens demanen:
+
+\noindent
+$P(\bar{D} \cap A)=P(\bar{D} | A) \cdot P(A)$
+
+\noindent
+De l'enunciat sabem que $P(D | A)=0.02$, per tant $P(\bar{D} | A)=0.98$.
+
+\noindent
+Finalment:
+
+\noindent
+$P(\bar{D} \cap A)=0.98 \cdot 0.4 =0.392$
+
+\end{document}
+
