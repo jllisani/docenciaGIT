@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+
+\noindent
+\textbf{Solució Control 3 Aplicacions Estadístiques. Data: 20/04/2011}
+
+\hrule
+
+\vspace{0.3 cm}
+
+\begin{problema}
+En una universitat s'ha observat que el 60\% dels estudiants que es
+matriculen ho fan en una carrera de Ci\`encies, mentre que l'altre 40\%
+ho fan en carreres d'Humanitats. Si un determinat dia es realitzen
+20 matr\'{\i}cules, calcular la probabilitat que:
+\begin{itemize}
+\item [a)] hi hagi igual nombre de matr\'{\i}cules en Ci\`encies i en Humanitats;
+\item [b)] el nombre de matr\'{\i}cules en Ci\`encies sigui menor que en Humanitats;
+\item [c)] hi hagi almenys 8 matr\'{\i}cules en Ci\`encies;
+\item [d)] no hi hagi m\'es de 12 matr\'{\i}cules en Ci\`encies.
+\item [e)] Si les cinc primeres matr\'{\i}cules s\'on d'Humanitats, calcular la
+probabilitat que en total hi hagi igual nombre de matr\'{\i}cules en Ci\`encies i en Humanitats.
+\end{itemize}
+\end{problema}
+
+\vskip 0.5 cm
+\noindent
+\textbf{Solució}
+
+\noindent
+Podem definir dues variables aleatòries que ens ajudaran a resoldre el problema:
+
+\noindent
+$X$: nombre de matrícules en Ciències (del total de 20 matrícules)
+
+\noindent
+$Y$: nombre de matrícules en Humanitats (del total de 20 matrícules)
+
+\vskip 0.3 cm
+\noindent
+A partir de les dades de l'enunciat deduïm que:
+
+\noindent
+$X \sim B(20, 0.6)$
+
+\noindent
+$Y \sim B(20, 0.4)$
+
+\vskip 0.3 cm
+\noindent
+Es tracta per tant de dues variables de tipus \textbf{binomial}. Com que volem
+resoldre el problema amb l'ajuda de les taules i en aquestes només estan tabulats
+els valors per a $n=20$ i $p=0.4$, plantejarem les preguntes del problema en termes
+de la variable $Y$.
+
+\vskip 0.3cm
+\noindent
+a) $P(X=10)=P(Y=10)=P(Y \leq 10)-P(Y\leq 9)=\text{(taules)}=0.8725-0.7553=0.1172$
+
+\vskip 0.3cm
+\noindent
+b) $P(X<10)=P(Y>10)=1-P(Y \leq 10)=\text{(taules)}=1-0.8725=0.1275$
+
+\vskip 0.3cm
+\noindent
+c) $P(X\geq 8)=P(Y\leq 12)=\text{(taules)}=0.9790$
+
+\vskip 0.3cm
+\noindent
+d) $P(X \leq 12)=P(Y \geq 8)=1-P(Y<8)=1-P(Y\leq 7)=\text{(taules)}=1-0.4159=0.5841$
+
+\vskip 0.3cm
+\noindent
+e) Sabem que ja hi ha 5 matriculats d'Humanitats (del total de 20 persones matriculades).
+Perquè hi hagi el mateix nombre total de matriculats de Ciències i d'Humanitats (és a dir, 10 
+de cada tipus), el nombre de matriculats d'Humanitats entre les 15 persones que queden 
+per matricular-se ha d'ésser igual a 5. 
+
+\vskip 0.3 cm
+\noindent
+Definim una nova variable:
+
+\noindent
+$Y'$: nombre de matrícules en Humanitats (del total de 15 matrícules que queden per fer-se)
+
+\vskip 0.3 cm
+\noindent
+Tenim que $Y' \sim B(15, 0.4)$. 
+
+\vskip 0.3 cm
+\noindent
+Per tant:
+
+\noindent
+$P(Y'=5)=P(Y' \leq 5) - P(Y' \leq 4)=\text{(taules)}=0.4032-0.2173=0.1859$
+
+
+\newpage
+\begin{problema}
+L'empresa \textsc{EMPIPATSA} vol comenar a produir bosses de pipes de pes nominal 100g. La normativa vigent exigeix que el pes del producte envasat no
+pot ser inferior al 95\% del pes nominal. L'empresa considera que el pes del producte
+envasat seguir\`a una llei normal de par\`ametres 98g i desviaci\'o t\'{\i}pica 1g. Es demana:
+\begin{itemize}
+\item [a)] Demostreu que la probabilitat que una bossa no compleixi la normativa \'es
+igual a $0.0013.$
+\item [b)] Calculeu la probabilitat que el pes d'una bossa que compleixi la normativa sigui m\'es petit que el pes nominal. 
+\item [c)] Calculeu la probabilitat que una caixa de 20 bosses contingui exactament
+3 bosses que no compleixen la normativa.
+\end{itemize}
+\end{problema}
+
+
+\vskip 0.5 cm
+\noindent
+\textbf{Solució}
+
+\noindent
+Definim la variable aleatòria següent:
+
+\noindent
+$X$: pes (en grams) d'una bossa de pipes
+
+\vskip 0.3 cm
+\noindent
+A partir de les dades de l'enunciat tenim que $X \sim N(98, 1^2)$.
+
+\vskip 0.3 cm
+\noindent
+a) $P(X < 95)=\text{(és v.a. contínua)}=P(X \leq 95)=F_X(95)=F_Z(\frac{95-98}{1})=F_Z(-3)=1-F_Z(3)=\text{(taules)}=1-0.9987=0.0013$
+
+\vskip 0.3 cm
+\noindent
+b) $P(X < 100 |_{X \geq 95})=\frac{P(95 \leq X < 100)}{P(X \geq 95)}$
+
+\vskip 0.3 cm
+\noindent
+$P(95 \leq X < 100)=\text{(és v.a. contínua)}=F_X(100)-F_X(95)=F_Z(\frac{100-98}{1})-F_Z(\frac{95-98}{1})=F_Z(2)-F_Z(-3)=
+\text{(taules i apartat a)}=0.9772-0.0013=0.9759$
+
+\vskip 0.3 cm
+\noindent
+$P(X \geq 95)=1-P(X < 95)=\text{(apartat a)}=1-0.0013=0.9987$
+
+\vskip 0.3 cm
+\noindent
+Per tant: $P(X < 100 |_{X \geq 95})=\frac{0.9759}{0.9987}=0.9771$
+
+\vskip 0.3 cm
+\noindent
+c) Definim una nova variable:
+
+\noindent
+$Y$: nombre de bosses que no cumpleixen la normativa (en una capsa de 20 bosses)
+
+\vskip 0.3 cm
+\noindent
+A partir de les dades de l'enunciat i de l'apartat a) deduïm: $Y \sim B(20, 0.0013)$
+
+\vskip 0.3 cm
+\noindent
+$P(Y=3)=\binom{20}{3} \cdot 0.0013^3 \cdot (1-0.0013)^17 = 2.45 \cdot 10^{-6}$
+
+
+\end{document}
+
