@@ -1,0 +1,112 @@
+[y,Fs,bits]=wavread("D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3.wav");
+
+Nt=length(y)
+
+Fs
+
+playsnd(y, Fs);
+
+scf(0), plot2d3(y);
+
+y2=y(1:30000);
+
+playsnd(y2, Fs);
+
+scf(1), plot2d3(y2);
+
+wavwrite(y2, Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short.wav");
+
+N=length(y2);
+
+
+[x,Fsx,bits]=wavread("D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\imperial.wav");
+
+Fsx
+
+scf(2), plot2d3(x);
+
+x2=x(6500+1:6500+N);
+
+xy=0.5*x2+y2;
+
+playsnd(xy, Fs);
+
+wavwrite(xy, Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_imperial.wav");
+
+
+playsnd(y2, 2*Fs);
+
+playsnd(y2, Fs/2);
+
+wavwrite(y2, 2*Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_fast.wav");
+
+wavwrite(y2, Fs/2, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_slow.wav");
+
+
+y2FFT=fft(y2);
+scf(3), plot2d3(abs(y2FFT)); 
+
+y3FFT=y2FFT;
+k1=5000;
+k2=10000;
+Fs*(k1-1)/N
+Fs*(k2-1)/N
+y3FFT(k1:k2)=0;
+y3FFT((N+2-k2):(N+2-k1))=0;
+scf(4), plot2d3(abs(y3FFT)); 
+
+y3=real(ifft(y3FFT));
+scf(5), plot2d3(y3);
+playsnd(y3, Fs);
+wavwrite(y3, Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_bandaElim.wav");
+
+y4FFT=y2FFT;
+k1=5000;
+k2=10000;
+Fs*(k1-1)/N
+Fs*(k2-1)/N
+y4FFT(k1:k2)=2*y4FFT(k1:k2);
+y4FFT((N+2-k2):(N+2-k1))=2*y4FFT((N+2-k2):(N+2-k1));
+scf(6), plot2d3(abs(y4FFT)); 
+y4=real(ifft(y4FFT));
+scf(7), plot2d3(y4);
+playsnd(y4, Fs);
+wavwrite(y4, Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_bandaAmpl.wav");
+
+y5FFT=y2FFT;
+k1=4000;
+k2=5000;
+Fs*(k1-1)/N
+Fs*(k2-1)/N
+y5FFT(k1:k2)=100;
+y5FFT((N+2-k2):(N+2-k1))=100;
+scf(8), plot2d3(abs(y5FFT)); 
+y5=real(ifft(y5FFT));
+scf(9), plot2d3(y5);
+playsnd(y5, Fs);
+wavwrite(y5, Fs, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_bandaAdd.wav");
+
+y6=y2(1:2:N);
+scf(10), plot2d3(y6); 
+playsnd(y6, Fs/2);
+y6FFT=fft(y6);
+scf(11), plot2d3(abs(y6FFT)); 
+wavwrite(y6, Fs/2, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_delmat2.wav");
+
+y7FFT=y2FFT;
+k1=1+N/4;
+k2=1+N/2;
+Fs*(k1-1)/N
+Fs*(k2-1)/N
+y7FFT(k1:k2)=0;
+y7FFT((N+2-k2):(N+2-k1))=0;
+scf(12), plot2d3(abs(y7FFT)); 
+y7=real(ifft(y7FFT));
+y8=y7(1:2:N);
+playsnd(y8, Fs/2);
+y8FFT=fft(y8);
+scf(13), plot2d3(abs(y8FFT)); 
+wavwrite(y8, Fs/2, "D:\Portatil\Docencia\pdsTelem\curs_09_10\practicaScilab\jedi3_short_delmat2F.wav");
+
+
+

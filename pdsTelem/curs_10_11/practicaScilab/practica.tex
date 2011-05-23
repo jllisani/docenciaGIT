@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{empty}
+\begin{document}
+
+\textbf{\Large Pràctica PDS amb Scilab}
+
+\vskip 0.3 cm
+L'objectiu de la pràctica es utilitzar Scilab per a fer un processament bàsic d'un senyal
+de veu, seguint l'esquema del document ``Exemples bàsics de Processament Digital de Senyal amb Scilab''.
+
+
+Per a això cada alumne haurà de fer el següent:
+
+\begin{enumerate}
+\item Instal.lar Scilab (\url{http://www.scilab.org/}).
+\item Triar un senyal de veu o música en format .wav. En podeu trobar per Internet
+(\url{http://www.thefreesite.com/Free_Sounds/Free_WAVs/}
+i \url{http://www.moviewavs.com/}) o els podeu crear amb
+la gravadora de sons de Windows (al menú Todos los programas/Accesorios/Entretenimiento).
+
+És important que cada alumne treballi amb un senyal diferent. Per això es crearà un forum a
+Campus Extens on cada alumne anunciarà a la resta amb quin senyal està treballant.
+Abans de descarregar-vos un senyal de la web consultau el fòrum per comprovar que el
+senyal no l'utilitza un altre company. A continuació anunciau al fòrum quin és el vostre senyal.
+
+\item Si el senyal té més de $50000$ mostres selecionau un bocí de tamany màxim $50000$.
+
+\item Damunt el bocí seleccionat s'han de fer les següents operacions:
+
+
+\begin{enumerate}
+\item Representau el senyal.
+\item Dibuixau el seu espectre.
+\item Digau quin és la seva freqüència de mostreig.
+\item Reproduiu el senyal amb freqüència de mostreig doble de l'original i guardau el resultat.
+\item Reproduiu el senyal amb freqüència de mostreig meitat de l'original i guardau el resultat.
+\item A cada alumne se li ha assignat una freqüència (contínua) $F_1$ amb la qual fer els següents tests.
+Podeu trobar l'assignació a Campus Extens.
+Per a una banda de freqüències (contínues) entre $F_1$ i $F_1+1000$:
+\begin{enumerate}
+\item eliminau la banda de freqüències, reproduïu el nou senyal i guardau el resultat;
+\item amplificau la banda de freqüències (factor 2), reproduïu el nou senyal i guardau el resultat;
+\item assignau un valor constant (de la vostra elecció) a la banda de freqüències, reproduïu el nou senyal i guardau el resultat.
+\end{enumerate}
+\item Submostrejau el senyal original, reproduïu-lo i guardau el resultat. Observau la DFT del senyal
+i comentau si s'ha produït aliasing.
+\item Repetiu l'apartat anterior després d'aplicar un filtre anti-aliasing al senyal original.
+\end{enumerate}
+
+\item Cada alumne haurà d'escriure un breu informe on es mostrin totes les operacions 
+efectuades damunt el senyal. Així mateix haurà de guardar els sons resultants en fitxers .wav.
+L'informe i els fitxers es comprimiran en format .zip i es penjaran de Campus Extens per a
+la seva avaluació. Teniu fins el dia de l'examen de juny (28 de juny) per presentar el treball, el qual
+enguany és voluntari i comptarà com una activitat d'avaluació més.
+
+
+
+\end{enumerate}
+ 
+
+
+
+\end{document}
