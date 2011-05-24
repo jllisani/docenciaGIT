@@ -92,4 +92,67 @@ tots els valors, no només els compresos entre
 primer i tercer quartils
 
 
-Rodríguez Boyeras:
+Rodríguez Boyeras:	100/100
+
+
+Rodríguez Calero:		100/100
+
+
+Rodríguez Fernández:	100/100
+
+
+Rodríguez López:		100/100
+
+
+Rodríguez Muñoz:		100/100
+
+
+Rodríguez Salas:		80/100
+- el diagrama de dispersió és incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular variàncies, covariància i coeficient
+de correlació
+
+
+Sánchez Gutiérrez:	100/100
+
+
+Sánchez Mas:	90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular les variàncies
+
+
+Sanmartín Suau:	90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular les variàncies
+
+
+
+Torres Sánchez:	100/100
+
+
+Torres Van-Gent:	85/100
+- el mínim valor típic és incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular variàncies, covariància i coeficient
+de correlació
+
+
+Vargas Brugmans:	100/100
+
+
+Villalonga Caparrós:	80/100
+- el diagrama de dispersió és incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular variàncies, covariància i coeficient
+de correlació
+
+
+
+
+
+
+
+
+
+
