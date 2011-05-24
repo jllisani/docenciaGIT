@@ -1,0 +1,199 @@
+Alorda Moreno:	100/100
+			
+
+Campo Cela:		40/100
+- càlcul incorrecte de mitjana i quartils
+tant per dades brutes com en intervals
+- falta interval "menys de 50" en gràfiques
+- moda incorrecta en dades brutes
+- falta valor de la moda en dades en intervals
+
+
+Colomar Morín:	100/100
+
+
+Company Contreras:	50/100
+- la variable és quantitativa (nombre d'empreses)
+per tant sí té sentit calcular mediana i quartils
+- càlcul incorrecte de mitjana i quartils
+per dades en intervals
+- falta valor de la moda en dades en intervals
+
+
+Domínguez Muñoz:	90/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- mediana incorrecta en dades en intervals
+
+
+Fernandez Jaume:	100/100
+
+
+Frau Montesinos:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Fullana Canyelles:	100/100
+
+
+Gala del Rio:	80/100
+- no dius quines marques de classe utilitzes
+- quartils incorrectes en dades en intervals
+
+
+García Campanals:	60/100
+- falta valor de la moda en dades en intervals
+- falta interval "menys de 50" en gràfiques
+- falta càlcul de la mitjana en dades en intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+
+
+García Puga:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+González Parra:	90/100
+- la moda sí es pot calcular per les dades brutes
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Jiménez Moreno:	90/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- tercer quartil incorrecte en dades en intervals
+
+
+Juan García:	95/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+
+
+López Seco:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Martínez Calandria:	100/100
+
+
+Martín Martínez:	90/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+
+
+Medina López:	90/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+
+
+Molinet Romero:	65/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- falta interval "menys de 50" en gràfiques
+- càlcul incorrecte de la mitjana en dades en 
+intervals
+- càlcul incorrecte del tercer quartil en dades en 
+intervals
+
+
+Morales Arjona:	95/100
+- càlcul incorrecte de la moda en dades en intervals
+
+
+Pérez Soler:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Pol Serra:		95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Ramis Rodríguez:	80/100
+- quartils i mediana incorrectes en dades en 
+intervals
+
+
+Ribas Serra: 	90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Rodríguez Boyeras:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Rodríguez Calero:		95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Rodríguez Fernández:	90/100
+- càlcul incorrecte de la mitjana en dades brutes
+
+
+Rodríguez López:		80/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+- error en freqüència absoluta de taula
+- càlcul incorrecte de mediana i tercer quartil en 
+dades en intervals
+
+
+Rodríguez Salas:		95/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+
+
+Sánchez Gutiérrez:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Sánchez Mas:	80/100
+- càlcul incorrecte de mediana i quartils en dades
+en intervals
+
+
+Sanmartín Suau:	65/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+- marques de classe incorrectes de primer i darrer 
+intervals
+- no expliques com fas el càlcul de mediana i quartils
+en dades en intervals
+- moda incorrecta en dades en intervals
+
+
+Torres Sánchez:	100/100
+
+
+Torres Van-Gent:	90/100
+- sembla que no utilitzes les fòrmules de la fulla de 
+càlcul per calcular mediana i quartils de dades brutes
+- càlcul incorrecte de la mitjana en dades en intervals 
+(el valor màxim del darrer interval és incorrecte)
+
+
+Vargas Brugmans:	95/100
+- marques de classe incorrectes de primer i darrer 
+intervals
+
+
+Villalonga Caparrós:	40/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mediana i quartils de dades brutes
+- incorrecte l'organització de les dades en intervals
+
