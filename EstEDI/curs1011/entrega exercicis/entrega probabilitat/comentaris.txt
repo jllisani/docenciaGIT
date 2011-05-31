@@ -1,0 +1,149 @@
+Adrover Serra	85/100
+P1	70/100
+- falta dir que els successos són independents	
+P2	100/100
+
+
+Amengual Jiménez	98/100
+P1	95/100
+- petit error de càlcul de maneres de colocar le resultat
+P2	100/100
+
+
+Amengual Riquelme	60/100
+P1	80/100
+- no defineixes els successos
+P2	40/100
+- no defineixes els successos
+- notació incorrecta en l'apartat b)
+- apartat c) incorrecte
+
+
+Balaguer Reig	35/100
+P1	60/100
+- apartat d) i e) incorrectes
+P2	10/100
+- incorrecte
+
+
+Barba Castro	15/100
+P1	0/100
+- plantejament incorrecte
+P2	30/100
+- no calcules el que et demanen
+- apartat b) incorrecte
+
+
+Cabanillas González 75/100
+P1	85/100
+- falta considerar el cas "niña-niño" en el càlcul
+P2	70/100
+- apartat b) incorrecte
+
+
+Cantallops Busquets	45/100
+P1	90/100
+- problema amb la notació
+P2	0/100
+- amb aquesta notació no entenc el que dius
+
+
+Costa Ramis	95/100
+P1	100/100
+P2	90/100
+- petit error de plantejament de l'apartat a)
+
+
+Edo Guasch	40/100
+P1	80/100
+- problema amb la notació
+- apartat e) incorrecte
+P2	0/100
+- incorrecte
+
+
+Garcia Fluxà	20/100
+P1	40/100
+- apartats b) i c) incorrectes
+P2	0/100
+- incorrecte
+
+
+Jiménez López	65/100
+P1	60/100
+- falta apartat b)
+P2	70/100
+- apartat b) incomplet
+
+
+Juan Moreno		100/100
+P1	100/100
+P2	100/100
+
+
+López del Amo	65/100
+P1	60/100
+- falta apartat b)
+P2	70/100
+- apartat b) incomplet
+
+
+López Molinari	15/100
+P1	0/100
+- no associes correctament les probabilitats de 
+l'enunciat als successos
+P2	30/100
+- el resultat ha de dependre de n
+
+
+
+Martínez Bonnin	100/100
+P1	100/100
+P2	100/100
+
+
+Payeras Mestre	100/100
+P1	100/100
+P2	100/100
+
+
+Peralta Salas	100/100
+P1	100/100
+P2	100/100
+
+
+Perelló Borrás	0/100
+P1	0/100
+- incorrecte
+
+
+Quetglas Molinas	100/100
+P1	100/100
+P2	100/100
+
+
+Recio Soler		25/100
+P1	0/100
+- incorrecte
+P2	50/100
+- notació incorrecta en apartats a) i b)
+
+
+Tur Oliver	100/100
+P1	100/100
+P2	100/100
+
+
+Vega López	30/100
+P1	60/100
+- notació incorrecta
+- apartat b) incorrecte
+P2	0/100
+- incorrecte
+
+
+Videckis Martini	0/100
+P1	0/100
+- incorrecte
+P2	0/100
+- incorrecte

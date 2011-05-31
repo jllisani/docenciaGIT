@@ -1,0 +1,172 @@
+Adrover Serra	60/100
+P1	50/100
+- no tens en compte que és una v.a. contínua
+P2	70/100
+- apartat b) incorrecte
+
+
+Amengual Jiménez	100/100
+P1	100/100
+P2	100/100
+
+
+Amengual Riquelme		95/100
+P1 	100/100
+P2	90/100
+- P(X >= 35)=1-P(X<=34) ja que és v.a. discreta (Poisson)
+
+
+Balaguer Reig	100/100
+P1	100/100
+P2	100/100
+
+
+Ballesteros Borrego	70/100
+P1	40/100
+- valor de sigma incorrecto en la aproximación por
+una normal
+- piden P(X=0), no P(X <= 0)
+P2	100/100
+
+
+Barba Castro	80/100
+P1	60/100
+- en l'apartat c) demanen una probabilitat condicionada
+P2	100/100
+
+
+Caña Ferrer	100/100
+P1	100/100
+P2	100/100
+
+
+Cantallops Busquets	75/100
+P1	90/100
+- molt mal de llegir amb la notació que utilitzes
+P2	60/100
+- en apartat b) P(X >= 6)=1-P(X < 6)=1-P(X <= 5)
+- apartat c) no fet
+
+
+Costa Ramis		100/100
+P1	100/100
+P2	100/100
+
+
+Edo Guasch		35/100
+- molt difícil llegir els problemes amb la notació que 
+utilitzes
+P1	70/100
+P2	0/100
+- utilitzes dades diferents a les de l'enunciat
+- incorrecte
+
+
+Frau Reinés		0/100
+- no se veu res en el document
+
+
+Jimeno Moyà		30/100
+P1	30/100
+- és v.a. discreta (binomial), per tant P(X>=3)=1-P(X<=2)
+P2	30/100
+- és v.a. discreta (binomial), per tant P(X>=6)=1-P(X<=5)
+
+
+Juan Moreno		100/100
+P1	100/100
+P2	100/100
+
+
+Llull Cabrer	25/100
+P1	0/100
+- incorrecte
+P2	50/100
+- no dius que és una v.a. binomial
+- notació incorrecta
+
+
+López Molinari	100/100
+P1	100/100
+P2	100/100
+
+
+Martínez Bonnin	85/100
+P1	70/100
+- alguns valors de probabilitat són erronis
+P2	100/100
+
+
+Palou de Comasema		50/100
+P1	0/100
+- és una v.a. continua, per tant P(X<8)=P(X<=8)
+i P(X=10)=0
+P2	100/100
+
+
+Payeras Mestre	100/100
+P1	100/100
+P2	100/100
+
+
+Peralta Salas	95/100
+P1	90/100
+- apartat c) incorrecte
+P2	100/100
+
+
+Perelló Borrás	100/100
+P1	100/100
+- en l'apartat b) utilitzes un valor incorrecte del
+paràmetre
+P2	100/100
+
+
+Picó Autonell	50/100
+P1	100/100
+P2	0/100
+- incorrecte
+
+
+Quetglas Molinas	100/100
+P1	100/100
+P2	100/100
+
+
+Recio Soler		80/100
+P1	60/100
+- en l'apartat c) demanen una probabilitat condicionada
+P2	100/100
+
+
+Ripoll Sastre	100/100
+P1	100/100
+P2	100/100
+
+
+Riutort Piña	100/100
+P1	100/100
+P2	100/100
+
+
+Tur Oliver		100/100
+P1	100/100
+P2	100/100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

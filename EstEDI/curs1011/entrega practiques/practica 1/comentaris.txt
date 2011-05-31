@@ -1,0 +1,268 @@
+Adrover Serra	90/100
+- càlcul de la variància incorrecte per les dades
+en intervals
+
+
+Amengual Jiménez	100/100
+
+
+Amengual Llofriu	80/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+
+
+Amengual Riquelme		85/100
+- mediana incorrecta per a dades en intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Balaguer Reig		60/100
+- no calcules els límits del diagrama de capsa
+- mediana i quartils incorrectes per a dades en
+intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Ballesteros Borrego	90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Barba Castro	70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana, quartils, mediana i moda
+de les dades brutes
+- la mitjana de les dades brutes és incorrecta
+- no dius quins valors són atípics
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+- s'escriu "porcentaje", no "porcentage"
+
+
+Begazo Meza		40/100
+- el format de les columnes de percentatges és 
+incorrecte
+- valors extrems del diagrama de capsa incorrectes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular quartils i mediana de les dades brutes
+- moda, quartils, mediana, mitjana i variància mal 
+calculades per les dades en intervals
+- diagrama de barres incorrecte
+
+
+Caña Ferrer		90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+
+
+Cantallops Busquets	75/100
+- el percentil 90 és incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Capó Priego		70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- no dónes cap explicació de com fas els càlculs
+
+
+Colomar Soriano	100/100
+
+
+Costa Ramis		80/100
+- dius que no hi ha valors atípics però els marques
+al diagrama de capsa
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Delgado Tashiguano	100/100
+
+
+Edo Guasch		90/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+
+
+Frau Reinés		75/100
+- diagrama de barres incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Garcia Fluxa	70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- no dónes cap explicació de com fas els càlculs
+per a les dades brutes
+
+
+Jimeno Moya		70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- no dónes cap explicació de com fas els càlculs
+per a les dades brutes
+
+
+Juan Moreno		85/100
+- no entenc les dades del "plot box"
+- els intervals amb freqüència 0 no han de sortir
+a la taula de freqüències ni als diagrames de 
+barras i de tarta
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Llull Cabrer	95/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana de les dades en intervals
+
+
+López Molinari	0/100
+- tens tot el problema malament perquè
+no entens que la variable del problema és 
+"nombre d'edificis", no "mes/any"
+
+
+Martínez Bonnin	75/100
+- "mitja" és incorrecte
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+- no expliques com calcules la mediana i quartils
+de les dades en intervals
+
+
+Muñoz Benavides	85/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- la variància de les dades en intervals és incorrecta
+
+
+Palou de Comasema		45/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- la moda, mediana i quartils de les dades en intervals
+són incorrectes
+- no dónes cap explicació de com fas els càlculs
+- la taula de freqüències té més de 10 intervals
+
+
+Payeras Mestre		60/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- la mediana i quartils de les dades en intervals
+són incorrectes
+
+
+Peralta Salas	80/100
+- els intervals amb freqüència 0 no han de sortir
+a la taula de freqüències ni als diagrames de 
+barras i de tarta
+- el càlcul de Q3 i P90 per a dades en intervals
+és incorrecte
+
+
+Perelló Borrás		70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- confons el que són els límits del diagrama de capsa
+amb els valors atípics i extrems màxim i mínim.
+
+
+Pérez Berral	70/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana de les dades en intervals
+- mediana i Q1 mal calculats per a dades en intervals
+
+
+Picó Autonell	45/100
+- on són les dades brutes?
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+- els diagrames de barres i de tarta no es visualitzen
+
+
+Puertas Thorborg		70/100
+- la mitjana, mediana i quartils estan mal calculats per
+les dades en intervals
+
+
+Quetglas Molinas		45/100
+- les marques de classe, moda, mediana i quartils 
+estan mal calculats per a les dades en intervals
+- la taula de freqüències té més de 10 intervals
+- els intervals amb freqüència 0 no han de sortir
+a la taula de freqüències ni als diagrames de 
+barras i de tarta
+
+
+Recio Soler		80/100
+- càlcul incorrecte de mediana i quartils per
+a les dades en intervals
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Ripoll Sastre	80/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+
+
+Riutort Piña	100/100
+
+
+Tur Oliver		0/100
+- tens tot el problema malament perquè
+no entens que la variable del problema és 
+"nombre d'edificis", no "número de mes"
+
+
+Valiente Cot	75/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular mitjana i variància de les dades en 
+intervals
+- els intervals amb freqüència 0 no han de sortir
+a la taula de freqüències ni als diagrames de 
+barras i de tarta

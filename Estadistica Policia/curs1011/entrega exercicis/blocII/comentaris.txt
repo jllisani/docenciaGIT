@@ -60,7 +60,7 @@ López Seco:		80/100
 - el diagrama de dispersió és incorrecte
 
 
-Martínez Calandria:	0/100
+Martínez Calandria:	100/100
 - fitxer defectuós, no es pot llegir correctament
 
 

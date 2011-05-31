@@ -152,6 +152,9 @@ intervals
 dades en intervals
 
 
+Rodríguez Muñoz	100/100
+
+
 Rodríguez Salas:		95/100
 - no utilitzes les fòrmules de la fulla de càlcul
 per calcular mediana i quartils de dades brutes

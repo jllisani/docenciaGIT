@@ -1,0 +1,184 @@
+Adrover Serra	90/100
+- no dónes una interpretació del coeficient de correlació
+
+
+Amengual Jiménez	100/100
+
+
+Amengual Llofriu	90/100
+- no dónes una interpretació del coeficient de correlació
+
+
+Amengual Riquelme		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Balaguer Reig		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Ballesteros Borrego	100/100
+
+
+Barba Castro		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Begazo Meza			50/100
+- no calcules covariància ni coeficient de correlació
+
+
+Caña Ferrer		0/100
+- has fet els càlculs amb les dades ordenades,
+la qual cosa és totalment incorrecta
+
+
+Cantallops Busquets	85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Capó Priego		50/100
+- el coeficient de correlació és incorrecte i no dius 
+com el calcules
+
+
+Colomar Soriano	100/100
+
+
+Costa Ramis		70/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Delgado Tashiguano	100/100
+
+
+Edo Guasch		100/100
+
+
+Frau Reinés		50/100
+- la covariància, variància de Y i coeficient de correlació
+estan mal calculats
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+García Fluxa	45/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- el diagrama de dispersió és incorrecte, no se dibuixa
+a partir de les dades ordenades. 
+- no et dones compte que el coeficient que calcules no 
+quadra amb el diagrama dibuixat
+- en el diagrama de dispersió no dibuixes la recta de
+regressió lineal, sino una corba exponencial
+
+
+Jimeno Moyà		90/100
+- no dónes una interpretació del coeficient de correlació
+
+
+Juan Moreno		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Llull Cabrer	60/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància 
+- no calcules el coeficient de correlació
+
+
+López Molinari	0/100
+- no utilitzes les dades brutes
+
+
+Martínez Bonnin	45/100
+- el diagrama de dispersió és incorrecte
+- la interpretació del coeficient de correlació és 
+incorrecta
+
+
+
+Muñoz Benavides	50/100
+- d'on surt aquest valor del coeficient de correlació?
+
+
+Palou de Comasema		60/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- no dónes una interpretació del coeficient de correlació
+
+
+Payeras Mestre	85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Peralta Salas	75/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- no dónes una interpretació del coeficient de correlació
+
+
+Perelló Borrás	0/100
+- has fet els càlculs amb les dades ordenades,
+la qual cosa és totalment incorrecta
+
+
+Pérez Berral	75/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- la interpretació del coeficient de correlació és
+incorrecta
+
+
+Picó Autonell	40/100
+- el diagrama de dispersió està mal dibuixat
+- no expliques com obtens cap dels valors
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- el valor del coeficient de correlació és incorrecte
+- no dónes cap interpretació del valor del coeficient 
+de correlació
+
+
+Puertas Thorborg		60/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+- el valor del coeficient de correlació és incorrecte
+
+
+
+Quetglas Molinas		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+Recio Soler		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
+
+Ripoll Sastre	100/100
+
+
+Riutort Piña	95/100
+- no utilitzes la fórmules de la fulla de càlcul
+per calcular el coeficient de correlació
+
+
+Tur Oliver		100/100
+
+
+Valiente Cot	45/100
+- no dibuixes el diagrama de dispersió
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
