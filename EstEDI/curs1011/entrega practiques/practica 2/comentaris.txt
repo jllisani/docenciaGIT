@@ -78,6 +78,12 @@ quadra amb el diagrama dibuixat
 regressió lineal, sino una corba exponencial
 
 
+Jiménez López	75/100
+- no dónes una interpretació del coeficient de correlació
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
+
 Jimeno Moyà		90/100
 - no dónes una interpretació del coeficient de correlació
 
@@ -180,5 +186,11 @@ Valiente Cot	45/100
 - no dibuixes el diagrama de dispersió
 - no utilitzes les fórmules de la fulla de càlcul
 per calcular la covariància i el coeficient de correlació
+
+
+Vega López		85/100
+- no utilitzes les fórmules de la fulla de càlcul
+per calcular la covariància i el coeficient de correlació
+
 
 

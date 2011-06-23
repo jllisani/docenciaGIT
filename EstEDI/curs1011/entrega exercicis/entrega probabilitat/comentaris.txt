@@ -129,6 +129,12 @@ P2	50/100
 - notació incorrecta en apartats a) i b)
 
 
+Ripoll Sastre	80/100
+P1	60/100
+- apartats d) i e) incorrectes
+P2	100/100
+
+
 Tur Oliver	100/100
 P1	100/100
 P2	100/100

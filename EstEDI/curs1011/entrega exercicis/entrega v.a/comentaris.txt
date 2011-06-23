@@ -62,8 +62,18 @@ P2	0/100
 - incorrecte
 
 
-Frau Reinés		0/100
-- no se veu res en el document
+Frau Reinés		45/100
+P1	60/100
+- falta calcular l'esperança i la variància
+P2	30/100
+- notació insuficient
+- el plantejament inicial sembal correcte però el 
+càlcul no està explicat i el resultat és incorrecte 
+
+
+Jiménez López	100/100
+P1	100/100
+P2	100/100
 
 
 Jimeno Moyà		30/100

@@ -1,0 +1,126 @@
+Primer quatrimestre. Àlgebra Lineal
+
+
+Tema 1: Conjunts, aplicacions i estructures algebraiques.
+
+Conjunts i operacions amb conjunts. Principi d'inducció matemàtica 
+Aplicacions. Operacions. Homomorfismes.
+Estructures algebraiques. Grups, Anells i Cossos. 
+
+Tema 2: Introducció a l'Espai Vectorial. Matrius
+
+Definició d'Espai Vectorial. Combinació lineal de vectors. Dependència i independència lineal. Rang. 
+Definició de Matriu. Elements i tipus de matrius. 
+L'espai vectorial de les matrius n x m. 
+L'anell de les matrius quadrades. 
+Rang d'una matriu 
+
+Tema 3: Determinants.
+
+Permutacions. Grup simètric. Signatura d'una permutació.
+Definició de determinant. Determinants de 2n i 3r ordre. Propietats. 
+Menor complementari i adjunt d'un element. 
+Desenvolupament d'un determinant pels elements d'una filera o columna. 
+Menor d'una matriu. 
+Matriu inversa. 
+
+Tema 4: Sistemes d'equacions lineals.
+
+Concepte. Sistema homogeni. Matriu dels coeficients i matriu ampliada. 
+Teorema de Rouché-Frobenius. 
+Resolució de sistemes d'equacions lineals. Mètode de Gauss. Regla de Cramer. 
+
+Tema 5: Espais vectorials.
+
+Subespais vectorials. Suma i intersecció de subespais vectorials. Suma directa. Subespais suplementaris. 
+Espai vectorial producte. 
+Sistema generador. Base. Dimensió d'un espai vectorial.
+Teorema de Steinitz. Fórmula de Grassmann. 
+Sistema de coordenades. Canvi de coordenades. Matriu del canvi de base. 
+
+Tema 6: Aplicacions lineals.
+
+Definicions bàsiques. Primeres propietats. 
+Nucli i Imatge d'una aplicació lineal. 
+Matriu associada. Rang d'una aplicació lineal. 
+L'espai vectorial de les aplicacions lineals entre espais vectorials (Hom(V,W),+,•). L'isomorfisme entre aquest espai vectorial i el de les matrius associades corresponents. 
+El grup dels automorfismes d'un espai vectorial: (GL(V),•). L'isomorfisme entre aquest grup i el de les matrius associades corresponents. 
+
+Tema 7: Valors i vectors propis d'un endomorfisme.
+
+Definicions bàsiques. 
+Polinomi característic. 
+Diagonalització. 
+
+Tema 8: Espais euclidians.
+
+Aplicacions p-lineals. Producte escalar. Matriu coordenada del producte escalar. 
+Espai vectorial euclidià. 
+Base ortogonal i base ortonormal. Mètode d'ortogonalització de Gram-Schmidt. 
+Subespais ortogonals. Projecció ortogonal. Angle de dos vectors.
+
+
+
+Segon quatrimestre. Introducció a la Probabilitat
+
+Tema 9: Combinatòria.
+
+Variacions ordinàries i amb repetició. 
+Permutacions. Permutació circular. Permutacions amb repetició.
+Combinacions ordinàries i amb repetició.
+Nombres combinatoris. Propietats.
+
+Tema 10: Probabilitat.
+
+Experiments aleatoris. Espai mostral.
+Succés elemental i compost. Unió i intersecció de successos.
+Concepte de probabilitat. Propietats.
+Probabilitat condicionada. Successos independents.
+Teorema de la probabilitat total. Teorema de Bayes.
+
+Tema 11: Variable aleatòria. Variable aleatòria discreta.
+
+Concepte de variable aleatòria.
+Distribució i funció de probabilitat i densitat.
+Funció de distribució.
+Esperança d'una variable aleatòria. Propietats.
+Algunes variables aleatòries discretes:
+de Bernoulli
+Binomial.
+Geomètrica.
+Binomial negativa.
+de Poisson. Aproximació d'una distribució binomial a una de Poisson
+Hipergeomètrica.
+
+Tema 12: Variable aleatòria contínua.
+
+Algunes variables aleatòries contínues: 
+Uniforme.
+Normal o de Gauss. Aproximació d'una distribució binomial o de Poisson a una normal.
+Exponencial. Propietat de la pèrdua de memòria.
+
+Tema 13: Moments d'una variable aleatòria.
+Moments d'ordre superior.
+Esperança d'una variable aleatòria. Propietats.
+Variància. Propietats.
+Transformacions de variables aleatòries discretes i contínues.
+Desigualtats de Markov i Txebixef.
+Funció característica i funció generatriu de moments. 
+Fórmules d'inversió.
+Càlcul de moments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

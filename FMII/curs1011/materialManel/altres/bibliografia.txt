@@ -1,0 +1,20 @@
+Bibliografia bàsica
+
+Àlgebra Lineal:
+D.C. Lay. Álgebra Lineal y sus Aplicaciones. Pearson Education, 2001
+W.K. Nicholson. Linear Algebra with Applications. 3ª edició, International Thomson Publishing, 1990.
+L. Merino i E. Santos. Álgebra Lineal con métodos elementales. Thomson. 2006.
+
+Introducció a la Probabilitat
+D. C. Montgomery, G. C. Runger. Probabilidad y Estadística aplicadas a la Ingeniería. McGraw-Hill, 1996
+A. Leon-Garcia. Probability and Random Processes for Electrical Engineering. 2ª edició, Addison-Wesley, 1994
+
+Bibliografia complementària
+
+Àlgebra Lineal:
+Michel Queysanne. Algebre. Librairie Armand Colin. Paris. 1964
+Ll. Sastre i M. Moyà. Àlgebra Lineal. Problemes resolts. Mètodes Matemàtics per a l'economia I. Documenta Balear. Palma 1998
+
+Introducció a la Probabilitat
+A. Mir, J. Sunyer. Introducció a l?Estadística Descriptiva i a la Teoria de les Probabilitats. Materials Didàctics 34, Universitat de les Illes Balears, 1997
+J.J. Salazar, M. López. Ejercicios resueltos de probabilidad.

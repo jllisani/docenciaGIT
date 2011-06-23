@@ -119,6 +119,13 @@ intervals
 per a les dades brutes
 
 
+Jiménez López	80/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+
+
 Jimeno Moya		70/100
 - no utilitzes les fòrmules de la fulla de càlcul
 per calcular els quartils i mediana de les dades brutes
@@ -266,3 +273,11 @@ intervals
 - els intervals amb freqüència 0 no han de sortir
 a la taula de freqüències ni als diagrames de 
 barras i de tarta
+
+
+Vega López	80/100
+- no utilitzes les fòrmules de la fulla de càlcul
+per calcular els quartils i mediana de les dades brutes
+ni per calcular mitjana i variància de les dades en 
+intervals
+
