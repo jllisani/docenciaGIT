@@ -20,6 +20,8 @@ de l'assignada en l'apartat 4f-iii?
 
 Cañellas Gómez 10/10
 
+Chaves López 10/10
+
 Fernández Rivera 10/10
 
 González Maimó 10/10
@@ -46,9 +48,7 @@ Mut González 7/10
 - les gràfiques dels espectres mostren una banda modificada 
 errònia (falta simetria), si bé les fòrmules semblen correctes
 
-Solera Ripoll 7/10
-- no m'envies els arxius de so
-- s'ha de representar el mòdul de l'espectre dels senyals
+Solera Ripoll 10/10
 - conclusions correctes
 
 Tortosa Jiménez 6/10
