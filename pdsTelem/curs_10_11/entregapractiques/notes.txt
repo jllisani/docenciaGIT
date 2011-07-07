@@ -5,12 +5,7 @@ i submostrejat després de filtratge antialiasing
 Bernal Cardona 6/10
 - la banda de freqüències modificada no és correcta
 
-Boscana Oliver 5/10
-- la banda de freqüències modificada no és correcta
-- l'informe pot ésser més complet i mostrar els espectres 
-dels senyals modificats
-- s'han de mostrar les FFT dels senyals submostrejat
-i submostrejat després de filtratge antialiasing
+Boscana Oliver 10/10
 
 Bosch Servera 10/10
 
@@ -26,11 +21,7 @@ Fernández Rivera 10/10
 
 González Maimó 10/10
 
-Horrach Hinarejos 7/10
-- l'informe pot ésser més complet i mostrar els espectres 
-dels senyals modificats
-- el filtrat antialiasing és incorrecte (hi ha un error, que
-es veu clarament a la gràfica de l'espectre del senyal filtrat)
+Horrach Hinarejos 10/10
 
 Ianni 6/10
 - la banda de freqüències modificada no és correcta
@@ -51,8 +42,7 @@ errònia (falta simetria), si bé les fòrmules semblen correctes
 Solera Ripoll 10/10
 - conclusions correctes
 
-Tortosa Jiménez 6/10
-- la banda de freqüències modificada no és correcta
+Tortosa Jiménez 10/10
 
 Vidal Ginard 10/10
 
