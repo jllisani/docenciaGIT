@@ -1,3 +1,15 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carÃ¯Â¿Å“ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
 \newcommand\Z{\mathbb{Z}}
 \newcommand\R{\mathbb{R}}
 \newcommand\N{\mathbb{N}}
@@ -14,6 +26,23 @@ setembre 2011}
 \end{center}
 
 \vspace{1 cm}
+
+\noindent\textbf{P1.-}
+El sistema de còpies de seguretat d'una empresa fa una còpia diària
+de cada un dels dos discs durs centrals en un moment aleatori entre 
+les 3h i les 5h. Les còpies de cada disc dur es fan de manera independent.
+Per un error en la configuració, si la diferència
+entre els inicis de còpia de cada disc dur és inferior a 2 minuts
+es produeix un error en el sistema.
+\begin{enumerate}[a)]
+\item Definiu les variables aleatòries associades al problema i escriviu les
+seves funcions de probabilitat. \ \hfill{\textbf{ 0.5pt.}}
+\item Escriviu la funció de probabilitat conjunta i dibuixau el seu suport. 
+\ \hfill{\textbf{ 0.5 pt.}}
+\item Quina és la probabilitat que es produeixi un error en el sistema
+un dia qualsevol? \ \hfill{\textbf{ 1.5 pt.}}
+\end{enumerate}
+\vspace{0.75 cm}
 
 
 
@@ -46,10 +75,44 @@ que s'hagin produït 4 errors durant la setmana?.
 \ \hfill{\textbf{ 0.5 pt.}}
 \end{enumerate}
 
+\vspace{0.75 cm}
+
+
+
+\noindent\textbf{P3.-}.
+El motor que permet orientar una antena parab\`olica produeix un error en l'orientaci\'o de
+$\varepsilon$ graus cada vegada que s'acciona, on $\varepsilon \sim N(0, 1)$. Els errors en
+l'orientaci\'o s'acumulen despr\'es de cada actuaci\'o del motor i s\'on independents entre s\'i.
+\begin{enumerate}[a)]
+\item Quina \'es la probabilitat que l'error d'orientaci\'o sigui superior a $5$ graus despr\'es de
+$100$ actuacions del motor?\ \hfill{\textbf{ 1.25 pt.}}
+\item Quan l'error acumulat (en valor absolut) \'es superior a $10$ graus l'antena s'ha de recalibrar.
+Quin \'es el nombre m\`axim d'actuacions del motor que es poden fer si es vol garantir, amb una
+probabilitat del $95\%$, que l'antena no necessita \'esser recalibrada?\ \hfill{\textbf{ 1.25 pt.}}
+\end{enumerate}
 
 
 
 \vspace{0.75 cm}
+
+\noindent\textbf{P4.-} 
+Sigui $X(t)$ un procés aleatori definit com $X(t)=t^2+3U$, on $U$ és una variable
+aleatòria de Poisson amb paràmetre $10$.
+\begin{enumerate}[a)]
+\item 
+Calculau la mitjana i l'autocovariància de $X(t)$. És tracta d'un procés
+estacionari?
+\item Si $Y(t)$ és un procés aleatori Gaussià estacionari i amb mitjana 4,
+calculau la correlació creuada de $X$ i $Y$ suposant que $Y(t)$ i $U$ són 
+independents per a tot $t$.
+\end{enumerate}
+
+
+\ \hfill{\textbf{2.5 pt.}}
+
+
+\vspace{1 cm}
+
 
 \hrule
 
