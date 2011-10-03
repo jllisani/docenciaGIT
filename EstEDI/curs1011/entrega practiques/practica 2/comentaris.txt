@@ -99,8 +99,7 @@ per calcular la covariància
 - no calcules el coeficient de correlació
 
 
-López Molinari	0/100
-- no utilitzes les dades brutes
+López Molinari	100/100
 
 
 Martínez Bonnin	45/100

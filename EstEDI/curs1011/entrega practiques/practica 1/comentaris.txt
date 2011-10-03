@@ -150,10 +150,7 @@ Llull Cabrer	95/100
 per calcular mitjana de les dades en intervals
 
 
-López Molinari	0/100
-- tens tot el problema malament perquè
-no entens que la variable del problema és 
-"nombre d'edificis", no "mes/any"
+López Molinari	100/100
 
 
 Martínez Bonnin	75/100
