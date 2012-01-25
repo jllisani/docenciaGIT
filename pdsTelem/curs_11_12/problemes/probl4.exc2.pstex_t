@@ -1,0 +1,43 @@
+\begin{picture}(0,0)%
+\includegraphics{probl4.exc2.pstex}%
+\end{picture}%
+\setlength{\unitlength}{2960sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(7224,5169)(439,-4768)
+\put(2101,-661){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\frac12$}%
+}}}
+\put(2401,-1561){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}ROC: $|z|<1/2$}%
+}}}
+\put(6601,-1561){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}ROC: $|z|>3/2$}%
+}}}
+\put(2851,-736){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Re(z)$}%
+}}}
+\put(1726,239){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Im(z)$}%
+}}}
+\put(2626,-961){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1$}%
+}}}
+\put(5926,239){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Im(z)$}%
+}}}
+\put(6826,-961){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1$}%
+}}}
+\put(2851,-3436){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Re(z)$}%
+}}}
+\put(1726,-2461){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Im(z)$}%
+}}}
+\put(2626,-3661){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1$}%
+}}}
+\put(7051,-3436){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Re(z)$}%
+}}}
+\put(5926,-2461){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Im(z)$}%
+}}}
+\put(6826,-3661){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1$}%
+}}}
+\put(7576,-736){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Re(z)$}%
+}}}
+\end{picture}

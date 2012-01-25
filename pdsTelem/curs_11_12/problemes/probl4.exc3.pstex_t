@@ -1,0 +1,33 @@
+\begin{picture}(0,0)%
+\includegraphics{probl4.exc3.pstex}%
+\end{picture}%
+\setlength{\unitlength}{2960sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5124,2493)(2839,-1873)
+\put(3901,239){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_1[n]$}%
+}}}
+\put(5401,239){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_2[n]$}%
+}}}
+\put(6901,239){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_3[n]$}%
+}}}
+\put(4426,-511){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_3[n]$}%
+}}}
+\put(5926,-1711){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_2[n]$}%
+}}}
+\put(4426,-1711){\makebox(0,0)[b]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h_1[n]$}%
+}}}
+\put(7426,-961){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$y[n]$}%
+}}}
+\put(3076,-961){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x[n]$}%
+}}}
+\put(2851,389){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x[n]$}%
+}}}
+\put(7651,464){\makebox(0,0)[lb]{\smash{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$y[n]$}%
+}}}
+\end{picture}
