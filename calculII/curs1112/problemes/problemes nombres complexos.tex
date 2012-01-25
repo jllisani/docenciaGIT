@@ -1,0 +1,254 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+%\usepackage[ansinew]{inputenc} %%
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{epsfig}
+\usepackage{color}
+\usepackage{multicol}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{color}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\topmargin}{-1.3cm}
+% \setlength{\evensidemargin}{1cm}
+% \addtolength{\headheight}{\baselineskip}
+% \addtolength{\topmargin}{-3cm}
+
+
+\newcommand{\sC}{{\cal C}}
+\newcommand{\sF}{{\cal F}}
+\newcommand{\sL}{{\cal L}}
+\newcommand{\sU}{{\cal U}}
+\newcommand{\sX}{{\cal X}}
+\newcommand{\eop}{{\Box}}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposicio}
+% \newtheorem{definition}{Definicio}
+% \newtheorem{exercici}{}
+%\newcommand{\ar}{A^{(r)}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\sS}{{\cal S}}
+\newcommand{\Img}{\mbox{Img}}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{C\!\!\!\!I}
+
+%\newtheorem{nota}{Nota}[subsection]
+
+%\def\C{I\!\!C}
+%\def\text#1{\hbox{\rm #1}}
+%\def\inter#1{{\buildrel {\circ}\over {#1}}}
+%\def\defi{\sp2J\hskip1cm {\bf Definici{\'o}n}}
+
+\newcount\problemes
+\problemes=0
+
+\def\probl{\advance\problemes by 1
+\vskip 2ex\noindent{\bf \the\problemes \hbox{ } }}
+
+
+\begin{document}
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE,RO]{Exercicis Tema 1. Els nombres complexos}
+
+
+
+%\pagestyle{empty}
+%
+%\parindent =0 pt
+%{\bf Problemes de C{\`a}lcul II. Primer Telem{\`a}tica
+%\hfill Tema 1. Nombres complexos.}
+
+
+\vspace{0.6 cm}
+
+\probl
+ Si $\> z = 1+2i \> $ i $\> \omega = 3-i, \> $ comprovau les propietats seg\"uents:
+$$
+\begin{array}{lcl}
+\mbox{\bf a)} \;\;\overline{\overline{z\vphantom{+}}} = z & \;\; &
+\mbox{\bf b)} \;\;\overline{z + \omega} =
+\overline{z\vphantom{+}} + \overline{\omega\vphantom{+}} \\
+\\
+\mbox{\bf c)} \;\; \overline{z \cdot \omega\vphantom{+}} =
+\overline{z\vphantom{+}} \cdot \overline{\omega\vphantom{+}} &
+\;\; & \mbox{\bf d)} \;\; z\cdot \overline{z\vphantom{+}} \geq 0
+\end{array}
+$$
+
+
+\vspace{0.4cm}
+\probl
+Si $\> z = 3-4i \> $ i $\> \omega = -6+8i, \> $ comprovau les
+propietats seg{\"u}ents:
+$$
+\begin{array}{lcl}
+\mbox{\bf a)}\;\; \mid \overline{z\vphantom{+}} \mid \> = \> \mid
+z \mid  & \;\; &
+
+\mbox{\bf b)} \;\; \mid z \cdot \omega \mid \> = \> \mid z \mid \>
+\cdot \> \mid \omega \mid \\
+\\
+\mbox{\bf c)}  \;\; \mid \mbox{Re} \> z \mid \> \leq \> \mid z \mid &
+\;\; & \mbox{\bf d)} \;\; \mid \mbox{Im} \> z \mid \> \leq \> \mid z
+\mid
+\\
+\\
+\mbox{\bf e)} \;\; \mid z + \omega \mid \> \leq \> \mid
+z \mid \> + \> \mid \omega\mid
+\end{array}
+$$
+
+
+\vspace{0.4cm}
+\probl
+Calculau el m{\`o}dul i l'argument dels nombres complexos
+seg{\"u}ents:
+$$2\sqrt{3}-2i, \ \ 5i, \ \ -\sqrt{3}-i, \ \ -4+4\sqrt{3}i, \ \ 1+i$$
+
+
+\vspace{0.4cm}
+\probl
+Representau gr{\`a}ficament i expressau en forma exponencial i en
+forma trigonom{\`e}trica els nombres complexos seg{\"u}ents:
+$$\begin{array}{lclcl}
+\mbox{\bf a)} \;\; z = i & \;\; & \mbox{\bf b)} \;\; z = -2-2i &
+\;\; &
+\mbox{\bf c)} \;\; z = 2\\
+\\
+\mbox{\bf d)} \;\; z =1+i & \;\; & \mbox{\bf e)} \;\; z=1-i &  \;\; &
+\mbox{\bf f)} \;\; z = -1+i\\
+\end{array}$$
+
+
+\vspace{0.4cm}
+\probl
+Representau gr{\`a}ficament i expressau en forma bin{\`o}mica els nombres
+complexos seg{\"u}ents expressats en forma exponencial:
+$$\begin{array}{lclcl}
+\mbox{\bf a)} \;\; z = 3 \; e^{i\frac{\pi}{4}} & \;\; & \mbox{\bf
+b)} \;\; z = 2 \; e^{i\frac{\pi}{3}} & \;\; &
+\mbox{\bf c)} \;\; z = 6 \; e^{i\frac{5\pi}{3}}\\
+\\
+\mbox{\bf d)} \;\; z = e^{i\frac{\pi}{6}} & \;\; & \mbox{\bf e)}
+\;\; z = 8 \; e^{i\frac{\pi}{2}} & \;\; &
+\mbox{\bf f)} \;\; z = 4 \; e^{i \pi}\\
+\end{array}$$
+
+
+\vspace{0.4cm}
+\probl
+Resoleu les equacions  seg{\"u}ents en $\; \C$ i descomponeu en
+factors:
+$$\begin{array}{lcl}
+\mbox{\bf a)} \;\; 4x^2+48x+169 =0 & \;\; & \mbox{\bf b)} \;\;
+4x^2-12x+25 = 0 \\
+\\
+\mbox{\bf c)} \;\; x^2+49=0 & \;\; & \mbox{\bf d)} \;\; x^2+16=0
+\\
+\\
+\mbox{\bf e)} \;\; x^2+2x-5=0 & \;\; &
+\mbox{\bf f)} \;\; 3x^2-x-10=0\\
+\end{array}$$
+
+
+\vspace{0.4cm}
+\probl
+Si $\> z = 3+2i \> $ i $\> \omega = 5-i, \> $ comprovau les
+propietats seg{\"u}ents:
+
+$$\begin{array}{lcl} \mbox{\bf a)} \;\;\displaystyle e^{z + \omega}
+= e^{z} \cdot e^{\omega} &\;\;& \mbox{\bf b)} \;\; \displaystyle
+e^{-z} = {1 \over e^z} \\
+\\
+\mbox{\bf c)} \;\;\displaystyle \overline{e^z} = e^{\overline{z}}
+&\;\; & \mbox{\bf d)}  \;\;\displaystyle e^z = e^{z+2 \pi i}\\
+
+\end{array}
+$$
+
+
+%\newpage
+
+\vspace{0.4cm}
+\probl
+Provau que si $\> z_1 = 2-2i, z_2 = 4+5i, \> $ aleshores $\>
+\displaystyle (z_1 \cdot z_2)^2 = z_1^2 \cdot z_2^2$
+
+
+\vspace{0.4cm}
+\probl
+Efectuau les operacions  seg{\"u}ents amb nombres complexos:
+$$\begin{array}{lcl}
+\mbox{\bf a)} \;\;  (1-i+i^2)(2i-1)^2 & \;\; & \mbox{\bf b)} \;\;
+\displaystyle (2+3i)^5 \\
+\\
+\mbox{\bf c)} \;\; \displaystyle {i^{15}-i^{16} \over 2-i} & \;\;
+& \mbox{\bf
+d)} \;\; \displaystyle {{(1+i+...+i^{62})} \over 2-i}\\
+\end{array}$$
+
+
+\vspace{0.4cm}
+\probl
+Determinau el conjunt de tots els $\> x,y \in \R \> $ tals que: $$
+\mbox{\bf a)} \;\;x+iy \> = \> \mid x-iy \mid \quad\quad \mbox{\bf
+b)} \;\;  x+iy = (x-iy)^2 \quad\quad \mbox{\bf c)}
+\;\;\displaystyle x+iy = \sum_{k=0}^{100} i^k $$
+
+
+\vspace{0.4cm}
+\probl
+Determinau els conjunts seg{\"u}ents: $$ \mbox{\bf a)}\;\;\{z\in\C
+\; : \; 1+e^z=0\} \qquad \mbox{\bf b)}\;\;\{z\in\C \; : \; {1\over
+e}-e^z=0\} \qquad \mbox{\bf c)}\;\;\{z\in\C \; : \; 1+i-e^z=0\}
+$$
+
+
+\vspace{0.4cm}
+\probl
+Determinau les arrels complexes
+$$\sqrt[3]{-5i}, \ \ \sqrt[4]{-\sqrt{3}+i}, \ \ \sqrt[5]{4-4\sqrt{3}i},
+ \ \ \sqrt[6]{1+i}, \sqrt[3]{-1}$$
+
+
+\vspace{0.4cm}
+\probl
+Determinau tots els $z\in \C$ tals que $z^4+i=0$ i tots els $z\in
+\C$ tals que $z^8 = 1$.
+
+
+\vspace{0.4cm}
+\probl
+Sigui $z = 1+i$. Calculau els conjunts de valors de ${\bigl(\root
+n\of {z}\bigr)}^m$ i $\root n\of {z^m}$ per als casos seg{\"u}ents:
+
+$$\hbox{a)}\ m=4,\ n=2\qquad\hbox{b)}\ m=3,\ n=2$$
+
+\textbf{Nota.} Siguin $m$ i $n$ dos nombres naturals i $z$ un nombre complex
+distint de 0. Llavors el nombre de valors distints de
+${\bigl(\root n\of {z}\bigr)}^m$ {\'e}s ${n\over d},$ on
+$d=\hbox{mcd} (m,n)$.
+
+
+
+
+\end{document}

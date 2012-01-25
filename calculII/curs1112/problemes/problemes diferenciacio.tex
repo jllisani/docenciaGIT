@@ -1,0 +1,231 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+%\usepackage[ansinew]{inputenc} %%
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{epsfig}
+\usepackage{color}
+\usepackage{multicol}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\topmargin}{-1.3cm}
+% \setlength{\evensidemargin}{1cm}
+% \addtolength{\headheight}{\baselineskip}
+% \addtolength{\topmargin}{-3cm}
+
+
+\newcommand{\sC}{{\cal C}}
+\newcommand{\sF}{{\cal F}}
+\newcommand{\sL}{{\cal L}}
+\newcommand{\sU}{{\cal U}}
+\newcommand{\sX}{{\cal X}}
+\newcommand{\eop}{{\Box}}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposicio}
+% \newtheorem{definition}{Definicio}
+% \newtheorem{exercici}{}
+%\newcommand{\ar}{A^{(r)}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\sS}{{\cal S}}
+\newcommand{\Img}{\mbox{Img}}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{C\!\!\!\!I}
+
+%\def\C{I\!\!C}
+%\def\text#1{\hbox{\rm #1}}
+%\def\inter#1{{\buildrel {\circ}\over {#1}}}
+%\def\defi{\sp2J\hskip1cm {\bf Definici{\'o}n}}
+
+\newcount\problemes
+\problemes=23
+
+\def\probl{\advance\problemes by 1
+\vskip 2ex\noindent{\bf \the\problemes \hbox{ } }}
+
+
+\begin{document}
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE,RO]{Exercicis Tema 3. Funcions de vàries variables. Diferenciació.}
+
+
+
+%\pagestyle{empty}
+%\parindent =0 pt
+%{\bf Problemes de C{\`a}lcul II. Primer Telem{\`a}tica
+%\hfill Bloc 3}
+
+
+\vspace{0.8 cm}
+\probl
+Calculau les derivades parcials de les seg{\"u}ents funcions
+
+\vspace{0.6cm}
+$\begin{array}{ll}
+a)\;\;f(x,y,z)=\sin xy +\cos yz &b)\;\; f(x,y,z)=xe^{yz}\\
+ & \\
+c)\;\; f(x,y,z)=e^{xyz}\sin (xy) \cos(2xz)\hspace{1.3cm} &
+d)\;\;f(t,u,v)=\sec (tu)+\arcsin (tv)\\
+\end{array}$
+
+\vspace{0.8 cm}
+\probl
+Calculau la matriu jacobiana de les seg{\"u}ents funcions:
+
+\vspace{0.6cm}
+$\begin{array}{ll} a)\;\; f(x,y)=(x^2y,xy,xy^2)\hspace{1.7cm} & b)\;\;
+f(x,y,z)=(xe^{yz},ye^{xz},ze^{xy})
+\end{array}$
+
+\vspace{0.8 cm}
+\probl
+Calculau les derivades parcials de la funci{\'o}:
+$$
+f(x,y)=\begin{cases} \displaystyle{3x^2y\over x^2 +y^2} & si (x,y)\not= (0,0)\cr
+& \cr
+0 & si (x,y)=(0,0)\cr\end{cases}
+$$
+
+\vspace{0.8cm}
+\probl
+Estudiau l'exist{\`e}ncia de les derivades direccionals de la funci{\'o}
+$f(x,y,z)=x\sqrt{y^2+z^2}$ en el punt $(0,0,0)$.
+
+\vspace{0.8cm}
+\probl
+De les seg{\"u}ents funcions de $n$-variables calculau les seves derivades parcials:
+
+\vspace{0.3cm}
+a) $\; f(x_1,x_2,\dots , x_n)=\sqrt{x_1^2 + x_2^2 + \dots + x_n^2} $
+
+\vspace{0.3cm}
+b) $\;f(x_1,x_2,\dots , x_n)=\sin ( x_1 + 2x_2 + \dots + n x_n).$
+
+\vspace{0.8cm}
+\probl
+Calculau $D_vf(P)$ on $v$ {\'e}s el vector unitari en la direcci{\'o}
+$\vec{PQ}$. Utilitzau el fet que la funci{\'o} {\'e}s diferenciable.
+
+\vspace{0.3cm}
+a) $\;f(x,y,z)=x^2 +3xy+y^2 +z^2; \quad P=(1,0,2),\, Q=(-1,3,4).$
+
+\vspace{0.3cm}
+b) $\;f(x,y,z)=e^x\cos y + e^y\sin z;\quad P=(2,1,0),\, Q=(-1,2,2).$
+
+\vspace{0.8cm}
+\probl
+Per cada una de les seg{\"u}ents funcions, trobau la direcci{\'o} en la qual la derivada direccional {\'e}s
+m{\`a}xima:
+
+\vspace{0.3cm}
+a) $\; f(x,y)=\ln (x^2+2y^2)\ \ $ a $\ \ (1,-2)$ \qquad b) $\;f(x,y,z)=\sin xy -\cos
+xz\ \ $ a $\ \ (\pi, 1, 1)$
+
+\vspace{0.8cm}
+\probl
+Trobau l'equaci{\'o} del pla tangent a la superf{\'\i}cie donada en el punt
+indicat
+$$
+\begin{array}{ll}
+a)\ z=x^2 + 4y^2,\ \ (2,1,8)\ &  b)\ z= 5 + (x-1)^2 + (y+2)^2,\ \ (2,0,10)
+\end{array}
+$$
+
+\probl
+Siguin $f,\; g$ funcions reals de variable real derivables a tot $\R$, aleshores calculau
+ $\displaystyle{\partial z\over \partial x}$  i
+ $\displaystyle{\partial z\over \partial y}$ de les funcions:
+$$
+\begin{array}{ll}
+a)\; z= f(x) + g(y)\qquad & b)\; z= f(x) g(y)\\
+ & \\
+c)\; z= f(xy)\; & d)\; z= f(ax + by).
+\end{array}
+$$
+
+\vspace{0.8cm}
+\probl
+Utilitzau la regla de la cadena per calcular les derivades indicades:
+
+%\vspace{0.3cm}
+%a) $\; f(x,y)=x^y$, $x=t^2$, $y=\ln t;\qquad \displaystyle\frac{df}{dt}$
+%
+\vspace{0.3cm}
+$\qquad f(x,y)=x^2+xy$, $x=ve^u$, $y=ue^v\qquad \displaystyle\frac{\partial f}{\partial u}\,,$
+$\ \displaystyle\frac{\partial f}{\partial v}$
+
+\vspace{0.8cm}
+\probl
+Trobau totes les derivades parcials de segon ordre de les funcions:
+$$
+\begin{array}{ll}
+a)\; f(x,y)= x^2 y + x\sqrt{y},\qquad & b)\; f(x,y)= \sin (x+y) + \cos (x-y)
+\end{array}
+$$
+
+\vspace{0.8cm}
+\probl
+Trobau, en cada cas, la derivada parcial indicada:
+$$
+\begin{array}{ll}
+a)\; f(x,y)=x^2y^3 - 3x^4y;\, f_{xxx}\; & b)\; f(x,y,z)= x^5 + x^4y^4z^3 + yz^2;\, f_{xyz},\,
+  f_{yxz},\, f_{zyx}
+\end{array}
+$$
+
+%\vspace{0.8cm}
+%\probl
+%Sigui
+%$$
+%f(x,y)=\cases{\displaystyle{xy(x^2-y^2)\over x^2 + y^2} & si $(x,y)\not=(0,0)$ \cr
+% & \cr
+%0 & si $(x,y)=(0,0)$ \cr}
+%$$
+%
+%a) Si $(x,y)\not=(0,0)$, calculau $f_x$ i $f_y$.
+%
+%\vspace{0.3cm}
+%b) Provau que $f_x(0,0)=0=f_y(0,0)$.
+
+
+\vspace{0.8cm}
+\probl
+Demostrau que la funci{\'o} $\ z=y\;\varphi (x^2 - y^2)\ $ satisf{\`a} l'equaci{\'o}
+$$
+{1\over x}{\partial z\over \partial x} + {1\over y}{\partial z\over
+\partial y} = {z\over y^2}
+$$
+
+
+
+\vspace{0.8 cm}
+\probl
+Trobau els m{\`a}xims i m{\'\i}nims relatius de les funcions:
+
+\vspace{0.6cm}
+a) $f(x,y)=x^4+y^4-2(x-y)^2\qquad\qquad$ b) $f(x,y)=x^4+y^4+\displaystyle\frac{1}{x^4y^4}$
+
+\vspace{0.8 cm}
+\probl
+Determinau els extrems absoluts de la funci{\'o}
+$f(x,y)= xy ( 1 - x^2 - y^2)$ en el quadrat $[0,1]\times [0,1]$.
+
+\end{document} 

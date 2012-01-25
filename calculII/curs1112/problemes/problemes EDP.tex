@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+%\usepackage[ansinew]{inputenc} %%
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{epsfig}
+\usepackage{color}
+\usepackage{multicol}
+
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\topmargin}{-1.3cm}
+% \setlength{\evensidemargin}{1cm}
+% \addtolength{\headheight}{\baselineskip}
+% \addtolength{\topmargin}{-3cm}
+
+
+\newcommand{\sC}{{\cal C}}
+\newcommand{\sF}{{\cal F}}
+\newcommand{\sL}{{\cal L}}
+\newcommand{\sU}{{\cal U}}
+\newcommand{\sX}{{\cal X}}
+\newcommand{\eop}{{\Box}}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposicio}
+% \newtheorem{definition}{Definicio}
+% \newtheorem{exercici}{}
+%\newcommand{\ar}{A^{(r)}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\sS}{{\cal S}}
+\newcommand{\Img}{\mbox{Img}}
+
+\def\N{I\!\!N}
+\def\R{I\!\!R}
+\def\Z{Z\!\!\!Z}
+\def\Q{O\!\!\!\!Q}
+\def\C{I\!\!C}
+%\def\text#1{\hbox{\rm #1}}
+%\def\inter#1{{\buildrel {\circ}\over {#1}}}
+%\def\defi{\sp2J\hskip1cm {\bf Definici{\'o}n}}
+
+\newcount\problemes
+\problemes=49
+
+\def\probl{\advance\problemes by 1
+\vskip 2ex\noindent{\bf \the\problemes \hbox{ } }}
+
+
+\begin{document}
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE,RO]{Exercicis Tema 5. Equacions en derivades parcials.}
+
+%\pagestyle{empty}
+%\parindent =0 pt
+%{\bf Problemes de C{\`a}lcul II. Primer Telem{\`a}tica
+%\hfill Bloc 5}
+
+\vspace{0.4 cm}
+
+
+\probl Trobau la soluci{\'o} general $u(x,y) $ de
+
+\vspace{0.4 cm}
+\begin{tabular}{lll}
+a) $u_x=3x^2+y^2$ & \qquad\qquad b)$u_{xy}=x^2y$ & \qquad\qquad c) $u_{xxy}=1$ \\
+& & \\
+d) $u_x-2u=0$  &\qquad\qquad  e) $u_y+2yu=4xy$ &\qquad\qquad  f) $uu_{xy}-u_xu_y=0$
+\end{tabular}
+
+\vspace{0.7 cm}
+\probl a) Trobau la soluci{\'o} general $u(x,y)$ de $u_{xx}-u=0$\\
+
+b) Trobau la soluci{\'o} de l'equaci{\'o} de l'apartat anterior que
+satisf{\`a} les condicions auxiliars
+$$ u(0,y)=f(y)\,, \qquad u_x(0,y)=g(y)\,.$$
+
+
+\vspace{0.4 cm}
+\probl Donada l'equaci{\'o}
+
+$$ 4y^2u_{xx}+2(1-y^2)u_{xy}-u_{yy}-\frac{2y}{1+y^2}(2u_x-u_y)=0$$
+
+amb les condicions $\quad u(x,0)=f(x)\ $ i $\ u_y(x,0)=1\,, $
+
+provau que
+$$
+u(x,y)=f(x-\frac{2}{3}y^3)+y+\frac{1}{3}y^3
+$$
+{\'e}s una soluci{\'o} del'EDP.
+
+
+
+\vspace{0.7 cm}
+\probl  Trobau la soluci{\'o} general de les seg{\"u}ents EDP's on
+$u=u(x,y)$
+
+\vspace{0.4 cm}
+\begin{tabular}{lll}
+a) $2u_x-3u_y=x$ &\qquad \qquad b) $3u_x-4u_y=x+e^x$ &\qquad\qquad c) $u_x+3u_y=9y^2$
+\end{tabular}
+
+\vspace{0.7 cm}
+\probl Provau que l'EDP $\ u_x+u_y-u=0\ $ amb la condici{\'o}
+$\ u(x,x)=\tan x\ $ no t{\'e} soluci{\'o}.
+
+\vspace{0.7 cm}
+\probl Quina forma ha de tenir $g(x)$ per a que el seg{\"u}ent
+problema tingui soluci{\'o}?
+$$ u_x+3u_y-u=1 \qquad u(x,3x)=g(x)$$
+%Si $g$ t{\'e} la forma requerida, hi haur{\`a} m{\'e}s d'una soluci{\'o}?
+
+\vspace{0.7 cm}
+\probl Trobau la soluci{\'o} particular de les EDP's amb les
+condicions donades
+
+\vspace{0.4 cm}
+\begin{tabular}{ll}
+a) $\ xu_x+2yu_y=0\,,\quad u(x,\frac{1}{x})=x \ (x>0)$  &\qquad  b) $\ yu_x-4xu_y=0\,, \quad u(x,0)=x^4$ \\
+\end{tabular}
+
+\vspace{0.7 cm}
+\probl Resoleu $\qquad u_t=2u_{xx} \qquad\quad 0< x <1\,, t> 0\qquad $ tal que\\
+
+$\qquad u(0,t)=0\,,\ \  t>0\qquad u_x(1,t)=0\,,\ \ t>0\qquad  u(x,0)=\sin(\frac{3\pi x}{2})\,, \ \ x\in[0,1]$
+
+
+\end{document}
+
+\vspace{0.7 cm}
+\probl a) Sigui $u(x,y)=\phi(\frac{y}{x})+x\varphi(\frac{y}{x})$,
+demostrau que satisf{\`a}
+$$x^2u_{xx}+2xyu_{xy}+y^2 u_{yy}=0$$
+
+b) obteniu una soluci{\'o} de l'EDP anterior que satisfaci
+$u(1,y)=\cos y$ i $u(1/2,y)=e^{-2y}$.

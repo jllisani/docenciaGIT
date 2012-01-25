@@ -1,0 +1,891 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+%\usepackage[ansinew]{inputenc} %%
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{epsfig}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+
+
+%\usepackage[spanish]{babel}
+%\usepackage{color}% usar color para las letras
+%\usepackage{graphics}
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{amsfonts}%para poder poner las letras de Reales Complejos etc...
+%\usepackage{anysize} % Soporte para el comando \marginsize
+%\usepackage[latin1]{inputenc}% permite poner acentos de forma normal
+
+\setlength{\textwidth}{16cm} \setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.3cm} \setlength{\topmargin}{-1.3cm}
+
+%\usepackage{texfonts}
+%\marginsize{2cm}{2cm}{2cm}{2cm}
+%\newcommand{\ZZ}{\mathbbmss{Z}}
+%\usepackage{fancyhdr}
+%\renewcommand{\rmdefault}{phv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-- nuevos comandos para facilitar la escritura
+\newcommand{\notacio}{\textbf{Notaci{\'o}}\ \ }
+\newcommand{\demostracio}{\textbf{Demostraci{\'o}}\ \ }
+\newcommand{\propietats}{\textbf{Propietats}\ \ }
+\newcommand{\propietat}{\textbf{Propietat}\ \ }
+%\newcommand{\exemple}{\textbf{Exemple}\ \ }
+\newcommand{\exemples}{\textbf{Exemples}\ \ }
+\newcommand{\observacio}{\textbf{Observaci{\'o}}\ \ }
+\newcommand{\observacions}{\textbf{Observacions}\ \ }
+
+\newtheorem{definicio}{Definici{\'o}}[subsection]
+\newtheorem{teorema}{Teorema}[subsection]
+\newtheorem{Teorema}{Teorema}[subsubsection]
+\newtheorem{proposicio}{Proposici{\'o}}[subsection]
+\newtheorem{lema}{Lema}[subsection]
+\newtheorem{corol}{Corol.lari}[subsection]
+\newtheorem{exemple}{Exemple}[subsection]
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\sen}{\mathop{\rm sen}\nolimits}
+
+\setcounter{page}{60}
+
+\setcounter{section}{4}
+
+\begin{document}
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE,RO]{Tema 5. Equacions en derivades parcials}
+\fancyfoot[RE,RO]{Autor: Marc Carbonell 2011}
+
+\begin{center}
+\section{Tema 5. Equacions en derivades parcials}
+\end{center}
+
+\parskip =0.3cm
+\parindent =0cm
+\itemindent=2cm
+
+En aquest cap{\'\i}tol introduirem uns tipus d'equacions en les quals les inc{\`o}gnites s{\'o}n funcions de diverses variables. Aquestes equacions s{\'o}n una generalitzaci{\'o} de les equacions diferencials ordin{\`a}ries.
+
+
+\vspace{0.4cm}
+\begin{definicio}
+Una \textbf{Equaci{\'o} en Derivades Parcials (EDP)} {\'e}s una equaci{\'o}  que relaciona una funci{\'o}
+$\ u :D \rightarrow \R\ $ on $\,D\, $ {\'e}s un domini de $\R^n$ i les seves derivades parcials, {\'e}s a dir,
+\vspace{0.3cm}
+\begin{equation}\label{edp}
+ F(x,u,\frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n},\ldots,D^\alpha u)=0.
+\end{equation}
+
+L'\textbf{ordre} $m$ d'una EDP {\'e}s l'ordre m{\'e}s alt de les derivades parcials que apareixen a l'equaci{\'o}.
+\end{definicio}
+
+\vspace{0.4cm}
+\begin{definicio}
+ Una EDP d'ordre $m$ {\'e}s \textbf{lineal} si $F$ {\'e}s lineal respecte de $u$ i les seves derivades parcials, {\'e}s a dir, {\'e}s de la forma
+
+\[
+ \sum_{|\alpha |\leq m} A_\alpha (x)D^{\alpha} u(x)=f(x).
+\]
+
+Si $\ f(x)=0\,,\ $ llavors direm que l'EDP {\'e}s \textbf{homog{\`e}nia}.
+\end{definicio}
+
+\vspace{0.4cm}
+\begin{exemples}
+\begin{itemize}
+ \item L'equaci{\'o} en derivades parcials $\ u_t+u_{xx}=0\ $ {\'e}s lineal i de segon ordre, ja que la derivada parcial m{\'e}s alta que apareix {\'e}s $u_{xx}.$
+\item L'equaci{\'o} $\ (1+u_y^2)u_{xxy}-3xyu_{xy}^3=u_{yy}\ $ {\'e}s una EDP de tercer ordre i no lineal.
+\item L'equaci{\'o} $\ (u_x)^5+3x^3y=0\ $ {\'e}s una EDP de primer ordre i no {\'e}s lineal.
+\end{itemize}
+\end{exemples}
+
+
+
+\vspace{0.4cm}
+\begin{definicio}
+Direm que una funci{\'o} $u$  {\'e}s una \textbf{soluci{\'o}}  de la EDP \eqref{edp} a la regi{\'o} $D$ si se compleixen les seg{\"u}ents condicions:
+\begin{itemize}
+\item En el domini $D$ la funci{\'o} $\ u(x_1,\ldots,x_n)\ $ t{\'e} totes les derivades que apareixen en l'equaci{\'o} i s{\'o}n cont{\'\i}nues.
+\item En substituir $u$  i les seves derivades dins l'equaci{\'o} \eqref{edp} s'obt{\'e} una identitat respecte a les variables $\ x_1,\ldots,x_n\,.$
+ \end{itemize}
+\end{definicio}
+
+\newpage
+\vspace{0.4cm}
+\begin{exemples}
+\begin{itemize}
+\item Considerem l'equaci{\'o} $\ u_{xx} + u_{yy} = 0\,,\ $ que {\'e}s una EDP lineal, homog{\`e}nia i de segon ordre.
+{\'E}s f{\`a}cil comprovar que $\ u(x,y)=x-y\ $ i $\ u(x,y) =x^2-y^2\ $ s{\'o}n solucions.
+
+Aquest exemple ens diu que una EDP pot tenir una varietat de solucions completament diferents unes de les altres.
+
+\item Considerem l'EDP $\ u_x=x+y\,.$ Aquesta EDP la podem resoldre integrant directament ambd{\'o}s costats
+de l'equaci{\'o} respecte de la variable $x$
+\[
+ u(x,y)=\frac{x^2}{2}+xy+\varphi(y).
+\]
+Observem que en integrar respecte de $x$ obtenim una funci{\'o} arbitr{\`a}ria de la variable $y\,.$
+
+\item Considerem ara l'equaci{\'o} $\ u_{xy} = 0\,.$ Si feim el canvi $\ v = u_x\ $ l'EDP anterior queda $\ v_y=0\ $ que, integrant respecte de $y$ t{\'e} per soluci{\'o} $\ v(x,y) = f(x)\ $ on $f$ {\'e}s una funci{\'o} arbitr{\`a}ria.
+
+Desfent el canvi de variable obtenim $\ u_x = f(x)\ $ i integrant respecte de $x$ obtenim la soluci{\'o} de l'EDP
+$\ u(x, y) = F(x) + G(y)\,,$ on $F$ (la primitiva de $f$) i $G$ s{\'o}n funcions
+arbitr{\`a}ries.
+
+Aquesta expressi{\'o} obtinguda s'anomena \textbf{soluci{\'o} general} de l'EDP ja que qualsevol soluci{\'o}
+de l'equaci{\'o} se pot obtenir de la forma anterior. Es troben solucions particulars imposant condicions addicionals.
+\end{itemize}
+\end{exemples}
+
+
+Dels exemples anteriors podem deduir que la soluci{\'o} general d'una EDP d'ordre $m$ cont{\'e} $m$ funcions arbitr{\`a}ries.
+Qualsevol soluci{\'o} obtinguda d'aquesta afegint condicions addicionals s'anomena \textbf{soluci{\'o} particular}.
+
+Se poden donar diferents tipus de condicions addicionals a l'hora de trobar la soluci{\'o} particular d'una EDP
+per  determinar-la un{\'\i}vocament. Si aquestes condicions ens donen l'estat inicial del proc{\'e}s s'anomenen \textbf{condicions inicials} i si les condicions que ha de satisfer la soluci{\'o} de l'EDP es troben a la frontera del domini on t{\'e} lloc el proc{\'e}s,  es diuen \textbf{condicions de frontera}.
+
+\vspace{0.4cm}
+Amb molta freq{\"u}{\`e}ncia les EDPs sorgeixen de modelitzar fen{\`o}mens f{\'\i}sics. Conv{\'e} saber que no hi ha una teoria que resolgui les EDPs en general. De fet, la gran majoria d'elles no se saben o no es poden resoldre. El nostre objectiu ser{\`a} introduir algunes de les EDPs m{\'e}s importants i aprendre m{\`e}todes de resoluci{\'o} per certs tipus de EDPs.
+
+
+\subsection{Equacions de primer ordre}
+
+En aquesta secci{\'o} estudiarem com resoldre les EDPs m{\'e}s senzilles que existeixen, les de primer ordre. A m{\'e}s a m{\'e}s
+ho farem per a equacions de dimensi{\'o} dos i utilitzarem el m{\`e}tode anomenat de les caracter{\'\i}stiques. Per tant, l'equaci{\'o} que resoldrem en aquesta secci{\'o} t{\'e} la forma:
+\begin{equation}\label{primer-orden}
+ a(x,y)u_x+b(x,y)u_y+c(x,y)u=f(x,y),
+\end{equation}
+
+on $a,b,c,f$ s{\'o}n funcions diferenciables amb les derivades parcials de primer ordre cont{\'\i}nues. \\
+
+
+Per resoldre l'equaci{\'o} \eqref{primer-orden}, el que farem ser{\`a} cercar un canvi de coordenades que la transformi en una altra EDP on no aparegui $u_y\,.$ Amb aix{\`o} obtindrem una equaci{\'o} diferencial ordin{\`a}ria (EDO) lineal de primer ordre respecte a la  $\ u(x,y)\ $ com a funci{\'o} de $\ x\ $ que ja sabem resoldre.\\
+
+Pensam en un canvi de coordenades qualsevol:
+$$
+w=h(x,y)\,,\ \  z=g(x,y)
+$$
+
+Aplicant la regla de la cadena obtenim
+\[
+ u_x=u_w w_x+u_zz_x,\qquad u_y=u_ww_y+u_zz_y.
+\]
+
+Si ho substitu{\"\i}m en l'equaci{\'o} \eqref{primer-orden} ens queda
+\[
+ a(u_w w_x+u_zz_x)+b(u_ww_y+u_zz_y)+cu=f \ \iff \ (aw_x+bw_y)u_w+(az_x+bz_y)u_z+cu=f.
+\]
+
+
+El que ens agradaria {\'e}s que $\ aw_x+bw_y=0\,,\ $ perqu{\`e} no aparegu{\'e}s $u_w\,.$  Per aconseguir-ho considerarem el \textbf{m{\`e}tode de les caracter{\'\i}stiques} que presentam a continuaci{\'o}.
+
+Primer s'ha de resoldre l'equaci{\'o}:
+
+\begin{equation}\label{ec-caract}
+y'= \frac{dy}{dx}=\frac{b}{a}
+\end{equation}
+
+que s'anomena \textbf{equaci{\'o} caracter{\'\i}stica} de l'EDP \eqref{primer-orden}
+i la fam{\'\i}lia de corbes soluci{\'o} s'anomenen \textbf{corbes caracter{\'\i}stiques}. Les corbes caracter{\'\i}stiques
+representen corbes sobre les quals la nova variable independent $w$ {\'e}s constant. Si el.legim el canvi de variables $w(x,y)$ tal que $w(x,y) = K$ sigui soluci{\'o} de \eqref{ec-caract} tindrem que el  coeficient de $u_w$  s'anul.la com vol{\'\i}em.
+
+Observem que la variable $z$ no ha jugat cap paper i per tant podem triar-la com vulguem. El m{\'e}s f{\`a}cil generalment ser{\`a} triar $\ z=y.$
+
+
+\vspace{0.3cm}
+\observacio Moltes vegades no ser{\`a} f{\`a}cil resoldre l'EDO \eqref{ec-caract} i fins i tot en els cas en qu{\`e} s{\'\i}
+puguem resoldre l'EDO no ser{\`a} f{\`a}cil trobar la transformaci{\'o} inversa del canvi de variables. En els nostres
+exemples i exercicis sempre podrem fer aquests c{\`a}lculs.
+
+\vspace{0.4cm}
+Pel cas en qu{\`e} els coeficients de l'equaci{\'o} \eqref{primer-orden} s{\'o}n constants, {\'e}s a dir, $\ a(x,y)=a\,,\ \ b(x,y)=b\ $ obtenim que l'equaci{\'o} caracter{\'\i}stica {\'e}s
+
+$$
+y'=\frac{b}{a}\qquad a,b\in\R
+$$
+
+que te per solucions les rectes $\ bx-ay=K\,,\quad K\in\R.$ Per tant les corbes caracter{\'\i}stiques de l'EDP s{\'o}n una fam{\'\i}lia de rectes paral.leles. Si feim el canvi de variables
+\[
+ \left\{
+ \begin{array}{l}
+ w=bx-ay\\
+ \\
+ z=y
+ \end{array}
+ \right.
+\]
+
+que t{\'e} per transformaci{\'o} inversa
+\[
+ \left\{
+ \begin{array}{l}
+ x=\displaystyle\frac{w+az}{b}\\
+ \\
+ y=z
+ \end{array}
+ \right.
+\]
+
+obtenim que l'EDP \eqref{primer-orden} es transforma en l'EDO
+\[
+ bu_z+cu=f(w,z)
+\]
+
+que nom{\'e}s dep{\`e}n de $z$ i podem resoldre directament.
+
+
+\vspace{0.7cm}
+Donarem ara dos exemples en que els coeficients s{\'o}n constants.
+
+\vspace{0.4cm}
+\begin{exemple}
+Calculau la soluci{\'o} general de l'EDP
+\[
+ 3u_x-2u_y+u=x
+\]
+\end{exemple}
+
+Resolem l'equaci{\'o} caracter{\'\i}stica
+\[
+y'=-\frac{2}{3}
+\]
+
+que ens dona les rectes $\ 2x+3y=K\,.$ Per tant el canvi de variable que hem de fer {\'e}s
+\[
+\left\{
+ \begin{array}{l}
+ w=2x+3y\\
+ \\
+ z=y
+ \end{array}
+ \right.
+\]
+
+que t{\'e} per transformaci{\'o} inversa
+\[
+\left\{
+ \begin{array}{l}
+ x=\frac{w-3z}{2}\\
+ \\
+ y=z
+ \end{array}
+ \right.
+\]
+
+Utilitzant la regal de al cadena i substituint en el terme de l'esquerra de la igualtat de l'equaci{\'o} donada tenim:
+$$
+ 3u_x-2u_y+u=3(u_w\; w_x+u_z\; z_x)-2(u_w\;w_y+u_z\;z_y)+u= 3(u_w\cdot 2)-2(u_z+u_w\cdot 3)+u=-2u_z+u
+$$
+
+Per tant, l'EDP en les noves variables {\'e}s
+$$
+-2u_z+u=\frac{w-3z}{2}
+$$
+
+Que podem pensar com una EDO lineal de primer ordre respecte a la variable $z$.
+
+Aplicam ara el m{\`e}tode conegut per resoldre aquesta equaci{\'o} diferencial:
+
+Dividim per $(-2)$ i multiplicant pel factor integrant $e^{-z/2}$ obtenim
+\[
+ \frac{\partial }{\partial z}\left(e^{\frac{-z}{2}} u\right)=-\frac{1}{4}e^{\frac{-z}{2}}(w-3z)
+\]
+
+Integrant la igualtat anterior respecte de $z$, deixant $w$ fixe, obtenim
+
+\begin{eqnarray*}
+ e^{\frac{-z}{2}} u&=&-\frac{1}{4}w\int e^{\frac{-z}{2}}\,dz+\frac{3}{4}\int z e^{\frac{-z}{2}}\,dz+C(w)=
+\frac{1}{2}we^{\frac{-z}{2}}+\frac{3}{4}(-4-2z)e^{\frac{-z}{2}}+C(w)=\\
+&&\\
+&=&e^{\frac{-z}{2}}\left(\frac{w-3z}{2}-3\right)+C(w)
+\end{eqnarray*}
+
+on $\ C(w)\ $ {\'e}s una funci{\'o} arbitr{\`a}ria de $w.$ Observem que podem simplificar de tots dos costats el terme exponencial i obtenim
+
+$$
+u(w,z)=\left(\frac{w-3z}{2}-3\right)+e^{\frac{z}{2}}C(w)
+$$
+
+Ara hem de desfer el canvi de variables:
+
+\[
+ u(x,y)=\frac{2x+3y-3y}{2}-3+e^{\frac{y}{2}}C(2x+3y)=x-3+e^\frac{y}{2}C(2x+3y)
+\]
+
+on $C(2x+3y)$ pot ser qualsevol funci{\'o} de $\ (2x+3y)\,.$ \\
+
+Per exemple, $\ C(2x+3y)=(2x+3y)^2\,,$ o b{\'e}  $\ C(2x+3y)e^{2x+3y}\,,$
+ o tamb{\'e} $\ C(2x+3y)=\sin^2(2x+3y)\,.$
+
+
+\vspace{0.4cm}
+Si imposam una condici{\'o} inicial podem trobar exactament quina {\'e}s la funci{\'o} $C$ que la satisf{\`a}. Per
+exemple podem imposar $u(x,0)=3x.$ Aleshores, si substitu{\"\i}m a la soluci{\'o} general obtenim:
+
+\[
+ u(x,0)=x-3+C(2x)=3x\ \Rightarrow\ C(2x)=2x+3\ \Rightarrow\ C(s)=s+3
+\]
+
+Per tant, la soluci{\'o} de l'equaci{\'o}  $\ 3u_x-2u_y+u=x\ $ amb condici{\'o} inicial $\ u(x,0)=3x\ $ {\'e}s
+
+\[
+ u(x,y)=x-3+e^{\frac{y}{2}} (2x+3y+3)\,.
+\]
+
+
+\vspace{0.8cm}
+\begin{exemple}
+Anem a resoldre l'EDP $\ u_x+2u_y-4u=e^{x+y}\ $ amb la condici{\'o} $\ u(x,3x)=0\,.$
+\end{exemple}
+
+L'equaci{\'o} caracter{\'\i}stica {\'e}s $\ y'= 2\,,\ $ per tant les corbes caracter{\'\i}stiques s{\'o}n $\ 2x-y=K\ $. D'aix{\`o} el canvi de variables que hem d'aplicar {\'e}s
+
+\[
+\left\{
+ \begin{array}{l}
+ w=2x-y\\
+ \\
+z=y
+ \end{array}
+ \right. \   \iff \
+ \left\{
+ \begin{array}{l}
+ x=\frac{w+z}{2}\\
+ \\
+y=z
+ \end{array}
+ \right.
+\]
+
+Per la regla de la cadena tenim que:
+
+$$
+u_x=u_w\; w_x+u_z\; z_x=2u_w\qquad\qquad u_y=u_w\;w_y+u_z\;z_y=-u_w+u_z
+$$
+
+i per tant l'equaci{\'o} ens queda $\ 2u_z-4u=e^{\frac{w+3z}{2}}.$
+
+Si dividim per 2,  multiplicam pel factor integrant $\ e^{-2z}\ $ i integram obtenim:
+
+\[
+ \frac{\partial}{\partial z}\left(e^{-2z}u\right)=\frac{1}{2}\int e^{\frac{w-z}{2}}dz\ \Rightarrow \ e^{-2z}u=\frac{1}{2}e^{\frac{w-z}{2}}(-2)+C(w)\ \Rightarrow \ e^{-2z}u=-e^\frac{w-z}{2}+C(w).
+\]
+
+Per tant $\ u(w,z)=-e^{\frac{w+3z}{2}}+C(w)\;e^{2z}\,,\ $ pel que si desfem el canvi de variables resulta
+
+\[
+ u(x,y)=-e^\frac{2x-y+3y}{2}+C(2x-y)e^{2y}=-e^{x+y}+C(2x-y)e^{2y}.
+\]
+
+Si imposam la condici{\'o} de l'enunciat resulta
+
+\[
+ u(x,3x)=-e^{x+3x}+C(2x-3x)e^{6x}=-e^{4x}+C(-x)e^{6x}=0\ \Rightarrow \ C(-x)=e^{-2x}
+\]
+
+o el que {\'e}s el mateix $C(s)=e^{2s}.$
+
+Per tant la soluci{\'o} de l'EDP juntament amb la condici{\'o} {\'e}s:
+
+\[
+ u(x,y)=-e^{x+y}+e^{2(2x-y)}e^{2y}=-e^{x+y}+e^{4x}
+\]
+
+
+\vspace{0.4cm}
+\observacio
+No totes les EDPs de primer ordre amb condici{\'o}  inicial tenen soluci{\'o}. Per exemple, si a l'EDP anterior
+ens donasin com a condici{\'o} $u(x,2x+1)=0, $ llavors en imposar-la ens donaria:
+\[
+ u(x,2x+1)=-e^{x+2x+1}+C(2x-2x-1)e^{2(2x+1)}=-e^{3x+1}+C(-1)e^{4x+2}=0 \ \Rightarrow \ C(-1)=e^{-x-1}.
+\]
+Per{\`o} independentment de la funci{\'o} $C$ que triem resulta que $C(-1)$ {\'e}s una constant mentre que $\ e^{-x-1}\ $
+{\'e}s una funci{\'o} depenent de $x\,.$ Per tant la condici{\'o} $u(x,2x+1)=0$ no es complir{\`a} mai i el problema no tindr{\`a} soluci{\'o}.
+
+
+\vspace{0.8cm}
+Consideram ara un exemple amb coeficients variables.
+
+\vspace{0.4cm}
+\begin{exemple}
+Resoleu l'EDP $\ -yu_x+xu_y=0\,.$
+\end{exemple}
+
+L'equaci{\'o} caracter{\'\i}stica {\'e}s $\ \frac{dy}{dx}=-\frac{x}{y}\,.$ {\'E}s una EDO de variables separades que podem
+resoldre directament
+
+\[
+ ydy=-xdx\ \Rightarrow \ \frac{1}{2}y^2=-\frac{1}{2}x^2+c
+\]
+
+Per tant les corbes caracter{\'\i}stiques s{\'o}n $\ y^2+x^2=K\,,$ {\'e}s a dir, cercles centrats al punt $(0,0)$ de radi $\sqrt{K}.$
+
+Feim el canvi de variables
+
+$$
+\left\{
+ \begin{array}{l}
+w=x^2+y^2\\
+ \\
+z= y
+ \end{array}
+ \right.
+$$
+
+que t{\'e} per inversa
+
+$$
+\left\{
+ \begin{array}{l}
+x=\pm\sqrt{w-z^2}\\
+ \\
+y=z
+\end{array}
+ \right.
+$$
+
+Observem que tenim dues transformacions inverses i que nom{\'e}s estan ben definides per a $w\geq z^2.$
+$$
+u_x=u_w\; w_x+u_z\; z_x=2x\;u_w\qquad\qquad u_y=u_w\;w_y+u_z\;z_y=2y\;u_w+u_z
+$$
+
+i per tant l'equaci{\'o} ens queda $\ x\;u_z=0\ \Leftrightarrow\ u_z=0$\\
+
+
+Per tant, la funci{\'o} $u$ nom{\'e}s dep{\`e}n de $w$ i la soluci{\'o} de l'equaci{\'o} anterior {\'e}s
+$\ u(w,z)=f(w)\ $ amb $f$ una funci{\'o} qualsevol. Si desfem el canvi obtenim
+
+\[
+ u(x,y)=f(x^2+y^2)
+\]
+
+Comprovem que efectivament la funci{\'o} anterior {\'e}s soluci{\'o} de la nostra EDP:
+
+\[
+ -yu_x+xu_y=-yf'(x^2+y^2)2x+xf'(x^2+y^2)2y=0
+\]
+
+
+
+\subsection{Equacions de segon ordre. Exemples m{\'e}s importants}
+
+En aquesta secci{\'o} volem introduir les EDPs m{\'e}s importants que modelen fen{\`o}mens f{\'\i}sics, que s{\'o}n de segon ordre.
+Malgrat l'inter{\`e}s que t{\'e} la deducci{\'o} d'aquestes equacions, {\'e}s un tema que s'escapa del contingut d'aquest curs.
+
+En aquesta secci{\'o} ens centrarem en equacions de segon ordre en dimensi{\'o} dos amb coeficients constants, per tant en equacions de la forma
+\vspace{0.4cm}
+\begin{equation}\label{segonordre}
+ A\;\frac{\partial^2 u}{\partial x^2}+B\;\frac{\partial^2 u}{\partial y\partial x}+C\;\frac{\partial^2 u}{\partial y^2}+D\;\frac{\partial u}{\partial x}+E\;\frac{\partial u}{\partial y}+F\,u=G(x,y)
+\end{equation}
+on $\ A,B,C,D,E,F\in \R\,.$
+
+Podem fer una analogia amb les equacions polinomials quadr{\`a}tiques
+
+\[
+ a x^2+bxy+c y^2+dx+ey+f=0
+\]
+
+que representen una hip{\`e}rbola,  una par{\`a}bola o una  el.lipse segons el valor del discriminant  $\ b^2-4ac\ $  sigui positiu, zero o negatiu, respectivament.\\
+
+D'aix{\`o} podem classificar les EDPs de segon ordre de la seg{\"u}ent manera:
+\vspace{0.4cm}
+\begin{itemize}
+\item si $\ B^2-4AC>0\ $ llavors l'equaci{\'o} \eqref{segonordre} s'en diu \textbf{hiperb{\`o}lica}.
+\item si $\ B^2-4AC=0\ $ llavors l'equaci{\'o} \eqref{segonordre} s'en diu \textbf{parab{\`o}lica}.
+\item si $\ B^2-4AC<0\ $ llavors l'equaci{\'o} \eqref{segonordre} s'en diu \textbf{el.l{\'\i}ptica}.
+\end{itemize}
+
+Si l'equaci{\'o} no {\'e}s de dimensi{\'o} dos sin{\'o} de dimensi{\'o} superior llavors se pot fet una classificaci{\'o} similar.
+
+Anem a veure els exemples m{\'e}s significatius de cadascun d'aquest tipus.
+
+
+\subsubsection{Equaci{\'o} de la calor}
+
+L'equaci{\'o} de la calor descriu la distribuci{\'o} de la calor (o les variacions de la temperatura)
+en una regi{\'o} al llarg del temps. Aquesta equaci{\'o} s'en dedueix de la segona llei de la termodin{\`a}mica que diu essencialment que la calor flueix de regions amb alta temperatura a regions de baixa temperatura, i de la llei de conservaci{\'o} de l'energia. Tamb{\'e} hem de tenir en compte que la quantitat de calor d'un cos {\'e}s proporcional a la seva massa i, evidentment, a la seva temperatura.
+
+Considerem una barra homog{\`e}nia que t{\'e} els seus costats coberts per un material a{\"\i}llant de tal manera que la calor de la barra no s'escapa a l'exterior. Si denotam per $u(x,t)$ la temperatura de la barra a l'instant $t$
+al punt $x,$ llavors l'equaci{\'o} que modela aquesta temperatura {\'e}s
+
+\[
+ u_t=c\;u_{xx}
+\]
+
+on $c$ {\'e}s una constant que representa la difusivitat de la barra. A m{\'e}s a m{\'e}s, tenim una
+condici{\'o} inicial que representa la temperatura de la barra a l'instant $t=0$ i ve donada per $u(x,0)=f(x).$
+
+Quan la barra {\'e}s finita, tamb{\'e} hem de saber qu{\`e} ocorre en els seus costats laterals, si la temperatura es mant{\'e} fixa o b{\'e} si hi ha aportament o p{\`e}rdua de calor; aix{\`o} vindr{\`a} donat per les condicions de frontera. Per exemple, si la barra t{\'e} longitud $L$ llavors les condicions de frontera seran
+\[
+ u(0,t)=\varphi_0(t), \quad u(L,t)=\varphi_L(t),
+\]
+essent $\varphi_0$ i $\varphi_L$ funcions conegudes.
+
+
+En el cas que considerem  l'equaci{\'o} de la calor en  2 i 3 variables, llavors les equacions que s'obtenen s{\'o}n:
+\vspace{0.4cm}\begin{eqnarray*}
+u_t&=&c(u_{xx}+u_{yy})\quad\hbox{ en dimensi{\'o} 2}\\
+u_t&=&c(u_{xx}+u_{yy}+u_{zz})\quad \hbox{ en dimensi{\'o} 3}
+\end{eqnarray*}
+
+L'equaci{\'o} de la calor {\'e}s el prototip d'equaci{\'o} parab{\`o}lica.
+En la seg{\"u}ent secci{\'o} estudiarem un m{\`e}tode per resoldre l'equaci{\'o} en dimensi{\'o} 1.
+
+
+\subsubsection{Equaci{\'o} d'ones}
+
+Considerem una corda el{\`a}stica ben tirant de longitud $a,$ que
+est{\`a} col$\cdot$locada al llarg d'un segment horitzontal i assumim
+que els dos costats de l'el{\`a}stic estan fixos. Si corbam
+verticalment l'el{\`a}stic des de la seva posici{\'o} original o b{\'e} si
+li donam una certa velocitat vertical als seus punts, l'el{\`a}stic
+comen\c{c}ar{\`a} a oscil.lar. L'equaci{\'o} d'ones estudia la
+forma que adoptar{\`a} l'el{\`a}stic en cada un dels seus punts al llarg
+del temps, com per exemple la vibraci{\'o} d'una corda de viol{\'\i},
+o la propagaci{\'o} d'ones com les del so o la llum. L'equaci{\'o} t{\'e}
+la seg{\"u}ent forma:
+
+\[
+ u_{tt}=c^2\; u_{xx}
+\]
+
+on $\ c^2=T/\rho\ $ essent $T$ la tensi{\'o} de la corda i $\rho$ la densitat de massa constant de la corda, {\'e}s a dir,
+la massa per unitat de longitud. Es pot demostrar que $\ c=\sqrt{T/\rho}\ $ {\'e}s la velocitat a la que es mouen les ones.
+L'equaci{\'o} d'ones {\'e}s el prototip d'equaci{\'o} hiperb{\`o}lica.
+
+De la mateixa manera que amb l'equaci{\'o} de la calor, hem de dotar aquesta equaci{\'o} d'unes condicions inicials que descriuen l'estat de la corda al temps inicial, la seva forma inicial $\ u(x,0)=f(x)\ $ i la seva velocitat inicial $\ u_t(x,0)=g(x)\,.$\\
+
+Com que assumim que la corda {\'e}s finita i est{\`a} fixa en els extrems llavors, el moviment de la corda tamb{\'e}
+vindr{\`a} donat per les condicions de frontera: $\ u(0,t)=0, u(a,t)=0\,.$
+
+Evidentment es podrien assumir altres hip{\`o}tesis damunt la corda, com per exemple que aquesta {\'e}s infinita (si volem modelar la propagaci{\'o} del so a l'espai). Aleshores, les condicions de frontera canvien.
+
+
+A continuaci{\'o} escrivim l'equaci{\'o} d'ones en  2 i 3 variables.
+\vspace{0.4cm}\begin{eqnarray*}
+u_{tt}&=&c^2(u_{xx}+u_{yy})\quad\hbox{ en dimensi{\'o} 2}\\
+u_{tt}&=&c^2(u_{xx}+u_{yy}+u_{zz})\quad \hbox{ en dimensi{\'o} 3}
+\end{eqnarray*}
+
+
+\subsubsection{Equaci{\'o} de Laplace}
+
+L'exemple m{\'e}s t{\'\i}pic  d'equaci{\'o} el.l{\'\i}ptica {\'e}s l'equaci{\'o}
+$$
+u_{xx}+u_{yy}=0
+$$
+
+anomenada equaci{\'o} de Laplace.
+
+
+Observem que si a l'equaci{\'o} de la calor  en dues dimensions $x,y$ cercam solucions
+estacion{\`a}ries, {\'e}s a dir, independents del temps, llavors $\ u_t = 0\ $ i d'aquesta manera resulta que aquestes solucions verifiquen $\ u_{xx}+u_{yy}= 0\,.$ {\'E}s a dir, l'equaci{\'o} de Laplace pot
+ser interpretada com l'equaci{\'o} de la calor estacion{\`a}ria.
+
+Com que no hi ha depend{\`e}ncia en el temps no podem imposar condicions inicials. Ara b{\'e}, es pot imposar que les solucions de l'equaci{\'o} de Laplace verifiquin certes condicions de frontera. Per exemple, podem consideram el seg{\"u}ent problema en dimensi{\'o} dos en un rectangle $\ [0,a]\times [0,b]\ $ i vindr{\`a} donat per  condicions del tipus:
+
+\[
+\left\{\begin{array}{ll}
+u(x,0)=f(x)\ \ & u(x,b)=g(x)\\
+\\
+u(0,y)=0 \ \ & u(a,y)=0
+\end{array}
+\right.
+\]
+
+
+\subsection{M{\`e}tode de separaci{\'o} de variables}
+
+Un dels m{\`e}todes m{\'e}s utilitzats per a la resoluci{\'o} de  equacions en derivades parcials lineals {\'e}s el de
+separaci{\'o} de variables. Amb aquest m{\`e}tode la resoluci{\'o} del problema es redueix a la resoluci{\'o} d'una successi{\'o}
+de problemes de valors inicials i/o de contorn relatius a certes equacions diferencials ordin{\`a}ries. Separar variables consisteix en cercar totes les possibles solucions de l'equaci{\'o} i de la condici{\'o} de contorn (per ara no parlarem de la condici{\'o} inicial) que siguin producte de dues funcions,
+una depenent de la variable espacial $\ x\in D\ $ i l'altra de la temporal $\ t \in(0,\infty)\ $ de la forma:
+
+\[
+ u(x,t)=T(t)X(x),\quad (x,t)\in D\times (0,\infty).
+\]
+
+Evidentment, en tot moment estam cercant solucions que no siguin id{\`e}nticament nul.les. A m{\'e}s a m{\'e}s,
+nom{\'e}s consideram el cas unidimensional, {\'e}s a dir $\ D\subseteq \R.$
+
+Anem a explicar el m{\`e}tode amb un exemple. Resolem l'equaci{\'o} de la calor amb les condicions indicades
+
+\vspace{0.4cm}
+\begin{equation}\label{calorDirichlet}
+\left\{ \vspace{0.4cm}\begin{split}
+&u_t=c\;u_{xx}\quad \hbox{ al domini } \ D=\{(x,t)\in\R^2\ :\  0<x<L\,,\ t>0\}\\
+\\
+&u(0,t)=u(L,t)=0 \qquad t\geq 0\\
+\\
+&u(x,0)=f(x) \qquad x\in[0,L]
+ \end{split}\right.
+\end{equation}
+
+amb $f$ una funci{\'o} cont{\'\i}nua. Seguint el m{\`e}tode de separaci{\'o} de variables, volem trobar una soluci{\'o} de la forma
+
+\[
+ u(x,t)=X(x)T(t),
+\]
+
+on $X$ i $T$ s{\'o}n funcions a determinar. Si substitu{\"\i}m la igualtat anterior a l'EDP \eqref{calorDirichlet} obtenim
+
+\[
+ X(x)T'(t)=c X''(x)T(t)\quad per\ (x,t)\in D.
+\]
+
+Si suposam que $X(x)\neq 0 $ per $x\in(0,L)$ i $T(t)\neq 0$ per $t> 0$, llavors la igualtat anterior queda
+
+\[
+ \frac{X''(x)}{X(x)}=\frac{T'(t)}{c\;T(t)}
+\]
+
+En aquesta darrera igualtat el primer membre nom{\'e}s dep{\`e}n de $x$ i el segon nom{\'e}s de $t.$ Perqu{\`e} es produeixi la
+igualtat, ambd{\'o}s membres han de ser constants. Denotam aquesta constant per $-\lambda$ i llavors tenim dues equacions diferencials ordin{\`a}ries
+
+\begin{eqnarray}
+ X''(x)+\lambda\; X(x)=0\label{ec-x}
+\end{eqnarray}
+\begin{eqnarray}
+T'(t)+c\;\lambda\; T(t)=0\label{ec-t}
+\end{eqnarray}
+
+Les condicions de frontera queden:
+\begin{eqnarray*}
+ u(0,t)=X(0)T(t)=0\qquad\qquad u(L,t)=X(L)T(t)=0
+\end{eqnarray*}
+
+i com que estam suposant que $\ T(t)\neq 0\,,\ $ llavors les condicions de frontera s{\'o}n
+
+\[
+ X(0)=0\qquad X(L)=0\,.
+\]
+
+L'EDO \eqref{ec-x} {\'e}s una equaci{\'o} lineal de segon ordre que es resol trobant les solucions de l'equaci{\'o}:
+
+$$
+x^2+\lambda=0\ \Longleftrightarrow x=\pm\sqrt{-\lambda}
+$$
+
+
+La soluci{\'o} de \eqref{ec-x} dep{\`e}n del signe de $\lambda,$ per tant estudiarem els tres casos segons el seu signe.
+\begin{itemize}
+\item $\lambda<0\,.$ En aquest cas les solucions s{\'o}n
+\[
+ X(x)=Ae^{-\sqrt{-\lambda}x}+Be^{\sqrt{-\lambda} x}
+\]
+Si imposam les condicions de frontera,
+\begin{eqnarray*}
+ X(0)&=&A+B=0\\
+X(L)&=&Ae^{-\sqrt{-\lambda}L}+Be^{\sqrt{-\lambda} L}=0
+\end{eqnarray*}
+obtenim que es tracta d'un sistema lineal homogeni per a les constants $A$ i $B.$ Com que el determinant de la matriu
+del sistema {\'e}s distint de zero, l'{\'u}nica soluci{\'o} {\'e}s la trivial $A = B = 0,$ i per tant, $X = 0.$
+Com que cercam solucions que no siguin id{\`e}nticament nul$\cdot$les, resulta que per a $\ \lambda < 0\ $ no existeixen solucions no trivials.
+
+\item $\lambda=0\,.$ La soluci{\'o} general de l'equaci{\'o} {\'e}s
+\[
+ X(x)=Ax+B
+\]
+que si imposam les condicions de frontera ens torna a donar $A=B=0$ i per tant la soluci{\'o} id{\`e}nticament nul.la.
+En aquest cas tampoc tenim solucions no trivials.
+
+\item $\lambda>0\,.$ La soluci{\'o} general de l'equaci{\'o} {\'e}s
+\[
+ X(x)=A\cos(\sqrt{\lambda}x)+B\sin(\sqrt{\lambda}x)
+\]
+Si imposam les condicions de frontera obtenim el sistema:
+\begin{eqnarray*}
+&& A=0\\
+&&A\cos(\sqrt{\lambda} L)+B\sin(\sqrt{\lambda} L)=0\Rightarrow B\sin(\sqrt{\lambda} L)=0
+\end{eqnarray*}
+
+Aquest sistema t{\'e} solucions no trivials si $\ \sin(\sqrt{\lambda} L)=0\ $ {\'e}s a dir si $\ \sqrt{\lambda}L=k\pi, k\in\Z.$
+En aquest cas hem obtingut una fam{\'\i}lia d'autovalors del pro\-ble\-ma
+\[
+ \lambda_k=\left(\frac{k\pi}{L}\right)^2,
+\]
+pels quals hi ha solucions no trivials
+$
+ X(x)=\sin\left(\frac{k\pi}{L} x\right),
+$
+que s'anomenen les autofuncions del pro\-ble\-ma (hem considerat $B = 1$ sense p{\`e}rdua de generalitat).
+
+Observem que com que a $\lambda_k$ la variable $k$ est{\`a} elevada al quadrat, {\'e}s suficient considerar els $k$ positius.
+\end{itemize}
+
+Ara, per a cada autovalor $\lambda_k$ encara ens falta resoldre l'equaci{\'o} temporal \eqref{ec-t}
+que t{\'e} com a soluci{\'o} general
+\[
+ T_k(t)=a_ke^{-c\lambda_k t}\qquad a_k\in\R.
+\]
+
+Llavors, per a cada $k\in \Z^+$ la funci{\'o}
+\[
+ u_k(x,t)=a_k\sin\left(\frac{k\pi}{L} x\right)e^{-c\lambda_k t}
+\]
+
+{\'e}s una soluci{\'o} no trivial de l'equaci{\'o} de la calor que s'anul.la als extrems de la barra.
+
+Per acabar de resoldre el problema ens falta imposar la condici{\'o} inicial $u(x,0)=f(x).$ Per fer aix{\`o}
+primer hem de tenir en compte que l'EDP \eqref{calorDirichlet} que estam considerant {\'e}s lineal i per tant verifica
+el principi de superposici{\'o}, {\'e}s a dir, si $u_1$ i $u_2$ s{\'o}n soluci{\'o} llavors tamb{\'e} ho {\'e}s la seva suma
+$u_1+u_2.$  Per aix{\`o} considerarem d'una manera m{\'e}s general que la nostra soluci{\'o} de l'EDP \eqref{calorDirichlet}
+t{\'e} la forma
+\begin{equation}\label{sol-calor}
+ u(x,t)=\sum_{k=1}^N u_k(x,t)=\sum_{k=1}^N a_k\sin\left(\frac{k\pi}{L} x\right)e^{-c\lambda_k t}
+\end{equation}
+
+i satisf{\`a} les condicions de contorn.
+
+La funci{\'o} \eqref{sol-calor} tamb{\'e} verificar{\`a} la condici{\'o} inicial si
+
+\[
+ f(x)=\sum_{k=1}^N a_k\sin\left(\frac{k\pi}{L} x\right),
+\]
+
+per{\`o} en general la funci{\'o} $f,$ que {\'e}s la condici{\'o} inicial del problema, no tindr{\`a} aquesta forma. En aquests darrers casos s'utilitzen uns resultats que queden fora del prop{\`o}sit del curs.
+
+\vspace{0.8cm}
+Considerem un exemple que s{\'\i} podem resoldre.
+
+\vspace{0.4cm}
+\begin{exemple}
+ Resoleu l'EDP $\ u_t=2u_{xx}\,,\ 0\leq x\leq \pi\,,\ t\geq 0\ $ amb les condicions de contorn $\ u(0,t)=0\,,\ u(\pi,t)=0\ $ i
+condicions inicials $\ u(x,0)=5\sin(2x)-30\sin(3x)\,.$
+\end{exemple}
+
+Seguint el m{\`e}tode se separaci{\'o} de variables explicat m{\'e}s amunt, la soluci{\'o} de l'equaci{\'o} de la calor amb les condicions de frontera {\'e}s
+
+\[
+ u(x,t)=\sum_{k=1}^N u_k(x,t)=\sum_{k=1}^N a_k\sin\left(\frac{k\pi}{L} x\right)e^{-c\lambda_k t}.
+\]
+
+Com que $\ L=\pi\ $ llavors,  $\ \lambda_k=k^2\ $ i la soluci{\'o} de l'equaci{\'o} {\'e}s
+
+$$
+u(x,t)=\sum_{k=1}^N a_k\sin\left(k x\right)e^{-2k^2 t}
+$$
+
+Si ara aplicam la condici{\'o} inicial obtenim:
+
+\[
+u(x,0)= \sum_{k=1}^N a_k\sin\left(k\; x\right)=5\sin(2x)-30\sin(3x),
+\]
+
+D'aix{\`o}, $\ N=3\,,\ a_1=0\,,\ a_2=5\,,\ a_3=-30\,.$\\
+
+ Per tant, la soluci{\'o} final {\'e}s
+
+\[
+ u(x,t)=5\sin(2x)e^{-8t}-30\sin(3x)e^{-18 t}
+\]
+
+
+\vspace{0.7cm}
+\begin{exemple}
+Resoleu l'equaci{\'o} d'ones amb les seg{\"u}ents condicions:
+\begin{equation}\label{ondas}
+\left\{\begin{split}
+&u_{tt}=-u_{xx}\quad \hbox{ al domini } \ D=\{(x,t)\in\R^2\ :\  0<x<\pi\,,\ t>0\}\\
+\\
+&u(0,t)=u(\pi,t)=0 \qquad t\geq 0\\
+\\
+&\lim_{t\to \infty} u(x,t)=0\qquad x\in[0,\pi]\\
+\\
+&u(x,0)=1\qquad x\in(0,\pi)
+ \end{split}\right.
+\end{equation}
+\end{exemple}
+
+Si aplicam el m{\`e}tode de separaci{\'o} de variables imposant que la soluci{\'o} sigui de la forma $\ u(x,t)=X(x)T(t)\ $ i
+utilitzant l'equaci{\'o} obtenim
+
+\[
+X(x) T''(t)=-X''(x)T(t) \iff \frac{T''(t)}{T(t)}=-\frac{X''(x)}{X(x)}
+\]
+
+Perqu{\`e} aquests dos quocients siguin iguals ha de passar que siguin constants, {\'e}s a dir:
+
+\[
+\begin{split}
+-\frac{X''(x)}{X(x)}=-\lambda\iff X''(x)-\lambda X(x)=0\\
+\\
+ \frac{T''(t)}{T(t)}=-\lambda\iff T''(t)+\lambda T(t)=0
+\end{split}
+\]
+
+amb les condicions $\ X(0)=0\,,\ X(\pi)=0\,,\ \displaystyle\lim_{t\to \infty}T(t)=0\,,\ T(0)=1\,.$
+
+Si $\ \lambda=k^2>0\ $ llavors la soluci{\'o} de la primera equaci{\'o} {\'e}s
+
+\[
+ X(x)=Ae^{k x}+Be^{-kx}
+\]
+
+que en imposar les condicions respecte a la funci{\'o} $X(x)$ ens dona id{\`e}nticament zero.\\
+
+Si $\lambda=0$ obtenim de nou la soluci{\'o} nul.la.\\
+
+Si $\lambda=-k^2<0$ llavors la soluci{\'o} de l'equaci{\'o} diferencial per $X(x)$ {\'e}s
+
+\[
+ X(x)=A\cos(kx)+B\sin(kx)
+\]
+
+Si ara aplicam que $\ X(0)=0\ $ obtenim $\ A=0\ $ i si aplicam $\ X(\pi)=0\ $ obtenim que $\ k\in \Z\,.$
+
+Ara resolem l'EDO per la funci{\'o} $T(t)$ coneixent ja el valor per $\lambda$ i obtenim que
+
+\[
+ T(t)=Ce^{kt}+De^{-kt}
+\]
+
+Si imposam la condici{\'o} de que $\ \displaystyle\lim_{t\to\infty}T(t)=0\ $ dedu{\"\i}m que $\ C=0\,.$ Per tant la soluci{\'o} a la que arribam {\'e}s
+
+\begin{equation}\label{sol-ondas}
+ u(x,t)=X(x)T(t)=E\;e^{-kt}\sin(kx)\ \ k\in \Z^+
+\end{equation}
+
+Ens falta encara imposar la condici{\'o} de frontera $\ u(x,0)=1\,,$ o equivalentment\\
+
+ $\ E\;\sin(kx)=1\,,\ $ per tot $\ x\in(0,\pi)\,.$\\
+
+
+Evidentment aix{\`o} {\'e}s impossible, per tant no existeix una soluci{\'o} de la
+forma anterior \eqref{sol-ondas} que satisfaci la condici{\'o} de frontera.
+
+Aplicant el principi de superposici{\'o} i les s{\`e}ries de Fourier podem considerar solucions de la forma
+\[
+ u(x,t)=\sum_{k=0}^\infty S_k e^{-k t}\sin(kx),
+\]
+
+que satisf{\`a} les tres primeres condicions del problema i considerant la darrera condici{\'o} $u(x,0)=1$ es pot demostrar que la soluci{\'o} del problema \eqref{ondas} {\'e}s
+\begin{eqnarray*}
+ u(x,t)&=&\displaystyle\sum_{n=1}^\infty\frac{4}{(2n+1)\pi} e^{-(2n+1)t}\sin((2n+1)x)=\\
+ \\
+&=&\displaystyle\frac{4}{\pi}\left(e^{-t}\sin(x)+\frac{1}{3}e^{-3t}\sin(3x)+\frac{1}{5}e^{-5t}\sin(5x)+\ldots\right)
+\end{eqnarray*}
+
+
+\end{document}
+
+
+
+
