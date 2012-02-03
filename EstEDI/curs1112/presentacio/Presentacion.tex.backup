@@ -1,0 +1,201 @@
+\documentclass[compress,red,mathsans,10pt]{beamer}
+\usepackage{beamerthemesplit}
+\usepackage{amssymb}
+%\usetheme{Antibes}
+\usepackage{pgf,pgfarrows,pgfnodes}
+
+\setbeamercolor{uppercol}{fg=white,bg=purple}%
+\setbeamercolor{lowercol}{fg=black,bg=pink}%
+
+
+\usecolortheme{lily}
+\begin{document}
+\title{Aplicacions Estad\'{\i}stiques}
+\subtitle{Enginyeria Edificaci\'o 2009/10.}  
+\author{Antonio E. Teruel}
+\date{}
+
+
+
+\frame{\titlepage} 
+
+%\frame{\frametitle{Table of contents}\tableofcontents} 
+
+\section{Presentaci\'o} 
+\frame{\frametitle{Informaci\'o general}	
+\begin{itemize}
+\item Professor: Antonio E. Teruel
+\item [] Despatx: Anselm Turmeda D-120
+\item [] E-mail: antonioe.teruel@uib.es
+\item Horari:
+	\begin{center}
+	\begin{tabular}{|l|c|} \hline
+	D\'{i}a & Hora \\ \hline
+	Dilluns & 10:30 -- 11:30 \\ \hline
+	Dimecres & 8:30 -- 10:30 \\ \hline
+	Divendres & 9:30 -- 10:30 \\ \hline
+	\end{tabular}
+	\end{center}
+\item Documentaci\'o:
+	\begin{itemize}
+	\item campus extens (apunts, llistes problemes, anuncis)
+	\item UIB digital (guia docent, cronograma)
+	\end{itemize} 
+\end{itemize}
+}
+\frame{\frametitle{Evaluaci\'o}
+\begin{itemize}
+\item Activitats presencials: 
+	\begin{itemize}
+	\item Classes de teor\'{\i}a i problemes (presencia del professor)
+	\item Classes de resoluci\'o individual de problemes (sense el professor)
+		\begin{itemize}
+		\item [] Setmanes: 8-12 de march i 24-28 de maig
+		\end{itemize}
+	\item Examens 
+		\begin{itemize}
+		\item [] D\'{\i}a: 05/03, 26/03, 30/04, 21/05, \color{red}31/05, 13/09 \color{black}
+		\end{itemize}
+	\end{itemize}
+\item Itineraris:
+	\begin{center}
+	\begin{tabular}{|l|c|c|c|} \hline
+			       & A	& B	& C    \\ \hline
+	Examens peri\'odics    &	& 30\%	& 30\% \\ \hline
+	Exercicis              & 20\%	&	& 20\% \\ \hline
+	Pr\`actiques ordinador & 10\%	& 10\%	& 10\% \\ \hline
+	Examen final           & 70\%	& 60\%	& 40\% \\ \hline
+	\end{tabular}
+	\end{center}
+\item A cada alumne se li posar\'a la nota \color{red}m\'es favorable dels 3 itineraris \color{black}
+\end{itemize}
+}
+
+\frame{\frametitle{L'asignatura}
+\begin{itemize}
+\item Estad\'istica: Ci\`encia per a la descripci\'o, organitzaci\'o i interpretaci\'o de dades
+\item <2->Esquema:
+\end{itemize}
+\begin{columns}
+\begin{column}{0.65\textwidth}
+\begin{overlayarea}{0.65\textwidth}{0.65\textheight}
+ \only<2>{\includegraphics[width=10cm]{Dbes0101.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+	} 
+ \only<3>{\includegraphics[width=10cm]{Dbes0102.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+	} 
+ \only<4>{\includegraphics[width=10cm]{Dbes0103.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+	}
+ \only<5>{\includegraphics[width=10cm]{Dbes0104.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+		\put(-150,30){$Y$}
+		\put(-110,25){$\mu_{Y}, \sigma^2_{Y}$}
+	}
+ \only<6>{\includegraphics[width=10cm]{Dbes0105.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+		\put(-150,30){$Y$}
+		\put(-110,25){$\mu_{Y}, \sigma^2_{Y}$}
+		\put(-155,75){Probabilitat}
+	}
+ \only<7>{\includegraphics[width=10cm]{Dbes0106.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+		\put(-150,30){$Y$}
+		\put(-110,25){$\mu_{Y}, \sigma^2_{Y}$}
+		\put(-155,75){Probabilitat}
+	}
+ \only<8>{\includegraphics[width=10cm]{Dbes0107.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+		\put(-150,30){$Y$}
+		\put(-110,25){$\mu_{Y}, \sigma^2_{Y}$}
+		\put(-155,75){Probabilitat}
+	}
+ \only<9-10>{\includegraphics[width=10cm]{Dbes0108.eps}
+		\put(-240,105){Poblaci\'o}
+		\put(-260,135){$N$}
+		\put(-150,135){$X$}
+		\put(-110,125){$\mu_{X}, \sigma^2_{X}$}
+		\put(-230,65){$n$}
+		\put(-240,37){mostra}
+		\put(-150,30){$Y$}
+		\put(-110,25){$\mu_{Y}, \sigma^2_{Y}$}
+		\put(-155,75){Probabilitat}
+	}
+\end{overlayarea}
+\end{column}
+\begin{column}{0.35\textwidth}
+\begin{overlayarea}{0.95\textwidth}{0.65\textheight}
+\only<2-6>{
+	\begin{itemize} 
+ 	\item <2->$N$ tamany poblaci\'o
+ 	\item <3->$X$ Caracteristica 
+ 	\item <4->$n$ tamany mostra
+ 	\item <5->$Y$ Carac. mostral 
+	\end{itemize}
+	}
+\only<7->{
+	\begin{itemize} 
+ 	\item <7-9> \color{red}{\large Mostreig.}\color{black}
+	\item[]
+ 	\item <8-> \color{blue}{\large Est. Descriptiva}\color{black}
+	\item[]
+ 	\item <9-> \color{green}{\large Est. Inferencial}\color{black}
+	\end{itemize}
+	}
+\end{overlayarea}
+\end{column}
+\end{columns}
+}
+
+\frame{\frametitle{Temari}
+\begin{itemize}
+\item Estad\'{\i}stica Descriptiva.
+	\begin{itemize}
+	\item [] Tema 1. An\`alisi exploratori de dades.
+	\item [] Tema 2. Distribucions estad\'{\i}stiques bidimensionals. 
+	\end{itemize}
+\item Probabilitat.
+	\begin{itemize}
+	 \item [] Tema 3. Teoria de la probabilitat.
+	\end{itemize}
+\item Estad\'{\i}stica Inferencial.
+	\begin{itemize}
+	\item [] Tema 4. Variables aleat\`ories discretes.
+	\item [] Tema 5. Variables aleat\`ories continues.
+	\item [] Tema 6. Estimaci\'o de par\`ametres.
+	\item [] Tema 7. Contrast d'hipòtesis.
+	\end{itemize}
+\end{itemize}
+}
+
+\end{document}
