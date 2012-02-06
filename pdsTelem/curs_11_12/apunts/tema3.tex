@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
-\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
+\usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -211,7 +212,7 @@ $(a^n\sin(\omega_0n)) u[n]$ & $\frac{az^{-1}\sin \omega_0}{1-2az^{-1}\cos\omega_
 
 \vskip 0.3cm
 \noindent
-Un tipus important de transformades Z s\'on les transformada Z racionals,
+Un tipus important de transformades Z s\'on les transformades Z racionals,
 que s'escriuen com a quocient de dos polinomis:
 
 \begin{equation}
@@ -370,7 +371,7 @@ X(z) & \text{ROC} & x[n] & \\ \hline & & & \\
 \frac{1}{1-pz^{-1}} & |z|>|p| & p^n u[n] & \text{(senyal causal)} \\ & & & \\
 \frac{1}{1-pz^{-1}} & |z|<|p| & -p^n u[-n-1] & \text{(senyal anticausal)} \\ & & & \\
 \frac{A}{1-pz^{-1}}  + \frac{A^*}{1-p^*z^{-1}} & |z|>|p| & 2 |A| r^n \cos(\beta n + \alpha) u[n] & 
-A=|A|e^{j\alpha}, \,\, r=|r|e^{j\beta}, \,\, \text{(senyal causal)} \\ & & & \\
+A=|A|e^{j\alpha}, \,\, p=|r|e^{j\beta}, \,\, \text{(senyal causal)} \\ & & & \\
 \frac{pz^{-1}}{(1-pz^{-1})^2} & |z|>|p| & np^nu[n] & \text{(senyal causal)}
 \end{array}
 \]
@@ -415,32 +416,6 @@ x[n]=\frac{1}{4} (-1)^nu[n] + \frac{3}{4} u[n] + \frac{1}{2} n (1)^n u[n] =
 \end{enumerate}
 
 \vskip 1cm
-\noindent
-\textbf{Inversi\'o de transformades Z descrites com a s\`eries de pot\`encies}
-
-\vskip 0.2 cm
-\noindent
-Si una $X(z)$ amb una determinada ROC es pot escriure de la seg\"ent manera:
-\[
-X(z)=\sum_{n=-\infty}^{\infty} c_n z^{-n}
-\]
-\noindent
-i aquesta s\`erie convergeix dins la ROC donada, llavors $x[n]=c_n$, per a tot $n$.
-
-\vskip 0.2 cm
-\noindent
-Exemples:
-\vskip 0.2 cm
-\begin{tabular}{l|l|l}
-$X(z)$ & ROC & $x[n]$ \\ \hline & & \\
-$\frac{1}{1-1.5z^{-1}+0.5z^{-2}}$ & $|z|>1$ & $\{\underline{1}, \frac{3}{2}, \frac{7}{4}, \cdots \}$ \\ \hline & & \\
-$\frac{1}{1-1.5z^{-1}+0.5z^{-2}}$ & $|z|<0.5$ & $\{ \cdots, 14, 6, 2, 0, \underline{0} \}$ \\ \hline & & \\
-$\log(1+az^{-1})$ & $|z|>|a|$ & $\begin{cases} (-1)^{n+1} \frac{a^n}{n} & \text{si }n \geq 1 \\ \\ 0 & \text{si } n \leq 0 \end{cases}$
-\\ & & (Nota: $\log(1+x)=\sum_{n=1}^\infty \frac{ (-1)^{n+1} x^n}{n}$ si $|x|<1$)
-\end{tabular}
-
-
-\newpage
 \noindent
 \textbf{An\`alisi de sistemes LTI mitjan\c{c}ant la transformada Z}
 

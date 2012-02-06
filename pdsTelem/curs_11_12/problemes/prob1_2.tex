@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[catalan]{babel}
 \usepackage{amssymb,amsthm,amsmath,xspace,color}
 \usepackage[dvips]{graphicx}
@@ -39,9 +40,9 @@
   \item Dibuixeu el senyal $x$.
   \item Dibuixeu el senyal resultant de:
     \begin{enumerate}
-    \item Primer reflexar el senyal $x$ i després retardar-lo $4$
+    \item Primer reflexar el senyal $x$ i desprÃ©s retardar-lo $4$
       mostres.
-    \item Primer retardar-lo $4$ mostres i després reflexar-lo.
+    \item Primer retardar-lo $4$ mostres i desprÃ©s reflexar-lo.
     \end{enumerate}
   \item Dibuixeu els senyals $x[-n-4]$ i $x[-n+4]$ i compareu-los amb
   els resultats anteriors.
@@ -57,19 +58,19 @@
   \item $u[n]=\sum_{k=0}^\infty
     \delta[n-k]$. 
   \end{enumerate}
-\item Demostreu que la descomposició d'un senyal en la seva part
-  parell i la seva part senar és única.
+\item Demostreu que la descomposiciÃ³ d'un senyal en la seva part
+  parell i la seva part senar Ã©s Ãºnica.
 \item Sigui $x$ un senyal que pren valors reals. Demostreu que la
-  potència de $x$ és igual a la suma de la potència de la seva part
-  parell i la potència de la seva part senar. Proveu el resultat
-  anàleg per a l'energia.
+  potÃ¨ncia de $x$ Ã©s igual a la suma de la potÃ¨ncia de la seva part
+  parell i la potÃ¨ncia de la seva part senar. Proveu el resultat
+  anÃ leg per a l'energia.
 \item Sigui $\cT$ un sistema lineal. Demostreu que si l'entrada al
-  sistema és idènticament nul (totes les mostres iguals a $0$),
-  aleshores el senyal de sortida és idènticament nul.
-\item Pels sistemes següents, digueu si tenen les propietats
-  d'estabilitat, causalitat, linealitat i invariança amb el temps.
+  sistema Ã©s idÃ¨nticament nul (totes les mostres iguals a $0$),
+  aleshores el senyal de sortida Ã©s idÃ¨nticament nul.
+\item Pels sistemes segÃ¼ents, digueu si tenen les propietats
+  d'estabilitat, causalitat, linealitat i invarianÃ§a amb el temps.
   \begin{enumerate}
-  \item $(\cT x)[n]=x[n]g[n]$, on $g:\Z\to\bR$ és una funció arbitrària.
+  \item $(\cT x)[n]=x[n]g[n]$, on $g:\Z\to\bR$ Ã©s una funciÃ³ arbitrÃ ria.
   \item $(\cT x)[n]=\sum_{k=0}^n x[k]$.
   \item $(\cT x)[n]=\sum_{k=n-2}^{n+2} x[k]$.
   \item $(\cT x)[n]=x[n-n_0]$, amb $n_0\in\Z$ fixat.
@@ -79,28 +80,28 @@
   \item $(\cT x)[n]=ax[n]+b$, amb $a,b\in\bR$ fixats.
   \item $(\cT x)[n]=x[-n]$.
   \item $(\cT x)[n]=|x[n]|$.
-  \item $(\cT x)[n]=\lfloor x[-n] \rfloor$, on $\lfloor t\rfloor$ és
-    la part entera de $t$, és a dir, el major enter menor o igual que $t$.
+  \item $(\cT x)[n]=\lfloor x[-n] \rfloor$, on $\lfloor t\rfloor$ Ã©s
+    la part entera de $t$, Ã©s a dir, el major enter menor o igual que $t$.
   \item $(\cT x)[n]=x[n]+|x[n]|$.
   \end{enumerate}
 \item Dos sistemes $\cT_1$ i $\cT_2$ es connecten en serie formant un
-  nou sistema $\cT$. Digueu si les següents afirmacions són certes o
+  nou sistema $\cT$. Digueu si les segÃ¼ents afirmacions sÃ³n certes o
   falses; demostreu les certes i doneu contraexemples per a les
   falses.
   \begin{enumerate}
-  \item Si $\cT_1$ i $\cT_2$ són lineals, aleshores $\cT$ és lineal.
-  \item Si $\cT_1$ i $\cT_2$ són invariants amb el temps, aleshores
-    $\cT$ és invariant amb el temps. 
-  \item Si $\cT_1$ i $\cT_2$ són causals, aleshores $\cT$ és causal.
-  \item Si $\cT_1$ i $\cT_2$ són LTI, aleshores $\cT$ és LTI.
-  \item Si $\cT_1$ i $\cT_2$ són no lineals, aleshores $\cT$ és no lineal.
-  \item Si $\cT_1$ i $\cT_2$ són estables, aleshores $\cT$ és estable.
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n lineals, aleshores $\cT$ Ã©s lineal.
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n invariants amb el temps, aleshores
+    $\cT$ Ã©s invariant amb el temps. 
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n causals, aleshores $\cT$ Ã©s causal.
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n LTI, aleshores $\cT$ Ã©s LTI.
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n no lineals, aleshores $\cT$ Ã©s no lineal.
+  \item Si $\cT_1$ i $\cT_2$ sÃ³n estables, aleshores $\cT$ Ã©s estable.
   \end{enumerate}
   Digueu si afecta l'ordre en que s'interconnecten els dos sistemes
   per al cas que els sistemes $\cT_1$ i $\cT_2$ siguin lineals,
   invariants amb el temps i LTI.
 \item Per als parells de senyals que segueixen, calculeu-ne la
-  convolució:
+  convoluciÃ³:
   \begin{enumerate}
   \item $h[n]=(\underline{0},1)$, $x[n]=(\underline{2},1)$.
   \item $h[n]=(\underline{2},-1)$, $x[n]=(\underline{-1},2,1)$.
@@ -108,16 +109,16 @@
     $x[n]=(\underline{0},0,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1)$.
   \item $h[n]=(1,2,\underline{1},1)$, $x[n]=(\underline{1},-1,0,0,1,1)$.
   \end{enumerate}
-\item Calculeu la convolució dels senyals $h[n]=a^n u[n]$ i $x[n]=b^n
+\item Calculeu la convoluciÃ³ dels senyals $h[n]=a^n u[n]$ i $x[n]=b^n
   u[n]$; distingiu els casos $a=b$ i $a\neq b$.
-\item Sigui $\cT$ un sistema LTI estable. Demostreu les següents
+\item Sigui $\cT$ un sistema LTI estable. Demostreu les segÃ¼ents
   afirmacions. 
   \begin{enumerate}
-  \item Si el senyal d'entrada és periòdic de periode $T$, aleshores
-    el senyal de sortida és periòdic de periode $T$.
-  \item Si el senyal d'entrada és fitat i tendeix a una constant, és a
-    dir, $\lim_{n\to\infty}x[n]=a$, aleshores el senyal de sortida és
-    fitat i tendeix a una constant. Calculeu explícitament aquesta
+  \item Si el senyal d'entrada Ã©s periÃ²dic de periode $T$, aleshores
+    el senyal de sortida Ã©s periÃ²dic de periode $T$.
+  \item Si el senyal d'entrada Ã©s fitat i tendeix a una constant, Ã©s a
+    dir, $\lim_{n\to\infty}x[n]=a$, aleshores el senyal de sortida Ã©s
+    fitat i tendeix a una constant. Calculeu explÃ­citament aquesta
     constant. 
   \end{enumerate}
 \item Sigui $\cT$ un sistema LTI amb resposta impulsional donada per
@@ -126,21 +127,24 @@
     0,&\text{altrament.} 
   \end{cases}
   $$
-  Determineu la sortida quan s'excita amb el graó unitat
-  $u[n]$. Estudieu l'estabilitat del sistema en funció del paràmetre
+  Determineu la sortida quan s'excita amb el graÃ³ unitat
+  $u[n]$. Estudieu l'estabilitat del sistema en funciÃ³ del parÃ metre
   $a$.
-\item Sabem que la resposta impulsional d'un sistema s'anul·la per a
-  $n<n_1$ i per a $n>n_2$. Si s'excita amb un senyal que s'anul·la per
+\item Sabem que la resposta impulsional d'un sistema s'anulÂ·la per a
+  $n<n_1$ i per a $n>n_2$. Si s'excita amb un senyal que s'anulÂ·la per
   a $n<n_3$ i per a $n>n_4$, demostreu que existeixen constants $n_5$
-  i $n_6$ de manera que la sortida s'anul·la per a $n<n_5$ i per a
-  $n>n_6$. Determineu $n_5$ i $n_6$ en funció de $n_1,n_2,n_3,n_4$.
+  i $n_6$ de manera que la sortida s'anulÂ·la per a $n<n_5$ i per a
+  $n>n_6$. Determineu $n_5$ i $n_6$ en funciÃ³ de $n_1,n_2,n_3,n_4$.
 \item Considereu el sistema de la figura:
+
+
+
   \begin{figure*}[htbp]
     \centering
     \input{probl1.exc1.pstex_t}
   \end{figure*}
   \begin{enumerate}
-  \item Doneu la resposta impulsional del sistema en funció de
+  \item Doneu la resposta impulsional del sistema en funciÃ³ de
     $h_1,h_2,h_3,h_4$.
   \item Feu el cas particular
     $h_1[n]=(\underline{\frac12},\frac14,\frac12)$,
@@ -148,30 +152,9 @@
   \item Trobeu la resposta del sistema de l'apartat anterior quan
     s'excita amb el senyal $x[n]=\delta[n+2]+3\delta[n-1]-4\delta[n-3]$. 
   \end{enumerate}
-\item Determineu la solució (amb paràmetres) de les equacions en
-  diferències finites homogènies següents:
-  \begin{enumerate}
-  \item $y[n]+\frac34 y[n-1]+\frac18y[n-2]=0$.
-  \item $y[n]-y[n-1]+\frac14y[n-2]=0$.
-  \item $y[n]-5y[n-1]+6y[n-2]=0$.
-  \end{enumerate}
-\item Determineu la solució  de les equacions en
-  diferències finites següents suposant condicions inicials nul·les:
-  \begin{enumerate}
-  \item $y[n]+\frac34 y[n-1]+\frac18y[n-2]=\delta[n]$.
-  \item $y[n]-y[n-1]+\frac14y[n-2]=\delta[n]$.
-  \item $y[n]-5y[n-1]+6y[n-2]=\delta[n]$.
-  \end{enumerate}
-\item Determineu la solució  de les equacions en
-  diferències finites següents suposant condicions inicials $y[k]=1$
-  per a tot $k<0$:
-  \begin{enumerate}
-  \item $y[n]+\frac34 y[n-1]+\frac18y[n-2]=u[n]$.
-  \item $y[n]-y[n-1]+\frac14y[n-2]=u[n]$.
-  \item $y[n]-5y[n-1]+6y[n-2]=u[n]$.
-  \end{enumerate}
-\item Dibuixeu la forma directa i la forma canònica dels sistemes
-  següents donats per equacions en diferències finites.
+
+\item Dibuixeu la forma directa i la forma canÃ²nica dels sistemes
+  segÃ¼ents donats per equacions en diferÃ¨ncies finites.
   \begin{enumerate}
   \item $2y[n]+y[n-1]-4y[n-3]=x[n]+3x[n-5]$.
   \item $y[n]=y[n-1]+x[n]-x[n-1]+2x[n-2]-3x[n-4]$.

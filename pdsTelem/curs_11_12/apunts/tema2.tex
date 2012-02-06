@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
-\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
+\usepackage[utf8]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -30,7 +31,7 @@
 
 \begin{document}
 
-\textbf{\Large Tema 2.Sistemes}
+\textbf{\Large Tema 2. Sistemes}
 
 \vskip 0.3 cm
 \noindent
@@ -73,7 +74,7 @@ De manera equivalent es pot escriure: $y[n]=\sum_{k=-\infty}^n x[k]$
 \item Diferenciador
 
 \begin{tabular}{lr}
-$y[n]=x[n-1]-x[n]$ &
+$y[n]=x[n]-x[n-1]$ &
 \begin{minipage}{5cm}\includegraphics[width=5cm]{diferenciador.png}\end{minipage}
 \end{tabular}
 
@@ -318,7 +319,7 @@ Propietats dels sistemes LTI:
 
 \vskip 0.2 cm
 \noindent
-Classificaci\'o dels sistemes LTI segons la duraci\`o de la seva resposta impulsional:
+Classificaci\'o dels sistemes LTI segons la duraci\'o de la seva resposta impulsional:
 \begin{itemize}
 \item Sistemes FIR (\textit{finite-duration impulsional response}).
 S\'on aquells en qu\`e la resposta impulsional val zero fora d'un cert
@@ -339,7 +340,7 @@ la sortida del sistema s'escriu com un sumatori infinit de valors.
 \end{itemize}
 
 
-\newpage
+%\newpage
 %\vskip 0.3 cm
 \noindent
 \textbf{Sistemes LTI descrits per equacions en difer\`encies finites}
@@ -369,210 +370,14 @@ Els sistemes FIR causals s\'on sistemes no recursius.
 
 
 \vskip 0.3 cm
-En aquest apartat estudiam com calcular de manera expl\'icita la sortida dels sistemes
-recursius descrits per equacions de la forma:
-\[
-y[n]+\sum_{k=1}^N a_k y[n-k] = \sum_{k=0}^M b_k x[n-k]
-\]
-Aquest tipus d'equaci\'o rep el nom d'\textbf{equaci\'o en difer\`encies finites amb coeficients constants}.
-$N$ s'anomena \textbf{grau} de l'equaci\'o.
-
-
-\vskip 0.3 cm
-La soluci\'o general d'aquesta equaci\'o es calcula de la forma seg\"uent:
-
-
-\begin{enumerate}
-\item la soluci\'o $y[n]$ s'escriu com la suma de dos termes
-\[
-y[n]=y_H[n]+y_P[n]
-\]
-\noindent
-anomenats, respectivament, \textbf{soluci\'o homog\`enia} ($y_H$) i \textbf{soluci\'o particular} ($y_P$).
-
-\item La soluci\'o homog\`enia \'es la soluci\'o de l'equaci\'o:
-\[
-y[n]+\sum_{k=1}^N a_k y[n-k] = 0
-\]
-\noindent
-que rep el nom d'\textbf{equaci\'o homog\`enia}.
-
-$y_H[n]$ es calcula de la seq\"uent manera:
-
-\begin{enumerate}
-
-\item escrivim l'\textbf{eq\"uaci\'o caracter\'istica} associada a l'eq\"uaci\'o
-homog\`enia:
-\[
-\lambda^N+\sum_{k=1}^N a_k \lambda^{N-k} = 0
-\]
-\noindent
-aquesta equaci\'o t\'e grau $N$.
-\item calculam les arrels de l'eq\"uaci\'o caracter\'istica:
-\[
-\begin{array}{c}
-\lambda_1 \text{ amb multiplicitat } r_1 \\ \\
-\lambda_2 \text{ amb multiplicitat } r_2 \\ \\
-\cdots \\ \\
-\lambda_m \text{ amb multiplicitat } r_m
-\end{array}
-\]
-
-\noindent
-Es verifica que $r_1+r_2+\cdots+r_m=N$
-
-\item per a cada arrel $\lambda_i$ amb multiplicitat $r_i$ de l'equaci\'o 
-caracter\'istica tenim una soluci\'o parcial de l'equaci\'o homog\`enia:
-\[
-C_{i1} \lambda_i^n + C_{i2} n \lambda_i^n + \cdots + C_{i r_i} n^{r_i-1} \lambda_i^n
-= \sum_{j=1}^{r_i} C_{ij} n^{j-1} \lambda_i^n
-\]
-
-\item la soluci\'o de l'equaci\'o homog\`enia s'obt\'e sumant totes les solucions parcials
-\[
-y_H[n]=\sum_{i=1}^m \sum_{j=1}^{r_i} C_{ij} n^{j-1} \lambda_i^n
-\]
-
-\item les constants $C_{ij}$ es calculen a partir de les 
-\textbf{condicions inicials} del problema.
-
-\end{enumerate}
-
-
-
-\item La forma de la soluci\'o particular $y_P[n]$ dep\`en del tipus del senyal d'entrada $x[n]$:
-
-\begin{tabular}{c|c}
-Senyal d'entrada & Soluci\'o particular \\ 
-$x[n]$, $n \geq 0$ & $y_P[n]$, $n \geq 0$ \\ 
-($x[n]=0$ si $n < 0$) & ($y_P[n]=0$ si $n < 0$)\\  \hline \\
-$(A_0+A_1 n + \cdots + A_k n^k) \alpha^n$ & $(B_0+B_1 n + \cdots + B_k n^k) n^M \alpha^n$ \\ \\
- & on $M$ \'es la multiplicitat de $\alpha$ com a soluci\'o de l'equaci\'o caracter\'istica \\
-\hline
-\\
-$A \cos(\omega_0 n)$ & $B_1 \cos(\omega_0 n) + B_2 \sin(\omega_0 n)$ \\ \\
-\hline
-\\
-$A \sin(\omega_0 n)$ & $B_1 \cos(\omega_0 n) + B_2 \sin(\omega_0 n)$ 
-\end{tabular}
-
-\noindent
-\vskip 0.3 cm
-Les constants $B_i$ es calculen per substituci\'o en l'equaci\'o en difer\`encies inicial.
-
-\end{enumerate}
-
+La sortida d'alguns sistemes recursius es pot calcular de manera explícita resolent
+una \textbf{eqüació en diferències finites}. Una altra tècnica de càlcul es basa en la
+\textbf{transformada Z}, que estudiarem en el tema següent.  
 
 
 \vskip 0.4cm
 \noindent
-\textbf{Exemple:} Calculau la soluci\'o del sistema recursiu descrit per l'equaci\'o seg\"uent
-considerant condicions inicials $y[k]=1$ per a tot $k < 0$.
-\[
-y[n]-5y[n-1]+6y[n-2]=u[n]
-\]
-
-\vskip 0.2cm
-\noindent
-Soluci\'o:
-\begin{enumerate}
-\item $y[n]=y_H[n]+y_P[n]$
-\item $y_H[n]$:
-\begin{enumerate}
-\item equaci\'o homog\`enia: $y[n]-5y[n-1]+6y[n-2]=0$ (grau 2)
-\item equaci\'o caracter\'istica: $\lambda^2 - 5 \lambda + 6 =0$
-\item arrels de l'equaci\'o caracter\'istica: $3$ i $2$
-\item $y_H[n]=C_1 3^n + C_2 2^n$
-\end{enumerate}
-\item $y_P[n]$:
-\begin{enumerate}
-\item $x[n]=A u[n]$, amb $A=1$ (polinomi de grau 0)
-\item $y_P[n]=B u[n]$
-\item substituint a l'equaci\'o inicial:
-\[
-\begin{array}{l}
-y_P[n]=B u[n] \\
-y_P[n-1]=B u[n-1] \\
-y_P[n-2]=B u[n-2] \\
-y_P[n]-5y_P[n-1]+6y_P[n-2]=u[n] \quad \Rightarrow Bu[n]-5Bu[n-1]+6Bu[n-2]=u[n]\\
-\text{per a $n >= 2$ la resposta s'estabilitza i tenim:} \qquad B-5B+6B=1 \quad \Rightarrow B=\frac{1}{2}
-\end{array}
-\]
-\item per tant: $y_P[n]=\frac{1}{2} u[n]$
-\end{enumerate}
-
-\item Soluci\'o completa: $y[n]=C_1 3^n + C_2 2^n+\frac{1}{2} u[n]$
-
-\item C\`alcul de $C_1$ i $C_2$:
-\begin{enumerate}
-\item de l'equaci\'o inicial i aplicant les condicions inicials ($y[k]=1$ si $k < 0$):
-\[
-\begin{array}{l}
-y[0]-5y[-1]+6y[-2]=u[0] \quad \longrightarrow \quad y[0]=5-6+1=0 \\
-y[1]-5y[0]+6y[-1]=u[1] \quad \longrightarrow \quad y[1]=0-6+1=-5 
-\end{array}
-\]
-\item de la soluci\'o trobada:
-\[
-\begin{array}{l}
-y[0]=C_1 3^0 + C_2 2^0+\frac{1}{2} u[0] \quad \longrightarrow \quad y[0]=C_1+C_2+\frac{1}{2} \\ 
-y[1]=C_1 3^1 + C_2 2^1+\frac{1}{2} u[1] \quad \longrightarrow \quad y[1]=3C_1+2C_2+\frac{1}{2} \\ 
-\end{array}
-\]
-\item resolent el sistema d'equacions que plantejen les anteriors equacions: $C_1=-\frac{13}{2}$, $C_2=7$.
-
-\end{enumerate}
- 
-\item Soluci\'o final: $y[n]=-\frac{13}{2} \cdot 3^n + 7 \cdot 2^n+\frac{1}{2} u[n]$
-
-\end{enumerate}
-
-
-
-\vskip 0.4cm
-\noindent
-\textbf{Respostes lliure i for\c{c}ada d'un sistema} 
-
-\vskip 0.2 cm
-\noindent
-La resposta total d'un sistema es pot escriure com la suma de dos termes
-\[
-y[n]=y_{zi}[n]+y_{zs}[n]
-\]
-
-\noindent
-on $y_{zi}$ s'anomena \textbf{resposta zero-input}, resposta lliure o resposta natural
-del sistema. \'Es la resposta que s'obt\'e quan l'entrada \'es nul.la i coincideix amb
-la soluci\'o homog\`enia de l'equaci\'o en difer\`encies ($y_{zi}[n]=y_H[n]$).
-
-\noindent
-$y_{zs}$ rep el nom de \textbf{resposta zero-state} o resposta for\c{c}ada del sistema
-i \'es la resposta que s'obt\'e davant un senyal d'entrada quan les condicions inicials s\'on
-nul.les (sistema en rep\`os o relaxat). Coincideix amb la soluci\'o del sistema
-quan les condicions inicials s\'on nul.les ($y_{zs}[n]=y[n]$, amb $y[n]=0$ per $n < 0$).
-
-\vskip 0.4cm
-\noindent
-\textbf{Resposta impulsional d'un sistema recursiu} 
-
-\vskip 0.2 cm
-\noindent
-La resposta impulsional $h[n]$ d'un sistema LTI es defineix com la resposta
-del sistema a un senyal delta de Dirac. En el cas d'un sistema descrit per una
-equaci\'o en difer\`encies $h[n]$ coindideix amb la resposta del sistema quan
-$x[n]=\delta[n]$ i les condicions inicials s\'on nul.les: 
-\[
-h[n]=y[n] \qquad \text{quan} \quad x[n]=\delta[n] \quad \text{i} \quad y[n]=0 \text{ per } n < 0
-\]
-
-\noindent
-a m\'es, com $x[n]=\delta[n]$, resulta que $y_P[n]=0$ i per tant $y[n]=y_H[n]$.
-
-
-
-\vskip 0.4cm
-\noindent
-\textbf{Estructures per a la realitzaci\'o de sistemes LTI descrits per equacions en difer�ncies} 
+\textbf{Estructures per a la realitzaci\'o de sistemes LTI descrits per equacions en diferències} 
 
 \vskip 0.2 cm
 \noindent

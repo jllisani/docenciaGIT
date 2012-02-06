@@ -1,0 +1,7 @@
+\makebox[in][l]{
+  \vbox to in{
+    \vfill
+    \special{psfile=probl1.exc1.fig}
+  }
+  \vspace{-\baselineskip}
+}
