@@ -4,6 +4,8 @@
 *.blg
 *.log
 *.toc
+*.dvi
+*.ps
 .DS_Store
 *.nav
 *.out

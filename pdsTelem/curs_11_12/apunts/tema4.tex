@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
-\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
+\usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -66,18 +67,7 @@ Propietats:
 \item An\`alisi freq\"uencial: freq\"u\`encies m\'ultiples de $\frac{1}{T}$.
 \item La definici\'o de s\`erie de Fourier nom\'es t\'e sentit si el sumatori 
 $\sum_{k=-\infty}^{\infty} c_k e^{j \frac{2\pi k}{T} t}$ convergeix per a tot valor de $t$.
-Les \textit{condicions de Dirichlet} garanteixen que la s\`erie existeix per a tots els
-valors de $t$:
-\begin{enumerate}[i)]
-\item $x(t)$ t\'e un nombre finit de discontinu\"itats en cada periode
-\item $x(t)$ cont\'e un nombre finit de m\`axims i m\'inims en cada periode
-\item $x(t)$ \'es absolutament integrable en un periode: $\int_{T} |x(t)| \, dt < \infty$
-\end{enumerate}
-Si un senyal no \'es absolutament integrable per\`o verifica que 
-$\int_{T} |x(t)|^2 \, dt < \infty$ (senyal d'energia finita), llavors $x(t)$ i la seva s\`erie
-de Fourier poden \'esser diferents per a alguns valors de $t$.
-
-En general, tots els senyals peri\`odics d'inter\'es satisfan les condicions de Dirichlet.
+En general, per a tots els senyals peri\`odics d'inter\'es es pot calcular la sèrie de Fourier.
 
 \item Si $x(t)$ \'es un senyal real: 
 \[
@@ -122,27 +112,27 @@ seva s\`erie de Fourier per a diferents valors de $\tau$ amb $T_P$ fixat.}
 
 \newpage
 
-\item[Cas 2.] $x$ senyal anal\`ogic (temps continu) no per�\`odic:
+\item[Cas 2.] $x$ senyal anal\`ogic (temps continu) no periòdic:
 
 \[
 \begin{array}{ll}
-x(t)=\displaystyle \int_{-\infty}^{\infty} X(f) e^{j 2\pi f t} \, df &  \\ \\
-X(f)=\displaystyle \int_{-\infty}^{\infty} x(t) e^{-j 2\pi f t} \, dt & \textbf{(transformada de Fourier)}
+x(t)=\displaystyle \int_{-\infty}^{\infty} X(F) e^{j 2\pi F t} \, dF &  \\ \\
+X(F)=\displaystyle \int_{-\infty}^{\infty} x(t) e^{-j 2\pi F t} \, dt & \textbf{(transformada de Fourier)}
 \end{array}
 \]
 
 \noindent
-Alternativament, aquestes expressions es poden escriure en termes de la freq\"u\`encia angular $\omega=2\pi f$:
+Alternativament, aquestes expressions es poden escriure en termes de la freq\"u\`encia angular $\Omega=2\pi F$:
 
 \[
 \begin{array}{ll}
-x(t)=\frac{1}{2\pi} \displaystyle \int_{-\infty}^{\infty} X(\omega) e^{j \omega t} \, d\omega &  \\ \\
-X(\omega)=\displaystyle \int_{-\infty}^{\infty} x(t) e^{-j \omega t} \, dt & \textbf{(transformada de Fourier)}
+x(t)=\frac{1}{2\pi} \displaystyle \int_{-\infty}^{\infty} X(\Omega) e^{j \Omega t} \, d\Omega &  \\ \\
+X(\Omega)=\displaystyle \int_{-\infty}^{\infty} x(t) e^{-j \Omega t} \, dt & \textbf{(transformada de Fourier)}
 \end{array}
 \]
 
-\noindent $X(f)$ rep el nom d'\textbf{espectre del senyal} i tamb\'e es denota com ${\cal F}(x(t))$.
-La transformada inversa de Fourier es denota ${\cal F}^{-1}(X(f))=x(t)$.
+\noindent $X(F)$ rep el nom d'\textbf{espectre del senyal} i tamb\'e es denota com ${\cal F}(x(t))$.
+La transformada inversa de Fourier es denota ${\cal F}^{-1}(X(F))=x(t)$.
 
 \noindent
 Propietats:
@@ -150,32 +140,19 @@ Propietats:
 \item An\`alisi freq\"uencial: totes les freq\"u\`encies.
 
 \item La definici\'o de transformada de Fourier nom\'es t\'e sentit si la integral 
-$\int_{-\infty}^{\infty} x(t) e^{-j \omega t} \, dt$ convergeix per a tot valor de $t$.
-Les \textit{condicions de Dirichlet} garanteixen que la transformada existeix per a tots els
-valors de $t$:
-\begin{enumerate}[i)]
-\item $x(t)$ t\'e un nombre finit de discontinu\"itats finites
-\item $x(t)$ cont\'e un nombre finit de m\`axims i m\'inims
-\item $x(t)$ \'es absolutament integrable: $\int_{-\infty}^\infty |x(t)| \, dt < \infty$
-\end{enumerate}
-Si un senyal no \'es absolutament integrable per\`o verifica que 
-$\int_{-\infty}^\infty |x(t)|^2 \, dt < \infty$ (senyal d'energia finita), llavors
-tamb\'e existeix la seva transformada de Fourier. En aquest cas, a m\'es, es pot assegurar que
-tamb\'e existeix la transformada inversa i que ${\cal F}^{-1} {\cal F} x(t)=x(t)$.
-
-\noindent
+$\int_{-\infty}^{\infty} x(t) e^{-j \Omega t} \, dt$ convergeix per a tot valor de $t$.
 En la pr\`actica, per a tots els senyals que trobarem en el ``mon real'' podrem calcular
 les seves transformades i transformades inverses de Fourier.
 \item L'energia del senyal $x$ es pot calcular a partir dels coeficients de la seva transformada de Fourier
 (f\`ormula de Parseval):
 \[
-E=\int_{-\infty}^\infty |x(t)|^2 \, dt = \int_{-\infty}^\infty |X(f)|^2 \, df
+E=\int_{-\infty}^\infty |x(t)|^2 \, dt = \int_{-\infty}^\infty |X(F)|^2 \, df
 \]
 
-S'anomena \textbf{densitat espectral d'energia} a la funci\'o $S_{XX}(f)=|X(f)|^2$.
+S'anomena \textbf{densitat espectral d'energia} a la funci\'o $S_{XX}(F)=|X(F)|^2$.
 
-\item si $x(t)$ \'es un senyal real llavors $|X(-f)|=|X(f)|$ (espectre sim\`etric respecte a l'eix vertical)
-i $S_{XX}(-f)=S_{XX}(f)$.
+\item si $x(t)$ \'es un senyal real llavors $|X(-F)|=|X(F)|$ (espectre sim\`etric respecte a l'eix vertical)
+i $S_{XX}(-F)=S_{XX}(F)$.
 
 
 \end{itemize}
@@ -192,7 +169,7 @@ i $S_{XX}(-f)=S_{XX}(f)$.
 seva transformada de Fourier per a diferents valors de $\tau$.}
 \end{figure}
 
-
+\newpage
 \item[Cas 3.] $x$ senyal digital (temps discret) peri\`odic de periode $N$:
 
 \[
@@ -483,27 +460,11 @@ $\qquad$
 \end{figure}
 
 
-Per distingir ambdues magnituds, a partir d'ara utilitzarem la lletra $F$ per denotar la freq\"u\`encia 
+Per distingir ambdues magnituds utilitzarem la lletra $F$ per denotar la freq\"u\`encia 
 d'un senyal continu i $f$ per denotar la d'un senyal discret
-\footnote{Tamb\'e utilitzarem la notaci\'o $\Omega$ i $\omega$ per distingir entre freq\"u\`encia angular
-dels senyals continus i dels senyals discrets, respectivament}. La relaci\'o entre ambues freq\"u\`encies \'es
-$F=\frac{f}{T}$.
-
-Amb aquesta nova notaci\'o les f\`ormules per al c\`alcul de les transformades de Fourier de $x_a(t)$ i $x[n]$
-s\'on:
-
-
-\[
-\begin{array}{lcl}
-x_a(t)=\displaystyle \int_{-\infty}^{\infty} X(_aF) e^{j 2\pi F t} \, dF  & $\qquad$ &
-X_a(F)=\displaystyle \int_{-\infty}^{\infty} x_a(t) e^{-j 2\pi F t} \, dt \\ \\ 
-x[n]=\displaystyle \int_0^1 X(f) e^{j 2 \pi f n} \, df  & $\qquad$ &
-X(f)=\displaystyle \sum_{n=-\infty}^\infty x[n] e^{-j 2 \pi f n} 
-\end{array}
-\]
-
-
-On s'ha de tenir en compte que si $F=\frac{f}{T}$, llavors $X(f)=X(FT)$.
+(tamb\'e utilitzarem la notaci\'o $\Omega$ i $\omega$ per distingir entre freq\"u\`encia angular
+dels senyals continus i dels senyals discrets, respectivament).
+La relaci\'o entre ambues freq\"u\`encies \'es $F=\frac{f}{T}$ (resp., $\Omega=\frac{\omega}{T}$).
 
 
 \vskip 0.2 cm
@@ -512,7 +473,14 @@ On s'ha de tenir en compte que si $F=\frac{f}{T}$, llavors $X(f)=X(FT)$.
 La relaci\'o entre les transformades $X_a$ i $X$ v\'e donada per la seg\"uent expressi\'o:
 
 \[
-X(FT)=\frac{1}{T} \sum_{k=-\infty}^\infty X_a(F+\frac{k}{T})
+X(f)=X(FT)=\frac{1}{T} \sum_{k=-\infty}^\infty X_a(F+\frac{k}{T})
+\]
+
+\noindent
+o de manera equivalent, en termes de $\Omega$ i $\omega$:
+
+\[
+X(\omega)=X(\Omega T)=\frac{1}{T} \sum_{k=-\infty}^\infty X_a(\Omega+2\pi\frac{k}{T})
 \]
 
 \noindent
@@ -574,12 +542,13 @@ F_m > 2B \qquad \text{per tant} \qquad F_N=2B
 En cas que un senyal hagi estat mostrejat satisfent la condici\'o de Nyquist, el \textbf{teorema del
 mostreig} ens diu com obtenir el senyal original a partir del mostrejat: 
 \begin{itemize}
-\item Definim $X_{\Pi}(F)=X(FT) \cdot \Pi(\frac{F}{F_m/2})$, on 
-$\Pi(\frac{F}{F_m/2})=\begin{cases} 1 & \text{ si } |F| \leq F_m/2 \\ 0 & \text{altrament} \end{cases}$
-\item Si es verifica la condici\'o de Nyquist llavors $X_{\Pi}(F)=\frac{1}{T}  \cdot X_a(F)$ 
-\item Calculam $x_a(t)$ com la transformada inversa de $T \cdot X_{\Pi}(F)$:
+\item Definim $X_{\Pi}(F)=X(FT) \cdot H_{\Pi}(F)$, on
+$H_{\Pi}(F)=\begin{cases} T & \text{ si } |F| \leq F_m/2 \\ 0 & \text{altrament} \end{cases}=
+\begin{cases} T & \text{ si } |F| \leq 1/2T \\ 0 & \text{altrament} \end{cases}$
+\item Si es verifica la condici\'o de Nyquist llavors $X_{\Pi}(F)=X_a(F)$ 
+\item Calculam $x_a(t)$ com la transformada inversa de $X_{\Pi}(F)$:
 \[
-x_a(t)=T \cdot \int_{-\infty}^\infty X_{\Pi}(F) e^{j 2 \pi F t} \, dF
+x_a(t)=\int_{-\infty}^\infty X_{\Pi}(F) e^{j 2 \pi F t} \, dF
 \]
 \item El resultat del c\`alcul d\'ona:
 \[
@@ -693,12 +662,15 @@ $\qquad$
 El proc\'es de conversi\'o d'anal\`ogic a digital es pot descriure, de manera ideal, en dues etapes: el producte
 del senyal anal\`ogic per un tren de deltes i la conversi\'o del resultat (bloc \textbf{T/D}) en la seva versi\'o 
 discreta. Processos com la quantificaci\'o i codificaci\'o dels valors del senyal no es tenen en compte.
+La relació entre els senyals $x(t)$, $\hat{x}(t)$ i $x[n]$ és l'explicada en la secció \textit{Mostreig de senyals}.
 
 \vskip 0.3 cm
 El proc\'es de conversi\'o de digital a anal\`ogic es pot descriure, de manera ideal, en dues etapes:
 el pas a la versi\'o cont\'inua del senyal discret, expressat com a tren de deltes (bloc \textbf{D/T})
 i eliminaci\'o de les repeticions de la transformada (bloc \textit{filtre passa-baix}, amb funci\'o de
-transfer\`encia $H_{\Pi}(F)$). 
+transfer\`encia $H_{\Pi}(F)$\footnote{$H_{\Pi}(F)=\begin{cases} T & \text{ si } |F| \leq 1/2T \\ 0 & \text{altrament} \end{cases}$,
+o en termes de $\Omega$: $H_{\Omega}(F)=\begin{cases} T & \text{ si } |\Omega| \leq \pi/T \\ 0 & \text{altrament} \end{cases}$}). 
+La relació entre els senyals $y[n]$, $\hat{y}(t)$ i $y(t)$ és l'explicada en la secció \textit{Mostreig de senyals}.
 
 \vskip 0.3 cm
 \noindent
