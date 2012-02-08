@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
 %\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
-\usepackage[utf8]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+\usepackage[utf8]{inputenc} 
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -113,16 +113,6 @@ Senyal digital
 \end{center}
 
 
-\vskip 0.5 cm
-\noindent
-Per \textbf{tractament o processament de senyal} entenem qualsevol operaci\'o que permet generar, rebre,
-enviar o modificar un senyal. Fins als anys 60 la majoria de senyals amb qu\`e treballaven els enginyers eren 
-senyals anal\`ogics (per exemple senyals de radar) que es tractaven amb circuits electr\`onics anal\`ogics 
-(basats en v\`alvules i transistors). Amb l'aparici\'o dels ordinadors i els circuits digitals es va passar 
-a treballar amb senyals digitals, que s\'on els \'unics que poden tractar els ordinadors.
-L'\'us de la tecnologia digital permet molta m\'es flexibilitat en el tractament de senyals.
-El \textbf{processament digital de senyals} fa refer\`encia a les modificacions que afecten els senyals digitals.
-
 \vskip 0.2 cm
 \noindent
 \textbf{Notaci\'o}
@@ -194,12 +184,46 @@ Si $B$ est\`a format per valors reals deim que el senyal \'es un \textbf{senyal 
 si est\`a format per valors complexes parlam de \textbf{senyal complexe}.
 
 
+\vskip 0.5 cm
+\noindent
+\textbf{Tractament analògic vs. tractament digital de senyals}
+
+Per \textbf{tractament o processament de senyal} entenem qualsevol operaci\'o que permet generar, rebre,
+enviar o modificar un senyal. Fins als anys 60 la majoria de senyals amb qu\`e treballaven els enginyers eren 
+senyals anal\`ogics (per exemple senyals de radar) que es tractaven amb circuits electr\`onics anal\`ogics 
+(basats en v\`alvules i transistors). Amb l'aparici\'o dels ordinadors i els circuits digitals es va passar 
+a treballar amb senyals digitals, que s\'on els \'unics que poden tractar els ordinadors.
+L'\'us de la tecnologia digital permet molta m\'es flexibilitat en el tractament de senyals.
+El \textbf{processament digital de senyals} fa refer\`encia a les modificacions que afecten els senyals digitals.
+
+La figura \ref{filtreAnalogic} mostra un exemple d'un circuit electrònic (filtre analògic) que fa un processament d'un
+senyal analògic. La figura \ref{filtreDigital} mostra l'exemple d'un programa d'ordinador (filtre digital) que fa
+un filtratge equivalent. Resulta evident que és més senzill canviar els paràmetres del filtre digital modificant algunes
+línees del codi que haver de remplaçar resistències i condensadors en el circuit digital.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm]{filtreanalogic.png} 
+\caption{Exemple de filtre analògic (font: The Scientist and Engineer's Guide to Digital Signal Processing, A.W. Smith)}
+\label{filtreAnalogic}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{filtredigital.png} 
+\caption{Exemple de filtre digital (font: The Scientist and Engineer's Guide to Digital Signal Processing, A.W. Smith)}
+\label{filtreDigital}
+\end{figure}
+
 \vskip 0.3 cm
 \noindent
 \textbf{Conversi\'o anal\`ogica-digital}
 
 \vskip 0.2 cm
 \noindent
+Per a que els filtres analògic i digital mostrats en les figures anteriors siguin realment equivalents
+és necessari convertir primer els senyals d'entrada analògics a format digital. I, una vegada processats,
+convertir la sortida a format analògic.
 Un senyal anal\`ogic es pot transformar en digital mitjantzant la
 \textbf{digitalitzaci\'o}, que compren un proc\'es de \textbf{mostreig}
 i un proc\'es de \textbf{quantitzaci\'o} (veure figura \ref{conversioAD}). 
@@ -215,14 +239,14 @@ verifiquin unes certes condicions.
 \label{conversioAD}
 \end{figure}
 
-\vskip 0.3 cm
+\newpage
 \noindent
 \textbf{\large Senyals digitals}
 
 \vskip 0.2 cm
 \noindent
 En aquest curs treballarem principalment amb senyals digitals, els quals es poden 
-descriure mitjan\c{c}ant una seq\"u\`encia de nombres o mitjan\c{c}ant una f\'ormula.
+descriure mitjan\c{c}ant una seq\"u\`encia de n\'umeros o mitjan\c{c}ant una f\`ormula.
 
 \vskip 0.2 cm
 \noindent
@@ -322,7 +346,7 @@ que, en general, es consideren estacionaris i erg\`odics.
 \end{itemize}
 
 
-\newpage
+\vskip 0.5 cm
 \noindent
 \textbf{Operacions b\`asiques amb senyals}.
 \begin{itemize}
