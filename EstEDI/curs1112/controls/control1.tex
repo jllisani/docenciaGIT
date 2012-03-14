@@ -1,0 +1,222 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\noindent
+{\large \bf Escola Politècnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificació}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estadístiques}
+
+\hrule
+
+\vskip 0.3cm
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pràctica & Examen & Altres \\
+\hline
+Puntuable & & & X & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències específiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les tècniques i mètodes probabilístics i d'anàlisi estadística & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències genèriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resolució de problemes (CI-1) & X \\ \hline
+Capacitat d'anàlisi i síntesi (CI-4) & X \\ \hline
+Coneixement d'informàtica relatiu a l'àmbit d'estudis (CI-2) & \\ \hline
+Aptitud per a la gestió de l'informació (CI-5) & \\ \hline
+Compromís ètic (CP-1) & X \\ \hline
+Raonament crític (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) & \\ \hline
+Aprenentatge autònom (CP-9) & \\ \hline
+\end{tabular}
+
+
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data: 15/03/2011}
+
+\hrule
+
+\vspace{0.3 cm}
+
+\noindent
+Considerau les següents dades corresponents al pes (Kg) i l'altura (cm) de 20 jugadors de la plantilla del RCD Mallorca 2011-2012
+ (font www.rcdmallorca.es):
+
+%\vskip 0.3 cm
+%\begin{center}
+%\begin{tabular}{|c|cccccccccccccccccccc|}
+%\hline
+%Dorsal & 1 & 13 & 26 & 2 & 4 & 12 & 15 & 16 & 21 & 22 & 29 & 3 & 5 & 7 & 11 & 19 & 27 & 8 & 9 & 18\\
+%\hline
+%Pes & 88 & 87 & 82 & 74 & 84 & 82 & 79 & 81 & 76 & 82 & 75 & 82 & 78 & 69 & 76 & 76 &  74 & 77 & 81 & 80 \\
+%\hline
+%Altura & 191 & 188 & 192 & 179 & 189 & 187 & 179 & 185 & 181 & 180 & 176 & 182 & 185 & 177 & 177 & 180 & 179 & 181 & 185 &  180\\
+%\hline
+%\end{tabular}
+%\end{center}
+
+\vskip 0.3 cm
+\begin{center}
+\begin{tabular}{|c|cccccccccc|}
+\hline
+Dorsal & 1 & 13 & 26 & 2 & 4 & 12 & 15 & 16 & 21 & 22 \\
+\hline
+Pes & 88 & 87 & 82 & 74 & 84 & 82 & 79 & 81 & 76 & 82  \\
+\hline
+Altura & 191 & 188 & 192 & 179 & 189 & 187 & 179 & 185 & 181 & 180\\
+\hline
+\end{tabular}
+\end{center}
+
+\vskip 0.3 cm
+\begin{center}
+\begin{tabular}{|c|cccccccccc|}
+\hline
+Dorsal & 29 & 3 & 5 & 7 & 11 & 19 & 27 & 8 & 9 & 18\\
+\hline
+Pes & 75 & 82 & 78 & 69 & 76 & 76 &  74 & 77 & 81 & 80 \\
+\hline
+Altura &  176 & 182 & 185 & 177 & 177 & 180 & 179 & 181 & 185 &  180\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{problema}
+.
+
+\begin{enumerate}[a)]
+\item Representau els valors de la variable `Pes' en un diagrama de capsa, indicant 
+tots els valors numèrics rellevants i quins són, si n'hi ha, els valors atípics i extrems.
+\item Agrupau els valors de la variable `Pes' en els intervals següents: \textit{menys de 70}, $[70, 75)$,  $[75, 80)$, 
+$[80, 85)$, \textit{igual o superior a 85}
+i calculau:
+\begin{enumerate}[1)]
+\item Taula de freqüències (absolutes, relatives, acumulades i percentatges).
+\item Moda, mitjana i mediana. 
+\item Dibuixau l'histograma de freqüències absolutes.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{problema}
+
+\vspace{0.3cm}
+
+\begin{problema}
+
+Considerant les variables brutes de `Pes' i Altura' calculau, \textbf{amb dues xifres decimals de precissió en els càlculs}:
+
+\begin{enumerate}[a)]
+\item Mitjana i desviació típica de la variable `Pes'
+\item Mitjana i desviació típica de la variable `Altura'.
+\item Diagrama de dispersió.
+\item Covariància i coeficient de correlació entre les variables, donant una interpretació del valor trobat.
+\item Si el coeficient de correlació és superior a $0.5$ calculau i representau la recta de regressió.
+\end{enumerate}
+
+\end{problema}
+
+
+\vskip 1cm
+
+\newpage
+
+
+
+\vskip 5cm
+\textbf{Formulari Estadística Descriptiva}
+\vskip 0.2 cm
+
+\begin{itemize}
+\item Percentil $p$ de dades agrupades en intervals:
+\[
+P_p=L_p + (L_{p+1}-L_p) \frac{N \cdot p - N_{p-1}}{n_p}
+\]
+
+\item Coeficient de simetria: $g_1=\frac{m_3}{s^3}$, $s$: desviació típica
+\begin{itemize}
+\item Dades brutes
+\[
+m_3=\frac{(x_1-\bar{x})^3+(x_2-\bar{x})^3+\cdots+(x_N-\bar{x})^3}{N}
+\]
+\item Dades en taula de freqüències
+\[
+m_3=\frac{(x_1-\bar{x})^3 n_1+(x_2-\bar{x})^3 n_2+\cdots+(x_k-\bar{x})^3 n_k}{N}
+\]
+\end{itemize}
+
+\item Coeficient d'apuntament: $g_2=\frac{m_4}{s^4} - 3$, $s$: desviació típica
+\begin{itemize}
+\item Dades brutes
+\[
+m_4=\frac{(x_1-\bar{x})^4+(x_2-\bar{x})^4+\cdots+(x_N-\bar{x})^4}{N}
+\]
+\item Dades en taula de freqüències
+\[
+m_4=\frac{(x_1-\bar{x})^4 n_1+(x_2-\bar{x})^4 n_2+\cdots+(x_k-\bar{x})^4 n_k}{N}
+\]
+\end{itemize}
+
+\item Recta de regressió: $\hat{Y}=aX+b$
+\[
+a=\frac{\mathrm{Cov(X, Y)}}{\mathrm{Var(X)}} \qquad b=\bar{y}-a \bar{x}
+\]
+
+\item Coeficient de conting\`encia:
+\[
+0\leq C \leq \sqrt{1-\dfrac{1}{\min(k,l)}},\quad C=\sqrt{\dfrac {\chi^2}{\chi^2+N}},\quad \chi^2=\sum_i \sum_j \dfrac {(n_{ij}-e_{ij})^2}{e_{ij}},\quad e_{ij}=\dfrac {n_{i*}n_{*j}}{N}
+\]
+
+\end{itemize}
+
+
+
+\end{document}
+

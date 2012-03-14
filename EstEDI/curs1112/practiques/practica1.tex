@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+\usepackage[active]{srcltx}
+\usepackage[latin1]{inputenc}	%%para utilizar tildes en el texto
+\usepackage[catalan]{babel}	%%corta las palabras segun el castellano
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{hyperref}
+
+
+\setlength{\topmargin}{-2cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+\noindent
+{\large \bf Escola Polit\`ecnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificaci\'o}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estad\'\i stiques}
+
+\hrule
+
+\vskip 0.3cm
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pr\`actica & Examen & Altres \\
+\hline
+Puntuable & & X &  & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Compet\`encies espec\'\i fiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les t\`ecniques i m\`etodes probabil\'\i stics i d'an\`alisi estad\'\i stica & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Compet\`encies gen\`eriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resoluci\'o de problemes (CI-1) & X \\ \hline
+Capacitat d'an\`alisi i s\'\i ntesi (CI-4) & X \\ \hline
+Coneixement d'inform\`atica relatiu a l'\`ambit d'estudis (CI-2) & X \\ \hline
+Aptitud per a la gesti\'o de l'informaci\'o (CI-5) & X\\ \hline
+Comprom\'\i s \`etic (CP-1) & X \\ \hline
+Raonament cr\'\i tic (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) &  \\ \hline
+Aprenentatge aut\`onom (CP-9) & X\\ \hline
+\end{tabular}
+
+
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data entrega: 17/04/2012}
+
+\hrule
+
+\vspace{0.3cm}
+\noindent
+\textbf{Pr\`actica Tema I}
+
+\vspace{0.3cm}
+
+
+\begin{quotation}
+\textit{L'enunciat d'aquesta pr\`actica \'es variable i dep\`en dels valors que us han estat assignats personalment, en particular de l'\textbf{any-inici} i
+de l'\textbf{any-fi}. Podeu consultar la vostra assignaci\'o en el document \textit{Assignaci\'o Pr\`actiques} que trobareu a Campus Extens.}
+\end{quotation}
+
+En aquesta pr\`actica analitzarem el nombre d'habitatges visats durant el per\'{\i}ode compr\`es entre any--inicio any--fi per a cadascun dels municipis de Mallorca. Les dades necess\`aries per a aquest estudi han d'obtenir-se de l'IBESTAT mitjan\c{c}ant la seva adre\c{c}a 
+\begin{center}
+\url{http://ibestat.caib.es/ibestat/page?lang=ca}
+\end{center}
+A continuaci\'o descrivim el procediment per descarregar-se les dades de la plana web.
+\begin{itemize}
+\item [i)] En la barra de menu trobareu la opci\'o \textit{Estad\'{\i}stiques}. Entrau en l'apartat d'\textit{Economia}, i dins d'aquest, en el de \textit{Construcci\'o i habitatge}. 
+Anau a la secci\'o \textit{Visats, llic\`encies i certificacions d'obra} i triau 
+\textit{Nombre, pressupost i metres dels projectes visats per any i mes, illa i municipi i tipus d'\'us}. Accedireu a una plana web amb diferents finestres que us permetran seleccionar les dades a baixar.
+\item [ii)] En la finestra titulada \textbf{per\'{\i}ode} s'ha de seleccionar el per\'{\i}ode de temps que se us ha assignat: des del mes de gener (M01) de l'\textbf{any--inici} a desembre (M12) de l'\textbf{any--fi}, ambd\'os inclosos. Tant mateix, a la finestra titulada \textbf{Illa i municipi} tothom ha de seleccionar els 53 municipis de Mallorca (del codi \textit{07001 Alar\'o} fins al \textit{07901 Ariany}) . A la finestra \textbf{Tipus d'\'us} s'ha de seleccionar l'\'us Residencial i a la finestra \textbf{Dades} el Nombre total d'habitages.
+\item [iii)] Ara construirem la taula amb les dades seleccionades. Trieu \'unicament la variable \textbf{Illa i municipi} per a la finestra \textbf{Variable en files} i passeu la resta a la finestra \textbf{Variables en columnes}. Finalment col.loqueu la variable \textbf{Per\'{\i}ode} com la primera a la finestra \textbf{Variables en columnes}.
+\item [iv)] Pitjau el bot\'o \textbf{Consultar la selecci\'o}. Obtindrem una taula amb la informaci\'o requerida. En la primera columna apareixen els diferents municipis de Mallorca. En les seg\"uents columnes el nombre d'habitatges visats com a residencials depenent del mes i any. Aqu\'i podeu descarregar-vos la taula en diferents formats, trieu el format Excel.
+\item [v)] Obriu la taula amb el full de c\`alcul. Per obtenir el nombre d'habitatges residencials visats per municipi durant el per\'{\i}ode assignat \'unicament us resta sumar els valors de les diferents columnes. 
+\end{itemize}
+
+A partir de l'anterior informaci\'o es demana:
+
+\begin{enumerate}[1-]
+\item  Calculau, a partir de les dades brutes, la mediana, mitjana i moda, la desviaci\'o t\'ipica i els coeficients de simetria i curtosi.
+
+\item Calculau el rang i el rang interquart\'{\i}lic. Dibuixau el diagrama de capsa, marcant els valors at\'{\i}pics, si n'hi ha. 
+Si no podeu dibuixar el diagrama de capsa amb l'ordinador, al manco heu de donar la seg\"uent informaci\'o: mediana; primer i tercer quartils; l\'\i mits
+superior i inferior entre valors t\'\i pics i at\'\i pics; l\'\i mits superior i inferior entre valors at\'\i pics i extrems; llista de valors
+at\'\i pics; llista de valors extrems.
+
+
+\item  Agrupau les dades en un m\`axim de 10 subintervals d'igual amplitud (excepte els intervals inicial i final que poden tenir diferent amplitud)
+i constru\"{\i}u una taula de freq\"u\`encies per a aquests intervals.
+\begin{enumerate}[a)]
+\item Representau mitjan\c{c}ant un diagrama de barres la freq\"u\`encia absoluta i mitjan\c{c}ant un diagrama de 
+tarta el percentatge.
+\item  Calculau la moda, la mitjana, la mediana, el primer i tercer quartils i el percentil
+90.
+\item  Calculau el ratio de variaci\'o i el rang interquart\'{\i}lic. 
+\item  Calculau la vari\`ancia i la desviaci\'o t\'{\i}pica.
+\end{enumerate}
+\end{enumerate}
+\end{document} 

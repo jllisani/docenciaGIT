@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+
+\usepackage[active]{srcltx}
+\usepackage[latin1]{inputenc}	%%para utilizar tildes en el texto
+\usepackage[catalan]{babel}	%%corta las palabras segun el castellano
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{hyperref}
+
+
+\setlength{\topmargin}{-2cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+\noindent
+{\large \bf Escola Polit\`ecnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificaci\'o}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estad\'\i stiques}
+
+\hrule
+
+\vskip 0.3cm
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pr\`actica & Examen & Altres \\
+\hline
+Puntuable & & X &  & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Compet\`encies espec\'\i fiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les t\`ecniques i m\`etodes probabil\'\i stics i d'an\`alisi estad\'\i stica & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Compet\`encies gen\`eriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resoluci\'o de problemes (CI-1) & X \\ \hline
+Capacitat d'an\`alisi i s\'\i ntesi (CI-4) & X \\ \hline
+Coneixement d'inform\`atica relatiu a l'\`ambit d'estudis (CI-2) & X \\ \hline
+Aptitud per a la gesti\'o de l'informaci\'o (CI-5) & X\\ \hline
+Comprom\'\i s \`etic (CP-1) & X \\ \hline
+Raonament cr\'\i tic (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) &  \\ \hline
+Aprenentatge aut\`onom (CP-9) & X\\ \hline
+\end{tabular}
+
+
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data entrega: 17/04/2012}
+
+\hrule
+
+\vspace{0.3cm}
+\noindent
+\textbf{Pr\`actica Tema II}
+
+\vspace{0.3cm}
+
+
+\begin{quotation}
+\textit{L'enunciat d'aquesta pr\`actica \'es variable i dep\`en dels valors que us han estat assignats personalment, en particular de l'\textbf{any-inici} i
+de l'\textbf{any-fi}. Podeu consultar la vostra assignaci\'o en el document \textit{Assignaci\'o Pr\`actiques} que trobareu a Campus Extens.}
+\end{quotation}
+
+En aquesta pr\`actica analitzarem les variables \textit{nombre d'habitatges visats} i \textit{nombre de vehicles matriculats} durant el per\'{\i}ode compr\`es entre any--inicio any--fi per a cadascun dels municipis de Mallorca. Les dades necess\`aries per a aquest estudi han d'obtenir-se de l'IBESTAT mitjan\c{c}ant la seva adre\c{c}a 
+\begin{center}
+\url{http://ibestat.caib.es/ibestat/page?lang=ca}
+\end{center}
+Les dades de \textit{nombre d'habitatges visats} s\'on les que s'han utilitzat en la Pr\`actica 1. 
+A continuaci\'o descrivim el procediment per descarregar-se les dades de \textit{nombre de vehicles matriculats} de la plana web.
+\begin{itemize}
+\item [i)] En la barra de menu trobareu la opci\'o \textit{Estad\'{\i}stiques}. Entrau en l'apartat d'\textit{Economia}, i dins d'aquest, en el de \textit{Sector serveis}. 
+Anau a la secci\'o \textit{Transport} i, dins \textit{Matriculaci\'o de vehicles} triau 
+\textit{Illa-municipi, mes-any i tipus de vehicle}. 
+Accedireu a una plana web amb diferents finestres que us permetran seleccionar les dades a baixar.
+\item [ii)] En la finestra titulada \textbf{per\'{\i}ode} s'ha de seleccionar el per\'{\i}ode de temps que se us ha assignat: des del mes de gener (M01) al mes de desembre (M12) dels anys \textbf{any--inici}  a \textbf{any--fi}, ambd\'os inclosos. Tant mateix, a la finestra titulada \textbf{Illa i municipi} tothom ha de seleccionar els 53 municipis de Mallorca (del codi \textit{07001 Alar\'o} fins al \textit{07901 Ariany}) . A la finestra \textbf{Tipus de vehicle} s'ha de seleccionar Turismes.
+\item [iii)] Ara construirem la taula amb les dades seleccionades. Trieu \'unicament la variable \textbf{Illa i municipi} per a la finestra \textbf{Variable en files} i passeu la resta a la finestra \textbf{Variables en columnes}. Finalment col.loqueu la variable \textbf{Per\'{\i}ode} com la primera a la finestra \textbf{Variables en columnes}.
+\item [iv)] Pitjau el bot\'o \textbf{Consulta la selecci\'o}. Obtindrem una taula amb la informaci\'o requerida. En la primera columna apareixen els diferents municipis de Mallorca. En les seg\"uents columnes el nombre de turismes matriculats depenent del mes i any. Aqu\'i podeu descarregar-vos la taula en diferents formats, trieu el format Excel.
+\item [v)] Obriu la taula amb el full de c\`alcul. Per obtenir el nombre vehicles matriculats per municipi durant el per\'{\i}ode assignat \'unicament us resta sumar els valors de les diferents columnes. 
+\end{itemize}
+
+A partir de les dades d'aquest parell de variables es demana:
+
+\begin{enumerate}[a)]
+\item Dibuixau el diagrama de dispersi\'o.
+\item Calculau el coeficient de correlaci\'o. Interpretau el resultat.
+\item Si el coeficient de correlaci\'o \'es major que $0.5,$ calculau i dibuixau la recta de regressi\'o. Interpretau el resultat.
+\end{enumerate}
+\end{document} 
