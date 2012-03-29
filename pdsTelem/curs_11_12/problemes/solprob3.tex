@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
-\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car�ters llatins de forma directa.
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
+\usepackage[utf8]{inputenc}   % Permet usar tots els accents i car鐃諸ers llatins de forma directa.
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -65,6 +66,264 @@ ROC:$|z|>1$
 \item $\displaystyle \frac{X(z^{1/2})+X(-z^{1/2})}{2}$
 \item $X(z^2)$
 \end{enumerate}
+
+\noindent 
+7. 
+\begin{description}
+\item{Pas 1:    }
+$
+\displaystyle
+X(z)=\frac{5z^{-1}}{(1-2z^{-1})(3-z^{-1})} = \frac{5z}{(z-2)(3z-1)}
+$
+\item{Pas 2:    }
+$
+\displaystyle
+\frac{X(z)}{z}= \frac{5}{(z-2)(3z-1)} = \frac{A}{z-2} + \frac{B}{3z-1} = \text{(es calculen A i B)} = \frac{1}{z-2} + \frac{-3}{3z-1}
+$
+\item{Pas 3:    }
+$
+\displaystyle
+X(z)=  \frac{z}{z-2} + \frac{-3z}{3z-1} = \frac{1}{1-2z^{-1}} - \frac{1}{1-\frac{1}{3}z^{-1}} = X_1(z) - X_2(z)
+$
+\newline
+on $ \displaystyle X_1(z)=  \frac{1}{1-2z^{-1}} $, $ \displaystyle X_2(z)=\frac{1}{1-\frac{1}{3}z^{-1}}$. 
+\newline
+Per tant, $x[n]=x_1[n]-x_2[n]$
+\item{Pas 4:}   possibles solucions (mirant taules de transformades):
+\begin{enumerate}
+\item $x_1[n]$ causal, $x_2[n]$ causal:
+\begin{itemize}
+\item $\displaystyle x_1[n]=2^n u[n]$, $ROC_1: |z| > 2$
+\item $\displaystyle x_2[n]=\left(\frac{1}{3}\right)^n u[n]$, $ROC_2: |z| > 1/3$
+\item $\displaystyle ROC = ROC_1 \cap ROC_2 = |z| > 2$, $\qquad$ $x[n]=2^n u[n]-(\frac{1}{3})^n u[n]$
+\end{itemize}
+\item $x_1[n]$ causal, $x_2[n]$ anticausal:
+\begin{itemize}
+\item $\displaystyle x_1[n]=2^n u[n]$, $ROC_1: |z| > 2$
+\item $\displaystyle x_2[n]=-\left(\frac{1}{3}\right)^n u[-n-1]$, $ROC_2: |z| < 1/3$
+\item $\displaystyle ROC = ROC_1 \cap ROC_2 = \emptyset$, $\qquad$ No és possible
+\end{itemize}
+\item $x_1[n]$ anticausal, $x_2[n]$ causal:
+\begin{itemize}
+\item $\displaystyle x_1[n]=- 2^n u[-n-1]$, $ROC_1: |z| < 2$
+\item $\displaystyle x_2[n]=\left(\frac{1}{3}\right)^n u[n]$, $ROC_2: |z| > 1/3$
+\item $\displaystyle ROC = ROC_1 \cap ROC_2 = 1/3 < |z| < 2$, $\qquad$ $x[n]=- 2^n u[-n-1]-(\frac{1}{3})^n u[n]$
+\end{itemize}
+\item $x_1[n]$ anticausal, $x_2[n]$ antcausal:
+\begin{itemize}
+\item $\displaystyle x_1[n]=- 2^n u[-n-1]$, $ROC_1: |z| < 2$
+\item $\displaystyle x_2[n]=- \left(\frac{1}{3}\right)^n u[-n-1]$, $ROC_2: |z| < 1/3$
+\item $\displaystyle ROC = ROC_1 \cap ROC_2 = |z| < 1/3$, $\qquad$ $x[n]=- 2^n u[-n-1]+(\frac{1}{3})^n u[-n-1]$
+\end{itemize}
+\end{enumerate}
+\end{description}
+
+\noindent 
+14.
+\begin{description}
+
+\item{a)}
+\begin{description}
+\item{Pas 1:    }
+$
+\displaystyle
+x[n]=\left(\frac{1}{2}\right)^n u[n] - \frac{1}{4} \left(\frac{1}{2}\right)^{n-1} u[n-1] = x_1[n] - \frac{1}{4} x_1[n-1]
+$
+
+on $x_1[n]=(\frac{1}{2})^n u[n]$
+
+$
+\displaystyle
+X(z)=X_1(z) - \frac{1}{4} z^{-1} X_1(z)=(1-\frac{1}{4}z^{-1})X_1(z)=\text{(taules transformades)}=\frac{1-\frac{1}{4}z^{-1}}{1-\frac{1}{2}z^{-1}}
+$, $\qquad$ $ROC=|z|>1/2$
+
+\item{Pas 2:    }
+$
+\displaystyle
+y[n]=\left(\frac{1}{3}\right)^n u[n]
+$
+
+$
+\displaystyle
+Y(z)=\frac{1}{1-\frac{1}{3}z^{-1}}
+$, $\qquad$ $ROC=|z|>1/3$
+
+\item{Pas 3:    }
+$
+\displaystyle
+H(z)=\frac{Y(z)}{X(z)}=\frac{ \frac{1}{1-\frac{1}{3}z^{-1}} }{ \frac{1-\frac{1}{4}z^{-1}}{1-\frac{1}{2}z^{-1}} }=
+\frac{1-\frac{1}{2}z^{-1}}{(1-\frac{1}{3}z^{-1})(1-\frac{1}{4}z^{-1})} = \frac{z(z-\frac{1}{2})}{(z-\frac{1}{3})(z-\frac{1}{4})}
+$
+
+\item{Pas 4:    }
+$
+\displaystyle
+\frac{H(z)}{z}=\frac{z-\frac{1}{2}}{(z-\frac{1}{3})(z-\frac{1}{4})}=\frac{A}{z-\frac{1}{3}}+\frac{B}{z-\frac{1}{4}}=
+\text{(es calculen A i B)}=\frac{-2}{z-\frac{1}{3}}+\frac{3}{z-\frac{1}{4}}
+$
+
+\item{Pas 5:    } 
+$
+\displaystyle
+H(z)=\frac{-2z}{z-\frac{1}{3}}+\frac{3z}{z-\frac{1}{4}}
+$
+
+La ROC es calcula en l'apartat b).
+
+\end{description}
+
+\item{b)}
+\begin{description}
+\item{Pas 1:    } a partir del resultat de l'apartat a):
+$
+\displaystyle
+H(z)=\frac{-2z}{z-\frac{1}{3}}+\frac{3z}{z-\frac{1}{4}}=-2\frac{1}{1-\frac{1}{3}z^{-1}}+3\frac{1}{1-\frac{1}{4}z^{-1}}=-2H_1(z)+3H_2(z)
+$
+
+on $\displaystyle H_1(z)=\frac{1}{1-\frac{1}{3}z^{-1}}$, $\displaystyle H_2(z)=\frac{1}{1-\frac{1}{4}z^{-1}}$.
+
+Per tant, $h[n]=-2h_1[n]+3h_2[n]$
+
+\item{Pas 2:}   solució causal (l'enunciat diu que és un sistema LTI causal) (mirant taules de transformades):
+
+$
+\displaystyle
+h_1[n]=\left(\frac{1}{3}\right)^n u[n]
+$, $ROC_1:|z|>1/3$
+
+$
+\displaystyle
+h_2[n]=\left( \frac{1}{4} \right)^n u[n]
+$, $ROC_2:|z|>1/4$
+
+$
+\displaystyle
+h[n]=-2 \left(\frac{1}{3}\right)^n u[n] + 3 \left( \frac{1}{4} \right)^n u[n]
+$, $ROC=ROC_1 \cap ROC_2:|z|>1/3$
+
+\end{description}
+
+\item{c)} A partir del resultat del pas 3 de l'apartat a):
+
+$
+\displaystyle
+H(z)=\frac{Y(z)}{X(z)}= \frac{z(z-\frac{1}{2})}{(z-\frac{1}{3})(z-\frac{1}{4})}=\frac{z^2-\frac{1}{2}z}{z^2-\frac{7}{12}z+\frac{1}{12}}=
+\frac{1-\frac{1}{2}z^{-1}}{1-\frac{7}{12}z^{-1}+\frac{1}{12}z^{-2}}
+$
+ 
+$
+\displaystyle
+Y(z) \left( 1-\frac{7}{12}z^{-1}+\frac{1}{12}z^{-2} \right) = X(z) \left(  1-\frac{1}{2}z^{-1} \right)
+$
+
+$
+\displaystyle
+Y(z) -\frac{7}{12}z^{-1} Y(z) +\frac{1}{12}z^{-2} Y(z)  = X(z) -\frac{1}{2}z^{-1} X(z)
+$
+
+Aplicant propietats de la transformada Z:
+
+$
+\displaystyle
+y[n] -\frac{7}{12} y[n-1] +\frac{1}{12} y[n-2]  = x[n] -\frac{1}{2} x[n-1]
+$
+
+$
+\displaystyle
+y[n]= \frac{7}{12} y[n-1] - \frac{1}{12} y[n-2]  + x[n] -\frac{1}{2} x[n-1]
+$
+
+
+\item{d)} A partir del resultat del pas 3 de l'apartat a):
+
+$
+\displaystyle
+H(z)= \frac{z(z-\frac{1}{2})}{(z-\frac{1}{3})(z-\frac{1}{4})}
+$
+ 
+Els zeros de $H(z)$ són les arrels del numerador, i els pols les arrels del denominador. Per tant:
+
+zeros: $z_1=0$, $z_2=1/2$
+
+pols: $p_1=1/3$, $p_2=1/4$
+
+
+Com que el sistema és causal (ho diu l'enunciat) i $|p_1|<1$ i $|p_2|<1$, llavors el sistema és \textbf{estable}.
+
+\end{description}
+
+
+\noindent 
+15.
+
+\begin{description}
+\item{Pas 1:}
+$
+\displaystyle
+y[n]+a_1 y[n-1]+a_2 y[n-2] = x[n]
+$
+
+\item{Pas 2:} aplicam propietats de la transformada Z:
+
+$
+\displaystyle
+Y(z)+a_1 z^{-1} Y(z)+a_2 z^{-2} Y(z) = X(z)
+$
+
+\item{Pas 3:}
+
+$
+\displaystyle
+H(z)=\frac{Y(z)}{X(z)}=\frac{1}{1+a_1z^{-1}+a_2z^{-2}}=\frac{z^2}{z^2+a_1z+a_2}=\frac{z^2}{(z-p_1)(z-p_2)}
+$
+
+on
+
+$\displaystyle p_1=\frac{-a_1 + \sqrt{a_1^2 - 4a_2}}{2}$
+
+$\displaystyle p_2=\frac{-a_1 -  \sqrt{a_1^2 - 4a_2}}{2}$
+
+
+
+\item{Pas 4:} el sistema és causal (ho diu l'enunciat), per ésser estable els pols han d'estar
+a l'interior del cercle unitat ($|p_1| < 1$, $|p_2| < 1$).
+
+Possibilitats:
+
+\begin{enumerate}
+\item $p_1$ i $p_2$ són reals i iguals: 
+
+Això passa si $a_1^2 - 4a_2=0$, és a dir: $a_2=a_1^2/4$.
+
+En aquest cas $p_1=p_2=\frac{a_1}{2}$.
+
+Per tenir $|p_1|=|p_2| < 1$ haurà de passar $|\frac{a_1}{2}|<1$, i per tant $|a_1|<2$.
+
+\item $p_1$ i $p_2$ són valors complexes conjugats: 
+
+Això passa si $a_1^2 - 4a_2<0$, és a dir: $a_2 > a_1^2/4$.
+
+En aquest cas:
+
+$\displaystyle p_1=\frac{-a_1 + i \sqrt{-a_1^2 + 4a_2}}{2}$=$-\frac{a_1}{2} + i \frac{\sqrt{-a_1^2 + 4a_2}}{2} $
+
+$\displaystyle p_1=\frac{-a_1 - i \sqrt{-a_1^2 + 4a_2}}{2}$=$-\frac{a_1}{2} - i \frac{\sqrt{-a_1^2 + 4a_2}}{2} $
+
+
+$\displaystyle |p_1| = |p_2|=\sqrt{  \left( \frac{a_1}{2} \right)^2 + \left( \frac{\sqrt{-a_1^2 + 4a_2}}{2} \right)^2 }  = \sqrt{a_2} $
+
+Per tenir $|p_1|=|p_2| < 1$ haurà de passar $\sqrt{a_2}<1$, i per tant $a_2<1$.
+
+
+\item $p_1$ i $p_2$ són reals i diferents: no estudiam aquest cas
+
+
+\end{enumerate}
+
+
+
+\end{description}
+
 
 
 \end{document}
