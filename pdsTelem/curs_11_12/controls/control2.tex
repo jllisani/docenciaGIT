@@ -1,0 +1,63 @@
+\documentclass[12pt]{report}
+\usepackage[catalan]{babel}
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage[utf8]{inputenc}  
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[pdftex]{graphicx}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\textbf{\Large Fonaments i Aplicacions del Processament Digital dels Senyals.\\ Control 2. Curs 2011-12}
+\end{center}
+
+\vskip 1cm
+\noindent
+\textbf{P1.} Un sistema LTI causal s'excita amb un senyal 
+\[
+x[n]=\frac{\sqrt{2}}{2} (\sqrt{2})^n \cos(\frac{\pi}{2}(n-1)) u[n-1]
+\]
+i s'obt\'e una sortida
+\[
+y[n]=n 4^{n+1} u[n]
+\]
+
+Es demana:
+\begin{enumerate}[a)]
+\item Calculau la transformada Z del senyal d'entrada.
+\item Calculau la transformada Z del senyal de sortida.
+\item Calculau la funci\'o de transfer\`encia del sistema.
+\item Calculau la resposta impulsional del sistema.
+\item Dibuixau la ROC de la funci� de transfer\`encia.
+\item Dibuixau el diagrama de zeros i pols.
+\item Discutiu l'estabilitat del sistema.
+\end{enumerate}
+
+
+
+\end{document}
