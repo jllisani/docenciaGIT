@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[catalan]{babel}
-\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carÃ¯Â¿Â½ters llatins de forma directa.
+\usepackage[utf8]{inputenc}   % Permet usar tots els accents i carÃ¯Â¿Â½ters llatins de forma directa.
 \usepackage{enumerate}
 \usepackage{amsfonts, amscd, amsmath, amssymb}
 \usepackage[pdftex]{graphicx}
@@ -34,23 +35,23 @@
 \textbf{\Large Tema 5. Filtres digitals}
 
 \vskip 0.3 cm
-En aquest tema s'estudia el comportament freqüencial dels sistemes LTI 
-i s'analitzen els sistemes que modifiquen les característiques freqüencials 
+En aquest tema s'estudia el comportament freqÃ¼encial dels sistemes LTI 
+i s'analitzen els sistemes que modifiquen les caracterÃ­stiques freqÃ¼encials 
 dels senyals d'entrada d'una manera preestablerta. Aquest tipus de sistemes s'anomenen \textbf{filtres}. 
 
 \vskip 0.5 cm
 \noindent
-\textbf{\large Anàlisi freqüencial de sistemes LTI}
+\textbf{\large AnÃ lisi freqÃ¼encial de sistemes LTI}
 
 %resposta d'un sistema LTI a una exponencial complexa i a una sinusoide
 %exemple
 
-Per a estudiar el comportament freqüencial dels sistemes LTI s'analitza
-la sortida d'aquests sistemes quan l'entrada és un to pur (una exponencial 
+Per a estudiar el comportament freqÃ¼encial dels sistemes LTI s'analitza
+la sortida d'aquests sistemes quan l'entrada Ã©s un to pur (una exponencial 
 complexa o una sinusoide).
 
 En general, la sortida d'un sistema LTI amb resposta impulsional $h[n]$ 
-quan s'excita amb una entrada $x[n]$ és
+quan s'excita amb una entrada $x[n]$ Ã©s
 \[
 y[n]=x[n] * h[n] = \sum_{k=-\infty}^\infty h[k] x[n-k]
 \]
@@ -62,17 +63,17 @@ H(\omega) A e^{j \omega n}
 \]
 
 \noindent
-on $H(\omega)$ és la transformada de Fourier de $h[n]$. Aquesta transformada existeix si el sistema és estable 
-(és a dir, si $\sum_{k=-\infty}^\infty |h[n]| < \infty$).
+on $H(\omega)$ Ã©s la transformada de Fourier de $h[n]$. Aquesta transformada existeix si el sistema Ã©s estable 
+(Ã©s a dir, si $\sum_{k=-\infty}^\infty |h[n]| < \infty$).
 
-Si escrivim $H(\omega)$ en funció del seu mòdul i la seva fase ($H(\omega)=|H(\omega)| e^{j \Theta(\omega)}$) llavors
+Si escrivim $H(\omega)$ en funciÃ³ del seu mÃ²dul i la seva fase ($H(\omega)=|H(\omega)| e^{j \Theta(\omega)}$) llavors
 \begin{equation}
 y[n]=A |H(\omega)| e^{j (\omega n + \Theta(\omega))}
 \end{equation}
 
-Si $h[n]$ pren valors reals $|H(\omega)|$ és una funció parell ($|H(\omega)|=|H(-\omega)|$) i 
-$\Theta(\omega)$ és una funció imparell ($\Theta(\omega)=-\Theta(-\omega)$).
-En aquest cas la resposta a una sinusoide (sinus o cosinus) és:
+Si $h[n]$ pren valors reals $|H(\omega)|$ Ã©s una funciÃ³ parell ($|H(\omega)|=|H(-\omega)|$) i 
+$\Theta(\omega)$ Ã©s una funciÃ³ imparell ($\Theta(\omega)=-\Theta(-\omega)$).
+En aquest cas la resposta a una sinusoide (sinus o cosinus) Ã©s:
 \begin{equation}
 \begin{array}{l}
 y[n]=h[n] * A \cos(\omega n)=A |H(\omega)| \cos(\omega n + \Theta(\omega)) \\ \\
@@ -80,11 +81,11 @@ y[n]=h[n] * A \sin(\omega n)=A |H(\omega)| \sin(\omega n + \Theta(\omega))
 \end{array}
 \end{equation}
 
-La conclusió d'aquesta anàlisi és que la resposta d'un sistema LTI davant un senyal sinusoïdal
-vé totalment caracteritzada per $|H(\omega)|$ i $\Theta(\omega)$. 
-$|H(\omega)|$ determina l'amplificació ($|H(\omega)| > 1$) o atenuació ($|H(\omega)| < 1$)
-de l'amplitud de la sinusoide, mentre que $\Theta(\omega)$ determina el desplaçament de fase.
-$H(\omega)$ rep el nom de \textbf{resposta freqüencial} del sistema.
+La conclusiÃ³ d'aquesta anÃ lisi Ã©s que la resposta d'un sistema LTI davant un senyal sinusoÃ¯dal
+vÃ© totalment caracteritzada per $|H(\omega)|$ i $\Theta(\omega)$. 
+$|H(\omega)|$ determina l'amplificaciÃ³ ($|H(\omega)| > 1$) o atenuaciÃ³ ($|H(\omega)| < 1$)
+de l'amplitud de la sinusoide, mentre que $\Theta(\omega)$ determina el desplaÃ§ament de fase.
+$H(\omega)$ rep el nom de \textbf{resposta freqÃ¼encial} del sistema.
 
 \vskip 0.3 cm
 \noindent
@@ -94,12 +95,12 @@ al senyal d'entrada $x[n]=10 - 5 \sin \frac{\pi}{2} n + 20 \cos \pi n$
 
 \vskip 0.5 cm
 \noindent
-\textbf{\large Anàlisi freqüencial de sistemes LTI descrits per una funció de transferència racional}
+\textbf{\large AnÃ lisi freqÃ¼encial de sistemes LTI descrits per una funciÃ³ de transferÃ¨ncia racional}
 
-%Expressió de la densitat espectral d'energia en termes de la T.Z.
-%Relació entre la resposta freqüencial i la posició de pols i zeros.
+%ExpressiÃ³ de la densitat espectral d'energia en termes de la T.Z.
+%RelaciÃ³ entre la resposta freqÃ¼encial i la posiciÃ³ de pols i zeros.
 
-Consideram ara el cas dels sistemes LTI que es poden descriure amb una funció de transferència
+Consideram ara el cas dels sistemes LTI que es poden descriure amb una funciÃ³ de transferÃ¨ncia
 (transformada Z de la resposta impulsional) racional.
 
 \[
@@ -107,77 +108,77 @@ H(z)=\frac{\sum_{k=0}^M b_k z^{-k}}{1+ \sum_{k=0}^N a_k z^{-k}}=
 b_0 \frac{ \Pi_{k=1}^M (1-z_k z^{-1}) }{ \Pi_{k=1}^N (1-p_k z^{-1}) }
 \]
 
-Recordem que si la ROC de $H(z)$ conté el cercle unitat llavors $H(\omega)=H(z)|_{z=e^{j\omega}}$, per tant
+Recordem que si la ROC de $H(z)$ contÃ© el cercle unitat llavors $H(\omega)=H(z)|_{z=e^{j\omega}}$, per tant
 \[
 H(\omega)=b_0 \frac{ \Pi_{k=1}^M (1-z_k e^{-j\omega}) }{ \Pi_{k=1}^N (1-p_k e^{-j\omega}) }
 \]
 
-També podem trobar l'expressió de $|H(\omega)|^2$ en funció de la transformada Z per a sistemes amb $h[n]$ real:
+TambÃ© podem trobar l'expressiÃ³ de $|H(\omega)|^2$ en funciÃ³ de la transformada Z per a sistemes amb $h[n]$ real:
 \[
 |H(\omega)|^2=H(\omega) H^*(\omega)=H(\omega) H(-\omega)=H(z) H(z^{-1})|_{z=e^{j\omega}}
 \]
 
 
-Per últim, a partir de l'expressió 
+Per Ãºltim, a partir de l'expressiÃ³ 
 \[
 H(\omega)=b_0 \frac{ \Pi_{k=1}^M (1-z_k e^{-j\omega}) }{ \Pi_{k=1}^N (1-p_k e^{-j\omega}) }=
 b_0 e^{j \omega (N-M)} \frac{ \Pi_{k=1}^M (e^{j\omega}-z_k) }{ \Pi_{k=1}^N (e^{j\omega}-p_k) }
 \]
 
-podem interpretar la relació entre la posició dels pols i zeros de $H(z)$ i la resposta freqüencial
+podem interpretar la relaciÃ³ entre la posiciÃ³ dels pols i zeros de $H(z)$ i la resposta freqÃ¼encial
 del sistema. Si $e^{j\omega} \simeq z_k$ per a algun $z_k$, llavors $H(\omega) \simeq 0$, per tant 
-els zeros pròxims al cercle unitat fan que la resposta a sinuosides amb freqüència propera al zero
+els zeros prÃ²xims al cercle unitat fan que la resposta a sinuosides amb freqÃ¼Ã¨ncia propera al zero
 sigui petita. En canvi, si $e^{j\omega} \simeq p_k$ per a algun $p_k$, llavors $H(\omega) \simeq \infty$, per tant 
-els pols pròxims al cercle unitat fan que la resposta a sinuosides amb freqüència propera al pol
+els pols prÃ²xims al cercle unitat fan que la resposta a sinuosides amb freqÃ¼Ã¨ncia propera al pol
 sigui gran (veure Figura \ref{polszerosHomega}).
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=5cm]{polszerosHomega.png}
 \end{center}
-\caption{Relació entre la posició dels pols i zeros del sistema amb la seva resposta en freqüència.}
+\caption{RelaciÃ³ entre la posiciÃ³ dels pols i zeros del sistema amb la seva resposta en freqÃ¼Ã¨ncia.}
 \label{polszerosHomega}
 \end{figure}
 
 \vskip 0.3 cm
 \noindent
-\textbf{Exemple:} Raonau perquè el sistema descrit per la funció de transferència $H(z)=\frac{1}{1-0.8z^{-1}}$
-té un pic de la magnitud de la resposta freqüencial a $\omega=0$.
+\textbf{Exemple:} Raonau perquÃ¨ el sistema descrit per la funciÃ³ de transferÃ¨ncia $H(z)=\frac{1}{1-0.8z^{-1}}$
+tÃ© un pic de la magnitud de la resposta freqÃ¼encial a $\omega=0$.
  
 
 \vskip 0.5 cm
 \noindent
-\textbf{\large Sistemes LTI com a filtres selectius en freqüència}
+\textbf{\large Sistemes LTI com a filtres selectius en freqÃ¼Ã¨ncia}
 
-%Característiques dels filtres ideals: passa baix, passa banda, passa alt, banda eliminada i passa tot.
+%CaracterÃ­stiques dels filtres ideals: passa baix, passa banda, passa alt, banda eliminada i passa tot.
 %
 %Pols i zeros de filtres passa baix, passa banda i passa alt.
 %Pols i zeros de filtres passa tot.
 %
 %Filtres de fase lineal i fase lineal generalitzada
 %
-%Filtres invertibles, filtres de fase mínima. 
-%Descomposició d'un filtre en filtre de fase mínima i filtre passa-tot.
+%Filtres invertibles, filtres de fase mÃ­nima. 
+%DescomposiciÃ³ d'un filtre en filtre de fase mÃ­nima i filtre passa-tot.
 
 
-La paraula \textit{filtre} fa referència, en general, a un dispositiu
+La paraula \textit{filtre} fa referÃ¨ncia, en general, a un dispositiu
 que discrimina, d'acord amb qualque atribut, els elements que passen
-a través d'ell.
+a travÃ©s d'ell.
 
-Per analogia, es parla de filtres freqüencials quan ens referim als sistemes
-que permeten passar (amb poca o cap atenuació) senyals d'unes determinades freqüències
+Per analogia, es parla de filtres freqÃ¼encials quan ens referim als sistemes
+que permeten passar (amb poca o cap atenuaciÃ³) senyals d'unes determinades freqÃ¼Ã¨ncies
 (\textbf{banda de pas})
-i que atenuen (total o parcialment) senyals d'altres freqüencies (\textbf{banda de stop}).
+i que atenuen (total o parcialment) senyals d'altres freqÃ¼encies (\textbf{banda de stop}).
 
-Els \textbf{filtres ideals} són aquells que atenuen totalment una banda de freqüències
-i deixen passar sense modificació una altra banda de freqüències. La magnitud 
-de la seva resposta freqüencial es de la forma:
+Els \textbf{filtres ideals} sÃ³n aquells que atenuen totalment una banda de freqÃ¼Ã¨ncies
+i deixen passar sense modificaciÃ³ una altra banda de freqÃ¼Ã¨ncies. La magnitud 
+de la seva resposta freqÃ¼encial es de la forma:
 \[
 |H(\omega)|=\begin{cases} 1 & \text{si } \omega_1 < \omega < \omega_2 \\ \\
 0 & \text{altrament} \end{cases}
 \]
 
-En funció dels valors de $\omega_1$ i $\omega_2$ es parla de filtres passa-baix,
+En funciÃ³ dels valors de $\omega_1$ i $\omega_2$ es parla de filtres passa-baix,
 passa-banda, passa-alt, de banda eliminada o passa-tot (veure Figura \ref{idealfilters}).
 
 \begin{figure}[htbp]
@@ -192,8 +193,8 @@ passa-banda, passa-alt, de banda eliminada o passa-tot (veure Figura \ref{idealf
 \noindent
 \textbf{Diagrama de pols i zeros i tipus de filtres}
 
-A partir de l'analisi de la relació entre la posició dels pols i zeros del sistema i la seva
-resposta freqüencial (veure secció anterior) podem deduir si un sistema és passa-baix, passa-alt
+A partir de l'analisi de la relaciÃ³ entre la posiciÃ³ dels pols i zeros del sistema i la seva
+resposta freqÃ¼encial (veure secciÃ³ anterior) podem deduir si un sistema Ã©s passa-baix, passa-alt
 o passa-banda observant el seu diagrama de pols i zeros. La Figura \ref{polszerosfiltres}
 mostra un exemple per als casos dels filtres passa-baix i passa-alt.
 
@@ -211,8 +212,8 @@ Per al cas dels filtres passa tot tenim que
 |H(\omega)|=1 \quad \forall \omega \qquad \text{equivalent a } \quad |H(\omega)|^2=1 \quad \forall \omega
 \]
 
-Si la funció de transferència del sistema s'escriu com una funció racional l'anterior relació
-implica que $H(z)$ és de la forma 
+Si la funciÃ³ de transferÃ¨ncia del sistema s'escriu com una funciÃ³ racional l'anterior relaciÃ³
+implica que $H(z)$ Ã©s de la forma 
 \[
 H(z)=z^{-N} \frac{A(z^{-1})}{A(z)}
 \]
@@ -223,7 +224,7 @@ ja que llavors
 |H(\omega)|^2=H(z) H(z^{-1})|_{z=e^{j\omega}}= z^{-N} \frac{A(z^{-1})}{A(z)} z^{N} \frac{A(z)}{A(z^{-1})}|_{z=e^{j\omega}}= 1
 \]
 
-En aquest cas, si $z_0$ \'es un pol de $H(z)$, llavors $\frac{1}{z_0}$ ha d'ésser un zero de $H(z)$ i viceversa.
+En aquest cas, si $z_0$ \'es un pol de $H(z)$, llavors $\frac{1}{z_0}$ ha d'Ã©sser un zero de $H(z)$ i viceversa.
 La Figura \ref{polszerospassatot} mostra dos exemples de diagrames de pols i zeros per a filtres passa-tot.
 
 \begin{figure}[htbp]
@@ -239,20 +240,20 @@ La Figura \ref{polszerospassatot} mostra dos exemples de diagrames de pols i zer
 \textbf{Filtres de fase lineal}
 
 En les seccions anteriors s'han definit els filtres ideals com aquells que tenen una magnitud 
-de la resposta freqüencial igual a $1$ en una determinada banda de freqüències i $0$ fora
-d'ella, però no hem parlat de la fase de la resposta freqüencial.
+de la resposta freqÃ¼encial igual a $1$ en una determinada banda de freqÃ¼Ã¨ncies i $0$ fora
+d'ella, perÃ² no hem parlat de la fase de la resposta freqÃ¼encial.
 
-Direm que un filtre és de \textbf{fase lineal generalitzada} si $\Theta(\omega)=-\omega \alpha + \beta$.
-Si $\beta=0$ direm que el filtre és de fase lineal. Anem a estudiar el comportament
+Direm que un filtre Ã©s de \textbf{fase lineal generalitzada} si $\Theta(\omega)=-\omega \alpha + \beta$.
+Si $\beta=0$ direm que el filtre Ã©s de fase lineal. Anem a estudiar el comportament
 dels filtres amb fase lineal generalitzada.
 
-Sigui un filtre digital amb $h[n]$ real i resposta freqüencial
+Sigui un filtre digital amb $h[n]$ real i resposta freqÃ¼encial
 \[
 H(\omega)=\begin{cases} C e^{-j( \omega \alpha - \beta)} & \text{si } \omega_1 < \omega < \omega_2 \\ \\
 0 & \text{altrament} \end{cases}
 \]
 
-La resposta d'aquest filtre a un senyal sinusoïdal amb freqüencia $\omega \in (\omega_1, \omega_2)$ és:
+La resposta d'aquest filtre a un senyal sinusoÃ¯dal amb freqÃ¼encia $\omega \in (\omega_1, \omega_2)$ Ã©s:
 \begin{equation}
 \begin{array}{l}
 y[n]=h[n] * \cos(\omega n)=A C \cos(\omega (n - \alpha) + \beta) \\ \\
@@ -260,44 +261,44 @@ y[n]=h[n] * \sin(\omega n)=A C \sin(\omega (n - \alpha)+ \beta)
 \end{array} 
 \end{equation}
 
-És a dir, la sortida del sistema és una versió atenuada, retardada i desplaçada en fase del senyal d'entrada.
-Malgrat que aquest comportament del filtre estigui lluny del comportament ideal (voldriem un senyal idèntic
-al d'entrada a la sortida), el fet que per a totes les freqüències $\omega \in (\omega_1, \omega_2)$ es tengui
-la mateixa atenuació, retard i desplaçament de fase fa que, per a senyals compostos per vàries freqüències,
-el senyal de sortida tengui la mateixa \textit{forma} que el d'entrada (no hi ha \textit{distorsió}). 
-Això no passaria si cada freqüència
-es veiés afectada de forma diferent pel filtre. És per aquest motiu que els filtres amb fase lineal generalitzada
+Ã‰s a dir, la sortida del sistema Ã©s una versiÃ³ atenuada, retardada i desplaÃ§ada en fase del senyal d'entrada.
+Malgrat que aquest comportament del filtre estigui lluny del comportament ideal (voldriem un senyal idÃ¨ntic
+al d'entrada a la sortida), el fet que per a totes les freqÃ¼Ã¨ncies $\omega \in (\omega_1, \omega_2)$ es tengui
+la mateixa atenuaciÃ³, retard i desplaÃ§ament de fase fa que, per a senyals compostos per vÃ ries freqÃ¼Ã¨ncies,
+el senyal de sortida tengui la mateixa \textit{forma} que el d'entrada (no hi ha \textit{distorsiÃ³}). 
+AixÃ² no passaria si cada freqÃ¼Ã¨ncia
+es veiÃ©s afectada de forma diferent pel filtre. Ã‰s per aquest motiu que els filtres amb fase lineal generalitzada
 es consideren \textit{suficientment bons} per al filtratge de senyal i no s'exigeix que els filtres ideals
 tenguin fase $0$ ($\Theta(\omega)=0$).
 
 
 \vskip 0.3 cm
 \noindent
-\textbf{Filtres de fase mínima. Filtres invertibles}
+\textbf{Filtres de fase mÃ­nima. Filtres invertibles}
 
-Un filtre és diu de fase mínima si tots els pols i els zeros de la seva funció de transferència
+Un filtre Ã©s diu de fase mÃ­nima si tots els pols i els zeros de la seva funciÃ³ de transferÃ¨ncia
 es troben a l'interior del cercle unitat. 
 
-Si la funció de transferència és de la forma $H(z)=\frac{B(z)}{A(z)}$ i el filtre és
-de fase mínima llavors:
+Si la funciÃ³ de transferÃ¨ncia Ã©s de la forma $H(z)=\frac{B(z)}{A(z)}$ i el filtre Ã©s
+de fase mÃ­nima llavors:
 \begin{itemize}
-\item el filtre és estable i causal
-\item el filtre és invertible, és a dir, existeix una funció $H_I(z)$ tal que $H(z) H_I(z)=1$.
+\item el filtre Ã©s estable i causal
+\item el filtre Ã©s invertible, Ã©s a dir, existeix una funciÃ³ $H_I(z)$ tal que $H(z) H_I(z)=1$.
 En aquest cas $H_I(z)=\frac{1}{H(z)}=\frac{A(z)}{B(z)}$
-\item el filtre invers és estable i causal
+\item el filtre invers Ã©s estable i causal
 \end{itemize}
 
-Una darrera propietat relativa als filtres de fase mínima és que la funció de transferència de
-qualsevol filtre amb fase no mínima és pot escriure com el producte de les funcions de
-transferència d'un filtre de fase mínima i un filtre passa tot:
+Una darrera propietat relativa als filtres de fase mÃ­nima Ã©s que la funciÃ³ de transferÃ¨ncia de
+qualsevol filtre amb fase no mÃ­nima Ã©s pot escriure com el producte de les funcions de
+transferÃ¨ncia d'un filtre de fase mÃ­nima i un filtre passa tot:
 
 \[
 H(z)=H_{\text{min}}(z) H_{\text{pt}}(z)
 \]
 
-En particular, si el filtre és estable i causal amb $H(z)=\frac{B(z)}{A(z)}$ i 
+En particular, si el filtre Ã©s estable i causal amb $H(z)=\frac{B(z)}{A(z)}$ i 
 $B(z)$ es pot descomposar com $B(z)=B_1(z) B_2(z)$,
-on $B_1(z)$ té totes les seves arrels dins el cercle unitat i $B_2(z)$ fora del cercle unitat,
+on $B_1(z)$ tÃ© totes les seves arrels dins el cercle unitat i $B_2(z)$ fora del cercle unitat,
 llavors 
 \[
 H_{\text{min}}(z)=\frac{ B_1(z) B_2(z^{-1}) }{A(z)}
@@ -305,8 +306,8 @@ H_{\text{min}}(z)=\frac{ B_1(z) B_2(z^{-1}) }{A(z)}
 H_{\text{pt}}(z)=\frac{B_2(z)}{B_2(z^{-1})}
 \]
 \noindent
-on $B_2(z^{-1})$ és un polinomi amb totes les seves arrels dins el cercle unitat i $A(z)$ té també 
-totes les seves arrels dins el cercle unitat ja que el filtre és estable i causal. 
+on $B_2(z^{-1})$ Ã©s un polinomi amb totes les seves arrels dins el cercle unitat i $A(z)$ tÃ© tambÃ© 
+totes les seves arrels dins el cercle unitat ja que el filtre Ã©s estable i causal. 
 
  
 
@@ -316,33 +317,33 @@ totes les seves arrels dins el cercle unitat ja que el filtre és estable i causa
 
 %El problema de la no-causalitat dels filtres ideals
 %
-%Característiques dels filtres causals i realitzables
+%CaracterÃ­stiques dels filtres causals i realitzables
 %
 %Propietats de simetria dels filtres FIR de fase lineal generalitzada
 %
-%Disseny de filtres FIR de fase lineal mitjançant finestres
-%Disseny de filtres FIR de fase lineal per mostreig de freqüències
-%Disseny de filtres IIR a partir de filtres analògics: filtres Butterworth i Txebyshev
+%Disseny de filtres FIR de fase lineal mitjanÃ§ant finestres
+%Disseny de filtres FIR de fase lineal per mostreig de freqÃ¼Ã¨ncies
+%Disseny de filtres IIR a partir de filtres analÃ²gics: filtres Butterworth i Txebyshev
 %
 
 \vskip 0.2 cm
 \noindent
 \textbf{El problema de la no-causalitat dels filtres ideals}
 
-Considerem un filtre passa-baix ideal amb funció de transferència
+Considerem un filtre passa-baix ideal amb funciÃ³ de transferÃ¨ncia
 \[
 H(\omega)=\begin{cases} 1 & \text{si } |\omega| \leq \omega_c \\ 0 & \text{altrament} \end{cases}
 \]
 
-La transformada inversa d'aquesta funció dóna com a resposta impulsional
+La transformada inversa d'aquesta funciÃ³ dÃ³na com a resposta impulsional
 \[
 h[n]=\begin{cases} \frac{\omega_c}{n} & \text{si } n=0 \\ 
 \frac{\omega_c}{n} \mathrm{sinc}(\omega_c n) & \text{altrament} \end{cases}
 \]
 
-Observam (Figura \ref{passabaixideal}) que aquesta resposta impulsional correspon a un filtre no causal i per tant és \textbf{irrealitzable}.
+Observam (Figura \ref{passabaixideal}) que aquesta resposta impulsional correspon a un filtre no causal i per tant Ã©s \textbf{irrealitzable}.
 En general obtenim el mateix resultat per a qualsevol filtre ideal: qualsevol filtre per al qual
-$|H(\omega)|=0$ en un interval de freqüències (cas de tots els filtres ideals) és un filtre no causal i per
+$|H(\omega)|=0$ en un interval de freqÃ¼Ã¨ncies (cas de tots els filtres ideals) Ã©s un filtre no causal i per
 tant irrealitzable.
 
 \begin{figure}[htbp]
@@ -355,16 +356,16 @@ tant irrealitzable.
 
 \vskip 0.3 cm
 De manera que a l'hora de dissenyar un filtre realitzable (i per tant causal) no podem esperar obtenir 
-una resposta en freqüència com les mostrades en la Figura \ref{idealfilters} sino que ens haurem de 
+una resposta en freqÃ¼Ã¨ncia com les mostrades en la Figura \ref{idealfilters} sino que ens haurem de 
 conformar amb una resposta com la que es mostra en la Figura \ref{realizablefilters}.
 En aquesta figura els valors de $\delta_1$, $\delta_2$, $\omega_p$ i $\omega_c$ indiquen els marges
-de tolerància permesos en el disseny del filtre.
+de tolerÃ ncia permesos en el disseny del filtre.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=7cm]{realizablefilters.png}
 \end{center}
-\caption{Magnitud de la resposta freqüencial d'un filtre realitzable}
+\caption{Magnitud de la resposta freqÃ¼encial d'un filtre realitzable}
 \label{realizablefilters}
 \end{figure}
 
@@ -372,7 +373,7 @@ de tolerància permesos en el disseny del filtre.
 \noindent
 \textbf{Disseny de filtres FIR}
 
-En aquestes seccions ens centram en l'estudi d'algunes tècniques per al disseny de filtres
+En aquestes seccions ens centram en l'estudi d'algunes tÃ¨cniques per al disseny de filtres
 causals amb resposta impulsional finita (FIR) i amb fase lineal generalitzada.
 
 \vskip 0.3 cm
@@ -384,42 +385,42 @@ Considerem el cas general d'un filtre FIR causal de longitud $M+1$:
 h[n]=\{ h[0], h[1], \cdots, h[M-1], h[M] \}
 \]
 
-Es pot demostrar que el filtre és de fase lineal generalitzada si 
+Es pot demostrar que el filtre Ã©s de fase lineal generalitzada si 
 \[
 h[n]=\pm h[M-n] \qquad \forall n=0, 1, \cdots, M
 \]
 
-(la implicació inversa no és certa, és a dir, un filtre pot ésser de fase lineal
-sense verificar l'anterior relació).
+(la implicaciÃ³ inversa no Ã©s certa, Ã©s a dir, un filtre pot Ã©sser de fase lineal
+sense verificar l'anterior relaciÃ³).
 
-Aquesta condició implica que la transformada Z de $h[n]$ ha de verificar:
+Aquesta condiciÃ³ implica que la transformada Z de $h[n]$ ha de verificar:
 \[
 z^{-M}H(z^{-1})=\pm H(z)
 \]
 \noindent
-És a dir, les arrels del polinomi $H(z)$ també són arrels de $H(z^{-1})$, la qual cosa significa que si
-$z_i$ és zero de $H(z)$ llavors $\frac{1}{z_i}$ també ho és. A més, si $h[n]$ és real llavors
-les arrels complexes han de formar parells conjugats i per tant, si $z_i$ és zero de $H(z)$ llavors
-$z_i^*$,$1/z_i$ i $1/z_i^*$ també són arrels. La Figura \ref{zerosFIRlineal} mostra un exemple
-de la distribució dels zeros en un filtre FIR causal real de fase lineal.
+Ã‰s a dir, les arrels del polinomi $H(z)$ tambÃ© sÃ³n arrels de $H(z^{-1})$, la qual cosa significa que si
+$z_i$ Ã©s zero de $H(z)$ llavors $\frac{1}{z_i}$ tambÃ© ho Ã©s. A mÃ©s, si $h[n]$ Ã©s real llavors
+les arrels complexes han de formar parells conjugats i per tant, si $z_i$ Ã©s zero de $H(z)$ llavors
+$z_i^*$,$1/z_i$ i $1/z_i^*$ tambÃ© sÃ³n arrels. La Figura \ref{zerosFIRlineal} mostra un exemple
+de la distribuciÃ³ dels zeros en un filtre FIR causal real de fase lineal.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=5cm]{zerosFIRlineal.png}
 \end{center}
-\caption{Exemple de la distribució dels zeros en un filtre FIR causal real de fase lineal.}
+\caption{Exemple de la distribuciÃ³ dels zeros en un filtre FIR causal real de fase lineal.}
 \label{zerosFIRlineal}
 \end{figure}
 
 \vskip 0.2 cm
-Si $h[n]=h[M-n]$ és diu que el filtre FIR de fase lineal és \textbf{simètric}.
-Si $h[n]=-h[M-n]$ és diu que el filtre és \textbf{antisimètric}. En ambdos casos es pot distingir
-entre els filtres amb un nombre de mostres ($M+1$) parell o imparell. Això dóna lloc
+Si $h[n]=h[M-n]$ Ã©s diu que el filtre FIR de fase lineal Ã©s \textbf{simÃ¨tric}.
+Si $h[n]=-h[M-n]$ Ã©s diu que el filtre Ã©s \textbf{antisimÃ¨tric}. En ambdos casos es pot distingir
+entre els filtres amb un nombre de mostres ($M+1$) parell o imparell. AixÃ² dÃ³na lloc
 a quatre configuracions possibles per als filtres FIR de fase-lineal:
-tipus I (simètric imparell), tipus II (simètric parell), tipus III (antisimètric imparell)
-i tipus IV (antisimètric parell). La Figura \ref{tipusFIR} mostra un exemple de cada tipus
-i la Figura \ref{tipusFIR_H} mostra la magnitud de les seves respostes en freqüència.
-Observam que els filtres tipus I i II són filtres passa-baix, els tipus III passa banda 
+tipus I (simÃ¨tric imparell), tipus II (simÃ¨tric parell), tipus III (antisimÃ¨tric imparell)
+i tipus IV (antisimÃ¨tric parell). La Figura \ref{tipusFIR} mostra un exemple de cada tipus
+i la Figura \ref{tipusFIR_H} mostra la magnitud de les seves respostes en freqÃ¼Ã¨ncia.
+Observam que els filtres tipus I i II sÃ³n filtres passa-baix, els tipus III passa banda 
 i el tipus IV passa-alt.
 
 \begin{figure}[htbp]
@@ -445,11 +446,11 @@ Processing, A. Oppenheim, W. Schafer, Prentice-Hall, 1989}
 
 \vskip 0.3 cm
 \noindent
-\textbf{Disseny de filtres FIR de fase lineal mitjançant finestres}
+\textbf{Disseny de filtres FIR de fase lineal mitjanÃ§ant finestres}
 
-A partir d'una resposta en freqüència especificada $H_d(\omega)$ l'objectiu és
+A partir d'una resposta en freqÃ¼Ã¨ncia especificada $H_d(\omega)$ l'objectiu Ã©s
 trobar un filtre, amb una resposta impulsional $h[n]$, causal i que tengui 
-una resposta en freqüència $H(\omega)$ similar a $H_d(\omega)$.
+una resposta en freqÃ¼Ã¨ncia $H(\omega)$ similar a $H_d(\omega)$.
 
 El filtre ideal $h_d[n]$ es pot obtenir fent l'antitransformada de Fourier de $H_d(\omega)$:
 \[
@@ -457,13 +458,13 @@ h_d[n]=\frac{1}{2\pi} \int_{-\pi}^\pi H_d(\omega) e^{j\omega n} \, d\omega
 \]
 
 \noindent
-com $h_d[n]$ té una resposta impulsional infinita i per tant no causal, s'aproxima mitjançant
-un filtre causal $h[n]$ de la següent manera:
+com $h_d[n]$ tÃ© una resposta impulsional infinita i per tant no causal, s'aproxima mitjanÃ§ant
+un filtre causal $h[n]$ de la segÃ¼ent manera:
 \[
 h[n]=\begin{cases} h_d[n] & \text{si } n \geq 0 \\ 0 & \text{altrament} \end{cases}
 \]
 
-Aquest procés és equivalent a multiplicar $h_d[n]$ per una \textit{finestra} 
+Aquest procÃ©s Ã©s equivalent a multiplicar $h_d[n]$ per una \textit{finestra} 
 $w[n]=\begin{cases} 1 & \text{si } n \geq 0 \\ 0 & \text{altrament} \end{cases}$:
 \[
 h[n]=h_d[n] w[n]
@@ -476,10 +477,10 @@ H(\omega)={\cal F}^{-1} \{ h_d[n] w[n] \} = H_d(\omega) * W(\omega)
 \]
 
 \noindent
-$h[n]$ es troba fent l'antitransformada d'aquesta funció.
+$h[n]$ es troba fent l'antitransformada d'aquesta funciÃ³.
 
-La Figura \ref{exdissenyfinestra} mostra alguns resultats d'aplicar aquest mètode al disseny
-d'un filtre passa-baix ideal. A part de la finestra rectangular $w[n]$ definida més amunt es poden definir
+La Figura \ref{exdissenyfinestra} mostra alguns resultats d'aplicar aquest mÃ¨tode al disseny
+d'un filtre passa-baix ideal. A part de la finestra rectangular $w[n]$ definida mÃ©s amunt es poden definir
 finestres amb formes diferents que permeten aproximar millor el comportament dels filtres ideals.
 
 
@@ -495,20 +496,20 @@ finestres amb formes diferents que permeten aproximar millor el comportament del
 
 \vskip 0.3 cm
 \noindent
-\textbf{Disseny de filtres FIR de fase lineal per mostreig de freqüències}
+\textbf{Disseny de filtres FIR de fase lineal per mostreig de freqÃ¼Ã¨ncies}
 
-En aquest cas s'especifica $H_d(\omega)$ per a un conjunt discret de freqüències $\omega_k$
+En aquest cas s'especifica $H_d(\omega)$ per a un conjunt discret de freqÃ¼Ã¨ncies $\omega_k$
 i es troben els valors de $h[n]$ resolent un sistema d'equacions.
 
 \vskip 0.3 cm
 \noindent
-\textbf{Disseny de filtres FIR de fase lineal òptims}
+\textbf{Disseny de filtres FIR de fase lineal Ã²ptims}
 
-Els mètodes de disseny anterior no permeten controlar de manera precisa les freqüències de
-separació de la banda de pas i la de stop.
-Els filtres FIR de fase lineal òptims minimitzen la diferència entre les respostes del filtre
-ideal i el filtre dissenyat en cada una de les bandes. L'equació d'aquest filtres es troba
-resolent un problema de minimització, seguint una tècnica formulada per Txebytxev.
+Els mÃ¨todes de disseny anterior no permeten controlar de manera precisa les freqÃ¼Ã¨ncies de
+separaciÃ³ de la banda de pas i la de stop.
+Els filtres FIR de fase lineal Ã²ptims minimitzen la diferÃ¨ncia entre les respostes del filtre
+ideal i el filtre dissenyat en cada una de les bandes. L'equaciÃ³ d'aquest filtres es troba
+resolent un problema de minimitzaciÃ³, seguint una tÃ¨cnica formulada per Txebytxev.
 
 
 
@@ -516,18 +517,18 @@ resolent un problema de minimització, seguint una tècnica formulada per Txebytxe
 \noindent
 \textbf{Disseny de filtres IIR}
 
-Les tècniques de disseny de filtres IIR es basen en la conversió de filtres analògics a filtres
-digitals. Els filtres analògics es dissenyen per a verificar una sèrie d'especificacions,
-seguint unes tècniques de disseny ben conegudes en l'àrea del processament analògic: disseny
+Les tÃ¨cniques de disseny de filtres IIR es basen en la conversiÃ³ de filtres analÃ²gics a filtres
+digitals. Els filtres analÃ²gics es dissenyen per a verificar una sÃ¨rie d'especificacions,
+seguint unes tÃ¨cniques de disseny ben conegudes en l'Ã rea del processament analÃ²gic: disseny
 tipus Butterworth o disseny tipus Txebyshev. La figura \ref{ButtTxeby} mostra un exemple
-de la forma de la resposta freqüencial de cada tipus de filtre. La conversió de les expresions
-obtingudes al cas discret es fa mitjançant un canvi de variables (transformació bilineal).
+de la forma de la resposta freqÃ¼encial de cada tipus de filtre. La conversiÃ³ de les expresions
+obtingudes al cas discret es fa mitjanÃ§ant un canvi de variables (transformaciÃ³ bilineal).
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm]{ButtTxeby.png}
 \end{center}
-\caption{Exemples de respostes en freqüència de filtres analògics Butterworth (esquerra) i Txebytxev (dreta).}
+\caption{Exemples de respostes en freqÃ¼Ã¨ncia de filtres analÃ²gics Butterworth (esquerra) i Txebytxev (dreta).}
 \label{ButtTxeby}
 \end{figure}
 

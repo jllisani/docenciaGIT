@@ -1,0 +1,35 @@
+TEMA 5
+
+load handel.mat
+hfile = 'handel.wav';
+wavwrite(y, Fs, hfile)
+[y, Fs, nbits, readinfo] = wavread(hfile);
+sound(y, Fs);
+yn=awgn(y, 20);
+sound(yn, Fs)
+a=1;
+b=[1/3 1/3 1/3];
+ynf=filter(b, a, yn);
+sound(ynf, Fs)
+wavwrite(yn, Fs, 'handel_snr20.wav')
+wavwrite(ynf, Fs, 'handel_snr20_avg3.wav')
+yfft=fft(y);
+figure, plot(abs(yfft));
+k=20000;
+N=size(y, 1);
+nn=(1:N)';
+s=cos(2*pi*k*nn/N);
+sound(s, Fs)
+z=y+0.2*s;
+sound(z, Fs)
+wavwrite(z, Fs, 'handel_pulse.wav');
+zfft=fft(z);
+wfft=zfft;
+figure, plot(abs(wfft));
+wfft(19000:21000)=0;
+figure, plot(abs(wfft));
+wfft(N-21000:N-19000)=0;
+figure, plot(abs(wfft));
+w=real(ifft(wfft));
+sound(w, Fs)
+wavwrite(w, Fs, 'handel_pulse_bandpass.wav');

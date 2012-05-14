@@ -1,0 +1,112 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\noindent
+{\Large Soluci\'o control 2}
+
+\begin{problema}
+Dues persones, Maria i Joan, juguen a b\`asquet de la següent manera: llancen de manera alternativa
+des de la l\'\i nea de 3 punts fins que un d'ells encistella i guanya i acaba el joc. Si la primera en llançar \'es na Maria,
+i suposant que les probabilitats d'encistellar d'en Joan i na Maria s\'on, respectivament, $0.3$ i $0.4$,
+quina \'es la probabilitat que el nombre total de llançaments que fa en Joan fins que acaba el joc sigui 2?
+\ \hfill{\textbf{ 4 pt.}}
+\end{problema}
+
+\vspace{0.5cm}
+\noindent
+\textbf{Solució:}
+
+Successos:
+
+M: Maria encistella, $P(M)=0.4$, $P(\bar{M})=1-P(M)=0.6$
+
+J: Joan encistella, $P(J)=0.3$, $P(\bar{J})=1-P(J)=0.7$
+
+A: Joan fa un total de 2 llançaments
+
+\[
+\begin{array}{ll}
+P(A) & =P((\bar{M} \cap \bar{J} \cap \bar{M} \cap J) \cup (\bar{M} \cap \bar{J} \cap \bar{M} \cap \bar{J} \cap M))=\text{(disjunts)}=\\
+       & = P(\bar{M} \cap \bar{J} \cap \bar{M} \cap J) + P(\bar{M} \cap \bar{J} \cap \bar{M} \cap \bar{J} \cap M) = \text{(independents)}=\\
+       & =  P(\bar{M}) P(\bar{J}) P(\bar{M}) P(J) + P(\bar{M}) P(\bar{J}) P(\bar{M}) P(\bar{J}) P(M)= \\
+       & = 0.6 \cdot  0.7 \cdot 0.6 \cdot 0.3 +  0.6 \cdot  0.7 \cdot 0.6 \cdot 0.7 \cdot 0.4 = 0.146
+\end{array}
+\]
+
+
+\begin{problema}
+Un estudi estad\'\i stic mostra que la distribuci\'o dels habitatges d'una determinada localitat segons la seva antiguitat 
+\'es la seg\"uent:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Antiguitat (anys) & Quantitat \\
+\hline
+m\'es de 50 & 25 \\
+de 50 a 40 & 75 \\
+de 40 a 30 & 100 \\
+de 30 a 20 & 200 \\
+de 20 a 10 & 200 \\
+menys de 10 & 400 \\
+\hline
+\end{tabular}
+\end{center}
+
+Aix\'i mateix, l'estudi mostra que un $15\%$ dels habitatges \textit{vells}  (30 o m\'es anys)  tenen defectes estructurals, mentre 
+que nom\'es un $5\%$ dels edificis \textit{nous}  (menys de 30 anys)  en tenen.
+
+Es demana:
+\begin{enumerate}[a)]
+\item Quina \'es la probabilitat que un habitatge triat a l'atzar tengui defectes estructurals?
+\item Quina \'es la probabilitat que un habitatge triat a l'atzar sigui \textit{nou} i tengui defectes estructurals?
+\item Quina \'es la probabilitat que un edifici que té defectes estructurals sigui \textit{nou}?
+\end{enumerate}
+
+\ \hfill{\textbf{ 6 pt.}}
+\end{problema}
+
+\vspace{0.5cm}
+\noindent
+\textbf{Solució:}
+
+Successos:
+
+V: habitatge vell (30 o m\'es anys), $P(V)=CF/CP=200/1000=0.2$
+
+N: habitatge nou (menys de 30 anys), $P(N)=CF/CP=800/1000=0.8$
+
+D: habitatge amb defectes estructurals, $P(D|V)=0.15$, $P(D|N)=0.05$
+
+\begin{enumerate}[a)]
+\item $P(D)=\text{(f\'ormula prob. total)}=P(D|V)P(V)+P(D|N)P(N)=0.15\cdot 0.2 + 0.05 \cdot 0.8 = 0.07$
+\item $P(N \cap D)=\text{(no independents)}=P(D|N)P(N)=0.05 \cdot 0.8= 0.04$
+\item $P(N|D)=\text{(f\'ormula de Bayes)}=\displaystyle \frac{P(D|N)P(N)}{P(D)}=\frac{0.05 \cdot 0.8}{0.07}= 0.5714$
+\end{enumerate}
+
+
+
+
+\end{document}
+
