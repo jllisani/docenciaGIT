@@ -1,0 +1,55 @@
+\documentclass[12pt]{report}
+\usepackage[catalan]{babel}
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage[utf8]{inputenc}  
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[pdftex]{graphicx}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\textbf{\Large Càlcul II.\\ Control 2. Curs 2011-12}
+\end{center}
+
+\vskip 0.3cm
+\noindent
+\textbf{P1.} Per a la següent funció, trobau la direcció en què la derivada direccional és màxima
+i el valor de la derivada direccional en aquesta direcció.
+
+\[
+f(x, y, z)=\sin xy - \cos xz \quad \text{a } \quad (\pi, 1, 1)
+\]
+
+\vskip 0.3cm
+\noindent
+\textbf{P2.} Determinau els extrems absoluts de la funció $f(x, y)=xy(1-x^2-y^2)$ en el
+quadrat $[0, 1] \times [0, 1]$.
+
+
+
+\end{document}

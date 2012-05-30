@@ -1,0 +1,99 @@
+[x, Fs, nbits, readinfo]=wavread('gomaespuma1.wav');
+nbits
+Fs
+player=audioplayer(x, Fs);
+figure, plot(x)
+size(x)
+xx=x(:, 1);
+[x, Fs]=wavread('gomaespuma1.wav');
+xx=x(:, 1);
+size(xx)
+size(xx, 1)*1/Fs
+size(xx, 1)*1/Fs/60
+figure, plot(xx);
+xxx=xx(1:1000000);
+figure, plot(xxx);
+wavwrite(xxx, Fs, 'gomaespuma1a.wav');
+tcut=15;
+ncut=tcut*Fs
+xxx=xx(1:ncut);
+figure, plot(xxx);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=4.5;
+ncut=tcut*Fs
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=5;
+ncut=tcut*Fs
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=6;
+ncut=tcut*Fs;
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=5.5;
+ncut=tcut*Fs;
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=5.4;
+ncut=tcut*Fs;
+xxx=xx(1:ncut);
+ncut=int(tcut*Fs);
+ncut=tcut*Fs;
+ncut
+ncut=round(tcut*Fs)
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=5.25;
+ncut=round(tcut*Fs)
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+tcut=5.2;
+ncut=round(tcut*Fs)
+xxx=xx(1:ncut);
+wavwrite(xxx, Fs, 'gme1.wav');
+wavwrite(xxx, Fs*2, 'gme2.wav');
+wavwrite(xxx, Fs/2, 'gme3.wav');
+wavwrite(xxx, Fs*0.75, 'gme4.wav');
+[stw, Fstw]=wavread('imperial.wav');
+Fstw
+Fs
+tcut
+tcut1=8.5;
+tcut2=tcut1+tcut;
+ncut1=tcut1*Fstw;
+ncut2=tcut2*Fstw;
+stww=stw(ncut1:ncut2);
+ncut1=round(tcut1*Fstw);
+ncut2=round(tcut2*Fstw);
+stww=stw(ncut1:ncut2);
+wavwrite(stww, Fstw, 'stw.wav');
+tcut1=8.8;
+tcut2=tcut1+tcut;
+ncut1=round(tcut1*Fstw);
+ncut2=round(tcut2*Fstw);
+stww=stw(ncut1:ncut2);
+wavwrite(stww, Fstw, 'stw.wav');
+stwww=stww;
+figure, plot(stwww);
+1/Fstw
+Fstw
+stwww(1:5000)=0;
+figure, plot(stwww);
+wavwrite(stwww, Fstw, 'stww.wav');
+size(stwww)
+size(xxx)
+size(xxx)/4
+pista1=xxx(1:4);
+size(pista1)
+pista1=xxx(1:4:end);
+size(pista1)
+pista2=stwww(1:size(pista1, 1));
+pistaOut=pista1+pista2;
+wavwrite(pistaOut, Fstw, 'mix1.wav');
+pistaOut=pista1+0.5*pista2;
+wavwrite(pistaOut, Fstw, 'mix1.wav');
+pistaOut=pista1+0.2*pista2;
+wavwrite(pistaOut, Fstw, 'mix1.wav');
+pistaOut=pista1+0.1*pista2;
+wavwrite(pistaOut, Fstw, 'mix1.wav');
+length(xxx)
