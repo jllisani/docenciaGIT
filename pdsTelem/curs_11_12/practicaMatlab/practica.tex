@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[catalan]{babel}
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage[utf8]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+%\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+
+\begin{document}
+
+\textbf{\Large Pràctica Processament Digital de Senyal amb Matlab}
+
+
+\vskip 0.3 cm
+\noindent
+\textbf{Exercici 1}
+
+L'objectiu és estudiar l'efecte de l'aliasing en una gravació musical.
+Per a això:
+\begin{enumerate}[1)]
+\item descarregau d'Internet (per exemple de http://www.mfiles.co.uk/classical-mp3.htm) alguna peça musical
+\item si el format del fitxer no és .wav convertiu-lo a .wav amb http://media.io/
+\item obriu el fitxer des de Matlab i convertiu-lo a mono si era estéreo. Quedau-vos només amb 4 o 5 segons de la peça
+i guardau el nou senyal.
+\item obriu el senyal i representau-lo. Representau també el mòdul de la seva transformada de Fourier
+\item submostrejau el senyal amb diferents factors de submostreig, fins que l'efecte de l'aliasing sigui evident
+\item representau la transformada de Fourier dels senyals obtinguts en l'apartat anterior i guardau els resultats en
+format .wav
+\end{enumerate}
+
+
+\vskip 0.3 cm
+\noindent
+\textbf{Exercici 2}
+
+L'objectiu és estudiar el filtratge del renou en un senyal 1D (senyal de so).
+Per a això:
+\begin{enumerate}[1)]
+\item gravau 4 o 5 segons d'un senyal de veu contaminat per renou (per exemple, amb el telèfon mòvil gravau la televisió mentre teniu
+un aparell amb un motor en marxa -un extractor, un assecador de cabells, etc-)
+\item obriu el fitxer des de Matlab, representau-lo a nivell temporal i freqüencial
+\item intentau eliminar el renou aplicant un filtre de mitjana de diferents tamanys. Representau els resultats a nivell temporal i freqüencial
+\item intentau eliminar el renou aplicant un filtre de mediana de diferents tamanys. Representau els resultats a nivell temporal i freqüencial
+\end{enumerate}
+
+\vskip 0.3 cm
+\noindent
+\textbf{Exercici 3}
+
+L'objectiu és modificar el contingut d'un fitxer de so.
+Per a això:
+\begin{enumerate}[1)]
+\item descarregau-vos el fitxer de so  `sopractica.wav' disponible a Campus Extens i escoltau la peça musical
+\item obriu el fitxer i representau-lo a nivell temporal i freqüencial
+\item en la representació temporal observareu que hi ha una separació entre cada una de les notes de la peça musical.
+En total hi ha 16 notes. L'objectiu de la pràctica és que cada alumne modifiqui el senyal per eliminar una nota de la peça, indicat a més
+quina és la freqüència principal de la nota eliminada. Cada alumne té assignada una nota (la primera, la segona, etc. fins a la
+darrera nota que és la número 16), l'assignació de notes està penjada de Campus Extens (`notesassignades.pdf')
+\item es suggereix el següent procediment per eliminar la nota:
+\begin{itemize}
+\item observau, a nivell temporal, on es troba la nota a eliminar
+\item copiau en un array la porció del senyal on es troba la nota
+\item eliminau (posau a zero) la porció del senyal original on es troba la nota i guardau el resultat
+\item dibuixau l'espectre del la porció copiada en el pas 2 i calculau a quina freqüència
+contínua correspon el màxim de l'espectre
+\end{itemize}
+\end{enumerate}
+
+
+
+
+\vskip 0.3 cm
+\noindent
+S'ha d'entregar un informe de la pràctica en format pdf on s'incloguin, per a cada exercici, 
+les instruccions utilitzades, les figures generades i comentaris dels resultats. Els fitxers de so generats també s'han d'entregar.
+Tots els fitxers s'han de comprimir en un únic fitxer amb format .zip i penjar-los de Campus Extens.
+
+
+
+\end{document}

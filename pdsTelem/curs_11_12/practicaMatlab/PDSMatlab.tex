@@ -338,7 +338,8 @@ aliasing temporal del filtre ideal. D'una altra banda, el resultat obtingut en a
 del senyal discretitzat original amb la resposta impulsional del filtre, ja que la ifft d'un producte de senyals no és igual
 a la convolució habitual, sino a la convolució circular dels senyals.
 \item Una manera d'evitar l'aliasing és, abans del submostreig del senyals, filtrar-los amb un filtre passa-baix amb la
-freqüència de tall ajustada a $Fs/k$. D'aquesta manera no es produeix aliasing al submostrejar per un factor $k$
+freqüència de tall ajustada a $Fs/k$, on $k$ és el factor de submostreig. Aquest filtre rep el nom de \textbf{filtre antialiasing}.
+D'aquesta manera no es produeix aliasing al submostrejar per un factor $k$
 (si bé l'eliminació de freqüències altes produeix un altre efecte anomenat \textbf{efecte de Gibbs}).
 \end{itemize}
 
@@ -861,30 +862,123 @@ close all
 
 im=imread('camisa.png');
 
-imshow(im);
+im1=im(:,:,1);
+
+figure, imshow(im1);
 \end{verbatim}
 
 La submostrejam amb primer amb factor 2 i després 4 i observam l'efecte de l'aliasing.
 
 \begin{verbatim}
-im2=im(1:2:end, 1:2:end, 1);
+im2=im1(1:2:end, 1:2:end);
 
-imshow(im2);
+figure, imshow(im2);
 
-im4=im(1:4:end, 1:4:end, 1);
+im4=im1(1:4:end, 1:4:end);
 
-imshow(im4);
+figure, imshow(im4);
 \end{verbatim}
 
 Podem observar també els espectres (bidimensionals) de les imatges originals i submostrejades:
 
 \begin{verbatim}
-imshow(abs(fft2(im(:, 1))),[])
+figure, imshow(log(abs(fft2(im1))),[])
 
-imshow(abs(fft2(im2)),[])
+figure, imshow(log(abs(fft2(im2))),[])
 
-imshow(abs(fft2(im4)),[])
+figure, imshow(log(abs(fft2(im4))),[])
+
 \end{verbatim}
+
+Per evitar l'aliàsing hauriem d'utiltzar un filtre antialiasing en dimensió 2, de manera similar a com s'ha comentat per
+als senyals de dimensió 1:
+
+\begin{verbatim}
+im1bfft2=fft2(im1);
+
+N=size(im1, 1);
+
+M=size(im1, 2);
+
+im1bfft2(round(N/4):N-round(N/4), :)=0;
+
+im1bfft2(:, round(M/4):M-round(M/4))=0;
+
+
+figure, imshow(log(abs(im1bfft2)),[])
+
+im1b=real(ifft2(im1bfft2));
+
+figure, imshow(im1b,[])
+
+im1b4=im1b(1:4:end, 1:4:end);
+
+figure, imshow(im1b4,[])
+\end{verbatim}
+
+
+\vskip 0.5 cm
+
+Un segon exemple de processament d'imatges és l'eliminació de renou.
+
+En primer lloc obrim i visualitzam la imatge:
+
+\begin{verbatim}
+clear all
+
+close all
+
+im=imread('imatgerenouSP.png');
+
+figure, imshow(im)
+\end{verbatim}
+
+
+Ara la filtram amb un filtre de mitjana de tamany $3 \times 3$:
+
+\begin{verbatim}
+mitjana=[1/9 1/9 1/9;1/9 1/9 1/9;1/9 1/9 1/9];
+
+im2(:,:,1)=conv2(double(im(:,:,1)), mitjana);
+
+im2(:,:,2)=conv2(double(im(:,:,2)), mitjana);
+
+im2(:,:,3)=conv2(double(im(:,:,3)), mitjana);
+
+figure, imshow(uint8(im2))
+\end{verbatim}
+
+
+Comparam el resultat amb un filtratge de mediana del mateix tamany:
+
+\begin{verbatim}
+im3(:,:,1)=medfilt2(double(im(:,:,1)), [3 3]);
+
+im3(:,:,2)=medfilt2(double(im(:,:,2)), [3 3]);
+
+im3(:,:,3)=medfilt2(double(im(:,:,3)), [3 3]);
+
+figure, imshow(uint8(im3))
+\end{verbatim}
+
+
+\vskip 0.3 cm
+S'ha de tenir present que el millor tipus de filtre depen de les característiques
+del renou. En l'exemple que hem fet el renou era de tipus `sal i pebre' (puntets blancs o
+negres repartits de manera aleatòria per la imatge), i el filtratge de mediana
+dóna millors resultats que el de mitjana. 
+Aquest no és el cas si el renou és de tipus Gaussià, on cap dels dos tipus de filtres
+donen resultats similars. Per exemple, obrim una imatge:
+
+\begin{verbatim}
+im=imread('imatgerenouG.png');
+
+figure, imshow(im)
+\end{verbatim}
+
+
+i repetim les passes anteriors amb els filtres de mitjana i mediana i comparam els resultats.
+
 
 
 \end{document}
