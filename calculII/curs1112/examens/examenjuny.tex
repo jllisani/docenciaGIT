@@ -1,0 +1,133 @@
+\documentclass[12pt]{report}
+\usepackage[catalan]{babel}
+%\usepackage[latin1]{inputenc}   % Permet usar tots els accents i carï¿½ters llatins de forma directa.
+\usepackage[utf8]{inputenc}  
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+\usepackage[pdftex]{graphicx}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\newcounter{exctr}
+\newenvironment{exemple}
+{ \stepcounter{exctr} 
+\hspace{0.2cm} 
+\textit{Exemple  \arabic{exctr}: }
+\it
+\begin{quotation}
+}{\end{quotation}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\textbf{\Large Càlcul II.\\ Examen Juny. Curs 2011-12}
+\end{center}
+
+\vskip 0.3cm
+\noindent
+L'examen consta de 5 blocs de preguntes, cada un d'ells amb dues opcions. Heu de contestar \textbf{només una} de les opcions
+en cada bloc.
+
+\vskip 0.5cm
+\begin{enumerate}
+\item[\textbf{Bloc 1}]. 
+
+\begin{enumerate}
+\item[
+\textbf{Opció 1.}] Determinau el conjunt de tots els $x, y \in \R$ tals que $x+iy=(x-iy)^2$
+\item[
+\textbf{Opció 2.}] Determinau el conjunt següent: $\{ z \in \C : 1+i-e^{z}=0 \}$
+\end{enumerate}
+
+\vskip 0.3cm
+
+\item[\textbf{Bloc 2}]. 
+
+\begin{enumerate}
+\item[
+\textbf{Opció 1.}]  Estudiau la continuïtat en el punt $(1, 2)$ de la següent funció:
+\[
+f(x, y)=\begin{cases} \frac{3-x-y}{3+x-2y}  & \text{si } \quad (x, y) \neq (1, 2) \\ 0 & \text{si } \quad (x, y)=(1, 2) \end{cases}
+\]
+\item[
+\textbf{Opció 2.}] Calculau els límits iterats, els límits segons les rectes que passen per $(2, 3)$ i el límit en $(2, 3)$
+de la següent funció:
+$
+f(x, y)=x^2y^2-2xy^5+3y
+$
+\end{enumerate}
+
+\vskip 0.3cm
+
+\item[\textbf{Bloc 3}].
+
+\begin{enumerate}
+\item[
+\textbf{Opció 1.}]  Demostrau que la funció $z=y \varphi(x^2-y^2)$ satisfà l'equació:
+$
+\displaystyle
+\frac{1}{x} \frac{\partial z}{\partial x} + \frac{1}{y} \frac{\partial z}{\partial y}=\frac{z}{y^2}
+$
+\item[
+\textbf{Opció 2.}]  Trobau els màxims i mínims relatius de la funció:
+$
+\displaystyle
+f(x, y)=x^4+y^4+\frac{1}{x^4y^4}
+$
+\end{enumerate}
+
+\vskip 0.3cm
+
+
+\item[\textbf{Bloc 4}]. 
+
+\begin{enumerate}
+\item[
+\textbf{Opció 1.}]  Resoleu l'integral següent i dibuixau el recinte d'integració:
+\[
+\int_0^1 \int_1^{e^x} (x+y) dy dx
+\]
+\item[
+\textbf{Opció 2.}]   Resoleu l'integral següent i dibuixau el recinte d'integració:
+\[
+\iint_D xy dxdy
+\]
+on $D=\{ (x, y) : \quad y \leq 1-\frac{1}{2}x , \quad y \leq 1+\frac{1}{2}x, \quad -1 \leq x \leq 1 \}$.
+\end{enumerate}
+
+\vskip 0.3cm
+
+
+\item[\textbf{Bloc 5}].
+
+\begin{enumerate}
+\item[
+\textbf{Opció 1.}] Trobau la solució general $u(x, y)$ de la següent EDP i comprovau el resultat:
+\[
+u_{xy}=x^2y
+\]
+\item[
+\textbf{Opció 2.}]   Trobau la solució general $u(x, y)$ de la següent EDP i comprovau el resultat:
+\[
+3u_x-4u_y=x+e^x
+\]
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}

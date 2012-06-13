@@ -1,0 +1,321 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\noindent
+{\large \bf Escola Politècnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificació}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estadístiques}
+
+\hrule
+
+\vskip 0.3cm
+
+{ \footnotesize
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pràctica & Examen & Altres \\
+\hline
+Puntuable & & & X & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències específiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les tècniques i mètodes probabilístics i d'anàlisi estadística & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències genèriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resolució de problemes (CI-1) & X \\ \hline
+Capacitat d'anàlisi i síntesi (CI-4) & X \\ \hline
+Coneixement d'informàtica relatiu a l'àmbit d'estudis (CI-2) & \\ \hline
+Aptitud per a la gestió de l'informació (CI-5) & \\ \hline
+Compromís ètic (CP-1) & X \\ \hline
+Raonament crític (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) & \\ \hline
+Aprenentatge autònom (CP-9) & \\ \hline
+\end{tabular}
+
+}
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data: 18/06/2012}
+
+\hrule
+
+\vskip 0.5cm
+
+\begin{problema}
+La següent taula mostra les notes dels 2 primers controls de 20 alumnes d'Estadística:
+
+\begin{center}
+\begin{tabular}{|cccccccccccccccccccc|}
+\hline
+ 8.3 & 9.5 & 3.7 & 7.9 & 6.7 & 9 & 9.7 & 10 & 5.9 & 7.4 & 4.1 & 9.4 & 9 & 10 & 7.1 & 5.7 & 4.2 & 7 & 4.9 & 8.2 \\
+\hline
+6 & 5 & 0.5 & 5 & 0 & 9.2 & 2.5 & 9.7 & 7 & 7 & 3 & 6 & 9 & 9.7 & 1.5 & 3.5 & 7 & 4.2 & 4 & 8.5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vskip 0.3 cm
+Es demana:
+
+\begin{enumerate}[a)]
+\item Utilitza el rang interquartílic per comparar la dispersió de les notes dels dos controls i comenta els resultats.
+\item Dibuixa el diagrama de dispersió dels dos conjunts de notes
+\item Calcula el coeficient de correlació entre els dos conjunts de notes i comenta el resultat, relacionat-lo amb el diagrama
+de dispersió dibuixat a l'apartat anterior.
+\end{enumerate}
+\end{problema}
+
+\vskip 0.5cm
+
+\begin{problema}
+En una pastisseria hi ha dues vitrines on s'exposen els pastissos. En la primera d'elles hi ha 10 pastissos de poma i 7 de xocolata
+i en la segona 5 de poma i 10 de xocolata. Per un error una de les dependentes passa un pastís de la primera a la segona vitrina
+i a continuació arriba un client que tria un pastís a l'atzar d'aquesta segona vitrina.
+
+
+\vskip 0.3 cm
+Es demana:
+
+\begin{enumerate}[a)]
+\item Identifica i dóna nom als successos que es descriuen a l'enunciat del problema.
+En cas que hi hagi successos que estiguin condicionats per uns altres successos, calcula les probabilitats condicionades. 
+\item Quina és la probabilitat que el pastís que tria el client sigui de poma?
+\item Si el pastís que tria el client és de poma, quina és la probabilitat que el pastís que va passar de la primera a la segona 
+vitrina fos de xocolata?
+\item Quina és la probabilitat que el pastís que canvia de vitrina sigui de poma i que el pastís que tria el client sigui de xocolata?
+\end{enumerate}
+\end{problema}
+
+
+\vskip 0.5cm
+\begin{problema}
+Una fabricant de vidres sap que, per terme mitjà, els vidres que fabrica tenen 10 imperfeccions per metre quadrat.
+
+\vskip 0.3 cm
+Es demana:
+
+\begin{enumerate}[a)]
+\item Quina és la probabilitat de trobar més de 20 imperfeccions en un vidre d'un metre quadrat?
+\item Quina és la probabilitat de trobar més de 10 i menys de 15 imperfeccions en un vidre de mig metre quadrat?
+\item Quina és la probabilitat de trobar menys de 40 imperfeccions en un vidre de 5 metres quadrats?
+\item Si es fabriquen 10 vidres d'un metre quadrat cadascun, quina és la probabilitat que més de 7 d'aquests 
+vidres presentin 20 o menys imperfeccions?
+\end{enumerate}
+\end{problema}
+
+
+\vskip 0.5cm
+\begin{problema}
+El president d'un determinat país afirma que l'economia del país funciona molt bé i que no necessita ajuda
+financera externa ja que l'Índex Econòmic mitjà de les seves empreses és de 10, al nivell de la mitjana mundial. 
+Una agència internacional d'estudis econòmics decideix contrastar aquestes afirmacions i pren una mostra de
+10 empreses, obtenint els següents valors de l'Índex Econòmic per a cada una d'elles:
+
+\begin{center}
+\begin{tabular}{cccccccccc}
+9 & 8.9 & 11 & 9.5 & 10.4 & 7.8 & 9.7 & 10.1 & 8.5 & 9.9 
+\end{tabular}
+\end{center}
+
+\vskip 0.3 cm
+Es demana:
+
+\begin{enumerate}[a)]
+\item Calcula la mitjana i la desviació típica mostrals de l'Índex Econòmic de les empreses.
+\item A partir de les dades anteriors troba un interval de confiança per a la mitjana poblacional de l'Índex Econòmic de les empreses,
+amb un nivell de confiança del $95\%$.
+\item Contrasta les afirmacions del president del país, indicant de manera raonada quines són les hipòtesis nul.la i alternativa,
+amb un nivell de significació del $10\%$. Calcula el p-valor del contrast.
+\end{enumerate}
+\end{problema}
+
+
+\vskip 1cm
+
+{\footnotesize
+
+\textbf{Formulari Estad\'{\i}stica Descriptiva}
+\vskip 0.2 cm
+
+\begin{itemize}
+\item Percentil $p$ de dades agrupades en intervals:
+$
+\displaystyle
+P_p=L_p + (L_{p+1}-L_p) \frac{N \cdot p - N_{p-1}}{n_p}
+$
+
+\item Coeficient de simetria: $g_1=\frac{m_3}{s^3}$, $s$: desviaci\'o t\'{\i}pica
+\begin{itemize}
+\item Dades brutes:
+$
+\displaystyle
+m_3=\frac{(x_1-\bar{x})^3+(x_2-\bar{x})^3+\cdots+(x_N-\bar{x})^3}{N}
+$
+\item Dades en taula de freq\"u\`encies:
+$
+\displaystyle
+m_3=\frac{(x_1-\bar{x})^3 n_1+(x_2-\bar{x})^3 n_2+\cdots+(x_k-\bar{x})^3 n_k}{N}
+$
+\end{itemize}
+
+\item Coeficient d'apuntament: $g_2=\frac{m_4}{s^4} - 3$, $s$: desviaci\'o t\'{\i}pica
+\begin{itemize}
+\item Dades brutes:
+$
+\displaystyle
+m_4=\frac{(x_1-\bar{x})^4+(x_2-\bar{x})^4+\cdots+(x_N-\bar{x})^4}{N}
+$
+\item Dades en taula de freq\"u\`encies:
+$
+\displaystyle
+m_4=\frac{(x_1-\bar{x})^4 n_1+(x_2-\bar{x})^4 n_2+\cdots+(x_k-\bar{x})^4 n_k}{N}
+$
+\end{itemize}
+
+\item Recta de regressi\'o: $\hat{Y}=aX+b$, $\qquad 
+a=\frac{\mathrm{Cov(X, Y)}}{\mathrm{Var(X)}} \qquad b=\bar{y}-a \bar{x}
+$
+
+\item Coeficient de conting\`encia:
+$
+\displaystyle
+0\leq C \leq \sqrt{1-\dfrac{1}{\min(k,l)}},\quad C=\sqrt{\dfrac {\chi^2}{\chi^2+N}},\quad \chi^2=\sum_i \sum_j \dfrac {(n_{ij}-e_{ij})^2}{e_{ij}},\quad e_{ij}=\dfrac {n_{i*}n_{*j}}{N}
+$
+
+
+\end{itemize}
+
+\textbf{Formulari Estad\'{\i}stica Inferencial}
+\vskip 0.2 cm
+
+\textbf{Variables aleat\`ories usuals}
+\vskip 0.1 cm
+
+\begin{tabular}{|c|cl|c|c|l|}
+V.A. (X) & $f_X(x)$ & & $E(X)$ & $Var(X)$ & Altres propietats \\
+\hline
+Binomial $B(n, p)$ & $\binom{n}{x} p^x (1-p)^{n-x}$ & si $x\in \Omega_X$ &
+ $np$ & $np(1-p)$ & \\
+$\Omega_X=\{ 0, 1, \cdots, n \}$ & $0$ & si $x \notin \Omega_X$ & & & \\ \hline
+Poisson $Po(\lambda)$ & $\frac{\lambda^x}{x!} e^{-\lambda}$ & si $x\in \Omega_X$ & 
+ $\lambda$ & $\lambda$ & $B(n, p) \approx Po(np)$ \\
+$\Omega_X=\{ 0, 1, \cdots \}$ & $0$ & si $x \notin \Omega_X$ & & & ($n$ gran, $p$ petit)\\ \hline
+Uniforme ${\cal U}(a, b)$ & $\frac{1}{b-a}$ & si $x \in [a, b]$ & 
+$\frac{b+a}{2}$ & $\frac{(b-a)^2}{12}$ & 
+$F_X(x)=\begin{cases} 
+\frac{x-a}{b-a} & x \in [a, b] \\
+0 & x < a \\
+1 & x > b
+\end{cases}$ \\
+$\Omega_X=[a, b]$ & 0 & si $x \notin [a, b]$ &  & & \\ \hline
+Gaussiana $X(\mu, \sigma^2)$ & & & $\mu$ & $\sigma^2$ & $Z\sim N(0, 1)$ normal est\'andar \\
+$\Omega_X=\mathbb{R}$ & & & &  & $F_Z(-z)=1-F_Z(z)$ \\
+ & & & &  & $F_X(x)=F_Z(\frac{x-\mu}{\sigma})$ \\ 
+ & & & &  & $B(n, p) \approx N(np, np(1-p))$ \\ 
+ & & & &  & ($n$ gran) \\
+ & & & &  & $Po(\lambda) \approx N(\lambda, \lambda)$ \\ 
+ & & & &  & ($\lambda$ gran) \\ \hline
+\end{tabular}
+
+\vskip 0.2 cm
+
+\textbf{Estad\'\i stics m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{c|c|c|cl}
+Par\`ametre  & Esperan\c{c}a & Vari\`ancia & Distribuci\'o  & \\
+mostral &  &  & de probabilitat & \\
+(estad\'\i stic) & & & & \\ 
+\hline
+$\bar{X}$ & $E(\bar{X})=\mu$ & $\mathrm{Var}(\bar{X})=\frac{\sigma^2}{n}$ & 
+$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$ & poblaci\'o normal, $\sigma$ conegut \\
+& & & $\frac{\bar{X}-\mu}{\hat{s}_X / \sqrt{n}} \sim t_{n-1}$ & 
+poblaci\'o normal, $\sigma$ desconegut, $n \leq 30$ \\
+& & & 
+$\bar{X} \sim N(\mu, \frac{\hat{s}_X^2}{n})$ & 
+$\sigma$ desconegut, $n > 30$ \\
+& & & & \\
+$\hat{s}_X^2$ & $E(\hat{s}_X^2)=\sigma^2$ & $\mathrm{Var}(\hat{s}_X^2)=\frac{2\sigma^4}{n-1}$ & 
+$\frac{n-1}{\sigma^2}\hat{s}_X^2 \sim \chi^2_{n-1}$ & poblaci\'o normal \\
+& & & & \\
+$\hat{p}_X$ & $E(\hat{p}_X)=p$ & $\mathrm{Var}(\hat{p}_X)=\frac{p(1-p)}{n}$ &
+$\hat{p}_X \sim N(p, \frac{p(1-p)}{n})$ & $n > 30$ \\
+ & & & $\hat{p}_X \sim t_{n-1}$ & poblaci\'o normal, $n \leq 30$ 
+\end{tabular}
+
+\vskip 0.7 cm
+\textbf{Intervals de confian\c{c}a m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{l|ll}
+Par\`ametre mostral & Interval de confian\c{c}a & \\
+\hline
+& & \\
+Mitjana & $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ conegut \\
+& & \\
+ & $\displaystyle \bar{X} \pm t_{n-1, \alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ desconegut  \\
+& & i $n \leq 30$\\
+& & \\
+& $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & si $n > 30$ \\
+& & \\
+& & \\
+Vari\`ancia & $\displaystyle \left[ \frac{n-1}{\chi^2_{n-1, 1-\alpha/2}} \hat{s}_X^2,
+ \frac{n-1}{\chi^2_{n-1, \alpha/2}} \hat{s}_X^2 \right]$ & si la poblaci\'o segueix una llei normal  \\
+& & \\
+& & \\
+Proporci\'o & $\displaystyle \hat{p}_X \pm z_{\alpha/2} \sqrt{\frac{\hat{p}_X (1-\hat{p}_X)}{n}}$ & si $n > 30$ \\
+& & 
+\end{tabular}
+
+}
+
+\end{document}
+

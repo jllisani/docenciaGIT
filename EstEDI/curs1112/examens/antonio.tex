@@ -1,0 +1,250 @@
+%% This document created by Scientific Word (R) Version 3.0
+%%
+%% Examen extraordinario para un chico que no pudo asistir al oficial
+%%
+%%%%%
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[catalan]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setlength{\topmargin}{-3cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-1cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+\noindent\textbf{\large{Escola Polit\`ecnica Superior}}\\
+\noindent{\large{Grau en Enginyeria d'Edificaci\'o}}\\
+
+\noindent\textbf{\underline{\large{Assignatura: Aplicacions Estad\'{i}stiques}\hspace{10cm}} }\\ 
+\noindent\begin{small}\textbf{Tipus d'activitat:}\end{small}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}\hline
+ 		&Exercici & Treball/Pr\`actica & Examen & Altres \\ \hline
+Puntuable       & 	  & 			 & \textbf{X}  	  & \\ \hline
+No Puntuable    &  	  &			 & 	  & \\ \hline
+\end{tabular}
+\end{center}
+\noindent\begin{small}\textbf{Compet\`encies espec\'{\i}fiques que es treballen:}\end{small}\\
+\begin{tabular}{|l|c|}\hline
+Capacitat per a utilitzar les t\`ecniques i m\`etodes probabil\'{\i}stics i d'an\`alisi estad\'{\i}stica & \textbf{X} \\ \hline
+\end{tabular}\vspace{0.25cm}
+
+\noindent\begin{small}\textbf{Compet\`encies gen\`eriques que es treballen:}\end{small}\\
+\begin{tabular}{|l|c|}\hline
+Resoluci\'o de problemes (CI-1) & \textbf{X}\\ \hline
+Capacitat d'an\`alisi i s\'{\i}ntesi (CI-4) & \textbf{X}  \\ \hline
+Comprom\'{\i}s \`etic (CP-1)$\quad$ & \textbf{X} \\ \hline
+\end{tabular}\vspace{0.25cm}
+
+\noindent\begin{small}\textbf{Data: 18/06/2012 }\end{small}\\
+\noindent\underline{\hspace{18cm}}
+
+
+\begin{problema}
+En la seg\"uent taula s'ha reflectit el nombre de formigoneres que entren en un taller de reparaci\'o especialitzat segons els anys d'antiguitat (X) i l'import total de la factura (Y).
+\begin{center}
+\begin{tabular}{|l||c|c|c|}\hline
+Y \textbackslash X & $1$ & $2 $& $3$ \\ \hline \hline
+$[50,100)$ & 8 & 2 & 10 \\ \hline
+$[100,300)$ & 20 & 5 & 25 \\ \hline
+$[300,600]$ & 12 & 3 & 15\\ \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item [a)] Per als vehicles de 3 anys, calculau l'import mitj\`a de la factura i la vari\`ancia.
+\item [b)] Analitzau si existeix independ\`encia estad\'{\i}stica entre les variables.
+\item [c)] Determinau el coeficient de correlaci\'o lineal i interpretau el resultat.
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+L'alineaci\'o entre el suport i el cap lector en un sistema d'emmagatzematge de dades, afecta a l'acompliment del sistema. Es considera que el 10\% de les operacions de lectura es veuen atenuades per una alineaci\'o obliqua, el 5\% de les operacions de lectura es veuen atenuades per una alineaci\'o descentrada i la resta de les operacions de lectura es realitzen de forma correcta. La probabilitat d'error en la lectura a causa d'una alineaci\'o obliqua \'es 0.01, per una alineaci\'o descentrada \'es 0.02 i quan l'alineaci\'o \'es correcta \'es 0.001.
+\begin{itemize}
+\item [a)] Quina \'es la probabilitat de tenir un error de lectura?
+\item [b)] Si es presenta un error de lectura, quina \'es la probabilitat que es degui a una alineaci\'o obliqua?
+\end{itemize}
+\end{problema}
+
+
+\begin{problema}
+En cert servei telef\`onic, la probabilitat que una trucada sigui contestada en menys de 30 segons \'es 0.75. Suposem que les trucades s\'on independents.
+\begin{itemize}
+\item [a)] Si una persona crida 10 vegades, quina \'es la probabilitat que exactament nou de les trucades siguin contestades en menys de 30 segons?
+\item [b)] Si una persona crida 20 vegades, quina \'es el nombre de trucades que esperem que siguin contestades en menys de 30 segons?
+\item [c)] Quina \'es la probabilitat d'haver de cridar quatre vegades fins a tenir una resposta en menys de 30 segons?
+% \item [d)] Quin \'es la probabilitat d'haver de cridar sis vegades perqu\`e dues de les trucades siguin ateses en menys de 30 segons? 
+\end{itemize}
+\end{problema}
+
+
+\begin{problema}
+En una publicaci\'o cient\'{\i}fica es descriu l'efecte de la p\`erdua de l\`amines sobre la freq\"u\`encia natural, de bigues formades per diverses l\`amines. Es van subjectar 5 bigues amb p\`erdua de l\`amines a diverses c\`arregues, i les freq\"u\`encies resultants van ser les seg\"uents (en Hz.)
+\[
+230.66,\;233.05,\;232.58,\;229.48,\; 232.58
+\]
+Trobeu un interval de confian\c{c}a del 90\% per a la desviaci\'o t\'{\i}pica de la freq\"u\`encia natural.
+\end{problema}
+
+
+\begin{problema}
+El director de producci\'o de Finestres Nord S. A. desitja avaluar un nou m\`etode per produir finestres de doble fulla. El proc\'es actual t\'e una producci\'o mitjana de 80 unitats per hora amb una desviaci\'o t\'{\i}pica $\sigma=8.$ El director indica que no vol substituir l'actual proc\'es tret que existeixin proves contundents que el nivell mitj\`a de producci\'o \'es major amb el nou m\`etode. Obtenim una mostra de 25 hores de producci\'o amb el nou m\`etode amb una producci\'o mitjana de 83 finestres. Suposant que un nivell de significaci\'o $\alpha=0.05$ \'es una prova contundent, quina recomanaci\'o faries al director (suposam que la desviaci\'o t\'{\i}pica de la producci\'o amb el m\`etode nou
+\'es la mateixa que amb el vell)?
+\end{problema}
+
+
+
+\newpage
+
+{\footnotesize
+
+\textbf{Formulari Estad\'{\i}stica Descriptiva}
+\vskip 0.2 cm
+
+\begin{itemize}
+\item Percentil $p$ de dades agrupades en intervals:
+$
+\displaystyle
+P_p=L_p + (L_{p+1}-L_p) \frac{N \cdot p - N_{p-1}}{n_p}
+$
+
+\item Coeficient de simetria: $g_1=\frac{m_3}{s^3}$, $s$: desviaci\'o t\'{\i}pica
+\begin{itemize}
+\item Dades brutes:
+$
+\displaystyle
+m_3=\frac{(x_1-\bar{x})^3+(x_2-\bar{x})^3+\cdots+(x_N-\bar{x})^3}{N}
+$
+\item Dades en taula de freq\"u\`encies:
+$
+\displaystyle
+m_3=\frac{(x_1-\bar{x})^3 n_1+(x_2-\bar{x})^3 n_2+\cdots+(x_k-\bar{x})^3 n_k}{N}
+$
+\end{itemize}
+
+\item Coeficient d'apuntament: $g_2=\frac{m_4}{s^4} - 3$, $s$: desviaci\'o t\'{\i}pica
+\begin{itemize}
+\item Dades brutes:
+$
+\displaystyle
+m_4=\frac{(x_1-\bar{x})^4+(x_2-\bar{x})^4+\cdots+(x_N-\bar{x})^4}{N}
+$
+\item Dades en taula de freq\"u\`encies:
+$
+\displaystyle
+m_4=\frac{(x_1-\bar{x})^4 n_1+(x_2-\bar{x})^4 n_2+\cdots+(x_k-\bar{x})^4 n_k}{N}
+$
+\end{itemize}
+
+\item Recta de regressi\'o: $\hat{Y}=aX+b$, $\qquad 
+a=\frac{\mathrm{Cov(X, Y)}}{\mathrm{Var(X)}} \qquad b=\bar{y}-a \bar{x}
+$
+
+\item Coeficient de conting\`encia:
+$
+\displaystyle
+0\leq C \leq \sqrt{1-\dfrac{1}{\min(k,l)}},\quad C=\sqrt{\dfrac {\chi^2}{\chi^2+N}},\quad \chi^2=\sum_i \sum_j \dfrac {(n_{ij}-e_{ij})^2}{e_{ij}},\quad e_{ij}=\dfrac {n_{i*}n_{*j}}{N}
+$
+
+
+\end{itemize}
+
+\textbf{Formulari Estad\'{\i}stica Inferencial}
+\vskip 0.2 cm
+
+\textbf{Variables aleat\`ories usuals}
+\vskip 0.1 cm
+
+\begin{tabular}{|c|cl|c|c|l|}
+V.A. (X) & $f_X(x)$ & & $E(X)$ & $Var(X)$ & Altres propietats \\
+\hline
+Binomial $B(n, p)$ & $\binom{n}{x} p^x (1-p)^{n-x}$ & si $x\in \Omega_X$ &
+ $np$ & $np(1-p)$ & \\
+$\Omega_X=\{ 0, 1, \cdots, n \}$ & $0$ & si $x \notin \Omega_X$ & & & \\ \hline
+Poisson $Po(\lambda)$ & $\frac{\lambda^x}{x!} e^{-\lambda}$ & si $x\in \Omega_X$ & 
+ $\lambda$ & $\lambda$ & $B(n, p) \approx Po(np)$ \\
+$\Omega_X=\{ 0, 1, \cdots \}$ & $0$ & si $x \notin \Omega_X$ & & & ($n$ gran, $p$ petit)\\ \hline
+Uniforme ${\cal U}(a, b)$ & $\frac{1}{b-a}$ & si $x \in [a, b]$ & 
+$\frac{b+a}{2}$ & $\frac{(b-a)^2}{12}$ & 
+$F_X(x)=\begin{cases} 
+\frac{x-a}{b-a} & x \in [a, b] \\
+0 & x < a \\
+1 & x > b
+\end{cases}$ \\
+$\Omega_X=[a, b]$ & 0 & si $x \notin [a, b]$ &  & & \\ \hline
+Gaussiana $X(\mu, \sigma^2)$ & & & $\mu$ & $\sigma^2$ & $Z\sim N(0, 1)$ normal est\'andar \\
+$\Omega_X=\mathbb{R}$ & & & &  & $F_Z(-z)=1-F_Z(z)$ \\
+ & & & &  & $F_X(x)=F_Z(\frac{x-\mu}{\sigma})$ \\ 
+ & & & &  & $B(n, p) \approx N(np, np(1-p))$ \\ 
+ & & & &  & ($n$ gran) \\
+ & & & &  & $Po(\lambda) \approx N(\lambda, \lambda)$ \\ 
+ & & & &  & ($\lambda$ gran) \\ \hline
+\end{tabular}
+
+\vskip 0.2 cm
+
+\textbf{Estad\'\i stics m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{c|c|c|cl}
+Par\`ametre  & Esperan\c{c}a & Vari\`ancia & Distribuci\'o  & \\
+mostral &  &  & de probabilitat & \\
+(estad\'\i stic) & & & & \\ 
+\hline
+$\bar{X}$ & $E(\bar{X})=\mu$ & $\mathrm{Var}(\bar{X})=\frac{\sigma^2}{n}$ & 
+$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$ & poblaci\'o normal, $\sigma$ conegut \\
+& & & $\frac{\bar{X}-\mu}{\hat{s}_X / \sqrt{n}} \sim t_{n-1}$ & 
+poblaci\'o normal, $\sigma$ desconegut, $n \leq 30$ \\
+& & & 
+$\bar{X} \sim N(\mu, \frac{\hat{s}_X^2}{n})$ & 
+$\sigma$ desconegut, $n > 30$ \\
+& & & & \\
+$\hat{s}_X^2$ & $E(\hat{s}_X^2)=\sigma^2$ & $\mathrm{Var}(\hat{s}_X^2)=\frac{2\sigma^4}{n-1}$ & 
+$\frac{n-1}{\sigma^2}\hat{s}_X^2 \sim \chi^2_{n-1}$ & poblaci\'o normal \\
+& & & & \\
+$\hat{p}_X$ & $E(\hat{p}_X)=p$ & $\mathrm{Var}(\hat{p}_X)=\frac{p(1-p)}{n}$ &
+$\hat{p}_X \sim N(p, \frac{p(1-p)}{n})$ & $n > 30$ \\
+ & & & $\hat{p}_X \sim t_{n-1}$ & poblaci\'o normal, $n \leq 30$ 
+\end{tabular}
+
+\vskip 0.7 cm
+\textbf{Intervals de confian\c{c}a m\'es usuals}
+\vskip 0.2 cm
+
+\begin{tabular}{l|ll}
+Par\`ametre mostral & Interval de confian\c{c}a & \\
+\hline
+& & \\
+Mitjana & $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ conegut \\
+& & \\
+ & $\displaystyle \bar{X} \pm t_{n-1, \alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & poblaci\'o normal,
+$\sigma$ desconegut  \\
+& & i $n \leq 30$\\
+& & \\
+& $\displaystyle \bar{X} \pm z_{\alpha/2} \frac{\hat{s}_X}{\sqrt{n}}$ & si $n > 30$ \\
+& & \\
+& & \\
+Vari\`ancia & $\displaystyle \left[ \frac{n-1}{\chi^2_{n-1, 1-\alpha/2}} \hat{s}_X^2,
+ \frac{n-1}{\chi^2_{n-1, \alpha/2}} \hat{s}_X^2 \right]$ & si la poblaci\'o segueix una llei normal  \\
+& & \\
+& & \\
+Proporci\'o & $\displaystyle \hat{p}_X \pm z_{\alpha/2} \sqrt{\frac{\hat{p}_X (1-\hat{p}_X)}{n}}$ & si $n > 30$ \\
+& & 
+\end{tabular}
+
+}
+\end{document}
+
+
