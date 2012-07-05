@@ -1,0 +1,517 @@
+\documentclass[11pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex
+
+\usepackage[utf8]{inputenc}		%%para utilizar tildes en el texto
+\usepackage[spanish]{babel}		%%corta las palabras segun el castellano, pero pone comas en los puntos
+							%% decimales
+\usepackage{amsmath}			%% AMS-LaTeX	
+\usepackage{amsfonts}
+\usepackage{amssymb}			%%simbolos del AMS-LaTeX
+
+\setlength{\topmargin}{-2cm}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+
+
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+\newtheorem{ejemplo}[prbcont]{Ejemplo}
+\begin{document}
+
+\begin{center}
+\textbf{{\large {Aplicacions Estad\'{i}stiques.}\\Enginyeria Edificaci\'o.\\}}
+\vspace{0.5cm}
+\textbf{Exercicis Probabilitat}
+\end{center}
+
+\begin{problema}
+Una bossa conté 3 bolles negres, 8 blanques i 13 vermelles. Una segona bossa cont\'e 5 bolles negres, 7 blanques i 6 vermelles. S'escull a l'atzar una bolla de cada bossa. Calculeu la probabilitat que les dues bolles siguin de diferent color.
+\end{problema}
+
+% \begin{problema}
+% Es vol enviar un senyal des del punt A al B a trav\'es de la xarxa de comunicaci\'o que es mostra a la figura. El senyal es bifurca per les 3 branques intentant arribar ï¬ns al punt B. Els nodes 1,2,3 i 4 poden estar oberts, no passa el senyal, o tancats, passa el senyal, de forma independent. La probabilitat que un node estigui tancat \'es igual a
+% $p$. Es demana:
+% \begin{itemize}
+% \item [(a)] Calculeu, en funci\'o de $p$, la probabilitat que un senyal enviat des d'A arribi ï¬ns a B. 
+% \item [(b)] S'ha enviat un senyal des del punt A que ï¬nalment no ha arribat a B. Calculeu en funci\'o de $p$ la probabilitat que el node 3 estigui obert. 
+% \item [(c)] S'ha enviat un senyal des del punt A que s\'{\i} ha arribat a B. Calculeu, en funci\'o de $p,$ la probabilitat que dos nodes estiguin oberts i dos tancats.
+% \end{itemize}
+% \end{problema}
+
+% \begin{problema}
+% Quina \'es la probabilitat que en una reuni\'o de 10 persones n'hi hagi com a m\'inim dues que celebrin el seu aniversari el mateix dia?
+% \end{problema}
+
+\begin{problema}
+Una bossa cont\'e 7 bolles negres i 3 blanques. S'escullen a l'atzar 3 bolles de la bossa, una despr\'es de l'altra i sense devoluci\'o. 
+\begin{itemize}
+\item Busqueu la probabilitat que les dues primeres boles siguin negres i la tercera blanca.
+\item Contesteu la mateixa pregunta en el cas que les extraccions fossin amb devoluci\'o
+\end{itemize}
+\end{problema}
+
+% \begin{problema}
+% Una bossa cont\'e $n$ boles vermelles i una blava. 
+% \begin{itemize}
+% \item Descriviu l'espai mostral i les probabilitats associades a l'experiment aleatori ``extraure boles de la bossa fins que nom\'es quedin boles del mateix color''. 
+% \item Calculeu la probabilitat que les boles que quedin siguin vermelles.
+% \end{itemize}
+% \end{problema}
+
+\begin{problema} 
+En Joan i en Pep llan\c{c}en, 10 vegades cadascun, una moneda correcta. Quina \'es la probabilitat que en Joan tingui m\'es cares que en Pep?
+\end{problema}
+
+\begin{problema}
+Es llan\c{c}a un dau tres vegades. 
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat que la suma dels valors obtinguts sigui parell? 
+\item [(b)] I si es llancen 4 vegades? 
+\item [(c)] I si es llancen 5 vegades?
+\end{itemize}
+\end{problema}
+
+% \begin{problema}
+% Entre tots els subconjunts possibles d'un conjunt de n elements s'escull un conjunt a l'atzar. Calculeu la probabilitat que el subconjunt escollit tingui tres elements.
+% \end{problema}
+
+\begin{problema}
+En una oficina amb un unic tel\`efon hi ha tres persones A, B i C. Les trucades que es reben a l'oficina es produeixen aleat\`oriament durant el dia en les proporcions 2/5 dirigides a la persona A, 2/5 dirigides a la persona B i 1/5 dirigides a la persona C. Per motius de la seva feina les persones A, B i C han d'absentar-se de l'oficina
+aleat\`oriament i independentment de manera que A \'es absent la meitat del seu horari laboral, mentre que tant B com C s\'on absents la quarta part del seu horari laboral. Per a les trucades que es reben a l'oficina en horari laboral, trobeu la probabilitat que:
+\begin{itemize}
+\item [(a)] No hi hagi ning\'u per atendre la trucada. %(1/32)
+\item [(b)] Que una trucada pugui ser atesa per la persona a la qual va dirigida. %(13/20)
+\item [(c)] Que tres trucades consecutives vagin dirigides a la mateixa persona. %(17/125)
+\item [(d)] Que tres trucades consecutives vagin dirigides a tres persones diferents. %(24/125)
+\item [(e)] Que una persona que vol contactar amb B hagi de trucar m\'es de 3 vegades per localitzar-la. %(1/64)
+\item [(f)] S'ha rebut una trucada que se sap que ha pogut ser atesa per la persona a la qual anava dirigida. Calculeu la probabilitat que an\'es dirigida a A. %(4/13)
+\end{itemize}
+\end{problema}
+              
+% \begin{problema}
+% Una bossa cont\'e $b$ boles de color blanc i $n$ boles de color negre. S'escull a l'atzar una bola, per\`o quan es torna a la bossa s'hi afegeixen tamb\'e $c$ boles del mateix color. Tot seguit, s'escull a l'atzar una segona bola. Demostreu que si ens informen que aquesta segona bola \'es de color negre, la probabilitat que la primera hagi estat de color blanc \'es igual a $b/(b+n+c).$
+% \end{problema}
+
+\begin{problema}
+En una bossa hi ha 4 boles negres i 3 blanques. S'extreuen a l'atzar, sense devoluci\'o i una despr\'es de l'altra, totes les boles de la bossa. 
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat d'obtenir una successi\'o alternativa de colors. %(1/35) 
+\item [(b)] Contesteu la mateixa pregunta en el cas que la bossa contingui 3 boles negres i 3 blanques. %(1/10)
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Es tenen dues monedes: una d'elles \'es normal i sim\`etrica mentre que l'altra t\'e dues cares. S'escull a l'atzar una de les monedes i es fa un llan\c{c}ament. Suposant que la probabilitat d'escollir la moneda normal \'es $3/4$ i que s'ha obtingut ``cara'' en el llan\c{c}ament. Quina \'es la probabilitat que s'hagi escollit la moneda trucada? %(0.4)
+\end{problema}
+
+\begin{problema}
+Una bossa cont\'e boles numerades de l'1 al 9. Prenem boles a l'atzar, tornant-les cada vegada. Sigui $p_k$ la probabilitat que el primer 7 aparegui en la extracci\'o n\'umero $k.$
+\begin{itemize}
+\item [(a)] Calculeu $p_k$ i representeu gr\`aficament els seus valors.
+\item [(b)] Quantes boles hem d'extraure per a que la probabilitat de tenir algun 7 sigui com a m\'{\i}nim $9/10$?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Un canal de telecomunicaci\'o transmet missatges codificats en un sistema binari. La probabilitat que sigui em\`es el senyal 0 \'es $p$, i la probabilitat que sigui em\`es el senyal 1 \'es $1-p.$ Certes pertorbacions en la transmissi\'o, anomenades soroll de fons, poden alterar el senyal em\`es - canviant 0's per 1's i 1's per 0's - essent $p_0$ la probabilitat d'alteraci\'o quan el senyal em\`e \'es 0, i $p_1$ la probabilitat d'alteraci\'o quan el senyal em\`es
+\'es 1. Es demana:
+\begin{itemize}
+\item [(a)] Si s'ha rebut el senyal 0. Quina \'es la probabilitat que el senyal em\`es hagi estat
+efectivament el 0? %[p(1 â p0 )/(p(1 â p0 ) + (1 â p)p1 )]
+\item [(b)] Si s'ha rebut el senyal 1. Quina \'es la probabilitat que el senyal em\`es hagi estat
+el 0? %[pp0 /(pp0 + (1 â p)(1 â p1 ))]
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+En un sistema d'alarma, la probabilitat que es produeixi un perill \'es $p=0.1.$ Si es produeix el perill, la probabilitat que l'alarma funcioni \'es $p_1 = 0.95,$ i la probabilitat que l'alarma funcioni sense que s'hagi produ\"{\i}t el perill \'es $p_2 = 0.03.$ Calculeu:
+\begin{itemize}
+\item [(a)] La probabilitat que, havent funcionat l'alarma, el perill no s'hagi presentat. %(27/122)
+\item [(b)] La probabilitat que hi hagi un perill i l'alarma funcioni. %(0.095)
+\item [(c)] La probabilitat que, no havent funcionat l'alarma, hi hagi un perill. %(5/878)
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+En una certa instal.laci\'o industrial, dues m\`aquines $M_1$ i $M_2$ ocupen respectivament el $10\%$ i el $90\%$ de la producci\'o total d'un determinat article. La probabilitat que la primera m\`aquina fabriqui una pe\c{c}a defectuosa \'es $p_1 = 0.01,$ i la probabilitat que fabriqui una pe\c{c}a defectuosa la segona m\`aquina \'es $p_2 = 0.05.$ Agafant a l'atzar una pe\c{c}a de la producci\'o d'un dia, s'observa que \'es defectuosa. Quina \'es la probabilitat
+que aquesta pe\c{c}a procedeixi de la primera m\`aquina? %(1/46)
+\end{problema}
+
+
+\begin{problema}
+Si un ordinador personal est\`a contaminat per un determinat ``virus''  $V,$ un programa PR1 detecta la seva pres\`encia amb probabilitat $p_1 = 0.92.$ Si l'ordinador no t\'e el virus $V$ el programa detecta efectivament la seva abs\`encia amb probabilitat $p_2 = 0.87.$ S'estima que la probabilitat que un ordinador contingui el virus $V$ \'es igual a $0.32.$ Es demana:
+\begin{itemize}
+\item [(a)] Probabilitat que l'ordinador contingui realment el virus $V$ quan el programa PR1 detecta la seva pres\`encia. %(0.7691)
+\item [(b)] Probabilitat que l'ordinador no contingui efectivament el virus $V$ quan el programa PR1 no detecta la seva pres\`encia. %(0.9585)
+\item [(c)] Probabilitat que el programa PR1 realitzi una diagnosi correcta de la pres\`encia o no del virus $V$ en un ordinador personal escollit a l'atzar. %[0.886]
+% \item [(d)] Un segon programa PR2, preparat per detectar el mateix tipus de virus $V,$ t\'e probabilitats $p_1 = 0.99$ i $p2 = 0.82,$ respectivament. Quin dels dos programes (PR1 i PR2) \'es m\'es eficient? Raoneu la vostra resposta. %(El programa PR1)
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Dues m\`aquines A i B estan funcionant correctament. La probabilitat que la m\`aquina A continu\"{\i} funcionant correctament durant 10 dies m\'es \'es igual a $1/4,$ mentre que ho faci la m\`aquina B \'es igual a $1/3.$ El funcionament d'una de les m\`aquines no influeix en el de l'altra. Calculeu la probabilitat que:
+\begin{itemize}
+\item [(a)] Passats 10 dies, les dues m\`aquines continu\"{\i}n funcionant correctament. %(1/12)
+\item [(b)] Passats 10 dies, una de les m\`aquines -si m\'es no- funcioni correctament. %(1/2)
+\item [(c)] Passats 10 dies, cap de les dues m\`aquines funcioni correctament. %(1/2)
+\item [(d)] Passats 10 dies, nom\'es funcioni correctament la m\`aquina B. %(1/4)
+\item [(e)] Passats 10 dies, nom\'es funcioni correctament una de les dues m\`aquines. %(5/12)
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+En una bossa A hi ha 5 boles negres i 3 blanques, i en una altra bossa B hi ha 1 bola negra i 2 blanques. Es llan\c{c}a un dau i, si surt un 1 o un 2, es treu a l'atzar una bola de la bossa B i, sense mirar el seu color, s'introdueix a la bossa A i a continuaci\'o s'extreu a l'atzar una bola de la bossa A. Si la puntuaci\'o del dau \'es major que 2, s'extreu a l'atzar una bola de la bossa A i, sense mirar el seu color, s'introdueix a la bossa B i a continuaci\'o s'extreu a l'atzar una bola de la bossa B.
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat que la bola extreta la segona vegada sigui de color negre. %[607/1296]
+\item [(b)] Si la bola extreta la segona vegada resulta que \'es de color negre, quina probabilitat hi ha que la bola extreta en primer lloc tamb\'e ho sigui? %[366/607]
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+La senyora Xisca, de tant en tant, va al casino per jugar a la ruleta. Segons ella, sap una manera per guanyar quasi sempre. Quan juga sempre ho fa al color vermell i nom\'es ho fa quan en les 10 partides anteriors la ruleta s'ha aturat en caselles de color negre. La Xisca diu que t\'e moltes m\'es possibilitats de guanyar ja que la probabilitat que una ruleta s'aturi 11 vegades consecutives en una casella \'es molt petita. Jutgeu el raonament de la senyora Xisca.
+\end{problema}
+
+\begin{problema}
+Siguin $A$ i $B$ dos esdeveniments associats a un fenomen aleatori de manera que: $P(A)=1/2 P(B) = 1/3$ i $P (A\cap B)= 1/4.$ Calculeu:
+\begin{itemize}
+\item [(a)] $ P(A/B).$
+\item [(b)] $ P(B/A).$
+\item [(c)] $ P(A\cup B).$
+\item [(d)] $ P(\bar{A}/\bar{B}).$
+\item [(e)] $ P(\bar{B}/\bar{A}).$ % [3/4, 1/2, 7/12, 5/8, 5/6]
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Un servei de manteniment d'equips inform\`atics est\`a especialitzat en dos tipus d'equips que anomenarem $A$ i $\bar{A}$. Del total de serveis reclamats un $40\%$ s\'on de les m\`aquines $A$ i un $60\%$ de les $\bar{A}.$ D'altra banda, aquests dos tipus d'equips poden tenir dos tipus d'avaries que anomenarem $C$ i $\bar{C}.$ Se sap que, de les avaries de les m\`aquines $A,$ el $50\%$ s\'on de tipus $C.$ En canvi, el $30\%$ de les avaries de les $\bar{A}$ s\'on del tipus $\bar{C}$. Es demana:
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat que una avaria sigui del tipus $C$? %(0.62)
+\item [(b)] Els esdeveniments $A$ i $C$ s\'on disjunts (mutuament excloents)? S\'on independents? %(No)
+\item [(c)] El fet de saber que una avaria \'es del tipus $C$ o $\bar{C},$ varia la probabilitat que l'avaria vingui d'una m\`aquina tipus $A$?
+\item [(d)] Els operaris que reparen les avaries tipus $\bar{C}$ amb quin tipus de m\`aquines treballen m\'es freq\"uentment?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Una urna cont\'e 1 bola blanca i 3 boles negres. Quatre jugadors A, B, C i D treuen (per aquest ordre i sense reempla\c{c}ament) una bola de la urna. Guanya el primer jugador que treu la bola blanca. Calculeu la probabilitat que t\'e cada jugador de guanyar la partida. Creieu que l'ordre en que els jugadors treuen les boles t\'e influ\`encia en el resultat final? %(0.25)
+\end{problema}
+
+\begin{problema}
+Es treuen 5 cartes d'una baralla espanyola. Les cartes es treuen una despr\'es de l'altra i amb devoluci\'o. Calculeu la probabilitat d'obtenir 2 copes, 2 espases i 1 oro. %(15/512)
+\end{problema}
+
+\begin{problema}
+Una empresa de software ha trobat un nou procediment per a detectar un cert virus. Una empresa amb molts ordinadors l'ha contractada a fi de prevenir l'exist\`encia del virus. La probabilitat que la prova sigui positiva i identifiqui de manera correcta un ordinador que t\'e el virus \'es de $0.99,$ mentre que la probabilitat que la prova sigui negativa i identifiqui correctament un ordinador que no t\'e el virus \'es $0.95.$ La proporci\'o d'ordinadors amb virus \'es igual a $0.001.$ Calculeu la probabilitat que un ordinador no tingui el virus, sabent que la prova ha resultat positiva.
+\end{problema}
+
+\begin{problema}
+El software per a detectar fraus en las targetes telef\`oniques enregistra cada dia el nombre d'\`arees metropolitanes des d'on s'originen totes les trucades. Se sap que l'$1\% $ dels usuaris leg\'{\i}tims fan trucades al dia amb origen en dues o m\'es \`arees metropolitanes i que el $30\%$ dels usuaris fraudulents fan trucades al dia des de dues o m\'es \`arees metropolitanes. La proporci\'o d'usuaris fraudulents \'es de l'$1\%$. Si un mateix usuari fa en un dia trucades des de dues o m\'es \`arees metropolitanes, calculeu la probabilitat que l'usuari sigui fraudulent.
+\end{problema}
+
+\begin{problema} 
+Una placa base t\'e 20 circuits en una certa zona i se sap que 5 s\'on defectuosos. Es prenen 4 a l'atzar i sense reempla\c{c}ament per a comprovar-los. 
+\begin{itemize}
+\item [(a)] Probabilitat que els 4 circuits no siguin defectuosos.
+\item [(b)] Probabilitat que com a m\'{\i}nim un sigui defectu\'os.
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Quatre persones pugen a un ascensor a la planta baixa. L'ascensor t\'e quatre parades. Quina \'es la probabilitat que com a m\'{\i}nim dues persones baixin a la mateixa parada?
+\end{problema}
+
+\begin{problema}
+Es llan\c{c}a un dau tres vegades. Es demana: 
+\begin{itemize}
+\item [(a)] Si el resultat del tercer llan\c{c}ament ha estat $5,$ quina \'es la probabilitat que sigui major que els dos anteriors?
+\item [(b)] Si el resultat del tercer llan\c{c}ament \'es m\'es gran que el del segon, quina \'es la probabilitat que sigui m\'es gran que el resultat del primer?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+D'una urna que cont\'e tres boles vermelles i quatre blaves, es prenen tres boles. Si hi ha m\'es vermelles que blaves entre les boles extretes, quina \'es la probabilitat que hi hagi tres boles vermelles?
+\end{problema}
+
+\begin{problema}
+Es llan\c{c}a un dau. Si el resultat \'es m\'es petit o igual que 3, es llan\c{c}a de nou. Quina \'es la probabilitat que la suma dels valors sigui m\'es gran que 4?
+\end{problema}
+
+
+% \begin{problema}
+% Quina \'es la mida m\'{\i}nima d'un alfabet per poder identificar els individus d'una poblaci\'o de mida 10 amb paraules de tres lletres? Quina \'es la llargada m\'{\i}nima de les paraules d'un alfabet de tres lletres per poder identificar els individus d'una poblaci\'o de mida 106?
+% \end{problema}
+
+\begin{problema}
+En treure tres cartes d'una baralla de 40 cartes, quina \'es la probabilitat de treure almenys una figura?
+\end{problema}
+
+% \begin{problema}
+% \begin{itemize}
+% \item [(a)] Si tenim 11 amics, de quantes maneres en podem convidar 5 a dinar? 
+% \item [(b)] Si dos s\'on parella i van junts, de quantes maneres en podem convidar 5? 
+% \item [(c)] I si dos estan barallats i no els podem convidar junts, de quantes maneres els podem convidar?
+% \end{itemize}
+% \end{problema}
+
+% \begin{problema}
+% El Reial decret 2822/1998, de 23 de desembre de 1998, que regula la normativa de matriculaci\'o dels vehicles, estableix:
+% \begin{quote}
+% En las placas de matr\'{\i}cula se inscribir\'an dos grupos de caracteres constituidos
+% por un n\'umero de cuatro cifras, que ir\'a desde el 0000 al 9999, y de tres letras,
+% empezando por las letras BBB y terminando por las letras ZZZ, suprimi\'endose las cinco vocales, y las letras N, Q, CH y LL."
+% \end{quote}
+% \begin{itemize}
+% \item [(a)] Quantes matr\'{\i}cules es poden formar d'acord amb la normativa actual? 
+% \end{itemize}
+% Si les matr\'{\i}cules es formessin igualment amb 7 car\`acters (les lletres de l'alfabet, segons
+% la normativa, i els d\'{\i}gits del 0 al 9), quantes matr\'{\i}cules podrien fer-se si:
+% \begin{itemize}
+% \item [(b)] Cada car\`acter pot ser lletra o n\'umero.
+% \item [(c)] Tres car\`acters consecutius s\'on lletres (no necess\`ariament els tres primers) i la resta
+% n\'umeros.
+% \item [(d)] Exactament tres car\`acters s\'on lletres i els altres, n\'umeros.
+% \item [(e)] Hi pot haver qualsevol combinaci\'o de n\'umeros i lletres.
+% \end{itemize}
+% \end{problema}
+
+% \begin{problema}
+% Un ascensor t\'e $n$ usuaris a la planta baixa i puja $m$ pisos. 
+% Quantes distribucions de nombres d'usuaris que surten a cada planta hi ha? 
+% En quantes d'aquestes distribucions no baixa ning\'u a la planta 1? 
+% En quantes d'aquestes distribucions surt, com a molt, un usuari a cada planta?
+% \end{problema}
+
+% \begin{problema}
+% De quantes maneres diferents es poden distribuir $n$ boles en $m$ caixes numerades si
+% \begin{itemize}
+% \item [(a)] les boles s\'on distingibles.
+% \item [(b)] les boles no s\'on distingibles.
+% \item [(c)] cada caixa t\'e com a molt una bola (considereu els casos de boles distingibles i boles
+% no distingibles).
+% \item [(d)] si una de les caixes est\`a buida.
+% \end{itemize}
+% \end{problema}
+
+%\begin{problema}
+%(Problema dels aniversaris) Quina \'es la probabilitat $p_n$ que en un grup de $n$ persones n'hi
+%hagi almenys dues que tenen l'aniversari el mateix dia. Quin \'es el valor m\'es petit de $n$
+%pel qual $p_n > 1/2$. (Se suposa que els aniversaris estan distribu\'{\i}ts uniformement al llarg dels dies de l'any i que tots els anys tenen 365 dies.)
+%\end{problema}
+
+% \begin{problema}
+% Quantes paraules de llargada $n$ d'un alfabet de tres s\'{\i}mbols $\{0, 1, -1\}$ tenen exactament
+% $r$ zeros? Quantes tenen exactament $r$ zeros i $s$ uns? Quantes n'hi ha que la suma dels
+% d\'{\i}gits \'es 0?
+% \end{problema}
+
+\begin{problema}
+Es treuen $n$ nombres a l'atzar entre 1 i 9. Quina \'es la probabilitat que el seu producte
+acabi en 0?
+\end{problema}
+
+\begin{problema}
+Un senyor aparca cada nit en una zona prohibida. Li posen dotze multes, sempre en
+dimarts o en dijous. Quina \'es la probabilitat d'aquest succ\'es si suposem que tots els
+dies de la setmana tenen el mateix risc de multa. Suposem ara que, de dotze multes, no
+n'hi ha cap en diumenge (per\'o si els altres dies). Es prou evid\`encia per suposar que els
+diumenges no passa mai la gu\`ardia urbana?
+\end{problema}
+
+\begin{problema}
+S'ensenya una mona a escriure a m\`aquina i tecleja un text de 14 car\`acters triant cadascuna
+de les 27 tecles de lletres (incl\'os l'espai) a l'atzar. Quina \'es la probabilitat que escrigui
+la frase ``S\'oc inteligent''?
+\end{problema}
+
+\begin{problema}
+En un curs de quatre assignatures, el $70\%$ aproven l'assignatura A, el $75\%$ aproven l'assignatura B, el $80\%$ aproven l'assignatura C i el $85\%$ aproven l'assignatura D. Quin \'es el percentatge m\'{\i}nim d'estudiants que aproven les quatre assignatures?
+\end{problema}
+
+
+% \begin{problema}
+% Determineu la distribuci\'o de probabilitat de la suma de resultats obtinguts en tirar
+% dos daus. Quina distribuci\'o s'obtindria si s'utilitzen dos daus amb cares numerades $\{1; 3; 4; 5; 6; 8\}$ en un i $\{1; 2; 2; 3; 3; 4\}$ a l'altre?
+% \end{problema}
+
+\begin{problema}
+El resultat d'un experiment \'es un nombre enter entre 1 i 4. L'experiment es repeteix dues
+vegades de forma independent i s'obtenen els resultats $E_1$ i $E_2$. Calculeu les probabilitats
+de $A = \{E_1 = E_2\}, B = \{E_1 > E_2 \},$ i $C = \{E_1 + E_2 >6\}$. Calculeu les probabilitats de
+$A;$ $B;$ $A \ B;$ $A \ C;$ $B \ C$ i $\bar{A} \ B.$
+\end{problema}
+
+\begin{problema}
+Tenim un dau amb tres uns, dos dosos i un tres. D'altra banda, tenim una urna amb tres bolles blanques i dues negres. Llancem el dau i agafem tantes bolles com el n\'umero que surti al dau.
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat de treure com a m\'{\i}nim una bolla blanca.
+\item [(b)] Sabent que hem tret com a m\'{\i}nim una bolla negra, calculeu la probabilitat d'haver tret
+un dos al dau.
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Suposem que neixen m\'es nenes que nens. Comproveu que \'es m\'es probable tenir dos fills
+del mateix sexe que de sexe diferent.
+\end{problema}
+
+\begin{problema}
+Quina \'es la probabilitat d'aprovar un test de 20 preguntes amb quatre opcions per a
+cadascuna (de les quals nom\'es una \'es v\`alida) contestant a l'atzar? 
+Quina \'es aquesta probabilitat si nom\'es es contesten a l'atzar 15 preguntes i se'n deixen 5 en blanc?
+Per a l'avaluaci\'o del test tingueu en compte que cada resposta encertada puntua un punt, les respostes err\`onies o les preguntes no contestades no sumen ni resten punts i per a aprovar s'han d'obtenir 5 punts o m\'es. 
+\end{problema}
+
+% \begin{problema}   
+% \item Siguin $A,B,C$ tres successos tals que $P(A\cap B \cap C)=P(A)P(B)P(C).$ Es pot deduir que $A$ i $B$ s\'on independents?
+% \end{problema}
+
+\begin{problema}
+(El problema del cavaller de M\'er\'e) El cavaller de M\'er\'e apostava que en tirar un dau 4 vegades almenys sortiria un sis. Despr\'es de guanyar moltes vegades ning\'u no volia jugar amb ell i va canviar el joc, apostant que en 24 tirades de dos daus sortiria un doble sis. Es m\'es probable que perdi o que guanyi? Quin \'es el nombre m\'{\i}nim de tirades a partir del qual \'es m\'es probable guanyar que perdre?
+\end{problema}
+
+
+\begin{problema}
+Un senyor porta sis claus semblants, dues de les quals obren els dos panys de la porta de casa seva. Si en perd una, quina \'es la probabilitat que pugui entrar a casa? Quina \'es la
+probabilitat que les dues primeres claus que tria obrin la porta?
+\end{problema}
+
+% \begin{problema}
+% En un lot de $n$ xips, n'hi ha $l$ que s\'on defectuosos.
+% \begin{itemize}
+% \item [(a)] Quina \'es la probabilitat que en una mostra de mida $m$ n'hi hagi $r$ de defectuosos?
+% \item [(b)] Quina seria aquesta probabilitat si es pren la mostra de mida m amb reempla\c{c}ament?       Compareu-la amb l'anterior pels valors $n = 20, l = 2, m = 10 $ i $r = 1,$ i per als valors
+% $n = 100, l = 10, m = 10$ i $r = 1.$
+% \end{itemize}
+% \end{problema}
+
+
+\begin{problema}
+En un lot de $100$ xips, n'hi ha $10$ que s\'on defectuosos.
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat que en una mostra de mida $10$ n'hi hagi $1$ de defectuosos?
+\item [(b)] Quina seria aquesta probabilitat si es pren la mostra de mida $10$ per\`o amb reempla\c{c}ament?       \end{itemize}
+\end{problema}
+
+
+\begin{problema}
+Una caixa cont\'e 10 monedes normals i 20 de trucades per a les quals $P(\text{cara}) = 0.25.$ Es
+treu a l'atzar una moneda de la caixa i es tira dues vegades.
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat que surtin dues cares?
+\item [(b)] Si han sortit dues cares, quina \'es la probabilitat que la moneda fos trucada?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Es treuen dues boles d'una bossa que en cont\'e 5 de vermelles, 3 de blanques i 2 de verdes.
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat que les dues boles siguin del mateix color.
+\item [(b)] Si les dues boles s\'on del mateix color, quina \'es la probabilitat que siguin de color blanc?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Una f\`abrica produeix un $30\%$ de claus, un $25\%$ de cargols i un $45\%$ de xinxetes. Entre
+els claus, cadascun t\'e una probabilitat del $0,005$ de ser defectu\'os; la probabilitat que un cargol sigui defectu\'os \'es de $0,003,$ i una xinxeta, de $0,008.$ Si una pe\c{c}a \'es defectuosa, quina
+\'es la probabilitat que sigui una xinxeta?
+\end{problema}
+
+\begin{problema}
+Per tal d'assistir a un examen un estudiant compta amb l'ajuda d'un despertador, el
+qual aconsegueix despertar-lo el $80\%$ dels casos. Quan el despertador el desperta, la
+probabilitat que faci l'examen \'es del $0,9,$ mentre que si no el desperta la probabilitat que
+faci l'examen \'es del $0,5.$ Si fa l'examen, quina \'es la probabilitat que el despertador l'hagi
+despertat? Si no fa l'examen, quina \'es la probabilitat que no l'hagi despertat?
+\end{problema}
+
+\begin{problema}
+Un metge sap que nom\'es el $60\%$ dels pacients que van a la consulta estan malalts. Per
+poder distingir entre els malalts i els que no ho s\'on, el metge disposa d'una an\`alisi que
+presenta el $95\%$ de fiabilitat (\'es a dir, d\'ona el resultat correcte el $95\%$ de les vegades que
+s'aplica). Si un pacient d\'ona positiu, quina \'es la probabilitat que realment estigui malalt?
+\end{problema}
+
+\begin{problema}
+En una poblaci\'o hi ha un $24\%$ d'individus que s\'on homes i fumen, i un $35\%$ que s\'on dones
+i no fumen. Si la proporci\'o d'homes \'es del $55\%$, quina \'es la probabilitat que un individu
+escollit a l'atzar entre els fumadors sigui dona?
+\end{problema}
+
+\begin{problema}
+En un examen hi ha quatre problemes. El primer val 3 punts, el segon 2 i el tercer i el
+quart 2.5 cada un. La probabilitat de fer b\'e els problemes \'es $0.6, 0.8, 0.4$ i $0.4,$ per aquest
+ordre.
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat de no aprovar?
+\item [(b)] Si un estudiant ha aprovat, quina \'es la probabilitat que hagi fet b\'e el primer problema?
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+En un concurs televisiu hi ha tres portes, darrere una de les quals hi ha un premi. El
+concursant escull una de les portes i a continuaci\'o el presentador li mostra una de les
+portes que no ha triat i que no amaga el premi. El presentador ofereix al concursant la
+possibilitat de canviar la seva elecci\'o. Calculeu la probabilitat d'encertar la porta amb
+premi si:
+\begin{itemize}
+\item [(a)] El concursant ha decidit d'entrada no canviar la seva opci\'o.
+\item [(b)] El concursant ha decidit d'entrada canviar la seva opci\'o. 
+\end{itemize}
+\end{problema}
+
+% \begin{problema}
+% En una empresa de $n$ treballadors un d'ells explica un rumor a un altre, escollit a l'atzar.
+% Aquest, a la vegada, l'explica a un tercer escollit a l'atzar, i aix\'{\i} successivament.
+% \begin{itemize} 
+% \item [(a)] Quina \'es la probabilitat que el rumor hagi passat per $r$ persones sense tornar a qui
+% l'ha originat.
+% \item [(b)] Quina \'es la probabilitat que el rumor hagi passat per $r$ persones sense que ning\'u l'hagi
+% sentit m\'es d'una vegada.
+% \end{itemize}
+% \end{problema}
+
+\begin{problema}
+Un servei t\`ecnic t\'e tres equips de reparaci\'o, A, B i C, els quals efectuen el mateix nombre
+de reparacions. L'equip A resol favorablement el $80\%$ de les reparacions, l'equip B el $75\%$
+i l'equip C el $65\%$.
+\begin{itemize}
+\item [(a)] Quina \'es la probabilitat que una reparaci\'o defectuosa correspongui a un treball efectuat
+per l'equip A.
+\item [(b)] Es detecten cinc reparacions defectuoses. Quina \'es la probabilitat que n'hi hagi, com
+a molt, una realitzada per l'equip A.
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+Una urna cont\'e tres boles negres i dues boles blanques. Un primer jugador treu tres boles.
+Torna a l'urna una bola negra si entre les boles que ha tret n'hi ha m\'es de negres. Si no
+\'es aix\'{\i} torna a l'urna una bola blanca. A continuaci\'o, el segon jugador extreu una bola.
+El joc consisteix a endevinar quantes boles blanques ha extret el primer jugador. Si el
+segon jugador ha extret una bola blanca, quina \'es la probabilitat que el primer jugador
+hagi extret:
+\begin{itemize}
+\item [(a)] Cap bola blanca.
+\item [(b)] Una bola blanca.
+\item [(c)] Dues boles blanques.
+\end{itemize}
+\end{problema}
+
+\begin{problema}
+La probabilitat que hi hagi emb\'us a la via cintura a les 8 del vespre \'es de $0.4$ els dies que no
+juga el Mallorca, mentre que puja a $0.8$ els dies de partit. Sabem tamb\'e que el Mallorca juga
+dos partits per setmana.
+\begin{itemize}
+\item [(a)] Calculeu la probabilitat que hi hagi emb\'us un dia qualsevol.
+\item [(b)] Si un dia determinat vaig a la via cintura a les 8 del vespre i hi ha emb\'us, calculeu la
+probabilitat que estigui jugant el Mallorca.
+\end{itemize}
+\end{problema}
+
+
+\end{document}
+
+
+

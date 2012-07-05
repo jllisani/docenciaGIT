@@ -1,0 +1,236 @@
+\documentclass{report}
+\usepackage[catalan]{babel}
+\usepackage[utf8]{inputenc}   % Permet usar tots els accents i carÃ¯Â¿Åters llatins de forma directa.
+\usepackage{enumerate}
+\usepackage{amsfonts, amscd, amsmath, amssymb}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{27cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{0.25cm} \addtolength{\headheight}{\baselineskip}
+\addtolength{\topmargin}{-3cm}
+
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\K{\Bbbk}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+\textsc{Examen Fonaments Matemàtics II
+Telem\`{a}tica\\
+juny 2012}
+\end{center}
+
+\vspace{0.5 cm}
+\noindent
+\textbf{ÀlGEBRA LINEAL}
+
+\vspace{0.5 cm}
+\noindent\textbf{P1.-}
+
+\begin{enumerate}[a)]
+
+\item
+Calculau, sense aplicar la regla de Sarrus i sense desenvolupar pels elements
+d'una fila o columna, el determinant següent:
+
+\[
+\left| 
+\begin{array}{cccc}
+1 & 1 & 1 & \lambda \\
+1 & 1 & \lambda & 1 \\
+1 & \lambda & 1 & 1 \\
+\lambda & 1 & 1 & 1
+\end{array}
+\right|
+\]
+
+\ \hfill{\textbf{ 3 pt.}}
+
+\item 
+Discutiu i resoleu el sistema:
+
+\[
+\left.
+\begin{array}{ccccccc}
+x & + & y & + & z & = & \lambda \\
+x & + & y & + & \lambda z & = & 1 \\
+x & + & \lambda y & + & z & = & 1 \\
+\lambda x & + & y & + & z & = & 1 
+\end{array}
+\right\}
+\]
+
+\ \hfill{\textbf{ 7 pt.}}
+
+\end{enumerate}
+
+\vspace{0.5 cm}
+\noindent\textbf{P2.-}
+Considerau les següents successions recurrents:
+
+\[
+\begin{array}{ccccccc}
+a_n & = & 4a_{n-1} & - & 4b_{n-1} & + & 6c_{n-1} \\
+b_n & = & 3a_{n-1} & - & 4b_{n-1} & + & 6c_{n-1} \\
+c_n & = &  a_{n-1} & - & 2b_{n-1} & + & 3c_{n-1}
+\end{array}
+\]
+
+\noindent
+on $a_0=2$, $b_0=-2$ i $c_0=1$.
+
+\begin{enumerate}[a)]
+\item Trobau la matriu $A$ tal que 
+$\left( \begin{array}{c} a_n \\ b_n \\ c_n \end{array} \right) = A \left( \begin{array}{c} a_{n-1} \\ b_{n-1} \\ c_{n-1} \end{array} \right)$
+
+\ \hfill{\textbf{ 1 pt.}}
+
+\item Calculau els valors propis de $A$.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Trobau els espais propis associats a cada valor propi.
+\ \hfill{\textbf{ 3 pt.}}
+
+\item Indicau si la matriu és diagonalitzable i per què.
+\ \hfill{\textbf{ 1 pt.}}
+
+\item Calculau les sucessions $a_n$, $b_n$ i $c_n$.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Si $f: \R^3 \rightarrow \R^3$ és una aplicació lineal tal que 
+$f(x, y, z)=(x, y, -2x-4y-z)$ indicau si $(0, 0, \sqrt{5})$ és
+un vector propi. En cas afirmatiu indicau el valor propi corresponent.
+\ \hfill{\textbf{ 1 pt.}}
+
+\end{enumerate}
+
+\vspace{0.5 cm}
+\noindent\textbf{P3.-} Definim el següent producte escalar sobre $\R^3$:
+\[
+\langle (x_1, x_2, x_3), (y_1, y_2, y_3) \rangle = 2x_1y_1+x_2y_2+2x_3y_3
+\]
+
+\begin{enumerate}[a)]
+\item Demostrau que és un producte escalar.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Trobau la matriu associada al producte escalar respecte a la base canònica.
+\ \hfill{\textbf{ 1 pt.}}
+
+\item Sigui $S=\{ (x, y, z) \in \R^3 | x+y-3z=0 \}$. Trobau una base ortonormal de $S$.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Trobau una base de $S^{\perp}$.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Calculau la projecció ortogonal sobre $S$ del vector $(-1, 3, 2)$.
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Trobau l'angle que forma el vector $(-1, 3, 2)$ amb l'espai vectorial $S$.
+\ \hfill{\textbf{ 1 pt.}}
+
+\end{enumerate}
+
+\vspace{0.5 cm}
+\noindent
+\textbf{PROBABILITAT}
+
+\vspace{0.5 cm}
+\noindent\textbf{P4.-}
+Una empresa d'electrònica A fabrica xips i se sap que un $5\%$ dels xips que fabrica
+són defectuosos.
+
+\begin{enumerate}
+\item[a)] En una capsa tenim 200 xips fabricats per A. N'agafam 10.
+Quina és la probabilitat que 3 d'aquests xips siguin defectuosos?
+\ \hfill{\textbf{ 2 pt.}}
+\end{enumerate}
+
+A més de A, hi ha dues empreses més, B i C, que també fabriquen xips. 
+Se sap que són defectuosos un $10\%$ dels que fabrica B i un $3\%$
+dels de C. Una tenda d'electrònica compra 1000 xips a A, 500 a B i 500 a C.
+Es demana:
+
+\begin{enumerate}
+\item[b)] Del total de xips que compra la tenda agafam un a l'atzar.
+Quina és la probabilitat que sigui defectuós?
+\ \hfill{\textbf{ 2 pt.}}
+\item[c)] Si el xip que hem agafat és defectuós, quina és la probabilitat
+que l'hagi fabricat C?
+\ \hfill{\textbf{ 2 pt.}}
+\item[d)] Quina és la probabilitat que el xip sigui defectuós i l'hagi
+fabricat B?
+\ \hfill{\textbf{ 2 pt.}}
+\end{enumerate}
+
+\noindent
+(Plantejament i notació: \textbf{ 2 pt.})
+
+
+\vspace{0.5 cm}
+\noindent\textbf{P5.-}
+Una empresa immobili\`aria confecciona una oferta de lloguer d'habitatges. 
+L'empresa sap per experi\`encia que en la situaci\'o actual \'unicament el 40\% dels pisos es lloguen realment.
+\begin{enumerate}[a)]
+\item  Quina \'es la probabilitat que es lloguin exactament 6 pisos si la immobili\`aria posa 9 pisos en lloguer?
+\ \hfill{\textbf{ 2 pt.}}
+\item  Quina \'es la probabilitat que es lloguin com a m\`axim 6 pisos si la immobili\`aria posa 10 pisos en lloguer?
+\ \hfill{\textbf{ 2 pt.}}
+\item  Quina \'es la probabilitat que es lloguin entre 12 i 15 pisos (tots dos inclosos) si la immobili\`aria posa 20 pisos en lloguer?
+\ \hfill{\textbf{ 2 pt.}}
+\item Quin és el nombre de pisos que espera llogar si posa 90 pisos en lloguer.
+\ \hfill{\textbf{ 2 pt.}}
+\end{enumerate}
+(Plantejament i notació: \textbf{ 2 pt.})
+%
+%
+%Una petita barca amb capacitat per a 15 persones (a part de la tripulaci\'o) fa viatges diaris al Parc Natural de Cabrera. El patr\'o de la barca sap que 1 de cada 5 reserves fallen, per la qual cosa cada dia f\`a 17 reserves.
+%\begin{enumerate}[a)]
+%\item Quina \'es la probabilitat que un dia qualsevol no hagi espai a la barca per dur a totes les persones que han fet una reserva (overbooking)? 
+%\ \hfill{\textbf{ 2 pt.}}
+%\item Quina \'es la probabilitat que un dia qualsevol no s'ompli la barca?
+%\ \hfill{\textbf{ 2 pt.}}
+%\item Quina \'es la probabilitat que un dia qualsevol viatgin en la barca entre 10 i 12 persones (incloses)?
+%\ \hfill{\textbf{ 2pt.}}
+%\item Quina ha de \'esser la capacitat m\'{\i}nima de la barca per a que la probabilitat d'overbooking sigui inferior al $3\%$. 
+%\ \hfill{\textbf{ 2 pt.}}
+%\end{enumerate}
+%(Plantejament i notació: \textbf{ 2 pt.})
+
+
+\vspace{0.5 cm}
+\noindent\textbf{P6.-}
+L'usuari d'un pàrquing aparca el seu cotxe durant un temps variable $X$
+que es pot modelar amb una variable aleatòria Gaussiana de mitjana $100$
+i desviació típica $15$ (unitats en minuts).
+El pàrquing li costa una quantitat fixa de 50 cèntims d'euro més
+1 cèntim per minut aparcat.
+\begin{enumerate}[a)]
+\item Quina és la probabilitat que el pàrquing li costi menys de 1,20 euros?
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Quina és la probabilitat que el pàrquing li costi més de 2 euros?
+\ \hfill{\textbf{ 2 pt.}}
+
+\item Quina és la probabilitat que el cotxe estigui aparcat entre $60$ i $90$ minuts?
+\ \hfill{\textbf{ 2 pt.}}
+
+\item $75\%$ és el percentatge de vegades que el cotxe estigui aparcat menys de quants minuts?
+\ \hfill{\textbf{ 2 pt.}}
+
+\end{enumerate}
+(Plantejament i notació: \textbf{ 2 pt.})
+
+\vskip 5cm
+\hrule
+
+\vspace{0.25 cm}
+
+\noindent Duraci\'o de l'examen 4 hores.\newline
+
+\end{document}
