@@ -1,8 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\select@language {spanish}
-\beamer@sectionintoc {1}{Instalaci\IeC {\'o}n en Debian}{3}{0}{1}
-\beamer@sectionintoc {2}{Elementos de un documento}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Cabecera del documento}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Cuerpo del documento}{6}{0}{2}
-\beamer@subsectionintoc {2}{3}{Cosas a recordar}{11}{0}{2}
-\beamer@sectionintoc {3}{Anexo}{12}{0}{3}
