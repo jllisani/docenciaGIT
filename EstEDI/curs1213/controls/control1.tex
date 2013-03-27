@@ -1,0 +1,122 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[active]{srcltx}      	%% necesario para pasar del dvi al tex%
+\usepackage[spanish]{babel}
+\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{sw20res1}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\setlength{\topmargin}{-2.5cm}	%%formato de pagina que ocupa todo
+\setlength{\textwidth}{18.5cm}
+\setlength{\textheight}{28cm}
+\setlength{\oddsidemargin}{-1.5cm}
+
+\pagestyle{empty}
+\newcounter{prbcont}
+\stepcounter{prbcont}
+\setcounter{prbcont}{0}
+\newtheorem{problema}[prbcont]{Problema}
+
+\begin{document}
+
+\noindent
+{\large \bf Escola Politècnica Superior}
+
+\noindent
+{\large Grau en Enginyeria d'Edificació}
+
+\vskip 0.3cm
+\noindent
+{\large \bf Assignatura: Aplicacions Estadístiques}
+
+\hrule
+
+\vskip 0.3cm
+
+\noindent
+Tipus d'activitat
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Exercici & Treball / Pràctica & Examen & Altres \\
+\hline
+Puntuable & & & X & \\ \hline
+No Puntuable & & & & \\ \hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències específiques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Capacitat per a utilitzar les tècniques i mètodes probabilístics i d'anàlisi estadística & X \\
+\hline
+\end{tabular}
+
+\vskip 0.3cm
+
+\noindent
+Competències genèriques que es treballen
+
+\begin{tabular}{|l|c|}
+\hline
+Resolució de problemes (CI-1) & X \\ \hline
+Capacitat d'anàlisi i síntesi (CI-4) & X \\ \hline
+Coneixement d'informàtica relatiu a l'àmbit d'estudis (CI-2) & \\ \hline
+Aptitud per a la gestió de l'informació (CI-5) & \\ \hline
+Compromís ètic (CP-1) & X \\ \hline
+Raonament crític (CP-2) & X \\ \hline
+Aptitud per al treball en equip (CP-3) & \\ \hline
+Aprenentatge autònom (CP-9) & \\ \hline
+\end{tabular}
+
+
+\vskip 0.3 cm
+
+\noindent
+\textbf{Data: 19/03/2013}
+
+\hrule
+
+\vspace{0.3 cm}
+
+\begin{problema}
+
+\noindent
+Es pren una mostra de 11 elements d'una població i per a cada un d'ells es recopilen dues dades estadístiques $X$ i $Y$.
+Les dades brutes es mostren en la taula següent:
+
+\begin{center}
+\begin{tabular}{c|ccccccccccc}
+X & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\ \hline
+Y & 27 & 18 & 11 & 6 & 3 & 2 & 3 & 6 & 11 & 18 &27 
+\end{tabular}
+\end{center}
+
+\noindent
+Es demana:
+\begin{enumerate}[a)]
+\item Mitjana i desviació típica de la variable $X$.
+\item Mitjana i desviació típica de la variable $Y$.
+\item Mediana i quartils primer i tercer de la variable $Y$.
+\item Diagrama de dispersió.
+\item Covariància i coeficient de correlació lineal. Comentau el resultat.
+\item Taula de contingència.
+\item Coeficient de contingència. Comentau el resultat en relació amb
+el valor de la correlació lineal.
+\end{enumerate}
+
+
+\end{problema}
+
+
+
+
+\end{document}
+

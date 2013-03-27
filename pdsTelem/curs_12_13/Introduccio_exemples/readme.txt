@@ -2,11 +2,12 @@ Adquisició d'audio (format .wav):
 http://www.faq-mac.com/tutoriales/grabar-cualquier-audio-reproducido-mac/32819
 
 Útils per l'adquisició: 
-Soundflower
-Audiacity
+Soundflower (només per Mac: http://code.google.com/p/soundflower/)
+Audiacity (http://audacity.sourceforge.net)
 
 Processament: 
-Matlab
+Matlab (http://www.mathworks.es/products/matlab/) 
+Scilab (http://www.scilab.org/)
 
 
 Fitxers:
@@ -42,10 +43,36 @@ length(B)/Fs
 //mono:
 AA=A(1, :); //scilab
 AA=A(:, 1); //matlab
+playsnd(AA, Fs);
+
+//representar el senyal
+scf(0), plot2d3(AA)
+//reproduir i representar un bocí del senyal
+// "Que"
+playsnd(AA(1:10000), Fs) 
+scf(1), plot2d3(AA(1:10000))
+//"Q"
+playsnd(5*AA(5500:6000), Fs)
+scf(2), plot2d3(AA(5500:6000))
+//detalls de la representació
+scf(3), plot2d3(AA(5900:6000))
+scf(4), plot2d3(AA(5900:5930))
+
+//Operacions amb senyals
+//reflexió del senyal
+N=length(AA);
+I=zeros(1:N);
+for k=1:N
+  I(k)=AA(N+1-k);
+end
+playsnd(I, Fs);
+scf(5), plot2d3(I)
+
 //bocí de senyal B amb la durada de A, mono:
 D=B(1, 1:size(A, 2)); //scilab
 D=B(1:length(A), 1); //matlab
 D=B(1:length(AA), 1); //scilab i matlab
+
 //reproducció de combinacions lineal dels senyals
 playsnd(AA+D, Fs)
 playsnd(AA+2*D, Fs)
@@ -64,18 +91,7 @@ E=DD;
 //retard d'1/2 segon == Fs mostres
 E(Fs/2:Fs/2+length(AA)-1)=E(Fs/2:Fs/2+length(AA)-1)+AA;
 playsnd(E, Fs);
-//representar el senyal
-scf(0), plot2d3(AA)
-//reproduir i representar un bocí del senyal
-// "Que"
-playsnd(AA(1:10000), Fs) 
-scf(1), plot2d3(AA(1:10000))
-//"Q"
-playsnd(5*AA(5500:6000), Fs)
-scf(2), plot2d3(AA(5500:6000))
-//detalls de la representació
-scf(3), plot2d3(AA(5900:6000))
-scf(4), plot2d3(AA(5900:5930))
+
 //Altres exemples de processament del senyal (Wikipedia: Audio signal processing)
 //eco: canal 1 original, canal 2 retardat > 35ms
 ret_eco_min=int(0.035*Fs)
@@ -135,5 +151,36 @@ Aup2=real(ifft(Aup2_f));
 scf(2), plot2d3(abs(Aup2_f));
 playsnd(Aup2, Fs)
 
-
+//exemple de sistema recursiu:
+//sintetitzador de sons (Karplus-Strong algorithm)
+x=rand(100, 1, "normal");
+scf(0), plot2d3(x)
+M=size(x)
+M=length(x)
+N=10*M;
+y=zeros(N, 1);
+y(1:M)=x;
+for k=M+1:N
+  y(k)=0.9*y(k-M);
+end
+playsnd(x)
+playsnd(y)
+playsnd(y, 44100)
+playsnd(y, 11000)
+//un altre exemple
+[A, Fs]=wavread('bugs.wav');
+x=A(1, 1:10000)';
+M=length(x);
+N=10*M;
+D=100;
+y=zeros(N, 1);
+y(1:M)=x;
+for k=D+1:N
+    y(k)=y(k)+0.9*y(k-D);
+end
+playsnd(x, Fs)
+playsnd(y, Fs)
+ 
+   
+end
 
